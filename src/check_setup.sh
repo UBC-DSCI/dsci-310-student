@@ -258,7 +258,7 @@ echo "## R packages" >> check_setup.log
 if ! [ -x "$(command -v R)" ]; then  # Check that R exists as an executable program
     echo "Please install 'R' to check R package versions." >> check_setup.log
 else
-    r_pkgs=(cowplot=1 GGally=2 kknn=1 scales=1 tidyverse=1 tidymodels=0)
+    r_pkgs=(cowplot=1 GGally=2 kknn=1 scales=1 tidyverse=1 tidymodels=0 tinytex=0)
     installed_r_pkgs=$(R -q -e "print(format(as.data.frame(installed.packages()[,c('Package', 'Version')]), justify='left'), row.names=FALSE)" | grep -v "^>" | tail -n +2 | sed 's/^ //;s/ *$//' | tr -s ' ' '=')
     for r_pkg in ${r_pkgs[@]}; do
         if ! $(grep -iq "$r_pkg" <<< $installed_r_pkgs); then
