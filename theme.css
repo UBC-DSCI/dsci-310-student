@@ -1,0 +1,110 @@
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:300, 300i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #ca225e;
+  --header-color:    #ca225e;                    /* edited */
+  --body-color:      #404040;                    /* edited */
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    "Noto Serif JP", sans-serif; /* edited */
+  --mono-font:       "IBM Plex Mono", monospace;  /* edited */
+  --body-font:       "Lato", sans-serif;          /* edited */
+  --navbar-font:     "Lato", sans-serif;          /* edited */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.9rem;                      /* edited */
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.95rem;                     /* edited */
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);      
+  --text-size:       0.9rem;                    /* edited */
+  --text-color:      #1a162d;                   /* edited */
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       #1f1f1f;                   /* edited */
+  --text-size:        15px;
+  --hover-color:      #787878;                   /* edited */
+  --bkgd-color:       #fff;                      /* edited */
+}
+
+.distill-site-footer {
+  --text-color:       #7e7b88;                   /* edited */
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #ca225e3d;                 /* edited */
+}
+
+/*-- Additional custom styles --*/
+
+ul > li::marker {
+  color: #ca225e;
+}
+
+.distill-site-header { 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.distill-site-header .logo img{
+  max-height: 40px; /* Makes logo bigger, default was 20px */
+}
+
+.distill-site-header {
+  padding-top: 1rem;
+}
+
+d-title h1,
+d-article h2,
+.posts-list .description h2,
+.posts-list > h1 {
+    font-weight: 300;
+}
+
+d-appendix {
+  background-color: #fdf7f9;
+  border-top: none;
+}
