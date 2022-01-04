@@ -1,0 +1,56 @@
+---
+title: "Individual assignment 1"
+descriptions: |
+    Setting up your computer.
+output:
+  distill::distill_article:
+    toc: true
+---
+
+## Instructions
+
+Complete the computer setup installation instructions 
+which corresponds to your computer's operating system:
+
+- [Computer setup installation instructions](../docs/computer-setup.html)
+
+## Submission
+
+Submit a copy of the output of the `check_setup.sh` script you ran 
+(instructions in 
+["Post-installation notes"](https://ubc-dsci.github.io/dsci-310-student/install_stack_mac_x86.html#post-installation-notes) 
+section of the computer setup instructions) 
+to the text box provided for Individual assignment 1 
+in the course shell on [Canvas](https://canvas.ubc.ca).
+
+## Troubleshooting
+
+We understand that you may encounter issues 
+when following the installation instructions. 
+If/when you do, 
+please post your issues on the course Piazza forum 
+to obtain assistance trouble shooting these. 
+When asking for help on Piazza 
+please ensure you include the following information in your post 
+to ensure we can help you:
+
+1. Operating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version
+
+2. What you did that led to the issue (command/code typed, software that was attempted to be installed)
+
+3. Clear description and/or screenshot of the issue 
+
+**When possible please share commands typed 
+and error messages as text, not screenshots, 
+as text can be copied and pasted by the teaching team 
+to help search for solutions.**
+
+## Rubric 
+
+This assignment will be graded for completion as follows:
+
+|Grade | Description |
+|------|-------------|
+| 100% | The output of the `check_setup.sh` script indicates that 90% or more of the installation instructions were attempted. |
+| 50%  | The output of the `check_setup.sh` script indicates that only 50%, or less, of the installation instructions were attempted. |
+| 0%   | No output from the `check_setup.sh` script was provided, or the output of the `check_setup.sh` script indicates that only 25%, or less, of the installation instructions were attempted. |
