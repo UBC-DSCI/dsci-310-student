@@ -138,10 +138,6 @@ mid-term exam** and make arrangements (e.g., schedule an oral make-up mid-term e
 Instructor. Failing to present a declaration within a reasonable timeframe
 before the mid-term exam will result in a grade of zero. 
 
-There will be **no extensions for the lecture and tutorial worksheets**; late
-assignments will receive a grade of zero. Instead, we will drop the lowest
-grade on tutorials and worksheets for the semester. 
-
 A late submission is defined as any work submitted after the deadline. 
 For a late submission, the student will receive a 75% scaling of their grade for the first occurrence, 
 50% scaling of their grade for the second occurrence, and will receive a grade of 0 for subsequent occurrences.
@@ -163,10 +159,9 @@ Failure to present valid documentation may result in a failing grade.
 
 ### Re-grading
 If you have concerns about the way your work was graded, please contact the TA
-who graded it within one week of having the grade returned to you. After this
+who graded it within one week of having the grade returned to you through Piazza. After this
 one-week window, we may deny your request for re-evaluation. Also, please keep
-in mind that your grade may go up or down as a result of re-grading. Please see
-Canvas for instructions on submitting re-grade requests.
+in mind that your grade may go up or down as a result of re-grading.
 
 
 ### Missed final exam 
