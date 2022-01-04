@@ -79,11 +79,12 @@ minutes late. Please be patient!*
 |Individual assignments	| 5% |	1, 2, 4, 5 |
 |Project milestone 1 |	10%	| 3, 6 |
 |Project milestone 2	| 10%	| 3, 4, 6 |
-|Mid-term Exam |	10%	 | 1, 2, part of 4 |
 |Project milestone 3	| 10%	| 3, 4, 5, 6 |
-|Peer review |	5%	| 2 |
 |Final project	| 20%	| 3, 4, 5, 6 |
+|Peer review |	4.5%	| 2 |
 |Teamwork	| 10% |	6 |
+| GitHub username quiz | 0.5% | NA |
+|Mid-term Exam |	10%	 | 1, 2, part of 4 |
 |Final Exam	| 20%	| 1, 2, 4, 5 |
 
 ## Schedule at a glance
@@ -91,7 +92,7 @@ minutes late. Please be patient!*
 | Week | Date     | Topic | Reading | Assessments due | Notes |
 |------|----------|-------|---------|-----------------|-------|
 | 1    | 2021/01/10 | How do reproducible and trustworthy workflows impact data analysis? |  |  |  |
-| 2    | 2021/01/17 | Version control for transparency and collaboration |  | Individual assignment 1 due |  |
+| 2    | 2021/01/17 | Version control for transparency and collaboration |  | Individual assignment 1 due & GitHub username quiz |  |
 | 3    | 2021/01/24 | Integrated development environments, filenames and data science project organization |  |  | Team assignment for group projects & drafting of team work contract |
 | 4    | 2021/01/31 | Managing dependencies using virtual environments |  | Individual assignment 2 due |  |
 | 5    | 2021/02/07 | Managing dependencies using containerization  |  | Individual assignment 3 due |  |
@@ -109,6 +110,7 @@ minutes late. Please be patient!*
 | Assessment            | Description | Due date |
 |--------------------|-----------------------|---------|
 | Individual assignment 1 | Setting up your computer | 2021/01/22 18:00 |
+| GitHub username quiz | | 2021/01/22 18:00 |
 | Individual assignment 2 | Version control practice | 2021/01/29 18:00 |
 | Individual assignment 3 | Dockerfile practice | 2021/02/05 18:00 |
 | Milestone 1    | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 2021/02/19 18:00 |
