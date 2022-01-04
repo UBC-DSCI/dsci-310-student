@@ -14,6 +14,8 @@ navbar:
       href: coc.html
     - text: "Computer setup"
       href: computer-setup.html
-    - text: "Frequently asked questions"
+    - text: "Assessments"
+      href: assessments.html
+    - text: "FAQ"
       href: faq.html
 output: distill::distill_article

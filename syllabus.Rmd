@@ -121,6 +121,7 @@ minutes late. Please be patient!*
 | Peer review | review of another group's project | 2021/04/02 18:00 |
 | Individual assignment 5 | Packaging practice | 2021/04/02 18:00 |
 | Final project | package & CI (the full monty package - including docs) | 2021/04/09 18:00 |
+| Team work | Reflection of how the group worked together, as well as individual performance | 2021/04/09 11:59 |
 | Final exam | | TBD |
 
 ## Policies
