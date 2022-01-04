@@ -7,11 +7,11 @@ output:
     toc: true
 ---
 
-## Time and Place
+## Time and place
 - Lecture Section 101: Online (Zoom), Tues/Thurs 09:00-10:30
 - Tutorial Section T1A: Online (Zoom), Fri 09:00-10:00
 
-## Course Description
+## Course description
 
 Data science methods to automate the running and testing of code and analytic reports, manage data analysis software dependencies, package and deploy software for data analysis, and collaborate with others using version control.
 
@@ -19,7 +19,7 @@ Data science methods to automate the running and testing of code and analytic re
 
 *See the Faculty of Science Credit Exclusion Lists: [www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414](https://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414)*
 
-**Long Version:** Data Science skills and tools are increasingly in demand across a large variety of disciplines. DSCI 310 aims to further students’ existing data science knowledge with reproducible and trustworthy workflows in the areas of creating and deploying data analysis, reports, and software. Particular focus will be placed on teaching the skills and tools currently used in academic research and industry settings. 
+**Long version:** Data Science skills and tools are increasingly in demand across a large variety of disciplines. DSCI 310 aims to further students’ existing data science knowledge with reproducible and trustworthy workflows in the areas of creating and deploying data analysis, reports, and software. Particular focus will be placed on teaching the skills and tools currently used in academic research and industry settings. 
 
 Without deliberate and conscious effort towards project organization, tool choice, and workflows, complex and large data science projects can quickly grow out-of-hand and become irreproducible and untrustworthy. This course will focus on reproducible and trustworthy workflows for writing computer scripts, analytic reports and data analysis pipelines, as well as packaging, automated testing and deployment of software written for data analysis. An emphasis is also placed on how to collaborate effectively with others using version control tools, such as Git and GitHub. Such workflows act to mitigate chaos and maximize transparency, reproducibility, and productivity. 
 
@@ -34,29 +34,32 @@ We will be using a collection of resources available online. These include:
 - [R packages](https://r-pkgs.org/)
 - [Python packages](https://py-pkgs.org/)
 
-## Hardware & Software
+## Hardware & software
 Students are required to bring a laptop to both lectures and tutorials. Students
 who do not own a laptop, chromebook, or tablet may be able to 
 [loan a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/). 
 
-## Learning Outcomes
+## Course-level learning outcomes
 By the end of the course, students will be able to:
 
-- Read data using computation from various sources (local and remote plain text files, spreadsheets and databases)
-- Wrangle data from their original format into a fit-for-purpose format.
-- Identify the most common types of research/statistical questions and map them to the appropriate type of data analysis.
-- Create, and interpret, meaningful tables from wrangled data.
-- Create, and interpret, impactful figures from wrangled data.
-- Collaborate with others using version control.
-- Apply, and interpret the output of simple classifier and regression models.
-- Make and evaluate predictions using a simple classifier and a regression model.
-- Apply, and interpret the output of, a simple clustering algorithm.
-- Distinguish between in-sample prediction, out-of-sample prediction, and cross-validation.
-- Calculate a point estimate in the context of statistical inference and explain how that relates to the population quantity being estimated.
-- Accomplish all of the above using workflows and communication strategies that are sensible,
-clear, reproducible, and shareable.
+- Defend and justify the importance of creating data science workflows that are
+reproducible and trustworthy and the elements that go into such a workflow (e.g.,
+writing clear, robust, accurate and reproducible code, managing and sharing compute
+environments, defined collaboration strategies, etc).
+- Constructively criticize the workflows and data analysis of others in regards to its
+reproducibility and trustworthiness.
+- Develop a data science project (including code and non-code documents such as
+reports) that uses reproducible and trustworthy workflows
+- Demonstrate how to effectively share and collaborate on data science projects and
+software by creating robust code packages, using reproducible compute environments,
+and leveraging collaborative development tools.
+- Defend and justify the benefit of, and employ automated testing regimes, continuous
+integration and continuous deployment for managing and maintaining data science
+projects and packages.
+- Demonstrate strong communication, teamwork, and collaborative skills by working on
+a significant data science project with peers throughout the course.
 
-## Teaching Team
+## Teaching team
 
 *Note that your TAs are students too; they may have class 
 right before their office hours, and they may run a few 
@@ -120,10 +123,10 @@ minutes late. Please be patient!*
 
 ## Policies
 
-### Late Registration
+### Late registration
 Students who register for the class late have 1 week from their registration date on Canvas to complete all prior assignments.
 
-### Late Assignments / mid-term exam Absence
+### Late assignments / mid-term exam absence
 Students **must be present** at the invigilation venue (in class, on Zoom,
 examination centre, etc) to take the mid-term exam; otherwise they will be considered to
 have missed the mid-term exam and will be assigned a grade of zero. 
@@ -164,7 +167,7 @@ in mind that your grade may go up or down as a result of re-grading. Please see
 Canvas for instructions on submitting re-grade requests.
 
 
-### Missed Final Exam 
+### Missed final exam 
 Students who miss the final quiz must report to their faculty advising office
 within 72 hours of the missed exam, and must supply supporting documentation.
 Only your faculty advising office can grant deferred standing in a course. You
@@ -173,12 +176,12 @@ the exam. Your instructor will let you know when you are expected to write your
 deferred exam. Deferred exams will ONLY be provided to students who have
 applied for and received deferred standing from their faculty.
 
-### Academic Concession Policy
+### Academic concession policy
 Please see [UBC's concession policy](http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0) for
 detailed information on dealing with missed coursework, quizzes, and exams
 under circumstances of an acute and unanticipated nature.
 
-### Academic Integrity 
+### Academic integrity 
 The academic enterprise is founded on honesty, civility, and integrity. As
 members of this enterprise, all students are expected to know, understand, and
 follow the codes of conduct regarding academic integrity. At the most basic
