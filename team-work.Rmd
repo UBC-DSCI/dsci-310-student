@@ -7,7 +7,7 @@ output:
     toc: true
 ---
 
-*You can acces an editable version of this file [here](https://github.com/UBC-DSCI/dsci-310-student/team-work.Rmd).*
+*You can acces an editable version of this file [here](https://github.com/UBC-DSCI/dsci-310-student/blob/main/team-work.Rmd).*
 
 The purpose of this individual report
 is to give you an avenue to present your viewpoint
@@ -105,4 +105,4 @@ comment on the following areas:
 
 ## Submission instructions
 
-- Fill out this form (editable version of the form available [here](https://github.com/UBC-DSCI/dsci-310-student/team-work.Rmd)) and convert it to an `.html` document. Finally submit it to Canvas.
+- Fill out this form (editable version of the form available [here](https://github.com/UBC-DSCI/dsci-310-student/blob/main/team-work.Rmd)) and convert it to an `.html` document. Finally submit it to Canvas.
