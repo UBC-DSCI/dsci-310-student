@@ -13,6 +13,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+```{r, out.width="40%"}
+knitr::include_graphics("images/dsci-310-logo.png")
+```
+
 Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:
 
 - [DSCI 310 course notes](https://github.com/UBC-DSCI/reproducible-and-trustworthy-workflows-for-data-science)
