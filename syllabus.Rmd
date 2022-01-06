@@ -30,7 +30,7 @@ Students who have completed this course will be able to complete complex data an
 ## Textbook
 We will be using a collection of resources available online. These include:
 
-- [DSCI 310 course notes](https://github.com/UBC-DSCI/reproducible-and-trustworthy-workflows-for-data-science)
+- [DSCI 310 course notes](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science)
 - [R packages](https://r-pkgs.org/)
 - [Python packages](https://py-pkgs.org/)
 
