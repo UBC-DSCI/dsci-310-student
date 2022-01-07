@@ -785,7 +785,7 @@ You can sign up for a free one [here](https://store.docker.com/signup?next=%2F%3
 
 After signing-up and signing into the Docker Store,
 go [here](https://store.docker.com/editions/community/docker-ce-desktop-windows)
-and click on the "Get Docker" button on the right hand side of the screen.
+and click on the "Get Docker Desktop" button on the right hand side of the screen.
 Then follow the installation instructions on that screen to install the stable version.
 
 > **Note:** If you see a warning saying that your WSL installation is incomplete,
