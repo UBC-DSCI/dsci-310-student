@@ -51,14 +51,6 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
     echo $os_version >> check_setup.log
     file_browser="explorer"
 
-    if $(grep -iq Home <<< $os_edition); then
-        echo '' >> check_setup.log
-        echo "MISSING Windows Home is not sufficient. Please upgrade to the free Education edition as per the setup instructions." >> check_setup.log
-    fi
-    if ! $(grep -iq "1904[1|2|3|4]" <<< $os_version); then
-        echo '' >> check_setup.log
-        echo "MISSING You need at least Windows build 10.0.19041. Please run Windows update." >> check_setup.log
-    fi
 else
     echo "Operating system verison could not be detected." >> check_setup.log
 fi
