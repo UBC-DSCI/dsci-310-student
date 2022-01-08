@@ -496,7 +496,7 @@ Once the change is made you can try in the RStudio console `Ctrl` + `Shift` + `m
 ### Rtools
 
 Windows users will also need to install Rtools, which will allow you to use external libraries.
-Go to <http://cran.r-project.org/bin/windows/Rtools/> and download the latest version (e.g., Rtools40.exe).
+Go to <http://cran.r-project.org/bin/windows/Rtools/> and download the latest version (e.g., rtools40v2-x86_64.exe).
 After the download has finished, run the installer with the default configuration.
 **Do not** follow the Rtools' website instructions for "Putting Rtools on the PATH".
 RStudio will put Rtools on the PATH automatically when it is needed.
@@ -785,7 +785,7 @@ You can sign up for a free one [here](https://store.docker.com/signup?next=%2F%3
 
 After signing-up and signing into the Docker Store,
 go [here](https://store.docker.com/editions/community/docker-ce-desktop-windows)
-and click on the "Get Docker" button on the right hand side of the screen.
+and click on the "Get Docker Desktop" button on the right hand side of the screen.
 Then follow the installation instructions on that screen to install the stable version.
 
 > **Note:** If you see a warning saying that your WSL installation is incomplete,
