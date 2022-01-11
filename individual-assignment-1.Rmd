@@ -12,7 +12,7 @@ output:
 Complete the computer setup installation instructions 
 which corresponds to your computer's operating system:
 
-- [Computer setup installation instructions](../docs/computer-setup.html)
+- [Computer setup installation instructions](https://ubc-dsci.github.io/dsci-310-student/computer-setup.html)
 
 ## Submission
 
