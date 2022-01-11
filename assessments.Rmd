@@ -11,17 +11,17 @@ output:
 
 | Assessment         | Description | Grade weight | Due date |
 |--------------------|-------------|----------|---------|
-| [Individual assignment 1](individual-assignment-1.html) | Setting up your computer | 1% |  2021/01/22 18:00 |
-| GitHub username quiz | | 0.5% | 2021/01/22 18:00 |
-| Individual assignment 2 | Version control practice | 1% | 2021/01/29 18:00 |
-| Individual assignment 3 | Dockerfile practice | 1% |2021/02/05 18:00 |
-| [Milestone 1](milestone1.html) | GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`). data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 10% | 2021/02/19 18:00 |
-| Mid-term exam | | 10% | 2021/03/04 09:00 |
-| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 10% | 2021/03/12 18:00  |
-| Individual assignment 4 | Reproducible reports practice |  1% | 2021/03/19 18:00 |
-| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 10% | 2021/03/26 18:00 |
-| Peer review | review of another group's project | 4.5% | 2021/04/02 18:00 |
-| Individual assignment 5 | Packaging practice | 1% | 2021/04/02 18:00 |
-| Final project | regrade entire project which now also includes the package & CI (the full monty package - including docs) | 20% | 2021/04/09 18:00 |
-| [Team work](team-work.html) | Reflection of how the group worked together, as well as individual performance | 10% | 2021/04/09 11:59 |
+| [Individual assignment 1](individual-assignment-1.html) | Setting up your computer | 1% |  2022/01/22 18:00 |
+| GitHub username quiz | | 0.5% | 2022/01/22 18:00 |
+| Individual assignment 2 | Version control practice | 1% | 2022/01/29 18:00 |
+| Individual assignment 3 | Dockerfile practice | 1% |2022/02/05 18:00 |
+| [Milestone 1](milestone1.html) | GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`). data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 10% | 2022/02/19 18:00 |
+| Mid-term exam | | 10% | 2022/03/04 09:00 |
+| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 10% | 2022/03/12 18:00  |
+| Individual assignment 4 | Reproducible reports practice |  1% | 2022/03/19 18:00 |
+| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 10% | 2022/03/26 18:00 |
+| Peer review | review of another group's project | 4.5% | 2022/04/02 18:00 |
+| Individual assignment 5 | Packaging practice | 1% | 2022/04/02 18:00 |
+| Final project | regrade entire project which now also includes the package & CI (the full monty package - including docs) | 20% | 2022/04/09 18:00 |
+| [Team work](team-work.html) | Reflection of how the group worked together, as well as individual performance | 10% | 2022/04/09 11:59 |
 | Final exam | | 20% | TBD |
