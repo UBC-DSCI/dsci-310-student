@@ -524,17 +524,12 @@ install.packages(c("cowplot", "GGally", "kknn", "scales", "tidyverse", "tidymode
 
 The `IRkernel` package is needed to make R work in Jupyter notebooks.
 To enable this kernel in the notebooks,
-open R **from the Windows Terminal** (not R Studio) and run the setup via the following two commands:
+open R **from RStudio** and run the setup via the following two commands:
 
 ```R
 install.packages('IRkernel')
 IRkernel::installspec()
 ```
-
-When asked to select a mirror, pick one at a location close to where you live for faster downloads.
-
-> **Note:** You cannot use RStudio for this step because it will not be able to find the jupyter installation
->  R from terminal will since the correct PATH for jupyter is set when the terminal is launched.
 
 To see if you were successful, try running JupyterLab and check if you have a working R kernel.
 To launch the JupyterLab type the following in the terminal:
