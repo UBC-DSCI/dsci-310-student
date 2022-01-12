@@ -19,13 +19,13 @@ Data science methods to automate the running and testing of code and analytic re
 
 *See the Faculty of Science Credit Exclusion Lists: [www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414](https://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414)*
 
-**Long version:** Data Science skills and tools are increasingly in demand across a large variety of disciplines. DSCI 310 aims to further students’ existing data science knowledge with reproducible and trustworthy workflows in the areas of creating and deploying data analysis, reports, and software. Particular focus will be placed on teaching the skills and tools currently used in academic research and industry settings. 
+**Long version:** Data Science skills and tools are increasingly in demand across a large variety of disciplines. DSCI 310 aims to further students’ existing data science knowledge with reproducible and trustworthy workflows in the areas of creating and deploying data analysis, reports, and software. Particular focus will be placed on teaching the skills and tools currently used in academic research and industry settings.
 
-Without deliberate and conscious effort towards project organization, tool choice, and workflows, complex and large data science projects can quickly grow out-of-hand and become irreproducible and untrustworthy. This course will focus on reproducible and trustworthy workflows for writing computer scripts, analytic reports and data analysis pipelines, as well as packaging, automated testing and deployment of software written for data analysis. An emphasis is also placed on how to collaborate effectively with others using version control tools, such as Git and GitHub. Such workflows act to mitigate chaos and maximize transparency, reproducibility, and productivity. 
+Without deliberate and conscious effort towards project organization, tool choice, and workflows, complex and large data science projects can quickly grow out-of-hand and become irreproducible and untrustworthy. This course will focus on reproducible and trustworthy workflows for writing computer scripts, analytic reports and data analysis pipelines, as well as packaging, automated testing and deployment of software written for data analysis. An emphasis is also placed on how to collaborate effectively with others using version control tools, such as Git and GitHub. Such workflows act to mitigate chaos and maximize transparency, reproducibility, and productivity.
 
 While the course will be based on the use of the two leading languages in data science, Python and R, and related current tools (conda, Docker, Git, GitHub, Jupyter, etc.), the concepts and skills taught in the course aim to be discipline and tool agnostic, focussing on the importance of reproducible and trustworthy workflows for data analysis and the implications of failing to implement these when performing a data analysis.
 
-Students who have completed this course will be able to complete complex data analysis projects with minimal technical debt – meaning that others can transparently follow how the analysis was done, reproduce the analysis for themselves if desired, and easily pickup on, and further extend the analysis in new areas. Strategies for collaboration on data science projects will also be emphasized. 
+Students who have completed this course will be able to complete complex data analysis projects with minimal technical debt – meaning that others can transparently follow how the analysis was done, reproduce the analysis for themselves if desired, and easily pickup on, and further extend the analysis in new areas. Strategies for collaboration on data science projects will also be emphasized.
 
 ## Textbook
 We will be using a collection of resources available online. These include:
@@ -36,8 +36,8 @@ We will be using a collection of resources available online. These include:
 
 ## Hardware & software
 Students are required to bring a laptop to both lectures and tutorials. Students
-who do not own a laptop, chromebook, or tablet may be able to 
-[loan a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/). 
+who do not own a laptop, chromebook, or tablet may be able to
+[loan a laptop from the UBC library](https://services.library.ubc.ca/computers-technology/technology-borrowing/).
 
 ## Course-level learning outcomes
 By the end of the course, students will be able to:
@@ -61,8 +61,8 @@ a significant data science project with peers throughout the course.
 
 ## Teaching team
 
-*Note that your TAs are students too; they may have class 
-right before their office hours, and they may run a few 
+*Note that your TAs are students too; they may have class
+right before their office hours, and they may run a few
 minutes late. Please be patient!*
 
 | Position | Name  | Email | Office Hours | Office Location |
@@ -91,37 +91,37 @@ minutes late. Please be patient!*
 
 | Week | Date     | Topic | Reading | Assessments due | Notes |
 |------|----------|-------|---------|-----------------|-------|
-| 1    | 2021/01/10 | How do reproducible and trustworthy workflows impact data analysis? |  |  |  |
-| 2    | 2021/01/17 | Version control for transparency and collaboration |  | Individual assignment 1 due & GitHub username quiz |  |
-| 3    | 2021/01/24 | Integrated development environments, filenames and data science project organization |  |  | Team assignment for group projects & drafting of team work contract |
-| 4    | 2021/01/31 | Managing dependencies using virtual environments |  | Individual assignment 2 due |  |
-| 5    | 2021/02/07 | Managing dependencies using containerization  |  | Individual assignment 3 due |  |
-| 6    | 2021/02/14 | Introduction to testing code for data science |  | Milestone 1 due |  |
-| 7    | 2021/02/21 | Reading Break | | | |
-| 8    | 2021/02/28 | Non-interactive scripts and data analysis pipelines |  | Mid-term exam |  |
-| 9    | 2021/03/07 | Reproducible reports |  | Milestone 2 due |  |
-| 10   | 2021/03/14 | Advanced version control workflows |  | Individual assignment 4 due |  |
-| 11   | 2021/03/21 | Packaging and documenting code |  | Milestone 3 due |  |
-| 12   | 2021/03/28 | Automated testing and continuous integration |  | Individual assignment 5 & Peer review due |  |
-| 13   | 2021/04/04 | Deploying and publishing packages,  copyright and licenses |  |  Final project & Team work reflection due | |
+| 1    | 2022/01/10 | How do reproducible and trustworthy workflows impact data analysis? |  |  |  |
+| 2    | 2022/01/17 | Version control for transparency and collaboration |  | Individual assignment 1 due & GitHub username quiz |  |
+| 3    | 2022/01/24 | Integrated development environments, filenames and data science project organization |  |  | Team assignment for group projects & drafting of team work contract |
+| 4    | 2022/01/31 | Managing dependencies using virtual environments |  | Individual assignment 2 due |  |
+| 5    | 2022/02/07 | Managing dependencies using containerization  |  | Individual assignment 3 due |  |
+| 6    | 2022/02/14 | Introduction to testing code for data science |  | Milestone 1 due |  |
+| 7    | 2022/02/21 | Reading Break | | | |
+| 8    | 2022/02/28 | Non-interactive scripts and data analysis pipelines |  | Mid-term exam |  |
+| 9    | 2022/03/07 | Reproducible reports |  | Milestone 2 due |  |
+| 10   | 2022/03/14 | Advanced version control workflows |  | Individual assignment 4 due |  |
+| 11   | 2022/03/21 | Packaging and documenting code |  | Milestone 3 due |  |
+| 12   | 2022/03/28 | Automated testing and continuous integration |  | Individual assignment 5 & Peer review due |  |
+| 13   | 2022/04/04 | Deploying and publishing packages,  copyright and licenses |  |  Final project & Team work reflection due | |
 
 ### Assessment schedule
 
 | Assessment            | Description | Due date |
 |--------------------|-----------------------|---------|
-| Individual assignment 1 | Setting up your computer | 2021/01/22 18:00 |
-| GitHub username quiz | | 2021/01/22 18:00 |
-| Individual assignment 2 | Version control practice | 2021/01/29 18:00 |
-| Individual assignment 3 | Dockerfile practice | 2021/02/05 18:00 |
-| Milestone 1    | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 2021/02/19 18:00 |
-| Mid-term exam | | 2021/03/04 09:00 |
-| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 2021/03/12 18:00  |
-| Individual assignment 4 | Reproducible reports practice | 2021/03/19 18:00 |
-| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2021/03/26 18:00 |
-| Peer review | review of another group's project | 2021/04/02 18:00 |
-| Individual assignment 5 | Packaging practice | 2021/04/02 18:00 |
-| Final project | package & CI (the full monty package - including docs) | 2021/04/09 18:00 |
-| Team work | Reflection of how the group worked together, as well as individual performance | 2021/04/09 11:59 |
+| Individual assignment 1 | Setting up your computer | 2022/01/22 18:00 |
+| GitHub username quiz | | 2022/01/22 18:00 |
+| Individual assignment 2 | Version control practice | 2022/01/29 18:00 |
+| Individual assignment 3 | Dockerfile practice | 2022/02/05 18:00 |
+| Milestone 1    | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 2022/02/19 18:00 |
+| Mid-term exam | | 2022/03/04 09:00 |
+| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 2022/03/12 18:00  |
+| Individual assignment 4 | Reproducible reports practice | 2022/03/19 18:00 |
+| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2022/03/26 18:00 |
+| Peer review | review of another group's project | 2022/04/02 18:00 |
+| Individual assignment 5 | Packaging practice | 2022/04/02 18:00 |
+| Final project | package & CI (the full monty package - including docs) | 2022/04/09 18:00 |
+| Team work | Reflection of how the group worked together, as well as individual performance | 2022/04/09 11:59 |
 | Final exam | | TBD |
 
 ## Policies
@@ -132,30 +132,30 @@ Students who register for the class late have 1 week from their registration dat
 ### Late assignments / mid-term exam absence
 Students **must be present** at the invigilation venue (in class, on Zoom,
 examination centre, etc) to take the mid-term exam; otherwise they will be considered to
-have missed the mid-term exam and will be assigned a grade of zero. 
+have missed the mid-term exam and will be assigned a grade of zero.
 
 Students who will miss the mid-term exam **must provide a self-declaration prior to the
 mid-term exam** and make arrangements (e.g., schedule an oral make-up mid-term exam) with the
 Instructor. Failing to present a declaration within a reasonable timeframe
-before the mid-term exam will result in a grade of zero. 
+before the mid-term exam will result in a grade of zero.
 
-A late submission is defined as any work submitted after the deadline. 
-For a late submission, the student will receive a 75% scaling of their grade for the first occurrence, 
+A late submission is defined as any work submitted after the deadline.
+For a late submission, the student will receive a 75% scaling of their grade for the first occurrence,
 50% scaling of their grade for the second occurrence, and will receive a grade of 0 for subsequent occurrences.
 
-Students who miss an assignment or quiz can request an academic concession. 
-From the [UBC Senate policy on academic concession](https://senate.ubc.ca/sites/senate.ubc.ca/files/downloads/20190515_V_135_Academic_Concession-Approved.pdf), 
-grounds for academic concession can be illness, 
-conflicting responsibilities, or compassionate grounds. 
-Examples of compassionate grounds, from the above policy, 
-include “a traumatic event experienced by the student, a family member, or a close friend; 
-an act of sexual assault or other sexual misconduct experienced by the student, 
+Students who miss an assignment or quiz can request an academic concession.
+From the [UBC Senate policy on academic concession](https://senate.ubc.ca/sites/senate.ubc.ca/files/downloads/20190515_V_135_Academic_Concession-Approved.pdf),
+grounds for academic concession can be illness,
+conflicting responsibilities, or compassionate grounds.
+Examples of compassionate grounds, from the above policy,
+include “a traumatic event experienced by the student, a family member, or a close friend;
+an act of sexual assault or other sexual misconduct experienced by the student,
 a family member, or a close friend; a death in the family or of a close friend.”
 
-To request an academic concession, students should immediately email a completed 
-and signed 
-[academic concession form to the course Instructor](https://github.com/UBC-MDS/UBC-MDS.github.io/blob/master/img/Template%20-%20In-Term%20Academic%20Concessions%20Self%20Declaration.pdf?raw=1). 
-Upon receiving the form, the Instructor will make a decision about how to proceed. 
+To request an academic concession, students should immediately email a completed
+and signed
+[academic concession form to the course Instructor](https://github.com/UBC-MDS/UBC-MDS.github.io/blob/master/img/Template%20-%20In-Term%20Academic%20Concessions%20Self%20Declaration.pdf?raw=1).
+Upon receiving the form, the Instructor will make a decision about how to proceed.
 Failure to present valid documentation may result in a failing grade.
 
 ### Re-grading
@@ -165,7 +165,7 @@ one-week window, we may deny your request for re-evaluation. Also, please keep
 in mind that your grade may go up or down as a result of re-grading.
 
 
-### Missed final exam 
+### Missed final exam
 Students who miss the final quiz must report to their faculty advising office
 within 72 hours of the missed exam, and must supply supporting documentation.
 Only your faculty advising office can grant deferred standing in a course. You
@@ -179,7 +179,7 @@ Please see [UBC's concession policy](http://www.calendar.ubc.ca/vancouver/index.
 detailed information on dealing with missed coursework, quizzes, and exams
 under circumstances of an acute and unanticipated nature.
 
-### Academic integrity 
+### Academic integrity
 The academic enterprise is founded on honesty, civility, and integrity. As
 members of this enterprise, all students are expected to know, understand, and
 follow the codes of conduct regarding academic integrity. At the most basic
@@ -204,14 +204,14 @@ else or by the student themselves for other assignments. Cases of plagiarism
 may include, but are not limited to:
 
 - the reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)
-- the translation of an algorithm or a script from a language to another 
-- the generation of code by automatic code-generation software 
+- the translation of an algorithm or a script from a language to another
+- the generation of code by automatic code-generation software
 
 An "adequate acknowledgement" requires a detailed identification of the (parts of the) code or text reused and a full citation of the original source code that has been reused.
 
 The above attribution policy applies only to assignments. **No code or text may be copied (with or without attribution) from any source during a quiz or exam. Answers must always be in your own words. At a minimum, copying will result in a grade of 0 for the related question.**
 
-**Repeated plagiarism of any form could result in larger penalties, including failure of the course.** 
+**Repeated plagiarism of any form could result in larger penalties, including failure of the course.**
 
 ## Attribution
 
