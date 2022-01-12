@@ -2663,13 +2663,9 @@ export PATH=&quot;${R_DIR}:$PATH&quot;</code></pre>
 <p>Next, install the key R packages needed for the course by opening up RStudio and typing the following into the R console inside RStudio:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;cowplot&quot;</span>, <span class="st">&quot;GGally&quot;</span>, <span class="st">&quot;kknn&quot;</span>, <span class="st">&quot;scales&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;tidymodels&quot;</span>))</span></code></pre></div>
 <h3 id="irkernel">IRkernel</h3>
-<p>The <code>IRkernel</code> package is needed to make R work in Jupyter notebooks. To enable this kernel in the notebooks, open R <strong>from the Windows Terminal</strong> (not R Studio) and run the setup via the following two commands:</p>
+<p>The <code>IRkernel</code> package is needed to make R work in Jupyter notebooks. To enable this kernel in the notebooks, open R <strong>from RStudio</strong> and run the setup via the following two commands:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;IRkernel&#39;</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>IRkernel<span class="sc">::</span><span class="fu">installspec</span>()</span></code></pre></div>
-<p>When asked to select a mirror, pick one at a location close to where you live for faster downloads.</p>
-<blockquote>
-<p><strong>Note:</strong> You cannot use RStudio for this step because it will not be able to find the jupyter installation R from terminal will since the correct PATH for jupyter is set when the terminal is launched.</p>
-</blockquote>
 <p>To see if you were successful, try running JupyterLab and check if you have a working R kernel. To launch the JupyterLab type the following in the terminal:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre></div>
 <p>A browser should have launched and you should see a page that looks like the screenshot below. Now click on “R” notebook (circled in red on the screenshot below) to launch an JupyterLab with an R kernel.</p>
