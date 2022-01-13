@@ -2469,6 +2469,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul></li>
 <li><a href="#latex">LaTeX</a>
 <ul>
+<li><a href="#pandoc">Pandoc</a></li>
 <li><a href="#webpdf-export">WebPDF export</a></li>
 </ul></li>
 <li><a href="#docker">Docker</a></li>
@@ -2723,6 +2724,8 @@ Compiled with xpdf version 4.03</code></pre>
 <span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>  titlesec <span class="dt">\</span></span>
 <span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>  ucharclasses</span></code></pre></div>
 <p>To test that your latex installation is working with jupyter notebooks, launch <code>jupyter lab</code> from a terminal and open either a new notebook or the same one you used to test IRkernel above. Go to <code>File -&gt; Export notebook as... -&gt; Export Notebook to PDF</code>. If the PDF file is created, your LaTeX environment is set up correctly.</p>
+<h3 id="pandoc">Pandoc</h3>
+<p>You will also need to install Pandoc to convert R Markdown documents to PDF. To do so visit the <a href="https://pandoc.org/installing.html">Pandoc website</a> and follow their installation instructions.</p>
 <h3 id="webpdf-export">WebPDF export</h3>
 <p>Jupyter recently added another way to export notebooks to PDF which does not require Latex and makes the exported PDF look similar to notebooks exported to HTML. This requires the <code>pyppeteer</code> package, which we can install as follows.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install pyppeteer</span>
