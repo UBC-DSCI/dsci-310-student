@@ -573,6 +573,12 @@ Go to `File -> Export notebook as... -> Export Notebook to PDF`.
 If the PDF file is created,
 your LaTeX environment is set up correctly.
 
+### Pandoc
+  
+You will also need to install Pandoc to convert R Markdown documents to PDF. 
+To do so visit the [Pandoc website](https://pandoc.org/installing.html) 
+and follow their installation instructions.
+  
 ### WebPDF export
 
 Jupyter recently added another way to export notebooks to PDF
