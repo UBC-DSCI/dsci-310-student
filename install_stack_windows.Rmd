@@ -72,7 +72,7 @@ run the installer and accept the default configuration for all pages except for 
 
 - On the **Select Components** page, add a Git Bash profile to Windows Terminal.
 
-    ![](resources/gitbash_profile.png)
+    ![](resources/git_bash_profile.png)
 
 - On the **Choosing the default editor used by Git** page,
     select "Use Visual Studio Code as Git's default editor" from the drop-down menu'
@@ -722,9 +722,9 @@ Change the extract location to `C:\Users\YOUR_USERNAME\make-4.3`
 (substituting in your actual username instead of `YOUR_USERNAME`) and click "Extract".
 See the screenshots below if you're unsure what to click.
 
-![](/resources_pages/imgs/extract_make.png)
+![](resources/extract_make.png)
 
-![](/resources_pages/imgs/extract_make_path.png)
+![](resources/extract_make_path.png)
 
 > **Note:** It is advisable to show file extensions by default in the Windows File Explorer.
 > Click the `View` tab and check the box next to `File name extensions`.
