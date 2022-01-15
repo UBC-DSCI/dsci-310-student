@@ -2663,57 +2663,58 @@ export PATH=&quot;${R_DIR}:$PATH&quot;</code></pre>
 <p>Next, install the key R packages needed for the course by opening up RStudio and typing the following into the R console inside RStudio:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;cowplot&quot;</span>, <span class="st">&quot;GGally&quot;</span>, <span class="st">&quot;kknn&quot;</span>, <span class="st">&quot;scales&quot;</span>, <span class="st">&quot;tidyverse&quot;</span>, <span class="st">&quot;tidymodels&quot;</span>))</span></code></pre></div>
 <h3 id="irkernel">IRkernel</h3>
-<p>The <code>IRkernel</code> package is needed to make R work in Jupyter notebooks. To enable this kernel in the notebooks, open R <strong>from RStudio</strong> and run the setup via the following two commands:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;IRkernel&#39;</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>IRkernel<span class="sc">::</span><span class="fu">installspec</span>()</span></code></pre></div>
+<p>The <code>IRkernel</code> package is needed to make R work in Jupyter notebooks. To enable this kernel in the notebooks, install by pasting the following command into the <strong>RStudio</strong> Console:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;IRkernel&#39;</span>)</span></code></pre></div>
+<p>Next, open the <strong>Windows terminal</strong> and type the following (you can’t use RStudio for this step since it doesn’t honor <code>$PATH</code> changes)</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-e</span> <span class="st">&quot;IRkernel::installspec()&quot;</span></span></code></pre></div>
 <p>To see if you were successful, try running JupyterLab and check if you have a working R kernel. To launch the JupyterLab type the following in the terminal:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre></div>
 <p>A browser should have launched and you should see a page that looks like the screenshot below. Now click on “R” notebook (circled in red on the screenshot below) to launch an JupyterLab with an R kernel.</p>
 <p><img src="resources/jupyterlab_r_kernel.png" /></p>
 <p>Sometimes a kernel loads, but doesn’t work as expected. To test whether your installation was done correctly now type <code>library(tidyverse)</code> in the code cell and click on the run button to run the cell. If your R kernel works you should see something like the image below:</p>
 <p><img src="resources/jupyterlab_r_kernel2.png" /></p>
 <p>To improve the experience of using R in JupyterLab, we will add keyboard shortcuts for inserting the common R operators <code>&lt;-</code> and <code>|&gt;</code>. Go to <code>Settings -&gt; Advanced Settings Editor -&gt; Keyboard Shortcuts</code> and paste the following in the rightmost panel that says <code>User Preferences</code> (replacing the <code>{}</code>):</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;shortcuts&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;apputils:run-first-enabled&quot;</span><span class="fu">,</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;selector&quot;</span><span class="fu">:</span> <span class="st">&quot;body&quot;</span><span class="fu">,</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;keys&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Alt -&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&quot;commands&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;console:replace-selection&quot;</span><span class="ot">,</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;fileeditor:replace-selection&quot;</span><span class="ot">,</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;notebook:replace-selection&quot;</span><span class="ot">,</span></span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;&lt;- &quot;</span><span class="fu">}</span></span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;apputils:run-first-enabled&quot;</span><span class="fu">,</span></span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;selector&quot;</span><span class="fu">:</span> <span class="st">&quot;body&quot;</span><span class="fu">,</span></span>
-<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;keys&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Accel Shift M&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&quot;commands&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;console:replace-selection&quot;</span><span class="ot">,</span></span>
-<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;fileeditor:replace-selection&quot;</span><span class="ot">,</span></span>
-<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;notebook:replace-selection&quot;</span><span class="ot">,</span></span>
-<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;|&gt; &quot;</span><span class="fu">}</span></span>
-<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
-<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
-<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;shortcuts&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;apputils:run-first-enabled&quot;</span><span class="fu">,</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;selector&quot;</span><span class="fu">:</span> <span class="st">&quot;body&quot;</span><span class="fu">,</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;keys&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Alt -&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&quot;commands&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;console:replace-selection&quot;</span><span class="ot">,</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;fileeditor:replace-selection&quot;</span><span class="ot">,</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;notebook:replace-selection&quot;</span><span class="ot">,</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;&lt;- &quot;</span><span class="fu">}</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;command&quot;</span><span class="fu">:</span> <span class="st">&quot;apputils:run-first-enabled&quot;</span><span class="fu">,</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;selector&quot;</span><span class="fu">:</span> <span class="st">&quot;body&quot;</span><span class="fu">,</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;keys&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;Accel Shift M&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&quot;commands&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;console:replace-selection&quot;</span><span class="ot">,</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;fileeditor:replace-selection&quot;</span><span class="ot">,</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;notebook:replace-selection&quot;</span><span class="ot">,</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&quot;args&quot;</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;|&gt; &quot;</span><span class="fu">}</span></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 <p>After you have pasted this text, hit the small floppy disk in the top right (or <code>Ctrl</code> + <code>s</code>) to save the settings. Here is a screenshot of what it looks like with the settings saved:</p>
 <p><img src="resources/jupyterlab_shortcuts.png" /></p>
 <p>To check that the extension is working, open JupyterLab, launch an R notebook, and try inserting the operators by pressing <code>Alt</code> + <code>-</code> or <code>Shift</code> + <code>Ctrl</code> + <code>m</code>, respectively. You could add any arbitrary text insertion command the same way, but this is all that is required for MDS.</p>
 <h2 id="latex">LaTeX</h2>
 <p>We will install the lightest possible version of LaTeX and its necessary packages as possible so that we can render Jupyter notebooks and R Markdown documents to html and PDF. If you have previously installed LaTeX, please uninstall it before proceeding with these instructions.</p>
 <p>First, open RStudio and run the following commands to install the <code>tinytex</code> package and setup <code>tinytex</code>:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
 <p>Note that you might see two error messages regarding lua during the installation, you can safely ignore these, the installation will complete successfully after clicking “OK”.</p>
 <p>In order for Git Bash to be able to find the location of TinyTex, you will need to <a href="https://support.microsoft.com/en-us/windows/sign-out-of-windows-346925bb-024c-cd86-7a53-9066242a9ed3">sign out of Windows</a> and back in again. After doing that, you can check that the installation worked by opening a terminal and asking for the version of latex:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">latex</span> <span class="at">--version</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">latex</span> <span class="at">--version</span></span></code></pre></div>
 <p>You should see something like this if you were successful:</p>
 <pre><code>pdfTeX 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX)
 kpathsea version 6.3.3
@@ -2729,45 +2730,45 @@ Compiled with zlib 1.2.11; using zlib 1.2.11
 Compiled with xpdf version 4.03</code></pre>
 <p>The above is all we need to have LaTeX work with R Markdown documents, however for Jupyter we need to add several more packages.</p>
 <p>When you sign back in, install the additional LaTeX packages needed for Jupyter by pasting the following into the new terminal instance and press enter: by pasting the following:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.bat</span> install eurosym <span class="dt">\</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  adjustbox <span class="dt">\</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  caption <span class="dt">\</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  collectbox <span class="dt">\</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  enumitem <span class="dt">\</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  environ <span class="dt">\</span></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  fp <span class="dt">\</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  jknapltx <span class="dt">\</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  ms <span class="dt">\</span></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  parskip <span class="dt">\</span></span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  pgf <span class="dt">\</span></span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  rsfs <span class="dt">\</span></span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>  tcolorbox <span class="dt">\</span></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>  titling <span class="dt">\</span></span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>  trimspaces <span class="dt">\</span></span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>  ucs <span class="dt">\</span></span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>  ulem <span class="dt">\</span></span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>  upquote <span class="dt">\</span></span>
-<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>  lwarp <span class="dt">\</span></span>
-<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>  oberdiek <span class="dt">\</span></span>
-<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>  pgfplots <span class="dt">\</span></span>
-<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>  bbm-macros <span class="dt">\</span></span>
-<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>  cmap <span class="dt">\</span></span>
-<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>  polyglossia <span class="dt">\</span></span>
-<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>  gnu-freefont <span class="dt">\</span></span>
-<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a>  fncychap <span class="dt">\</span></span>
-<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a>  wrapfig <span class="dt">\</span></span>
-<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>  capt-of <span class="dt">\</span></span>
-<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>  needspace <span class="dt">\</span></span>
-<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a>  tabulary <span class="dt">\</span></span>
-<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a>  varwidth <span class="dt">\</span></span>
-<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a>  fancyhdr <span class="dt">\</span></span>
-<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a>  titlesec <span class="dt">\</span></span>
-<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a>  ucharclasses</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.bat</span> install eurosym <span class="dt">\</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  adjustbox <span class="dt">\</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  caption <span class="dt">\</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  collectbox <span class="dt">\</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  enumitem <span class="dt">\</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  environ <span class="dt">\</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  fp <span class="dt">\</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  jknapltx <span class="dt">\</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  ms <span class="dt">\</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  parskip <span class="dt">\</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>  pgf <span class="dt">\</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  rsfs <span class="dt">\</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  tcolorbox <span class="dt">\</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>  titling <span class="dt">\</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>  trimspaces <span class="dt">\</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>  ucs <span class="dt">\</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>  ulem <span class="dt">\</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>  upquote <span class="dt">\</span></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>  lwarp <span class="dt">\</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>  oberdiek <span class="dt">\</span></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>  pgfplots <span class="dt">\</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>  bbm-macros <span class="dt">\</span></span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>  cmap <span class="dt">\</span></span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>  polyglossia <span class="dt">\</span></span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>  gnu-freefont <span class="dt">\</span></span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>  fncychap <span class="dt">\</span></span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>  wrapfig <span class="dt">\</span></span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>  capt-of <span class="dt">\</span></span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a>  needspace <span class="dt">\</span></span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a>  tabulary <span class="dt">\</span></span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a>  varwidth <span class="dt">\</span></span>
+<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a>  fancyhdr <span class="dt">\</span></span>
+<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a>  titlesec <span class="dt">\</span></span>
+<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a>  ucharclasses</span></code></pre></div>
 <p>To test that your latex installation is working with jupyter notebooks, launch <code>jupyter lab</code> from a terminal and open either a new notebook or the same one you used to test IRkernel above. Go to <code>File -&gt; Export notebook as... -&gt; Export Notebook to PDF</code>. If the PDF file is created, your LaTeX environment is set up correctly.</p>
 <h3 id="webpdf-export">WebPDF export</h3>
 <p>Jupyter recently added another way to export notebooks to PDF which does not require Latex and makes the exported PDF look similar to notebooks exported to HTML. This requires the <code>pyppeteer</code> package, which we can install by typing the following into Windows Terminal.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install pyppeteer=0.2.2</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pyppeteer-install</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install pyppeteer=0.2.2</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pyppeteer-install</span></span></code></pre></div>
 <p>Now try exporting a notebook by clicking <code>File -&gt; Export notebook as... -&gt; Export Notebook to WebPDF</code>.</p>
 <h2 id="make">Make</h2>
 <p>Later in the program, we will be using <code>make</code> to automate our analysis scripts. <a href="https://downloads.sourceforge.net/project/ezwinports/make-4.3-without-guile-w32-bin.zip">Download <code>make</code> from this URL</a>. Click on the downloaded zip-file to open it in the File Explorer and click the button in the “Extract” tab that reads “Extract all”. Change the extract location to <code>C:\Users\YOUR_USERNAME\make-4.3</code> (substituting in your actual username instead of <code>YOUR_USERNAME</code>) and click “Extract”. See the screenshots below if you’re unsure what to click.</p>
@@ -2777,7 +2778,7 @@ Compiled with xpdf version 4.03</code></pre>
 <p><strong>Note:</strong> It is advisable to show file extensions by default in the Windows File Explorer. Click the <code>View</code> tab and check the box next to <code>File name extensions</code>.</p>
 </blockquote>
 <p>Next we need to add make’s <code>bin</code> folder to our PATH so that we can use he command <code>make</code> from the terminal (like we did with R earlier). Open the bash configuration file with VS Code again by pasting this into a terminal:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code></pre></div>
 <p>And replace the section that reads:</p>
 <pre><code># Add R and Rscript to path
 export PATH=&quot;${R_DIR}:$PATH&quot;</code></pre>
@@ -2785,14 +2786,14 @@ export PATH=&quot;${R_DIR}:$PATH&quot;</code></pre>
 <pre><code># Add R, Rscript, and Make to path
 export PATH=&quot;/c/Users/${USERNAME}/make-4.3/bin:${R_DIR}:$PATH&quot;</code></pre>
 <p>Then save the file and exit VS Code. Launch a new terminal and run</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code></pre></div>
 <p>which should return something like</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> Make 4.3</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Built</span> for Windows32</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">1988-2020</span> Free Software Foundation, Inc.</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="ex">License</span> GPLv3+: GNU GPL version 3 or later <span class="op">&lt;</span>http://gnu.org/licenses/gpl.html<span class="op">&gt;</span></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is free software: you are free to change and redistribute it.</span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="ex">There</span> is NO WARRANTY, to the extent permitted by law.</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> Make 4.3</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Built</span> for Windows32</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">1988-2020</span> Free Software Foundation, Inc.</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="ex">License</span> GPLv3+: GNU GPL version 3 or later <span class="op">&lt;</span>http://gnu.org/licenses/gpl.html<span class="op">&gt;</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is free software: you are free to change and redistribute it.</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="ex">There</span> is NO WARRANTY, to the extent permitted by law.</span></code></pre></div>
 <h2 id="docker">Docker</h2>
 <p>You will use Docker to create reproducible, sharable and shippable computing environments for your analyses. For this you will need a Docker account. You can sign up for a free one <a href="https://store.docker.com/signup?next=%2F%3Fref%3Dlogin">here</a>.</p>
 <p>After signing-up and signing into the Docker Store, go <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">here</a> and click on the “Get Docker Desktop” button on the right hand side of the screen. Then follow the installation instructions on that screen to install the stable version.</p>
@@ -2800,7 +2801,7 @@ export PATH=&quot;/c/Users/${USERNAME}/make-4.3/bin:${R_DIR}:$PATH&quot;</code><
 <p><strong>Note:</strong> If you see a warning saying that your WSL installation is incomplete, you can click the link to install the kernel update and then restart per the instructions in the warning message.</p>
 </blockquote>
 <p>After installation (Docker will make you sign out to finish installing), launch a terminal and type</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div>
 <p>which should output something like this:</p>
 <pre><code>Unable to find image &#39;hello-world:latest&#39; locally
 latest: Pulling from library/hello-world
@@ -2828,7 +2829,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/</code></pre>
 <h2 id="post-installation-notes">Post-installation notes</h2>
 <p>You have completed the installation instructions, well done 🙌! We have created a script to help you check that your installation was successful, and to provide instructions for how you can troubleshoot any potential issues. To run this script, please execute the following command from your terminal.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> <span class="at">-Ss</span> https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/check_setup.sh<span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> <span class="at">-Ss</span> https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/check_setup.sh<span class="op">)</span></span></code></pre></div>
 <p>The output from running the script will look something like this:</p>
 <pre><code># DSCI 310 setup check 1.0
 
@@ -2906,7 +2907,7 @@ You can open this folder in your file browser by typing `explorer .` (without th
 <li><a href="https://clouds.eos.ubc.ca/~phil/numeric/python.html">Numerical Methods - Getting started</a></li>
 <li><a href="https://blog.rstudio.com/2021/06/09/rstudio-v1-4-update-whats-new/">RStudio - New native pipe operator</a></li>
 </ul>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
