@@ -92,7 +92,7 @@ minutes late. Please be patient!*
 | Week | Date     | Topic | Reading | Assessments due | Notes |
 |------|----------|-------|---------|-----------------|-------|
 | 1    | 2022/01/10 | How do reproducible and trustworthy workflows impact data analysis? |  |  |  |
-| 2    | 2022/01/17 | Version control for transparency and collaboration |  | Individual assignment 1 due & GitHub username quiz |  |
+| 2    | 2022/01/17 | Version control for transparency and collaboration | [Collaboration with version control](https://ubc-dsci.github.io/introduction-to-datascience/Getting-started-with-version-control.html) | Individual assignment 1 due & GitHub username quiz |  |
 | 3    | 2022/01/24 | Integrated development environments, filenames and data science project organization |  |  | Team assignment for group projects & drafting of team work contract |
 | 4    | 2022/01/31 | Managing dependencies using virtual environments |  | Individual assignment 2 due |  |
 | 5    | 2022/02/07 | Managing dependencies using containerization  |  | Individual assignment 3 due |  |
