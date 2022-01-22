@@ -44,7 +44,7 @@
 
 **On Github**
 
-![Untitled](Tutorial%202%20091ed9eaa20c40a78fc235cf683cff46/Untitled.png)
+![Untitled](https://docs.github.com/assets/cb-33284/images/help/repository/fetch-upstream-drop-down.png)
 
 **On terminal**
 
