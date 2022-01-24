@@ -1,11 +1,11 @@
 ---
 title: "Sample teamwork contract"
-descriptions: |
-    Sample project teamwork contract from a group of students for a past data science group project
 output:
   distill::distill_article:
     toc: true
 ---
+
+Sample project teamwork contract from a group of students for a past data science group project.
 
 **Team Contract**
 
