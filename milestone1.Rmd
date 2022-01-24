@@ -38,9 +38,10 @@ An example project milestone 1 can be seen here: [https://github.com/UBC-DSCI/pr
 
 ### 1. Draft a team work contract
 
-This document will govern the working relationships on your team, and if done correctly, it should help you manage and resolve any issues that might arise when working in a group.
+This document will govern the working relationships on your team, and if done correctly, it should help you manage and resolve any issues that might arise when working in a group. A sample team work contract from a past data science project can be found [here](sample-team-work-contract.html).
 
 A team work contract communicates specifically **how** the core group of people who are working together and gives detail about the logisitics of working together and the expectations you have for each other.
+
 Some aspects of the team work contract could be:
 
 - How will work be distributed in a fair and equitable way?
