@@ -66,8 +66,8 @@ echo "## System programs" >> check_setup.log
 # so easier to test the location of the executable than having students add it to PATH.
 if [[ "$(uname)" == 'Darwin' ]]; then
     # rstudio is installed as an .app
-    if ! $(grep -iq "= \"2021\.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
-        echo "MISSING   rstudio 2021.09.*" >> check_setup.log
+    if ! $(grep -iq "= \"202*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
+        echo "MISSING   rstudio 2021 or higher" >> check_setup.log
     else
         # This is what is needed instead of --version
         installed_version_tmp=$(grep -io "= \"2021\.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
@@ -82,8 +82,8 @@ if [[ "$(uname)" == 'Darwin' ]]; then
 elif [[ "$OSTYPE" == 'msys' ]]; then
     # Rstudio on windows does not accept the --version flag when run interactively
     # so this section can only be troubleshot from the script
-    if ! $(grep -iq "2021\.09.*" <<< "$('/c//Program Files/RStudio/bin/rstudio' --version)"); then
-        echo "MISSING   rstudio 2021.09*" >> check_setup.log
+    if ! $(grep -iq "202*" <<< "$('/c//Program Files/RStudio/bin/rstudio' --version)"); then
+        echo "MISSING   rstudio 2021  or higher" >> check_setup.log
     else
         echo "OK        rstudio "$('/c//Program Files/RStudio/bin/rstudio' --version) >> check_setup.log
     fi
@@ -97,7 +97,7 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
     sys_progs=(R=4.* python=3.* conda=4.* bash=4.* git=2.* make=4.* latex=3.* docker=20.* code=1.*)
 else
     # For Linux everything is sane and consistent so all packages can be tested the same way
-    sys_progs=(rstudio=2021\.09.* R=4.* python=3.* conda=4.* bash=5.* \
+    sys_progs=(rstudio=202* R=4.* python=3.* conda=4.* bash=5.* \
         git=2.* make=4.* latex=3.* tlmgr=5.* docker=20.* code=1.*)
     # Note that the single equal sign syntax in used for `sys_progs` is what we have in the install
     # instruction for conda, so I am using it for Python packagees so that we
