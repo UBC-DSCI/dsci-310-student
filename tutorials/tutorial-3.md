@@ -1,11 +1,11 @@
 # Tutorial 3
 
-Tip: You can check your team number and group members in the people tab on Canvas: https://canvas.ubc.ca/courses/89629/groups#tab-46672
+**Tip:** You can check your team number and group members in the people tab on Canvas: https://canvas.ubc.ca/courses/89629/groups#tab-46672
 
 ## Part 1: (30 min) Draft a team work contract
 
 In your team of 3~4:
-1. Spend 5~7 minutes in silence, and during this time, each team member comes up with 3 things to contribute to the team work contract.
+1. Spend 5~7 minutes in silence, and during this time, each team member comes up with 3 things to contribute to the team work contract
 1. Paste all items from all group members into a collaborative document (e.g., Google docs, Microsoft word using UBC's Microsoft teams, Software Carpentry hack pad: https://pad.carpentries.org/)
 1. Organize items that are similar
 1. Discuss each group of items, and discuss which you agree to keep, and which you do not
