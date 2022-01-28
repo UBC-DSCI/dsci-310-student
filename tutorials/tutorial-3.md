@@ -1,5 +1,7 @@
 # Tutorial 3
 
+Tip: You can check your team number and group members in the people tab on Canvas: https://canvas.ubc.ca/courses/89629/groups#tab-46672
+
 ## Part 1: (30 min) Draft a team work contract
 
 In your team of 3~4:
@@ -30,3 +32,6 @@ Notes:
 - The project repo can be public or private. But if you set the repo to private, you must add us (Tiffany and Giuseppe) as collaborators with read access to your repo.
 - I (the TA) will bounce between breakout rooms to see if anyone has questions or needs help
 - After you assign the tasks, you are free to go : )
+
+Resources:
+- GitHub project board: https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards
