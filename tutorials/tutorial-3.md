@@ -23,8 +23,8 @@ Resources:
 
 In the same team:
 1. (Only one of you) Create a project repo in the **UBC-DSCI 310 ORG** (https://github.com/DSCI-310)
-1. (Only one of you) Add the other members as colaborators
-1. (Only one of you) Set up a GitHub board
+1. (Only one of you) Add the other members as collaborators
+1. (Only one of you) Set up a GitHub board (we recommend the basic kanban template)
 1. (Everybody together) Create some GitHub issues and assign tasks
 1. That is your project repo!
 
