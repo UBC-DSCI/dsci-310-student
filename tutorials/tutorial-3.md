@@ -29,7 +29,7 @@ In the same team:
 1. That is your project repo!
 
 Notes:
-- The project repo can be public or private. But if you set the repo to private, you must add us (Tiffany and Giuseppe) as collaborators with read access to your repo.
+- The project repo can be public or private. But if you set the repo to private, you must add us (ttimbers and GiuseppeTT) as collaborators with read access to your repo.
 - I (the TA) will bounce between breakout rooms to see if anyone has questions or needs help
 - After you assign the tasks, you are free to go : )
 
