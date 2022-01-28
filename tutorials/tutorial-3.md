@@ -1,6 +1,6 @@
 # Tutorial 3
 
-**Tip:** You can check your team number and group members in the people tab on Canvas: https://canvas.ubc.ca/courses/89629/groups#tab-46672
+**Tip:** You can check your team number and teammates in the people tab on Canvas: https://canvas.ubc.ca/courses/89629/groups#tab-46672
 
 ## Part 1: (30 min) Draft a team work contract
 
