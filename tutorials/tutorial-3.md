@@ -34,4 +34,5 @@ Notes:
 - After you assign the tasks, you are free to go : )
 
 Resources:
+- Instructions for project repository: https://ubc-dsci.github.io/dsci-310-student/milestone1.html#set-up-a-github-repository
 - GitHub project board: https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards
