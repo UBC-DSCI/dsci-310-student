@@ -14,7 +14,7 @@ output:
 | [Individual assignment 1](individual-assignment-1.html) | Setting up your computer | 1% |  2022/01/22 18:00 |
 | GitHub username quiz | | 0.5% | 2022/01/22 18:00 |
 | [Individual assignment 2](https://canvas.ubc.ca/courses/89629/quizzes/470524) | Version control practice | 1% | 2022/01/29 18:00 |
-| Individual assignment 3 | Dockerfile practice | 1% |2022/02/05 18:00 |
+| Individual assignment 3 | Dockerfile practice | 1% |2022/02/12 18:00 |
 | [Milestone 1](milestone1.html) | GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`). data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 10% | 2022/02/19 18:00 |
 | Mid-term exam | | 10% | 2022/03/04 09:00 |
 | Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 10% | 2022/03/12 18:00  |
