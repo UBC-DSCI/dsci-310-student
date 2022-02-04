@@ -13,7 +13,6 @@ Notes:
 - `{renv}` has other advanteges besides making it easy to install the R dependencies of a project. For instance:
     - Isolate the dependencies of a project from the rest of the system
     - Manage dependencies
-    - Easily enforce specific versions of a package
 
 ## Part 2: Set up `{renv}` (`renv::init()`) (`git init`)
 
