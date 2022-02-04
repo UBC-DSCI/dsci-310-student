@@ -12,10 +12,10 @@ You should name your GitHub.com repository `dockerfile-practice`.
 
 ### Exercise instructions
 
-1. Create a public repository on GitHub.com repo called `dockerfile-practice`
+1. Create a public repository on GitHub.com repo under your personal username called `dockerfile-practice`
 
 2. Add a `Dockerfile` to it. This Dockerfile should:
-    - Be based off of one of the Jupyter docker-stacks images ([link to Jupyter docker-stacks documentation](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html), [link to repo of Jupyter docker-stacks Dockerfiles](https://github.com/jupyter/docker-stacks))
+    - Be based off of the `ubcdsci/jupyterlab` Docker image ([link to `ubcdsci/jupyterlab` DockerHub repository](https://hub.docker.com/repository/docker/ubcdsci/jupyterlab), [link to `ubcdsci/jupyterlab` Dockerfile](https://github.com/UBC-DSCI/jupyterlab/blob/main/Dockerfile))
     - Add at least one new R or Python package to the Dockerfile (ensure that you pin the version of the package you add).
 
 3. Add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile ([link to a GitHub Actions Workflow you should use for this](https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml)).
@@ -24,4 +24,3 @@ You should name your GitHub.com repository `dockerfile-practice`.
   - *Note 2: You will need to add your DockerHub username and password (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively) as GitHub secrets to this repository for this to work.*
 
 4. Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once.
-5. 
