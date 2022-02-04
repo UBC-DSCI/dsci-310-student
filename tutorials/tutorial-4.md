@@ -18,7 +18,7 @@ Notes:
 
 Please, do the following:
 1. Run the R command `install.packages("renv")` to install `{renv}`
-2. Fork the fair coin analysis repository: https://github.com/GiuseppeTT/fair-coin-analysis
+2. Fork the fair coin analysis repository: https://github.com/DSCI-310/fair-coin-analysis
 3. Clone it
 4. Run `renv::init()` on the R console
 5. Commit all the files created by `{renv}`
