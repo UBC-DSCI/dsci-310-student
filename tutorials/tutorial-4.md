@@ -1,6 +1,6 @@
 # Tutorial 4
 
-`{renv}` documentation: https://rstudio.github.io/renv/articles/renv.html
+`{renv}` documentation: https://rstudio.github.io/renv/index.html
 
 ## Part 1: Motivation
 
@@ -11,9 +11,9 @@ Please, do the following:
 Notes:
 - Notice how `{renv}` made the experience easier for a new user
 - `{renv}` has other advanteges besides making it easy to install the R dependencies of a project. For instance:
-    - A
-    - B
-    - C
+    - Isolate the dependencies of a project from the rest of the system
+    - Manage dependencies
+    - Easily enforce specific versions of a package
 
 ## Part 2: Set up `{renv}` (`renv::init()`) (`git init`)
 
