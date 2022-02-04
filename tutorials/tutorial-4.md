@@ -47,7 +47,7 @@ Notes:
 Please, do the following:
 
 Notes:
-- You can force `{renv}` delete any currently not used package with `renv::restore(clean = TRUE)`
+- You can force `{renv}` delete all currently not used packagse with `renv::restore(clean = TRUE)`
 
 ## Part 5: Go crazy
 
