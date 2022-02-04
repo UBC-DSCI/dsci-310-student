@@ -33,3 +33,15 @@ You should name your GitHub.com repository `dockerfile-practice`.
   - *Note 2: You will need to add your DockerHub username and password (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively) as GitHub secrets to this repository for this to work.*
 
 4. Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once.
+
+## Rubric 
+
+This assignment will be graded for completion as follows:
+
+|Grade | Description |
+|------|-------------|
+| 100% | <ul><li>A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub.</li><li>The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username.</li><li>There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.</li><li>The Docker image version tag is in sync with the GitHub repository release tag.</li></ul> |
+| 75%  | 3/4 of the criteria listed above were met. |
+| 50%  | 2/4 of the criteria listed above were met. |
+| 50%  | 1/4 of the criteria listed above were met. |
+| 0%   | Not attempted. |
