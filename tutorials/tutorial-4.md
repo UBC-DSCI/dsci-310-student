@@ -10,7 +10,7 @@ Please, do the following:
 
 Notes:
 - Notice how `{renv}` made the experience easier for a new user
-- `{renv}` has other advanteges besides making it easy to install the R dependencies of a project. For instance:
+- `{renv}` has other advantages besides making it easy to install the R dependencies of a project. For instance:
     - Isolate the dependencies of a project from the rest of the system
     - Manage dependencies
 
@@ -25,7 +25,7 @@ Please, do the following:
 6. That's it 🥳
 
 Notes:
-- You can check that `{renv}` is set up by restarting the R session and excecuting the R command `renv::status()`
+- You can check that `{renv}` is set up by restarting the R session and executing the R command `renv::status()`
 - You can also run the `scripts/analyze.R` script and see the results in the `results/` folder
 
 ## Part 3: Add packages (`renv::snapshot()`) (`git add` and `git commit`)
@@ -39,7 +39,7 @@ Please, do the following:
 6. That's it 🥳
 
 Notes:
-- Notice how `renv::snapshot()` did nothing the first time even though we installaed `{cowsay}`
+- Notice how `renv::snapshot()` did nothing the first time even though we installed `{cowsay}`
 - `renv::snapshot()` only changed `renv.lock` when it detected a new package being actively used in a script
 
 ## Part 4: Restore to previous state (`renv::restore()`) (`git revert`)
@@ -53,7 +53,7 @@ Notes:
 
 Notes:
 - This is a quick introduction to `{renv}`
-- It has more commands and featuers. To name a few
+- It has more commands and features. To name a few
   - `renv::install()`, `renv::remove()`, `renv::update()`, `renv::upgrade()`, `renv::use()`
   - documentation for docker
   - documentation for continuous integration
