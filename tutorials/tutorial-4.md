@@ -1,5 +1,7 @@
 # Tutorial 4
 
+`{renv}` documentation: https://rstudio.github.io/renv/articles/renv.html
+
 ## Part 1: Motivation
 
 Please, do the following:
