@@ -15,7 +15,7 @@ Notes:
     - B
     - C
 
-## Part 2: Set up `{renv}` (`renv::init()`)
+## Part 2: Set up `{renv}` (`renv::init()`) (`git init`)
 
 Please, do the following:
 1. Run the R command `install.packages("renv")` to install `{renv}`
@@ -29,7 +29,7 @@ Notes:
 - You can check that `{renv}` is set up by restarting the R session and excecuting the R command `renv::status()`
 - You can also run the `scripts/analyze.R` script and see the results in the `results/` folder
 
-## Part 3: Add packages (`renv::snapshot()`)
+## Part 3: Add packages (`renv::snapshot()`) (`git add` and `git commit`)
 
 Please, do the following:
 1. Run the R command `install.packages("cowsay")` to install `{cowsay}`
@@ -42,3 +42,19 @@ Please, do the following:
 Notes:
 - Notice how `renv::snapshot()` did nothing the first time even though we installaed `{cowsay}`
 - `renv::snapshot()` only changed `renv.lock` when it detected a new package being actively used in a script
+
+## Part 4: Restore to previous state (`renv::restore()`) (`git revert`)
+
+Please, do the following:
+
+Notes:
+- You can force `{renv}` delete any currently not used package with `renv::restore(clean = TRUE)`
+
+## Part 5: Go crazy
+
+Notes:
+- This is a quick introduction to `{renv}`
+- It has more commands and featuers. To name a few
+  - `renv::install()`, `renv::remove()`, `renv::update()`, `renv::upgrade()`, `renv::use()`
+  - documentation for docker
+  - documentation for continuous integration
