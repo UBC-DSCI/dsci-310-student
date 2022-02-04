@@ -31,7 +31,7 @@ Notes:
 ## Part 3: Add packages (`renv::snapshot()`) (`git add` and `git commit`)
 
 Please, do the following:
-1. Run the R command `install.packages("cowsay")` to install `{cowsay}`
+1. Run the R command `renv::install("cowsay")` to install `{cowsay}`
 2. Run `renv::snapshot()`
 3. Create a script that loads `{cowsay}` and use it to conclude if the coin is fair
 4. Run `renv::snapshot()` again
@@ -45,6 +45,9 @@ Notes:
 ## Part 4: Restore to previous state (`renv::restore()`) (`git revert`)
 
 Please, do the following:
+1. Run the R command `renv::install("sckott/cowsay")` to install the dev version of `{cowsay}`
+2. Run the R command `renv::status()` to check the current state of the environment
+3. Run the R command `renv::restore()` to restore environment from the `renv.lock` file
 
 Notes:
 - You can force `{renv}` delete all currently not used packagse with `renv::restore(clean = TRUE)`
@@ -54,7 +57,6 @@ Notes:
 Notes:
 - This is a quick introduction to `{renv}`
 - It has more commands and features. To name a few:
-    - `renv::install()`
     - `renv::remove()`
     - `renv::update()`
     - `renv::upgrade()`
