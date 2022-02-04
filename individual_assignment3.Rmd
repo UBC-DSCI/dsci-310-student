@@ -1,4 +1,13 @@
-## Individual assignment 3
+---
+title: "Individual assignment 3"
+descriptions: |
+    Practice building Docker images
+output:
+  distill::distill_article:
+    toc: true
+---
+
+## Instructions
 
 The purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from `Dockerfile`s. 
 
