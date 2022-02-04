@@ -25,7 +25,7 @@ You should name your GitHub.com repository `dockerfile-practice`.
 
 2. Add a `Dockerfile` to it. This Dockerfile should:
     - Be based off of the `ubcdsci/jupyterlab` Docker image ([link to `ubcdsci/jupyterlab` DockerHub repository](https://hub.docker.com/repository/docker/ubcdsci/jupyterlab), [link to `ubcdsci/jupyterlab` Dockerfile](https://github.com/UBC-DSCI/jupyterlab/blob/main/Dockerfile))
-    - Add at least one new R or Python package to the Dockerfile (ensure that you pin the version of the package you add).
+    - Add at least one new R or Python package to the Dockerfile using `conda` (ensure that you pin the version of the package you add).
 
 3. Add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile ([link to a GitHub Actions Workflow you should use for this](https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml)).
 
@@ -40,8 +40,8 @@ This assignment will be graded for completion as follows:
 
 |Grade | Description |
 |------|-------------|
-| 100% | 1. A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub. 2. The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username. 3. There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub. 4. The Docker image version tag is in sync with the GitHub repository release tag. |
-| 75%  | 3/4 of the criteria listed above were met. |
-| 50%  | 2/4 of the criteria listed above were met. |
-| 25%  | 1/4 of the criteria listed above were met. |
-| 0%   | Not attempted. |
+| 100% | 1. A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub. 2. The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username. 3. There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub. 4. The Docker image version tag is in sync with the GitHub repository release tag. 5. At least one new R or Python package was added to the Dockerfile using `conda`, and the version of that package was pinned. |
+| 75%  | 4/5 of the criteria listed above were met. |
+| 50%  | 3/5 of the criteria listed above were met. |
+| 25%  | 2/5 of the criteria listed above were met. |
+| 0%   | Only 1/5 of the criteria listed above were met or the assignment was not attempted. |
