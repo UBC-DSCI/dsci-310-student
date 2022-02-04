@@ -53,7 +53,11 @@ Notes:
 
 Notes:
 - This is a quick introduction to `{renv}`
-- It has more commands and features. To name a few
-  - `renv::install()`, `renv::remove()`, `renv::update()`, `renv::upgrade()`, `renv::use()`
-  - documentation for docker
-  - documentation for continuous integration
+- It has more commands and features. To name a few:
+    - `renv::install()`
+    - `renv::remove()`
+    - `renv::update()`
+    - `renv::upgrade()`
+    - `renv::use()`
+    - documentation for docker
+    - documentation for continuous integration
