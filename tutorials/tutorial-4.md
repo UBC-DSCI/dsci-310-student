@@ -15,7 +15,7 @@ Notes:
     - B
     - C
 
-## Part 2: Set up `{renv}`
+## Part 2: Set up `{renv}` (`renv::init()`)
 
 Please, do the following:
 1. Run the R command `install.packages("renv")` to install `{renv}`
@@ -29,7 +29,7 @@ Notes:
 - You can check that `{renv}` is set up by restarting the R session and excecuting the R command `renv::status()`
 - You can also run the `scripts/analyze.R` script and see the results in the `results/` folder
 
-## Part 3: Working with `{renv}`
+## Part 3: Add packages (`renv::snapshot()`)
 
 Please, do the following:
 1. Run the R command `install.packages("cowsay")` to install `{cowsay}`
