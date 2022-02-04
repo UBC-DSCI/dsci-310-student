@@ -28,3 +28,17 @@ Please, do the following:
 Notes:
 - You can check that `{renv}` is set up by restarting the R session and excecuting the R command `renv::status()`
 - You can also run the `scripts/analyze.R` script and see the results in the `results/` folder
+
+## Part 3: Working with `{renv}`
+
+Please, do the following:
+1. Run the R command `install.packages("cowsay")` to install `{cowsay}`
+2. Run `renv::snapshot()`
+3. Create a script that loads `{cowsay}` and use it to conclude if the coin is fair
+4. Run `renv::snapshot()` again
+5. Commit the new script and `renv.lock`
+6. That's it 🥳
+
+Notes:
+- Notice how `renv::snapshot()` did nothing the first time even though we installaed `{cowsay}`
+- `renv::snapshot()` only changed `renv.lock` when it detected a new package being actively used in a script
