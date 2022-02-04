@@ -40,7 +40,7 @@ This assignment will be graded for completion as follows:
 
 |Grade | Description |
 |------|-------------|
-| 100% | <ul><li>A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub.</li><li>The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username.</li><li>There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.</li><li>The Docker image version tag is in sync with the GitHub repository release tag.</li></ul> |
+| 100% | 1. A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub. 2. The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username. 3. There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub. 4. The Docker image version tag is in sync with the GitHub repository release tag. |
 | 75%  | 3/4 of the criteria listed above were met. |
 | 50%  | 2/4 of the criteria listed above were met. |
 | 50%  | 1/4 of the criteria listed above were met. |
