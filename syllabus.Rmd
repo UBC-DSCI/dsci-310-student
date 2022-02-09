@@ -68,7 +68,7 @@ minutes late. Please be patient!*
 | Position | Name  | Email | Office Hours | Office Location |
 |-------|-------|--------------|-----------------|----------------|
 | Instructor | Tiffany Timbers | tiffany.timbers[-at-]stat.ubc.ca | Friday 15:30-16:30 | Zoom |
-| TA | Giuseppe Tinti Tomio | giuseppe.tomio[-at-]stat.ubc.ca | Friday 10:00-11:00 | Zoom |
+| TA | Giuseppe Tinti Tomio | giuseppe.tomio[-at-]stat.ubc.ca | Friday 10:00-11:00 | ~~Zoom~~ ESB 1043 |
 
 ## Assessment
 
