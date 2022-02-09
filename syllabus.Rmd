@@ -9,7 +9,7 @@ output:
 
 ## Time and place
 - Lecture Section 101: Online (Zoom), Tues/Thurs 09:00-10:30
-- Tutorial Section T1A: Online (Zoom), Fri 09:00-10:00
+- Tutorial Section T1A: ~~Online (Zoom)~~ **In person** [ORCH 4074](https://learningspaces.ubc.ca/classrooms/orch-4074), Fri 09:00-10:00
 
 ## Course description
 
