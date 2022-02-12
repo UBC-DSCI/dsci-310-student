@@ -22,6 +22,10 @@ Try 2:
 - Run with volume: `docker run -e PASSWORD=yourpassword -p 8787:8787 -v ${PWD}:/home/rstudio rocker/rstudio`
 - `install.packages("binom")`
 
+> Note 1: In the lecture notes, we suggest `-v /$(pwd):/home/rstudio` for volume mounting, as this works more consistently across operating systems, however see the note about Windows below.
+>
+> Note 2: If the volume mounting doesn't work with the above on Windows, try: `-v /$(pwd)://home//rstudio`
+
 Try 3:
 - Add docker file
 - Build: `docker build -t fair-coin-analysis .`
