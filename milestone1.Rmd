@@ -19,9 +19,8 @@ Your data analysis project will evolve throughout the course from a single, mono
 - a containerized computational environment created and made shareable by Docker, and
 - a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.
 
-An example final project can be seen here: 
-
-- [Predicting Airbnb nightly price from property and host data](https://github.com/UBC-DSCI/predict-airbnb-nightly-price)
+An example final project from another course (where the project is similar) can be seen here: 
+-[Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor)
 
 ## Milestone 1 summary
 
@@ -34,7 +33,9 @@ In this milestone, you will:
 5. Add the data analysis as a literate code document
 6. Make the computation environment reproducible through containerization with Docker
 
-An example project milestone 1 can be seen here: [https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0)
+An example project milestone 1 will soon be available here: [https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0)
+
+For now, it is still a work in progress (about 80% done): [https://github.com/UBC-DSCI/predict-airbnb-nightly-price](https://github.com/UBC-DSCI/predict-airbnb-nightly-price). You can checkout the [project board](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/projects/1), and [milestone1](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/milestone/1) to see what is left to do on this example.
 
 ### 1. Draft a team work contract
 
