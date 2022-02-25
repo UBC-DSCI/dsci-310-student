@@ -49,12 +49,21 @@ Examples of code that often repetitive in a data analysis projects:
 - data modeling workflow/pipeline code when tuning different models on the same data set
 
 When doing this task, 
-follow the [workflow for writing functions and tests for data science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html#workflow-for-writing-functions-and-tests-for-data-science, 
+follow the [workflow for writing functions and tests for data science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html#workflow-for-writing-functions-and-tests-for-data-science), 
 remember this process will include:
 
   - writing thorough function specifications & documentation
   - writing robust unit tests for these functions to ensure they work as expected
   - writing the code that makes up the function body
+
+If you are using R, these functions will live in an `.R` file (whose filename will be named after the function, or functions).
+It is OK to have one function per file, or all functions in one file.
+This/these file(s) will live in a sub-directory called `R`.
+If you are using Python, these functions will live in an `.py` file (whose filename will be named after the function, or functions).
+Again, it is OK to have one function per file, or all functions in one file.
+This/these file(s) will live in a sub-directory called `src`.
+You will `source` (in the case of R) or `import` these functions in your literate code document (`*.ipynb`) to use them in your analysis.
+Tests will live in a `test` directory, with files/subdirectories organized as per the testing framework you are using.
 
 **We expect that you will abstract at least 3-4 functions from code from your literate code document. 
 One per group member is the minimum.** 
@@ -62,8 +71,10 @@ Of course, if it makes sense to have more than 3-4 you are welcome to increase t
 However, all functions must have the same standards in regards to software robustness.
 Your functions will be assessed for their quality 
 (e.g., functions should do one thing, and generally return an abject unless they were specifically designed for side-effects),
-usability, documentation
-and quality of the test suite.
+usability, 
+readability (follow the [tidyverse style guide](https://style.tidyverse.org/) for R, 
+or the [black style guide](https://black.readthedocs.io/en/stable/the_black_code_style/index.html) for Python), 
+documentation and quality of the test suite.
 
 If you are using R for your data analysis code, 
 we expect you to use the [`testthat`](https://testthat.r-lib.org/) R package framework for writing software tests.
@@ -104,5 +115,6 @@ before the the pull request is accepted.
 It's OK if one or two are less meaningful, but most should be.
 - Use GitHub issues to communicate to their team mate (as opposed to email or Slack).
 - Your question, analysis and visualization should make sense. It doesn't have to be complicated.
+- Your analysis should be correct, and run reproducibly given the instructions provided in the README.
 - You should use proper grammar and full sentences in your README. 
 Point form may occur, but should be less than 10% of your written documents.
