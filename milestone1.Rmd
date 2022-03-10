@@ -33,9 +33,7 @@ In this milestone, you will:
 5. Add the data analysis as a literate code document
 6. Make the computation environment reproducible through containerization with Docker
 
-An example project milestone 1 will soon be available here: [https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0)
-
-For now, it is still a work in progress (about 80% done): [https://github.com/UBC-DSCI/predict-airbnb-nightly-price](https://github.com/UBC-DSCI/predict-airbnb-nightly-price). You can checkout the [project board](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/projects/1), and [milestone1](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/milestone/1) to see what is left to do on this example.
+An example project milestone 1 is available here: [https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2)
 
 ### 1. Draft a team work contract
 
