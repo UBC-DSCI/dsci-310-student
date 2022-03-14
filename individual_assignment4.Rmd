@@ -52,7 +52,7 @@ Inside the [template repository](https://github.com/UBC-DSCI/dsci-310-individual
   - edit the figure captions so that they are automatically numbered by R Markdown ([docs on how to do this](https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html)) and control the figure sizes so that they are easy to view and read in the report [docs on how to do this](https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html).
   - add a table description via `knitr::kable`'s `caption argument so that they are automatically numbered by R Markdown ([docs on how to do this](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html#kable-caption))
   - replace the `?` on line 56 with inline R Markdown code, so that the text will be automatically updated with the correct value ([docs on how to do this](https://rmarkdown.rstudio.com/lesson-4.html))
-- change the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) ([docs on how to do this](https://rmarkdown.rstudio.com/lesson-3.html)))
+- change the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) ([docs on how to do this](https://rmarkdown.rstudio.com/lesson-3.html))
 
 4. Use the `Makefile` to render the final R Markdown report (you will want to have GNU Make build the `rmd` target to do this). The HTML version of the report is saved to `doc/rmd_example/rmd_example.html` and the PDF version will be saved to `doc/rmd_example/rmd_example.pdf`.
 
