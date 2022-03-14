@@ -13,13 +13,19 @@ The purpose of this assignment is to ensure that everyone gains hands-on practic
 This assignment also contains an optional added challenge to gain practice with Jupyter book as well. 
 If students complete the optional challenge, they get a 10% bonus mark on this assignment (so the highest possible mark is 110%).
 
+Throughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.
+
+But are Jupyter Notebooks all there is to creating reproducible reports? Not entirely... For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process. Imagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4...
+
+This is where R Markdown and Jupyter Books can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this worksheet, you will start to familiarize yourself with both R Markdown and Jupyter Books, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences.
+
 ### Submission instructions
 
 In the textbox provided for this assignment on Canvas,
 you must submit: 
 1. A link to the GitHub.com repository that you create for this assignment.
 
-### Exercise instructions
+### Exercise instructions - R Markdown (reqiured)
 
 1. Create a copy of [this template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports) on GitHub.com under your personal username.
 
@@ -39,8 +45,118 @@ there are several directories and files. Here is a quick rundown of each:
 
 3. Edit `doc/rmd_example/rmd_example.rmd` so that:
 
-  - TBD
+  - add header formatting to sections (e.g., "Aim", "Data", "Methods", "Results", "References") and R Markdown configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered ([docs on how to do this in html](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents) and [in pdf](https://bookdown.org/yihui/rmarkdown/pdf-document.html#table-of-contents-1))
+  - add correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document ([docs on how to do this](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html))
+  - edit the figure captions so that they are automatically numbered by R Markdown ([docs on how to do this](https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html))
+  - add a table description via `knitr::kable`'s `caption argument so that they are automatically numbered by R Markdown ([docs on how to do this](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html#kable-caption))
+  - replace the `?` on line 56 with inline R Markdown code, so that the text will be automatically updated with the correct value ([docs on how to do this](https://rmarkdown.rstudio.com/lesson-4.html))
 
+4. Use the `Makefile` to render the final R Markdown report (you will want to have GNU Make build the `rmd` target to do this). The HTML version of the report is saved to `doc/rmd_example/rmd_example.html` and the PDF version will be saved to `doc/rmd_example/rmd_example.pdf`.
+
+### Exercise instructions - Jupyter book (optional/bonus)
+
+#### Introduction to Jupyter book
+
+A Jupyter Book has a similar structure to an R Markdown document,
+but in more of a Jupyter Notebook style that you are used to. 
+In fact, a Jupyter Book _contains_ one or more Jupyter Notebooks,
+in addition to various files that are used for configuration.
+A Jupyter Book has three main components:
+
+1. A configuration file, `_config.yml`
+2. A table of contents file, `_toc.yml`
+3. The content (typically Jupyter Notebooks with Markdown and
+R code chunks, but can include other file types as well)
+
+The configuration file, `_config.yml`, allows you to define
+metadata for your book, similar to how you would at the start
+of an R Markdown document. 
+In fact, the syntax here is identical: the YAML syntax is used,
+and indentation matters.
+Here is an example of a simple `_config.yml` file:
+
+```yml
+title: "Example Jupyter Book"
+author: "Your Name"
+execute:
+    execute_notebooks: "force"
+```
+
+Again, this configuration file is quite simple. Note that we specify
+that we want to `force` all Jupyter Notebooks that make up the content
+of the book to run.
+
+The table of contents file, `_toc.yml`, simply points to the files
+that contain the content of your Jupyter Book. The table of contents
+in a Jupyter Book is a bit more complicated than a single R Markdown
+document, as you can split your book into more than one Jupyter 
+Notebook (or other file types) while _also_ having headers and 
+sub-headers inside those files. Nonetheless, here is a very simple
+table of contents file:
+
+```yml
+- file: jupyter_notebook1
+- file: jupyter_notebook2
+```
+
+More detailed information about how files, chapters, sections, and
+headers correspond to the structure of a Jupyter Book can be found
+here: [jupyterbook.org/structure/sections-headers](https://jupyterbook.org/structure/sections-headers.html#toc-structure).
+
+Lastly, we have the content of the Jupyter Book. As mentioned
+previously, usually there are one or more Jupyter Notebooks that
+make up the content of a Jupyter Book, which you are already
+familiar with.
+There is nothing too interesting to mention here,
+other than the fact that, like an R Markdown 
+document, the Jupyter Notebooks that make up the content of your book
+will not be identical to the final, rendered version of the Jupyter
+Book, as you will see while you complete the worksheet.
+
+A Jupyter Book is built through a simple command. Assuming you
+have a `_config.yml` file, a `_toc.yml` file, and one or more files
+which are being pointed to by the `_toc.yml` file, all inside 
+a folder such as `book_name/`, you can build your Jupyter Book
+using
+
+```
+jupyter-book build book_name/
+```
+
+if your current working directory is directly outside the 
+`book_name/` folder. 
+
+As mentioned previously, this is only a very brief introduction
+to Jupyter Books. Here is an additional resource which goes 
+into much more detail, including an easy to follow guide on
+how to create your own first Jupyter Book:
+- [jupyter{book}.org: Create your first book](https://jupyterbook.org/start/your-first-book.html)
+
+#### Jupyter book instructions
+
+1. You can use the same copy of [the template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports) on GitHub.com under your personal username that you used for the R Markdown part of the assignment.
+
+2. Get familiar with the `doc/jbook_example` directory, inside it there are several files, here is a quick rundown of each:
+
+  - `doc/jbook_example`: contains the (incomplete) Jupyter Book version of
+    the analysis
+    - `_build`: contains files resulting from the Jupyter Book build process,
+    the important files here are `html/index.html` and `latex/python.pdf`
+    which are the HTML and PDF versions of the rendered Jupyter Book,
+    respectively. These will only be present after rendering the book.
+    - `_config.yml`: configuration file for the Jupyter Book **(incomplete - you will need to edit this)**
+    - `_toc.yml`: table of contents file for the Jupyter Book **(do not edit)**
+    - `jbook_example.ipynb`: Jupyter Notebook with contents of the report **(incomplete - you will need to edit this)**
+    - `references.bib`: BibTeX references file for the report **(do not edit)**
+
+3. Edit `doc/jbook_example/_config.yml` and `doc/jbook_example/jbook_example.ipynb`so that:
+
+  - add header formatting to sections (e.g., "Aim", "Data", "Methods", "Results", "References") and R Markdown configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered ([docs on how to do this](https://jupyterbook.org/structure/configure.html))
+  - add correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document ([docs on how to do this](https://jupyterbook.org/content/citations.html))
+  - edit the figure captions so that they are automatically numbered by Jupyter book ([docs on how to do this](https://jupyterbook.org/content/figures.html))
+  - replace the `?` on line 56 with inline Jupyter book glue code, so that the text will be automatically updated with the correct value ([docs on how to do this](https://jupyterbook.org/content/executable/output-insert.html))
+
+4. Use the `Makefile` to render the final Jupyter book report (you will want to have GNU Make build the `jbook` target to do this). The HTML version of the report is saved to `doc/jbook_example/_build/html/index.html` and the PDF version will be saved to `doc/jbook_example/_build/latex/python.pdf`.
 
 ## Rubric 
 
@@ -48,8 +164,9 @@ This assignment will be graded for completion as follows:
 
 |Grade | Description |
 |------|-------------|
-| 100% | *1)* A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub. *2)* The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username. *3)* There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub. *4)* The Docker image version tag is in sync with the GitHub repository release tag. *5)* At least one new R or Python package was added to the Dockerfile using `conda`, and the version of that package was pinned. |
-| 75%  | 4/5 of the criteria listed above were met. |
-| 50%  | 3/5 of the criteria listed above were met. |
-| 25%  | 2/5 of the criteria listed above were met. |
-| 0%   | Only 1/5 of the criteria listed above were met or the assignment was not attempted. |
+| 110% | All 5 of the required edits to the `.Rmd` document above were met. And all 5 required edits to the Jupyter book above were met. |
+| 100% | All 5 of the required edits to the `.Rmd` document above were met.  |
+| 75%  | 4/5 of the required edits to the `.Rmd` document listed above were met. |
+| 50%  | 3/5 of the required edits to the `.Rmd` document listed above were met. |
+| 25%  | 2/5 of the required edits to the `.Rmd` document listed above were met. |
+| 0%   | Only 1/5 of the required edits to the `.Rmd` document listed above were met or the assignment was not attempted. |
