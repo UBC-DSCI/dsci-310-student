@@ -23,10 +23,12 @@ This is where R Markdown and Jupyter Books can come in handy. Although they have
 
 In the textbox provided for this assignment on Canvas,
 you must submit: 
+
 1. A link to the GitHub.com repository that you create for this assignment.
+
 2. (optional) A note stating that you did the optional/bonus component
 
-### Exercise instructions - R Markdown (reqiured)
+### Exercise instructions - R Markdown (required)
 
 1. Create a copy of [this template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports) on GitHub.com under your personal username.
 
