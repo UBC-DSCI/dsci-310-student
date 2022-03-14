@@ -1,0 +1,55 @@
+---
+title: "Individual assignment 4"
+descriptions: |
+    Practice with reproducible reports
+output:
+  distill::distill_article:
+    toc: true
+---
+
+## Instructions
+
+The purpose of this assignment is to ensure that everyone gains hands-on practice on creating reproducible reports in R Markdown. 
+This assignment also contains an optional added challenge to gain practice with Jupyter book as well. 
+If students complete the optional challenge, they get a 10% bonus mark on this assignment (so the highest possible mark is 110%).
+
+### Submission instructions
+
+In the textbox provided for this assignment on Canvas,
+you must submit: 
+1. A link to the GitHub.com repository that you create for this assignment.
+
+### Exercise instructions
+
+1. Create a copy of [this template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports) on GitHub.com under your personal username.
+
+2. Get familiar with the repository (you can ignore the `doc/jbook_example` directory if you are not completing the optional assignment). 
+Inside the [ template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports), 
+there are several directories and files. Here is a quick rundown of each:
+
+  - `data`: contains data used in the analysis **(do not edit)**
+  - `doc/rmd_example`: contains the (incomplete) RMD version of the analysis
+    - `references.bib`: BibTeX references file for the report **(do not edit)**
+    - `rmd_example.rmd`: R Markdown containing the contents of the report and its
+    configuration **(incomplete)**
+  - `makefile`: declares commands used to build the Jupyter Book and RMD report **(do not edit**)
+  - `results`: output of the script in `source`
+  - `source/generate_figures.R`: a script that performs the analysis and outputs
+    various plots and a table that are to be used in the report **(do not edit)**
+
+3. Edit `doc/rmd_example/rmd_example.rmd` so that:
+
+  - TBD
+
+
+## Rubric 
+
+This assignment will be graded for completion as follows:
+
+|Grade | Description |
+|------|-------------|
+| 100% | *1)* A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub. *2)* The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username. *3)* There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub. *4)* The Docker image version tag is in sync with the GitHub repository release tag. *5)* At least one new R or Python package was added to the Dockerfile using `conda`, and the version of that package was pinned. |
+| 75%  | 4/5 of the criteria listed above were met. |
+| 50%  | 3/5 of the criteria listed above were met. |
+| 25%  | 2/5 of the criteria listed above were met. |
+| 0%   | Only 1/5 of the criteria listed above were met or the assignment was not attempted. |
