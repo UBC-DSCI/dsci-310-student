@@ -2444,8 +2444,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#milestone-3-summary">Milestone 3 summary</a></li>
 <li><a href="#milestone-3-specifics">Milestone 3 specifics</a>
 <ul>
-<li><a href="#abstract-more-code-from-your-literate-code-document-.ipynb-or-.rmd">1. Abstract more code from your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>)</a></li>
-<li><a href="#edit-your-literate-code-document-.ipynb-or-.rmd-so-that-its-sole">2. Edit your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) so that it’s sole</a></li>
+<li><a href="#abstract-more-code-from-your-literate-code-document-.ipynb-or-.rmd-to-scripts-e.g.-.r-or-.py.">1. Abstract more code from your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) to scripts (e.g., <code>.R</code> or <code>.py</code>).</a></li>
+<li><a href="#edit-your-literate-code-document-.ipynb-or-.rmd-so-that-its-sole-job-is-to-narrate-your-analysis-display-your-analysis-artifacts-i.e.-figures-and-tables-and-nicely-format-the-report.">2. Edit your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report.</a></li>
 <li><a href="#update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">3. Update your project’s computational environment as you add dependencies to your project</a></li>
 </ul></li>
 <li><a href="#submission-instructions">Submission Instructions</a>
@@ -2477,17 +2477,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>An example project milestone 3 will soon be available here: <a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v3.0.0">https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0</a></p>
 <p>For now, it is still a work in progress: <a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price">https://github.com/UBC-DSCI/predict-airbnb-nightly-price</a>.</p>
 <h2 id="milestone-3-specifics">Milestone 3 specifics</h2>
-<h3 id="abstract-more-code-from-your-literate-code-document-.ipynb-or-.rmd">1. Abstract more code from your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>)</h3>
-<p>to scripts (e.g., <code>.R</code> or <code>.py</code>).</p>
+<h3 id="abstract-more-code-from-your-literate-code-document-.ipynb-or-.rmd-to-scripts-e.g.-.r-or-.py.">1. Abstract more code from your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) to scripts (e.g., <code>.R</code> or <code>.py</code>).</h3>
 <p>This code need not be converted to a function, but can simply be files that call the functions needed to run your analysis. You should aim to split the analysis code into 4, or more, R or Python scripts. Where the code in each script is contributing to a related step in your analysis.</p>
 <p>The output of the first script must be the input of the second, and so on. All scripts should have command line arguments and we expect you to use the <code>docopt</code> R package for parsing command line arguments (if you are using Python, we recommend <a href="https://docs.python.org/3/library/argparse.html"><code>argparse</code></a> or <a href="https://click.palletsprojects.com/en/8.0.x/"><code>click</code></a>).</p>
-<p>They scripts could be organized something like this: - A first script that downloads the data from the internet and saves it locally. This should take at least two arguments:</p>
+<p>They scripts could be organized something like this:</p>
+<ul>
+<li><p>A first script that downloads the data from the internet and saves it locally. This should take at least two arguments:</p>
 <ul>
 <li>the path to the input file (a URL or a relative local path, such as data/file.csv), as well as</li>
 <li>a path/filename where to write the file to and what to call it (e.g., data/cleaned_data.csv).</li>
 </ul>
-<p><strong>Note: choose more descriptive filenames than the ones used above. These are general for illustrative purposes.</strong></p>
-<ul>
+<p><strong>Note: choose more descriptive filenames than the ones used above. These are general for illustrative purposes.</strong></p></li>
 <li><p>A second script that reads the data from the first script and performs and data cleaning/pre-processing, transforming, and/or partitioning that needs to happen before exploratory data analysis or modeling takes place. This should take at least two arguments:</p>
 <ul>
 <li>a path/filename pointing to the data to be read in</li>
@@ -2504,8 +2504,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>a path/filename prefix where to write the figure(s)/table(s) to and what to call it (e.g., results/this_analysis)</li>
 </ul></li>
 </ul>
-<h3 id="edit-your-literate-code-document-.ipynb-or-.rmd-so-that-its-sole">2. Edit your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) so that it’s sole</h3>
-<p>job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report.</p>
+<h3 id="edit-your-literate-code-document-.ipynb-or-.rmd-so-that-its-sole-job-is-to-narrate-your-analysis-display-your-analysis-artifacts-i.e.-figures-and-tables-and-nicely-format-the-report.">2. Edit your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report.</h3>
 <p>The goal is that non-data scientists would not be able to tell that code was used to perform your analysis or format your report (i.e., no code should be visible in the rendered report).</p>
 <p>You should render your report to either <code>html</code> or <code>PDF</code>. If you are using R Markdown, you should use the <a href="https://bookdown.org/yihui/bookdown/"><code>bookdown</code></a> outputs (e.g., <code>bookdown::html2</code> or <code>bookdown::pdf2</code>) so you can reference figures, tables and sections effectively. If you are using Jupyter for your final report, you should use <a href="https://jupyterbook.org/intro.html">Jupyter book</a>, again so you can reference figures, tables and sections effectively.</p>
 <h3 id="update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">3. Update your project’s computational environment as you add dependencies to your project</h3>
