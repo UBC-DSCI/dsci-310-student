@@ -48,8 +48,7 @@ For now, it is still a work in progress: [https://github.com/UBC-DSCI/predict-ai
 
 ## Milestone 3 specifics
 
-### 1. Abstract more code from your literate code document (`*.ipynb` or `*.Rmd`) 
-to scripts (e.g., `.R` or `.py`). 
+### 1. Abstract more code from your literate code document (`*.ipynb` or `*.Rmd`) to scripts (e.g., `.R` or `.py`). 
 
 This code need not be converted to a function, 
 but can simply be files that call the functions needed to run your analysis. 
@@ -103,9 +102,7 @@ This should take at least two arguments:
   - a path/filename prefix where to write the figure(s)/table(s) to 
     and what to call it (e.g., results/this_analysis)
 
-### 2. Edit your literate code document (`*.ipynb` or `*.Rmd`) so that it's sole 
-job is to narrate your analysis, display your analysis artifacts 
-(i.e., figures and tables), and nicely format the report.
+### 2. Edit your literate code document (`*.ipynb` or `*.Rmd`) so that it's sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report.
 
 The goal is that non-data scientists would not be able to tell that code
 was used to perform your analysis or format your report 
