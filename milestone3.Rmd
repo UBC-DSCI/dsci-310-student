@@ -64,6 +64,7 @@ for parsing command line arguments
 or [`click`](https://click.palletsprojects.com/en/8.0.x/)). 
   
 They scripts could be organized something like this:
+
 - A first script that downloads the data from the internet 
 and saves it locally. This should take at least two arguments:
 
@@ -72,8 +73,8 @@ and saves it locally. This should take at least two arguments:
   - a path/filename where to write the file to and what to call it 
     (e.g., data/cleaned_data.csv).
 
-**Note: choose more descriptive filenames than the ones used above. 
-These are general for illustrative purposes.**
+  **Note: choose more descriptive filenames than the ones used above. 
+  These are general for illustrative purposes.**
 
 - A second script that reads the data from the first script 
 and performs and data cleaning/pre-processing, transforming, 
