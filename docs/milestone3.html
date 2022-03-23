@@ -2446,7 +2446,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="#abstract-more-code-from-your-literate-code-document-.ipynb-or-.rmd-to-scripts-e.g.-.r-or-.py.">1. Abstract more code from your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) to scripts (e.g., <code>.R</code> or <code>.py</code>).</a></li>
 <li><a href="#edit-your-literate-code-document-.ipynb-or-.rmd-so-that-its-sole-job-is-to-narrate-your-analysis-display-your-analysis-artifacts-i.e.-figures-and-tables-and-nicely-format-the-report.">2. Edit your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report.</a></li>
-<li><a href="#update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">3. Update your project’s computational environment as you add dependencies to your project</a></li>
+<li><a href="#write-another-script-a-makefile-literally-called-makefile-to-act-as-a-driver-script-to-rule-them-all">3. Write another script, a <code>Makefile</code> (literally called <code>Makefile</code>), to act as a driver script to rule them all</a></li>
+<li><a href="#update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">4. Update your project’s computational environment as you add dependencies to your project</a></li>
 </ul></li>
 <li><a href="#submission-instructions">Submission Instructions</a>
 <ul>
@@ -2472,6 +2473,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ol type="1">
 <li><p>Abstract more code from your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) to scripts (e.g., <code>.R</code> or <code>.py</code>). This code need not be converted to a function, but can simply be files that call the functions needed to run your analysis. You should aim to split the analysis code into 4, or more, R or Python scripts. Where the code in each script is contributing to a related step in your analysis.</p></li>
 <li><p>Edit your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report. The goal is that non-data scientists would not be able to tell that code was used to perform your analysis or format your report (i.e., no code should be visible in the rendered report).</p></li>
+<li><p>Write another script, a <code>Makefile</code> (literally called <code>Makefile</code>), to act as a driver script to rule them all. This script should run the others in sequence, hard coding in the appropriate arguments.</p></li>
 <li><p>Update your project’s computational environment as you add dependencies to your project</p></li>
 </ol>
 <p>An example project milestone 3 will soon be available here: <a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v3.0.0">https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0</a></p>
@@ -2507,7 +2509,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="edit-your-literate-code-document-.ipynb-or-.rmd-so-that-its-sole-job-is-to-narrate-your-analysis-display-your-analysis-artifacts-i.e.-figures-and-tables-and-nicely-format-the-report.">2. Edit your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report.</h3>
 <p>The goal is that non-data scientists would not be able to tell that code was used to perform your analysis or format your report (i.e., no code should be visible in the rendered report).</p>
 <p>You should render your report to either <code>html</code> or <code>PDF</code>. If you are using R Markdown, you should use the <a href="https://bookdown.org/yihui/bookdown/"><code>bookdown</code></a> outputs (e.g., <code>bookdown::html2</code> or <code>bookdown::pdf2</code>) so you can reference figures, tables and sections effectively. If you are using Jupyter for your final report, you should use <a href="https://jupyterbook.org/intro.html">Jupyter book</a>, again so you can reference figures, tables and sections effectively.</p>
-<h3 id="update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">3. Update your project’s computational environment as you add dependencies to your project</h3>
+<h3 id="write-another-script-a-makefile-literally-called-makefile-to-act-as-a-driver-script-to-rule-them-all">3. Write another script, a <code>Makefile</code> (literally called <code>Makefile</code>), to act as a driver script to rule them all</h3>
+<p>This script should run the others in sequence, hard coding in the appropriate arguments. This script should:</p>
+<ul>
+<li><p>live in the project’s root directory and be named Makefile</p></li>
+<li><p>be well documented (using the project <code>README</code> and comments inside the <code>Makefile</code> to explain what it does and how to use it)</p></li>
+<li><p>have a <code>all</code> target so that you can easily run the entire analysis from top to bottom by running <code>make all</code> at the command line</p></li>
+<li><p>have a <code>clean</code> target so that you can easily “undo” your analysis by running <code>make clean</code> at the command line</p></li>
+</ul>
+<h3 id="update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">4. Update your project’s computational environment as you add dependencies to your project</h3>
 <p>At a minimum, you will be adding either <code>bookdown</code> or <code>jupyter-book</code> as a new dependency to your project. Thus, you will need to update your project’s computational environment as you add this (and potentially other) dependencies to your project. This means that your <code>Dockerfile</code> will need to have this package added, with the version pinned, and the Docker container image will need to be rebuilt. Do not forget to update your project’s documentation to reflect these changes.</p>
 <h2 id="submission-instructions">Submission Instructions</h2>
 <p>You will submit two URLS’s to Canvas in the provided text box for milestone 3:</p>
