@@ -51,13 +51,8 @@ This assignment will be graded for completion as follows:
 
 |Grade | Description |
 |------|-------------|
-| 110% | A working toy R package, and a working toy Python package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) 
-chapter of the R Packages book, and the [How to package a Python](https://r-pkgs.org/whole-game.html) 
-chapter of the Python Packages book, respectively. |
-| 100% | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) 
-chapter of the R Packages book.  |
-| 75%  | A toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) 
-chapter of the R Packages book however there are 1-2 aspects missing, or completed incorrectly, that affect the packages functionality or documentation (i.e., it does not fully work as expected). |
-| 50%  | A toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) 
-chapter of the R Packages book however there are 3 or more aspects missing, or completed incorrectly, that affect the packages functionality or documentation (i.e., it does not fully work as expected).  |
+| 110% | A working toy R package, and a working toy Python package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) chapter of the R Packages book, and the [How to package a Python](https://r-pkgs.org/whole-game.html) chapter of the Python Packages book, respectively. |
+| 100% | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) chapter of the R Packages book.  |
+| 75%  | A toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) chapter of the R Packages book however there are 1-2 aspects missing, or completed incorrectly, that affect the packages functionality or documentation (i.e., it does not fully work as expected). |
+| 50%  | A toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) chapter of the R Packages book however there are 3 or more aspects missing, or completed incorrectly, that affect the packages functionality or documentation (i.e., it does not fully work as expected).  |
 | 0%   | The assignment was not attempted. |
