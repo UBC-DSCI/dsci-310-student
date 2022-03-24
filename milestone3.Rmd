@@ -40,7 +40,9 @@ The goal is that non-data scientists would not be able to tell that code
 was used to perform your analysis or format your report 
 (i.e., no code should be visible in the rendered report).
 
-3. Update your project's computational environment as you add dependencies to your project
+3. Write another script, a `Makefile` (literally called `Makefile`), to act as a driver script to rule them all. This script should run the others in sequence, hard coding in the appropriate arguments. 
+
+4. Update your project's computational environment as you add dependencies to your project
 
 An example project milestone 3 will soon be available here: [https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v3.0.0)
 
@@ -118,7 +120,19 @@ If you are using Jupyter for your final report,
 you should use [Jupyter book](https://jupyterbook.org/intro.html), 
 again so you can reference figures, tables and sections effectively.
 
-### 3. Update your project’s computational environment as you add dependencies to your project
+### 3. Write another script, a `Makefile` (literally called `Makefile`), to act as a driver script to rule them all
+
+This script should run the others in sequence, hard coding in the appropriate arguments. This script should:
+
+- live in the project’s root directory and be named Makefile
+
+- be well documented (using the project `README` and comments inside the `Makefile` to explain what it does and how to use it)
+
+- have a `all` target so that you can easily run the entire analysis from top to bottom by running `make all` at the command line
+
+- have a `clean` target so that you can easily “undo” your analysis by running `make clean` at the command line
+
+### 4. Update your project’s computational environment as you add dependencies to your project
 
 At a minimum, 
 you will be adding either `bookdown` or `jupyter-book` 
