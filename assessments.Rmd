@@ -22,6 +22,6 @@ output:
 | [Milestone 3](milestone3.html)  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 10% | ~~2022/03/26~~ 2022/04/02 18:00 |
 | Peer review | review of another group's project | 4.5% | 2022/04/02 18:00 |
 | [Individual assignment 5](individual_assignment5) | Packaging practice | 1% | 2022/04/02 18:00 |
-| Final project | regrade entire project which now also includes the package & CI (the full monty package - including docs) | 20% | 2022/04/09 18:00 |
+| [Final project](final-project.html) | regrade entire project which now also includes the package & CI (the full monty package - including docs) | 20% | 2022/04/09 18:00 |
 | [Team work](team-work.html) | Reflection of how the group worked together, as well as individual performance | 10% | 2022/04/09 11:59 |
 | Final exam | | 20% | TBD |
