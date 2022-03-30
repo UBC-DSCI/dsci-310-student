@@ -102,14 +102,14 @@ addressed which pieces of feedback.
 
 ## Submission Instructions
 
-You will submit three URLS's to Canvas in the provided text box for milestone 3:
+You will submit three URLS's to Canvas in the provided text box for the final project:
 
 1. the URL of your project's GitHub.com repository
 2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
 3. the URL of your software package's repository on GitHub.com
 
 ### Creating a release on GitHub.com 
-Just before you submit the milestone 4, create a release on your project repository on GitHub and name it something like `4.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.
+Just before you submit the final project, create a release on your project repository on GitHub and name it something like `4.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.
 
 ## Expectations
 
@@ -127,7 +127,8 @@ before the the pull request is accepted.
 It's OK if one or two are less meaningful, but most should be.
 - Use GitHub issues to communicate to their team mate (as opposed to email or Slack).
 - Your question, analysis and visualization should make sense. It doesn't have to be complicated.
-- **Your analysis should be correct, and run reproducibly given the instructions provided in the README.**
+- **Your analysis should be correct, and run reproducibly given the instructions provided in the analysis repository README.**
+- **Your package should work, and be able to be installed by following the instructions provided in the package repository README.**
 - You should use proper grammar and full sentences in your README. 
 Point form may occur, but should be less than 10% of your written documents.
 - R code should follow the [tidyverse style guide](https://style.tidyverse.org/), 
