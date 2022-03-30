@@ -2486,19 +2486,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><p>have a code of conduct document that describes behavioural expectations of team interactions</p></li>
 <li><p>have a contributions document that outlines how the team will work together (expected workflow practices)</p></li>
 </ul>
-<p>You should update your the analysis code in your data analysis repository so that…</p>
+<p>You should update your the analysis code in your data analysis repository so that:</p>
+<ul>
+<li>you load your R (or Python) package to access your functions, instead of sourcing or importing files in your analysis repository</li>
+<li>remove the files that contain your functions (you no longer need these since you are loading them from your pacakge), and the <code>tests</code> directory files that holds the tests and the helper data for those tests (again, these should now exist in your package repository)</li>
+<li>update your projects computational environment so that it contains your R (or Python) package. <em>Don’t forget to include the version when doing this!</em></li>
+</ul>
 <h3 id="address-any-feedback-received-in-earlier-milestones">2. Address any feedback received in earlier milestones</h3>
 <p>Revise your data analysis project to address feedback received from the DSCI 310 teaching team from past milestones. 50% of your final grade for this milestone will be assessing whether you have addressed this feedback to improve your project.</p>
 <p>To help us easily, and correctly, assess this, please point us to where you have addressed the feedback received by replying in the issue thread where the feedback was given. You can point us to evidence of addressing it by providing URLs to reference specific lines of code, commit messages, pull requests, etc. Be sure to add some narration when sharing these URLs so that it is easy for us to identify which changes to your work addressed which pieces of feedback.</p>
 <h2 id="submission-instructions">Submission Instructions</h2>
-<p>You will submit three URLS’s to Canvas in the provided text box for milestone 3:</p>
+<p>You will submit three URLS’s to Canvas in the provided text box for the final project:</p>
 <ol type="1">
 <li>the URL of your project’s GitHub.com repository</li>
 <li>the URL of a GitHub release of your project’s GitHub.com repository for this milestone.</li>
 <li>the URL of your software package’s repository on GitHub.com</li>
 </ol>
 <h3 id="creating-a-release-on-github.com">Creating a release on GitHub.com</h3>
-<p>Just before you submit the milestone 4, create a release on your project repository on GitHub and name it something like <code>4.0.0</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.</p>
+<p>Just before you submit the final project, create a release on your project repository on GitHub and name it something like <code>4.0.0</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.</p>
 <h2 id="expectations">Expectations</h2>
 <ul>
 <li><strong>Everyone should contribute equally to all aspects of the project</strong> <strong>(e.g., code, writing, project management).</strong> <strong>This should be evidenced by a roughly equal number of commits,</strong> <strong>pull request reviews and participation in communication via GitHub issues.</strong></li>
@@ -2507,7 +2512,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Git commit messages should be meaningful. These will be marked. It’s OK if one or two are less meaningful, but most should be.</li>
 <li>Use GitHub issues to communicate to their team mate (as opposed to email or Slack).</li>
 <li>Your question, analysis and visualization should make sense. It doesn’t have to be complicated.</li>
-<li><strong>Your analysis should be correct, and run reproducibly given the instructions provided in the README.</strong></li>
+<li><strong>Your analysis should be correct, and run reproducibly given the instructions provided in the analysis repository README.</strong></li>
+<li><strong>Your package should work, and be able to be installed by following the instructions provided in the package repository README.</strong></li>
 <li>You should use proper grammar and full sentences in your README. Point form may occur, but should be less than 10% of your written documents.</li>
 <li>R code should follow the <a href="https://style.tidyverse.org/">tidyverse style guide</a>, and Python code should follow the <a href="https://black.readthedocs.io/en/stable/the_black_code_style/index.html">black style guide</a> for Python)</li>
 </ul>
