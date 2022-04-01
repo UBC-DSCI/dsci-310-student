@@ -1,0 +1,54 @@
+---
+title: "Peer review"
+descriptions: |
+    Constructively reviewing data analysis projects
+output:
+  distill::distill_article:
+    toc: true
+---
+
+
+## Constructively reviewing data analysis projects
+
+In this assignment, you will get to practice peer review of a data analysis project 
+by reviewing a data analysis project created by your classmates.
+You will be writing your review in an issue in [this repository](https://github.com/DSCI-310/data-analysis-review-2021). 
+You will be evaluated on the thoughtfullness and usefullness of your feedback in the review.
+
+### Submission instructions
+
+In the textbox provided for this assignment on Canvas,
+you must submit link to this issue containing your peer review to the "Peer review" assignment on Canvas 
+so that the TA can find your review easily.
+
+### Peer review instructions 
+
+- Once an issue is assigned to you, you can start your review. 
+You can view the project number you were assigned by searching the issues in [this repository](https://github.com/DSCI-310/data-analysis-review-2021/issues)
+for your GitHub username. You should have also received a GitHub notification or email about this assignment.
+- Using the review checklist linked to below, review the data analysis project assigned to you and write your comprehensive review. 
+    - [data analysis checklist](https://raw.githubusercontent.com/UBC-MDS/data-analysis-review-checklist/main/data-analysis-review-checklist.md) 
+- Other than checking the boxes in the template, we ask you to give at least 3 pieces of constructive feedback in the `Review Comments` section. 
+It is OK to have some overlap with the other people reviewing the data analysis project, but there should be **at least 2 points of constructive feedback unique to each review**. 
+
+### Some guidance when you write your reviews
+
+- Be concrete and specific: support your claims with evidence: provide an example or point to specific things when you write comments.
+
+- Be empathetic: when you write feedback, try to put yourself at the receiving end and think about what feedback would have been useful for you.
+
+- Be Constructive: Do not use evaluative or judgmental language; instead be constructive and help them build on their strengths.
+
+- Tone: Don't be mean. A good test to determine whether you are being mean or not is putting yourself or a close friend at the receiving end or imagining whether you can say it to them in a face-to-face conversation.
+
+## Rubric 
+
+This assignment will be graded on the quality of your peer review as follows:
+
+|Grade | Description |
+|------|-------------|
+| 100% | The review check boxes were completed and three pieces of constructive feedback was given in the "Review Comments" section. Two or more of these were unique. |
+| 75%  | The review check boxes were completed and three pieces of constructive feedback was given in the "Review Comments" section. Only one of these were unique. |
+| 50%  | The review check boxes were completed and constructive feedback was given in the "Review Comments" section. However, none of these were unique. |
+| 25%  | Only the review check boxes were completed. No constructive feedback was given in the "Review Comments" section. |
+| 0%   | The review was not attempted. |
