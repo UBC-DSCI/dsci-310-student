@@ -40,7 +40,7 @@ that lives inside a public repository on GitHub.com.
 
 Read through, 
 and follow all of the promts in the
-[How to package a Python](https://r-pkgs.org/whole-game.html) 
+[How to package a Python](https://py-pkgs.org/03-how-to-package-a-python) 
 chapter of the Python Packages book.
 At the end of this chapter, you will have created a toy Python package
 that lives inside a public repository on GitHub.com.
