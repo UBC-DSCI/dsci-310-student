@@ -45,9 +45,10 @@ Use the following ratings:
 
 | Group member name | Preparation rating |
 |-------------------|--------------------|
-|                   |                    |
-|                   |                    |
-|                   |                    |
+|   Elaine Zhou     |       4            |
+|   Jossie Jiang    |       4            |
+|   Swakhar Poddar  |       4            |
+|    Weihao Sun     |       4            |
 
 ## 2. Participation & communication
 
@@ -58,9 +59,10 @@ Use the following ratings:
 
 | Group member name | Participation & communication rating |
 |-------------------|--------------------------------------|
-|                   |                                      |
-|                   |                                      |
-|                   |                                      |
+|  Elaine Zhou      |               4                      |
+|   Jossie Jiang    |               4                      |
+|  Swakhar Poddar   |               4                      |
+|   Weihao Sun      |               4                      |
 
 ## 3. Helps group excel
 
@@ -72,9 +74,10 @@ Use the following ratings:
 
 | Group member name | Helps group excel rating |
 |-------------------|--------------------------|
-|                   |                          |
-|                   |                          |
-|                   |                          |
+|   Elaine Zhou     |            4             |
+|   Jossie Jiang    |            4             |
+|   Swakhar Poddar  |            4             |
+|    Weihao Sun     |            4             |
 
 ## 4. Team player (cooperation)
 
@@ -86,9 +89,10 @@ Use the following ratings:
 
 | Group member name | Team player (cooperation) rating |
 |-------------------|----------------------------------|
-|                   |                                  |
-|                   |                                  |
-|                   |                                  |
+|    Elaine Zhou    |               4                  |
+|  Jossie Jiang     |               4                  |
+|  Swakhar Poddar   |               4                  |
+|    Weihao Sun     |               4                  |
 
 Below,
 briefly describe the specific contributions each team member
@@ -102,6 +106,40 @@ comment on the following areas:
       That is, what sort of things did you do to contribute to the evolution of the project?
     - What were the roles of others in your group?
 - What went well and poorly throughout the team project experience?
+
+Elaine:
+- documentation of the project and the package
+- Dockerfile
+- wording of the analysis
+- function line_plot and its test cases
+- Rmarkdown of the project
+- address feedback of milestones
+
+Jossie Jiang:
+- introduction part of the analysis
+- revise README.md for the project and the package
+- address feedback of milestones
+- write part of train_and_predict_model
+- write makefile and Jbook 
+
+Swakhar Poddar:
+- model the data set
+- fix many bugs we encountered
+- improving train_and_predict_model function and the tests
+- write final_model and std_acc and pre_processing and their tests
+- build the package
+- write makefile and Jbook
+
+Weihao Sun:
+- visualization of the project
+- build the package
+- write para_optimize and its test cases
+- write scripts in results folder
+- documentation of the package
+- address some feedback of milestone1
+
+
+
 
 ## Submission instructions
 
