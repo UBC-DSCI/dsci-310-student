@@ -1,0 +1,209 @@
+---
+title: "Individual assignment 2"
+descriptions: |
+    Version control practice
+output:
+  distill::distill_article:
+    toc: true
+---
+
+## Instructions
+
+The purpose of this assignment is to start familiarizing yourselves with
+version control with Git and GitHub.
+
+There are two parts to this assignment: a short quiz that you can find
+on Canvas (open book, unlimited time) and a more hands-on activity where
+you will resolve a merge conflict in Git.
+
+### Activity
+
+For this portion of the assignment, we will create a toy repository with
+a merge conflict and learn how to resolve it. A merge conflict occurs
+when Git is unable to automatically determine how to incorporate new
+changes. This can can occur when two branches modify the same line, or
+when a file is deleted when someone else is changing it. You can read
+more about merge conflicts here: [Git merge
+conflicts](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts).
+
+First, we need to create a remote repository where the conflict will
+occur. Navigate to [github.com](https://github.com/) and click the `+`
+button at the top right of the screen, and then "New Repository". Name
+the repository **`dsci-310-assign2`**. **Keep all other settings as
+default, and ensure the repository is public.** Click on "Create
+repository".
+
+Now we will run a script that will create a new toy repository with a
+history where a merge conflict can occur and push it to our remote
+repository. The repository we are creating will have a structure like
+this:
+
+    |
+    * main: initial commit
+    |
+    |\  
+    | * branch_1: branch_1 commit 1
+    | |
+    | * branch_1: branch1 commit 2
+    | | 
+    |\ \
+    | * | branch_2: branch_2 commit 1
+    | | |
+    | * | branch_2: branch_2 commit 2
+    | | |
+
+We have two branches that branch off of main at the same point, and each
+branch has two commits.
+
+Open a new terminal and navigate to a directory where you want the
+repository to live. The easiest location would be in the same folder you
+have the `dsci-310-student` repository. Copy the URL towards the top of
+the screen in your new empty remote repository. It should look something
+like this:
+
+> <https://github.com/jbourak/dsci-310-assign2.git>
+
+Type
+
+    sh <relative_path_to_dsci-310-student>/src/create_conflict.sh <remote_repository_url>
+
+into your terminal and hit enter to execute the script. For example, if
+your working directory is `dsci-310` and it holds the `dsci-310-student`
+repository, your command might look something like this:
+
+    sh dsci-310-student/src/create_conflict.sh https://github.com/jbourak/dsci-310-assign2.git
+
+> If you get `permission denied` after attempting to run the script, run
+> `chmod +x dsci-310-student/src/create_conflict.sh` to add permissions
+> to execute this file.
+
+Refresh the remote repository on github. You should see that the remote
+repository is no longer empty and has two new branches. Go to the "Pull
+requests" tab and then click on "New pull request". Click the "compare"
+drop-down and choose `conflict_branch_1`. You can see that Github lets
+you know that "These branches can be automatically merged." Click on
+"Create pull request". Here you would usually add more detailed
+information about your pull request, but we don't need to do that here,
+so just click on "Create pull request" again. Finally, click on "Merge
+pull request" and then "Confirm merge".
+
+Go to the "Pull requests" tab and then click on "New pull request"
+again. Click the "compare" drop-down but this time choose
+`conflict_branch_2`. You will see that the branches can't be merged
+automatically, but you can still create the pull request. Click on
+"Create pull request" and then again on "Create pull request."
+
+#### Your task:
+
+Resolve the merge conflict and merge `conflict_branch_2` into `main`
+such that the README.md file reads as:
+
+    # DSCI 310 Individual Assignment 2
+    Changes to branch_2 commit 1
+    Changes to branch_1 commit 2
+
+The resulting structure would look something like this
+
+    |
+    * main: initial commit
+    |
+    |\  
+    | * branch_1: branch_1 commit 1
+    | |
+    | * conflict_branch_1: branch_1 commit 2
+    | | 
+    |\ \
+    | * | conflict_branch_2: branch_2 commit 1
+    | | |
+    | * | conflict_branch_2: branch_2 commit 2
+    | | |
+    | |/
+    |/|
+    * | merge PR #1 from branch_1 into main
+    | |
+    |/
+    * merge PR #2 from branch_2 into main
+    |  (merge conflict occurs here)
+    |
+
+Feel free to resolve the conflict locally or by using the web editor,
+but we'd recommend resolving it locally to get used to the process (it
+is generally easier to resolve the conflicts locally if the merge
+conflict is more complicated).
+
+When you are done, submit the **NAME OF YOUR RESPOSITORY** on Canvas
+without spaces or extra characters. For example, `dsci-310-assign2`.
+
+### Quiz
+
+(to be posted on canvas)
+
+1.  Which Git command(s) below would you need to use to snapshot new
+    changes you made on your local computer to a project that is already
+    under version control, so that those changes would be added to the
+    history of the local version control repository? Select all that
+    apply.
+
+-   add
+-   clone
+-   commit
+-   pull
+-   push
+
+2.  Complete the following statement: > Git \_\_\_\_\_\_ sends your
+    local commits to the \_\_\_\_\_\_ repository.
+
+-   push; main
+-   pull; remote
+-   push; remote
+-   pull; main
+
+3.  Complete the following statement. Assume you are currently working
+    on a branch named `b1`, which branches directly off of the `main`
+    branch: > Git pull merges commits from \_\_\_\_\_\_ into
+    \_\_\_\_\_\_.
+
+-   the `main` branch; the current branch
+-   the remote repository; the local repository
+-   the current branch; the `main` branch
+-   the local repository; the remote repository
+
+4.  Complete the following statement. > Git pull is a combination of two
+    commands: git \_\_\_\_\_\_ and git merge.
+
+-   fetch
+-   remote
+-   push
+-   commit
+
+5.  Complete the following statement. > Git clone is like \_\_\_\_\_ an
+    existing remote repository to \_\_\_\_\_\_.
+
+-   copying; another remote repository
+-   copying; a local repository
+-   uploading; GitHub
+-   uploading; a local repository
+
+6.  When working locally on a project that is under version control, at
+    a minimum how often should you push commits to your remote version
+    control repository on GitHub.com?
+
+-   about every 15 minutes
+-   at the end of every work session
+-   2-3 times per week
+-   shortly before the deliverable deadline
+
+7.  What are some benefits of using a branch-pull-request workflow
+    instead of committing each change directly to the `main` branch?
+    Select all that apply.
+
+-   It makes it easy to review a co-workers code.
+-   It makes it easy for multiple people to work on the project the same
+    time as branches can be independent of each other.
+-   Branches provide a safe environment to develop new features without
+    worrying about breaking the code.
+-   This workflow is useful when working in a team, but we shouldn't use
+    it when working alone.
+-   Even when working alone, it helps keep your progress
+    compartmentalized so you can work on multiple features at once
+    without them conflicting with each other.
