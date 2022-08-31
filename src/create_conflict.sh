@@ -30,8 +30,8 @@ echo "Changes to branch_2 commit 2" >> README.md
 git add README.md
 git commit -m "branch_2 commit 2"
 
-git push origin branch_2
 git push origin branch_1
+git push origin branch_2
 
 git branch --set-upstream-to=origin/main main
 

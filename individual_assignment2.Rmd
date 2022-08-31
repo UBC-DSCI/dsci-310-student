@@ -21,19 +21,12 @@ First, we need to create a remote repository where the conflict will occur. Navi
 
 Now we will run a script that will create a new toy repository with a history where a merge conflict can occur and push it to our remote repository. The repository we are creating will have a structure like this:
 
-    |
-    * main: initial commit
-    |
-    |\  
-    | * branch_1: branch_1 commit 1
-    | |
-    | * branch_1: branch1 commit 2
-    | | 
-    |\ \
-    | * | branch_2: branch_2 commit 1
-    | | |
-    | * | branch_2: branch_2 commit 2
-    | | |
+    * 24c02c2 (origin/branch_1, branch_1) branch_1 commit 2
+    * bb90dde branch_1 commit 1
+    | * d0ace27 (HEAD -> branch_2, origin/branch_2) branch_2 commit 2
+    | * b79b3b7 branch_2 commit 1
+    |/
+    * 8252119 (origin/main, main) Changes to main
 
 We have two branches that branch off of main at the same point, and each branch has two commits.
 
@@ -65,29 +58,21 @@ Resolve the merge conflict (by merging `main` into `branch_2`) and then merge `b
 
 The resulting structure of the repository should look something like this:
 
-    |
-    * main: initial commit
-    |
-    |\  
-    | * branch_1: branch_1 commit 1
-    | |
-    | * branch_1: branch_1 commit 2
-    | | 
-    |\ \
-    | * | branch_2: branch_2 commit 1
-    | | |
-    | * | branch_2: branch_2 commit 2
-    | | |
+    *   5382ad7 (HEAD -> main, origin/main) Merge pull request #2 from jbourak/branch_2
+    |\
+    | *   747070d (origin/branch_2) Merge branch 'main' into branch_2
+    | |\
     | |/
     |/|
-    * | merge PR #1 from branch_1 into main
-    |\|
-    | * merge main into branch_2 (this resolves the merge conflict)
-    | |
+    * |   6a7034e Merge pull request #1 from jbourak/branch_1
+    |\ \
+    | * | 24c02c2 (origin/branch_1, branch_1) branch_1 commit 2
+    | * | bb90dde branch_1 commit 1
+    |/ /
+    | * d0ace27 (branch_2) branch_2 commit 2
+    | * b79b3b7 branch_2 commit 1
     |/
-    * merge PR #2 from branch_2 into main
-    | 
-    |
+    * 8252119 Changes to main
 
 Feel free to resolve the conflict locally or by using the web editor, but we'd recommend resolving it locally to get used to the process (it is generally easier to resolve the conflicts locally if the merge conflict is more complicated).
 
