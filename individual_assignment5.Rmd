@@ -11,48 +11,52 @@ output:
 
 The purpose of this assignment is to ensure that everyone 
 gains hands-on practice creating software packages in R. 
-This assignment also contains an optional added challenge 
-to gain hands-on practice creating software packages in Python as well. 
-If students complete the optional challenge, they get a 10% bonus mark on this assignment (so the highest possible mark is 110%).
 
 ### Submission instructions
 
 In the textbox provided for this assignment on Canvas,
-you must submit: 
-
-1. A link to the GitHub.com repository containing the R package 
+you must submit a link to the GitHub.com repository containing the R package 
 that you create for this assignment.
 
-2. (optional) A note stating that you did the optional/bonus component, 
-and if so, a link to the GitHub.com repository containing the Python package 
-that you created for the optional/bonus component of this assigment.
-
-### Exercise instructions - Create an R Package (required)
+### Exercise instructions - Create an R Package
 
 Read through, 
-and follow all of the promts in 
+and follow all of the prompts in 
 [The whole game](https://r-pkgs.org/whole-game.html) 
 chapter of the R Packages book.
 At the end of this chapter, you will have created a toy R package
 that lives inside a public repository on GitHub.com.
 
-### Exercise instructions - Create a Python Package (optional/bonus)
+To ensure your package is working, set your working directory to be directly
+inside the repository containing your package and then call
+`devtools::load_all()`. If everything is correct, you should now be able
+to call `str_split_one()`!
 
-Read through, 
-and follow all of the promts in the
-[How to package a Python](https://py-pkgs.org/03-how-to-package-a-python) 
-chapter of the Python Packages book.
-At the end of this chapter, you will have created a toy Python package
-that lives inside a public repository on GitHub.com.
+### Exercise instructions - Add a new R function to your package
 
-## Rubric 
+Now we are going to add a second function to this package.
+**Your grade will depend on the correctness of this function.**
+Here are the specifications for the function you must add:
 
-This assignment will be graded for completion as follows:
-
-|Grade | Description |
-|------|-------------|
-| 110% | A working toy R package, and a working toy Python package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) chapter of the R Packages book, and the [How to package a Python](https://r-pkgs.org/whole-game.html) chapter of the Python Packages book, respectively. |
-| 100% | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) chapter of the R Packages book.  |
-| 75%  | A toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) chapter of the R Packages book however there are 1-2 aspects missing, or completed incorrectly, that affect the packages functionality or documentation (i.e., it does not fully work as expected). |
-| 50%  | A toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) chapter of the R Packages book however there are 3 or more aspects missing, or completed incorrectly, that affect the packages functionality or documentation (i.e., it does not fully work as expected).  |
-| 0%   | The assignment was not attempted. |
+  #' Replace ALL instances of "foo" with "bar"
+  #'
+  #' @param string A character vector.
+  #'
+  #' @return A character vector.
+  #' @export
+  #'
+  #' @examples
+  #' x <- "foo"
+  #' str_replace_all_foo(x)
+  #'
+  #' y <- c("foo", "bar")
+  #' str_replace_all_foo(y)
+  
+Create a new file in the R directory of your package named 
+`str_replace_all_foo.R`
+and copy and paste the specification above. Implement the function according
+to the specification. Feel free to use any function inside the
+[`stringr`](https://stringr.tidyverse.org/) package in your implementation.
+You should also add some tests for your new function inside `tests/testthat`.
+When you are done, make sure you run `check()` to ensure your tests pass and
+the package is working properly.
