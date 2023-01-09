@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -787,6 +788,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1028,10 +1030,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1863,9 +1861,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1877,6 +1887,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1976,6 +2011,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1998,7 +2035,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2379,7 +2416,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2440,23 +2477,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#instructions">Instructions</a>
+<li><a href="#instructions" id="toc-instructions">Instructions</a>
 <ul>
-<li><a href="#submission-instructions">Submission instructions</a></li>
-<li><a href="#exercise-instructions---r-markdown-required">Exercise instructions - R Markdown (required)</a></li>
-<li><a href="#exercise-instructions---jupyter-book-optionalbonus">Exercise instructions - Jupyter book (optional/bonus)</a></li>
+<li><a href="#submission-instructions" id="toc-submission-instructions">Submission instructions</a></li>
+<li><a href="#exercise-instructions---r-markdown-required" id="toc-exercise-instructions---r-markdown-required">Exercise instructions - R Markdown (required)</a></li>
+<li><a href="#exercise-instructions---jupyter-book-optionalbonus" id="toc-exercise-instructions---jupyter-book-optionalbonus">Exercise instructions - Jupyter book (optional/bonus)</a></li>
 </ul></li>
-<li><a href="#rubric">Rubric</a></li>
+<li><a href="#rubric" id="toc-rubric">Rubric</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="instructions">Instructions</h2>
-<p>The purpose of this assignment is to ensure that everyone gains hands-on practice on creating reproducible reports in R Markdown. This assignment also contains an optional added challenge to gain practice with Jupyter book as well. If students complete the optional challenge, they get a 10% bonus mark on this assignment (so the highest possible mark is 110%).</p>
+<p>The purpose of this assignment is to ensure that everyone gains hands-on practice on creating reproducible reports in R Markdown.
+This assignment also contains an optional added challenge to gain practice with Jupyter book as well.
+If students complete the optional challenge, they get a 10% bonus mark on this assignment (so the highest possible mark is 110%).</p>
 <p>Throughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.</p>
 <p>But are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process. Imagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…</p>
 <p>This is where R Markdown and Jupyter Books can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this worksheet, you will start to familiarize yourself with both R Markdown and Jupyter Books, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences.</p>
 <h3 id="submission-instructions">Submission instructions</h3>
-<p>In the textbox provided for this assignment on Canvas, you must submit:</p>
+<p>In the textbox provided for this assignment on Canvas,
+you must submit:</p>
 <ol type="1">
 <li><p>A link to the GitHub.com repository that you create for this assignment.</p></li>
 <li><p>(optional) A note stating that you did the optional/bonus component</p></li>
@@ -2464,18 +2504,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="exercise-instructions---r-markdown-required">Exercise instructions - R Markdown (required)</h3>
 <ol type="1">
 <li><p>Create a copy of <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports">this template repository</a> on GitHub.com under your personal username.</p></li>
-<li><p>Get familiar with the repository (you can ignore the <code>doc/jbook_example</code> directory if you are not completing the optional part of the assignment). Inside the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports">template repository</a>, there are several directories and files. Here is a quick rundown of each:</p></li>
+<li><p>Get familiar with the repository (you can ignore the <code>doc/jbook_example</code> directory if you are not completing the optional part of the assignment).
+Inside the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports">template repository</a>, there are several directories and files. Here is a quick rundown of each:</p></li>
 </ol>
 <ul>
 <li><code>data</code>: contains data used in the analysis <strong>(do not edit)</strong></li>
 <li><code>doc/rmd_example</code>: contains the R Markdown version of the analysis
 <ul>
 <li><code>references.bib</code>: BibTeX references file for the report <strong>(do not edit)</strong></li>
-<li><code>rmd_example.rmd</code>: R Markdown containing the contents of the report and its configuration <strong>(incomplete - you will need to edit this)</strong></li>
+<li><code>rmd_example.rmd</code>: R Markdown containing the contents of the report and its
+configuration <strong>(incomplete - you will need to edit this)</strong></li>
 </ul></li>
 <li><code>makefile</code>: declares commands used to build the Jupyter Book and RMD report <strong>(do not edit</strong>)</li>
 <li><code>results</code>: output of the script in <code>source</code></li>
-<li><code>source/generate_figures.R</code>: a script that performs the analysis and outputs various plots and a table that are to be used in the report <strong>(do not edit)</strong></li>
+<li><code>source/generate_figures.R</code>: a script that performs the analysis and outputs
+various plots and a table that are to be used in the report <strong>(do not edit)</strong></li>
 </ul>
 <ol start="3" type="1">
 <li>Edit <code>doc/rmd_example/rmd_example.rmd</code> so that:</li>
@@ -2493,36 +2536,77 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ol>
 <h3 id="exercise-instructions---jupyter-book-optionalbonus">Exercise instructions - Jupyter book (optional/bonus)</h3>
 <h4 id="introduction-to-jupyter-book">Introduction to Jupyter book</h4>
-<p>A Jupyter Book has a similar structure to an R Markdown document, but in more of a Jupyter Notebook style that you are used to. In fact, a Jupyter Book <em>contains</em> one or more Jupyter Notebooks, in addition to various files that are used for configuration. A Jupyter Book has three main components:</p>
+<p>A Jupyter Book has a similar structure to an R Markdown document,
+but in more of a Jupyter Notebook style that you are used to.
+In fact, a Jupyter Book <em>contains</em> one or more Jupyter Notebooks,
+in addition to various files that are used for configuration.
+A Jupyter Book has three main components:</p>
 <ol type="1">
 <li>A configuration file, <code>_config.yml</code></li>
 <li>A table of contents file, <code>_toc.yml</code></li>
-<li>The content (typically Jupyter Notebooks with Markdown and R code chunks, but can include other file types as well)</li>
+<li>The content (typically Jupyter Notebooks with Markdown and
+R code chunks, but can include other file types as well)</li>
 </ol>
-<p>The configuration file, <code>_config.yml</code>, allows you to define metadata for your book, similar to how you would at the start of an R Markdown document. In fact, the syntax here is identical: the YAML syntax is used, and indentation matters. Here is an example of a simple <code>_config.yml</code> file:</p>
+<p>The configuration file, <code>_config.yml</code>, allows you to define
+metadata for your book, similar to how you would at the start
+of an R Markdown document.
+In fact, the syntax here is identical: the YAML syntax is used,
+and indentation matters.
+Here is an example of a simple <code>_config.yml</code> file:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Example Jupyter Book&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Your Name&quot;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">execute_notebooks</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;force&quot;</span></span></code></pre></div>
-<p>Again, this configuration file is quite simple. Note that we specify that we want to <code>force</code> all Jupyter Notebooks that make up the content of the book to run.</p>
-<p>The table of contents file, <code>_toc.yml</code>, simply points to the files that contain the content of your Jupyter Book. The table of contents in a Jupyter Book is a bit more complicated than a single R Markdown document, as you can split your book into more than one Jupyter Notebook (or other file types) while <em>also</em> having headers and sub-headers inside those files. Nonetheless, here is a very simple table of contents file:</p>
+<p>Again, this configuration file is quite simple. Note that we specify
+that we want to <code>force</code> all Jupyter Notebooks that make up the content
+of the book to run.</p>
+<p>The table of contents file, <code>_toc.yml</code>, simply points to the files
+that contain the content of your Jupyter Book. The table of contents
+in a Jupyter Book is a bit more complicated than a single R Markdown
+document, as you can split your book into more than one Jupyter
+Notebook (or other file types) while <em>also</em> having headers and
+sub-headers inside those files. Nonetheless, here is a very simple
+table of contents file:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">file</span><span class="kw">:</span><span class="at"> jupyter_notebook1</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">file</span><span class="kw">:</span><span class="at"> jupyter_notebook2</span></span></code></pre></div>
-<p>More detailed information about how files, chapters, sections, and headers correspond to the structure of a Jupyter Book can be found here: <a href="https://jupyterbook.org/structure/sections-headers.html#toc-structure">jupyterbook.org/structure/sections-headers</a>.</p>
-<p>Lastly, we have the content of the Jupyter Book. As mentioned previously, usually there are one or more Jupyter Notebooks that make up the content of a Jupyter Book, which you are already familiar with. There is nothing too interesting to mention here, other than the fact that, like an R Markdown document, the Jupyter Notebooks that make up the content of your book will not be identical to the final, rendered version of the Jupyter Book, as you will see while you complete the worksheet.</p>
-<p>A Jupyter Book is built through a simple command. Assuming you have a <code>_config.yml</code> file, a <code>_toc.yml</code> file, and one or more files which are being pointed to by the <code>_toc.yml</code> file, all inside a folder such as <code>book_name/</code>, you can build your Jupyter Book using</p>
+<p>More detailed information about how files, chapters, sections, and
+headers correspond to the structure of a Jupyter Book can be found
+here: <a href="https://jupyterbook.org/structure/sections-headers.html#toc-structure">jupyterbook.org/structure/sections-headers</a>.</p>
+<p>Lastly, we have the content of the Jupyter Book. As mentioned
+previously, usually there are one or more Jupyter Notebooks that
+make up the content of a Jupyter Book, which you are already
+familiar with.
+There is nothing too interesting to mention here,
+other than the fact that, like an R Markdown
+document, the Jupyter Notebooks that make up the content of your book
+will not be identical to the final, rendered version of the Jupyter
+Book, as you will see while you complete the worksheet.</p>
+<p>A Jupyter Book is built through a simple command. Assuming you
+have a <code>_config.yml</code> file, a <code>_toc.yml</code> file, and one or more files
+which are being pointed to by the <code>_toc.yml</code> file, all inside
+a folder such as <code>book_name/</code>, you can build your Jupyter Book
+using</p>
 <pre><code>jupyter-book build book_name/</code></pre>
-<p>if your current working directory is directly outside the <code>book_name/</code> folder.</p>
-<p>As mentioned previously, this is only a very brief introduction to Jupyter Books. Here is an additional resource which goes into much more detail, including an easy to follow guide on how to create your own first Jupyter Book: - <a href="https://jupyterbook.org/start/your-first-book.html">jupyter{book}.org: Create your first book</a></p>
+<p>if your current working directory is directly outside the
+<code>book_name/</code> folder.</p>
+<p>As mentioned previously, this is only a very brief introduction
+to Jupyter Books. Here is an additional resource which goes
+into much more detail, including an easy to follow guide on
+how to create your own first Jupyter Book:
+- <a href="https://jupyterbook.org/start/your-first-book.html">jupyter{book}.org: Create your first book</a></p>
 <h4 id="jupyter-book-instructions">Jupyter book instructions</h4>
 <ol type="1">
 <li><p>You can use the same copy of <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports">the template repository</a> on GitHub.com under your personal username that you used for the R Markdown part of the assignment.</p></li>
 <li><p>Get familiar with the <code>doc/jbook_example</code> directory, inside it there are several files, here is a quick rundown of each:</p></li>
 </ol>
 <ul>
-<li><code>doc/jbook_example</code>: contains the (incomplete) Jupyter Book version of the analysis
+<li><code>doc/jbook_example</code>: contains the (incomplete) Jupyter Book version of
+the analysis
 <ul>
-<li><code>_build</code>: contains files resulting from the Jupyter Book build process, the important files here are <code>html/index.html</code> and <code>latex/python.pdf</code> which are the HTML and PDF versions of the rendered Jupyter Book, respectively. These will only be present after rendering the book.</li>
+<li><code>_build</code>: contains files resulting from the Jupyter Book build process,
+the important files here are <code>html/index.html</code> and <code>latex/python.pdf</code>
+which are the HTML and PDF versions of the rendered Jupyter Book,
+respectively. These will only be present after rendering the book.</li>
 <li><code>_config.yml</code>: configuration file for the Jupyter Book <strong>(incomplete - you will need to edit this)</strong></li>
 <li><code>_toc.yml</code>: table of contents file for the Jupyter Book <strong>(do not edit)</strong></li>
 <li><code>jbook_example.ipynb</code>: Jupyter Notebook with contents of the report <strong>(incomplete - you will need to edit this)</strong></li>
@@ -2597,9 +2681,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>© Copyright 2022 <a href="https://www.tiffanytimbers.com/">Tiffany Timbers</a>.</p>
-<p>Software licensed under the <a href="https://spdx.org/licenses/MIT.html">MIT License</a>.</p>
-<p>Attribution: website theme was derived from the <a href="https://tidymodels.org">tidymodels.org</a> website theme (courtesy of <a href="https://desiree.rbind.io/">Desirée De Leon</a>).</p>
+<p>© Copyright 2022 <a href="https://www.tiffanytimbers.com/">Tiffany
+Timbers</a>.</p>
+<p>Software licensed under the
+<a href="https://spdx.org/licenses/MIT.html">MIT License</a>.</p>
+<p>Attribution: website theme was derived from the
+<a href="https://tidymodels.org">tidymodels.org</a> website theme
+(courtesy of <a href="https://desiree.rbind.io/">Desirée De
+Leon</a>).</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 

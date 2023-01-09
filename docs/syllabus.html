@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -787,6 +788,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1028,10 +1030,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1863,9 +1861,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1877,6 +1887,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1976,6 +2011,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1998,7 +2035,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2379,7 +2416,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2440,38 +2477,38 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#time-and-place">Time and place</a></li>
-<li><a href="#course-description">Course description</a></li>
-<li><a href="#textbook">Textbook</a></li>
-<li><a href="#hardware-software">Hardware &amp; software</a></li>
-<li><a href="#course-level-learning-outcomes">Course-level learning outcomes</a></li>
-<li><a href="#teaching-team">Teaching team</a></li>
-<li><a href="#assessment">Assessment</a>
+<li><a href="#time-and-place" id="toc-time-and-place">Time and place</a></li>
+<li><a href="#course-description" id="toc-course-description">Course description</a></li>
+<li><a href="#textbook" id="toc-textbook">Textbook</a></li>
+<li><a href="#hardware-software" id="toc-hardware-software">Hardware &amp; software</a></li>
+<li><a href="#course-level-learning-outcomes" id="toc-course-level-learning-outcomes">Course-level learning outcomes</a></li>
+<li><a href="#teaching-team" id="toc-teaching-team">Teaching team</a></li>
+<li><a href="#assessment" id="toc-assessment">Assessment</a>
 <ul>
-<li><a href="#course-breakdown">Course breakdown</a></li>
+<li><a href="#course-breakdown" id="toc-course-breakdown">Course breakdown</a></li>
 </ul></li>
-<li><a href="#schedule-at-a-glance">Schedule at a glance</a>
+<li><a href="#schedule-at-a-glance" id="toc-schedule-at-a-glance">Schedule at a glance</a>
 <ul>
-<li><a href="#assessment-schedule">Assessment schedule</a></li>
+<li><a href="#assessment-schedule" id="toc-assessment-schedule">Assessment schedule</a></li>
 </ul></li>
-<li><a href="#policies">Policies</a>
+<li><a href="#policies" id="toc-policies">Policies</a>
 <ul>
-<li><a href="#late-registration">Late registration</a></li>
-<li><a href="#late-assignments-mid-term-exam-absence">Late assignments / mid-term exam absence</a></li>
-<li><a href="#re-grading">Re-grading</a></li>
-<li><a href="#missed-final-exam">Missed final exam</a></li>
-<li><a href="#academic-concession-policy">Academic concession policy</a></li>
-<li><a href="#academic-integrity">Academic integrity</a></li>
-<li><a href="#plagiarism">Plagiarism</a></li>
+<li><a href="#late-registration" id="toc-late-registration">Late registration</a></li>
+<li><a href="#late-assignments-mid-term-exam-absence" id="toc-late-assignments-mid-term-exam-absence">Late assignments / mid-term exam absence</a></li>
+<li><a href="#re-grading" id="toc-re-grading">Re-grading</a></li>
+<li><a href="#missed-final-exam" id="toc-missed-final-exam">Missed final exam</a></li>
+<li><a href="#academic-concession-policy" id="toc-academic-concession-policy">Academic concession policy</a></li>
+<li><a href="#academic-integrity" id="toc-academic-integrity">Academic integrity</a></li>
+<li><a href="#plagiarism" id="toc-plagiarism">Plagiarism</a></li>
 </ul></li>
-<li><a href="#attribution">Attribution</a></li>
+<li><a href="#attribution" id="toc-attribution">Attribution</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="time-and-place">Time and place</h2>
 <ul>
-<li>Lecture Section 101: Online (Zoom), Tues/Thurs 09:00-10:30</li>
-<li>Tutorial Section T1A: <del>Online (Zoom)</del> <strong>In person</strong> <a href="https://learningspaces.ubc.ca/classrooms/orch-4074">ORCH 4074</a>, Fri 09:00-10:00</li>
+<li>Lecture Section 101: <a href="https://learningspaces.ubc.ca/classrooms/orch-4074">ORCH 4074</a>, Tues/Thurs 09:00-10:30</li>
+<li>Tutorial Section T1A: <a href="https://learningspaces.ubc.ca/classrooms/orch-3074">ORCH 3074</a>, Fri 09:00-10:00</li>
 </ul>
 <h2 id="course-description">Course description</h2>
 <p>Data science methods to automate the running and testing of code and analytic reports, manage data analysis software dependencies, package and deploy software for data analysis, and collaborate with others using version control.</p>
@@ -2489,19 +2526,33 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="https://py-pkgs.org/">Python packages</a></li>
 </ul>
 <h2 id="hardware-software">Hardware &amp; software</h2>
-<p>Students are required to bring a laptop to both lectures and tutorials. Students who do not own a laptop, chromebook, or tablet may be able to <a href="https://services.library.ubc.ca/computers-technology/technology-borrowing/">loan a laptop from the UBC library</a>.</p>
+<p>Students are required to bring a laptop to both lectures and tutorials. Students
+who do not own a laptop, chromebook, or tablet may be able to
+<a href="https://services.library.ubc.ca/computers-technology/technology-borrowing/">loan a laptop from the UBC library</a>.</p>
 <h2 id="course-level-learning-outcomes">Course-level learning outcomes</h2>
 <p>By the end of the course, students will be able to:</p>
 <ul>
-<li>Defend and justify the importance of creating data science workflows that are reproducible and trustworthy and the elements that go into such a workflow (e.g., writing clear, robust, accurate and reproducible code, managing and sharing compute environments, defined collaboration strategies, etc).</li>
-<li>Constructively criticize the workflows and data analysis of others in regards to its reproducibility and trustworthiness.</li>
-<li>Develop a data science project (including code and non-code documents such as reports) that uses reproducible and trustworthy workflows</li>
-<li>Demonstrate how to effectively share and collaborate on data science projects and software by creating robust code packages, using reproducible compute environments, and leveraging collaborative development tools.</li>
-<li>Defend and justify the benefit of, and employ automated testing regimes, continuous integration and continuous deployment for managing and maintaining data science projects and packages.</li>
-<li>Demonstrate strong communication, teamwork, and collaborative skills by working on a significant data science project with peers throughout the course.</li>
+<li>Defend and justify the importance of creating data science workflows that are
+reproducible and trustworthy and the elements that go into such a workflow (e.g.,
+writing clear, robust, accurate and reproducible code, managing and sharing compute
+environments, defined collaboration strategies, etc).</li>
+<li>Constructively criticize the workflows and data analysis of others in regards to its
+reproducibility and trustworthiness.</li>
+<li>Develop a data science project (including code and non-code documents such as
+reports) that uses reproducible and trustworthy workflows</li>
+<li>Demonstrate how to effectively share and collaborate on data science projects and
+software by creating robust code packages, using reproducible compute environments,
+and leveraging collaborative development tools.</li>
+<li>Defend and justify the benefit of, and employ automated testing regimes, continuous
+integration and continuous deployment for managing and maintaining data science
+projects and packages.</li>
+<li>Demonstrate strong communication, teamwork, and collaborative skills by working on
+a significant data science project with peers throughout the course.</li>
 </ul>
 <h2 id="teaching-team">Teaching team</h2>
-<p><em>Note that your TAs are students too; they may have class right before their office hours, and they may run a few minutes late. Please be patient!</em></p>
+<p><em>Note that your TAs are students too; they may have class
+right before their office hours, and they may run a few
+minutes late. Please be patient!</em></p>
 <table>
 <colgroup>
 <col style="width: 11%" />
@@ -2522,17 +2573,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tbody>
 <tr class="odd">
 <td>Instructor</td>
-<td>Tiffany Timbers</td>
-<td>tiffany.timbers[-at-]stat.ubc.ca</td>
-<td>Friday 15:30-16:30</td>
+<td>Daniel Chen</td>
+<td>daniel.chen[-at-]stat.ubc.ca</td>
+<td>Tuesday 8:00 AM - 9:00 AM</td>
 <td>Zoom</td>
 </tr>
 <tr class="even">
 <td>TA</td>
-<td>Giuseppe Tinti Tomio</td>
-<td>giuseppe.tomio[-at-]stat.ubc.ca</td>
-<td>Friday 10:00-11:00</td>
-<td><del>Zoom</del> ESB 1043</td>
+<td>Amy Kong</td>
+<td>—-</td>
+<td>Tuesday 10:30 AM - 11:30 AM</td>
+<td>Zoom</td>
+</tr>
+<tr class="odd">
+<td>TA</td>
+<td>Tony Liang</td>
+<td>—-</td>
+<td>Wednesday 3:00 PM- 4:00 PM</td>
+<td>Zoom</td>
+</tr>
+<tr class="even">
+<td>TA</td>
+<td>Zizhen Guo</td>
+<td>—-</td>
+<td>Thursday 1:00 PM - 2:00PM</td>
+<td>Zoom</td>
 </tr>
 </tbody>
 </table>
@@ -2727,6 +2792,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tbody>
 </table>
 <h3 id="assessment-schedule">Assessment schedule</h3>
+<p>In general, assignments will be due 11:59 PM on Saturdays</p>
 <table>
 <colgroup>
 <col style="width: 38%" />
@@ -2744,27 +2810,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tr class="odd">
 <td>Individual assignment 1</td>
 <td>Setting up your computer</td>
-<td>2022/01/22 18:00</td>
+<td>2022/01/21 23:59</td>
 </tr>
 <tr class="even">
 <td>GitHub username quiz</td>
 <td></td>
-<td>2022/01/22 18:00</td>
+<td>2022/01/21 23:59</td>
 </tr>
 <tr class="odd">
 <td>Individual assignment 2</td>
 <td>Version control practice</td>
-<td>2022/01/29 18:00</td>
+<td>2022/01/28 23:59</td>
 </tr>
 <tr class="even">
 <td>Individual assignment 3</td>
 <td>Dockerfile practice</td>
-<td>2022/02/05 18:00</td>
+<td>2022/02/04 23:59</td>
 </tr>
 <tr class="odd">
 <td>Milestone 1</td>
 <td>Question, data &amp; rough draft of analysis in one monolithic literate code document, reproducible environment (<code>full.ipynb</code>, <code>Dockerfile</code>, <code>docker-compose.yml</code>)</td>
-<td>2022/02/19 18:00</td>
+<td>2022/02/18 23:59</td>
 </tr>
 <tr class="even">
 <td>Mid-term exam</td>
@@ -2774,32 +2840,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tr class="odd">
 <td>Milestone 2</td>
 <td>functions abstracted to a file/module &amp; tests (<code>reduced.ipynb</code>, <code>.R</code> &amp; <code>test_*.R</code>, function documentation)</td>
-<td>2022/03/12 18:00</td>
+<td>2022/03/11 23:59</td>
 </tr>
 <tr class="even">
 <td>Individual assignment 4</td>
 <td>Reproducible reports practice</td>
-<td>2022/03/19 18:00</td>
+<td>2022/03/18 23:59</td>
 </tr>
 <tr class="odd">
 <td>Milestone 3</td>
 <td>literate code document broken into scripts and a report &amp; data analysis pipeline to stitch everything together (<code>.R</code> files &amp; Make pipeline, <code>bookdown</code> or <code>rticle</code> report)</td>
-<td>2022/03/26 18:00</td>
+<td>2022/03/25 23:59</td>
 </tr>
 <tr class="even">
 <td>Peer review</td>
 <td>review of another group’s project</td>
-<td>2022/04/02 18:00</td>
+<td>2022/04/01 23:59</td>
 </tr>
 <tr class="odd">
 <td>Individual assignment 5</td>
 <td>Packaging practice</td>
-<td>2022/04/02 18:00</td>
+<td>2022/04/01 23:59</td>
 </tr>
 <tr class="even">
 <td>Final project</td>
 <td>package &amp; CI (the full monty package - including docs)</td>
-<td>2022/04/09 18:00</td>
+<td>2022/04/08 23:59</td>
 </tr>
 <tr class="odd">
 <td>Team work</td>
@@ -2817,22 +2883,67 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="late-registration">Late registration</h3>
 <p>Students who register for the class late have 1 week from their registration date on Canvas to complete all prior assignments.</p>
 <h3 id="late-assignments-mid-term-exam-absence">Late assignments / mid-term exam absence</h3>
-<p>Students <strong>must be present</strong> at the invigilation venue (in class, on Zoom, examination centre, etc) to take the mid-term exam; otherwise they will be considered to have missed the mid-term exam and will be assigned a grade of zero.</p>
-<p>Students who will miss the mid-term exam <strong>must provide a self-declaration prior to the mid-term exam</strong> and make arrangements (e.g., schedule an oral make-up mid-term exam) with the Instructor. Failing to present a declaration within a reasonable timeframe before the mid-term exam will result in a grade of zero.</p>
-<p>A late submission is defined as any work submitted after the deadline. For a late submission, the student will receive a 75% scaling of their grade for the first occurrence, 50% scaling of their grade for the second occurrence, and will receive a grade of 0 for subsequent occurrences.</p>
-<p>Students who miss an assignment or quiz can request an academic concession. From the <a href="https://senate.ubc.ca/sites/senate.ubc.ca/files/downloads/20190515_V_135_Academic_Concession-Approved.pdf">UBC Senate policy on academic concession</a>, grounds for academic concession can be illness, conflicting responsibilities, or compassionate grounds. Examples of compassionate grounds, from the above policy, include “a traumatic event experienced by the student, a family member, or a close friend; an act of sexual assault or other sexual misconduct experienced by the student, a family member, or a close friend; a death in the family or of a close friend.”</p>
-<p>To request an academic concession, students should immediately email a completed and signed <a href="https://github.com/UBC-MDS/UBC-MDS.github.io/blob/master/img/Template%20-%20In-Term%20Academic%20Concessions%20Self%20Declaration.pdf?raw=1">academic concession form to the course Instructor</a>. Upon receiving the form, the Instructor will make a decision about how to proceed. Failure to present valid documentation may result in a failing grade.</p>
+<p>Students <strong>must be present</strong> at the invigilation venue (in class, on Zoom,
+examination centre, etc) to take the mid-term exam; otherwise they will be considered to
+have missed the mid-term exam and will be assigned a grade of zero.</p>
+<p>Students who will miss the mid-term exam <strong>must provide a self-declaration prior to the
+mid-term exam</strong> and make arrangements (e.g., schedule an oral make-up mid-term exam) with the
+Instructor. Failing to present a declaration within a reasonable timeframe
+before the mid-term exam will result in a grade of zero.</p>
+<p>A late submission is defined as any work submitted after the deadline.
+For a late submission, the student will receive a 75% scaling of their grade for the first occurrence,
+50% scaling of their grade for the second occurrence, and will receive a grade of 0 for subsequent occurrences.</p>
+<p>Students who miss an assignment or quiz can request an academic concession.
+From the <a href="https://senate.ubc.ca/sites/senate.ubc.ca/files/downloads/20190515_V_135_Academic_Concession-Approved.pdf">UBC Senate policy on academic concession</a>,
+grounds for academic concession can be illness,
+conflicting responsibilities, or compassionate grounds.
+Examples of compassionate grounds, from the above policy,
+include “a traumatic event experienced by the student, a family member, or a close friend;
+an act of sexual assault or other sexual misconduct experienced by the student,
+a family member, or a close friend; a death in the family or of a close friend.”</p>
+<p>To request an academic concession, students should immediately email a completed
+and signed
+<a href="https://github.com/UBC-MDS/UBC-MDS.github.io/blob/master/img/Template%20-%20In-Term%20Academic%20Concessions%20Self%20Declaration.pdf?raw=1">academic concession form to the course Instructor</a>.
+Upon receiving the form, the Instructor will make a decision about how to proceed.
+Failure to present valid documentation may result in a failing grade.</p>
 <h3 id="re-grading">Re-grading</h3>
-<p>If you have concerns about the way your work was graded, please contact the TA who graded it within one week of having the grade returned to you through Piazza. After this one-week window, we may deny your request for re-evaluation. Also, please keep in mind that your grade may go up or down as a result of re-grading.</p>
+<p>If you have concerns about the way your work was graded, please contact the TA
+who graded it within one week of having the grade returned to you through Piazza. After this
+one-week window, we may deny your request for re-evaluation. Also, please keep
+in mind that your grade may go up or down as a result of re-grading.</p>
 <h3 id="missed-final-exam">Missed final exam</h3>
-<p>Students who miss the final quiz must report to their faculty advising office within 72 hours of the missed exam, and must supply supporting documentation. Only your faculty advising office can grant deferred standing in a course. You must also notify your instructor prior to (if possible) or immediately after the exam. Your instructor will let you know when you are expected to write your deferred exam. Deferred exams will ONLY be provided to students who have applied for and received deferred standing from their faculty.</p>
+<p>Students who miss the final quiz must report to their faculty advising office
+within 72 hours of the missed exam, and must supply supporting documentation.
+Only your faculty advising office can grant deferred standing in a course. You
+must also notify your instructor prior to (if possible) or immediately after
+the exam. Your instructor will let you know when you are expected to write your
+deferred exam. Deferred exams will ONLY be provided to students who have
+applied for and received deferred standing from their faculty.</p>
 <h3 id="academic-concession-policy">Academic concession policy</h3>
-<p>Please see <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0">UBC’s concession policy</a> for detailed information on dealing with missed coursework, quizzes, and exams under circumstances of an acute and unanticipated nature.</p>
+<p>Please see <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0">UBC’s concession policy</a> for
+detailed information on dealing with missed coursework, quizzes, and exams
+under circumstances of an acute and unanticipated nature.</p>
 <h3 id="academic-integrity">Academic integrity</h3>
-<p>The academic enterprise is founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President’s Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.</p>
-<p>A more detailed description of academic integrity, including the University’s policies and procedures, may be found in the Academic Calendar at <a href="http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0" class="uri">http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0</a>.</p>
+<p>The academic enterprise is founded on honesty, civility, and integrity. As
+members of this enterprise, all students are expected to know, understand, and
+follow the codes of conduct regarding academic integrity. At the most basic
+level, this means submitting only original work done by you and acknowledging
+all sources of information or ideas and attributing them to others as required.
+This also means you should not cheat, copy, or mislead others about what is
+your work. Violations of academic integrity (i.e., misconduct) lead to the
+breakdown of the academic enterprise, and therefore serious consequences arise
+and harsh sanctions are imposed. For example, incidences of plagiarism or
+cheating may result in a mark of zero on the assignment or exam and more
+serious consequences may apply if the matter is referred to the President’s
+Advisory Committee on Student Discipline. Careful records are kept in order to
+monitor and prevent recurrences.</p>
+<p>A more detailed description of academic integrity, including the University’s
+policies and procedures, may be found in the Academic Calendar at
+<a href="http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0" class="uri">http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0</a>.</p>
 <h3 id="plagiarism">Plagiarism</h3>
-<p>Students must correctly cite any code or text that has been authored by someone else or by the student themselves for other assignments. Cases of plagiarism may include, but are not limited to:</p>
+<p>Students must correctly cite any code or text that has been authored by someone
+else or by the student themselves for other assignments. Cases of plagiarism
+may include, but are not limited to:</p>
 <ul>
 <li>the reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)</li>
 <li>the translation of an algorithm or a script from a language to another</li>
@@ -2859,9 +2970,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>© Copyright 2022 <a href="https://www.tiffanytimbers.com/">Tiffany Timbers</a>.</p>
-<p>Software licensed under the <a href="https://spdx.org/licenses/MIT.html">MIT License</a>.</p>
-<p>Attribution: website theme was derived from the <a href="https://tidymodels.org">tidymodels.org</a> website theme (courtesy of <a href="https://desiree.rbind.io/">Desirée De Leon</a>).</p>
+<p>© Copyright 2022 <a href="https://www.tiffanytimbers.com/">Tiffany
+Timbers</a>.</p>
+<p>Software licensed under the
+<a href="https://spdx.org/licenses/MIT.html">MIT License</a>.</p>
+<p>Attribution: website theme was derived from the
+<a href="https://tidymodels.org">tidymodels.org</a> website theme
+(courtesy of <a href="https://desiree.rbind.io/">Desirée De
+Leon</a>).</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 
