@@ -8,8 +8,8 @@ output:
 ---
 
 ## Time and place
-- Lecture Section 101: Online (Zoom), Tues/Thurs 09:00-10:30
-- Tutorial Section T1A: ~~Online (Zoom)~~ **In person** [ORCH 4074](https://learningspaces.ubc.ca/classrooms/orch-4074), Fri 09:00-10:00
+- Lecture Section 101: [ORCH 4074](https://learningspaces.ubc.ca/classrooms/orch-4074), Tues/Thurs 09:00-10:30
+- Tutorial Section T1A: [ORCH 3074](https://learningspaces.ubc.ca/classrooms/orch-3074), Fri 09:00-10:00
 
 ## Course description
 
@@ -67,8 +67,10 @@ minutes late. Please be patient!*
 
 | Position | Name  | Email | Office Hours | Office Location |
 |-------|-------|--------------|-----------------|----------------|
-| Instructor | Tiffany Timbers | tiffany.timbers[-at-]stat.ubc.ca | Friday 15:30-16:30 | Zoom |
-| TA | Giuseppe Tinti Tomio | giuseppe.tomio[-at-]stat.ubc.ca | Friday 10:00-11:00 | ~~Zoom~~ ESB 1043 |
+| Instructor | Daniel Chen | daniel.chen[-at-]stat.ubc.ca | Tuesday 8:00 AM - 9:00 AM | Zoom |
+| TA | Amy Kong | ---- | Tuesday 10:30 AM - 11:30 AM | Zoom |
+| TA | Tony Liang | ---- | Wednesday 3:00 PM- 4:00 PM | Zoom |
+| TA | Zizhen Guo | ---- | Thursday 1:00 PM - 2:00PM | Zoom |
 
 ## Assessment
 
@@ -107,20 +109,22 @@ minutes late. Please be patient!*
 
 ### Assessment schedule
 
+In general, assignments will be due 11:59 PM on Saturdays
+
 | Assessment            | Description | Due date |
 |--------------------|-----------------------|---------|
-| Individual assignment 1 | Setting up your computer | 2022/01/22 18:00 |
-| GitHub username quiz | | 2022/01/22 18:00 |
-| Individual assignment 2 | Version control practice | 2022/01/29 18:00 |
-| Individual assignment 3 | Dockerfile practice | 2022/02/05 18:00 |
-| Milestone 1    | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 2022/02/19 18:00 |
+| Individual assignment 1 | Setting up your computer | 2022/01/21 23:59 |
+| GitHub username quiz | | 2022/01/21 23:59 |
+| Individual assignment 2 | Version control practice | 2022/01/28 23:59 |
+| Individual assignment 3 | Dockerfile practice | 2022/02/04 23:59 |
+| Milestone 1    | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 2022/02/18 23:59 |
 | Mid-term exam | | 2022/03/04 09:00 |
-| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 2022/03/12 18:00  |
-| Individual assignment 4 | Reproducible reports practice | 2022/03/19 18:00 |
-| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2022/03/26 18:00 |
-| Peer review | review of another group's project | 2022/04/02 18:00 |
-| Individual assignment 5 | Packaging practice | 2022/04/02 18:00 |
-| Final project | package & CI (the full monty package - including docs) | 2022/04/09 18:00 |
+| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 2022/03/11 23:59  |
+| Individual assignment 4 | Reproducible reports practice | 2022/03/18 23:59 |
+| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2022/03/25 23:59 |
+| Peer review | review of another group's project | 2022/04/01 23:59 |
+| Individual assignment 5 | Packaging practice | 2022/04/01 23:59 |
+| Final project | package & CI (the full monty package - including docs) | 2022/04/08 23:59 |
 | Team work | Reflection of how the group worked together, as well as individual performance | 2022/04/09 11:59 |
 | Final exam | | TBD |
 
