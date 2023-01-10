@@ -93,19 +93,19 @@ minutes late. Please be patient!*
 
 | Week | Date     | Topic | Reading | Assessments due | Notes |
 |------|----------|-------|---------|-----------------|-------|
-| 1    | 2022/01/10 | How do reproducible and trustworthy workflows impact data analysis? |  |  |  |
-| 2    | 2022/01/17 | Version control for transparency and collaboration | [Collaboration with version control](https://ubc-dsci.github.io/introduction-to-datascience/Getting-started-with-version-control.html) | Individual assignment 1 due & GitHub username quiz |  |
-| 3    | 2022/01/24 | Integrated development environments, filenames and data science project organization |  |  | Team assignment for group projects & drafting of team work contract |
-| 4    | 2022/01/31 | Managing dependencies using virtual environments |  | Individual assignment 2 due |  |
-| 5    | 2022/02/07 | Managing dependencies using containerization  |  | Individual assignment 3 due |  |
-| 6    | 2022/02/14 | Introduction to testing code for data science |  | Milestone 1 due |  |
-| 7    | 2022/02/21 | Reading Break | | | |
-| 8    | 2022/02/28 | Non-interactive scripts and data analysis pipelines |  | Mid-term exam |  |
-| 9    | 2022/03/07 | Reproducible reports |  | Milestone 2 due |  |
-| 10   | 2022/03/14 | Advanced version control workflows |  | Individual assignment 4 due |  |
-| 11   | 2022/03/21 | Packaging and documenting code |  | Milestone 3 due |  |
-| 12   | 2022/03/28 | Automated testing and continuous integration |  | Individual assignment 5 & Peer review due |  |
-| 13   | 2022/04/04 | Deploying and publishing packages,  copyright and licenses |  |  Final project & Team work reflection due | |
+| 1    | 2023/01/10 | How do reproducible and trustworthy workflows impact data analysis? |  |  |  |
+| 2    | 2023/01/17 | Version control for transparency and collaboration | [Collaboration with version control](https://ubc-dsci.github.io/introduction-to-datascience/Getting-started-with-version-control.html) | Individual assignment 1 due & GitHub username quiz |  |
+| 3    | 2023/01/24 | Integrated development environments, filenames and data science project organization |  |  | Team assignment for group projects & drafting of team work contract |
+| 4    | 2023/01/31 | Managing dependencies using virtual environments |  | Individual assignment 2 due |  |
+| 5    | 2023/02/07 | Managing dependencies using containerization  |  | Individual assignment 3 due |  |
+| 6    | 2023/02/14 | Introduction to testing code for data science |  | Milestone 1 due |  |
+| 7    | 2023/02/21 | Reading Break | | | |
+| 8    | 2023/02/28 | Non-interactive scripts and data analysis pipelines |  | Mid-term exam |  |
+| 9    | 2023/03/07 | Reproducible reports |  | Milestone 2 due |  |
+| 10   | 2023/03/14 | Advanced version control workflows |  | Individual assignment 4 due |  |
+| 11   | 2023/03/21 | Packaging and documenting code |  | Milestone 3 due |  |
+| 12   | 2023/03/28 | Automated testing and continuous integration |  | Individual assignment 5 & Peer review due |  |
+| 13   | 2023/04/04 | Deploying and publishing packages,  copyright and licenses |  |  Final project & Team work reflection due | |
 
 ### Assessment schedule
 
@@ -113,19 +113,19 @@ In general, assignments will be due 11:59 PM on Saturdays
 
 | Assessment            | Description | Due date |
 |--------------------|-----------------------|---------|
-| Individual assignment 1 | Setting up your computer | 2022/01/21 23:59 |
-| GitHub username quiz | | 2022/01/21 23:59 |
-| Individual assignment 2 | Version control practice | 2022/01/28 23:59 |
-| Individual assignment 3 | Dockerfile practice | 2022/02/04 23:59 |
-| Milestone 1    | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 2022/02/18 23:59 |
-| Mid-term exam | | 2022/03/04 09:00 |
-| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 2022/03/11 23:59  |
-| Individual assignment 4 | Reproducible reports practice | 2022/03/18 23:59 |
-| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2022/03/25 23:59 |
-| Peer review | review of another group's project | 2022/04/01 23:59 |
-| Individual assignment 5 | Packaging practice | 2022/04/01 23:59 |
-| Final project | package & CI (the full monty package - including docs) | 2022/04/08 23:59 |
-| Team work | Reflection of how the group worked together, as well as individual performance | 2022/04/09 11:59 |
+| Individual assignment 1 | Setting up your computer | 2023/01/21 23:59 |
+| GitHub username quiz | | 2023/01/21 23:59 |
+| Individual assignment 2 | Version control practice | 2023/01/28 23:59 |
+| Individual assignment 3 | Dockerfile practice | 2023/02/04 23:59 |
+| Milestone 1    | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 2023/02/18 23:59 |
+| Mid-term exam | | 2023/03/03 09:00 |
+| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 2023/03/11 23:59  |
+| Individual assignment 4 | Reproducible reports practice | 2023/03/18 23:59 |
+| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2023/03/25 23:59 |
+| Peer review | review of another group's project | 2023/04/01 23:59 |
+| Individual assignment 5 | Packaging practice | 2023/04/01 23:59 |
+| Final project | package & CI (the full monty package - including docs) | 2023/04/08 23:59 |
+| Team work | Reflection of how the group worked together, as well as individual performance | 2023/04/09 11:59 |
 | Final exam | | TBD |
 
 ## Policies
@@ -164,7 +164,7 @@ Failure to present valid documentation may result in a failing grade.
 
 ### Re-grading
 If you have concerns about the way your work was graded, please contact the TA
-who graded it within one week of having the grade returned to you through Piazza. After this
+who graded it within one week of having the grade returned to you through Slack. After this
 one-week window, we may deny your request for re-evaluation. Also, please keep
 in mind that your grade may go up or down as a result of re-grading.
 
