@@ -67,9 +67,9 @@ minutes late. Please be patient!*
 
 | Position | Name  | Email | Office Hours | Office Location |
 |-------|-------|--------------|-----------------|----------------|
-| Instructor | Daniel Chen | daniel.chen[-at-]stat.ubc.ca | Tuesday 8:00 AM - 9:00 AM | Zoom |
+| Instructor | Daniel Chen | daniel.chen[-at-]stat.ubc.ca | Tuesday 8:00 AM - 9:00 AM | ORCH 4074 |
+| TA | Tony Liang | ---- | Monday 3:00 PM- 4:00 PM | Zoom |
 | TA | Amy Kong | ---- | Tuesday 10:30 AM - 11:30 AM | Zoom |
-| TA | Tony Liang | ---- | Wednesday 3:00 PM- 4:00 PM | Zoom |
 | TA | Zizhen Guo | ---- | Thursday 1:00 PM - 2:00PM | Zoom |
 
 ## Assessment
@@ -113,6 +113,7 @@ In general, assignments will be due 11:59 PM on Saturdays
 
 | Assessment            | Description | Due date |
 |--------------------|-----------------------|---------|
+| Individual assignment 0 | Computer Setup | 2023/01/12 |
 | Individual assignment 1 | Setting up your computer | 2023/01/21 23:59 |
 | GitHub username quiz | | 2023/01/21 23:59 |
 | Individual assignment 2 | Version control practice | 2023/01/28 23:59 |
