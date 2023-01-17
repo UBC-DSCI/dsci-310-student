@@ -146,7 +146,7 @@ if ! [ -x "$(command -v conda)" ]; then  # Check that conda exists as an executa
     echo "In order to do this after the installation process," >> check_setup.log
     echo "first run 'source <path to conda>/bin/activate' and then run 'conda init'." >> check_setup.log
 else
-    py_pkgs=(pandas=1 pyppeteer=0 nbconvert=6 jupyterlab=3 jupyterlab-git=0 jupytext=1 jupyterlab-spellchecker=0)
+    py_pkgs=(pandas=1 pyppeteer=1 nbconvert=7 jupyterlab=3 jupyterlab-git=0 jupytext=1 jupyterlab-spellchecker=0)
     # installed_py_pkgs=$(pip freeze)
     installed_py_pkgs=$(conda list | tail -n +4 | tr -s " " "=" | cut -d "=" -f -2)
     for py_pkg in ${py_pkgs[@]}; do
@@ -245,7 +245,7 @@ echo "## R packages" >> check_setup.log
 if ! [ -x "$(command -v R)" ]; then  # Check that R exists as an executable program
     echo "Please install 'R' to check R package versions." >> check_setup.log
 else
-    r_pkgs=(cowplot=1 GGally=2 kknn=1 scales=1 tidyverse=1 tidymodels=0 tinytex=0)
+    r_pkgs=(cowplot=1 GGally=2 kknn=1 scales=1 tidyverse=1 tidymodels=1 tinytex=0)
     installed_r_pkgs=$(R -q -e "print(format(as.data.frame(installed.packages()[,c('Package', 'Version')]), justify='left'), row.names=FALSE)" | grep -v "^>" | tail -n +2 | sed 's/^ //;s/ *$//' | tr -s ' ' '=')
     for r_pkg in ${r_pkgs[@]}; do
         if ! $(grep -iq "$r_pkg" <<< $installed_r_pkgs); then
