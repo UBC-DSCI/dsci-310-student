@@ -77,7 +77,7 @@ if [[ "$(uname)" == 'Darwin' ]]; then
     fi
 
     # Remove rstudio from the programs to be tested using the normal --version test
-    sys_progs=(R=4.* python=3.* conda=4.* bash=3.* git=2.* make=3.* latex=3.* tlmgr=5.* docker=20.* code=1.*)
+    sys_progs=(R=4.* python=3.* conda=22.* bash=3.* git=2.* make=3.* latex=3.* tlmgr=5.* docker=20.* code=1.*)
 # Rstudio is not on PATH in windows
 elif [[ "$OSTYPE" == 'msys' ]]; then
     # Rstudio on windows does not accept the --version flag when run interactively
