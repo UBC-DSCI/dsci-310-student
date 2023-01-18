@@ -37,7 +37,7 @@ if [[ "$(uname)" == 'Linux' ]]; then
 elif [[ "$(uname)" == 'Darwin' ]]; then
     sw_vers >> check_setup.log
     file_browser="open"
-    if ! $(sw_vers | grep -q -E "11.[4-6]|12.[0-9]"); then
+    if ! $(sw_vers | grep -q -E "11.[4-6]|12.[0-9]|13.[0-9]"); then
         echo '' >> check_setup.log
         echo "MISSING Big Sur or above (version 11.4.x and above)" >> check_setup.log
     fi
