@@ -68,9 +68,9 @@ minutes late. Please be patient!*
 | Position | Name  | Email | Office Hours | Office Location |
 |-------|-------|--------------|-----------------|----------------|
 | Instructor | Daniel Chen | daniel.chen[-at-]stat.ubc.ca | Tuesday 8:00 AM - 9:00 AM | ORCH 4074 |
-| TA | Tony Liang | ---- | Monday 3:00 PM- 4:00 PM | Zoom |
-| TA | Amy Kong | ---- | Tuesday 10:30 AM - 11:30 AM | Zoom |
-| TA | Zizhen Guo | ---- | Thursday 1:00 PM - 2:00PM | Zoom |
+| TA | Tony Liang | ---- | Monday 3:30 PM- 4:30 PM | SCRF 200 |
+| TA | Amy Kong | ---- | Tuesday 10:30 AM - 11:30 AM | ORCH 4074 |
+| TA | Zizhen Guo | ---- | Thursday 1:00 PM - 2:00PM | ORCH 4062 |
 
 ## Assessment
 
