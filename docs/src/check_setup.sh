@@ -37,7 +37,7 @@ if [[ "$(uname)" == 'Linux' ]]; then
 elif [[ "$(uname)" == 'Darwin' ]]; then
     sw_vers >> check_setup.log
     file_browser="open"
-    if ! $(sw_vers | grep -q -E "11.[4-6]|12.[0-9]"); then
+    if ! $(sw_vers | grep -q -E "11.[4-6]|12.[0-9]|13.[0-9]"); then
         echo '' >> check_setup.log
         echo "MISSING Big Sur or above (version 11.4.x and above)" >> check_setup.log
     fi
@@ -77,7 +77,7 @@ if [[ "$(uname)" == 'Darwin' ]]; then
     fi
 
     # Remove rstudio from the programs to be tested using the normal --version test
-    sys_progs=(R=4.* python=3.* conda=4.* bash=3.* git=2.* make=3.* latex=3.* tlmgr=5.* docker=20.* code=1.*)
+    sys_progs=(R=4.* python=3.* conda=22.* bash=3.* git=2.* make=3.* latex=3.* tlmgr=5.* docker=20.* code=1.*)
 # Rstudio is not on PATH in windows
 elif [[ "$OSTYPE" == 'msys' ]]; then
     # Rstudio on windows does not accept the --version flag when run interactively
@@ -94,10 +94,10 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
         echo "OK        "$(tlmgr.bat --version | head -1) >> check_setup.log
     fi
     # Remove rstudio from the programs to be tested using the normal --version test
-    sys_progs=(R=4.* python=3.* conda=4.* bash=4.* git=2.* make=4.* latex=3.* docker=20.* code=1.*)
+    sys_progs=(R=4.* python=3.* conda=22.* bash=4.* git=2.* make=4.* latex=3.* docker=20.* code=1.*)
 else
     # For Linux everything is sane and consistent so all packages can be tested the same way
-    sys_progs=(rstudio=202* R=4.* python=3.* conda=4.* bash=5.* \
+    sys_progs=(rstudio=202* R=4.* python=3.* conda=22.* bash=5.* \
         git=2.* make=4.* latex=3.* tlmgr=5.* docker=20.* code=1.*)
     # Note that the single equal sign syntax in used for `sys_progs` is what we have in the install
     # instruction for conda, so I am using it for Python packagees so that we
@@ -146,7 +146,7 @@ if ! [ -x "$(command -v conda)" ]; then  # Check that conda exists as an executa
     echo "In order to do this after the installation process," >> check_setup.log
     echo "first run 'source <path to conda>/bin/activate' and then run 'conda init'." >> check_setup.log
 else
-    py_pkgs=(pandas=1 pyppeteer=0 nbconvert=6 jupyterlab=3 jupyterlab-git=0 jupytext=1 jupyterlab-spellchecker=0)
+    py_pkgs=(pandas=1 pyppeteer=1 nbconvert=7 jupyterlab=3 jupyterlab-git=0 jupytext=1 jupyterlab-spellchecker=0)
     # installed_py_pkgs=$(pip freeze)
     installed_py_pkgs=$(conda list | tail -n +4 | tr -s " " "=" | cut -d "=" -f -2)
     for py_pkg in ${py_pkgs[@]}; do
@@ -245,7 +245,7 @@ echo "## R packages" >> check_setup.log
 if ! [ -x "$(command -v R)" ]; then  # Check that R exists as an executable program
     echo "Please install 'R' to check R package versions." >> check_setup.log
 else
-    r_pkgs=(cowplot=1 GGally=2 kknn=1 scales=1 tidyverse=1 tidymodels=0 tinytex=0)
+    r_pkgs=(cowplot=1 GGally=2 kknn=1 scales=1 tidyverse=1 tidymodels=1 tinytex=0)
     installed_r_pkgs=$(R -q -e "print(format(as.data.frame(installed.packages()[,c('Package', 'Version')]), justify='left'), row.names=FALSE)" | grep -v "^>" | tail -n +2 | sed 's/^ //;s/ *$//' | tr -s ' ' '=')
     for r_pkg in ${r_pkgs[@]}; do
         if ! $(grep -iq "$r_pkg" <<< $installed_r_pkgs); then
