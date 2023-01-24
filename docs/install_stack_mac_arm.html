@@ -2912,7 +2912,7 @@ which we can install as follows.</p>
 <p>Try this by going to <code>File -&gt; Export notebook as... -&gt; Export Notebook to WebPDF</code>.</p>
 <h3 id="webpdf-issues">WebPDF Issues</h3>
 <p>If there are issues exporting to WebPDF, run the following in Terminal:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbconvert</span> <span class="at">--to</span> webpdf <span class="at">--allow-chromium-download</span> Untitled.ipynb</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> nbconvert <span class="at">--to</span> webpdf <span class="at">--allow-chromium-download</span> Untitled.ipynb</span></code></pre></div>
 <p>The above assumes that your file name is <code>Untitled.ipynb</code></p>
 <h2 id="docker">Docker</h2>
 <p>You will use Docker to create reproducible,
