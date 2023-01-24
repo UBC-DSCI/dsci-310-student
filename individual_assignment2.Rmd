@@ -121,7 +121,23 @@ The resulting structure of the repository should look something like this:
 
 #### Step 5: Submit
 
-When you are done, submit the **NAME OF YOUR RESPOSITORY** on Canvas without spaces or extra characters.
-For example, `dsci-310-assign2`.
-Do not put any extra characters or words, we only need your repository name,
-we are using your github survey reponse to get your username.
+When you are done, submit a valid URL to your github repository.
+For example, `https://github.com/chendaniely/dsci-310-assign2`.
+Do not put any extra characters or words, we only need the full URL.
+
+Please make our lives easier by submitting a URL that we can just click.
+
+
+## Rubric 
+
+This assignment will be graded for completion as follows:
+
+|Grade | Description |
+|------|-------------|
+| 100% | 2 pull requests merged cleanly
+| 75%  | 2 pull requests merged but has lingering merge conflict markers
+| 50%  | 1 pull request merged
+| 25%  | 2 Pull Requests created
+| 15%  | Sucessfuly able to run the `create_conflict.sh` script
+| 10%  | Repository created
+| 0%   | No repository or attempt
