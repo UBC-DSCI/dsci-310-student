@@ -65,17 +65,11 @@ Now we will run a script that will create a new toy repository with a history wh
       - In Terminal/Git Bash, run (this is a multi line command copy and paste all of it at once): 
 
 
-
-```{bash klippy, class.source='klippy'}
-curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh --output create_conflict.sh
 ```
-
-
-<!-- ``` -->
-<!-- curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh \ -->
-<!--    --output \ -->
-<!--    create_conflict.sh -->
-<!-- ``` -->
+curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh \
+   --output \
+   create_conflict.sh
+```
 
 3. Once you have the script on your computer, run the script to prepare your repository by running the command below:
 
