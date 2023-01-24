@@ -105,6 +105,7 @@ If you're curious about the resulting repository structure, in Terminal/Git Bash
 git log --oneline --graph --all
 ```
 
+Your output might look something like this (but could also be slightly different):
 
 ```
 *   4086b5a (HEAD -> main, origin/main, origin/HEAD) Merge pull request #2 from jbourak/branch_2
