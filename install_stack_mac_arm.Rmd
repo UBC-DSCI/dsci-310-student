@@ -69,8 +69,8 @@ code --version
 you should see something like this if you were successful:
 
 ```bash
-1.62.2
-3a6960b964327f0e3882ce18fcebd07ed191b316
+1.74.3
+97dec172d3256f8ca4bfb2143f3f76b503ca0534
 arm64
 ```
 
@@ -109,7 +109,7 @@ git --version
 you should see something like this (does not have to be the exact same version) if you were successful:
 
 ```
-git version 2.30.1 (Apple Git-130)
+git version 2.35.1
 ```
 
 > **Note:** If you run into trouble, please see that Install Git
@@ -210,7 +210,7 @@ This will start the installation process, follow the directions that appear in t
 
 Initially, you will be greeted with a message like this:
 ```
-Welcome to Miniforge3 4.10.3-10
+Welcome to Miniforge3 22.9.0-3
 
 In order to continue the installation process, please review the license
 agreement.
@@ -264,7 +264,7 @@ conda --version
 which should return something like this:
 
 ```
-conda 4.11.0
+conda 22.9.0-3
 ```
 
 > **Note:** If you see `zsh: command not found: conda`,
@@ -345,8 +345,8 @@ R --version
 You should see something like this if you were successful:
 
 ```
-R version 4.1.1 (2021-08-10) -- "Kick Things"
-Copyright (C) 2021 The R Foundation for Statistical Computing
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: aarch64-apple-darwin20 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -511,9 +511,9 @@ latex --version
 You should see something like this if you were successful:
 
 ```
-pdfTeX 3.141592653-2.6-1.40.23 (TeX Live 2022/dev)
-kpathsea version 6.3.4/dev
-Copyright 2021 Han The Thanh (pdfTeX) et al.
+pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022)
+kpathsea version 6.3.4
+Copyright 2022 Han The Thanh (pdfTeX) et al.
 There is NO warranty.  Redistribution of this software is
 covered by the terms of both the pdfTeX copyright and
 the Lesser GNU General Public License.
@@ -563,7 +563,8 @@ tlmgr install eurosym \
   varwidth \
   fancyhdr \
   titlesec \
-  ucharclasses
+  ucharclasses \
+  pdfcol
 ```
 
 To test that your latex installation is working with jupyter notebooks,
@@ -593,6 +594,16 @@ pyppeteer-install
 ```
 
 Try this by going to `File -> Export notebook as... -> Export Notebook to WebPDF`.
+
+### WebPDF Issues
+
+If there are issues exporting to WebPDF, run the following in Terminal:
+
+```bash
+nbconvert --to webpdf --allow-chromium-download Untitled.ipynb
+```
+
+The above assumes that your file name is `Untitled.ipynb`
 
 ## Docker
 
@@ -680,32 +691,32 @@ Checking program and package versions...
 
 ## Operating system
 ProductName:	macOS
-ProductVersion:	12.0
+ProductVersion:	13.1
 BuildVersion:	21A344
 
 ## System programs
-OK        rstudio 2021.09.0+351
-OK        R 4.1.1 (2021-08-10) -- "Kick Things"
-OK        python 3.9.7
-OK        conda 4.11.0
-OK        bash 3.2.57(1)-release (x86_64-apple-darwin20)
-OK        git 2.30.1 (Apple Git-130)
+OK        rstudio 
+OK        R 4.2.2 (2022-10-31 ucrt) -- :Innocent and Trusting"
+OK        python 3.11.0
+OK        conda 22.11.1
+OK        bash 3.2.57(1)-release (arm64-apple-darwin22)
+OK        git 2.35.1
 OK        make 3.81
-OK        latex 3.141592653-2.6-1.40.23 (TeX Live 2022/dev)
-OK        tlmgr 5 +0200)
-OK        docker 20.10.8, build 3967b7d
-OK        code 1.62.2
+OK        latex 3.141592653-2.6-1.40.24 (TeX Live 2022)
+OK        tlmgr 58:07 +0200)
+OK        docker 20.10.13, build a224086
+OK        code 1.74.3
 
 ## Python packages
-MISSING   pandas=1.*
-MISSING   pyppeteer=0.*
-OK        nbconvert=6.3.0
-OK        jupyterlab=3.2.4
-OK        jupyterlab-git=0.34.0
-OK        jupytext=1.13.3
+OK        pandas=1.5.2
+OK        pyppeteer=1.0.2
+OK        nbconvert=7.2.8
+OK        jupyterlab=3.5.2
+OK        jupyterlab-git=0.41.0
+OK        jupytext=1.14.4
 OK        jupyterlab-spellchecker=0.7.2
 OK        jupyterlab PDF-generation was successful.
-MISSING   jupyterlab WebPDF-generation failed. It seems like you did not run `pip install "nbconvert[webpdf]"` to install pyppeteer.
+OK        jupyterlab WebPDF-generation was successful.
 OK        jupyterlab HTML-generation was successful.
 
 ## R packages
