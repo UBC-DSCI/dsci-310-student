@@ -2479,6 +2479,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="#canvas-quiz" id="toc-canvas-quiz">Canvas “Quiz”</a></li>
 <li><a href="#activity" id="toc-activity">Activity</a></li>
+<li><a href="#rubric" id="toc-rubric">Rubric</a></li>
 </ul>
 </nav>
 </div>
@@ -2543,19 +2544,22 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).</code
 </ol></li>
 <li>Download the <code>create_conflict.sh</code> script into your <code>dsci-310-assign2</code> repository
 <ol type="1">
-<li>You can find the URL to the script here: <a href="https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/a4b27e7f3d7bc039cb40cd0ee103d6b72cd4f4f1/src/create_conflict.sh" class="uri">https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/a4b27e7f3d7bc039cb40cd0ee103d6b72cd4f4f1/src/create_conflict.sh</a></li>
+<li>You can find the URL to the script here
+<ul>
+<li><a href="https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh" class="uri">https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh</a></li>
+</ul></li>
 <li>You can download the file by using one of the two methods below:
 <ol type="1">
-<li>right clicking &gt; save page as into your <code>dsci-310-assign2</code> folder</li>
-<li>Run <code>curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/a4b27e7f3d7bc039cb40cd0ee103d6b72cd4f4f1/src/create_conflict.sh --output create_conflict.sh</code></li>
+<li>right clicking &gt; save page as into your <code>dsci-310-assign2</code> folder OR</li>
+<li>Run: <code>curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh --output create_conflict.sh</code></li>
 </ol></li>
 </ol></li>
-<li>Run the script to prepare your repository by running the command below
-<ol type="1">
-<li>If you get <code>permission denied</code> after attempting to run the script, run <code>chmod +x create_conflict.sh</code> to add permissions to execute this file.</li>
-</ol></li>
+<li>Once you have the script on your computer, run the script to prepare your repository by running the command below:</li>
 </ol>
 <pre class="shell"><code>bash create_conflict.sh</code></pre>
+<ul>
+<li>If you get <code>permission denied</code> after attempting to run the script, run <code>chmod +x create_conflict.sh</code> to add permissions to execute this file.</li>
+</ul>
 <h4 id="step-4-merge-your-branches-by-fixing-conflicts">Step 4: Merge your branches by fixing conflicts</h4>
 <p>Resolve the merge conflict (by merging <code>main</code> into <code>branch_2</code>) and then merge <code>branch_2</code> into <code>main</code> such that the README.md file on <code>main</code> reads as:</p>
 <pre><code># DSCI 310 Individual Assignment 2
@@ -2592,10 +2596,54 @@ but we’d recommend resolving it locally to get used to the process
 (it is generally easier to resolve the conflicts locally if the merge conflict is more complicated).</li>
 </ol>
 <h4 id="step-5-submit">Step 5: Submit</h4>
-<p>When you are done, submit the <strong>NAME OF YOUR RESPOSITORY</strong> on Canvas without spaces or extra characters.
-For example, <code>dsci-310-assign2</code>.
-Do not put any extra characters or words, we only need your repository name,
-we are using your github survey reponse to get your username.</p>
+<p>When you are done, submit a valid URL to your github repository.
+For example, <code>https://github.com/chendaniely/dsci-310-assign2</code>.
+Do not put any extra characters or words, we only need the full URL.</p>
+<p>Please make our lives easier by submitting a URL that we can just click.</p>
+<h2 id="rubric">Rubric</h2>
+<p>This assignment will be graded for completion as follows:</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grade</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100%</td>
+<td>2 pull requests merged cleanly</td>
+</tr>
+<tr class="even">
+<td>75%</td>
+<td>2 pull requests merged but has lingering merge conflict markers</td>
+</tr>
+<tr class="odd">
+<td>50%</td>
+<td>1 pull request merged</td>
+</tr>
+<tr class="even">
+<td>25%</td>
+<td>2 Pull Requests created</td>
+</tr>
+<tr class="odd">
+<td>15%</td>
+<td>Sucessfuly able to run the <code>create_conflict.sh</code> script</td>
+</tr>
+<tr class="even">
+<td>10%</td>
+<td>Repository created</td>
+</tr>
+<tr class="odd">
+<td>0%</td>
+<td>No repository or attempt</td>
+</tr>
+</tbody>
+</table>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
