@@ -129,8 +129,8 @@ bash --version
 The output should look similar to this:
 
 ```bash
-GNU bash, version 4.4.23(1)-release (x86_64-pc-sys)
-Copyright (C) 2019 Free Software Foundation, Inc.
+GNU bash, version 5.2.12(1)-release (x86_64-pc-sys)
+Copyright (C) 2022 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 
 This is free software; you are free to change and redistribute it.
@@ -152,7 +152,7 @@ git --version
 ```
 
 ```bash
-git version 2.32.0.windows.2
+git version 2.39.0.windows.2
 ```
 
 > **Note:** Some of the Git commands we will use are only available since Git 2.23,
@@ -167,8 +167,8 @@ code --version
 ```
 
 ```bash
-1.59.0
-c3f126316369cd610563c75b1b1725e0679adfb3
+1.74.3
+97dec172d3256f8ca4bfb2143f3f76b503ca0534
 x64
 ```
 
@@ -303,7 +303,7 @@ conda --version
 you should see something like this
 
 ```bash
-conda 4.10.3
+conda 22.11.1
 ```
 
 > **Optional:** One annoyance with our current terminal setup is that the word `(base)`
@@ -425,8 +425,8 @@ R --version
 which should return something like:
 
 ```bash
-R version 4.1.1 (2021-05-18) -- "Camp Pontanezen"
-Copyright (C) 2021 The R Foundation for Statistical Computing
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -477,7 +477,7 @@ If you open the console in RStudio and also R from the Windows Terminal
 both applications should return the same values, and the first one should be a path inside your user directory e.g.
 
 ```
-"C:/Users/florencia/R/win-library/4.1" "C:/Program Files/R/R-4.1.0/library"
+"C:/Users/florencia/R/win-library/4.2" "C:/Program Files/R/R-4.2.2/library"
 ```
 
 If they don't return the same paths, please try to setting up your environmental variable again
@@ -638,9 +638,9 @@ latex --version
 You should see something like this if you were successful:
 
 ```
-pdfTeX 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX)
-kpathsea version 6.3.3
-Copyright 2021 Han The Thanh (pdfTeX) et al.
+pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022)
+kpathsea version 6.3.4
+Copyright 2022 Han The Thanh (pdfTeX) et al.
 There is NO warranty.  Redistribution of this software is
 covered by the terms of both the pdfTeX copyright and
 the Lesser GNU General Public License.
@@ -711,7 +711,7 @@ This requires the `pyppeteer` package,
 which we can install by typing the following into Windows Terminal.
 
 ```bash
-conda install pyppeteer=0.2.2
+conda install pyppeteer
 pyppeteer-install
 ```
 
