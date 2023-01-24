@@ -9,19 +9,23 @@ output:
 
 ### Assessment schedule
 
-| Assessment         | Description | Grade weight | Due date |
-|--------------------|-------------|----------|---------|
-| [Individual assignment 1](individual_assignment1) | Setting up your computer | 1% |  2022/01/22 18:00 |
-| GitHub username quiz | | 0.5% | 2022/01/22 18:00 |
-| [Individual assignment 2](https://canvas.ubc.ca/courses/89629/quizzes/470524) | Version control practice | 1% | 2022/01/29 18:00 |
-| [Individual assignment 3](individual_assignment3) | Dockerfile practice | 1% |2022/02/12 18:00 |
-| [Milestone 1](milestone1.html) | GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`). data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 10% | 2022/02/19 18:00 |
-| [Mid-term exam](https://canvas.ubc.ca/courses/89629/quizzes/477570) | | 10% | 2022/03/04 09:00 |
-|[Milestone 2](milestone2.html) | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 10% | 2022/03/12 18:00  |
-| [Individual assignment 4](individual_assignment4) | Reproducible reports practice |  1% | 2022/03/19 18:00 |
-| [Milestone 3](milestone3.html)  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 10% | ~~2022/03/26~~ 2022/04/02 18:00 |
-| [Peer review](peer-review.html) | review of another group's project | 4.5% | ~~2022/04/02~~ 2022/04/07 18:00 |
-| [Individual assignment 5](individual_assignment5) | Packaging practice | 1% | 2022/04/02 18:00 |
-| [Final project](final-project.html) | regrade entire project which now also includes the package & CI (the full monty package - including docs) | 20% | 2022/04/09 18:00 |
-| [Team work](team-work.html) | Reflection of how the group worked together, as well as individual performance | 10% | 2022/04/09 11:59 |
-| Final exam | | 20% | TBD |
+In general, assignments will be due 11:59 PM on Saturdays
+
+| Assessment                                        | Grade weight | Description                                                                                                                                                                | Due date         | Due Week |
+| ------------------------------------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------- |
+| Individual assignment 0                           | 0%           | Computer Setup                                                                                                                                                             | 2023/01/12       | 1        |
+| [Individual assignment 1](individual_assignment1) | 1%           | Setting up your computer                                                                                                                                                   | 2023/01/21 23:59 | 2        |
+| GitHub username quiz                              | 0.5%         |                                                                                                                                                                            | 2023/01/21 23:59 | 2        |
+| [Individual assignment 2](individual_assignment2) | 0.5%         | Version control practice (merge conflict) Worth 0.5%, the 1% is split with the version contorl quiz                                                                        | 2023/01/28 23:59 | 3        |
+| Version control Quiz                              | 0.5%         | Not a real quiz, it's just a set of questions you answer via the canvas quiz section Worth 0.5% the 1 point is split with Indivitual Assignment 2                          | 2023/01/28 23:59 | 3        |
+| [Individual assignment 3](individual_assignment3) | 1%           | Dockerfile practice                                                                                                                                                        | 2023/02/04 23:59 | 5        |
+| [Milestone 1](milestone1.html)                    | 10%          | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`)             | 2023/02/18 23:59 | 6        |
+| Mid-term exam                                     | 10%          |                                                                                                                                                                            | 2023/03/03 09:00 | 8        |
+| [Milestone 2](milestone2.html)                    | 10%          | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation)                                                                 | 2023/03/11 23:59 | 9        |
+| [Individual assignment 4](individual_assignment4) | 1%           | Reproducible reports practice                                                                                                                                              | 2023/03/18 23:59 | 10       |
+| [Milestone 3](milestone3.html)                    | 10%          | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2023/03/25 23:59 | 11       |
+| [Peer review](peer-review.html)                   | 4.5%         | review of another group's project                                                                                                                                          | 2023/04/01 23:59 | 12       |
+| [Individual assignment 5](individual_assignment5) | 1%           | Packaging practice                                                                                                                                                         | 2023/04/01 23:59 | 12       |
+| [Final project](final-project.html)               | 20%          | package & CI (the full monty package - including docs)                                                                                                                     | 2023/04/08 23:59 | 13       |
+| [Team work](team-work.html)                       | 10%          | Reflection of how the group worked together, as well as individual performance                                                                                             | 2023/04/09 11:59 | 13       |
+| Final exam                                        | 20%          |                                                                                                                                                                            | TBD              |          |
