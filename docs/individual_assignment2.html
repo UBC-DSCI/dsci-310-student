@@ -2416,7 +2416,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2508,52 +2508,46 @@ You can read more about merge conflicts here: <a href="https://www.atlassian.com
 <li>Name the repository <strong><code>dsci-310-assign2</code></strong> (this repository name is important).</li>
 <li>Check off “Add a README file”</li>
 <li><strong>Keep all other settings as default, and ensure the repository is public.</strong> Click on “Create repository”.</li>
-<li>Go to your computer and <code>git clone</code> the repository down to your computer.</li>
 </ol>
 <h4 id="step-2-clone-repository">Step 2: Clone Repository</h4>
-<p>Now we will run a script that will create a new toy repository with a history where a merge conflict can occur and push it to our remote repository.
-The repository we are creating will have a structure like this:</p>
-<pre><code>* 24c02c2 (origin/branch_1, branch_1) branch_1 commit 2
-* bb90dde branch_1 commit 1
-| * d0ace27 (HEAD -&gt; branch_2, origin/branch_2) branch_2 commit 2
-| * b79b3b7 branch_2 commit 1
-|/
-* 8252119 (origin/main, main) Changes to main</code></pre>
-<p>We have two branches that branch off of main at the same point,
-and each branch has two commits.</p>
 <ol type="1">
 <li>Open a new terminal and navigate to a directory (using <code>cd</code>) where you want the repository to live (i.e., where you will <code>git clone</code>)</li>
 <li>Copy the HTTPS (or SSH) URL of your github repository (under the green code button in GitHub).
-<ol type="1">
+<ul>
 <li>Towards the top of the screen in your new empty remote repository.</li>
 <li>It should look something like this: <code>https://github.com/jbourak/dsci-310-assign2.git</code></li>
-</ol></li>
-<li><code>git clone</code> the repositoy down to your computer to the folder you <code>cd</code> into earler
-<ol type="1">
-<li>You should not be <code>git clone</code>ing into an existing repository</li>
-<li>before you run <code>git clone</code> if you type <code>git status</code> it should return:</li>
-</ol>
+</ul></li>
+<li><code>git clone</code> the repository down to your computer to the folder you <code>cd</code> into earler
+<ul>
+<li>You should <strong>not</strong> be <code>git clone</code>ing into an existing repository</li>
+<li>Before you run <code>git clone</code> if you type <code>git status</code> it should return:</li>
+</ul>
 <pre><code>git status
 fatal: not a git repository (or any parent up to mount point /)
 Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).</code></pre>
 <h4 id="step-3-prepare-assignment">Step 3: Prepare Assignment</h4></li>
-<li>Check that you are now into your <code>dsci-310-assign2</code> folder
+</ol>
+<p>Now we will run a script that will create a new toy repository with a history where a merge conflict can occur and push it to our remote repository.</p>
 <ol type="1">
+<li>Check that you are now into your <code>dsci-310-assign2</code> folder
+<ul>
 <li>If you haven’t done so your <code>pwd</code> should show that you are in <code>dsci-310-assign2</code></li>
 <li>If not, <code>cd dsci-310-assign2</code> into your folder</li>
-</ol></li>
-<li>Download the <code>create_conflict.sh</code> script into your <code>dsci-310-assign2</code> repository
-<ol type="1">
-<li>You can find the URL to the script here
-<ul>
-<li><a href="https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh" class="uri">https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh</a></li>
 </ul></li>
+<li>Download the <code>create_conflict.sh</code> script into your <code>dsci-310-assign2</code> repository
+<ul>
+<li>You can find the URL to the script <a href="https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh">here</a></li>
 <li>You can download the file by using one of the two methods below:
-<ol type="1">
-<li>right clicking &gt; save page as into your <code>dsci-310-assign2</code> folder OR</li>
-<li>Run: <code>curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh --output create_conflict.sh</code></li>
-</ol></li>
-</ol></li>
+<ul>
+<li>Right clicking &gt; save page as into your <code>dsci-310-assign2</code> folder OR</li>
+<li>In Terminal/Git Bash, run (this is a multi line command copy and paste all of it at once):</li>
+</ul></li>
+</ul></li>
+</ol>
+<pre><code>curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh \
+   --output \
+   create_conflict.sh</code></pre>
+<ol start="3" type="1">
 <li>Once you have the script on your computer, run the script to prepare your repository by running the command below:</li>
 </ol>
 <pre class="shell"><code>bash create_conflict.sh</code></pre>
@@ -2561,40 +2555,45 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).</code
 <li>If you get <code>permission denied</code> after attempting to run the script, run <code>chmod +x create_conflict.sh</code> to add permissions to execute this file.</li>
 </ul>
 <h4 id="step-4-merge-your-branches-by-fixing-conflicts">Step 4: Merge your branches by fixing conflicts</h4>
-<p>Resolve the merge conflict (by merging <code>main</code> into <code>branch_2</code>) and then merge <code>branch_2</code> into <code>main</code> such that the README.md file on <code>main</code> reads as:</p>
+<p>Resolve the merge conflict, by merging <code>branch_2</code> into <code>main</code> and then merge <code>branch_1</code> into <code>main</code> such that the README.md file on <code>main</code> reads as:</p>
 <pre><code># DSCI 310 Individual Assignment 2
 Changes to branch_2 commit 1
 Changes to branch_1 commit 2</code></pre>
-<p>The resulting structure of the repository should look something like this:</p>
-<pre><code>*   5382ad7 (HEAD -&gt; main, origin/main) Merge pull request #2 from jbourak/branch_2
-|\
-| *   747070d (origin/branch_2) Merge branch &#39;main&#39; into branch_2
-| |\
-| |/
-|/|
-* |   6a7034e Merge pull request #1 from jbourak/branch_1
-|\ \
-| * | 24c02c2 (origin/branch_1, branch_1) branch_1 commit 2
-| * | bb90dde branch_1 commit 1
-|/ /
-| * d0ace27 (branch_2) branch_2 commit 2
-| * b79b3b7 branch_2 commit 1
-|/
-* 8252119 Changes to main</code></pre>
 <ol type="1">
 <li>Refresh the remote repository on github.
-<ol type="1">
+<ul>
 <li>You should see that the remote repository is no longer empty and has two new branches.</li>
-</ol></li>
+</ul></li>
 <li>Create your two pull requests</li>
 <li>Merge both your pull requests into the <code>main</code> branch
-<ol type="1">
+<ul>
 <li>This will create a merge conflict in one of the PRs and you will need to resolove this for this assignment.</li>
-</ol></li>
+</ul></li>
 <li>Feel free to resolve the conflict locally or by using the web editor,
 but we’d recommend resolving it locally to get used to the process
 (it is generally easier to resolve the conflicts locally if the merge conflict is more complicated).</li>
 </ol>
+<p><br></p>
+<p>If you’re curious about the resulting repository structure, in Terminal/Git Bash, you can run:</p>
+<pre><code>git log --oneline --graph --all</code></pre>
+<pre><code>*   4086b5a (HEAD -&gt; main, origin/main, origin/HEAD) Merge pull request #2 from jbourak/branch_2
+|\  
+| *   48b40a0 (origin/branch_2) Merge branch &#39;main&#39; into branch_2
+| |\  
+| |/  
+|/|   
+* |   5388caa Merge pull request #1 from jbourak/branch_1
+|\ \  
+| * | 19a3d05 (origin/branch_1, branch_1) branch_1 commit 2
+| * | ac17f0e branch_1 commit 1
+|/ /  
+| * d2f6dd1 (branch_2) branch_2 commit 2
+| * 8a32bfc branch_2 commit 1
+|/  
+* f6ea48a Changes to main
+* b89ee34 Initial commit</code></pre>
+<p>We have two branches that branch off of main at the same point,
+and each branch has two commits.</p>
 <h4 id="step-5-submit">Step 5: Submit</h4>
 <p>When you are done, submit a valid URL to your github repository.
 For example, <code>https://github.com/chendaniely/dsci-310-assign2</code>.
@@ -2644,7 +2643,7 @@ Do not put any extra characters or words, we only need the full URL.</p>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
