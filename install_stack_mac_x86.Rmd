@@ -69,8 +69,8 @@ code --version
 you should see something like this if you were successful:
 
 ```
-1.61.2
-6cba118ac49a1b88332f312a8f67186f7f3c1643
+1.74.3
+97dec172d3256f8ca4bfb2143f3f76b503ca0534
 x64
 ```
 
@@ -109,7 +109,7 @@ git --version
 you should see something like this (does not have to be the exact same version) if you were successful:
 
 ```
-git version 2.24.2 (Apple Git-127)
+git version 2.35.1
 ```
 
 > **Note:** If you run into trouble, please see that Install Git
@@ -207,7 +207,7 @@ conda --version
 which should return something like this:
 
 ```
-conda 4.10.3
+conda 22.11.1
 ```
 
 > **Note:** If you see `zsh: command not found: conda`,
@@ -298,8 +298,8 @@ R --version
 You should see something like this if you were successful:
 
 ```
-R version 4.0.0 (2020-04-24) -- "Arbor Day"
-Copyright (C) 2020 The R Foundation for Statistical Computing
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-apple-darwin17.0 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -329,13 +329,11 @@ To see if you were successful,
 try opening RStudio by clicking on its icon (from Finder, Applications or Launchpad).
 It should open and look something like this picture below:
 
-![](/resources_pages/imgs/RStudio.png)
-
 Now we are going to change RStudio’s *Insert Pipe* shortcut so that it inserts
 the [new native pipe operator `|>`](https://blog.rstudio.com/2021/06/09/rstudio-v1-4-update-whats-new/). 
 Go to `Tools > Global Options > Code > Editing` and tick the following option:
 
-![](/resources_pages/imgs/new-pipe-rstudio.png)
+![](resources/native_pipe.png)
 
 Once the change is made you can try in the RStudio console `Command` + `Shift` + `m` to check if works.
 
@@ -375,14 +373,14 @@ jupyter lab
 A browser should have launched and you should see a page that looks like the screenshot below.
 Now click on "R" notebook (circled in red on the screenshot below) to launch an JupyterLab with an R kernel.
 
-![](/resources_pages/imgs/jupyterlab_r_kernel.png)
+![](resources/jupyterlab_r_kernel.png)
 
 Sometimes a kernel loads, but doesn't work as expected.
 To test whether your installation was done correctly now type `library(tidyverse)`
 in the code cell and click on the run button to run the cell.
 If your R kernel works you should see something like the image below:
 
-![](/resources_pages/imgs/jupyterlab_r_kernel2.png)
+![](resources/jupyterlab_r_kernel2.png)
 
 To improve the experience of using R in JupyterLab,
 we will add keyboard shortcuts for inserting the common R operators `<-` and `|>`.
@@ -467,9 +465,9 @@ latex --version
 You should see something like this if you were successful:
 
 ```
-pdfTeX 3.141592653-2.6-1.40.23 (TeX Live 2022/dev)
-kpathsea version 6.3.4/dev
-Copyright 2021 Han The Thanh (pdfTeX) et al.
+pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022)
+kpathsea version 6.3.4
+Copyright 2022 Han The Thanh (pdfTeX) et al.
 There is NO warranty.  Redistribution of this software is
 covered by the terms of both the pdfTeX copyright and
 the Lesser GNU General Public License.
@@ -519,7 +517,8 @@ tlmgr install eurosym \
   varwidth \
   fancyhdr \
   titlesec \
-  ucharclasses
+  ucharclasses \
+  pdfcol
 ```
 
 To test that your latex installation is working with jupyter notebooks,
@@ -543,6 +542,17 @@ pyppeteer-install
 ```
 
 Try this by going to `File -> Export notebook as... -> Export Notebook to WebPDF`.
+
+### WebPDF Issues
+
+If there are issues exporting to WebPDF, run the following in Terminal:
+
+```bash
+nbconvert --to webpdf --allow-chromium-download Untitled.ipynb
+```
+
+The above assumes that your file name is `Untitled.ipynb`
+
 
 ## Docker
 
@@ -630,32 +640,32 @@ Checking program and package versions...
 
 ## Operating system
 ProductName:	macOS
-ProductVersion:	12.0
+ProductVersion:	13.1
 BuildVersion:	21A344
 
 ## System programs
-OK        rstudio 2021.09.0+351
-OK        R 4.1.1 (2021-08-10) -- "Kick Things"
-OK        python 3.9.7
-OK        conda 4.11.0
-OK        bash 3.2.57(1)-release (x86_64-apple-darwin20)
-OK        git 2.30.1 (Apple Git-130)
+OK        rstudio 
+OK        R 4.2.2 (2022-10-31 ucrt) -- :Innocent and Trusting"
+OK        python 3.11.0
+OK        conda 22.11.1
+OK        bash 3.2.57(1)-release (arm64-apple-darwin22)
+OK        git 2.35.1
 OK        make 3.81
-OK        latex 3.141592653-2.6-1.40.23 (TeX Live 2022/dev)
-OK        tlmgr 5 +0200)
-OK        docker 20.10.8, build 3967b7d
-OK        code 1.62.2
+OK        latex 3.141592653-2.6-1.40.24 (TeX Live 2022)
+OK        tlmgr 58:07 +0200)
+OK        docker 20.10.13, build a224086
+OK        code 1.74.3
 
 ## Python packages
-MISSING   pandas=1.*
-MISSING   pyppeteer=0.*
-OK        nbconvert=6.3.0
-OK        jupyterlab=3.2.4
-OK        jupyterlab-git=0.34.0
-OK        jupytext=1.13.3
+OK        pandas=1.5.2
+OK        pyppeteer=1.0.2
+OK        nbconvert=7.2.8
+OK        jupyterlab=3.5.2
+OK        jupyterlab-git=0.41.0
+OK        jupytext=1.14.4
 OK        jupyterlab-spellchecker=0.7.2
 OK        jupyterlab PDF-generation was successful.
-MISSING   jupyterlab WebPDF-generation failed. It seems like you did not run `pip install "nbconvert[webpdf]"` to install pyppeteer.
+OK        jupyterlab WebPDF-generation was successful.
 OK        jupyterlab HTML-generation was successful.
 
 ## R packages
