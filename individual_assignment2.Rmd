@@ -73,16 +73,18 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
    1. If you haven't done so your `pwd` should show that you are in `dsci-310-assign2`
    2. If not, `cd dsci-310-assign2` into your folder
 2. Download the `create_conflict.sh` script into your `dsci-310-assign2` repository
-   1. You can find the URL to the script here: https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/a4b27e7f3d7bc039cb40cd0ee103d6b72cd4f4f1/src/create_conflict.sh
+   1. You can find the URL to the script here
+      - https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh
    2. You can download the file by using one of the two methods below:
-      1. right clicking > save page as into your `dsci-310-assign2` folder
-      2. Run `curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/a4b27e7f3d7bc039cb40cd0ee103d6b72cd4f4f1/src/create_conflict.sh --output create_conflict.sh`
-3. Run the script to prepare your repository by running the command below
-   1. If you get `permission denied` after attempting to run the script, run `chmod +x create_conflict.sh` to add permissions to execute this file.
+      1. right clicking > save page as into your `dsci-310-assign2` folder OR
+      2. Run: `curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh --output create_conflict.sh`
+3. Once you have the script on your computer, run the script to prepare your repository by running the command below:
 
 ```shell
 bash create_conflict.sh
 ```
+- If you get `permission denied` after attempting to run the script, run `chmod +x create_conflict.sh` to add permissions to execute this file.
+
 
 #### Step 4: Merge your branches by fixing conflicts
 
