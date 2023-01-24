@@ -2508,6 +2508,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="#pandoc" id="toc-pandoc">Pandoc</a></li>
 <li><a href="#webpdf-export" id="toc-webpdf-export">WebPDF export</a></li>
+<li><a href="#webpdf-issues" id="toc-webpdf-issues">WebPDF Issues</a></li>
 </ul></li>
 <li><a href="#docker" id="toc-docker">Docker</a></li>
 <li><a href="#post-installation-notes" id="toc-post-installation-notes">Post-installation notes</a></li>
@@ -2557,8 +2558,8 @@ In addition to reading the <a href="https://code.visualstudio.com/docs/setup/mac
 <p>You can test that VS code is installed and can be opened from Terminal by restarting terminal and typing the following command:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code></pre></div>
 <p>you should see something like this if you were successful:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.62.2</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">3a6960b964327f0e3882ce18fcebd07ed191b316</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.74.3</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">97dec172d3256f8ca4bfb2143f3f76b503ca0534</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">arm64</span></span></code></pre></div>
 <blockquote>
 <p><strong>Note:</strong> If you get an error message such as <code>-bash: code: command not found</code>,
@@ -2581,7 +2582,7 @@ we ask you to update it using the Xcode command line tools (not all of Xcode), w
 <p>After installation, in terminal type the following to ask for the version:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div>
 <p>you should see something like this (does not have to be the exact same version) if you were successful:</p>
-<pre><code>git version 2.30.1 (Apple Git-130)</code></pre>
+<pre><code>git version 2.35.1</code></pre>
 <blockquote>
 <p><strong>Note:</strong> If you run into trouble, please see that Install Git
 Mac OS section from <a href="http://happygitwithr.com/install-git.html#mac-os">Happy Git and GitHub for the useR</a>
@@ -2646,7 +2647,7 @@ Next, open the terminal and run the following:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> /Users/<span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span>/Downloads/Miniforge3-MacOSX-arm64.sh </span></code></pre></div>
 <p>This will start the installation process, follow the directions that appear in the terminal.</p>
 <p>Initially, you will be greeted with a message like this:</p>
-<pre><code>Welcome to Miniforge3 4.10.3-10
+<pre><code>Welcome to Miniforge3 22.9.0-3
 
 In order to continue the installation process, please review the license
 agreement.
@@ -2674,7 +2675,7 @@ you will see <code>(miniforge3)</code> prepending to your prompt string.
 To confirm that <code>conda</code> is working, you can ask it which version was installed:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div>
 <p>which should return something like this:</p>
-<pre><code>conda 4.11.0</code></pre>
+<pre><code>conda 22.9.0-3</code></pre>
 <blockquote>
 <p><strong>Note:</strong> If you see <code>zsh: command not found: conda</code>,
 see the section on <a href="#bash-shell">Bash</a>
@@ -2727,8 +2728,8 @@ and download the latest version of R for Mac. Open the file and follow the insta
 <p>After installation, open a new terminal window and type the following:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code></pre></div>
 <p>You should see something like this if you were successful:</p>
-<pre><code>R version 4.1.1 (2021-08-10) -- &quot;Kick Things&quot;
-Copyright (C) 2021 The R Foundation for Statistical Computing
+<pre><code>R version 4.2.2 (2022-10-31 ucrt) -- &quot;Innocent and Trusting&quot;
+Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: aarch64-apple-darwin20 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -2840,9 +2841,9 @@ If you have previously installed LaTeX, please uninstall it before proceeding wi
 <p>You can check that the installation is working by opening a terminal and asking for the version of latex:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">latex</span> <span class="at">--version</span></span></code></pre></div>
 <p>You should see something like this if you were successful:</p>
-<pre><code>pdfTeX 3.141592653-2.6-1.40.23 (TeX Live 2022/dev)
-kpathsea version 6.3.4/dev
-Copyright 2021 Han The Thanh (pdfTeX) et al.
+<pre><code>pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022)
+kpathsea version 6.3.4
+Copyright 2022 Han The Thanh (pdfTeX) et al.
 There is NO warranty.  Redistribution of this software is
 covered by the terms of both the pdfTeX copyright and
 the Lesser GNU General Public License.
@@ -2888,7 +2889,8 @@ Do this by opening a terminal and copying the following there press enter:</p>
 <span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>  varwidth <span class="dt">\</span></span>
 <span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>  fancyhdr <span class="dt">\</span></span>
 <span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>  titlesec <span class="dt">\</span></span>
-<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>  ucharclasses</span></code></pre></div>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>  ucharclasses <span class="dt">\</span></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>  pdfcol</span></code></pre></div>
 <p>To test that your latex installation is working with jupyter notebooks,
 launch <code>jupyter lab</code> from a terminal and open either a new notebook
 or the same one you used to test IRkernel above.
@@ -2908,6 +2910,10 @@ which we can install as follows.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install pyppeteer</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pyppeteer-install</span></span></code></pre></div>
 <p>Try this by going to <code>File -&gt; Export notebook as... -&gt; Export Notebook to WebPDF</code>.</p>
+<h3 id="webpdf-issues">WebPDF Issues</h3>
+<p>If there are issues exporting to WebPDF, run the following in Terminal:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nbconvert</span> <span class="at">--to</span> webpdf <span class="at">--allow-chromium-download</span> Untitled.ipynb</span></code></pre></div>
+<p>The above assumes that your file name is <code>Untitled.ipynb</code></p>
 <h2 id="docker">Docker</h2>
 <p>You will use Docker to create reproducible,
 sharable, and shippable computing environments for your analyses.
@@ -2920,7 +2926,7 @@ Then, follow the installation instructions on that screen to install the stable 
 <p>To test if Docker is working, after installation open the Docker app by clicking
 on its icon (from Finder, Applications or Launchpad).
 Next open Terminal and type the following:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div>
 <p>you should see something like this if you were successful:</p>
 <pre><code>Unable to find image &#39;hello-world:latest&#39; locally
 latest: Pulling from library/hello-world
@@ -2954,7 +2960,7 @@ We have created a script to help you check that your installation was successful
 and to provide instructions for how you can troubleshoot any potential issues.
 To run this script,
 please execute the following command from your terminal.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> <span class="at">-Ss</span> https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/check_setup.sh<span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> <span class="at">-Ss</span> https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/check_setup.sh<span class="op">)</span></span></code></pre></div>
 <p>The output from running the script will look something like this:</p>
 <pre><code># DSCI 310 setup check 1.0
 
@@ -2976,32 +2982,32 @@ Checking program and package versions...
 
 ## Operating system
 ProductName:    macOS
-ProductVersion: 12.0
+ProductVersion: 13.1
 BuildVersion:   21A344
 
 ## System programs
-OK        rstudio 2021.09.0+351
-OK        R 4.1.1 (2021-08-10) -- &quot;Kick Things&quot;
-OK        python 3.9.7
-OK        conda 4.11.0
-OK        bash 3.2.57(1)-release (x86_64-apple-darwin20)
-OK        git 2.30.1 (Apple Git-130)
+OK        rstudio 
+OK        R 4.2.2 (2022-10-31 ucrt) -- :Innocent and Trusting&quot;
+OK        python 3.11.0
+OK        conda 22.11.1
+OK        bash 3.2.57(1)-release (arm64-apple-darwin22)
+OK        git 2.35.1
 OK        make 3.81
-OK        latex 3.141592653-2.6-1.40.23 (TeX Live 2022/dev)
-OK        tlmgr 5 +0200)
-OK        docker 20.10.8, build 3967b7d
-OK        code 1.62.2
+OK        latex 3.141592653-2.6-1.40.24 (TeX Live 2022)
+OK        tlmgr 58:07 +0200)
+OK        docker 20.10.13, build a224086
+OK        code 1.74.3
 
 ## Python packages
-MISSING   pandas=1.*
-MISSING   pyppeteer=0.*
-OK        nbconvert=6.3.0
-OK        jupyterlab=3.2.4
-OK        jupyterlab-git=0.34.0
-OK        jupytext=1.13.3
+OK        pandas=1.5.2
+OK        pyppeteer=1.0.2
+OK        nbconvert=7.2.8
+OK        jupyterlab=3.5.2
+OK        jupyterlab-git=0.41.0
+OK        jupytext=1.14.4
 OK        jupyterlab-spellchecker=0.7.2
 OK        jupyterlab PDF-generation was successful.
-MISSING   jupyterlab WebPDF-generation failed. It seems like you did not run `pip install &quot;nbconvert[webpdf]&quot;` to install pyppeteer.
+OK        jupyterlab WebPDF-generation was successful.
 OK        jupyterlab HTML-generation was successful.
 
 ## R packages
@@ -3041,7 +3047,7 @@ from a trusted source as in this case
 <li><a href="http://stat545.com/packages01_system-prep.html#mac-os-system-prep">UBC STAT 545</a> licensed under the <a href="https://creativecommons.org/licenses/by-nc/3.0/legalcode">CC BY-NC 3.0</a></li>
 <li><a href="https://software-carpentry.org/">Software Carpentry</a></li>
 </ul>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
