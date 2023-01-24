@@ -600,7 +600,7 @@ Try this by going to `File -> Export notebook as... -> Export Notebook to WebPDF
 If there are issues exporting to WebPDF, run the following in Terminal:
 
 ```bash
-nbconvert --to webpdf --allow-chromium-download Untitled.ipynb
+jupyter nbconvert --to webpdf --allow-chromium-download Untitled.ipynb
 ```
 
 The above assumes that your file name is `Untitled.ipynb`
