@@ -779,6 +779,39 @@ There is NO WARRANTY, to the extent permitted by law.
 
 ## Docker
 
+Prior to use Docker, you must have **Windows Subsystem for Linux 2**(WSL2) installed. Please strictly follow the following procedure (adapted from [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)) to successfully use Docker on Windows:
+
+
+Open your terminal and prompt the following command:
+```bash
+wsl --install -d ubuntu
+```
+Once successful you will see another pop window that asks you to enter a username and password as shown below:
+
+> Note: The password will not be shown upon input
+
+
+![](resources/ubuntu-wsl-complete.png)
+Then, enter the following command in your original **Git-Bash** terminal:
+```bash
+wsl --set-default-version 2
+```
+
+And your output would look like the following:
+```
+For information on key differences with WSL 2 please visit https://aka.ms/wsl2
+
+The operation completed successfully
+```
+
+If you encountered problem with or after the installation like update kernel:
+
+Visit this [link](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package), where you should land on `Step 4 Download the Linux kernel update package`. Click the link that says [WSL2 Linux Kernel update for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) like the following:
+
+![](resources/wsl-linux-kernel-update.png)
+
+Once downloaded, just double click and run the installer found likely in your **Download** folder, and you will be asked for elevated permission (i.e. administrator access), simply click **OK** or **Allow** to complete the process. Then you can proceed on the installation of Docker.
+
 You will use Docker to create reproducible,
 sharable and shippable computing environments for your analyses.
 For this you will need a Docker account.
