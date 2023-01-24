@@ -2416,7 +2416,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2540,10 +2540,14 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).</code
 <li>You can download the file by using one of the two methods below:
 <ul>
 <li>Right clicking &gt; save page as into your <code>dsci-310-assign2</code> folder OR</li>
-<li>In Terminal/Git Bash, run:</li>
-</ul>
-<pre><code>curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh --output create_conflict.sh</code></pre></li>
+<li>In Terminal/Git Bash, run (this is a multi line command copy and paste all of it at once):</li>
 </ul></li>
+</ul></li>
+</ol>
+<pre><code>curl https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/create_conflict.sh \
+   --output \
+   create_conflict.sh</code></pre>
+<ol start="3" type="1">
 <li>Once you have the script on your computer, run the script to prepare your repository by running the command below:</li>
 </ol>
 <pre class="shell"><code>bash create_conflict.sh</code></pre>
