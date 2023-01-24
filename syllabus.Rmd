@@ -65,69 +65,70 @@ a significant data science project with peers throughout the course.
 right before their office hours, and they may run a few
 minutes late. Please be patient!*
 
-| Position | Name  | Email | Office Hours | Office Location |
-|-------|-------|--------------|-----------------|----------------|
-| Instructor | Daniel Chen | daniel.chen[-at-]stat.ubc.ca | Tuesday 8:00 AM - 9:00 AM | ORCH 4074 |
-| TA | Tony Liang | ---- | Monday 3:30 PM- 4:30 PM | SCRF 200 |
-| TA | Amy Kong | ---- | Tuesday 10:30 AM - 11:30 AM | ORCH 4074 |
-| TA | Zizhen Guo | ---- | Thursday 1:00 PM - 2:00PM | ORCH 4062 |
+| Position   | Name        | Email                        | Office Hours                | Office Location |
+| ---------- | ----------- | ---------------------------- | --------------------------- | --------------- |
+| TA         | Tony Liang  | ----                         | Monday 3:30 PM- 4:30 PM     | SCRF 200        |
+| Instructor | Daniel Chen | daniel.chen[-at-]stat.ubc.ca | Tuesday 8:00 AM - 9:00 AM   | ORCH 4074       |
+| TA         | Amy Kong    | ----                         | Tuesday 10:30 AM - 11:30 AM | ORCH 4074       |
+| TA         | Zizhen Guo  | ----                         | Thursday 1:00 PM - 2:00PM   | ORCH 4062       |
 
 ## Assessment
 
 ### Course breakdown
 
-| Deliverable	| Grade |	Learning objectives addressed |
-|-------------|-------|-------------------------------|
-|Individual assignments	| 5% |	1, 2, 4, 5 |
-|Project milestone 1 |	10%	| 3, 6 |
-|Project milestone 2	| 10%	| 3, 4, 6 |
-|Project milestone 3	| 10%	| 3, 4, 5, 6 |
-|Final project	| 20%	| 3, 4, 5, 6 |
-|Peer review |	4.5%	| 2 |
-|Teamwork	| 10% |	6 |
-| GitHub username quiz | 0.5% | NA |
-|Mid-term Exam |	10%	 | 1, 2, part of 4 |
-|Final Exam	| 20%	| 1, 2, 4, 5 |
+| Deliverable            | Grade | Learning objectives addressed |
+| ---------------------- | ----- | --- |
+| Individual assignments | 5%    | 1, 2, 4, 5                    |
+| Project milestone 1    | 10%   | 3, 6                          |
+| Project milestone 2    | 10%   | 3, 4, 6                       |
+| Project milestone 3    | 10%   | 3, 4, 5, 6                    |
+| Final project          | 20%   | 3, 4, 5, 6                    |
+| Peer review            | 4.5%  | 2                             |
+| Teamwork               | 10%   | 6                             |
+| GitHub username quiz   | 0.5%  | NA                            |
+| Mid-term Exam          | 10%   | 1, 2, part of 4               |
+| Final Exam             | 20%   | 1, 2, 4, 5                    |
 
 ## Schedule at a glance
 
-| Week | Date     | Topic | Reading | Assessments due | Notes |
-|------|----------|-------|---------|-----------------|-------|
-| 1    | 2023/01/10 | How do reproducible and trustworthy workflows impact data analysis? |  |  |  |
-| 2    | 2023/01/17 | Version control for transparency and collaboration | [Collaboration with version control](https://ubc-dsci.github.io/introduction-to-datascience/Getting-started-with-version-control.html) | Individual assignment 1 due & GitHub username quiz |  |
-| 3    | 2023/01/24 | Integrated development environments, filenames and data science project organization |  |  | Team assignment for group projects & drafting of team work contract |
-| 4    | 2023/01/31 | Managing dependencies using virtual environments |  | Individual assignment 2 due |  |
-| 5    | 2023/02/07 | Managing dependencies using containerization  |  | Individual assignment 3 due |  |
-| 6    | 2023/02/14 | Introduction to testing code for data science |  | Milestone 1 due |  |
-| 7    | 2023/02/21 | Reading Break | | | |
-| 8    | 2023/02/28 | Non-interactive scripts and data analysis pipelines |  | Mid-term exam |  |
-| 9    | 2023/03/07 | Reproducible reports |  | Milestone 2 due |  |
-| 10   | 2023/03/14 | Advanced version control workflows |  | Individual assignment 4 due |  |
-| 11   | 2023/03/21 | Packaging and documenting code |  | Milestone 3 due |  |
-| 12   | 2023/03/28 | Automated testing and continuous integration |  | Individual assignment 5 & Peer review due |  |
-| 13   | 2023/04/04 | Deploying and publishing packages,  copyright and licenses |  |  Final project & Team work reflection due | |
+| Week | Date       | Topic                                                                                | Reading                                                                                                                                | Assessments due                                    | Notes                                                               |
+| ---- | ---------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------- |
+| 1    | 2023/01/10 | How do reproducible and trustworthy workflows impact data analysis?                  |                                                                                                                                        |                                                    | Start working on your installation instructions                     |
+| 2    | 2023/01/17 | Version control for transparency and collaboration                                   | [Collaboration with version control](https://ubc-dsci.github.io/introduction-to-datascience/Getting-started-with-version-control.html) | Individual assignment 1 due & GitHub username quiz |                                                                     |
+| 3    | 2023/01/24 | Integrated development environments, filenames and data science project organization |                                                                                                                                        | Individual assignment 2 and Version Control "quiz" | Team assignment for group projects & drafting of team work contract |
+| 4    | 2023/01/31 | Managing dependencies using virtual environments                                     |                                                                                                                                        |                                                    |                                                                     |
+| 5    | 2023/02/07 | Managing dependencies using containerization                                         |                                                                                                                                        | Individual assignment 3 due                        |                                                                     |
+| 6    | 2023/02/14 | Introduction to testing code for data science                                        |                                                                                                                                        | Milestone 1 due                                    |                                                                     |
+| 7    | 2023/02/21 | Reading Break                                                                        |                                                                                                                                        |                                                    |                                                                     |
+| 8    | 2023/02/28 | Non-interactive scripts and data analysis pipelines                                  |                                                                                                                                        | Mid-term exam                                      |                                                                     |
+| 9    | 2023/03/07 | Reproducible reports                                                                 |                                                                                                                                        | Milestone 2 due                                    |                                                                     |
+| 10   | 2023/03/14 | Advanced version control workflows                                                   |                                                                                                                                        | Individual assignment 4 due                        |                                                                     |
+| 11   | 2023/03/21 | Packaging and documenting code                                                       |                                                                                                                                        | Milestone 3 due                                    |                                                                     |
+| 12   | 2023/03/28 | Automated testing and continuous integration                                         |                                                                                                                                        | Individual assignment 5 & Peer review due          |                                                                     |
+| 13   | 2023/04/04 | Deploying and publishing packages, copyright and licenses                            |                                                                                                                                        | Final project & Team work reflection due           |                                                                     |
 
 ### Assessment schedule
 
 In general, assignments will be due 11:59 PM on Saturdays
 
-| Assessment            | Description | Due date |
-|--------------------|-----------------------|---------|
-| Individual assignment 0 | Computer Setup | 2023/01/12 |
-| Individual assignment 1 | Setting up your computer | 2023/01/21 23:59 |
-| GitHub username quiz | | 2023/01/21 23:59 |
-| Individual assignment 2 | Version control practice | 2023/01/28 23:59 |
-| Individual assignment 3 | Dockerfile practice | 2023/02/04 23:59 |
-| Milestone 1    | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`) | 2023/02/18 23:59 |
-| Mid-term exam | | 2023/03/03 09:00 |
-| Milestone 2 | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation) | 2023/03/11 23:59  |
-| Individual assignment 4 | Reproducible reports practice | 2023/03/18 23:59 |
-| Milestone 3  | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2023/03/25 23:59 |
-| Peer review | review of another group's project | 2023/04/01 23:59 |
-| Individual assignment 5 | Packaging practice | 2023/04/01 23:59 |
-| Final project | package & CI (the full monty package - including docs) | 2023/04/08 23:59 |
-| Team work | Reflection of how the group worked together, as well as individual performance | 2023/04/09 11:59 |
-| Final exam | | TBD |
+| Assessment              | Description                                                                                                                                                                | Due date         | Due Week |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------- |
+| Individual assignment 0 | Computer Setup                                                                                                                                                             | 2023/01/12       | 1        |
+| Individual assignment 1 | Setting up your computer                                                                                                                                                   | 2023/01/21 23:59 | 2        |
+| GitHub username quiz    |                                                                                                                                                                            | 2023/01/21 23:59 | 2        |
+| Individual assignment 2 | Version control practice (merge conflict) Worth 0.5%, the 1% is split with the version contorl quiz                                                                        | 2023/01/28 23:59 | 3        |
+| Version control Quiz    | Not a real quiz, it's just a set of questions you answer via the canvas quiz section Worth 0.5% the 1 point is split with Indivitual Assignment 2                          | 2023/01/28 23:59 | 3        |
+| Individual assignment 3 | Dockerfile practice                                                                                                                                                        | 2023/02/04 23:59 | 5        |
+| Milestone 1             | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`)             | 2023/02/18 23:59 | 6        |
+| Mid-term exam           |                                                                                                                                                                            | 2023/03/03 09:00 | 8        |
+| Milestone 2             | functions abstracted to a file/module & tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation)                                                                 | 2023/03/11 23:59 | 9        |
+| Individual assignment 4 | Reproducible reports practice                                                                                                                                              | 2023/03/18 23:59 | 10       |
+| Milestone 3             | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together (`.R` files & Make pipeline, `bookdown` or `rticle` report) | 2023/03/25 23:59 | 11       |
+| Peer review             | review of another group's project                                                                                                                                          | 2023/04/01 23:59 | 12       |
+| Individual assignment 5 | Packaging practice                                                                                                                                                         | 2023/04/01 23:59 | 12       |
+| Final project           | package & CI (the full monty package - including docs)                                                                                                                     | 2023/04/08 23:59 | 13       |
+| Team work               | Reflection of how the group worked together, as well as individual performance                                                                                             | 2023/04/09 11:59 | 13       |
+| Final exam              |                                                                                                                                                                            | TBD              |          |
 
 ## Policies
 
