@@ -20,14 +20,14 @@ Your data analysis project will evolve throughout the course from a single, mono
 - a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.
 
 An example final project from another course (where the project is similar) can be seen here: 
--[Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor)
+[Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor)
 
 ## Milestone 1 summary
 
 In this milestone, you will:
 
 1. Draft a team work contract
-2. Set-up a public GitHub repository (or a private one, adding `ttimbers` and `GiuseppeTT` as collaborators with read access) under the [DSCI-310 organization](https://github.com/DSCI-310)
+2. Set-up a public GitHub repository (or a private one, adding `chendaniely`, `a-kong`, `gzzen`, and `tonyliang19` as collaborators)
 3. Select a data analysis project to work with
 4. Create an appropriate file and directory structure for a data analysis project
 5. Add the data analysis as a literate code document
@@ -60,11 +60,13 @@ You will need all of these for your capastone projects (and beyond)!
 
 ### 2. Set-up a GitHub repository
 
-Now set-up a public GitHub repository (or a private one, adding `ttimbers` and `GiuseppeTT` as collaborators with read access) with a reasonable name for your project under the the [DSCI-310 organization](https://github.com/DSCI-310). We are using github.com and public repositories because we will eventually be using some fancy tooling (*e.g.,* GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com.  Additionally, this will help you build a portfolio of your work you can share with others. *Note: if you need to change the name of your project repository later, you can!*
+Now set-up a public GitHub repository (or a private one, adding `chendaniely`, `a-kong`, `gzzen`, and `tonyliang19` as collaborators) for your project in the format: `dsci-310-group-XX-<optional_team_name>`. 
+
+We are using github.com and public repositories because we will eventually be using some fancy tooling (*e.g.,* GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com.  Additionally, this will help you build a portfolio of your work you can share with others. *Note: if you need to change the name of your project repository later, you can!*
 
 The tracking of the project will be done using [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones). When you create a milestone, you can associate it with issues and pull requests. After creating issues you can link them to a milestone associating each them to a project due date.
 
- In order to make more efficient team workflow, organize the issues you have previously associated with milestones into a [GitHub project board](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards). We recommend you to use `Basic kaban` template that counts with "To do", "In progress", and "Done" columns.
+ In order to make more efficient team workflow, organize the issues you have previously associated with milestones into a [GitHub project board](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards).
 
 The project board should show the current status of the project to the team. Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves. 
 
