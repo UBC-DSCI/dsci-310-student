@@ -11,6 +11,7 @@ In the same team:
     - Settings > Collaborators and teams > add people
 4. (Only one of you) Set up a GitHub board
     - Projects > Link a project > Board
+    - Add other members to the board
 5. (Everybody together) Create some GitHub issues and assign tasks
 6. That is your project repo!
 7. Paste your full github url into the class collaborative document hackmd page (slack > general > pinned on top)
