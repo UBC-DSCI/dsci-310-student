@@ -8,8 +8,9 @@ In the same team:
 1. (Only one of you) Create a project repo in your github account
     - Name your repository: `dsci-310-group-XX-<optional_team_name>`
 3. (Only one of you) Add the other members as collaborators
-    - Settings > Collaborators and teams > add people > add as admin
-4. (Only one of you) Set up a GitHub board (we recommend the basic kanban template)
+    - Settings > Collaborators and teams > add people
+4. (Only one of you) Set up a GitHub board
+    - Projects > Link a project > Board
 5. (Everybody together) Create some GitHub issues and assign tasks
 6. That is your project repo!
 7. Paste your full github url into the class collaborative document hackmd page (slack > general > pinned on top)
