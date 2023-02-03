@@ -30,7 +30,7 @@ Please, do the following:
 1. Clone the fair coin analysis repository: https://github.com/DSCI-310/fair-coin-analysis
 2. Go to the folder and open `fair-coin-analysis.Rproj`. RStudio will setup the working directory for you.
 3. Run `renv::init()` on the R console
-4. Run the `scripts/analyze.R` script and see the results in the `results/` folder
+4. Run the `analyze.R` by running `Rscript scripts/analyze.R` and see the results in the `results/` folder
 5. That's it 🥳
 
 Notes:
