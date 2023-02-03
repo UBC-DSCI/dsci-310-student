@@ -2,10 +2,20 @@
 
 `{renv}` documentation: https://rstudio.github.io/renv/index.html
 
+## Part 0: Install `renv`
+
+Steps:
+
+- Open R console from the command line or RStudio
+- Run the R command `install.packages("renv")` to install `{renv}`
+
 ## Part 1: Motivation
 
 Please, do the following:
+
 1. Clone the hard cowsay repository and try to run the script `hello_world.R`: https://github.com/DSCI-310/hard-cowsay
+   - To run an R script, locate to the repository and run `Rscript hello_world.R` from the command line
+   - The script is using a package that is (posssibly) not installed on your local environment. What can you do?
 2. Clone the easy cowsay repository and try following the instructions: https://github.com/DSCI-310/easy-cowsay
 
 Notes:
@@ -14,45 +24,46 @@ Notes:
     - Isolate the dependencies of a project from the rest of the system
     - Manage dependencies
 
-## Part 2: Set up `{renv}` (`renv::init()`) (`git init`)
+## Part 2: Set up `{renv}` (`renv::init()`)
 
 Please, do the following:
-1. Run the R command `install.packages("renv")` to install `{renv}`
-2. Fork the fair coin analysis repository: https://github.com/DSCI-310/fair-coin-analysis
-3. Clone it
-4. Run `renv::init()` on the R console
-5. Commit all the files created by `{renv}`
-6. That's it 🥳
+1. Clone the fair coin analysis repository: https://github.com/DSCI-310/fair-coin-analysis
+2. Go to the folder and open `fair-coin-analysis.Rproj`. RStudio will setup the working directory for you.
+3. Run `renv::init()` on the R console
+4. Run the `scripts/analyze.R` script and see the results in the `results/` folder
+5. That's it 🥳
 
 Notes:
 - You can check that `{renv}` is set up by restarting the R session and executing the R command `renv::status()`
-- You can also run the `scripts/analyze.R` script and see the results in the `results/` folder
 
-## Part 3: Add packages (`renv::snapshot()`) (`git add` and `git commit`)
+## Part 3: Add packages (`renv::snapshot()`)
 
 Please, do the following:
-1. Run the R command `renv::install("cowsay")` to install `{cowsay}`
+1. Run the R command `renv::install("cowsay")` to install `{cowsay}` 
 2. Run `renv::snapshot()`
 3. Create a script that loads `{cowsay}` and use it to conclude if the coin is fair
 4. Run `renv::snapshot()` again
-5. Commit the new script and `renv.lock`
 6. That's it 🥳
 
 Notes:
+
+- In an `renv` project, `renv::install()` does the job of `install.packages()`
+
 - Notice how `renv::snapshot()` did nothing the first time even though we installed `{cowsay}`
 - `renv::snapshot()` only changed `renv.lock` when it detected a new package being actively used in a script
 
-## Part 4: Restore to previous state (`renv::restore()`) (`git revert`)
+## Part 4: Restore to previous state (`renv::restore()`)
 
 Please, do the following:
 1. Run the R command `renv::install("sckott/cowsay")` to install the dev version of `{cowsay}`
 2. Run the R command `renv::status()` to check the current state of the environment
 3. Run the R command `renv::restore()` to restore environment from the `renv.lock` file
+4. That's it 🥳
 
 Notes:
 - You can force `{renv}` delete all currently not used packagse with `renv::restore(clean = TRUE)`
 
-## Part 5: Go crazy
+## Part 5: Go crazy!
 
 Notes:
 - This is a quick introduction to `{renv}`
