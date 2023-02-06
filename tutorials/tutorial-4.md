@@ -109,7 +109,7 @@ We need to tell `{renv}` to install all the packages in this environment. Luckil
 1. While in your `easy-cowsay` folder, open up the R console. You might see something like this:
 
 ```
-* Project '~/Desktop/easy-cowsay' loaded. [renv 0.15.2]
+* Project '~/git/easy-cowsay' loaded. [renv 0.15.2]
 * The project library is out of sync with the lockfile.
 * Use `renv::restore()` to install packages recorded in the lockfile.
 Warning message:
@@ -121,7 +121,7 @@ This project is configured to use R version '4.0.5', but '4.2.2' is currently be
 
 ```
 > getwd()
-[1] "/home/dan/Desktop/easy-cowsay"
+[1] "/home/dan/git/easy-cowsay"
 ```
 
 3. Initialize + install everything in the `renv.lock` file. By running the `init()` function from the `{renv}` library.
@@ -180,7 +180,7 @@ Installing cowsay [0.8.0] ...
         OK [built from source]
 Moving cowsay [0.8.0] into the cache ...
         OK [moved to cache in 0.16 milliseconds]
-* Project '~/Desktop/easy-cowsay' loaded. [renv 0.15.2]
+* Project '~/git/easy-cowsay' loaded. [renv 0.15.2]
 * renv activated -- please restart the R session.
 Warning message:
 This project is configured to use R version '4.0.5', but '4.2.2' is currently being used. 
