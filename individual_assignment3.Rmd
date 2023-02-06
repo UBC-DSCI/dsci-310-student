@@ -13,26 +13,32 @@ The purpose of this assignment is to ensure that everyone gains hands-on practic
 
 ### Submission instructions
 
-In the textbox provided for this assignment on Canvas,
-you must submit: 
+In the textbox provided for this assignment on Canvas, you must submit:
+
 1. A link to the GitHub.com repository that you create for this assignment.
-You should name your GitHub.com repository `dockerfile-practice`.
-2. A the link to your Docker image on DockerHub. You should name your DockerHub repository `dockerfile-practice`.
+    - You should name your GitHub.com repository `dsci310-dockerfile-practice`.
+2. A the link to your Docker image on DockerHub. You should name your DockerHub repository `dsci310-dockerfile-practice`.
 
 ### Exercise instructions
 
-1. Create a public repository on GitHub.com repo under your personal username called `dockerfile-practice`
-
+1. Create a public repository on GitHub.com repo under your personal username called `dsci310-dockerfile-practice`
 2. Add a `Dockerfile` to it. This Dockerfile should:
-    - Be based off of the `ubcdsci/jupyterlab` Docker image ([link to `ubcdsci/jupyterlab` DockerHub repository](https://hub.docker.com/repository/docker/ubcdsci/jupyterlab), [link to `ubcdsci/jupyterlab` Dockerfile](https://github.com/UBC-DSCI/jupyterlab/blob/main/Dockerfile))
-    - Add at least one new R or Python package to the Dockerfile using `conda` (ensure that you pin the version of the package you add).
+    1. Be based off of the `rocker/rstudio` Docker image
+      ([link to `rocker/rstudio` DockerHub repository](https://hub.docker.com/r/rocker/rstudio),
+      [link to `rocker/rstudio` Dockerfile](https://hub.docker.com/r/rocker/rstudio/dockerfile/))
+    2. Add at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).
 
-3. Add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile ([link to a GitHub Actions Workflow you should use for this](https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml)).
+3. Add a GitHub Actions workflow to automatically build the image, push it to DockerHub,
+   and version the image and GitHub repo when changes are pushed to the Dockerfile
+   ([link to a GitHub Actions Workflow you should use for this](https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml)).
+    - *Note 1: When setting up the workflow on GitHub Actions,
+      be sure to click "Skip this and setup a workflow yourself".*
+    - *Note 2: You will need to add your DockerHub username and password
+      (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively)
+      as GitHub secrets to this repository for this to work.*
 
-  - *Note 1: When setting up the workflow on GitHub Actions, be sure to click "Skip this and setup a workflow yourself".*
-  - *Note 2: You will need to add your DockerHub username and password (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively) as GitHub secrets to this repository for this to work.*
-
-4. Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once.
+4. Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup
+   so that you get the image automatically built and pushed to DockerHub at least once.
 
 ## Rubric 
 
