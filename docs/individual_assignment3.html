@@ -2525,6 +2525,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Another way is to <code>RUN</code> commands directly in the <code>Dockerfile</code> to install packages
 <ul>
 <li>Hint: You cannot use <code>install.packages()</code> because you can’t pin a version number.</li>
+<li>Hint: You can run R code directly from the command line. For example, <code>R -e "print('something to say...')"</code>. Make sure to change the double quotes <code>""</code> to single quotes <code>''</code> in the R code.<br />
+</li>
 <li>Hint: You will need to first install the <code>{remotes}</code> package, and then use the <code>remotes::install_version()</code> function</li>
 </ul></li>
 </ul></li>
