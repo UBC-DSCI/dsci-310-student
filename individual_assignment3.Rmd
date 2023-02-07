@@ -23,9 +23,9 @@ In the textbox provided for this assignment on Canvas, you must submit:
 
 1. Create a public repository on GitHub.com repo under your personal username called `dsci310-dockerfile-practice`
     - You can choose a pre-made `.gitignore` or manually create one yourself
-2. Add a `Dockerfile` to it. This Dockerfile should be based off of the `rocker/rstudio` Docker image
+2. Add a `Dockerfile` to it. This Dockerfile should be based off of the `rocker/rstudio:4.1.3` Docker image
     - [link to `rocker/rstudio` DockerHub repository](https://hub.docker.com/r/rocker/rstudio)
-    - [link to `rocker/rstudio` Dockerfile](https://hub.docker.com/r/rocker/rstudio/dockerfile/)
+    - [link to `rocker/rstudio:4.1.3` Dockerfile](https://hub.docker.com/r/rocker/rstudio/tags?page=1&name=4.1.3)
 3. Add at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).
     - There are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.
     - One way is to turn your `dsci310-dockerfile-practice` into a local RStudio project then do the following steps:
