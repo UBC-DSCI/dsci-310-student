@@ -22,32 +22,57 @@ In the textbox provided for this assignment on Canvas, you must submit:
 ### Exercise instructions
 
 1. Create a public repository on GitHub.com repo under your personal username called `dsci310-dockerfile-practice`
-2. Add a `Dockerfile` to it. This Dockerfile should:
-    1. Be based off of the `rocker/rstudio` Docker image
-      ([link to `rocker/rstudio` DockerHub repository](https://hub.docker.com/r/rocker/rstudio),
-      [link to `rocker/rstudio` Dockerfile](https://hub.docker.com/r/rocker/rstudio/dockerfile/))
-    2. Add at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).
-
-3. Add a GitHub Actions workflow to automatically build the image, push it to DockerHub,
+    - You can choose a pre-made `.gitignore` or manually create one yourself
+2. Add a `Dockerfile` to it. This Dockerfile should be based off of the `rocker/rstudio` Docker image
+    - [link to `rocker/rstudio` DockerHub repository](https://hub.docker.com/r/rocker/rstudio)
+    - [link to `rocker/rstudio` Dockerfile](https://hub.docker.com/r/rocker/rstudio/dockerfile/)
+3. Add at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).
+    - There are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.
+    - One way is to turn your `dsci310-dockerfile-practice` into a local RStudio project then do the following steps:
+        1. Open the RStudio project locally
+        2. Initialize the project with renv
+        3. Use `{renv}` to install a package (e.g., `cowsay`) and then make sure you create a script that loads/uses the `{cowsay}` package.
+        4. In your `Dockerfile` `COPY` all your renv files into the container
+        5. Use the outputs from `renv` to help you specify which functions to use to install the libraries
+        - Hint: you might need to toggle the `USER` in the `Dockerfile` between `rstudio` and `root` to get everything working.
+    - Another way is to `RUN` commands directly in the `Dockerfile` to install packages
+        - Hint: You cannot use `install.packages()` because you can't pin a version number.
+        - Hint: You will need to first install the `{remotes}` package, and then use the `remotes::install_version()` function
+4. Build your `Dockerfile` and test it locally.
+5. Add a GitHub Actions workflow to automatically build the image, push it to DockerHub,
    and version the image and GitHub repo when changes are pushed to the Dockerfile
    ([link to a GitHub Actions Workflow you should use for this](https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml)).
-    - *Note 1: When setting up the workflow on GitHub Actions,
-      be sure to click "Skip this and setup a workflow yourself".*
-    - *Note 2: You will need to add your DockerHub username and password
-      (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively)
-      as GitHub secrets to this repository for this to work.*
-
-4. Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup
+    - Use the "Docker image" workflow
+        - You can also start off with an empty file and paste in a workflow by clicking "Skip this and setup a workflow yourself".
+    - You will need to add your DockerHub username and password (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively)
+      as GitHub secrets to this repository for this to work.
+    - Github Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
+6. Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup
    so that you get the image automatically built and pushed to DockerHub at least once.
+    - You can also add a `workflow_dispatch:` trigger and manually trigger a workflow
+
+- Note: If you are making an `renv.lock` file and you notice it's not updating with `renv::snapshot()`,
+  take a look at [this FAQ](https://rstudio.github.io/renv/articles/faq.html#why-isnt-my-package-being-snapshotted-into-the-lockfile)
 
 ## Rubric 
 
 This assignment will be graded for completion as follows:
 
-|Grade | Description |
-|------|-------------|
-| 100% | *1)* A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub. *2)* The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username. *3)* There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub. *4)* The Docker image version tag is in sync with the GitHub repository release tag. *5)* At least one new R or Python package was added to the Dockerfile using `conda`, and the version of that package was pinned. |
-| 75%  | 4/5 of the criteria listed above were met. |
-| 50%  | 3/5 of the criteria listed above were met. |
-| 25%  | 2/5 of the criteria listed above were met. |
-| 0%   | Only 1/5 of the criteria listed above were met or the assignment was not attempted. |
+1. A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub.
+2. The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username.
+3. There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository,
+   and publish it to DockerHub.
+4. The Docker image version tag is in sync with the GitHub repository release tag.
+5. At least one new R package was added to the Dockerfile and the version of that package was pinned. 
+
+| Grade | Description                                                                         |
+| ----- | ----------------------------------------------------------------------------------- |
+| 100%  | 5/5 of the criteria listed above were met.                                          |
+| 75%   | 4/5 of the criteria listed above were met.                                          |
+| 50%   | 3/5 of the criteria listed above were met.                                          |
+| 25%   | 2/5 of the criteria listed above were met.                                          |
+| 0%    | Only 1/5 of the criteria listed above were met or the assignment was not attempted. |
+
+Additional points taken off:
+
+- -2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)
