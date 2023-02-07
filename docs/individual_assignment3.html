@@ -2489,34 +2489,82 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="instructions">Instructions</h2>
 <p>The purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from <code>Dockerfile</code>s.</p>
 <h3 id="submission-instructions">Submission instructions</h3>
-<p>In the textbox provided for this assignment on Canvas,
-you must submit:
-1. A link to the GitHub.com repository that you create for this assignment.
-You should name your GitHub.com repository <code>dockerfile-practice</code>.
-2. A the link to your Docker image on DockerHub. You should name your DockerHub repository <code>dockerfile-practice</code>.</p>
+<p>In the textbox provided for this assignment on Canvas, you must submit:</p>
+<ol type="1">
+<li>A link to the GitHub.com repository that you create for this assignment.
+<ul>
+<li>You should name your GitHub.com repository <code>dsci310-dockerfile-practice</code>.</li>
+</ul></li>
+<li>A the link to your Docker image on DockerHub. You should name your DockerHub repository <code>dsci310-dockerfile-practice</code>.</li>
+</ol>
 <h3 id="exercise-instructions">Exercise instructions</h3>
 <ol type="1">
-<li><p>Create a public repository on GitHub.com repo under your personal username called <code>dockerfile-practice</code></p></li>
-<li><p>Add a <code>Dockerfile</code> to it. This Dockerfile should:</p>
+<li>Create a public repository on GitHub.com repo under your personal username called <code>dsci310-dockerfile-practice</code>
 <ul>
-<li>Be based off of the <code>ubcdsci/jupyterlab</code> Docker image (<a href="https://hub.docker.com/repository/docker/ubcdsci/jupyterlab">link to <code>ubcdsci/jupyterlab</code> DockerHub repository</a>, <a href="https://github.com/UBC-DSCI/jupyterlab/blob/main/Dockerfile">link to <code>ubcdsci/jupyterlab</code> Dockerfile</a>)</li>
-<li>Add at least one new R or Python package to the Dockerfile using <code>conda</code> (ensure that you pin the version of the package you add).</li>
+<li>You can choose a pre-made <code>.gitignore</code> or manually create one yourself</li>
 </ul></li>
-<li><p>Add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile (<a href="https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml">link to a GitHub Actions Workflow you should use for this</a>).</p></li>
+<li>Add a <code>Dockerfile</code> to it. This Dockerfile should be based off of the <code>rocker/rstudio</code> Docker image
+<ul>
+<li><a href="https://hub.docker.com/r/rocker/rstudio">link to <code>rocker/rstudio</code> DockerHub repository</a></li>
+<li><a href="https://hub.docker.com/r/rocker/rstudio/dockerfile/">link to <code>rocker/rstudio</code> Dockerfile</a></li>
+</ul></li>
+<li>Add at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).
+<ul>
+<li>There are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.</li>
+<li>One way is to turn your <code>dsci310-dockerfile-practice</code> into a local RStudio project then do the following steps:
+<ol type="1">
+<li>Open the RStudio project locally</li>
+<li>Initialize the project with renv</li>
+<li>Use <code>{renv}</code> to install a package (e.g., <code>cowsay</code>) and then make sure you create a script that loads/uses the <code>{cowsay}</code> package.</li>
+<li>In your <code>Dockerfile</code> <code>COPY</code> all your renv files into the container</li>
+<li>Use the outputs from <code>renv</code> to help you specify which functions to use to install the libraries</li>
 </ol>
 <ul>
-<li><em>Note 1: When setting up the workflow on GitHub Actions, be sure to click “Skip this and setup a workflow yourself”.</em></li>
-<li><em>Note 2: You will need to add your DockerHub username and password (naming them <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>, respectively) as GitHub secrets to this repository for this to work.</em></li>
-</ul>
-<ol start="4" type="1">
-<li>Make sure you make at least one change to the <code>Dockerfile</code> once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once.</li>
+<li>Hint: you might need to toggle the <code>USER</code> in the <code>Dockerfile</code> between <code>rstudio</code> and <code>root</code> to get everything working.</li>
+</ul></li>
+<li>Another way is to <code>RUN</code> commands directly in the <code>Dockerfile</code> to install packages
+<ul>
+<li>Hint: You cannot use <code>install.packages()</code> because you can’t pin a version number.</li>
+<li>Hint: You will need to first install the <code>{remotes}</code> package, and then use the <code>remotes::install_version()</code> function</li>
+</ul></li>
+</ul></li>
+<li>Build your <code>Dockerfile</code> and test it locally.</li>
+<li>Add a GitHub Actions workflow to automatically build the image, push it to DockerHub,
+and version the image and GitHub repo when changes are pushed to the Dockerfile
+(<a href="https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml">link to a GitHub Actions Workflow you should use for this</a>).
+<ul>
+<li>Use the “Docker image” workflow
+<ul>
+<li>You can also start off with an empty file and paste in a workflow by clicking “Skip this and setup a workflow yourself”.</li>
+</ul></li>
+<li>You will need to add your DockerHub username and password (naming them <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>, respectively)
+as GitHub secrets to this repository for this to work.</li>
+<li>Github Actions Docker reference: <a href="https://docs.github.com/en/actions/publishing-packages/publishing-docker-images" class="uri">https://docs.github.com/en/actions/publishing-packages/publishing-docker-images</a></li>
+</ul></li>
+<li>Make sure you make at least one change to the <code>Dockerfile</code> once the GitHub Actions have been setup
+so that you get the image automatically built and pushed to DockerHub at least once.
+<ul>
+<li>You can also add a <code>workflow_dispatch:</code> trigger and manually trigger a workflow</li>
+</ul></li>
 </ol>
+<ul>
+<li>Note: If you are making an <code>renv.lock</code> file and you notice it’s not updating with <code>renv::snapshot()</code>,
+take a look at <a href="https://rstudio.github.io/renv/articles/faq.html#why-isnt-my-package-being-snapshotted-into-the-lockfile">this FAQ</a></li>
+</ul>
 <h2 id="rubric">Rubric</h2>
 <p>This assignment will be graded for completion as follows:</p>
+<ol type="1">
+<li>A Docker image named <code>dockerfile-practice</code> and tagged with a version exists under the student’s username on DockerHub.</li>
+<li>The Dockerfile used to create the Docker image lives in a GitHub repository named <code>dockerfile-practice</code> under the student’s username.</li>
+<li>There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository,
+and publish it to DockerHub.</li>
+<li>The Docker image version tag is in sync with the GitHub repository release tag.</li>
+<li>At least one new R package was added to the Dockerfile and the version of that package was pinned.</li>
+</ol>
 <table>
 <colgroup>
-<col style="width: 31%" />
-<col style="width: 68%" />
+<col style="width: 5%" />
+<col style="width: 94%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2527,7 +2575,7 @@ You should name your GitHub.com repository <code>dockerfile-practice</code>.
 <tbody>
 <tr class="odd">
 <td>100%</td>
-<td><em>1)</em> A Docker image named <code>dockerfile-practice</code> and tagged with a version exists under the student’s username on DockerHub. <em>2)</em> The Dockerfile used to create the Docker image lives in a GitHub repository named <code>dockerfile-practice</code> under the student’s username. <em>3)</em> There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub. <em>4)</em> The Docker image version tag is in sync with the GitHub repository release tag. <em>5)</em> At least one new R or Python package was added to the Dockerfile using <code>conda</code>, and the version of that package was pinned.</td>
+<td>5/5 of the criteria listed above were met.</td>
 </tr>
 <tr class="even">
 <td>75%</td>
@@ -2547,6 +2595,10 @@ You should name your GitHub.com repository <code>dockerfile-practice</code>.
 </tr>
 </tbody>
 </table>
+<p>Additional points taken off:</p>
+<ul>
+<li>-2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
