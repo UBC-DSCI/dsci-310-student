@@ -37,6 +37,7 @@ In the textbox provided for this assignment on Canvas, you must submit:
         - Hint: you might need to toggle the `USER` in the `Dockerfile` between `rstudio` and `root` to get everything working.
     - Another way is to `RUN` commands directly in the `Dockerfile` to install packages
         - Hint: You cannot use `install.packages()` because you can't pin a version number.
+        - Hint: You can run R code directly from the command line. For example, `R -e "print('something to say...')"`. Make sure to change the double quotes `""` to single quotes `''` in the R code.  
         - Hint: You will need to first install the `{remotes}` package, and then use the `remotes::install_version()` function
 4. Build your `Dockerfile` and test it locally.
 5. Add a GitHub Actions workflow to automatically build the image, push it to DockerHub,
