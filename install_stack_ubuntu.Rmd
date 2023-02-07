@@ -186,7 +186,7 @@ conda --version
 which should return something like this:
 
 ```bash
-conda 4.10.3
+conda 22.11.1
 ```
 
 Next, type the following to ask for the version of Python:
@@ -622,7 +622,7 @@ OK        docker 20.10.7, build f0df350
 OK        code 1.74.3
 
 ## Python packages
-K        pandas=1.5.2
+OK        pandas=1.5.2
 OK        pyppeteer=1.0.2
 OK        nbconvert=7.2.8
 OK        jupyterlab=3.5.2
