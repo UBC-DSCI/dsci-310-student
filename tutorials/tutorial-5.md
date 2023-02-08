@@ -14,7 +14,6 @@ To run the Docker container, open Terminal/Git bash and run:
 
 ```
 docker run -e PASSWORD=apassword --rm -p 8787:8787 rocker/rstudio:4.1.3
-
 ```
  
 Then go to [`localhost:8787`](localhost:8787)
@@ -37,7 +36,7 @@ In Terminal/Git bash, run:
 docker run -e PASSWORD=apassword -p 8787:8787 -v ${PWD}:/home/rstudio rocker/rstudio
 ```
 
-Then, go to [`localhost:8787`](localhost:8787)
+Then, go to `localhost:8787`
 
 #### Step 2b
 Now, in the RStudio console, install the `binom` package.
@@ -57,22 +56,22 @@ install.packages("binom")
 
 ---
 
-### Step 3: Add a Dockerfile
+### Step 3: Add a `Dockerfile`
 
-Now that we've confirmed that `install:packages('binom')` works in the previous step, we need to add it to our Dockerfile. 
+Now that we've confirmed that `install:packages('binom')` works, we need to add it to our `Dockerfile`. 
 
 #### Step 3a
 Create a `Dockerfile` in the `fair-coin-analysis` directory. 
 
 > **Note**
 >
-> The Dockerfile should have:
+> The `Dockerfile` should have:
 > - specifying the base image: `rocker/rstudio:4.1.3`
 > - installing the `binom` package
 
 
 #### Step 3b
-Now, build the Dockerfile by running in Terminal/Git bash:
+Now, build the `Dockerfile` by running `docker build` in Terminal/Git bash:
  
 ```
 docker build -t fair-coin-analysis .
@@ -87,7 +86,7 @@ docker run -e PASSWORD=apassword -p 8787:8787 -v ${PWD}:/home/rstudio fair-coin-
 
 ---
 
-### Step 4: Modify the Dockerfile
+### Step 4: Modify the `Dockerfile`
 
 #### Step 4a
 Change the `Dockerfile`, so it has the following lines:
@@ -101,14 +100,14 @@ RUN R -e "renv::restore()"
 ```
 
 #### Step 4b
-Build the container
+Build the container.
 
 ```
 docker build -t fair-coin-analysis .
 ```
 
 #### Step 4c
-Run the container with a mounted volume
+Run the container with a mounted volume.
 
 ```
 docker run -e PASSWORD=yourpassword -p 8787:8787 -v ${PWD}:/home/rstudio fair-coin-analysis
@@ -120,14 +119,14 @@ docker run -e PASSWORD=yourpassword -p 8787:8787 -v ${PWD}:/home/rstudio fair-co
 Change the base image to `ubcdsci/jupyterlab`
 
 #### Step 5b
-Build the container
+Build the container.
 
  ```
  docker build -t fair-coin-analysis .
  ```
 
 #### Step 5c
-Run with mounted volume
+Run with a mounted volume.
 ```
 docker run --rm --user root -v $(pwd):/opt/notebooks -p 8888:8888 fair-coin-analysis
 ```
@@ -142,7 +141,7 @@ docker run --rm --user root -v $(pwd):/opt/notebooks -p 8888:8888 fair-coin-anal
 
 ## Part 2
 
-Work in groups and set up a Dockerfile for your group project.
+Work in groups and set up a `Dockerfile` for your group project.
 
 
 ---
