@@ -43,7 +43,7 @@ Now, in the RStudio console, install the `binom` package.
 
 > **Warning**
 > 
-> This is done in the RStudio that you just opened in `localhost:8787`. Not in the RStudio installed on your machine.
+> This is done in the RStudio that you just opened in `localhost:8787`. NOT in the RStudio installed on your machine.
 
 
 ```
@@ -71,6 +71,11 @@ Create a `Dockerfile` in the `fair-coin-analysis` directory.
 
 
 #### Step 3b
+
+> **Warning**
+>
+> Make sure you are in the `fair-coin-analysis` directory.
+
 Now, build the `Dockerfile` by running `docker build` in Terminal/Git bash:
  
 ```
@@ -113,6 +118,8 @@ Run the container with a mounted volume.
 docker run -e PASSWORD=yourpassword -p 8787:8787 -v ${PWD}:/home/rstudio fair-coin-analysis
 ```
 
+---
+
 ### Step 5: Modify the `Dockerfile` Base Image
 
 #### Step 5a
@@ -131,20 +138,20 @@ Run with a mounted volume.
 docker run --rm --user root -v $(pwd):/opt/notebooks -p 8888:8888 fair-coin-analysis
 ```
 
+---
+
 ### Bonus:
 - Log in to docker hub: `docker login`
 - Create a repo for your image
 - Properly tag your image: `docker tag fair-coin-analysis <dockerhub username>/fair-coin-analysis`
 - Push: `docker push <dockerhub username>/fair-coin-analysis`
 
----
 
 ## Part 2
 
 Work in groups and set up a `Dockerfile` for your group project.
 
 
----
 ## References
 
 - rocker: [https://www.rocker-project.org/](https://www.rocker-project.org/)
