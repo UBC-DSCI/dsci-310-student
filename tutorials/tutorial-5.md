@@ -33,7 +33,7 @@ Mount a volume to the container, so that you're able to access the files on your
 In Terminal/Git bash, run: 
 
 ```
-docker run -e PASSWORD=apassword -p 8787:8787 -v ${PWD}:/home/rstudio rocker/rstudio
+docker run -e PASSWORD=apassword -p 8787:8787 -v ${PWD}:/home/rstudio rocker/rstudio:4.1.3
 ```
 
 Then, go to `localhost:8787`
