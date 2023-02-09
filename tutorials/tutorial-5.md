@@ -93,10 +93,10 @@ Change the `Dockerfile`, so it has the following lines:
 
 ```
 ENV RENV_VERSION 0.15.2-2
-RUN R -e "install.packages('remotes', repos = c(CRAN = '[https://cloud.r-project.org](https://cloud.r-project.org/)'))"
-RUN R -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
+RUN Rscript -e "install.packages('remotes')"
+RUN Rscript -e "remotes::install_github('rstudio/renv@${RENV_VERSION}')"
 COPY renv.lock renv.lock
-RUN R -e "renv::restore()"
+RUN Rscript -e "renv::restore()"
 ```
 
 #### Step 4b
