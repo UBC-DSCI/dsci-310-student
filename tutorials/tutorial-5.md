@@ -16,7 +16,7 @@ To run the Docker container, open Terminal/Git bash and run:
 docker run -e PASSWORD=apassword --rm -p 8787:8787 rocker/rstudio:4.1.3
 ```
  
-Then go to [`localhost:8787`](localhost:8787)
+Then go to [`localhost:8787`](localhost:8787), place `rstudio` for the username and `apassword` for the password. 
 
 #### Notes:
   - This is the same process [as seen in lecture](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/05-containerization.html#mapping-ports-to-containers-with-web-apps) where we map ports to containers so that we can use RStudio's GUI.
