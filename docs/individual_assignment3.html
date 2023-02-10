@@ -2533,7 +2533,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Build your <code>Dockerfile</code> and test it locally.</li>
 <li>Add a GitHub Actions workflow to automatically build the image, push it to DockerHub,
 and version the image and GitHub repo when changes are pushed to the Dockerfile
-(<a href="https://github.com/UBC-DSCI/dsci-310-student/issues/47">link to a GitHub Actions Workflow you should use for this</a>).
 <ul>
 <li>Use the “Docker image” workflow
 <ul>
@@ -2541,7 +2540,11 @@ and version the image and GitHub repo when changes are pushed to the Dockerfile
 </ul></li>
 <li>You will need to add your DockerHub username and password (naming them <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>, respectively)
 as GitHub secrets to this repository for this to work.</li>
+<li>Here are some resources to help you create your own Github Action Workflow:
+<ul>
+<li>In-class demo on Thursday’s lecture recording, starting 35:00</li>
 <li>Github Actions Docker reference: <a href="https://docs.github.com/en/actions/publishing-packages/publishing-docker-images" class="uri">https://docs.github.com/en/actions/publishing-packages/publishing-docker-images</a></li>
+</ul></li>
 </ul></li>
 <li>Make sure you make at least one change to the <code>Dockerfile</code> once the GitHub Actions have been setup
 so that you get the image automatically built and pushed to DockerHub at least once.
