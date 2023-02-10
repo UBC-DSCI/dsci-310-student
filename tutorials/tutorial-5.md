@@ -4,7 +4,7 @@
 
 > **Note**
 > 
-> If you haven't already, clone the repo: https://github.com/DSCI-310/fair-coin-analysis
+> If you haven't already, clone the repo: [https://github.com/DSCI-310/fair-coin-analysis](https://github.com/DSCI-310/fair-coin-analysis)
 > 
 > Then, navigate into the repo folder.
 
