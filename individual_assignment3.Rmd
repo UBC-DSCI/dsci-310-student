@@ -42,12 +42,13 @@ In the textbox provided for this assignment on Canvas, you must submit:
 4. Build your `Dockerfile` and test it locally.
 5. Add a GitHub Actions workflow to automatically build the image, push it to DockerHub,
    and version the image and GitHub repo when changes are pushed to the Dockerfile
-   ([link to a GitHub Actions Workflow you should use for this](https://github.com/UBC-DSCI/dsci-310-student/issues/47)).
     - Use the "Docker image" workflow
         - You can also start off with an empty file and paste in a workflow by clicking "Skip this and setup a workflow yourself".
     - You will need to add your DockerHub username and password (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively)
       as GitHub secrets to this repository for this to work.
-    - Github Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
+    - Here are some resources to help you create your own Github Action Workflow:
+        - In-class demo on Thursday's lecture recording, starting 35:00
+        - Github Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
 6. Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup
    so that you get the image automatically built and pushed to DockerHub at least once.
     - You can also add a `workflow_dispatch:` trigger and manually trigger a workflow
