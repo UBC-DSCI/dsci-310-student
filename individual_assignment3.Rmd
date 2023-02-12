@@ -49,7 +49,8 @@ In the textbox provided for this assignment on Canvas, you must submit:
     - Here are some resources to help you create your own Github Action Workflow:
         - In-class demo on Thursday's lecture recording, starting 35:00
         - Github Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
-6. Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup
+
+(As Needed): Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup
    so that you get the image automatically built and pushed to DockerHub at least once.
     - You can also add a `workflow_dispatch:` trigger and manually trigger a workflow
 
@@ -64,7 +65,7 @@ This assignment will be graded for completion as follows:
 2. The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username.
 3. There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository,
    and publish it to DockerHub.
-4. The Docker image version tag is in sync with the GitHub repository release tag.
+4. ~~The Docker image version tag is in sync with the GitHub repository release tag.~~ (Not needed -- Free Point)
 5. At least one new R package was added to the Dockerfile and the version of that package was pinned. 
 
 | Grade | Description                                                                         |
