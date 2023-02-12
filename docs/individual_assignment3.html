@@ -2546,12 +2546,10 @@ as GitHub secrets to this repository for this to work.</li>
 <li>Github Actions Docker reference: <a href="https://docs.github.com/en/actions/publishing-packages/publishing-docker-images" class="uri">https://docs.github.com/en/actions/publishing-packages/publishing-docker-images</a></li>
 </ul></li>
 </ul></li>
-<li>Make sure you make at least one change to the <code>Dockerfile</code> once the GitHub Actions have been setup
-so that you get the image automatically built and pushed to DockerHub at least once.
-<ul>
-<li>You can also add a <code>workflow_dispatch:</code> trigger and manually trigger a workflow</li>
-</ul></li>
 </ol>
+<p>(As Needed): Make sure you make at least one change to the <code>Dockerfile</code> once the GitHub Actions have been setup
+so that you get the image automatically built and pushed to DockerHub at least once.
+- You can also add a <code>workflow_dispatch:</code> trigger and manually trigger a workflow</p>
 <ul>
 <li>Note: If you are making an <code>renv.lock</code> file and you notice it’s not updating with <code>renv::snapshot()</code>,
 take a look at <a href="https://rstudio.github.io/renv/articles/faq.html#why-isnt-my-package-being-snapshotted-into-the-lockfile">this FAQ</a></li>
@@ -2563,7 +2561,7 @@ take a look at <a href="https://rstudio.github.io/renv/articles/faq.html#why-isn
 <li>The Dockerfile used to create the Docker image lives in a GitHub repository named <code>dockerfile-practice</code> under the student’s username.</li>
 <li>There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository,
 and publish it to DockerHub.</li>
-<li>The Docker image version tag is in sync with the GitHub repository release tag.</li>
+<li><del>The Docker image version tag is in sync with the GitHub repository release tag.</del> (Not needed – Free Point)</li>
 <li>At least one new R package was added to the Dockerfile and the version of that package was pinned.</li>
 </ol>
 <table>
