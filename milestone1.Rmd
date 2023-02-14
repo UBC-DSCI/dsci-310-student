@@ -24,10 +24,10 @@ to a fully reproducible and robust data data analysis project, comprised of:
 - a data analysis pipeline automated with GNU Make,
 - a reproducible report powered by either Jupyter book or R Markdown,
 - a containerized computational environment created and made shareable by Docker, and
-- a remote version control repository on GitHub for project collaboration and sharing, 
+- a remote version control repository on GitHub for project collaboration and sharing,
   as well as automation of test suite execution and documentation and software deployment.
 
-An example final project from another course (where the project is similar) can be seen here: 
+An example final project from another course (where the project is similar) can be seen here:
 [Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor)
 
 ## Milestone 1 summary
@@ -56,17 +56,17 @@ and gives detail about the logisitics of working together and the expectations y
 Some aspects of the team work contract could be:
 
 - How will work be distributed in a fair and equitable way?
-- What are the expected work hours for the project? 
-- How often will group meetings occur ([here is a nice article](http://third-bit.com/2018/05/11/meetings.html) on meetings)? 
+- What are the expected work hours for the project?
+- How often will group meetings occur ([here is a nice article](http://third-bit.com/2018/05/11/meetings.html) on meetings)?
 - Will you have meeting agendas and minutes? If so, what will be the system for rotating through these responsibilities?
-- What will be the style of working? 
+- What will be the style of working?
     - Will you start each day with [stand-ups](https://www.atlassian.com/agile/scrum/standups), or submit a summary of your contributions 4 hours before each meeting? or something else?
 - What is the quality of work each team member expects from themselves and each other?
-- When are team members not available (e.g., evenings and Sundays because of family obligations). 
+- When are team members not available (e.g., evenings and Sundays because of family obligations).
 - And any other similar things that govern your working relationships.
 
 Use this opportunity to use your prior knowledge/experience to improve your
-teamwork, communication, leadership, and organizational skills. 
+teamwork, communication, leadership, and organizational skills.
 You will need all of these for your capastone projects (and beyond)!
 
 **Note - this document is fairly personal and does NOT need to reside in your public GitHub.com repo. Instead you can prove that you created this by pasting it into the text box for your Canvas homework submission for this milestone.**
@@ -93,35 +93,35 @@ organize the issues you have previously associated with milestones into a
 [GitHub project board](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards).
 
 The project board should show the current status of the project to the team.
-Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves. 
+Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves.
 
 ### 3. Select a data analysis project to work with
 
- The content of this analysis project should be a narrated analysis that asks 
- and answers a predictive question using a classification 
- or regression method taught in the prerequisite course, DSCI 100. 
- For milestone 1, 
- the code and analysis narrative should be contained within a single Jupyter notebook 
- (e.g., `.ipynb` file), RMarkdown file (e.g., `.Rmd` file), or Quarto document (e.g., `.qmd` file). 
- The analysis narrative should be rich, 
- and at the level of the final project from DSCI 100. 
- Either R or Python can be used to do this. 
- However, all group members must have past experience using the language chosen 
- and permission of the instructor must be given. 
- The restrictions on the analysis methods 
- and programming language are put in place to ensure that all group members 
+ The content of this analysis project should be a narrated analysis that asks
+ and answers a predictive question using a classification
+ or regression method taught in the prerequisite course, DSCI 100.
+ For milestone 1,
+ the code and analysis narrative should be contained within a single Jupyter notebook
+ (e.g., `.ipynb` file), RMarkdown file (e.g., `.Rmd` file), or Quarto document (e.g., `.qmd` file).
+ The analysis narrative should be rich,
+ and at the level of the final project from DSCI 100.
+ Either R or Python can be used to do this.
+ However, all group members must have past experience using the language chosen
+ and permission of the instructor must be given.
+ The restrictions on the analysis methods
+ and programming language are put in place to ensure that all group members
  can contribute equally to the project.
 
 The data for the project should be publicly available,
 and clearly licensed to be shared and used openly on the internet.
-We strongly suggest you avoid using data sets where authentication is needed for access 
+We strongly suggest you avoid using data sets where authentication is needed for access
 (e.g., Kaggle) as this adds another layer of complexity when making these projects reproducible.
 
 #### Possible data set sources
 
-- past DSCI 100 projects 
-(note: if you reuse part or all of a past DSCI 100 project, 
-you will be required to provide documentation of written permission 
+- past DSCI 100 projects
+(note: if you reuse part or all of a past DSCI 100 project,
+you will be required to provide documentation of written permission
 of all past teammates from that project)
 - [UCI Machine Learning Repository: Data Sets](https://archive-beta.ics.uci.edu/ml/datasets)
 - [fivethirtyeight R package](https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/fivethirtyeight.html) (if you use this, see the note below!)
@@ -134,11 +134,11 @@ of all past teammates from that project)
 
 ### 4. Create an appropriate file and directory structure for a data analysis project
 
-For this project, 
-you are expected to follow the best practices we have learned about 
+For this project,
+you are expected to follow the best practices we have learned about
 in regards to project directory and file structures.
-This should be reflected in your GitHub repository. 
-Specifically for this milestone, 
+This should be reflected in your GitHub repository.
+Specifically for this milestone,
 please ensure that you include **at least** the following 7 files and directories
 in your project's GitHub repository:
 
@@ -150,7 +150,7 @@ in your project's GitHub repository:
   - `Dockerfile`
   - `.github/workflows/publish_docker_image.yml`
   - `LICENSE.md`
-    
+
 The description of each of them follows.
 
 #### i. `README.md`
@@ -159,7 +159,7 @@ In the main `README.md` file for this project you should include:
 - the project title
 - the list of contributors/authors
 - a short summary of the project (view from 10,000 feet)
-- how to run your data analysis 
+- how to run your data analysis
 - a list of the dependencies needed to run your analysis
 - the names of the licenses contained in `LICENSE.md`
 
@@ -187,12 +187,12 @@ At minimum, we believe that a good/effective code of conduct should include:
   - [Tidyverse CoC](https://github.com/tidyverse/tidyverse.org/blob/master/CODE_OF_CONDUCT.md)
   - [Pandas CoC](https://github.com/pandas-dev/pandas-governance/blob/master/code-of-conduct.md)
   - [Vox Media CoC](http://code-of-conduct.voxmedia.com/?_ga=1.62865454.308680892.1455143920)
-  
+
 **Note - this document should live in the root of your public GitHub.com repository.**
 
 #### iii. `CONTRIBUTING.md`
 
-It is a good practice to include information about how others outside the core team 
+It is a good practice to include information about how others outside the core team
 can contribute to your project somewhere in your repository.
 This is typically done as a separate file in a repository called `CONTRIBUTING.md`.
 Here are some examples of this file:
@@ -206,12 +206,12 @@ If you're interested in this,
 to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:
 
 ```
-We welcome all contributions to this project! 
-If you notice a bug, or have a feature request, 
-please open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues). 
-If you'd like to contribute a feature or bug fix, 
-you can fork our repo and submit a pull request. 
-We will review pull requests within 7 days. 
+We welcome all contributions to this project!
+If you notice a bug, or have a feature request,
+please open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues).
+If you'd like to contribute a feature or bug fix,
+you can fork our repo and submit a pull request.
+We will review pull requests within 7 days.
 All contributors must abide by our [code of conduct](CODE_OF_CONDUCT.md).
 ```
 
@@ -225,23 +225,23 @@ In such cases, please reach out to the instructional team to make an alternative
 
 #### v. `analysis.ipynb`
 
-For this milestone, 
+For this milestone,
 the analysis code and narration should be contained within a single literate code document
-(i.e., Jupyter notebook). 
-This document should not actually be named `analysis.ipynb`, but have a more descriptive title, 
+(i.e., Jupyter notebook).
+This document should not actually be named `analysis.ipynb`, but have a more descriptive title,
 related to the project title.
 
 #### vi. `Dockerfile`
 
-The `Dockerfile` is the file used to specify and create the Docker image from which containers 
-can be run to create an reproducible computational environment for your analysis. 
-For this project, 
-we recommend using a base Docker image 
+The `Dockerfile` is the file used to specify and create the Docker image from which containers
+can be run to create an reproducible computational environment for your analysis.
+For this project,
+we recommend using a base Docker image
 that already has most of the software dependencies needed for your analysis.
-Examples of these include the Jupyter core team Docker images 
-([documentation](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)) 
-and the Rocker team Docker images 
-([documentation](https://github.com/rocker-org/rocker-versioned2#version-stable-rocker-images-for-r--400)). 
+Examples of these include the Jupyter core team Docker images
+([documentation](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html))
+and the Rocker team Docker images
+([documentation](https://github.com/rocker-org/rocker-versioned2#version-stable-rocker-images-for-r--400)).
 When you add other software dependencies to this `Dockerfile`,
 ensure that you pin the version of the software that you add.
 
@@ -249,28 +249,28 @@ ensure that you pin the version of the software that you add.
 
 #### vii. `.github/workflows/publish_docker_image.yml`
 
-In this milestone, 
-we expect you to add a GitHub Actions workflow to automatically build the image, 
-push it to DockerHub, 
-and version the image and GitHub repo when changes are pushed to the Dockerfile 
+In this milestone,
+we expect you to add a GitHub Actions workflow to automatically build the image,
+push it to DockerHub,
+and version the image and GitHub repo when changes are pushed to the Dockerfile
 ([link to a GitHub Actions Workflow you should use for this](https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml)).
-When setting up the workflow on GitHub Actions, 
+When setting up the workflow on GitHub Actions,
 be sure to click "Skip this and setup a workflow yourself".
-You will need to add your DockerHub username and password 
-(naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively) 
+You will need to add your DockerHub username and password
+(naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively)
 as GitHub secrets to this repository for this to work.
 
 #### viii. `LICENSE.md`
 
-License's tell others how they may (or may not) use your work. 
+License's tell others how they may (or may not) use your work.
 We will learn more about licenses later in the course,
-and for now we recommend using an 
-[MIT license](https://opensource.org/licenses/MIT) 
-for the project code 
-and a Creative Commons 
-[Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/) 
+and for now we recommend using an
+[MIT license](https://opensource.org/licenses/MIT)
+for the project code
+and a Creative Commons
+[Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 license for the project report.
-As long as your group agrees, 
+As long as your group agrees,
 these can be changed later in the course when you learn more about licenses.
 If you want to spend some time choosing different licenses now, we can recommend these two websites to help get you started:
 
@@ -279,7 +279,7 @@ If you want to spend some time choosing different licenses now, we can recommend
 
 ### 5. Add the data analysis as a literate code document
 
-For this milestone, 
+For this milestone,
 the analysis code and narration should be contained within a single literate code document
 (i.e., Jupyter notebook).
 The following sections should be included:
@@ -293,12 +293,12 @@ The following sections should be included:
 - **Methods & Results:**
   - describe in written english the methods you used to perform your analysis from beginning to end that narrates the code the does the analysis.
   - your report should include code which:
-  - loads data from the original source on the web 
+  - loads data from the original source on the web
   - wrangles and cleans the data from it's original (downloaded) format to the format necessary for the planned classification or clustering analysis
-  - performs a summary of the data set that is relevant for exploratory data analysis related to the planned classification analysis 
+  - performs a summary of the data set that is relevant for exploratory data analysis related to the planned classification analysis
   -  creates a visualization of the dataset that is relevant for exploratory data analysis related to the planned classification analysis
   - performs classification or regression analysis
-  - creates a visualization of the result of the analysis 
+  - creates a visualization of the result of the analysis
   - *note: all tables and figure should have a figure/table number and a legend*
 - **Discussion:**
   - summarize what you found
@@ -310,16 +310,16 @@ The following sections should be included:
 
 ### 6. Make the computation environment reproducible through containerization with Docker
 
-For this project, 
+For this project,
 we will be making the computation environment reproducible through containerization with Docker.
-We will use Docker containers for collaborative project development, 
+We will use Docker containers for collaborative project development,
 as well as for sharing a reproducible analysis at the end of the project.
-It is expected that: 
+It is expected that:
 - the Docker image, from which containers are generated,
 will be specified by a `Dockerfile` that lives in the root of the project's GitHub repository
 - the building of the Docker image and distribution of it via DockerHub will be automated via GitHub Actions
 - an explanation of how to run and use Docker to develop and execute the analysis will be documented in the `README.md` file.
- 
+
 ## Submission Instructions
 
 You will submit two URLS's to Canvas in the provided text box for milestone 1:
@@ -341,16 +341,16 @@ while you continue to work on your project for the next milestone.
 **(e.g., code, writing, project management).**
 **This should be evidenced by a roughly equal number of commits,**
 **pull request reviews and participation in communication via GitHub issues.**
-- After the repository is set-up, 
-each group member should work in a 
-[GitHub flow workflow](https://docs.github.com/en/get-started/quickstart/github-flow); 
-where they create branches for each feature or fix, 
-which are reviewed and critiqued by at least one other teammate 
+- After the repository is set-up,
+each group member should work in a
+[GitHub flow workflow](https://docs.github.com/en/get-started/quickstart/github-flow);
+where they create branches for each feature or fix,
+which are reviewed and critiqued by at least one other teammate
 before the the pull request is accepted.
 - You should be committing to git and pushing to GitHub.com every time you work on this project.
-- Git commit messages should be meaningful. These will be marked. 
+- Git commit messages should be meaningful. These will be marked.
 It's OK if one or two are less meaningful, but most should be.
 - Use GitHub issues to communicate to their team mate (as opposed to email or Slack).
 - Your question, analysis and visualization should make sense. It doesn't have to be complicated.
-- You should use proper grammar and full sentences in your README. 
+- You should use proper grammar and full sentences in your README.
 Point form may occur, but should be less than 10% of your written documents.
