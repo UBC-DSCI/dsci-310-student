@@ -35,7 +35,7 @@ An example final project from another course (where the project is similar) can 
 In this milestone, you will:
 
 1. Draft a team work contract
-2. Set-up a public GitHub repository or a private one, adding all the teaching team (`chendaniely`, `a-kong`, `gzzen`, and `tonyliang19`) as collaborators
+2. Set-up a public GitHub repository ~~or a private one, adding all the teaching team (`chendaniely`, `a-kong`, `gzzen`, and `tonyliang19`) as collaborators~~
 1. Select a data analysis project to work with
 2. Create an appropriate file and directory structure for a data analysis project
 3. Add the data analysis as a literate code document
@@ -74,7 +74,7 @@ You will need all of these for your capastone projects (and beyond)!
 ### 2. Set-up a GitHub repository
 
 Now set-up a public GitHub repository
-(or a private one, adding the teaching team`chendaniely`, `a-kong`, `gzzen`, and `tonyliang19` as collaborators)
+~~(or a private one, adding the teaching team`chendaniely`, `a-kong`, `gzzen`, and `tonyliang19` as collaborators)~~
 for your project in the format: `dsci-310-group-XX-<optional_team_name>`.
 
 We are using github.com and public repositories because we will eventually be using some fancy tooling (*e.g.,* GitHub Actions) in this project.
