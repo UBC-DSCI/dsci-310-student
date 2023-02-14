@@ -327,8 +327,13 @@ You will submit two URLS's to Canvas in the provided text box for milestone 1:
 1. the URL of your project's GitHub.com repository
 2. the URL of a GitHub release of your project's project's GitHub.com repository
 
-### Creating a release on GitHub.com 
-Just before you submit the milestone 1, create a release on your project repository on GitHub and name it `0.0.1` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.
+### Creating a release on GitHub.com
+
+Just before you submit the milestone 1,
+create a release on your project repository on GitHub and name it
+`0.0.1` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)).
+This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes,
+while you continue to work on your project for the next milestone.
 
 ## Expectations
 
