@@ -223,12 +223,12 @@ The `data` directory should contain a copy of the downloaded data (written there
 An exception to this can be made if the data set is extremely large (> 100 MB per file).
 In such cases, please reach out to the instructional team to make an alternative plan.
 
-#### v. `analysis.ipynb`
+#### v. `analysis.ipynb` / `analysis.Rmd` / `analysis.qmd`
 
 For this milestone,
 the analysis code and narration should be contained within a single literate code document
-(i.e., Jupyter notebook).
-This document should not actually be named `analysis.ipynb`, but have a more descriptive title,
+(e.g., Jupyter notebook, RMarkdown file, or Quarto document).
+This document should not actually be named `analysis.***`, but have a more descriptive title,
 related to the project title.
 
 #### vi. `Dockerfile`
