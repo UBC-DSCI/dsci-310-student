@@ -102,7 +102,7 @@ Each collaborator is responsible of converting the issues to cards and then movi
  or regression method taught in the prerequisite course, DSCI 100. 
  For milestone 1, 
  the code and analysis narrative should be contained within a single Jupyter notebook 
- (e.g., `.ipynb` file). 
+ (e.g., `.ipynb` file), RMarkdown file (e.g., `.Rmd` file), or Quarto document (e.g., `.qmd` file). 
  The analysis narrative should be rich, 
  and at the level of the final project from DSCI 100. 
  Either R or Python can be used to do this. 
