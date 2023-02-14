@@ -9,15 +9,23 @@ output:
 
 ## Overall project summary
 
-In this course you will work in assigned teams of three or four (see group assignments in [Canvas](https://canvas.ubc.ca)) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.
+In this course you will work in assigned teams of three or four
+(see group assignments in [Canvas](https://canvas.ubc.ca))
+to answer a predictive question using a publicly available data set that will allow you to answer that question.
+To answer this question,
+you will perform a complete data analysis in R and/or Python,
+from data import to communication of results,
+while placing significant emphasis on reproducible and trustworthy workflows.
 
-Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:
+Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook,
+to a fully reproducible and robust data data analysis project, comprised of:
 
 - a well documented and modularized software package and scripts written in R and/or Python,
 - a data analysis pipeline automated with GNU Make,
 - a reproducible report powered by either Jupyter book or R Markdown,
 - a containerized computational environment created and made shareable by Docker, and
-- a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.
+- a remote version control repository on GitHub for project collaboration and sharing, 
+  as well as automation of test suite execution and documentation and software deployment.
 
 An example final project from another course (where the project is similar) can be seen here: 
 [Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor)
@@ -27,19 +35,23 @@ An example final project from another course (where the project is similar) can 
 In this milestone, you will:
 
 1. Draft a team work contract
-2. Set-up a public GitHub repository (or a private one, adding `chendaniely`, `a-kong`, `gzzen`, and `tonyliang19` as collaborators)
-3. Select a data analysis project to work with
-4. Create an appropriate file and directory structure for a data analysis project
-5. Add the data analysis as a literate code document
-6. Make the computation environment reproducible through containerization with Docker
+2. Set-up a public GitHub repository or a private one, adding all the teaching team (`chendaniely`, `a-kong`, `gzzen`, and `tonyliang19`) as collaborators
+1. Select a data analysis project to work with
+2. Create an appropriate file and directory structure for a data analysis project
+3. Add the data analysis as a literate code document
+4. Make the computation environment reproducible through containerization with Docker
 
-An example project milestone 1 is available here: [https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2)
+An example project milestone 1 is available here:
+[https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2)
 
 ### 1. Draft a team work contract
 
-This document will govern the working relationships on your team, and if done correctly, it should help you manage and resolve any issues that might arise when working in a group. A sample team work contract from a past data science project can be found [here](sample-team-work-contract.html).
+This document will govern the working relationships on your team, and if done correctly,
+it should help you manage and resolve any issues that might arise when working in a group.
+A sample team work contract from a past data science project can be found [here](sample-team-work-contract.html).
 
-A team work contract communicates specifically **how** the core group of people who are working together and gives detail about the logisitics of working together and the expectations you have for each other.
+A team work contract communicates specifically **how** the core group of people who are working together
+and gives detail about the logisitics of working together and the expectations you have for each other.
 
 Some aspects of the team work contract could be:
 
@@ -53,22 +65,35 @@ Some aspects of the team work contract could be:
 - When are team members not available (e.g., evenings and Sundays because of family obligations). 
 - And any other similar things that govern your working relationships.
 
-Use this opportunity to use your prior knowledge/experience to improve your teamwork, communication, leadership, and organizational skills. 
+Use this opportunity to use your prior knowledge/experience to improve your
+teamwork, communication, leadership, and organizational skills. 
 You will need all of these for your capastone projects (and beyond)!
 
 **Note - this document is fairly personal and does NOT need to reside in your public GitHub.com repo. Instead you can prove that you created this by pasting it into the text box for your Canvas homework submission for this milestone.**
 
 ### 2. Set-up a GitHub repository
 
-Now set-up a public GitHub repository (or a private one, adding `chendaniely`, `a-kong`, `gzzen`, and `tonyliang19` as collaborators) for your project in the format: `dsci-310-group-XX-<optional_team_name>`. 
+Now set-up a public GitHub repository
+(or a private one, adding the teaching team`chendaniely`, `a-kong`, `gzzen`, and `tonyliang19` as collaborators)
+for your project in the format: `dsci-310-group-XX-<optional_team_name>`.
 
-We are using github.com and public repositories because we will eventually be using some fancy tooling (*e.g.,* GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com.  Additionally, this will help you build a portfolio of your work you can share with others. *Note: if you need to change the name of your project repository later, you can!*
+We are using github.com and public repositories because we will eventually be using some fancy tooling (*e.g.,* GitHub Actions) in this project.
+For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com.
+Additionally, this will help you build a portfolio of your work you can share with others.
+*Note: if you need to change the name of your project repository later, you can!*
 
-The tracking of the project will be done using [GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones). When you create a milestone, you can associate it with issues and pull requests. After creating issues you can link them to a milestone associating each them to a project due date.
+The tracking of the project will be done using
+[GitHub milestones](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones).
+When you create a milestone,
+you can associate it with issues and pull requests.
+After creating issues you can link them to a milestone associating each them to a project due date.
 
- In order to make more efficient team workflow, organize the issues you have previously associated with milestones into a [GitHub project board](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards).
+In order to make more efficient team workflow,
+organize the issues you have previously associated with milestones into a
+[GitHub project board](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards).
 
-The project board should show the current status of the project to the team. Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves. 
+The project board should show the current status of the project to the team.
+Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves. 
 
 ### 3. Select a data analysis project to work with
 
@@ -176,7 +201,9 @@ Here are some examples of this file:
 - [dplyr](https://github.com/tidyverse/dplyr/blob/master/.github/CONTRIBUTING.md)
 - [Atom editor](https://github.com/atom/atom/blob/master/CONTRIBUTING.md) (very comprehensive)
 
-If you're interested in this, [here's a quick guide](https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors) to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:
+If you're interested in this,
+[here's a quick guide](https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors)
+to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:
 
 ```
 We welcome all contributions to this project! 
