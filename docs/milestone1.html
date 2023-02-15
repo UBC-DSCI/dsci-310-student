@@ -2496,14 +2496,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </nav>
 </div>
 <h2 id="overall-project-summary">Overall project summary</h2>
-<p>In this course you will work in assigned teams of three or four (see group assignments in <a href="https://canvas.ubc.ca">Canvas</a>) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.</p>
-<p>Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:</p>
+<p>In this course you will work in assigned teams of three or four
+(see group assignments in <a href="https://canvas.ubc.ca">Canvas</a>)
+to answer a predictive question using a publicly available data set that will allow you to answer that question.
+To answer this question,
+you will perform a complete data analysis in R and/or Python,
+from data import to communication of results,
+while placing significant emphasis on reproducible and trustworthy workflows.</p>
+<p>Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook,
+to a fully reproducible and robust data data analysis project, comprised of:</p>
 <ul>
 <li>a well documented and modularized software package and scripts written in R and/or Python,</li>
 <li>a data analysis pipeline automated with GNU Make,</li>
 <li>a reproducible report powered by either Jupyter book or R Markdown,</li>
 <li>a containerized computational environment created and made shareable by Docker, and</li>
-<li>a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.</li>
+<li>a remote version control repository on GitHub for project collaboration and sharing,
+as well as automation of test suite execution and documentation and software deployment.</li>
 </ul>
 <p>An example final project from another course (where the project is similar) can be seen here:
 <a href="https://github.com/ttimbers/breast_cancer_predictor">Breast Cancer Predictor</a></p>
@@ -2511,16 +2519,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>In this milestone, you will:</p>
 <ol type="1">
 <li>Draft a team work contract</li>
-<li>Set-up a public GitHub repository (or a private one, adding <code>chendaniely</code>, <code>a-kong</code>, <code>gzzen</code>, and <code>tonyliang19</code> as collaborators)</li>
+<li>Set-up a public GitHub repository <del>or a private one, adding all the teaching team (<code>chendaniely</code>, <code>a-kong</code>, <code>gzzen</code>, and <code>tonyliang19</code>) as collaborators</del></li>
 <li>Select a data analysis project to work with</li>
 <li>Create an appropriate file and directory structure for a data analysis project</li>
 <li>Add the data analysis as a literate code document</li>
 <li>Make the computation environment reproducible through containerization with Docker</li>
 </ol>
-<p>An example project milestone 1 is available here: <a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2">https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2</a></p>
+<p>An example project milestone 1 is available here:
+<a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2">https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2</a></p>
 <h3 id="draft-a-team-work-contract">1. Draft a team work contract</h3>
-<p>This document will govern the working relationships on your team, and if done correctly, it should help you manage and resolve any issues that might arise when working in a group. A sample team work contract from a past data science project can be found <a href="sample-team-work-contract.html">here</a>.</p>
-<p>A team work contract communicates specifically <strong>how</strong> the core group of people who are working together and gives detail about the logisitics of working together and the expectations you have for each other.</p>
+<p>This document will govern the working relationships on your team, and if done correctly,
+it should help you manage and resolve any issues that might arise when working in a group.
+A sample team work contract from a past data science project can be found <a href="sample-team-work-contract.html">here</a>.</p>
+<p>A team work contract communicates specifically <strong>how</strong> the core group of people who are working together
+and gives detail about the logisitics of working together and the expectations you have for each other.</p>
 <p>Some aspects of the team work contract could be:</p>
 <ul>
 <li>How will work be distributed in a fair and equitable way?</li>
@@ -2535,22 +2547,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>When are team members not available (e.g., evenings and Sundays because of family obligations).</li>
 <li>And any other similar things that govern your working relationships.</li>
 </ul>
-<p>Use this opportunity to use your prior knowledge/experience to improve your teamwork, communication, leadership, and organizational skills.
+<p>Use this opportunity to use your prior knowledge/experience to improve your
+teamwork, communication, leadership, and organizational skills.
 You will need all of these for your capastone projects (and beyond)!</p>
 <p><strong>Note - this document is fairly personal and does NOT need to reside in your public GitHub.com repo. Instead you can prove that you created this by pasting it into the text box for your Canvas homework submission for this milestone.</strong></p>
 <h3 id="set-up-a-github-repository">2. Set-up a GitHub repository</h3>
-<p>Now set-up a public GitHub repository (or a private one, adding <code>chendaniely</code>, <code>a-kong</code>, <code>gzzen</code>, and <code>tonyliang19</code> as collaborators) for your project in the format: <code>dsci-310-group-XX-&lt;optional_team_name&gt;</code>.</p>
-<p>We are using github.com and public repositories because we will eventually be using some fancy tooling (<em>e.g.,</em> GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com. Additionally, this will help you build a portfolio of your work you can share with others. <em>Note: if you need to change the name of your project repository later, you can!</em></p>
-<p>The tracking of the project will be done using <a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones">GitHub milestones</a>. When you create a milestone, you can associate it with issues and pull requests. After creating issues you can link them to a milestone associating each them to a project due date.</p>
-<p>In order to make more efficient team workflow, organize the issues you have previously associated with milestones into a <a href="https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards">GitHub project board</a>.</p>
-<p>The project board should show the current status of the project to the team. Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves.</p>
+<p>Now set-up a public GitHub repository
+<del>(or a private one, adding the teaching team<code>chendaniely</code>, <code>a-kong</code>, <code>gzzen</code>, and <code>tonyliang19</code> as collaborators)</del>
+for your project in the format: <code>dsci-310-group-XX-&lt;optional_team_name&gt;</code>.</p>
+<p>We are using github.com and public repositories because we will eventually be using some fancy tooling (<em>e.g.,</em> GitHub Actions) in this project.
+For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com.
+Additionally, this will help you build a portfolio of your work you can share with others.
+<em>Note: if you need to change the name of your project repository later, you can!</em></p>
+<p>The tracking of the project will be done using
+<a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones">GitHub milestones</a>.
+When you create a milestone,
+you can associate it with issues and pull requests.
+After creating issues you can link them to a milestone associating each them to a project due date.</p>
+<p>In order to make more efficient team workflow,
+organize the issues you have previously associated with milestones into a
+<a href="https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards">GitHub project board</a>.</p>
+<p>The project board should show the current status of the project to the team.
+Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves.</p>
 <h3 id="select-a-data-analysis-project-to-work-with">3. Select a data analysis project to work with</h3>
 <p>The content of this analysis project should be a narrated analysis that asks
 and answers a predictive question using a classification
 or regression method taught in the prerequisite course, DSCI 100.
 For milestone 1,
 the code and analysis narrative should be contained within a single Jupyter notebook
-(e.g., <code>.ipynb</code> file).
+(e.g., <code>.ipynb</code> file), RMarkdown file (e.g., <code>.Rmd</code> file), or Quarto document (e.g., <code>.qmd</code> file).
 The analysis narrative should be rich,
 and at the level of the final project from DSCI 100.
 Either R or Python can be used to do this.
@@ -2637,24 +2662,26 @@ Here are some examples of this file:</p>
 <li><a href="https://github.com/tidyverse/dplyr/blob/master/.github/CONTRIBUTING.md">dplyr</a></li>
 <li><a href="https://github.com/atom/atom/blob/master/CONTRIBUTING.md">Atom editor</a> (very comprehensive)</li>
 </ul>
-<p>If you’re interested in this, <a href="https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors">here’s a quick guide</a> to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:</p>
-<pre><code>We welcome all contributions to this project! 
-If you notice a bug, or have a feature request, 
-please open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues). 
-If you&#39;d like to contribute a feature or bug fix, 
-you can fork our repo and submit a pull request. 
-We will review pull requests within 7 days. 
+<p>If you’re interested in this,
+<a href="https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors">here’s a quick guide</a>
+to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:</p>
+<pre><code>We welcome all contributions to this project!
+If you notice a bug, or have a feature request,
+please open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues).
+If you&#39;d like to contribute a feature or bug fix,
+you can fork our repo and submit a pull request.
+We will review pull requests within 7 days.
 All contributors must abide by our [code of conduct](CODE_OF_CONDUCT.md).</code></pre>
 <p><strong>Note - this document should live in the root of your public GitHub.com repository.</strong></p>
 <h4 id="iv.-data">iv. <code>data/</code></h4>
 <p>The <code>data</code> directory should contain a copy of the downloaded data (written there by code).
 An exception to this can be made if the data set is extremely large (&gt; 100 MB per file).
 In such cases, please reach out to the instructional team to make an alternative plan.</p>
-<h4 id="v.-analysis.ipynb">v. <code>analysis.ipynb</code></h4>
+<h4 id="v.-analysis.ipynb-analysis.rmd-analysis.qmd">v. <code>analysis.ipynb</code> / <code>analysis.Rmd</code> / <code>analysis.qmd</code></h4>
 <p>For this milestone,
 the analysis code and narration should be contained within a single literate code document
-(i.e., Jupyter notebook).
-This document should not actually be named <code>analysis.ipynb</code>, but have a more descriptive title,
+(e.g., Jupyter notebook, RMarkdown file, or Quarto document).
+This document should not actually be named <code>analysis.***</code>, but have a more descriptive title,
 related to the project title.</p>
 <h4 id="vi.-dockerfile">vi. <code>Dockerfile</code></h4>
 <p>The <code>Dockerfile</code> is the file used to specify and create the Docker image from which containers
@@ -2673,13 +2700,11 @@ ensure that you pin the version of the software that you add.</p>
 <p>In this milestone,
 we expect you to add a GitHub Actions workflow to automatically build the image,
 push it to DockerHub,
-and version the image and GitHub repo when changes are pushed to the Dockerfile
-(<a href="https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml">link to a GitHub Actions Workflow you should use for this</a>).
-When setting up the workflow on GitHub Actions,
-be sure to click “Skip this and setup a workflow yourself”.
-You will need to add your DockerHub username and password
+and version the image (using <code>latest</code> is okay for now) and GitHub repo when changes are pushed to the Dockerfile</p>
+<p>You will need to add your DockerHub username and password
 (naming them <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>, respectively)
 as GitHub secrets to this repository for this to work.</p>
+<p>This part is similar to Individual Assignment 3.</p>
 <h4 id="viii.-license.md">viii. <code>LICENSE.md</code></h4>
 <p>License’s tell others how they may (or may not) use your work.
 We will learn more about licenses later in the course,
@@ -2751,7 +2776,11 @@ will be specified by a <code>Dockerfile</code> that lives in the root of the pro
 <li>the URL of a GitHub release of your project’s project’s GitHub.com repository</li>
 </ol>
 <h3 id="creating-a-release-on-github.com">Creating a release on GitHub.com</h3>
-<p>Just before you submit the milestone 1, create a release on your project repository on GitHub and name it <code>0.0.1</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.</p>
+<p>Just before you submit the milestone 1,
+create a release on your project repository on GitHub and name it
+<code>0.0.1</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>).
+This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes,
+while you continue to work on your project for the next milestone.</p>
 <h2 id="expectations">Expectations</h2>
 <ul>
 <li><strong>Everyone should contribute equally to all aspects of the project</strong>
