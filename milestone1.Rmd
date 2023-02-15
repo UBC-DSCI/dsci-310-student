@@ -252,13 +252,13 @@ ensure that you pin the version of the software that you add.
 In this milestone,
 we expect you to add a GitHub Actions workflow to automatically build the image,
 push it to DockerHub,
-and version the image and GitHub repo when changes are pushed to the Dockerfile
-([link to a GitHub Actions Workflow you should use for this](https://github.com/ttimbers/dockerfile-practice/blob/main/.github/workflows/publish_docker_image.yml)).
-When setting up the workflow on GitHub Actions,
-be sure to click "Skip this and setup a workflow yourself".
+and version the image (using `latest` is okay for now) and GitHub repo when changes are pushed to the Dockerfile
+
 You will need to add your DockerHub username and password
 (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively)
 as GitHub secrets to this repository for this to work.
+
+This part is similar to Individual Assignment 3.
 
 #### viii. `LICENSE.md`
 
