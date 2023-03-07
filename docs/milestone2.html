@@ -2480,7 +2480,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#overall-project-summary" id="toc-overall-project-summary">Overall project summary</a></li>
 <li><a href="#milestone-2-summary" id="toc-milestone-2-summary">Milestone 2 summary</a>
 <ul>
-<li><a href="#abstract-some-code-from-your-literate-code-document-.ipynb-to-functions-a-modular-file-e.g.-.r-or-.py" id="toc-abstract-some-code-from-your-literate-code-document-.ipynb-to-functions-a-modular-file-e.g.-.r-or-.py">1. Abstract some code from your literate code document (<code>*.ipynb</code>) to functions a modular file (e.g., <code>.R</code> or <code>.py</code>)</a></li>
+<li><a href="#abstract-some-code-from-your-literate-code-document-to-functions-a-modular-filename" id="toc-abstract-some-code-from-your-literate-code-document-to-functions-a-modular-filename">1. Abstract some code from your literate code document to functions a modular filename</a></li>
 <li><a href="#update-your-projects-computational-environment-as-you-add-dependencies-to-your-project" id="toc-update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">2. Update your project’s computational environment as you add dependencies to your project</a></li>
 </ul></li>
 <li><a href="#submission-instructions" id="toc-submission-instructions">Submission Instructions</a>
@@ -2492,59 +2492,85 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </nav>
 </div>
 <h2 id="overall-project-summary">Overall project summary</h2>
-<p>In this course you will work in assigned teams of three or four (see group assignments in <a href="https://canvas.ubc.ca">Canvas</a>) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.</p>
-<p>Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:</p>
+<p>In this course you will work in assigned teams of three or four
+(see group assignments in <a href="https://canvas.ubc.ca">Canvas</a>)
+to answer a predictive question using a publicly available data set
+that will allow you to answer that question.
+To answer this question,
+you will perform a complete data analysis in R and/or Python,
+from data import to communication of results,
+while placing significant emphasis on reproducible and trustworthy workflows.</p>
+<p>Your data analysis project will evolve throughout the course from a single,
+monolithic Jupyter notebook,
+to a fully reproducible and robust data data analysis project, comprised of:</p>
 <ul>
 <li>a well documented and modularized software package and scripts written in R and/or Python,</li>
 <li>a data analysis pipeline automated with GNU Make,</li>
 <li>a reproducible report powered by either Jupyter book or R Markdown,</li>
 <li>a containerized computational environment created and made shareable by Docker, and</li>
-<li>a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.</li>
+<li>a remote version control repository on GitHub for project collaboration and sharing,
+as well as automation of test suite execution and documentation and software deployment.</li>
 </ul>
-<p>An example final project from another course (where the project is similar) can be seen here:
--<a href="https://github.com/ttimbers/breast_cancer_predictor">Breast Cancer Predictor</a></p>
+<p>An example final project from another course (where the project is similar) can be seen here:</p>
+<ul>
+<li><a href="https://github.com/ttimbers/breast_cancer_predictor">Breast Cancer Predictor</a></li>
+</ul>
 <h2 id="milestone-2-summary">Milestone 2 summary</h2>
 <p>In this milestone, you will:</p>
 <ol type="1">
-<li><p>Abstract some code from your literate code document (<code>*.ipynb</code>) to functions a modular file (e.g., <code>.R</code> or <code>.py</code>)</p></li>
+<li><p>Abstract some code from your literate code document (<code>*.Rmd</code>, <code>*.qmd</code>, <code>*.ipynb</code>, etc)
+to functions a modular file (e.g., <code>.R</code> or <code>.py</code>)</p></li>
 <li><p>Update your project’s computational environment as you add dependencies to your project</p></li>
 </ol>
-<p>An example project milestone 2 will soon be available here: <a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0">https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0</a></p>
-<p>For now, it is still a work in progress: <a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price">https://github.com/UBC-DSCI/predict-airbnb-nightly-price</a>.</p>
-<h3 id="abstract-some-code-from-your-literate-code-document-.ipynb-to-functions-a-modular-file-e.g.-.r-or-.py">1. Abstract some code from your literate code document (<code>*.ipynb</code>) to functions a modular file (e.g., <code>.R</code> or <code>.py</code>)</h3>
+<p>An example project milestone 2 will soon be available here:
+<a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0">https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0</a></p>
+<p>For now, it is still a work in progress:
+<a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price">https://github.com/UBC-DSCI/predict-airbnb-nightly-price</a>.</p>
+<h3 id="abstract-some-code-from-your-literate-code-document-to-functions-a-modular-filename">1. Abstract some code from your literate code document to functions a modular filename</h3>
+<ul>
+<li>Your literate code document would be a<code>*.Rmd</code>, <code>*.qmd</code>, <code>*.ipynb</code>, etc</li>
+<li>Your modular functions file woule be an <code>*.R</code> or <code>*.py</code> file</li>
+</ul>
 <p>In every data science project, there is some code that is repetitive,
-and other code that may not be repetitive in the current project, but would likely be very useful in other, related future projects.
+and other code that may not be repetitive in the current project,
+but would likely be very useful in other, related future projects.
 It is well worth it to abstract such code to functions.
 This allows for the code to be tested with unit tests, to ensure it works as expected,
 as well as makes it easily reuseable in the future in other work.</p>
 <p>Examples of code that often repetitive in a data analysis projects:</p>
 <ul>
 <li>data wrangling, cleaning or transformation code that gets applied to multiple columns or multiple data sets</li>
-<li>data visualization code when many versions of a similar plot-type is used (e.g., many scatter plots with similar formatting)</li>
+<li>data visualization code when many versions of a similar plot-type is used
+(e.g., many scatter plots with similar formatting)</li>
 <li>data modeling workflow/pipeline code when tuning different models on the same data set</li>
 </ul>
 <p>When doing this task,
-follow the <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html#workflow-for-writing-functions-and-tests-for-data-science">workflow for writing functions and tests for data science</a>,
+follow the
+<a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html#workflow-for-writing-functions-and-tests-for-data-science">workflow for writing functions and tests for data science</a>,
 remember this process will include:</p>
 <ul>
 <li>writing thorough function specifications &amp; documentation</li>
 <li>writing robust unit tests for these functions to ensure they work as expected</li>
 <li>writing the code that makes up the function body</li>
 </ul>
-<p>If you are using R, these functions will live in an <code>.R</code> file (whose filename will be named after the function, or functions).
+<p>If you are using R, these functions will live in an <code>.R</code> file
+(whose filename will be named after the function, or functions).
 It is OK to have one function per file, or all functions in one file.
-This/these file(s) will live in a sub-directory called <code>R</code>.
-If you are using Python, these functions will live in an <code>.py</code> file (whose filename will be named after the function, or functions).
+This/these file(s) will live in a sub-directory called <code>R</code>.</p>
+<p>If you are using Python, these functions will live in an <code>.py</code> file
+(whose filename will be named after the function, or functions).
 Again, it is OK to have one function per file, or all functions in one file.
-This/these file(s) will live in a sub-directory called <code>src</code>.
-You will <code>source</code> (in the case of R) or <code>import</code> (in the case of Python) these functions in your literate code document (<code>*.ipynb</code>) to use them in your analysis.
+This/these file(s) will live in a sub-directory called <code>src</code>.</p>
+<p>You will <code>source</code> (in the case of R) or <code>import</code> (in the case of Python)
+these functions in your literate code document (<code>*.ipynb</code>) to use them in your analysis.
 Tests will live in a <code>test</code> directory, with files/subdirectories organized as per the testing framework you are using.</p>
 <p><strong>We expect that you will abstract at least 3-4 functions from your literate code document.
 One per group member is the minimum.</strong>
 Of course, if it makes sense to have more than 3-4 you are welcome to increase the number!
 However, all functions must have the same standards in regards to software robustness.
 Your functions will be assessed for their quality
-(e.g., functions should do one thing, and generally return an object unless they were specifically designed for side-effects),
+(e.g., functions should do one thing,
+and generally return an object unless they were specifically designed for side-effects),
 usability,
 readability (follow the <a href="https://style.tidyverse.org/">tidyverse style guide</a> for R,
 or the <a href="https://black.readthedocs.io/en/stable/the_black_code_style/index.html">black style guide</a> for Python),
@@ -2555,7 +2581,8 @@ If you are using Python, we expect you to use the <a href="https://docs.pytest.o
 <h3 id="update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">2. Update your project’s computational environment as you add dependencies to your project</h3>
 <p>At a minimum, you will be adding the testing package framework as a new dependency to your project
 (e.g., <code>testthat</code> R package or <code>pytest</code> Python package).
-Thus, you will need to update your project’s computational environment as you add this (and potentially other) dependencies to your project.
+Thus, you will need to update your project’s computational environment
+as you add this (and potentially other) dependencies to your project.
 This means that your <code>Dockerfile</code> will need to have this package added, with the version pinned,
 and the Docker container image will need to be rebuilt.
 Do not forget to update your project’s documentation to reflect these changes.</p>
@@ -2566,7 +2593,11 @@ Do not forget to update your project’s documentation to reflect these changes.
 <li>the URL of a GitHub release of your project’s GitHub.com repository for this milestone.</li>
 </ol>
 <h3 id="creating-a-release-on-github.com">Creating a release on GitHub.com</h3>
-<p>Just before you submit the milestone 2, create a release on your project repository on GitHub and name it something like <code>2.0.0</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.</p>
+<p>Just before you submit the milestone 2,
+create a release on your project repository on GitHub and name it something like <code>2.0.0</code>
+(<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>).
+This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes,
+while you continue to work on your project for the next milestone.</p>
 <h2 id="expectations">Expectations</h2>
 <ul>
 <li><strong>Everyone should contribute equally to all aspects of the project</strong>
@@ -2586,6 +2617,7 @@ It’s OK if one or two are less meaningful, but most should be.</li>
 <li><strong>Your analysis should be correct, and run reproducibly given the instructions provided in the README.</strong></li>
 <li>You should use proper grammar and full sentences in your README.
 Point form may occur, but should be less than 10% of your written documents.</li>
+<li>You will not be expected to incorporate Milestone 1 feedback in this submission.</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
