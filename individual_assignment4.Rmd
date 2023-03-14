@@ -139,7 +139,7 @@ Edit `doc/rmd_example/rmd_example.rmd` so that:
 
 **Notes:**
 
-- The RMarkdown file will may render on its own properly via the knit button in RStudio and using the `Makefile`
+- The RMarkdown file may not on its own properly via the knit button in RStudio and using the `Makefile`
   at the same time.
     - The current repository is written in a way for the `Makefile` to run the commands need to create the necessary inputs and outputs.
 - If you want to get the "Knit" button working as well as the `Makefile` commands,
@@ -263,7 +263,7 @@ This assignment will be graded for completion as follows:
 |Grade | Description |
 |------|-------------|
 | 110% | All 6 of the required edits to the `.Rmd` document above were met. And all of the required edits to the Jupyter book above were met. |
-| 100% | All 6 of the required edits to the `.Rmd` document above were met.  |
+| 100% | All 6 of the required edits to the `.Rmd` document above were met. *and* the report generates a working PDF and HTML file via the `Makefile`. |
 | 75%  | 5/6 of the required edits to the `.Rmd` document listed above were met. |
 | 50%  | 4/6 of the required edits to the `.Rmd` document listed above were met. |
 | 25%  | 3/6 of the required edits to the `.Rmd` document listed above were met. |
