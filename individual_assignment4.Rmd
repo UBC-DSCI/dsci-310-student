@@ -94,7 +94,7 @@ Here is a quick rundown of each:
 
 #### Step 3
 
-Goal: Famialrize yourself with the `Makefile` targets
+Goal: Familiarize yourself with the `Makefile` targets
 
 - The `Makefile` has all the targets needed to render the final R Markdown report.
 - You will want to have GNU Make build the `rmd` target to do this.
