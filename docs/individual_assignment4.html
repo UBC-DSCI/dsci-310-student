@@ -2489,11 +2489,36 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h2 id="instructions">Instructions</h2>
 <p>The purpose of this assignment is to ensure that everyone gains hands-on practice on creating reproducible reports in R Markdown.
-This assignment also contains an optional added challenge to gain practice with Jupyter book as well.
-If students complete the optional challenge, they get a 10% bonus mark on this assignment (so the highest possible mark is 110%).</p>
-<p>Throughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.</p>
-<p>But are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process. Imagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…</p>
-<p>This is where R Markdown and Jupyter Books can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this worksheet, you will start to familiarize yourself with both R Markdown and Jupyter Books, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences.</p>
+This assignment also contains an optional added challenge to gain practice with creating an online book as well.
+If students complete the optional challenge,
+they get a 10% bonus mark on this assignment (so the highest possible mark is 110%).</p>
+<p>Throughout the pre-requisites for DSCI 310,
+you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document.
+This allowed you to pass your analysis over to a co-worker or reviewer,
+who could reproduce your work by running your notebook from top to bottom.</p>
+<p>But are Jupyter Notebooks all there is to creating reproducible reports?
+Not entirely… For example,
+Jupyter Notebooks struggle with organization and configuration.
+Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook.
+Writing out a table of contents,
+formatting a bibliography,
+and adding labels to figures can become extremely cumbersome,
+especially as they evolve with your analysis during the review process.
+Imagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report;
+figure 1 now needs to be renamed to figure 2,
+table 2 now needs to be renamed to table 3,
+figure 3 now needs to be renamed to figure 4…</p>
+<p>This is where Quarto, R Markdown, and Jupyter Books can come in handy.
+Although they have their own set of disadvantages,
+they are certainly an improvement over plain Jupyter Notebooks.
+They allow for the automatic creation and formatting of a table of contents,
+a bibliography,
+and those pesky figure labels,
+among many other features.
+During this worksheet,
+you will start to familiarize yourself with both R Markdown and Jupyter Books,
+start to understand their advantages and disadvantages,
+and begin to recognize their similarities and differences.</p>
 <h3 id="submission-instructions">Submission instructions</h3>
 <p>In the textbox provided for this assignment on Canvas,
 you must submit:</p>
@@ -2502,11 +2527,23 @@ you must submit:</p>
 <li><p>(optional) A note stating that you did the optional/bonus component</p></li>
 </ol>
 <h3 id="exercise-instructions---r-markdown-required">Exercise instructions - R Markdown (required)</h3>
-<ol type="1">
-<li><p>Create a copy of <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports">this template repository</a> on GitHub.com under your personal username.</p></li>
-<li><p>Get familiar with the repository (you can ignore the <code>doc/jbook_example</code> directory if you are not completing the optional part of the assignment).
-Inside the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports">template repository</a>, there are several directories and files. Here is a quick rundown of each:</p></li>
-</ol>
+<p>We suggest you read through the instructions first before doing them in sequence.</p>
+<h4 id="step-1">Step 1</h4>
+<p><strong>Goal:</strong> Create a copy from the template repository.</p>
+<ul>
+<li>Create a copy of <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports">this template repository</a>
+on GitHub.com under <strong>your personal username</strong></li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Do not create it under the DSCI-310 organization</li>
+<li>We, the teaching team, also need to be able to see this repository in order to grade it.</li>
+</ul>
+<h4 id="step-2">Step 2</h4>
+<p><strong>Goal:</strong> Get familiar with the repository</p>
+<p>Inside the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports">template repository</a>,
+there are several directories and files.
+Here is a quick rundown of each:</p>
 <ul>
 <li><code>data</code>: contains data used in the analysis <strong>(do not edit)</strong></li>
 <li><code>doc/rmd_example</code>: contains the R Markdown version of the analysis
@@ -2515,25 +2552,77 @@ Inside the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-r
 <li><code>rmd_example.rmd</code>: R Markdown containing the contents of the report and its
 configuration <strong>(incomplete - you will need to edit this)</strong></li>
 </ul></li>
-<li><code>makefile</code>: declares commands used to build the Jupyter Book and RMD report <strong>(do not edit</strong>)</li>
+<li><code>makefile</code>: declares commands used to build the Jupyter Book and RMD report <strong>(do not edit</strong>)
+<ul>
+<li>This file has all the commands you need to do this assignment.</li>
+</ul></li>
 <li><code>results</code>: output of the script in <code>source</code></li>
 <li><code>source/generate_figures.R</code>: a script that performs the analysis and outputs
 various plots and a table that are to be used in the report <strong>(do not edit)</strong></li>
 </ul>
-<ol start="3" type="1">
-<li>Edit <code>doc/rmd_example/rmd_example.rmd</code> so that:</li>
-</ol>
+<p><strong>Notes:</strong></p>
 <ul>
-<li>add header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and R Markdown configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (<a href="https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents">docs on how to do this in html</a> and <a href="https://bookdown.org/yihui/rmarkdown/pdf-document.html#table-of-contents-1">in pdf</a>)</li>
-<li>add correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">docs on how to do this</a>)</li>
-<li>edit the figure captions so that they are automatically numbered by R Markdown (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html">docs on how to do this</a>), control the figure sizes so that they are easy to view and read in the report (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html">docs on how to do this</a>), and use cross referencing to link to the figure(s) if/when they are discussed in the text (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html">docs on how to do this</a>)</li>
-<li>add a table description via <code>knitr::kable</code>’s <code>caption</code> argument so that they are automatically numbered by R Markdown (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html#kable-caption">docs on how to do this</a>), and use cross referencing to link to the table if/when it is discussed in the text (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html">docs on how to do this</a>)</li>
-<li>replace the <code>?</code> on <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports/blob/e39f7bb28033a57f04d08aa490d7757b25b7f632/doc/rmd_example/rmd_example.Rmd#L55">this line</a> with inline R Markdown code, so that the text will be automatically updated with the correct value (<a href="https://rmarkdown.rstudio.com/lesson-4.html">docs on how to do this</a>)</li>
-<li>change the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (<a href="https://rmarkdown.rstudio.com/lesson-3.html">docs on how to do this</a>)</li>
+<li>you can ignore the <code>doc/jbook_example</code> directory if you are not completing the optional part of the assignment.</li>
 </ul>
-<ol start="4" type="1">
-<li>Use the <code>Makefile</code> to render the final R Markdown report (you will want to have GNU Make build the <code>rmd</code> target to do this). The HTML version of the report is saved to <code>doc/rmd_example/rmd_example.html</code> and the PDF version will be saved to <code>doc/rmd_example/rmd_example.pdf</code>.</li>
+<h4 id="step-3">Step 3</h4>
+<p>Goal: Famialrize yourself with the <code>Makefile</code> targets</p>
+<ul>
+<li>The <code>Makefile</code> has all the targets needed to render the final R Markdown report.</li>
+<li>You will want to have GNU Make build the <code>rmd</code> target to do this.</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>The HTML version of the report is saved to <code>doc/rmd_example/rmd_example.html</code></li>
+<li>The PDF version will be saved to <code>doc/rmd_example/rmd_example.pdf</code></li>
+<li>The <code>Makefile</code> commands will help you</li>
+</ul>
+<h4 id="step-4">Step 4</h4>
+<p>Goal: Create the example report</p>
+<p>Edit <code>doc/rmd_example/rmd_example.rmd</code> so that:</p>
+<ol type="1">
+<li>Add header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”)
+and R Markdown configuration so that a table of contents that is automatically generated from the document headers
+will be created when the document is rendered
+(<a href="https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents">docs on how to do this in html</a> and
+<a href="https://bookdown.org/yihui/rmarkdown/pdf-document.html#table-of-contents-1">in pdf</a>)</li>
+<li>Add correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document
+(<a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">docs on how to do this</a>)</li>
+<li>Edit the figure captions so that they are automatically numbered by R Markdow
+(<a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html">docs on how to do this</a>),
+control the figure sizes so that they are easy to view and read in the report
+(<a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-size.html">docs on how to do this</a>),
+and use cross referencing to link to the figure(s) if/when they are discussed in the text
+(<a href="https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html">docs on how to do this</a>)</li>
+<li>add a table description via <code>knitr::kable</code>’s <code>caption</code> argument so that they are automatically numbered by R Markdown
+(<a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html#kable-caption">docs on how to do this</a>),
+and use cross referencing to link to the table if/when it is discussed in the text
+(<a href="https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html">docs on how to do this</a>)</li>
+<li>replace the <code>?</code> on
+<a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-repro-reports/blob/e39f7bb28033a57f04d08aa490d7757b25b7f632/doc/rmd_example/rmd_example.Rmd#L55">this line</a>
+with inline R Markdown code,
+so that the text will be automatically updated with the correct value
+(<a href="https://rmarkdown.rstudio.com/lesson-4.html">docs on how to do this</a>)</li>
+<li>change the code chunk options so that no code is viewable in the rendered report,
+just the code outputs where needed (e.g., figures and tables)
+(<a href="https://rmarkdown.rstudio.com/lesson-3.html">docs on how to do this</a>)</li>
 </ol>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>The RMarkdown file will may render on its own properly via the knit button in RStudio and using the <code>Makefile</code>
+at the same time.
+<ul>
+<li>The current repository is written in a way for the <code>Makefile</code> to run the commands need to create the necessary inputs and outputs.</li>
+</ul></li>
+<li>If you want to get the “Knit” button working as well as the <code>Makefile</code> commands,
+pay attention to the error messages in the Knit rendering,
+it may point to a difference in working directories.
+<ul>
+<li>You may need to modify the <code>Makefile</code> runnable</li>
+<li>You may need to use the <code>{here}</code> library to help you find the root project path</li>
+<li>You may need to modify how the source document references the files relatively</li>
+</ul></li>
+<li>The default citation style is okay</li>
+</ul>
 <h3 id="exercise-instructions---jupyter-book-optionalbonus">Exercise instructions - Jupyter book (optional/bonus)</h3>
 <h4 id="introduction-to-jupyter-book">Introduction to Jupyter book</h4>
 <p>A Jupyter Book has a similar structure to an R Markdown document,
@@ -2571,7 +2660,8 @@ table of contents file:</p>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">file</span><span class="kw">:</span><span class="at"> jupyter_notebook2</span></span></code></pre></div>
 <p>More detailed information about how files, chapters, sections, and
 headers correspond to the structure of a Jupyter Book can be found
-here: <a href="https://jupyterbook.org/structure/sections-headers.html#toc-structure">jupyterbook.org/structure/sections-headers</a>.</p>
+here:
+<a href="https://jupyterbook.org/structure/sections-headers.html#toc-structure">jupyterbook.org/structure/sections-headers</a>.</p>
 <p>Lastly, we have the content of the Jupyter Book. As mentioned
 previously, usually there are one or more Jupyter Notebooks that
 make up the content of a Jupyter Book, which you are already
@@ -2665,6 +2755,9 @@ respectively. These will only be present after rendering the book.</li>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>You will only get the extra points for the Jupyter Book if all of the main assignment components were completed.</li>
+</ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
