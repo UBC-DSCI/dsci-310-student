@@ -173,6 +173,8 @@ You will submit two URLS's to Canvas in the provided text box for milestone 3:
 2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
 3. The URL of your Dockerhub image that can be pulled and used to run your analysis following your `README.md` instructions.
 
+_Up to_ 50% of your Milestone 1 + Milestone 2 points will be awareded if you have _adequately_ addressed feedback and comments from your repository.
+
 ### Creating a release on GitHub.com 
 
 Just before you submit the milestone 3, create a release on your project repository on GitHub and name it something like `3.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.
