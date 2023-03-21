@@ -2481,7 +2481,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#milestone-3-summary" id="toc-milestone-3-summary">Milestone 3 summary</a></li>
 <li><a href="#milestone-3-specifics" id="toc-milestone-3-specifics">Milestone 3 specifics</a>
 <ul>
-<li><a href="#abstract-more-code-from-your-literate-code-document-.ipynb-or-.rmd-to-scripts-e.g.-.r-or-.py." id="toc-abstract-more-code-from-your-literate-code-document-.ipynb-or-.rmd-to-scripts-e.g.-.r-or-.py.">1. Abstract more code from your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) to scripts (e.g., <code>.R</code> or <code>.py</code>).</a></li>
+<li><a href="#abstract-more-code-from-your-literate-code-document-.ipynb-.rmd-or-.qmd-to-scripts-e.g.-.r-or-.py." id="toc-abstract-more-code-from-your-literate-code-document-.ipynb-.rmd-or-.qmd-to-scripts-e.g.-.r-or-.py.">1. Abstract more code from your literate code document (<code>*.ipynb</code>, <code>*.Rmd</code>, or <code>.qmd</code>) to scripts (e.g., <code>.R</code> or <code>.py</code>).</a></li>
 <li><a href="#edit-your-literate-code-document-.ipynb-or-.rmd-so-that-its-sole-job-is-to-narrate-your-analysis-display-your-analysis-artifacts-i.e.-figures-and-tables-and-nicely-format-the-report." id="toc-edit-your-literate-code-document-.ipynb-or-.rmd-so-that-its-sole-job-is-to-narrate-your-analysis-display-your-analysis-artifacts-i.e.-figures-and-tables-and-nicely-format-the-report.">2. Edit your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report.</a></li>
 <li><a href="#write-another-script-a-makefile-literally-called-makefile-to-act-as-a-driver-script-to-rule-them-all" id="toc-write-another-script-a-makefile-literally-called-makefile-to-act-as-a-driver-script-to-rule-them-all">3. Write another script, a <code>Makefile</code> (literally called <code>Makefile</code>), to act as a driver script to rule them all</a></li>
 <li><a href="#update-your-projects-computational-environment-as-you-add-dependencies-to-your-project" id="toc-update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">4. Update your project’s computational environment as you add dependencies to your project</a></li>
@@ -2496,11 +2496,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h2 id="overall-project-summary">Overall project summary</h2>
 <p>In this course you will work in assigned teams of three or four (see group assignments in <a href="https://canvas.ubc.ca">Canvas</a>) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.</p>
-<p>Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:</p>
+<p>Your data analysis project will evolve throughout the course from a single, monolithic RMarkdown document, Jupyter notebook, or Quarto document to a fully reproducible and robust data data analysis project, comprised of:</p>
 <ul>
 <li>a well documented and modularized software package and scripts written in R and/or Python,</li>
 <li>a data analysis pipeline automated with GNU Make,</li>
-<li>a reproducible report powered by either Jupyter book or R Markdown,</li>
+<li>a reproducible report powered by either Jupyter book, R Markdown, or Quarto</li>
 <li>a containerized computational environment created and made shareable by Docker, and</li>
 <li>a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.</li>
 </ul>
@@ -2527,11 +2527,23 @@ was used to perform your analysis or format your report
 <p>An example project milestone 3 will soon be available here: <a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v3.0.0">https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0</a></p>
 <p>For now, it is still a work in progress: <a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price">https://github.com/UBC-DSCI/predict-airbnb-nightly-price</a>.</p>
 <h2 id="milestone-3-specifics">Milestone 3 specifics</h2>
-<h3 id="abstract-more-code-from-your-literate-code-document-.ipynb-or-.rmd-to-scripts-e.g.-.r-or-.py.">1. Abstract more code from your literate code document (<code>*.ipynb</code> or <code>*.Rmd</code>) to scripts (e.g., <code>.R</code> or <code>.py</code>).</h3>
+<h3 id="abstract-more-code-from-your-literate-code-document-.ipynb-.rmd-or-.qmd-to-scripts-e.g.-.r-or-.py.">1. Abstract more code from your literate code document (<code>*.ipynb</code>, <code>*.Rmd</code>, or <code>.qmd</code>) to scripts (e.g., <code>.R</code> or <code>.py</code>).</h3>
 <p>This code need not be converted to a function,
 but can simply be files that call the functions needed to run your analysis.
 You should aim to split the analysis code into 4, or more, R or Python scripts.
 Where the code in each script is contributing to a related step in your analysis.</p>
+<p>Examples of steps in your current document that can be broken up into steps:</p>
+<ul>
+<li>Load</li>
+<li>Clean</li>
+<li>Tidy</li>
+<li>EDA</li>
+<li>Figures</li>
+<li>Analysis</li>
+<li>Modeling</li>
+<li>Results</li>
+<li>Findings</li>
+</ul>
 <p>The output of the first script must be the input of the second, and so on.
 All scripts should have command line arguments
 and we expect you to use the <code>docopt</code> R package
@@ -2597,7 +2609,15 @@ again so you can reference figures, tables and sections effectively.</p>
 <li><p>live in the project’s root directory and be named Makefile</p></li>
 <li><p>be well documented (using the project <code>README</code> and comments inside the <code>Makefile</code> to explain what it does and how to use it)</p></li>
 <li><p>have a <code>all</code> target so that you can easily run the entire analysis from top to bottom by running <code>make all</code> at the command line</p></li>
-<li><p>have a <code>clean</code> target so that you can easily “undo” your analysis by running <code>make clean</code> at the command line</p></li>
+<li><p>have a <code>clean</code> target so that you can easily “undo” your analysis by running <code>make clean</code> at the command line (e.g., deletes all generate data and files).</p></li>
+</ul>
+<p>Tip:</p>
+<ul>
+<li>The <code>all</code> target can be a <code>.PHONTY</code> target</li>
+<li>You can create other targets that link up all the dependencies
+<ul>
+<li>For example, <code>data</code>, <code>analysis</code>, <code>figures</code>, <code>pdf</code>, etc, so your build process only runs what’s necessary during development</li>
+</ul></li>
 </ul>
 <h3 id="update-your-projects-computational-environment-as-you-add-dependencies-to-your-project">4. Update your project’s computational environment as you add dependencies to your project</h3>
 <p>At a minimum,
@@ -2607,38 +2627,40 @@ Thus, you will need to update your project’s computational environment
 as you add this (and potentially other) dependencies to your project.
 This means that your <code>Dockerfile</code> will need to have this package added,
 with the version pinned,
-and the Docker container image will need to be rebuilt.
+and the Docker container image will need to be rebuilt and published to DockerHub.
 Do not forget to update your project’s documentation to reflect these changes.</p>
 <h2 id="submission-instructions">Submission Instructions</h2>
 <p>You will submit two URLS’s to Canvas in the provided text box for milestone 3:</p>
 <ol type="1">
 <li>the URL of your project’s GitHub.com repository</li>
 <li>the URL of a GitHub release of your project’s GitHub.com repository for this milestone.</li>
+<li>The URL of your Dockerhub image that can be pulled and used to run your analysis following your <code>README.md</code> instructions.</li>
 </ol>
 <h3 id="creating-a-release-on-github.com">Creating a release on GitHub.com</h3>
 <p>Just before you submit the milestone 3, create a release on your project repository on GitHub and name it something like <code>3.0.0</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.</p>
 <h2 id="expectations">Expectations</h2>
 <ul>
-<li><strong>Everyone should contribute equally to all aspects of the project</strong>
+<li><p><strong>Everyone should contribute equally to all aspects of the project</strong>
 <strong>(e.g., code, writing, project management).</strong>
 <strong>This should be evidenced by a roughly equal number of commits,</strong>
-<strong>pull request reviews and participation in communication via GitHub issues.</strong></li>
-<li>Each group member should work in a
+<strong>pull request reviews and participation in communication via GitHub issues.</strong></p></li>
+<li><p>Each group member should work in a
 <a href="https://docs.github.com/en/get-started/quickstart/github-flow">GitHub flow workflow</a>;
 where they create branches for each feature or fix,
 which are reviewed and critiqued by at least one other teammate
-before the the pull request is accepted.</li>
-<li>You should be committing to git and pushing to GitHub.com every time you work on this project.</li>
-<li>Git commit messages should be meaningful. These will be marked.
-It’s OK if one or two are less meaningful, but most should be.</li>
-<li>Use GitHub issues to communicate to their team mate (as opposed to email or Slack).</li>
-<li>Your question, analysis and visualization should make sense. It doesn’t have to be complicated.</li>
-<li><strong>Your analysis should be correct, and run reproducibly given the instructions provided in the README.</strong></li>
-<li>You should use proper grammar and full sentences in your README.
-Point form may occur, but should be less than 10% of your written documents.</li>
-<li>R code should follow the <a href="https://style.tidyverse.org/">tidyverse style guide</a>,
+before the the pull request is accepted.</p></li>
+<li><p>You should be committing to git and pushing to GitHub.com every time you work on this project.</p></li>
+<li><p>Git commit messages should be meaningful. These will be marked.
+It’s OK if one or two are less meaningful, but most should be.</p></li>
+<li><p>Use GitHub issues to communicate to their team mate (as opposed to email or Slack).</p></li>
+<li><p>Your question, analysis and visualization should make sense. It doesn’t have to be complicated.</p></li>
+<li><p><strong>Your analysis should be correct, and run reproducibly given the instructions provided in the README.</strong></p></li>
+<li><p>You should use proper grammar and full sentences in your README.
+Point form may occur, but should be less than 10% of your written documents.</p></li>
+<li><p>R code should follow the <a href="https://style.tidyverse.org/">tidyverse style guide</a>,
 and Python code should follow the
-<a href="https://black.readthedocs.io/en/stable/the_black_code_style/index.html">black style guide</a> for Python)</li>
+<a href="https://black.readthedocs.io/en/stable/the_black_code_style/index.html">black style guide</a> for Python)</p></li>
+<li><p>You should not have extrandous files in your repository that shoudl be ignored.</p></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
