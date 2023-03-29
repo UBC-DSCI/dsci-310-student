@@ -126,8 +126,9 @@ This assignment will be graded for completion as follows:
 
 |Grade | Description |
 |------|-------------|
-| 110% | A working toy R package, working toy Python package with a pyopensci contribution |
+| 120% | A working toy R package, working toy Python package with a pyopensci contribution |
 | 100% | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) with a fully working and adequate set of unit tests.|
 | 75%  | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) with the additional function in the package.|
 | 75%  | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html).|
+| 25%  | Non working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html).|
 | 0%   | The assignment was not attempted. |
