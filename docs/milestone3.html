@@ -458,8 +458,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -2416,7 +2416,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2600,7 +2600,11 @@ If you are using R Markdown, you should use the
 <a href="https://bookdown.org/yihui/bookdown/"><code>bookdown</code></a> outputs
 (e.g., <code>bookdown::html2</code> or <code>bookdown::pdf2</code>)
 so you can reference figures, tables and sections effectively.
-If you are using Jupyter for your final report,
+PDF output needs a TeXLive installation to render the PDF.
+You did this locally in the computer setup at the beginning of the course,
+for your container, you may want to look into the
+<a href="https://rocker-project.org/images/#the-versioned-stack"><code>rocker/verse</code> base image</a>.</p>
+<p>If you are using Jupyter for your final report,
 you should use <a href="https://jupyterbook.org/intro.html">Jupyter book</a>,
 again so you can reference figures, tables and sections effectively.</p>
 <h3 id="write-another-script-a-makefile-literally-called-makefile-to-act-as-a-driver-script-to-rule-them-all">3. Write another script, a <code>Makefile</code> (literally called <code>Makefile</code>), to act as a driver script to rule them all</h3>
