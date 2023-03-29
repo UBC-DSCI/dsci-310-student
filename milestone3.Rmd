@@ -130,6 +130,11 @@ If you are using R Markdown, you should use the
 [`bookdown`](https://bookdown.org/yihui/bookdown/) outputs
 (e.g., `bookdown::html2` or `bookdown::pdf2`)
 so you can reference figures, tables and sections effectively.
+PDF output needs a TeXLive installation to render the PDF.
+You did this locally in the computer setup at the beginning of the course,
+for your container, you may want to look into the
+[`rocker/verse` base image](https://rocker-project.org/images/#the-versioned-stack).
+
 If you are using Jupyter for your final report,
 you should use [Jupyter book](https://jupyterbook.org/intro.html), 
 again so you can reference figures, tables and sections effectively.

@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 docs/search.json
+.ipynb_checkpoints
+.virtual_documents
