@@ -10,7 +10,21 @@ output:
 ## Motivation
 
 The purpose of this assignment is to ensure that everyone 
-gains hands-on practice creating software packages in R. 
+gains hands-on practice creating software packages in R.
+
+#### Optional: Python packaging and PyOpenSci feedback
+
+This assignment also contains an optional added challenge 
+to gain hands-on practice creating software packages in Python as well.
+There is an open source community component for this optional component.
+Please communicate with your instructor about this.
+The final due date for this component is flexibable,
+but you must let the instructor know you are planning to work on this before the main
+assignment deadline.
+You are not guarenteed to get this point if there is not enough community enguagement.
+Total potential points is extra 20% (10% for packaing 10% for open source feedback).
+
+Note: Just doing the python packaging component will not give you the 10%.
 
 ### Submission instructions
 
@@ -18,45 +32,102 @@ In the textbox provided for this assignment on Canvas,
 you must submit a link to the GitHub.com repository containing the R package 
 that you create for this assignment.
 
-### Exercise instructions - Create an R Package
+Links to the extra Python components will be submitted here.
+
+## Exercise instructions
+
+### Step 1: Create an R Package
 
 Read through, 
-and follow all of the prompts in 
+and follow all of the prompts in
 [The whole game](https://r-pkgs.org/whole-game.html) 
 chapter of the R Packages book.
 At the end of this chapter, you will have created a toy R package
 that lives inside a public repository on GitHub.com.
 
-To ensure your package is working, set your working directory to be directly
-inside the repository containing your package and then call
-`devtools::load_all()`. If everything is correct, you should now be able
-to call `str_split_one()`!
+Tip: create your starting repository on github first.
+It'll make setting up all the local git + GitHub plumbing easier.
+They mention this in The Whole Game section on
+[use_github()](https://r-pkgs.org/whole-game.html#use_github)
 
-### Exercise instructions - Add a new R function to your package
+To ensure your package is working, set your working directory to be directly
+inside the repository containing your package (in RStudio you can do this with an RStudio project)
+and then call `devtools::load_all()`.
+If everything is correct, you should now be able to call `str_split_one()`!
+
+Note: This is not the same as manually sourcing or running your `str_split_one`
+function definition in the file.
+
+### Step 2: Add a new R function to your package
 
 Now we are going to add a second function to this package.
-**Your grade will depend on the correctness of this function.**
+**Your grade will depend on the quality and correctness of this function and its tests.**
 Here are the specifications for the function you must add:
 
-  #' Replace ALL instances of "foo" with "bar"
-  #'
-  #' @param string A character vector.
-  #'
-  #' @return A character vector.
-  #' @export
-  #'
-  #' @examples
-  #' x <- "foo"
-  #' str_replace_all_foo(x)
-  #'
-  #' y <- c("foo", "bar")
-  #' str_replace_all_foo(y)
-  
-Create a new file in the R directory of your package named 
-`str_replace_all_foo.R`
-and copy and paste the specification above. Implement the function according
-to the specification. Feel free to use any function inside the
-[`stringr`](https://stringr.tidyverse.org/) package in your implementation.
-You should also add some tests for your new function inside `tests/testthat`.
-When you are done, make sure you run `check()` to ensure your tests pass and
-the package is working properly.
+1. File named `my_add.R` in the correct location
+2. Function named `my_add` in the `my_add.R` file
+3. Your `my_add` function will take 2 parameters, `x` and `y`
+4. The function will return the sum of the values `x` and `y`
+  - The `y` parameter will have a default value of 10
+
+The function will have the following behaviors:
+
+```r
+my_add(1, 2)       # output: 3
+my_add(1)          # output: 10
+my_add(NA)         # output: NA
+my_add(10, NA)     # output: NA
+my_add("10", "20") # output: error message saying "One of your inputs contains a string value"
+```
+
+Your function should have tests that test for edge cases and known errors.
+There should be at least 4 different test behavours.
+
+Tip: use the `check()` function from the `{devtools}` package as you work on your package.
+
+
+Useful additional resources:
+
+- Advanced R: Conditions: https://adv-r.hadley.nz/control-flow.html
+- Advanced R Functions > Exiting a function > Errors: https://adv-r.hadley.nz/functions.html?#errors
+
+## Optional: Python packaing
+
+This is a non-trivial amount of work.
+If you want to attempt this please talk to the instructor,
+so they can plan the coordination between the PyOpenSci community.
+You will have additional time to work on this part of the assignment
+if you make a plan with your instructor.
+Last minute or late request to do this part of the assignment will not be accepted.
+
+We will use the #pyopensci Slack channel to coordinate communications.
+You will need to manually join this channel.
+
+In general your task will be to create a python package while comparing and contrasting
+two sets of instructions.
+
+- You will create a python package using the py-pkgs book and the PyOpenSci packaing guidelines
+  - py-pkgs: "How to package a Python": https://py-pkgs.org/03-how-to-package-a-python
+  - PyOpenSci packaing guide: https://www.pyopensci.org/python-package-guide/
+- Compare and contrast the differences between the py-pkgs guide and the pyopensci guide
+- Read through the pyopensci guide and document issues
+  - Document if parts are confusing or not
+  - Any issues / errors: document in your python package assignment repo as an issue _with specifics_ about what is wrong or confusing
+- Create a pyopensci discourse account: https://pyopensci.discourse.group/
+  - We will evenvually coordinate with Leah Wasser there
+
+Note: the more specific and suggestions you can provide in this part of the assignment,
+the easier it will be to make a formal contribution to the pyopensci project.
+This will be a documented contribution using the Git + GitHub skills we've learned in class.
+
+## Rubric 
+
+This assignment will be graded for completion as follows:
+
+|Grade | Description |
+|------|-------------|
+| 110% | A working toy R package, working toy Python package with a pyopensci contribution |
+| 100% | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) with a fully working and adequate set of unit tests.|
+| 75%  | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html) with the additional function in the package.|
+| 75%  | A working toy R package was created as described in the [The whole game](https://r-pkgs.org/whole-game.html).|
+| 0%   | The assignment was not attempted. |
