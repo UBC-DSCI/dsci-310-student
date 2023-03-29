@@ -2480,43 +2480,112 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#motivation" id="toc-motivation">Motivation</a>
 <ul>
 <li><a href="#submission-instructions" id="toc-submission-instructions">Submission instructions</a></li>
-<li><a href="#exercise-instructions---create-an-r-package-required" id="toc-exercise-instructions---create-an-r-package-required">Exercise instructions - Create an R Package (required)</a></li>
-<li><a href="#exercise-instructions---create-a-python-package-optionalbonus" id="toc-exercise-instructions---create-a-python-package-optionalbonus">Exercise instructions - Create a Python Package (optional/bonus)</a></li>
 </ul></li>
+<li><a href="#exercise-instructions" id="toc-exercise-instructions">Exercise instructions</a>
+<ul>
+<li><a href="#step-1-create-an-r-package" id="toc-step-1-create-an-r-package">Step 1: Create an R Package</a></li>
+<li><a href="#step-2-add-a-new-r-function-to-your-package" id="toc-step-2-add-a-new-r-function-to-your-package">Step 2: Add a new R function to your package</a></li>
+</ul></li>
+<li><a href="#optional-python-packaing" id="toc-optional-python-packaing">Optional: Python packaing</a></li>
 <li><a href="#rubric" id="toc-rubric">Rubric</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="motivation">Motivation</h2>
 <p>The purpose of this assignment is to ensure that everyone
-gains hands-on practice creating software packages in R.
-This assignment also contains an optional added challenge
+gains hands-on practice creating software packages in R.</p>
+<h4 id="optional-python-packaging-and-pyopensci-feedback">Optional: Python packaging and PyOpenSci feedback</h4>
+<p>This assignment also contains an optional added challenge
 to gain hands-on practice creating software packages in Python as well.
-If students complete the optional challenge, they get a 10% bonus mark on this assignment (so the highest possible mark is 110%).</p>
+There is an open source community component for this optional component.
+Please communicate with your instructor about this.
+The final due date for this component is flexibable,
+but you must let the instructor know you are planning to work on this before the main
+assignment deadline.
+You are not guarenteed to get this point if there is not enough community enguagement.
+Total potential points is extra 20% (10% for packaing 10% for open source feedback).</p>
+<p>Note: Just doing the python packaging component will not give you the 10%.</p>
 <h3 id="submission-instructions">Submission instructions</h3>
 <p>In the textbox provided for this assignment on Canvas,
-you must submit:</p>
-<ol type="1">
-<li><p>A link to the GitHub.com repository containing the R package
-that you create for this assignment.</p></li>
-<li><p>(optional) A note stating that you did the optional/bonus component,
-and if so, a link to the GitHub.com repository containing the Python package
-that you created for the optional/bonus component of this assigment.</p></li>
-</ol>
-<h3 id="exercise-instructions---create-an-r-package-required">Exercise instructions - Create an R Package (required)</h3>
+you must submit a link to the GitHub.com repository containing the R package
+that you create for this assignment.</p>
+<p>Links to the extra Python components will be submitted here.</p>
+<h2 id="exercise-instructions">Exercise instructions</h2>
+<h3 id="step-1-create-an-r-package">Step 1: Create an R Package</h3>
 <p>Read through,
-and follow all of the promts in
+and follow all of the prompts in
 <a href="https://r-pkgs.org/whole-game.html">The whole game</a>
 chapter of the R Packages book.
 At the end of this chapter, you will have created a toy R package
 that lives inside a public repository on GitHub.com.</p>
-<h3 id="exercise-instructions---create-a-python-package-optionalbonus">Exercise instructions - Create a Python Package (optional/bonus)</h3>
-<p>Read through,
-and follow all of the promts in the
-<a href="https://py-pkgs.org/03-how-to-package-a-python">How to package a Python</a>
-chapter of the Python Packages book.
-At the end of this chapter, you will have created a toy Python package
-that lives inside a public repository on GitHub.com.</p>
+<p>Tip: create your starting repository on github first.
+It’ll make setting up all the local git + GitHub plumbing easier.
+They mention this in The Whole Game section on
+<a href="https://r-pkgs.org/whole-game.html#use_github">use_github()</a></p>
+<p>To ensure your package is working, set your working directory to be directly
+inside the repository containing your package (in RStudio you can do this with an RStudio project)
+and then call <code>devtools::load_all()</code>.
+If everything is correct, you should now be able to call <code>str_split_one()</code>!</p>
+<p>Note: This is not the same as manually sourcing or running your <code>str_split_one</code>
+function definition in the file.</p>
+<h3 id="step-2-add-a-new-r-function-to-your-package">Step 2: Add a new R function to your package</h3>
+<p>Now we are going to add a second function to this package.
+<strong>Your grade will depend on the quality and correctness of this function and its tests.</strong>
+Here are the specifications for the function you must add:</p>
+<ol type="1">
+<li>File named <code>my_add.R</code> in the correct location</li>
+<li>Function named <code>my_add</code> in the <code>my_add.R</code> file</li>
+<li>Your <code>my_add</code> function will take 2 parameters, <code>x</code> and <code>y</code></li>
+<li>The function will return the sum of the values <code>x</code> and <code>y</code></li>
+</ol>
+<ul>
+<li>The <code>y</code> parameter will have a default value of 10</li>
+</ul>
+<p>The function will have the following behaviors:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">my_add</span>(<span class="dv">1</span>, <span class="dv">2</span>)       <span class="co"># output: 3</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">my_add</span>(<span class="dv">1</span>)          <span class="co"># output: 10</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">my_add</span>(<span class="cn">NA</span>)         <span class="co"># output: NA</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">my_add</span>(<span class="dv">10</span>, <span class="cn">NA</span>)     <span class="co"># output: NA</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">my_add</span>(<span class="st">&quot;10&quot;</span>, <span class="st">&quot;20&quot;</span>) <span class="co"># output: error message saying &quot;One of your inputs contains a string value&quot;</span></span></code></pre></div>
+<p>Your function should have tests that test for edge cases and known errors.
+There should be at least 4 different test behavours.</p>
+<p>Tip: use the <code>check()</code> function from the <code>{devtools}</code> package as you work on your package.</p>
+<p>Useful additional resources:</p>
+<ul>
+<li>Advanced R: Conditions: <a href="https://adv-r.hadley.nz/control-flow.html" class="uri">https://adv-r.hadley.nz/control-flow.html</a></li>
+<li>Advanced R Functions &gt; Exiting a function &gt; Errors: <a href="https://adv-r.hadley.nz/functions.html?#errors" class="uri">https://adv-r.hadley.nz/functions.html?#errors</a></li>
+</ul>
+<h2 id="optional-python-packaing">Optional: Python packaing</h2>
+<p>This is a non-trivial amount of work.
+If you want to attempt this please talk to the instructor,
+so they can plan the coordination between the PyOpenSci community.
+You will have additional time to work on this part of the assignment
+if you make a plan with your instructor.
+Last minute or late request to do this part of the assignment will not be accepted.</p>
+<p>We will use the #pyopensci Slack channel to coordinate communications.
+You will need to manually join this channel.</p>
+<p>In general your task will be to create a python package while comparing and contrasting
+two sets of instructions.</p>
+<ul>
+<li>You will create a python package using the py-pkgs book and the PyOpenSci packaing guidelines
+<ul>
+<li>py-pkgs: “How to package a Python”: <a href="https://py-pkgs.org/03-how-to-package-a-python" class="uri">https://py-pkgs.org/03-how-to-package-a-python</a></li>
+<li>PyOpenSci packaing guide: <a href="https://www.pyopensci.org/python-package-guide/" class="uri">https://www.pyopensci.org/python-package-guide/</a></li>
+</ul></li>
+<li>Compare and contrast the differences between the py-pkgs guide and the pyopensci guide</li>
+<li>Read through the pyopensci guide and document issues
+<ul>
+<li>Document if parts are confusing or not</li>
+<li>Any issues / errors: document in your python package assignment repo as an issue <em>with specifics</em> about what is wrong or confusing</li>
+</ul></li>
+<li>Create a pyopensci discourse account: <a href="https://pyopensci.discourse.group/" class="uri">https://pyopensci.discourse.group/</a>
+<ul>
+<li>We will evenvually coordinate with Leah Wasser there</li>
+</ul></li>
+</ul>
+<p>Note: the more specific and suggestions you can provide in this part of the assignment,
+the easier it will be to make a formal contribution to the pyopensci project.
+This will be a documented contribution using the Git + GitHub skills we’ve learned in class.</p>
 <h2 id="rubric">Rubric</h2>
 <p>This assignment will be graded for completion as follows:</p>
 <table>
@@ -2532,28 +2601,32 @@ that lives inside a public repository on GitHub.com.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>110%</td>
-<td>A working toy R package, and a working toy Python package was created as described in the <a href="https://r-pkgs.org/whole-game.html">The whole game</a> chapter of the R Packages book, and the <a href="https://r-pkgs.org/whole-game.html">How to package a Python</a> chapter of the Python Packages book, respectively.</td>
+<td>120%</td>
+<td>A working toy R package, working toy Python package with a pyopensci contribution</td>
 </tr>
 <tr class="even">
 <td>100%</td>
-<td>A working toy R package was created as described in the <a href="https://r-pkgs.org/whole-game.html">The whole game</a> chapter of the R Packages book.</td>
+<td>A working toy R package was created as described in the <a href="https://r-pkgs.org/whole-game.html">The whole game</a> with a fully working and adequate set of unit tests.</td>
 </tr>
 <tr class="odd">
 <td>75%</td>
-<td>A toy R package was created as described in the <a href="https://r-pkgs.org/whole-game.html">The whole game</a> chapter of the R Packages book however there are 1-2 aspects missing, or completed incorrectly, that affect the packages functionality or documentation (i.e., it does not fully work as expected).</td>
+<td>A working toy R package was created as described in the <a href="https://r-pkgs.org/whole-game.html">The whole game</a> with the additional function in the package.</td>
 </tr>
 <tr class="even">
-<td>50%</td>
-<td>A toy R package was created as described in the <a href="https://r-pkgs.org/whole-game.html">The whole game</a> chapter of the R Packages book however there are 3 or more aspects missing, or completed incorrectly, that affect the packages functionality or documentation (i.e., it does not fully work as expected).</td>
+<td>75%</td>
+<td>A working toy R package was created as described in the <a href="https://r-pkgs.org/whole-game.html">The whole game</a>.</td>
 </tr>
 <tr class="odd">
+<td>25%</td>
+<td>Non working toy R package was created as described in the <a href="https://r-pkgs.org/whole-game.html">The whole game</a>.</td>
+</tr>
+<tr class="even">
 <td>0%</td>
 <td>The assignment was not attempted.</td>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
