@@ -2481,8 +2481,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#final-project-summary" id="toc-final-project-summary">Final project summary</a></li>
 <li><a href="#final-project-specifics" id="toc-final-project-specifics">Final project specifics</a>
 <ul>
-<li><a href="#abstract-project-functions-to-their-own-software-package" id="toc-abstract-project-functions-to-their-own-software-package">1. Abstract project functions to their own software package</a></li>
-<li><a href="#address-any-feedback-received-in-earlier-milestones" id="toc-address-any-feedback-received-in-earlier-milestones">2. Address any feedback received in earlier milestones</a></li>
+<li><a href="#abstract-project-functions-to-their-own-software-package" id="toc-abstract-project-functions-to-their-own-software-package">Abstract project functions to their own software package</a></li>
+<li><a href="#members-file" id="toc-members-file"><code>MEMBERS</code> File</a></li>
+<li><a href="#repository-ownership-transfer" id="toc-repository-ownership-transfer">Repository Ownership Transfer</a></li>
 </ul></li>
 <li><a href="#submission-instructions" id="toc-submission-instructions">Submission Instructions</a>
 <ul>
@@ -2493,25 +2494,38 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </nav>
 </div>
 <h2 id="overall-project-summary">Overall project summary</h2>
-<p>In this course you will work in assigned teams of three or four (see group assignments in <a href="https://canvas.ubc.ca">Canvas</a>) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.</p>
-<p>Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:</p>
+<p>In this course you will work in assigned teams of three or four
+(see group assignments in <a href="https://canvas.ubc.ca">Canvas</a>)
+to answer a predictive question using a publicly available data set
+that will allow you to answer that question.
+To answer this question,
+you will perform a complete data analysis in R and/or Python,
+from data import to communication of results,
+while placing significant emphasis on reproducible and trustworthy workflows.</p>
+<p>Your data analysis project will evolve throughout the course from a
+single, monolithic Jupyter notebook,
+to a fully reproducible and robust data data analysis project, comprised of:</p>
 <ul>
 <li>a well documented and modularized software package and scripts written in R and/or Python,</li>
 <li>a data analysis pipeline automated with GNU Make,</li>
-<li>a reproducible report powered by either Jupyter book or R Markdown,</li>
+<li>a reproducible report powered by either Jupyter book, R Markdown, or Quarto</li>
 <li>a containerized computational environment created and made shareable by Docker, and</li>
-<li>a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.</li>
+<li>a remote version control repository on GitHub for project collaboration and sharing,
+as well as automation of test suite execution and documentation and software deployment.</li>
 </ul>
 <p>An example final project from another course (where the project is similar) can be seen here:
 -<a href="https://github.com/ttimbers/breast_cancer_predictor">Breast Cancer Predictor</a></p>
 <h2 id="final-project-summary">Final project summary</h2>
 <p>In this final project milestone, you will:</p>
-<ol type="1">
-<li><p>Abstract project functions to their own software package (this means the code for your project will be split across two repositories)</p></li>
-<li><p>Address any feedback received in earlier milestones</p></li>
-</ol>
+<ul>
+<li>Abstract project functions to their own software package
+(this means the code for your project will be split across two repositories)</li>
+</ul>
+<!--2022-23: feedback was addressed during M2 and M3
+2. Address any feedback received in earlier milestones
+-->
 <h2 id="final-project-specifics">Final project specifics</h2>
-<h3 id="abstract-project-functions-to-their-own-software-package">1. Abstract project functions to their own software package</h3>
+<h3 id="abstract-project-functions-to-their-own-software-package">Abstract project functions to their own software package</h3>
 <p>To further refine your project, you are going to split the code
 for your analysis into two version control repositories.
 One will be for your analysis,
@@ -2522,10 +2536,17 @@ will allow for those functions to more easily be reused in future projects by
 you and others who might find them useful!</p>
 <p>Your new version control repository for your packaged functions should:</p>
 <ul>
+<li><p>be named the same as your group project repositry, with the addition of <code>-pkg</code> at the end.</p>
+<ul>
+<li>For example if my report project is named <code>dsci-310-202223-group-10</code> my package repository will be named <code>dsci-310-202223-group-10-pkg</code>.</li>
+</ul></li>
+<li><p>be in the DSCI-310 organization: <a href="https://github.com/DSCI-310" class="uri">https://github.com/DSCI-310</a></p></li>
 <li><p>contain at least 3 or 4 useful functions that handle errors gracefully
 (you already wrote these - you need to now
 copy them from your analysis repository to the software package repository)</p></li>
-<li><p>be well documented (use the three level of package documentation we learned about in class: function/reference docs, vignette/tutorials docs, and high-level package website docs)</p></li>
+<li><p>be well documented
+(use the three level of package documentation we learned about in class:
+function/reference docs, vignette/tutorials docs, and high-level package website docs)</p></li>
 <li><p>have unit and integration tests
 (you already wrote these - you need to now
 copy them from your analysis repository to the software package repository)</p></li>
@@ -2533,6 +2554,7 @@ copy them from your analysis repository to the software package repository)</p><
 and continuous deployment to render your package documentation
 (if you are creating a Python package,
 you can even use continuous deployment to publish your package to PyPI!)</p></li>
+<li><p>have a badge for a code coverage</p></li>
 <li><p>have a <code>README</code> that describes your package from a high-level,
 including where it sits in the package ecosystem
 for the language you chose to write it in chose
@@ -2548,30 +2570,56 @@ that outlines how the team will work together
 <p>You should update your the analysis code in your data analysis repository
 so that:</p>
 <ul>
-<li>you load your R (or Python) package to access your functions, instead of sourcing or importing files in your analysis repository</li>
-<li>remove the files that contain your functions (you no longer need these since you are loading them from your pacakge), and the <code>tests</code> directory files that holds the tests and the helper data for those tests (again, these should now exist in your package repository)</li>
-<li>update your projects computational environment so that it contains your R (or Python) package. <em>Don’t forget to include the version when doing this!</em></li>
+<li>you load your R (or Python) package to access your functions,
+instead of sourcing or importing files in your analysis repository</li>
+<li>remove the files that contain your functions
+(you no longer need these since you are loading them from your pacakge),
+and the <code>tests</code> directory files that holds the tests and the helper data for those tests
+(again, these should now exist in your package repository)</li>
+<li>update your projects computational environment so that it contains your R (or Python) package.
+<em>Don’t forget to include the version when doing this!</em></li>
 </ul>
-<h3 id="address-any-feedback-received-in-earlier-milestones">2. Address any feedback received in earlier milestones</h3>
-<p>Revise your data analysis project to address feedback received
+<!--
+### 2. Address any feedback received in earlier milestones
+
+Revise your data analysis project to address feedback received
 from the DSCI 310 teaching team from past milestones.
-50% of your final grade for this milestone will be assessing
-whether you have addressed this feedback to improve your project.</p>
-<p>To help us easily, and correctly, assess this,
+50% of your final grade for this milestone will be assessing 
+whether you have addressed this feedback to improve your project.
+
+To help us easily, and correctly, assess this, 
 please point us to where you have addressed the feedback received
 by replying in the issue thread where the feedback was given.
-You can point us to evidence of addressing it
-by providing URLs to reference
+You can point us to evidence of addressing it 
+by providing URLs to reference 
 specific lines of code, commit messages, pull requests, etc.
-Be sure to add some narration when sharing these URLs
-so that it is easy for us to identify which changes to your work
-addressed which pieces of feedback.</p>
+Be sure to add some narration when sharing these URLs 
+so that it is easy for us to identify which changes to your work 
+addressed which pieces of feedback.
+-->
+<h3 id="members-file"><code>MEMBERS</code> File</h3>
+<p>Create a file in the root part of your project called <code>MEMBERS</code> (no file extension or anything).
+This file contains the username of each of your teammates on their own line.
+E.g., the file contents should <em>just</em> look like this:</p>
+<pre><code>chendaniely
+ttimbers</code></pre>
+<p>Do not have any other extra information. We are using this file to do automation at the end.
+Do not put in any other extra information in here.</p>
+<h3 id="repository-ownership-transfer">Repository Ownership Transfer</h3>
+<p>When you are ready to submit your final project for grading
+you will need to transfer the ownership of your final project to the DSCI-310 organization.
+Please make sure the <code>MEMBERS</code> file is correct, otherwise you may loose access to your repository.</p>
+<p>You do this by going to the repsitory Settings &gt; General &gt; Danger Zone &gt; Transfer Owner &gt; Select DSCI-310</p>
+<p>Follow the instructions to finish the repository transfer.
+Your new Repository URL should look like <code>https://github.com/DSCI-310/XXXXXXXXXX</code></p>
+<p>All of your work for this class should now be under the DSCI-310 organization.</p>
 <h2 id="submission-instructions">Submission Instructions</h2>
-<p>You will submit three URLS’s to Canvas in the provided text box for the final project:</p>
+<p>You will submit four (4) URLS’s to Canvas in the provided text box for the final project:</p>
 <ol type="1">
-<li>the URL of your project’s GitHub.com repository</li>
-<li>the URL of a GitHub release of your project’s GitHub.com repository for this milestone.</li>
-<li>the URL of your software package’s repository on GitHub.com</li>
+<li>URL of your project’s GitHub.com repository (remeber to transfer your repository to be marked)</li>
+<li>URL of a GitHub release of your project’s GitHub.com repository for this milestone.</li>
+<li>URL of your software package’s repository on GitHub.com</li>
+<li>Dockerhub URL of your project’s built image and environment</li>
 </ol>
 <h3 id="creating-a-release-on-github.com">Creating a release on GitHub.com</h3>
 <p>Just before you submit the final project, create a release on your project repository on GitHub and name it something like <code>4.0.0</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.</p>
@@ -2599,7 +2647,7 @@ Point form may occur, but should be less than 10% of your written documents.</li
 and Python code should follow the
 <a href="https://black.readthedocs.io/en/stable/the_black_code_style/index.html">black style guide</a> for Python)</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
