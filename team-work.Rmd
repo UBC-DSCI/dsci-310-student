@@ -34,6 +34,9 @@ Use the following ratings:
 | 2      | Sometimes (less than half the time)     |
 | 1      | Rarely (never or once in a great while) |
 
+## 0. Group number
+
+What Group number are you in?
 
 ## 1. Preparation
 
@@ -105,4 +108,11 @@ comment on the following areas:
 
 ## Submission instructions
 
-- Fill out this form (editable version of the form available [here](https://github.com/UBC-DSCI/dsci-310-student/blob/main/team-work.Rmd)) and convert it to an `.html` document. Finally submit it to Canvas.
+- Fill out this form
+  (editable version of the form available [here](https://github.com/UBC-DSCI/dsci-310-student/blob/main/team-work.Rmd))
+  and convert it to an `.pdf` document.
+  Finally submit it to Canvas.
+
+- If you have any supporting documentation for good or bad communication of your teammbers,
+  You may insert them as an image in the document.
+  One way you can use this is to put into an R Chunk the `knitr::include_graphics("")` call like we did for your group project.
