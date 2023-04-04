@@ -10,15 +10,25 @@ output:
 
 ## Overall project summary
 
-In this course you will work in assigned teams of three or four (see group assignments in [Canvas](https://canvas.ubc.ca)) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.
+In this course you will work in assigned teams of three or four
+(see group assignments in [Canvas](https://canvas.ubc.ca))
+to answer a predictive question using a publicly available data set
+that will allow you to answer that question.
+To answer this question,
+you will perform a complete data analysis in R and/or Python,
+from data import to communication of results,
+while placing significant emphasis on reproducible and trustworthy workflows.
 
-Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:
+Your data analysis project will evolve throughout the course from a
+single, monolithic Jupyter notebook,
+to a fully reproducible and robust data data analysis project, comprised of:
 
 - a well documented and modularized software package and scripts written in R and/or Python,
 - a data analysis pipeline automated with GNU Make,
-- a reproducible report powered by either Jupyter book or R Markdown,
+- a reproducible report powered by either Jupyter book, R Markdown, or Quarto
 - a containerized computational environment created and made shareable by Docker, and
-- a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.
+- a remote version control repository on GitHub for project collaboration and sharing,
+  as well as automation of test suite execution and documentation and software deployment.
 
 An example final project from another course (where the project is similar) can be seen here: 
 -[Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor)
@@ -27,13 +37,16 @@ An example final project from another course (where the project is similar) can 
 
 In this final project milestone, you will:
 
-1. Abstract project functions to their own software package (this means the code for your project will be split across two repositories)
+- Abstract project functions to their own software package
+  (this means the code for your project will be split across two repositories)
 
+<!--2022-23: feedback was addressed during M2 and M3
 2. Address any feedback received in earlier milestones
+-->
 
 ## Final project specifics
 
-### 1. Abstract project functions to their own software package
+### Abstract project functions to their own software package
 
 To further refine your project, you are going to split the code
 for your analysis into two version control repositories.
@@ -50,7 +63,9 @@ Your new version control repository for your packaged functions should:
   (you already wrote these - you need to now 
   copy them from your analysis repository to the software package repository)
 
-- be well documented (use the three level of package documentation we learned about in class: function/reference docs, vignette/tutorials docs, and high-level package website docs)
+- be well documented
+  (use the three level of package documentation we learned about in class:
+  function/reference docs, vignette/tutorials docs, and high-level package website docs)
 
 - have unit and integration tests
   (you already wrote these - you need to now 
@@ -60,6 +75,8 @@ Your new version control repository for your packaged functions should:
   and continuous deployment to render your package documentation 
   (if you are creating a Python package, 
   you can even use continuous deployment to publish your package to PyPI!)
+
+- have a badge for a code coverage
 
 - have a `README` that describes your package from a high-level, 
   including where it sits in the package ecosystem 
@@ -79,10 +96,16 @@ Your new version control repository for your packaged functions should:
 You should update your the analysis code in your data analysis repository
 so that:
 
-- you load your R (or Python) package to access your functions, instead of sourcing or importing files in your analysis repository
-- remove the files that contain your functions (you no longer need these since you are loading them from your pacakge), and the `tests` directory files that holds the tests and the helper data for those tests (again, these should now exist in your package repository)
-- update your projects computational environment so that it contains your R (or Python) package. *Don't forget to include the version when doing this!*
+- you load your R (or Python) package to access your functions,
+  instead of sourcing or importing files in your analysis repository
+- remove the files that contain your functions
+  (you no longer need these since you are loading them from your pacakge),
+  and the `tests` directory files that holds the tests and the helper data for those tests
+  (again, these should now exist in your package repository)
+- update your projects computational environment so that it contains your R (or Python) package.
+  *Don't forget to include the version when doing this!*
 
+<!--
 ### 2. Address any feedback received in earlier milestones
 
 Revise your data analysis project to address feedback received
@@ -99,14 +122,16 @@ specific lines of code, commit messages, pull requests, etc.
 Be sure to add some narration when sharing these URLs 
 so that it is easy for us to identify which changes to your work 
 addressed which pieces of feedback.
+-->
 
 ## Submission Instructions
 
-You will submit three URLS's to Canvas in the provided text box for the final project:
+You will submit four (4) URLS's to Canvas in the provided text box for the final project:
 
-1. the URL of your project's GitHub.com repository
-2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
-3. the URL of your software package's repository on GitHub.com
+1. URL of your project's GitHub.com repository
+2. URL of a GitHub release of your project's GitHub.com repository for this milestone.
+3. URL of your software package's repository on GitHub.com
+4. Dockerhub URL of your project's built image and environment
 
 ### Creating a release on GitHub.com 
 Just before you submit the final project, create a release on your project repository on GitHub and name it something like `4.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.
