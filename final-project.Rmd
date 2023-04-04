@@ -59,6 +59,11 @@ you and others who might find them useful!
 
 Your new version control repository for your packaged functions should:
 
+- be named the same as your group project repositry, with the addition of `-pkg` at the end.
+  - For example if my report project is named `dsci-310-202223-group-10` my package repository will be named `dsci-310-202223-group-10-pkg`.
+
+- be in the DSCI-310 organization: https://github.com/DSCI-310
+
 - contain at least 3 or 4 useful functions that handle errors gracefully 
   (you already wrote these - you need to now 
   copy them from your analysis repository to the software package repository)
@@ -124,11 +129,38 @@ so that it is easy for us to identify which changes to your work
 addressed which pieces of feedback.
 -->
 
+### `MEMBERS` File
+
+Create a file in the root part of your project called `MEMBERS` (no file extension or anything).
+This file contains the username of each of your teammates on their own line.
+E.g., the file contents should _just_ look like this:
+
+```
+chendaniely
+ttimbers
+```
+
+Do not have any other extra information. We are using this file to do automation at the end.
+Do not put in any other extra information in here.
+
+### Repository Ownership Transfer
+
+When you are ready to submit your final project for grading
+you will need to transfer the ownership of your final project to the DSCI-310 organization.
+Please make sure the `MEMBERS` file is correct, otherwise you may loose access to your repository.
+
+You do this by going to the repsitory Settings > General > Danger Zone > Transfer Owner > Select DSCI-310
+
+Follow the instructions to finish the repository transfer.
+Your new Repository URL should look like `https://github.com/DSCI-310/XXXXXXXXXX`
+
+All of your work for this class should now be under the DSCI-310 organization.
+
 ## Submission Instructions
 
 You will submit four (4) URLS's to Canvas in the provided text box for the final project:
 
-1. URL of your project's GitHub.com repository
+1. URL of your project's GitHub.com repository (remeber to transfer your repository to be marked)
 2. URL of a GitHub release of your project's GitHub.com repository for this milestone.
 3. URL of your software package's repository on GitHub.com
 4. Dockerhub URL of your project's built image and environment
