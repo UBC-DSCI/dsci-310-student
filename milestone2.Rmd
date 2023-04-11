@@ -118,7 +118,7 @@ Do not forget to update your project's documentation to reflect these changes.
 
 ## Submission Instructions
 
-You will submit two URLS's to Canvas in the provided text box for milestone 2:
+You will submit two URLs to Canvas in the provided text box for milestone 2:
 
 1. the URL of your project's GitHub.com repository
 2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
@@ -128,7 +128,7 @@ You will submit two URLS's to Canvas in the provided text box for milestone 2:
 Just before you submit the milestone 2,
 create a release on your project repository on GitHub and name it something like `2.0.0`
 ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)).
-This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes,
+This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes,
 while you continue to work on your project for the next milestone.
 
 ## Expectations

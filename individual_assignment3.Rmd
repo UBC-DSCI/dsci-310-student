@@ -13,7 +13,7 @@ The purpose of this assignment is to ensure that everyone gains hands-on practic
 
 ### Submission instructions
 
-In the textbox provided for this assignment on Canvas, you must submit:
+In the text box provided for this assignment on Canvas, you must submit:
 
 1. A link to the GitHub.com repository that you create for this assignment.
     - You should name your GitHub.com repository `dsci310-dockerfile-practice`.
