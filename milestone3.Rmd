@@ -172,17 +172,17 @@ Do not forget to update your project's documentation to reflect these changes.
 
 ## Submission Instructions
 
-You will submit two URLS's to Canvas in the provided text box for milestone 3:
+You will submit three URLs to Canvas in the provided text box for milestone 3:
 
 1. the URL of your project's GitHub.com repository
 2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
 3. The URL of your Dockerhub image that can be pulled and used to run your analysis following your `README.md` instructions.
 
-_Up to_ 50% of your Milestone 1 + Milestone 2 points will be awareded if you have _adequately_ addressed feedback and comments from your repository.
+_Up to_ 50% of your Milestone 1 + Milestone 2 points will be awarded if you have _adequately_ addressed feedback and comments from your repository.
 
 ### Creating a release on GitHub.com 
 
-Just before you submit the milestone 3, create a release on your project repository on GitHub and name it something like `3.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.
+Just before you submit the milestone 3, create a release on your project repository on GitHub and name it something like `3.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.
 
 ## Expectations
 
@@ -207,4 +207,4 @@ Point form may occur, but should be less than 10% of your written documents.
 - R code should follow the [tidyverse style guide](https://style.tidyverse.org/), 
 and Python code should follow the 
 [black style guide](https://black.readthedocs.io/en/stable/the_black_code_style/index.html) for Python)
-- You should not have extrandous files in your repository that shoudl be ignored.
+- You should not have extraneous files in your repository that should be ignored.
