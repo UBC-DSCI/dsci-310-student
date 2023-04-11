@@ -1,5 +1,5 @@
 ---
-title: "Team work"
+title: "dsci-310-group-09-teamwork"
 descriptions: |
     Team work reflection document - contributes to part of the individual team work grade.
 output:
@@ -38,6 +38,8 @@ Use the following ratings:
 
 What Group number are you in?
 
+I'm in Group 09
+
 ## 1. Preparation
 
 - Prepared for group meetings and presentations
@@ -48,10 +50,12 @@ What Group number are you in?
 
 | Group member name | Preparation rating |
 |-------------------|--------------------|
-|                   |                    |
-|                   |                    |
-|                   |                    |
-
+| Yuyang Wang       |         4          |
+| Jenna Le Noble    |         4          |
+| Vera Danilova     |         4          |
+  Moira Renata                4
+  
+  
 ## 2. Participation & communication
 
 - Articulates ideas effectively when speaking or writing
@@ -61,9 +65,12 @@ What Group number are you in?
 
 | Group member name | Participation & communication rating |
 |-------------------|--------------------------------------|
-|                   |                                      |
-|                   |                                      |
-|                   |                                      |
+| Yuyang Wang       |         4          |
+| Jenna Le Noble    |         4          |
+| Vera Danilova     |         4          |
+  Moira Renata                4                                              
+                                                     
+                                                     
 
 ## 3. Helps group excel
 
@@ -75,9 +82,12 @@ What Group number are you in?
 
 | Group member name | Helps group excel rating |
 |-------------------|--------------------------|
-|                   |                          |
-|                   |                          |
-|                   |                          |
+|  Yuyang Wang      |         4          |
+| Jenna Le Noble    |         4          |
+| Vera Danilova     |         4          |
+  Moira Renata                4                                    
+                                        
+                                      
 
 ## 4. Team player (cooperation)
 
@@ -89,9 +99,12 @@ What Group number are you in?
 
 | Group member name | Team player (cooperation) rating |
 |-------------------|----------------------------------|
-|                   |                                  |
-|                   |                                  |
-|                   |                                  |
+| Yuyang Wang       |         4          |
+| Jenna Le Noble    |         4          |
+| Vera Danilova     |         4          |
+  Moira Renata                4                                               
+                                                  
+                                                
 
 Below,
 briefly describe the specific contributions each team member
@@ -105,6 +118,13 @@ comment on the following areas:
       That is, what sort of things did you do to contribute to the evolution of the project?
     - What were the roles of others in your group?
 - What went well and poorly throughout the team project experience?
+
+
+My role is a team player in this group. In the first few stages of projects, I mostly performed the tasks assigned on my side and collaborate with the group. I did well on writing the functions and tests on summarize_column on milestone 2, which shows no error and prove to be a robust function. For the final stage of project, I was able to take more of the lead and created our group package project first, created issues and assigned the tasks. I created package website, codecov badge, updated and improved test coverage, etc. Jenna contributed a lot on organzing the tasks, distributing the tasks. Moira and Vera are very good teammates who completed their own tasks and offer help when another teammate needs help on debugging or fixing tests for example.
+
+Most aspects of the team project went very well, we all worked very hard and contributed a lot of time and effort to make it smoothly reproducible. From the beginning stage, we scheduled the zoom meeting on time and leave plenty of time to complete the tasks and perform debugging in cases when there are errors. There're so many packages in our project, thus in this area, we can make some improvements and keep regular checks so that we are more prepared when there is a bug to fix.
+
+
 
 ## Submission instructions
 
