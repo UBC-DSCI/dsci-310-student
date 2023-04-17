@@ -59,7 +59,7 @@ you and others who might find them useful!
 
 Your new version control repository for your packaged functions should:
 
-- be named the same as your group project repositry, with the addition of `-pkg` at the end.
+- be named the same as your group project repository, with the addition of `-pkg` at the end.
   - For example if my report project is named `dsci-310-202223-group-10` my package repository will be named `dsci-310-202223-group-10-pkg`.
 
 - be in the DSCI-310 organization: https://github.com/DSCI-310
@@ -104,7 +104,7 @@ so that:
 - you load your R (or Python) package to access your functions,
   instead of sourcing or importing files in your analysis repository
 - remove the files that contain your functions
-  (you no longer need these since you are loading them from your pacakge),
+  (you no longer need these since you are loading them from your package),
   and the `tests` directory files that holds the tests and the helper data for those tests
   (again, these should now exist in your package repository)
 - update your projects computational environment so that it contains your R (or Python) package.
@@ -149,7 +149,7 @@ When you are ready to submit your final project for grading
 you will need to transfer the ownership of your final project to the DSCI-310 organization.
 Please make sure the `MEMBERS` file is correct, otherwise you may loose access to your repository.
 
-You do this by going to the repsitory Settings > General > Danger Zone > Transfer Owner > Select DSCI-310
+You do this by going to the repository Settings > General > Danger Zone > Transfer Owner > Select DSCI-310
 
 Follow the instructions to finish the repository transfer.
 Your new Repository URL should look like `https://github.com/DSCI-310/XXXXXXXXXX`
@@ -158,15 +158,15 @@ All of your work for this class should now be under the DSCI-310 organization.
 
 ## Submission Instructions
 
-You will submit four (4) URLS's to Canvas in the provided text box for the final project:
+You will submit four (4) URLs to Canvas in the provided text box for the final project:
 
-1. URL of your project's GitHub.com repository (remeber to transfer your repository to be marked)
+1. URL of your project's GitHub.com repository (remember to transfer your repository to be marked)
 2. URL of a GitHub release of your project's GitHub.com repository for this milestone.
 3. URL of your software package's repository on GitHub.com
 4. Dockerhub URL of your project's built image and environment
 
 ### Creating a release on GitHub.com 
-Just before you submit the final project, create a release on your project repository on GitHub and name it something like `4.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.
+Just before you submit the final project, create a release on your project repository on GitHub and name it something like `4.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.
 
 ## Expectations
 
