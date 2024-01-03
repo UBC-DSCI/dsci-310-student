@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 
 # 0. Help message and OS info
 echo ''
-echo -e "${ORANGE}# DSCI 310 setup check 2023.1${NC}" | tee check-setup-310.log
+echo -e "${ORANGE}# DSCI 310 setup check 2024.1${NC}" | tee check-setup-310.log
 echo '' | tee -a check-setup-310.log
 echo 'If a program or package is marked as MISSING,'
 echo 'this means that you are missing the required version of that program or package.'
@@ -80,8 +80,8 @@ echo -e "${ORANGE}## System programs${NC}" >> check-setup-310.log
 # so easier to test the location of the executable than having students add it to PATH.
 if [[ "$(uname)" == 'Darwin' ]]; then
     # rstudio is installed as an .app
-    if ! $(grep -iq "= \"2023\.06.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
-        echo "MISSING   rstudio 2023.06.*" >> check-setup-310.log
+    if ! $(grep -iq "= \"2023\.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
+        echo "MISSING   rstudio 2023.*" >> check-setup-310.log
     else
         # This is what is needed instead of --version
         installed_version_tmp=$(grep -io "= \"2023\.06.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
