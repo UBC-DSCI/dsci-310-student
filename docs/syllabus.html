@@ -110,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","descriptions","output"]}},"value":[{"type":"character","attributes":{},"value":["Syllabus"]},{"type":"character","attributes":{},"value":["Course syllabus for DSCI 310: Reproducible and trustworthy workflows for data science.\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","descriptions","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Syllabus"]},{"type":"character","attributes":{},"value":["Course syllabus for DSCI 310: Reproducible and trustworthy workflows for data science.\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[72]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -458,8 +458,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-6.2.1/css/all.min.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-6.2.1/css/v4-shims.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -829,9 +829,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     display: none !important;
   }
 
+  hr.section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0px;
+  }
+
+
+  d-byline {
+    border-top: none;
+  }
+
   d-article {
     padding-top: 2.5rem;
     padding-bottom: 30px;
+    border-top: none;
   }
 
   d-appendix {
@@ -926,6 +938,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article div.sourceCode pre {
     padding-left: 18px;
     font-size: 14px;
+  }
+
+  /* tweak for Pandoc numbered line within distill */
+  d-article pre.numberSource code > span {
+      left: -2em;
   }
 
   d-article pre {
@@ -1687,6 +1704,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // create d-title
     $('.d-title').changeElementType('d-title');
 
+    // separator
+    var separator = '<hr class="section-separator" style="clear: both"/>';
+    // prepend separator above appendix
+    $('.d-byline').before(separator);
+    $('.d-article').before(separator);
+
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
@@ -1764,8 +1787,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     $('.distill-force-highlighting-css').parent().remove();
 
     // remove empty line numbers inserted by pandoc when using a
-    // custom syntax highlighting theme
-    $('code.sourceCode a:empty').remove();
+    // custom syntax highlighting theme, except when numbering line
+    // in code chunk
+    $('pre:not(.numberLines) code.sourceCode a:empty').remove();
 
     // load distill framework
     load_distill_framework();
@@ -1791,12 +1815,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       // add orcid ids
       $('.authors-affiliations').find('.author').each(function(i, el) {
         var orcid_id = front_matter.authors[i].orcidID;
+        var author_name = front_matter.authors[i].author
         if (orcid_id) {
           var a = $('<a></a>');
           a.attr('href', 'https://orcid.org/' + orcid_id);
           var img = $('<img></img>');
           img.addClass('orcid-id');
-          img.attr('alt', 'ORCID ID');
+          img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
           img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
           a.append(img);
           $(this).append(a);
@@ -2416,7 +2441,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2466,6 +2491,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-title">
 <h1>Syllabus</h1>
+
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2507,59 +2533,101 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h2 id="time-and-place">Time and place</h2>
 <ul>
-<li>Lecture Section 101: <a href="https://learningspaces.ubc.ca/classrooms/orch-4074">ORCH 4074</a>, Tues/Thurs 09:00-10:30</li>
-<li>Tutorial Section T1A: <a href="https://learningspaces.ubc.ca/classrooms/orch-3074">ORCH 3074</a>, Fri 09:00-10:00</li>
+<li>Lecture Section 101: <a href="https://learningspaces.ubc.ca/classrooms/orch-4074">ORCH
+4074</a>,
+Tues/Thurs 09:00-10:30</li>
+<li>Tutorial Section T1A: <a href="https://learningspaces.ubc.ca/classrooms/orch-4074">ORCH
+4074</a>, Fri
+09:00-10:00</li>
 </ul>
 <h2 id="course-description">Course description</h2>
-<p>Data science methods to automate the running and testing of code and analytic reports, manage data analysis software dependencies, package and deploy software for data analysis, and collaborate with others using version control.</p>
-<p><strong>Pre-reqs:</strong> DSCI 100 and either (a) one of CPSC 203, CPSC 210, CPEN 221 or (b) one of MATH 210, ECON 323 and one of CPSC 107, CPSC 110.</p>
-<p><em>See the Faculty of Science Credit Exclusion Lists: <a href="https://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414">www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414</a></em></p>
-<p><strong>Long version:</strong> Data Science skills and tools are increasingly in demand across a large variety of disciplines. DSCI 310 aims to further students’ existing data science knowledge with reproducible and trustworthy workflows in the areas of creating and deploying data analysis, reports, and software. Particular focus will be placed on teaching the skills and tools currently used in academic research and industry settings.</p>
-<p>Without deliberate and conscious effort towards project organization, tool choice, and workflows, complex and large data science projects can quickly grow out-of-hand and become irreproducible and untrustworthy. This course will focus on reproducible and trustworthy workflows for writing computer scripts, analytic reports and data analysis pipelines, as well as packaging, automated testing and deployment of software written for data analysis. An emphasis is also placed on how to collaborate effectively with others using version control tools, such as Git and GitHub. Such workflows act to mitigate chaos and maximize transparency, reproducibility, and productivity.</p>
-<p>While the course will be based on the use of the two leading languages in data science, Python and R, and related current tools (conda, Docker, Git, GitHub, Jupyter, etc.), the concepts and skills taught in the course aim to be discipline and tool agnostic, focussing on the importance of reproducible and trustworthy workflows for data analysis and the implications of failing to implement these when performing a data analysis.</p>
-<p>Students who have completed this course will be able to complete complex data analysis projects with minimal technical debt – meaning that others can transparently follow how the analysis was done, reproduce the analysis for themselves if desired, and easily pickup on, and further extend the analysis in new areas. Strategies for collaboration on data science projects will also be emphasized.</p>
+<p>Data science methods to automate the running and testing of code and
+analytic reports, manage data analysis software dependencies, package
+and deploy software for data analysis, and collaborate with others using
+version control.</p>
+<p><strong>Pre-reqs:</strong> DSCI 100 and either (a) one of CPSC 203, CPSC 210, CPEN
+221 or (b) one of MATH 210, ECON 323 and one of CPSC 107, CPSC 110.</p>
+<p><em>See the Faculty of Science Credit Exclusion Lists:
+<a href="https://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414">www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414</a></em></p>
+<p><strong>Long version:</strong> Data Science skills and tools are increasingly in
+demand across a large variety of disciplines. DSCI 310 aims to further
+students’ existing data science knowledge with reproducible and
+trustworthy workflows in the areas of creating and deploying data
+analysis, reports, and software. Particular focus will be placed on
+teaching the skills and tools currently used in academic research and
+industry settings.</p>
+<p>Without deliberate and conscious effort towards project organization,
+tool choice, and workflows, complex and large data science projects can
+quickly grow out-of-hand and become irreproducible and untrustworthy.
+This course will focus on reproducible and trustworthy workflows for
+writing computer scripts, analytic reports and data analysis pipelines,
+as well as packaging, automated testing and deployment of software
+written for data analysis. An emphasis is also placed on how to
+collaborate effectively with others using version control tools, such as
+Git and GitHub. Such workflows act to mitigate chaos and maximize
+transparency, reproducibility, and productivity.</p>
+<p>While the course will be based on the use of the two leading languages
+in data science, Python and R, and related current tools (conda, Docker,
+Git, GitHub, Jupyter, etc.), the concepts and skills taught in the
+course aim to be discipline and tool agnostic, focussing on the
+importance of reproducible and trustworthy workflows for data analysis
+and the implications of failing to implement these when performing a
+data analysis.</p>
+<p>Students who have completed this course will be able to complete complex
+data analysis projects with minimal technical debt – meaning that others
+can transparently follow how the analysis was done, reproduce the
+analysis for themselves if desired, and easily pickup on, and further
+extend the analysis in new areas. Strategies for collaboration on data
+science projects will also be emphasized.</p>
 <h2 id="textbook">Textbook</h2>
-<p>We will be using a collection of resources available online. These include:</p>
+<p>We will be using a collection of resources available online. These
+include:</p>
 <ul>
-<li><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science">DSCI 310 course notes</a></li>
+<li><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science">DSCI 310 course
+notes</a></li>
 <li><a href="https://r-pkgs.org/">R packages</a></li>
 <li><a href="https://py-pkgs.org/">Python packages</a></li>
 </ul>
 <h2 id="hardware-software">Hardware &amp; software</h2>
-<p>Students are required to bring a laptop to both lectures and tutorials. Students
-who do not own a laptop, chromebook, or tablet may be able to
-<a href="https://services.library.ubc.ca/computers-technology/technology-borrowing/">loan a laptop from the UBC library</a>.</p>
+<p>Students are required to bring a laptop to both lectures and tutorials.
+Students who do not own a laptop, chromebook, or tablet may be able to
+<a href="https://services.library.ubc.ca/computers-technology/technology-borrowing/">loan a laptop from the UBC
+library</a>.</p>
 <h2 id="course-level-learning-outcomes">Course-level learning outcomes</h2>
 <p>By the end of the course, students will be able to:</p>
-<ul>
-<li>Defend and justify the importance of creating data science workflows that are
-reproducible and trustworthy and the elements that go into such a workflow (e.g.,
-writing clear, robust, accurate and reproducible code, managing and sharing compute
-environments, defined collaboration strategies, etc).</li>
-<li>Constructively criticize the workflows and data analysis of others in regards to its
-reproducibility and trustworthiness.</li>
-<li>Develop a data science project (including code and non-code documents such as
-reports) that uses reproducible and trustworthy workflows</li>
-<li>Demonstrate how to effectively share and collaborate on data science projects and
-software by creating robust code packages, using reproducible compute environments,
-and leveraging collaborative development tools.</li>
-<li>Defend and justify the benefit of, and employ automated testing regimes, continuous
-integration and continuous deployment for managing and maintaining data science
-projects and packages.</li>
-<li>Demonstrate strong communication, teamwork, and collaborative skills by working on
-a significant data science project with peers throughout the course.</li>
-</ul>
+<ol type="1">
+<li>Defend and justify the importance of creating data science workflows
+that are reproducible and trustworthy and the elements that go into
+such a workflow (e.g., writing clear, robust, accurate and
+reproducible code, managing and sharing compute environments,
+defined collaboration strategies, etc).</li>
+<li>Constructively criticize the workflows and data analysis of others
+in regards to its reproducibility and trustworthiness.</li>
+<li>Develop a data science project (including code and non-code
+documents such as reports) that uses reproducible and trustworthy
+workflows</li>
+<li>Demonstrate how to effectively share and collaborate on data science
+projects and software by creating robust code packages, using
+reproducible compute environments, and leveraging collaborative
+development tools.</li>
+<li>Defend and justify the benefit of, and employ automated testing
+regimes, continuous integration and continuous deployment for
+managing and maintaining data science projects and packages.</li>
+<li>Demonstrate strong communication, teamwork, and collaborative skills
+by working on a significant data science project with peers
+throughout the course.</li>
+</ol>
 <h2 id="teaching-team">Teaching team</h2>
-<p><em>Note that your TAs are students too; they may have class
-right before their office hours, and they may run a few
-minutes late. Please be patient!</em></p>
-<table style="width:100%;">
+<p><em>Note that your TAs are students too; they may have class right before
+their office hours, and they may run a few minutes late. Please be
+patient!</em></p>
+<table>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 12%" />
-<col style="width: 30%" />
-<col style="width: 29%" />
-<col style="width: 16%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2572,38 +2640,36 @@ minutes late. Please be patient!</em></p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>TA</td>
-<td>Tony Liang</td>
-<td>—-</td>
-<td>Monday 3:30 PM- 4:30 PM</td>
-<td>SCRF 200</td>
+<td>Instructor</td>
+<td>Tiffany Timbers</td>
+<td>tiffany.timbers[-at-]stat.ubc.ca</td>
+<td>Thursdays at 3pm</td>
+<td>ESB 1042</td>
 </tr>
 <tr class="even">
-<td>Instructor</td>
-<td>Daniel Chen</td>
-<td>daniel.chen[-at-]stat.ubc.ca</td>
-<td>Tuesday 8:00 AM - 12:30 PM</td>
-<td>ORCH 4074</td>
+<td>TA</td>
+<td>Jossie Jiang</td>
+<td>—-</td>
+<td>TBD</td>
+<td>TBD</td>
 </tr>
 <tr class="odd">
 <td>TA</td>
-<td>Amy Kong</td>
+<td>Andy Liu</td>
 <td>—-</td>
-<td>Tuesday 10:30 AM - 11:30 AM</td>
-<td>ORCH 4074</td>
-</tr>
-<tr class="even">
-<td>TA</td>
-<td>Zizhen Guo</td>
-<td>—-</td>
-<td>Thursday 1:00 PM - 2:00PM</td>
-<td>ORCH 4062</td>
+<td>TBD</td>
+<td>TBD</td>
 </tr>
 </tbody>
 </table>
 <h2 id="assessment">Assessment</h2>
 <h3 id="course-breakdown">Course breakdown</h3>
 <table>
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 9%" />
+<col style="width: 43%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Deliverable</th>
@@ -2613,66 +2679,77 @@ minutes late. Please be patient!</em></p>
 </thead>
 <tbody>
 <tr class="odd">
+<td>iClicker cloud</td>
+<td>1%</td>
+<td>1 - 6</td>
+</tr>
+<tr class="even">
 <td>Individual assignments</td>
-<td>5%</td>
+<td>1%</td>
 <td>1, 2, 4, 5</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Project milestone 1</td>
-<td>10%</td>
+<td>5%</td>
 <td>3, 6</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Project milestone 2</td>
-<td>10%</td>
+<td>5%</td>
 <td>3, 4, 6</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Project milestone 3</td>
-<td>10%</td>
+<td>5%</td>
+<td>3, 4, 5, 6</td>
+</tr>
+<tr class="even">
+<td>Final project</td>
+<td>5%</td>
 <td>3, 4, 5, 6</td>
 </tr>
 <tr class="odd">
-<td>Final project</td>
-<td>20%</td>
-<td>3, 4, 5, 6</td>
-</tr>
-<tr class="even">
 <td>Peer review</td>
-<td>4.5%</td>
+<td>2.5%</td>
 <td>2</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Teamwork</td>
-<td>10%</td>
+<td>5%</td>
 <td>6</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>GitHub username quiz</td>
 <td>0.5%</td>
 <td>NA</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Mid-term Exam</td>
-<td>10%</td>
+<td>20%</td>
 <td>1, 2, part of 4</td>
 </tr>
-<tr class="even">
-<td>Final Exam</td>
-<td>20%</td>
+<tr class="odd">
+<td>Final Exam (<strong>see note below</strong>)</td>
+<td>50%</td>
 <td>1, 2, 4, 5</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><strong>You must pass the final exam to pass the course.</strong></li>
+<li>We will be using iClicker cloud in the lectures regularly. You will
+be graded on both participation and performance (50% each). The
+three lowest iClicker marks will not be counted.</li>
+</ul>
 <h2 id="schedule-at-a-glance">Schedule at a glance</h2>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 1%" />
-<col style="width: 2%" />
-<col style="width: 24%" />
-<col style="width: 38%" />
-<col style="width: 14%" />
-<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2687,7 +2764,7 @@ minutes late. Please be patient!</em></p>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>2023/01/10</td>
+<td>2023/01/08</td>
 <td>How do reproducible and trustworthy workflows impact data analysis?</td>
 <td></td>
 <td></td>
@@ -2695,47 +2772,47 @@ minutes late. Please be patient!</em></p>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>2023/01/17</td>
+<td>2023/01/15</td>
 <td>Version control for transparency and collaboration</td>
-<td><a href="https://ubc-dsci.github.io/introduction-to-datascience/Getting-started-with-version-control.html">Collaboration with version control</a></td>
+<td><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/02-version-control-1.html#">Version control for transparency and collaboration</a></td>
 <td>Individual assignment 1 due &amp; GitHub username quiz</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>2023/01/24</td>
+<td>2023/01/22</td>
 <td>Integrated development environments, filenames and data science project organization</td>
-<td></td>
-<td>Individual assignment 2 and Version Control “quiz”</td>
+<td><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/03-filenames-project-organization.html">Filenames and data science project organization, Integrated development environments</a></td>
+<td>Individual assignment 2 due</td>
 <td>Team assignment for group projects &amp; drafting of team work contract</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>2023/01/31</td>
+<td>2023/01/29</td>
 <td>Managing dependencies using virtual environments</td>
-<td></td>
+<td><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/04-virtual-environments.html">Virtual environments</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>2023/02/07</td>
+<td>2023/02/05</td>
 <td>Managing dependencies using containerization</td>
-<td></td>
+<td><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/05-containerization.html">Managing dependencies using containerization</a></td>
 <td>Individual assignment 3 due</td>
 <td></td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>2023/02/14</td>
-<td>Introduction to testing code for data science</td>
-<td></td>
-<td>Milestone 1 due</td>
+<td>2023/02/12</td>
+<td>Non-interactive scripts and reproducible reports</td>
+<td><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/07-scripts.html">Non-interactive scripts</a> and <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/08-reproducible-reports.html">Reproducible reports</a></td>
+<td>Mid-term exam</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>2023/02/21</td>
+<td>2023/02/19</td>
 <td>Reading Break</td>
 <td></td>
 <td></td>
@@ -2743,47 +2820,63 @@ minutes late. Please be patient!</em></p>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>2023/02/28</td>
-<td>Non-interactive scripts and data analysis pipelines</td>
-<td></td>
-<td>Mid-term exam</td>
+<td>2023/02/26</td>
+<td>Data analysis pipelines</td>
+<td><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/09-pipelines.html">Data analysis pipelines</a></td>
+<td>Milestone 1 due</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td>2023/03/07</td>
-<td>Reproducible reports</td>
+<td>2023/03/04</td>
+<td>Introduction to testing code for data science</td>
+<td>[Introduction to testing code for data science</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>](<a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html" class="uri">https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html</a>)</td>
+<td>Individual assignment 4 due</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>2023/03/11</td>
+<td>Advanced version control workflows</td>
 <td></td>
 <td>Milestone 2 due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>10</td>
-<td>2023/03/14</td>
-<td>Advanced version control workflows</td>
+<td>11</td>
+<td>2023/03/18</td>
+<td>Packaging and project work session</td>
 <td></td>
-<td>Individual assignment 4 due</td>
+<td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>11</td>
-<td>2023/03/21</td>
-<td>Packaging and documenting code</td>
+<td>12</td>
+<td>2023/03/25</td>
+<td>Project work session &amp; documenting code</td>
 <td></td>
 <td>Milestone 3 due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>12</td>
-<td>2023/03/28</td>
+<td>13</td>
+<td>2023/04/01</td>
 <td>Automated testing and continuous integration</td>
 <td></td>
 <td>Individual assignment 5 &amp; Peer review due</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>13</td>
-<td>2023/04/04</td>
+<td>14</td>
+<td>2023/04/06</td>
 <td>Deploying and publishing packages, copyright and licenses</td>
 <td></td>
 <td>Final project &amp; Team work reflection due</td>
@@ -2792,13 +2885,16 @@ minutes late. Please be patient!</em></p>
 </tbody>
 </table>
 <h3 id="assessment-schedule">Assessment schedule</h3>
-<p>In general, assignments will be due 11:59 PM on Saturdays</p>
+<p>In general, assignments will be due 11:59 PM on Saturdays.
+However, in the final week of classes,
+all assignments need to be submitted by the final day of classes,
+thus we have two alternative due dates that week.</p>
 <table>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 78%" />
-<col style="width: 7%" />
-<col style="width: 3%" />
+<col style="width: 22%" />
+<col style="width: 33%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2810,98 +2906,86 @@ minutes late. Please be patient!</em></p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Individual assignment 0</td>
-<td>Computer Setup</td>
-<td>2023/01/12</td>
-<td>1</td>
-</tr>
-<tr class="even">
 <td>Individual assignment 1</td>
 <td>Setting up your computer</td>
-<td>2023/01/21 23:59</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>GitHub username quiz</td>
-<td></td>
-<td>2023/01/21 23:59</td>
+<td>2023/01/20 23:59</td>
 <td>2</td>
 </tr>
 <tr class="even">
-<td>Individual assignment 2</td>
-<td>Version control practice (merge conflict) Worth 0.5%, the 1% is split with the version contorl quiz</td>
-<td>2023/01/28 23:59</td>
-<td>3</td>
+<td>GitHub username quiz</td>
+<td></td>
+<td>2023/01/20 23:59</td>
+<td>2</td>
 </tr>
 <tr class="odd">
-<td>Version control Quiz</td>
-<td>Not a real quiz, it’s just a set of questions you answer via the canvas quiz section Worth 0.5% the 1 point is split with Indivitual Assignment 2</td>
-<td>2023/01/28 23:59</td>
+<td>Individual assignment 2</td>
+<td>Version control practice</td>
+<td>2023/01/27 23:59</td>
 <td>3</td>
 </tr>
 <tr class="even">
 <td>Individual assignment 3</td>
 <td>Dockerfile practice</td>
-<td>2023/02/11 23:59</td>
+<td>2023/02/10 23:59</td>
 <td>5</td>
 </tr>
 <tr class="odd">
 <td>Milestone 1</td>
 <td>Question, data &amp; rough draft of analysis in one monolithic literate code document, reproducible environment (<code>full.ipynb</code>, <code>Dockerfile</code>, <code>docker-compose.yml</code>)</td>
-<td>2023/02/18 23:59</td>
-<td>6</td>
+<td>2023/03/02 23:59</td>
+<td>8</td>
 </tr>
 <tr class="even">
 <td>Mid-term exam</td>
-<td></td>
-<td>2023/03/03 09:00</td>
-<td>8</td>
+<td>The midterm is a summative assessment: <a href="https://www.cmu.edu/teaching/assessment/basics/formativesummative.html" class="uri">https://www.cmu.edu/teaching/assessment/basics/formativesummative.html</a></td>
+<td>2023/02/12-2023/02/16 (Exact date/time TBD)</td>
+<td>6</td>
 </tr>
 <tr class="odd">
 <td>Milestone 2</td>
 <td>functions abstracted to a file/module &amp; tests (<code>reduced.ipynb</code>, <code>.R</code> &amp; <code>test_*.R</code>, function documentation)</td>
-<td>2023/03/11 23:59</td>
-<td>9</td>
+<td>2023/03/16 23:59</td>
+<td>10</td>
 </tr>
 <tr class="even">
 <td>Individual assignment 4</td>
 <td>Reproducible reports practice</td>
-<td>2023/03/18 23:59</td>
-<td>10</td>
+<td>2023/03/09 23:59</td>
+<td>9</td>
 </tr>
 <tr class="odd">
 <td>Milestone 3</td>
 <td>literate code document broken into scripts and a report &amp; data analysis pipeline to stitch everything together (<code>.R</code> files &amp; Make pipeline, <code>bookdown</code> or <code>rticle</code> report)</td>
-<td>2023/03/25 23:59</td>
-<td>11</td>
+<td>2023/03/30 23:59</td>
+<td>12</td>
 </tr>
 <tr class="even">
 <td>Peer review</td>
 <td>review of another group’s project</td>
-<td>2023/04/01 23:59</td>
-<td>12</td>
+<td>2023/04/06 23:59</td>
+<td>13</td>
 </tr>
 <tr class="odd">
 <td>Individual assignment 5</td>
 <td>Packaging practice</td>
-<td>2023/04/01 23:59</td>
-<td>12</td>
+<td>2023/04/06 23:59</td>
+<td>13</td>
 </tr>
 <tr class="even">
 <td>Final project</td>
 <td>package &amp; CI (the full monty package - including docs)</td>
-<td>2023/04/08 23:59</td>
-<td>13</td>
+<td>2023/04/11 23:59</td>
+<td>14</td>
 </tr>
 <tr class="odd">
 <td>Team work</td>
 <td>Reflection of how the group worked together, as well as individual performance</td>
-<td>2023/04/09 11:59</td>
-<td>13</td>
+<td>2023/04/12 23:59</td>
+<td>14</td>
 </tr>
 <tr class="even">
-<td>Final exam</td>
-<td></td>
+<td>Final exam (<strong>You must pass the final exam to pass the course.</strong>)</td>
+<td>The Final Exam will include all the material covered in all the components of the course. This is a summative assessment: <a href="https://www.cmu.edu/teaching/assessment/basics/formativesummative.html" class="uri">https://www.cmu.edu/teaching/assessment/basics/formativesummative.html</a></td>
 <td>TBD</td>
 <td></td>
 </tr>
@@ -2909,79 +2993,101 @@ minutes late. Please be patient!</em></p>
 </table>
 <h2 id="policies">Policies</h2>
 <h3 id="late-registration">Late registration</h3>
-<p>Students who register for the class late have 1 week from their registration date on Canvas to complete all prior assignments.</p>
+<p>Students who register for the class late have 1 week from their
+registration date on Canvas to complete all prior assignments.</p>
 <h3 id="late-assignments-mid-term-exam-absence">Late assignments / mid-term exam absence</h3>
-<p>Students <strong>must be present</strong> at the invigilation venue (in class, on Zoom,
-examination centre, etc) to take the mid-term exam; otherwise they will be considered to
-have missed the mid-term exam and will be assigned a grade of zero.</p>
-<p>Students who will miss the mid-term exam <strong>must provide a self-declaration prior to the
-mid-term exam</strong> and make arrangements (e.g., schedule an oral make-up mid-term exam) with the
-Instructor. Failing to present a declaration within a reasonable timeframe
-before the mid-term exam will result in a grade of zero.</p>
+<p>Students <strong>must be present</strong> at the invigilation venue (in class, on
+Zoom, examination centre, etc) to take the mid-term exam; otherwise they
+will be considered to have missed the mid-term exam and will be assigned
+a grade of zero.</p>
+<p>Students who will miss the mid-term exam <strong>must provide a
+self-declaration prior to the mid-term exam</strong> and make arrangements
+(e.g., schedule an oral make-up mid-term exam) with the Instructor.
+Failing to present a declaration within a reasonable timeframe before
+the mid-term exam will result in a grade of zero.</p>
 <p>A late submission is defined as any work submitted after the deadline.
-For a late submission, the student will receive a 75% scaling of their grade for the first occurrence,
-50% scaling of their grade for the second occurrence, and will receive a grade of 0 for subsequent occurrences.</p>
-<p>Students who miss an assignment or quiz can request an academic concession.
-From the <a href="https://senate.ubc.ca/sites/senate.ubc.ca/files/downloads/20190515_V_135_Academic_Concession-Approved.pdf">UBC Senate policy on academic concession</a>,
-grounds for academic concession can be illness,
-conflicting responsibilities, or compassionate grounds.
-Examples of compassionate grounds, from the above policy,
-include “a traumatic event experienced by the student, a family member, or a close friend;
-an act of sexual assault or other sexual misconduct experienced by the student,
-a family member, or a close friend; a death in the family or of a close friend.”</p>
-<p>To request an academic concession, students should immediately email a completed
-and signed
-<a href="https://github.com/UBC-MDS/UBC-MDS.github.io/blob/master/img/Template%20-%20In-Term%20Academic%20Concessions%20Self%20Declaration.pdf?raw=1">academic concession form to the course Instructor</a>.
-Upon receiving the form, the Instructor will make a decision about how to proceed.
-Failure to present valid documentation may result in a failing grade.</p>
+For a late submission, the student will receive a 75% scaling of their
+grade for the first occurrence, 50% scaling of their grade for the
+second occurrence, and will receive a grade of 0 for subsequent
+occurrences.</p>
+<p>Students who miss an assignment or quiz can request an academic
+concession. From the <a href="https://senate.ubc.ca/sites/senate.ubc.ca/files/downloads/20190515_V_135_Academic_Concession-Approved.pdf">UBC Senate policy on academic
+concession</a>,
+grounds for academic concession can be illness, conflicting
+responsibilities, or compassionate grounds. Examples of compassionate
+grounds, from the above policy, include “a traumatic event experienced
+by the student, a family member, or a close friend; an act of sexual
+assault or other sexual misconduct experienced by the student, a family
+member, or a close friend; a death in the family or of a close friend.”</p>
+<p>To request an academic concession, students should immediately email a
+completed and signed <a href="https://github.com/UBC-MDS/UBC-MDS.github.io/blob/master/img/Template%20-%20In-Term%20Academic%20Concessions%20Self%20Declaration.pdf?raw=1">academic concession form to the course
+Instructor</a>.
+Upon receiving the form, the Instructor will make a decision about how
+to proceed. Failure to present valid documentation may result in a
+failing grade.</p>
 <h3 id="re-grading">Re-grading</h3>
-<p>If you have concerns about the way your work was graded, please contact the TA
-who graded it within one week of having the grade returned to you through Slack. After this
-one-week window, we may deny your request for re-evaluation. Also, please keep
-in mind that your grade may go up or down as a result of re-grading.</p>
+<p>If you have concerns about the way your work was graded, please contact
+the TA who graded it within one week of having the grade returned to you
+through Piazza. After this one-week window, we may deny your request for
+re-evaluation. Also, please keep in mind that your grade may go up or
+down as a result of re-grading.</p>
 <h3 id="missed-final-exam">Missed final exam</h3>
-<p>Students who miss the final quiz must report to their faculty advising office
-within 72 hours of the missed exam, and must supply supporting documentation.
-Only your faculty advising office can grant deferred standing in a course. You
-must also notify your instructor prior to (if possible) or immediately after
-the exam. Your instructor will let you know when you are expected to write your
-deferred exam. Deferred exams will ONLY be provided to students who have
-applied for and received deferred standing from their faculty.</p>
+<p>Students who miss the final quiz must report to their faculty advising
+office within 72 hours of the missed exam, and must supply supporting
+documentation. Only your faculty advising office can grant deferred
+standing in a course. You must also notify your instructor prior to (if
+possible) or immediately after the exam. Your instructor will let you
+know when you are expected to write your deferred exam. Deferred exams
+will ONLY be provided to students who have applied for and received
+deferred standing from their faculty.</p>
 <h3 id="academic-concession-policy">Academic concession policy</h3>
-<p>Please see <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0">UBC’s concession policy</a> for
-detailed information on dealing with missed coursework, quizzes, and exams
-under circumstances of an acute and unanticipated nature.</p>
+<p>Please see <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0">UBC’s concession
+policy</a>
+for detailed information on dealing with missed coursework, quizzes, and
+exams under circumstances of an acute and unanticipated nature.</p>
 <h3 id="academic-integrity">Academic integrity</h3>
-<p>The academic enterprise is founded on honesty, civility, and integrity. As
-members of this enterprise, all students are expected to know, understand, and
-follow the codes of conduct regarding academic integrity. At the most basic
-level, this means submitting only original work done by you and acknowledging
-all sources of information or ideas and attributing them to others as required.
-This also means you should not cheat, copy, or mislead others about what is
-your work. Violations of academic integrity (i.e., misconduct) lead to the
-breakdown of the academic enterprise, and therefore serious consequences arise
-and harsh sanctions are imposed. For example, incidences of plagiarism or
-cheating may result in a mark of zero on the assignment or exam and more
-serious consequences may apply if the matter is referred to the President’s
-Advisory Committee on Student Discipline. Careful records are kept in order to
-monitor and prevent recurrences.</p>
-<p>A more detailed description of academic integrity, including the University’s
-policies and procedures, may be found in the Academic Calendar at
+<p>The academic enterprise is founded on honesty, civility, and integrity.
+As members of this enterprise, all students are expected to know,
+understand, and follow the codes of conduct regarding academic
+integrity. At the most basic level, this means submitting only original
+work done by you and acknowledging all sources of information or ideas
+and attributing them to others as required. This also means you should
+not cheat, copy, or mislead others about what is your work. Violations
+of academic integrity (i.e., misconduct) lead to the breakdown of the
+academic enterprise, and therefore serious consequences arise and harsh
+sanctions are imposed. For example, incidences of plagiarism or cheating
+may result in a mark of zero on the assignment or exam and more serious
+consequences may apply if the matter is referred to the President’s
+Advisory Committee on Student Discipline. Careful records are kept in
+order to monitor and prevent recurrences.</p>
+<p>A more detailed description of academic integrity, including the
+University’s policies and procedures, may be found in the Academic
+Calendar at
 <a href="http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0" class="uri">http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0</a>.</p>
 <h3 id="plagiarism">Plagiarism</h3>
-<p>Students must correctly cite any code or text that has been authored by someone
-else or by the student themselves for other assignments. Cases of plagiarism
-may include, but are not limited to:</p>
+<p>Students must correctly cite any code or text that has been authored by
+someone else or by the student themselves for other assignments. Cases
+of plagiarism may include, but are not limited to:</p>
 <ul>
-<li>the reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)</li>
-<li>the translation of an algorithm or a script from a language to another</li>
+<li>the reproduction (copying and pasting) of code or text with none or
+minimal reformatting (e.g., changing the name of the variables)</li>
+<li>the translation of an algorithm or a script from a language to
+another</li>
 <li>the generation of code by automatic code-generation software</li>
 </ul>
-<p>An “adequate acknowledgement” requires a detailed identification of the (parts of the) code or text reused and a full citation of the original source code that has been reused.</p>
-<p>The above attribution policy applies only to assignments. <strong>No code or text may be copied (with or without attribution) from any source during a quiz or exam. Answers must always be in your own words. At a minimum, copying will result in a grade of 0 for the related question.</strong></p>
-<p><strong>Repeated plagiarism of any form could result in larger penalties, including failure of the course.</strong></p>
+<p>An “adequate acknowledgement” requires a detailed identification of the
+(parts of the) code or text reused and a full citation of the original
+source code that has been reused.</p>
+<p>The above attribution policy applies only to assignments. <strong>No code or
+text may be copied (with or without attribution) from any source during
+a quiz or exam. Answers must always be in your own words. At a minimum,
+copying will result in a grade of 0 for the related question.</strong></p>
+<p><strong>Repeated plagiarism of any form could result in larger penalties,
+including failure of the course.</strong></p>
 <h2 id="attribution">Attribution</h2>
-<p>Parts of this syllabus (particularly the policies) have been copied and derived from the <a href="https://ubc-mds.github.io/policies/">UBC MDS Policies</a>.</p>
+<p>Parts of this syllabus (particularly the policies) have been copied and
+derived from the <a href="https://ubc-mds.github.io/policies/">UBC MDS
+Policies</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
