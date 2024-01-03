@@ -33,13 +33,7 @@ In DSCI 310 we will be using several tools that work most reliably on Google Chr
 
 ## Visual Studio Code
 
-The open-source text editor Visual Studio Code (VS Code) is both
-a powerful text editor and a full-blown Python IDE,
-which we will use for more complex analysis.
-Go to [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
-and download the windows version of VS Code.
-After the download has finished,
-run the installer and accept the default configuration for all pages except for the following:
+The open-source text editor Visual Studio Code (VS Code) is both a powerful text editor and a full-blown Python IDE, which we will use for more complex analysis. Go to [https://code.visualstudio.com/download](https://code.visualstudio.com/download) and download the windows version of VS Code. After the download has finished, run the installer and accept the default configuration for all pages except for the following:
 
 - *Optional* On the **Select Additional Tasks** page, check "Create a desktop icon" under "Additional icons".
 - Also on the **Select Additional Tasks** page check all four boxes under "Other"
@@ -78,6 +72,10 @@ run the installer and accept the default configuration for all pages except for 
     select "Use Visual Studio Code as Git's default editor" from the drop-down menu'
 
     ![](resources/vscode_as_git_editor.png)
+    
+- Set the default branch name to `main`
+
+    ![](/resources_pages/imgs/gitbash-defualt_main.png)
 
 [To install windows terminal visit this link](https://aka.ms/terminal)
 and click `Get` to open it in Windows Store.
@@ -129,8 +127,8 @@ bash --version
 The output should look similar to this:
 
 ```bash
-GNU bash, version 5.2.12(1)-release (x86_64-pc-sys)
-Copyright (C) 2022 Free Software Foundation, Inc.
+GNU bash, version 5.2.15(1)-release (x86_64-pc-msys)
+Copyright (C) 2020 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 
 This is free software; you are free to change and redistribute it.
@@ -152,7 +150,7 @@ git --version
 ```
 
 ```bash
-git version 2.39.0.windows.2
+git version 2.42.0.windows.2
 ```
 
 > **Note:** Some of the Git commands we will use are only available since Git 2.23,
@@ -167,8 +165,8 @@ code --version
 ```
 
 ```bash
-1.74.3
-97dec172d3256f8ca4bfb2143f3f76b503ca0534
+1.81.1
+6d9b74a70ca9c7733b29f0456fd8195364076dda
 x64
 ```
 
@@ -238,8 +236,26 @@ code ~/.bashrc
 And append the following line:
 
 ```bash
+# Do NOT add anything to this file, use `~/.bash_profile` instead.
+# The next line automatically loads your `~/.bash_profile`
+# any time a program tries to read your `~/.bashrc` file.
 if [ -f ~/.bash_profile ]; then . ~/.bash_profile; fi
 ```
+
+The comment is a reminder to your future self
+who might open up this file a few months from now =)
+
+### Setting Git Bash as the default VS Code terminal profile
+
+Finally,
+let's make sure the VS Code uses our newly installed Git Bash shell
+as its default terminal profile:
+
+1. Open Up VS Code and go to the general preferences / settings (shortcut `Ctrl` + `,`).
+2. Type in "Default terminal profile" and find the entry that reads `Terminal > Integrated > Default profile: Windows`.
+3. Select Git Bash from the drop down menu of this entry.
+
+Now Git Bash should be opened automatically each time you open a new terminal in side VS Code.
 
 ## Python, Conda, and JupyterLab
 
@@ -262,13 +278,11 @@ Type the following to check that your Python installation is working:
 python --version
 ```
 
-which should return Python 3.9.0 or greater:
+which should return Python 3.11.0 or greater:
 
 ```bash
-Python 3.9.5
+Python 3.11.0
 ```
-
-> **Note:** If instead you see `Python 2.7.X` you installed the wrong version. Follow [these instructions](https://docs.anaconda.com/anaconda/install/uninstall) to delete this installation and try the installation again, selecting **Python 3.9**.
 
 ### Integrating Python with the Git Bash terminal
 
@@ -291,7 +305,7 @@ python --version
 you should now see the same output as above:
 
 ```bash
-Python 3.9.5
+Python 3.11.0
 ```
 
 Let's also check the version of the `conda` package manager. If you type
@@ -303,7 +317,7 @@ conda --version
 you should see something like this
 
 ```bash
-conda 22.11.1
+conda 23.5.2
 ```
 
 > **Optional:** One annoyance with our current terminal setup is that the word `(base)`
@@ -364,21 +378,31 @@ you can replace `conda install` with `conda install -y`.
 Also note that we may occasionally need to install packages using `pip`,
 the standard Python package manager.
 The installation command is very similar to that of `conda`: `pip install <package-name>`.
-Let's try this out in the next section,
-by installing some of the key packages we will use in MDS.
+
+
+Let's try this out by installing a package that makes conda faster
+and changing the config to use this package by default:
+
+```bash
+conda install conda-libmamba-solver
+conda config --set solver libmamba
+```
+
+In the next session
+we will use `conda` to install
+some of the key packages we will use in DSCI 310.
 
 ## JupyterLab setup
 
-We will be using `JupyterLab` as our main coding environment
-and `pandas` is one of the key data analyses packages in MDS.
-The Jupytext Python package and the JupyterLab git extension facilitates
+`JupyterLab` is a coding environment that we will be using frequently
+throughout the course.
+The JupyterLab git extension facilitates
 using notebooks in JupyterLab together with Git & GitHub.
-The spellchecker helps us correcting typos in our writing
-and the LSP packages fill the same function for our code.
+The spellchecker helps us correcting typos in our writing.
 Install them via the following commands:
 
 ```bash
-conda install pandas jupyterlab jupyterlab-git jupyterlab-spellchecker jupytext jupyterlab-lsp jupyter-lsp-python
+conda install jupyterlab jupyterlab-git jupyterlab-spellchecker
 ```
 
 To test that your JupyterLab installation is functional, you can type `jupyter lab` into a terminal,
@@ -388,7 +412,7 @@ or go to the terminal from which you launched JupyterLab and hold `Ctrl` while p
 
 ## R, IRkernel, Rtools, and RStudio
 
-R is another programming language that we will be using a lot in the MDS program.
+R is the second language that we will be using frequently in this course.
 We will use R both in Jupyter notebooks and in RStudio.
 
 ### R
@@ -412,20 +436,20 @@ Append the following lines to the file
 # Automatically expand the R version number
 R_DIR=(/c/Program\ Files/R/*/bin/x64)
 # Add R and Rscript to PATH
-export PATH="${R_DIR}:$PATH"
+export PATH="$R_DIR:$PATH" # double quote is important here
 ```
 
 Then save the file and exit VS Code.
 Now you can open a new terminal window and type
 
-```bash
+```
 R --version
 ```
 
 which should return something like:
 
-```bash
-R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+```
+R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
@@ -511,15 +535,6 @@ install.packages("jsonlite", type = "source")
 
 If the `jsonlite` package installs without errors, Rtools is setup correctly.
 
-### Installing R packages
-
-Next, install the key R packages needed for the course by opening up RStudio and
-typing the following into the R console inside RStudio:
-
-```R
-install.packages(c("cowplot", "GGally", "kknn", "scales", "tidyverse", "tidymodels"))
-```
-
 ### IRkernel
 
 The `IRkernel` package is needed to make R work in Jupyter notebooks.
@@ -557,13 +572,18 @@ If your R kernel works you should see something like the image below:
 
 To improve the experience of using R in JupyterLab,
 we will add keyboard shortcuts for inserting the common R operators `<-` and `|>`.
-Go to `Settings -> Advanced Settings Editor -> Keyboard Shortcuts`
-and paste the following in the rightmost panel that says `User Preferences`
-(replacing the `{}`):
+Go to `Settings -> Settings Editor`. Then click `JSON Settings Editor` in the top right corner and click on `Keyboard Shortcuts` in the navigation panel to the left.
+You will see two panels,
+the right-most panel allows you to perform advanced modification
+of keyboards shortcuts in JupyterLab
+and it already contains quite a few shortcuts.
+We're going to add two more shortcuts,
+by pasting a text snippet just before the first existing shortcut.
+Go ahead and create a new line just after the line that says `"shortcuts": [`
+and paste the following:
+ 
 
 ```json
-{
-    "shortcuts": [
         {
             "command": "apputils:run-first-enabled",
             "selector": "body",
@@ -589,9 +609,7 @@ and paste the following in the rightmost panel that says `User Preferences`
                 ],
                 "args": {"text": "|> "}
             }
-        }
-    ]
-}
+        },
 ```
 
 After you have pasted this text,
@@ -599,7 +617,7 @@ hit the small floppy disk in the top right (or `Ctrl` + `s`)
 to save the settings.
 Here is a screenshot of what it looks like with the settings saved:
 
-![](resources/jupyterlab_shortcuts.png)
+![](https://ubc-mds.github.io/resources_pages/imgs/r-jl-text-shortcuts.png)
 
 To check that the extension is working,
 open JupyterLab,
@@ -669,8 +687,10 @@ tlmgr.bat install eurosym \
   jknapltx \
   ms \
   parskip \
+  pdfcol \
   pgf \
   rsfs \
+  soul \
   tcolorbox \
   titling \
   trimspaces \
@@ -678,21 +698,7 @@ tlmgr.bat install eurosym \
   ulem \
   upquote \
   lwarp \
-  oberdiek \
-  pgfplots \
-  bbm-macros \
-  cmap \
-  polyglossia \
-  gnu-freefont \
-  fncychap \
-  wrapfig \
-  capt-of \
-  needspace \
-  tabulary \
-  varwidth \
-  fancyhdr \
-  titlesec \
-  ucharclasses
+  oberdiek
 ```
 
 To test that your latex installation is working with jupyter notebooks,
@@ -711,17 +717,17 @@ This requires the `pyppeteer` package,
 which we can install by typing the following into Windows Terminal.
 
 ```bash
-conda install pyppeteer
-pyppeteer-install
+pip install "nbconvert[webpdf]"
+playwright install chromium
 ```
 
 Now try exporting a notebook by clicking
-`File -> Export notebook as... -> Export Notebook to WebPDF`.
+`File -> Save and Export Notebook As... -> WebPDF`.
 
 ## Make
 
 Later in the program, we will be using `make` to automate our analysis scripts.
-[Download `make` from this URL](https://downloads.sourceforge.net/project/ezwinports/make-4.3-without-guile-w32-bin.zip).
+[Download `make` from this URL](https://sourceforge.net/projects/ezwinports/files/make-4.4.1-without-guile-w32-bin.zip/download).
 Click on the downloaded zip-file to open it in the File Explorer and
 click the button in the "Extract" tab that reads "Extract all".
 Change the extract location to `C:\Users\YOUR_USERNAME\make-4.3`
@@ -779,55 +785,15 @@ There is NO WARRANTY, to the extent permitted by law.
 
 ## Docker
 
-Prior to use Docker, you must have **Windows Subsystem for Linux 2**(WSL2) installed. Please strictly follow the following procedure (adapted from [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)) to successfully use Docker on Windows:
+You will use Docker to create reproducible, sharable and shippable computing environments for your analyses. For this you will need a Docker account. You can sign up for a free one [here](https://store.docker.com/signup?next=%2F%3Fref%3Dlogin).
 
+After signing-up and signing into the Docker Store, go [here](https://store.docker.com/editions/community/docker-ce-desktop-windows) and click on the "Get Docker Desktop" button on the right hand side of the screen. Then follow the installation instructions on that screen to install the stable version.
 
-Open your terminal and prompt the following command:
-```bash
-wsl --install -d ubuntu
-```
-Once successful you will see another pop window that asks you to enter a username and password as shown below:
-
-> Note: The password will not be shown upon input
-
-
-![](resources/ubuntu-wsl-complete.png)
-Then, enter the following command in your original **Git-Bash** terminal:
-```bash
-wsl --set-default-version 2
-```
-
-And your output would look like the following:
-```
-For information on key differences with WSL 2 please visit https://aka.ms/wsl2
-
-The operation completed successfully
-```
-
-If you encountered problem with or after the installation like update kernel:
-
-Visit this [link](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package), where you should land on `Step 4 Download the Linux kernel update package`. Click the link that says [WSL2 Linux Kernel update for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) like the following:
-
-![](resources/wsl-linux-kernel-update.png)
-
-Once downloaded, just double click and run the installer found likely in your **Download** folder, and you will be asked for elevated permission (i.e. administrator access), simply click **OK** or **Allow** to complete the process. Then you can proceed on the installation of Docker.
-
-You will use Docker to create reproducible,
-sharable and shippable computing environments for your analyses.
-For this you will need a Docker account.
-You can sign up for a free one [here](https://store.docker.com/signup?next=%2F%3Fref%3Dlogin).
-
-After signing-up and signing into the Docker Store,
-go [here](https://store.docker.com/editions/community/docker-ce-desktop-windows)
-and click on the "Get Docker Desktop" button on the right hand side of the screen.
-Then follow the installation instructions on that screen to install the stable version.
-
-> **Note:** If you see a warning saying that your WSL installation is incomplete,
-> you can click the link to install the kernel update and then restart per the instructions in the warning message.
+> **Note:** If you see a warning saying that your WSL installation is incomplete, you can click the link to install the kernel update and then restart per the instructions in the warning message.
 
 After installation (Docker will make you sign out to finish installing), launch a terminal and type
 
-```bash
+```
 docker run hello-world
 ```
 
@@ -875,7 +841,7 @@ bash <(curl -Ss https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main
 The output from running the script will look something like this:
 
 ````
-# DSCI 310 setup check 1.0
+# DSCI 310 setup check 2024.1
 
 If a program or package is marked as MISSING,
 this means that you are missing the required version of that program or package.
@@ -885,58 +851,51 @@ e.g. 4.* means that all versions starting with 4 are accepted (4.0.1, 4.2.5, etc
 
 You can run the following commands to find out which version
 of a program or package is installed (if any):
-```
+
 name_of_program --version  # For system programs
 conda list  # For Python packages
-R -q -e "installed.packages()[,c(Package, Version)]"  # For R packages
-```
+R -q -e "as.data.frame(installed.packages()[,3])"  # For R packages
+
 
 Checking program and package versions...
 
 ## Operating system
-Microsoft Windows 10 Education
-64-bit
-10.0.19044
+ProductName:            macOS
+ProductVersion:         13.4
+BuildVersion:           22F66
 
 ## System programs
-OK        rstudio 1.4.1725
-OK        R 4.1.0 (2021-05-18) -- "Camp Pontanezen"
-OK        python 3.9.1
-OK        conda 4.10.3
-OK        bash 4.4.23(1)-release (x86_64-pc-msys)
-OK        git 2.32.0.windows.2
-OK        make 4.3
-OK        latex 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX)
-OK        tlmgr revision 59291 (2021-05-21 05:14:40 +0200)
-OK        docker 20.10.7, build f0df350
-OK        code 1.58.2
+OK        rstudio 2023.12.0+369
+OK        R 4.3.2 (2023-10-31) -- "Eye Holes"
+OK        python 3.11.6
+OK        conda 23
+OK        bash 3.2.57(1)-release (arm64-apple-darwin22)
+OK        git 2.39.2 (Apple Git-143)
+OK        make 3.81
+OK        latex 3.141592653-2.6-1.40.25 (TeX Live 2023)
+OK        tlmgr 5:21 +0200)
+OK        docker 24.0.6, build ed223bc
+OK        code 1.85.0
 
 ## Python packages
-MISSING   pandas=1.*
-MISSING   pyppeteer=0.*
-OK        nbconvert=6.3.0
-OK        jupyterlab=3.2.4
-OK        jupyterlab-git=0.34.0
-OK        jupytext=1.13.3
-OK        jupyterlab-spellchecker=0.7.2
+OK        nbconvert-core=7.8.0
+OK        playwright=1.40.0
+OK        jupyterlab=4.0.6
+OK        jupyterlab-git=0.41.0
+OK        jupyterlab-spellchecker=0.8.4
 OK        jupyterlab PDF-generation was successful.
-MISSING   jupyterlab WebPDF-generation failed. It seems like you did not run `pip install "nbconvert[webpdf]"` to install pyppeteer.
+OK        jupyterlab WebPDF-generation was successful.
 OK        jupyterlab HTML-generation was successful.
 
 ## R packages
-OK        cowplot=1.1.1
-OK        GGally=2.1.2
-OK        kknn=1.3.1
-OK        scales=1.1.1
-OK        tidyverse=1.3.1
-OK        tidymodels=0.1.4
-OK        tinytex=0.36
+OK        IRkernel=1.3.2
+OK        tinytex=0.46
 OK        rmarkdown PDF-generation was successful.
 OK        rmarkdown HTML-generation was successful.
 
-This output and additional configuration details have been saved to the file /c/Users/joel/check-setup-mds.log.
+The above output has been saved to the file /Users/timberst/Documents/dsci-310/dsci-310-student/check-setup-310.log
 together with system configuration details and any detailed error messages about PDF and HTML generation.
-You can open this folder in your file browser by typing `explorer .` (without the surrounding backticks).
+You can open this folder in your file browser by typing `open .` (without the surrounding backticks).
 ````
 
 As you can see at the end of the output,

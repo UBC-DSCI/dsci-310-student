@@ -15,12 +15,12 @@ These instructions will walk you through how to install the required Data Scienc
 
 ## Laptop requirements
 
- - Runs one of the following operating systems: Ubuntu 20.04, macOS (version 11.4.x or higher), Windows 10 (version 2004, 20H2, 21H1 or higher).
+ - Runs one of the following operating systems: Ubuntu 20.04 (any version >=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).
     - When installing Ubuntu, checking the box "Install third party..." will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.
 - Can connect to networks via a wireless connection for on campus work
 - Has access to an internet connection that is fast and stable enough for video calling and conducting online quizzes
-- Has at least 30 GB disk space available
-- Has at least 4 GB of RAM
+- Has at least 30 GB disk space available (50 GB is recommended)
+- Has at least 4 GB of RAM (8 GB is recommended)
 - Uses a 64-bit CPU
 - Is at most 6 years old (4 years old or newer is recommended)
 - Uses English as the default language

@@ -274,11 +274,10 @@ some of the key packages we will use in DSCI 310.
 ## JupyterLab setup
 
 `JupyterLab` is a coding environment that we will be using frequently
-throughout the course and `pandas` is one of the key Python data analyses packages.
-The Jupytext Python package and the JupyterLab git extension facilitates
+throughout the course.
+The JupyterLab git extension facilitates
 using notebooks in JupyterLab together with Git & GitHub.
-The spellchecker helps us correcting typos in our writing
-and the LSP packages fill the same function for our code.
+The spellchecker helps us correcting typos in our writing.
 Install them via the following commands:
 
 ```bash
@@ -343,15 +342,6 @@ Go to `Tools > Global Options > Code > Editing` and tick the following option:
 ![](resources/native_pipe.png)
 
 Once the change is made you can try in the RStudio console `Command` + `Shift` + `m` to check if works.
-
-### Installing R packages
-
-Next, install the key R packages needed for the course by opening up RStudio and
-typing the following into the R console inside RStudio:
-
-```R
-install.packages(c("cowplot", "GGally", "kknn", "scales", "tidyverse", "tidymodels"))
-```
 
 ### IRkernel
 
@@ -637,7 +627,7 @@ bash <(curl -Ss https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main
 The output from running the script will look something like this:
 
 ````
-# DSCI 310 setup check 1.0
+# DSCI 310 setup check 2024.1
 
 If a program or package is marked as MISSING,
 this means that you are missing the required version of that program or package.
@@ -647,56 +637,50 @@ e.g. 4.* means that all versions starting with 4 are accepted (4.0.1, 4.2.5, etc
 
 You can run the following commands to find out which version
 of a program or package is installed (if any):
-```
+
+
 name_of_program --version  # For system programs
 conda list  # For Python packages
-R -q -e "installed.packages()[,c(Package, Version)]"  # For R packages
-```
+R -q -e "as.data.frame(installed.packages()[,3])"  # For R packages
+
 
 Checking program and package versions...
 
 ## Operating system
-ProductName:	macOS
-ProductVersion:	13.1
-BuildVersion:	21A344
+ProductName:            macOS
+ProductVersion:         13.4
+BuildVersion:           22F66
 
 ## System programs
-OK        rstudio 
-OK        R 4.2.2 (2022-10-31 ucrt) -- :Innocent and Trusting"
-OK        python 3.11.0
-OK        conda 22.11.1
+OK        rstudio 2023.12.0+369
+OK        R 4.3.2 (2023-10-31) -- "Eye Holes"
+OK        python 3.11.6
+OK        conda 23
 OK        bash 3.2.57(1)-release (arm64-apple-darwin22)
-OK        git 2.35.1
+OK        git 2.39.2 (Apple Git-143)
 OK        make 3.81
-OK        latex 3.141592653-2.6-1.40.24 (TeX Live 2022)
-OK        tlmgr 58:07 +0200)
-OK        docker 20.10.13, build a224086
-OK        code 1.74.3
+OK        latex 3.141592653-2.6-1.40.25 (TeX Live 2023)
+OK        tlmgr 5:21 +0200)
+OK        docker 24.0.6, build ed223bc
+OK        code 1.85.0
 
 ## Python packages
-OK        pandas=1.5.2
-OK        pyppeteer=1.0.2
-OK        nbconvert=7.2.8
-OK        jupyterlab=3.5.2
+OK        nbconvert-core=7.8.0
+OK        playwright=1.40.0
+OK        jupyterlab=4.0.6
 OK        jupyterlab-git=0.41.0
-OK        jupytext=1.14.4
-OK        jupyterlab-spellchecker=0.7.2
+OK        jupyterlab-spellchecker=0.8.4
 OK        jupyterlab PDF-generation was successful.
 OK        jupyterlab WebPDF-generation was successful.
 OK        jupyterlab HTML-generation was successful.
 
 ## R packages
-OK        cowplot=1.1.1
-OK        GGally=2.1.2
-OK        kknn=1.3.1
-OK        scales=1.1.1
-OK        tidyverse=1.3.1
-OK        tidymodels=0.1.4
-OK        tinytex=0.36
+OK        IRkernel=1.3.2
+OK        tinytex=0.46
 OK        rmarkdown PDF-generation was successful.
 OK        rmarkdown HTML-generation was successful.
 
-The above output has been saved to the file /Users/jbourak/check_setup.log
+The above output has been saved to the file /Users/timberst/Documents/dsci-310/dsci-310-student/check-setup-310.log
 together with system configuration details and any detailed error messages about PDF and HTML generation.
 You can open this folder in your file browser by typing `open .` (without the surrounding backticks).
 ````
