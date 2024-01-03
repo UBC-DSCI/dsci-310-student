@@ -2527,12 +2527,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#rtools" id="toc-rtools">Rtools</a></li>
 <li><a href="#irkernel" id="toc-irkernel">IRkernel</a></li>
 </ul></li>
+<li><a href="#quarto-cli" id="toc-quarto-cli">Quarto CLI</a></li>
 <li><a href="#latex" id="toc-latex">LaTeX</a>
 <ul>
 <li><a href="#webpdf-export" id="toc-webpdf-export">WebPDF export</a></li>
 </ul></li>
 <li><a href="#make" id="toc-make">Make</a></li>
 <li><a href="#docker" id="toc-docker">Docker</a></li>
+<li><a href="#vs-code-extensions-optional" id="toc-vs-code-extensions-optional">VS Code extensions (Optional)</a></li>
 <li><a href="#post-installation-notes" id="toc-post-installation-notes">Post-installation notes</a></li>
 <li><a href="#attributions" id="toc-attributions">Attributions</a></li>
 </ul>
@@ -2958,14 +2960,25 @@ open JupyterLab,
 launch an R notebook,
 and try inserting the operators by pressing <code>Alt</code> + <code>-</code> or <code>Shift</code> + <code>Ctrl</code> + <code>m</code>, respectively.
 You could add any arbitrary text insertion command the same way,
-but this is all that is required for MDS.</p>
+but this is all that is required for this course.</p>
+<h2 id="quarto-cli">Quarto CLI</h2>
+<p>Quarto is an open-source scientific and technical publishing system that you can access from VSCode, Jupyter Lab, RStudio, or the terminal.</p>
+<p>The <a href="https://quarto.org/docs/tools/rstudio.html">RStudio version that you have downloaded</a> is already equipped with the last version of Quarto. You can check this by opening a new document in <code>File -&gt; New File -&gt; Quarto Document</code>.</p>
+<p>Quarto can be used outside RStudio as well, this is why we are going to install Quarto CLI. Please, download the <a href="https://quarto.org/docs/get-started/">last version of Quarto CLI</a> for Windows.</p>
+<p>After the installation finishes, close all the terminals you may have open. Then, open a new one and try running this command:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code></pre></div>
+<p>If the installation was successful you will read the output:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.3.450</span></span></code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> Pay attention that due to the Windows settings suggested in this installation you will always have to write <code>quarto.cmd</code> instead of <code>quarto</code> to run Quarto commands. Read more <a href="https://community.rstudio.com/t/bash-quarto-command-not-found/144187/3">here</a>.</p>
+</blockquote>
 <h2 id="latex">LaTeX</h2>
 <p>We will install the lightest possible version of LaTeX and its necessary
 packages as possible so that we can render Jupyter notebooks and R Markdown documents to html and PDF.
 If you have previously installed LaTeX, please uninstall it before proceeding with these instructions.</p>
 <p>First, open RStudio and run the following commands to install the <code>tinytex</code> package and setup <code>tinytex</code>:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
 <p>Note that you might see two error messages regarding lua during the installation,
 you can safely ignore these, the installation will complete successfully after clicking “OK”.</p>
 <p>In order for Git Bash to be able to find the location of TinyTex,
@@ -2974,7 +2987,7 @@ you will need to
 After doing that,
 you can check that the installation worked
 by opening a terminal and asking for the version of latex:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">latex</span> <span class="at">--version</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">latex</span> <span class="at">--version</span></span></code></pre></div>
 <p>You should see something like this if you were successful:</p>
 <pre><code>pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022)
 kpathsea version 6.3.4
@@ -2992,32 +3005,32 @@ Compiled with xpdf version 4.03</code></pre>
 <p>When you sign back in,
 install the additional LaTeX packages needed for Jupyter by pasting the following into the new terminal instance and press enter:
 by pasting the following:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.bat</span> install eurosym <span class="dt">\</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  adjustbox <span class="dt">\</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  caption <span class="dt">\</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  collectbox <span class="dt">\</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  enumitem <span class="dt">\</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  environ <span class="dt">\</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  fp <span class="dt">\</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  jknapltx <span class="dt">\</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  ms <span class="dt">\</span></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  parskip <span class="dt">\</span></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>  pdfcol <span class="dt">\</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  pgf <span class="dt">\</span></span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  rsfs <span class="dt">\</span></span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>  soul <span class="dt">\</span></span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>  tcolorbox <span class="dt">\</span></span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>  titling <span class="dt">\</span></span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>  trimspaces <span class="dt">\</span></span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>  ucs <span class="dt">\</span></span>
-<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>  ulem <span class="dt">\</span></span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>  upquote <span class="dt">\</span></span>
-<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>  lwarp <span class="dt">\</span></span>
-<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>  oberdiek</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.bat</span> install eurosym <span class="dt">\</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  adjustbox <span class="dt">\</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  caption <span class="dt">\</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  collectbox <span class="dt">\</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  enumitem <span class="dt">\</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  environ <span class="dt">\</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  fp <span class="dt">\</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  jknapltx <span class="dt">\</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  ms <span class="dt">\</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  parskip <span class="dt">\</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  pdfcol <span class="dt">\</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>  pgf <span class="dt">\</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>  rsfs <span class="dt">\</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>  soul <span class="dt">\</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>  tcolorbox <span class="dt">\</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>  titling <span class="dt">\</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>  trimspaces <span class="dt">\</span></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>  ucs <span class="dt">\</span></span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>  ulem <span class="dt">\</span></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>  upquote <span class="dt">\</span></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>  lwarp <span class="dt">\</span></span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>  oberdiek</span></code></pre></div>
 <p>To test that your latex installation is working with jupyter notebooks,
 launch <code>jupyter lab</code> from a terminal and open either a new notebook
 or the same one you used to test IRkernel above.
-Go to <code>File -&gt; Export notebook as... -&gt; Export Notebook to PDF</code>.
+Go to <code>File -&gt; Save and Export Notebook as... -&gt; PDF</code>.
 If the PDF file is created,
 your LaTeX environment is set up correctly.</p>
 <h3 id="webpdf-export">WebPDF export</h3>
@@ -3026,8 +3039,8 @@ which does not require Latex
 and makes the exported PDF look similar to notebooks exported to HTML.
 This requires the <code>pyppeteer</code> package,
 which we can install by typing the following into Windows Terminal.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">&quot;nbconvert[webpdf]&quot;</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">playwright</span> install chromium</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">&quot;nbconvert[webpdf]&quot;</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">playwright</span> install chromium</span></code></pre></div>
 <p>Now try exporting a notebook by clicking
 <code>File -&gt; Save and Export Notebook As... -&gt; WebPDF</code>.</p>
 <h2 id="make">Make</h2>
@@ -3047,7 +3060,7 @@ Click the <code>View</code> tab and check the box next to <code>File name extens
 <p>Next we need to add make’s <code>bin</code> folder to our PATH so that we can use
 he command <code>make</code> from the terminal (like we did with R earlier).
 Open the bash configuration file with VS Code again by pasting this into a terminal:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code></pre></div>
 <p>And replace the section that reads:</p>
 <pre><code># Add R and Rscript to path
 export PATH=&quot;${R_DIR}:$PATH&quot;</code></pre>
@@ -3058,14 +3071,14 @@ so you don’t need to replace it manually.</p>
 export PATH=&quot;/c/Users/${USERNAME}/make-4.3/bin:${R_DIR}:$PATH&quot;</code></pre>
 <p>Then save the file and exit VS Code.
 Launch a new terminal and run</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code></pre></div>
 <p>which should return something like</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> Make 4.3</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Built</span> for Windows32</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">1988-2020</span> Free Software Foundation, Inc.</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="ex">License</span> GPLv3+: GNU GPL version 3 or later <span class="op">&lt;</span>http://gnu.org/licenses/gpl.html<span class="op">&gt;</span></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is free software: you are free to change and redistribute it.</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="ex">There</span> is NO WARRANTY, to the extent permitted by law.</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> Make 4.3</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Built</span> for Windows32</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">1988-2020</span> Free Software Foundation, Inc.</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="ex">License</span> GPLv3+: GNU GPL version 3 or later <span class="op">&lt;</span>http://gnu.org/licenses/gpl.html<span class="op">&gt;</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is free software: you are free to change and redistribute it.</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="ex">There</span> is NO WARRANTY, to the extent permitted by law.</span></code></pre></div>
 <h2 id="docker">Docker</h2>
 <p>You will use Docker to create reproducible, sharable and shippable computing environments for your analyses. For this you will need a Docker account. You can sign up for a free one <a href="https://store.docker.com/signup?next=%2F%3Fref%3Dlogin">here</a>.</p>
 <p>After signing-up and signing into the Docker Store, go <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">here</a> and click on the “Get Docker Desktop” button on the right hand side of the screen. Then follow the installation instructions on that screen to install the stable version.</p>
@@ -3099,13 +3112,28 @@ Share images, automate workflows, and more with a free Docker ID:
  https://hub.docker.com/
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/</code></pre>
+<h2 id="vs-code-extensions-optional">VS Code extensions (Optional)</h2>
+<p>The real magic of VS Code is in the extensions that let you add languages, debuggers, and tools to your installation to support your specific workflow. From within VS Code you can open up the <a href="https://code.visualstudio.com/docs/editor/extension-gallery">Extension Marketplace</a> to browse and install extensions by clicking on the Extensions icon in the Activity Bar indicated in the figure below.</p>
+<p><img src="/resources_pages/imgs/vscode.png" /></p>
+<p>To install an extension, you simply search for it in the search bar, click the extension you want, and then click “Install”. There are extensions available to make almost any workflow or task you are interested in more efficient! Here we are interested in setting up VS Code as a Python IDE. To do this, search for and install the following extensions:</p>
+<ul>
+<li><p>Python (everything Python: notebooks, debugging, linting, formatting, etc.)</p></li>
+<li><p>markdownlint (markdown linting and style checking extension)</p></li>
+<li><p>GitLens (powerful extension that extends VS Code’s native git capabilities)</p></li>
+<li><p>Git History (intutive view of your git history)</p></li>
+<li><p>Docker (easily use Docker from VS Code)</p></li>
+<li><p>Quarto (integrated render and preview for Quarto documents and <a href="https://quarto.org/docs/tools/vscode.html">more</a>)</p></li>
+<li><p>(Optional) Material Theme and/or Predawn Theme Kit (additional colour themes to choose from)</p></li>
+<li><p>(Optional) Material Icon Theme (great-looking custom file icons!)</p></li>
+</ul>
+<p>This <a href="https://www.youtube.com/watch?v=-nh9rCzPJ20">video tutorial</a> is an excellent introduction to using VS Code in Python.</p>
 <h2 id="post-installation-notes">Post-installation notes</h2>
 <p>You have completed the installation instructions, well done 🙌!
 We have created a script to help you check that your installation was successful,
 and to provide instructions for how you can troubleshoot any potential issues.
 To run this script,
 please execute the following command from your terminal.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> <span class="at">-Ss</span> https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/check_setup.sh<span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> <span class="at">-Ss</span> https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/check_setup.sh<span class="op">)</span></span></code></pre></div>
 <p>The output from running the script will look something like this:</p>
 <pre><code># DSCI 310 setup check 2024.1
 
@@ -3186,7 +3214,7 @@ Details on where to submit will be provided later.</p>
 <li><a href="https://clouds.eos.ubc.ca/~phil/numeric/python.html">Numerical Methods - Getting started</a></li>
 <li><a href="https://blog.rstudio.com/2021/06/09/rstudio-v1-4-update-whats-new/">RStudio - New native pipe operator</a></li>
 </ul>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
