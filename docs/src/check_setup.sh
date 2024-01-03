@@ -80,24 +80,24 @@ echo -e "${ORANGE}## System programs${NC}" >> check-setup-310.log
 # so easier to test the location of the executable than having students add it to PATH.
 if [[ "$(uname)" == 'Darwin' ]]; then
     # rstudio is installed as an .app
-    if ! $(grep -iq "= \"2023\.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
-        echo "MISSING   rstudio 2023.*" >> check-setup-310.log
+    if ! $(grep -iq "= \"2023\.12.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
+        echo "MISSING   rstudio 2023.12.*" >> check-setup-310.log
     else
         # This is what is needed instead of --version
-        installed_version_tmp=$(grep -io "= \"2023\.06.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
+        installed_version_tmp=$(grep -io "= \"2023\.12.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
         # Tidy strangely formatted version number
         installed_version=$(sed "s/= //;s/\"//g" <<< "$installed_version_tmp")
         echo "OK        "rstudio $installed_version >> check-setup-310.log
     fi
 
-    # Remove rstudio from the programs to be tested using the normal --version test
+    # Remove rstudio and psql from the programs to be tested using the normal --version test
     sys_progs=(R=4.* python=3.* conda="23\|22\|4.*" bash=3.* git=2.* make=3.* latex=3.* tlmgr=5.* docker=24.* code=1.*)
 # Rstudio are not on PATH in windows
 elif [[ "$OSTYPE" == 'msys' ]]; then
     # Rstudio on windows does not accept the --version flag when run interactively
     # so this section can only be troubleshot from the script
-    if ! $(grep -iq "2023\.06.*" <<< "$('/c//Program Files/RStudio/rstudio' --version)"); then
-        echo "MISSING   rstudio 2023.06*" >> check-setup-310.log
+    if ! $(grep -iq "2023\.12.*" <<< "$('/c//Program Files/RStudio/rstudio' --version)"); then
+        echo "MISSING   rstudio 2023.12*" >> check-setup-310.log
     else
         echo "OK        rstudio "$('/c//Program Files/RStudio/rstudio' --version) >> check-setup-310.log
     fi
@@ -111,7 +111,7 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
     sys_progs=(R=4.* python=3.* conda="23\|22\|4.*" bash=4.* git=2.* make=4.* latex=3.* docker=24.* code=1.*)
 else
     # For Linux everything is sane and consistent so all packages can be tested the same way
-    sys_progs=(rstudio=2023\.06.* R=4.* python=3.* conda="23\|22\|4.*" bash=5.* \
+    sys_progs=(rstudio=2023\.12.* R=4.* python=3.* conda="23\|22\|4.*" bash=5.* \
         git=2.* make=4.* latex=3.* tlmgr=5.* docker=24.* code=1.*)
     # Note that the single equal sign syntax in used for `sys_progs` is what we have in the install
     # instruction for conda, so I am using it for Python packagees so that we
@@ -160,7 +160,7 @@ if ! [ -x "$(command -v conda)" ]; then  # Check that conda exists as an executa
     echo "In order to do this after the installation process," >> check-setup-310.log
     echo "first run 'source <path to conda>/bin/activate' and then run 'conda init'." >> check-setup-310.log
 else
-    py_pkgs=(otter-grader=5 pandas=2 nbconvert-core=7 playwright=1 jupyterlab=4 jupyterlab-git=0 jupyterlab-spellchecker=0)
+    py_pkgs=(nbconvert-core=7 playwright=1 jupyterlab=4 jupyterlab-git=0 jupyterlab-spellchecker=0)
     # installed_py_pkgs=$(pip freeze)
     installed_py_pkgs=$(conda list | tail -n +4 | tr -s " " "=" | cut -d "=" -f -2)
     for py_pkg in ${py_pkgs[@]}; do
@@ -261,7 +261,7 @@ echo -e "${ORANGE}## R packages${NC}" >> check-setup-310.log
 if ! [ -x "$(command -v R)" ]; then  # Check that R exists as an executable program
     echo "Please install 'R' to check R package versions." >> check-setup-310.log
 else
-    r_pkgs=(tidyverse=2 markdown=1 rmarkdown=2 renv=1 IRkernel=1 tinytex=0 janitor=2 gapminder=1 readxl=1 ottr=1 canlang=0)
+    r_pkgs=(IRkernel=1 tinytex=0)
     installed_r_pkgs=$(R -q -e "print(format(as.data.frame(installed.packages()[,c('Package', 'Version')]), justify='left'), row.names=FALSE)" | grep -v "^>" | tail -n +2 | sed 's/^ //;s/ *$//' | tr -s ' ' '=')
     for r_pkg in ${r_pkgs[@]}; do
         if ! $(grep -iq "$r_pkg" <<< $installed_r_pkgs); then
