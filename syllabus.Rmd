@@ -12,12 +12,7 @@ editor_options:
 
 ## Time and place
 
--   Lecture Section 101: [ORCH
-    4074](https://learningspaces.ubc.ca/classrooms/orch-4074),
-    Tues/Thurs 09:00-10:30
--   Tutorial Section T1A: [ORCH
-    4074](https://learningspaces.ubc.ca/classrooms/orch-4074), Fri
-    09:00-10:00
+-   See UBC Calendar
 
 ## Course description
 
