@@ -324,31 +324,6 @@ fi
 # -f makes sure `rm` succeeds even when the file does not exists
 rm -f jupyter-html-error.log jupyter-webpdf-error.log jupyter-pdf-error.log
 
-# Student don't need to see this in stdout, but useful to have in the log-file
-# env
-echo '' >> check-setup-310.log
-echo -e "${ORANGE}## Environmental variables${NC}" >> check-setup-310.log
-env >> check-setup-310.log
-
-# .bash_profile
-echo '' >> check-setup-310.log
-echo -e "${ORANGE}## Content of .bash_profile${NC}" >> check-setup-310.log
-if ! [ -f ~/.bash_profile ]; then
-    echo "~/.bash_profile not found" >> check-setup-310.log
-else
-    cat ~/.bash_profile >> check-setup-310.log
-fi
-
-# .bashrc
-echo '' >> check-setup-310.log
-echo -e "${ORANGE}## Content of .bashrc${NC}" >> check-setup-310.log
-if ! [ -f ~/.bashrc ]; then
-    echo "~/.bashrc not found" >> check-setup-310.log
-else
-    cat ~/.bashrc >> check-setup-310.log
-fi
-
-echo
 echo "The above output has been saved to the file $(pwd)/check-setup-310.log"
 echo "together with system configuration details and any detailed error messages about PDF and HTML generation."
 echo "You can open this folder in your file browser by typing \`${file_browser} .\` (without the surrounding backticks)."
