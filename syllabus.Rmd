@@ -111,9 +111,9 @@ patient!*
 
 | Position   | Name            | Email                            | Office Hours     | Office Location |
 |---------------|---------------|---------------|---------------|---------------|
-| Instructor | Tiffany Timbers | tiffany.timbers[-at-]stat.ubc.ca | Thursdays at 3pm | ESB 1042        |
-| TA         | Jossie Jiang    | ----                             | TBD              | TBD             |
-| TA         | Andy Liu        | ----                             | TBD              | TBD             |
+| Instructor | Tiffany Timbers | tiffany.timbers[-at-]stat.ubc.ca | Thursdays at 3pm | See Canvas        |
+| TA         | Jossie Jiang    | ----                             | TBD              | See Canvas        |
+| TA         | Andy Liu        | ----                             | TBD              | See Canvas        |
 
 ## Assessment
 
