@@ -43,7 +43,7 @@ if [[ "$(uname)" == 'Linux' ]]; then
 elif [[ "$(uname)" == 'Darwin' ]]; then
     sw_vers >> check-setup-310.log
     file_browser="open"
-    if ! $(sw_vers | grep -iq "13.\|12.\|11.[4|5|6]"); then
+    if ! $(sw_vers | grep -iq "14.\|13.\|12.\|11.[4|5|6]"); then
         echo '' >> check-setup-310.log
         echo "MISSING You need macOS Big Sur or greater (>=11.4)." >> check-setup-310.log
     fi
@@ -57,10 +57,6 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
     echo $os_version >> check-setup-310.log
     file_browser="explorer"
 
-    if $(grep -iq Home <<< $os_edition); then
-        echo '' >> check-setup-310.log
-        echo "MISSING Windows Home is not sufficient. Please upgrade to the free Education edition as per the setup instructions." >> check-setup-310.log
-    fi
     if ! $(grep -iq "22[0-9]|1904[1|2|3|4]" <<< $os_version); then
         echo '' >> check-setup-310.log
         echo "MISSING You need Windows 10 or 11 with build number >= 10.0.19041. Please run Windows update." >> check-setup-310.log
