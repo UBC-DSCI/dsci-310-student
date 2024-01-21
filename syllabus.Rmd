@@ -111,35 +111,31 @@ patient!*
 
 | Position   | Name            | Email                            | Office Hours     | Office Location |
 |---------------|---------------|---------------|---------------|---------------|
-| Instructor | Tiffany Timbers | tiffany.timbers[-at-]stat.ubc.ca | Thursdays at 3pm | See Canvas        |
-| TA         | Jossie Jiang    | ----                             | TBD              | See Canvas        |
-| TA         | Andy Liu        | ----                             | TBD              | See Canvas        |
+| Instructor | Tiffany Timbers | tiffany.timbers[-at-]stat.ubc.ca | Thursdays at 3pm | See Canvas      |
+| TA         | Jossie Jiang    | ----                             | TBD              | See Canvas      |
+| TA         | Andy Liu        | ----                             | TBD              | See Canvas      |
 
 ## Assessment
 
 ### Course breakdown
 
-This course includes a substantial group project component.
-You will work in randomly assigned groups of four for the project milestones. 
-There are also individual assignments 
-that act as stepping stones to the project milestones.
-Given that collaboration is so important in data science, 
-a portion of your final grade will be an assessment of the evidence you provide 
-that you were an effective and productive team member.
-A combination of peer evaluation 
-and GitHub history will be used to evaluate this.
-Your individual knowledge on the course materials 
-(concepts and practical skills)
-will be evaluated on two summative assessments (midterm and final exam).
+This course includes a substantial group project component. You will
+work in randomly assigned groups of four for the project milestones.
+There are also individual assignments that act as stepping stones to the
+project milestones. Given that collaboration is so important in data
+science, a portion of your final grade will be an assessment of the
+evidence you provide that you were an effective and productive team
+member. A combination of peer evaluation and GitHub history will be used
+to evaluate this. Your individual knowledge on the course materials
+(concepts and practical skills) will be evaluated on two summative
+assessments (midterm and final exam).
 
-Finally, this course is delivered in a blended format, 
-with some pre-work (video watching or reading) 
-expected to be done before each lecture.
-These will be provided in the course Canvas shell.
-Each in class lecture session will start with iClicker cloud
-questions to probe your understanding of the pre-lecture material
-and then we will work through demonstrations 
-and exercises in class to build off of this.
+Finally, this course is delivered in a blended format, with some
+pre-work (video watching or reading) expected to be done before each
+lecture. These will be provided in the course Canvas shell. Each in
+class lecture session will start with iClicker cloud questions to probe
+your understanding of the pre-lecture material and then we will work
+through demonstrations and exercises in class to build off of this.
 
 | Deliverable                     | Grade | Learning objectives addressed |
 |---------------------------------|-------|-------------------------------|
@@ -162,52 +158,55 @@ and exercises in class to build off of this.
 
 ## Schedule at a glance
 
-| Week | Date | Topic | Assessments due | Notes |
-|------|------|-------|-----------------|-------|
-| 1    | 2023/01/08 | How do reproducible and trustworthy workflows impact data analysis? | | Start working on your installation instructions |
-| 2    | 2023/01/15 | Version control for transparency and collaboration | Individual assignment 1 & GitHub username quiz | |
-| 3    | 2023/01/22 | Integrated development environments, filenames and data science project organization | Individual assignment 2 | Team assignment for group projects & drafting of team work contract |
-| 4    | 2023/01/29 | Managing dependencies using virtual environments  | |
-| 5    | 2023/02/05 | Managing dependencies using containerization | Individual assignment 3 |  |
-| 6    | 2023/02/12 | Non-interactive scripts and reproducible reports | Mid-term exam  |  |
-| 7    | 2023/02/19 | Reading Break | |  |
-| 8    | 2023/02/26 | Data analysis pipelines | Milestone 1 | |
-| 9    | 2023/03/04 | Introduction to testing code for data science | Individual assignment 4 |  |
-| 10   | 2023/03/11 | Advanced version control workflows | Milestone 2 | |
-| 11   | 2023/03/18 | Packaging and project work session | | |
-| 12   | 2023/03/25 | Project work session & documenting code | Milestone 3 | |
-| 13   | 2023/04/01 | Automated testing and continuous integration | Individual assignment 5 & Peer review | |
-| 14   | 2023/04/06 | Deploying and publishing packages, copyright and licenses  | Final project & Team work reflection | |
+| Week | Date       | Topic                                                                                | Assessments due                                | Notes                                                               |
+|-------------|-------------|-------------|----------------------|-------------|
+| 1    | 2023/01/08 | How do reproducible and trustworthy workflows impact data analysis?                  |                                                | Start working on your installation instructions                     |
+| 2    | 2023/01/15 | Version control for transparency and collaboration                                   | Individual assignment 1 & GitHub username quiz |                                                                     |
+| 3    | 2023/01/22 | Integrated development environments, filenames and data science project organization | Individual assignment 2                        |                                                                     |
+| 4    | 2023/01/29 | Managing dependencies using virtual environments                                     |                                                | Team assignment for group projects & drafting of team work contract |
+| 5    | 2023/02/05 | Managing dependencies using containerization                                         | Individual assignment 3                        |                                                                     |
+| 6    | 2023/02/12 | Non-interactive scripts and reproducible reports                                     | Mid-term exam                                  |                                                                     |
+| 7    | 2023/02/19 | Reading Break                                                                        |                                                |                                                                     |
+| 8    | 2023/02/26 | Data analysis pipelines                                                              | Milestone 1                                    |                                                                     |
+| 9    | 2023/03/04 | Introduction to testing code for data science                                        | Individual assignment 4                        |                                                                     |
+| 10   | 2023/03/11 | Advanced version control workflows                                                   | Milestone 2                                    |                                                                     |
+| 11   | 2023/03/18 | Packaging and project work session                                                   |                                                |                                                                     |
+| 12   | 2023/03/25 | Project work session & documenting code                                              | Milestone 3                                    |                                                                     |
+| 13   | 2023/04/01 | Automated testing and continuous integration                                         | Individual assignment 5 & Peer review          |                                                                     |
+| 14   | 2023/04/06 | Deploying and publishing packages, copyright and licenses                            | Final project & Team work reflection           |                                                                     |
 
 ### Assessment schedule
 
-In general, assignments will be due 11:59 PM on Saturdays. 
-However, in the final week of classes, 
-all assignments need to be submitted by the final day of classes, 
-thus we have two alternative due dates that week.
+In general, assignments will be due 11:59 PM on Saturdays. However, in
+the final week of classes, all assignments need to be submitted by the
+final day of classes, thus we have two alternative due dates that week.
 
-| Assessment                                                        | Description                                                                                                                                                                                                                                                                       | Due date                                    | Due Week |
-|----------------|------------------------|----------------|----------------|
-| Individual assignment 1                                           | Setting up your computer                                                                                                                                                                                                                                                          | 2023/01/20 23:59                            | 2        |
-| GitHub username quiz                                              |                                                                                                                                                                                                                                                                                   | 2023/01/20 23:59                            | 2        |
-| Individual assignment 2                                           | Version control practice                                                                                                                                                                                                                                                          | 2023/01/27 23:59                            | 3        |
-| Individual assignment 3                                           | Dockerfile practice                                                                                                                                                                                                                                                               | 2023/02/10 23:59                            | 5        |
-| Mid-term exam                                                     | The midterm is a summative assessment: <https://www.cmu.edu/teaching/assessment/basics/formativesummative.html>                                                                                      | 2023/02/12-2023/02/16 (Exact date/time TBD) | 6        |
-| Milestone 1                                                       | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`)                                                                                                                    | 2023/03/02 23:59                            | 8        |
-| Individual assignment 4                                           | Reproducible reports practice                                                                                                                                                                                                                                                     | 2023/03/09 23:59                            | 9        |
-| Milestone 2                                                       | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together                                                                                                                                                                       | 2023/03/16 23:59                            | 10       |
-| Milestone 3                                                       |  functions abstracted to a file/module & tests, function documentation                                                                                                       | 2023/03/30 23:59                            | 12       |
-| Peer review                                                       | review of another group's project                                                                                                                                                                                                                                                 | 2023/04/06 23:59                            | 13       |
-| Individual assignment 5                                           | Packaging practice                                                                                                                                                                                                                                                                | 2023/04/06 23:59                            | 13       |
-| Final project                                                     | package & CI (the full monty package - including docs)                                                                                                                                                                                                                            | 2023/04/11 23:59                            | 14       |
-| Team work                                                         | Reflection of how the group worked together, as well as individual performance                                                                                                                                                                                                    | 2023/04/12 23:59                            | 14       |
-| Final exam (**You must pass the final exam to pass the course.**) | The Final Exam will include all the material covered in all the components of the course. This is a summative assessment: <https://www.cmu.edu/teaching/assessment/basics/formativesummative.html> | TBD               
+| Assessment                                                        | Description                                                                                                                                                                                        | Due date                                    | Due Week |
+|-----------------|----------------------|-----------------|-----------------|
+| Individual assignment 1                                           | Setting up your computer                                                                                                                                                                           | 2023/01/20 23:59                            | 2        |
+| GitHub username quiz                                              |                                                                                                                                                                                                    | 2023/01/20 23:59                            | 2        |
+| Individual assignment 2                                           | Version control practice                                                                                                                                                                           | 2023/01/27 23:59                            | 3        |
+| Individual assignment 3                                           | Dockerfile practice                                                                                                                                                                                | 2023/02/10 23:59                            | 5        |
+| Mid-term exam                                                     | The midterm is a summative assessment: <https://www.cmu.edu/teaching/assessment/basics/formativesummative.html>                                                                                    | 2023/02/12-2023/02/16 (Exact date/time TBD) | 6        |
+| Milestone 1                                                       | Question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`)                                     | 2023/03/02 23:59                            | 8        |
+| Individual assignment 4                                           | Reproducible reports practice                                                                                                                                                                      | 2023/03/09 23:59                            | 9        |
+| Milestone 2                                                       | literate code document broken into scripts and a report & data analysis pipeline to stitch everything together                                                                                     | 2023/03/16 23:59                            | 10       |
+| Milestone 3                                                       | functions abstracted to a file/module & tests, function documentation                                                                                                                              | 2023/03/30 23:59                            | 12       |
+| Peer review                                                       | review of another group's project                                                                                                                                                                  | 2023/04/06 23:59                            | 13       |
+| Individual assignment 5                                           | Packaging practice                                                                                                                                                                                 | 2023/04/06 23:59                            | 13       |
+| Final project                                                     | package & CI (the full monty package - including docs)                                                                                                                                             | 2023/04/11 23:59                            | 14       |
+| Team work                                                         | Reflection of how the group worked together, as well as individual performance                                                                                                                     | 2023/04/12 23:59                            | 14       |
+| Final exam (**You must pass the final exam to pass the course.**) | The Final Exam will include all the material covered in all the components of the course. This is a summative assessment: <https://www.cmu.edu/teaching/assessment/basics/formativesummative.html> | TBD                                         |          |
 
 ## Policies
 
 ### Code of Conduct
 
-All participants in our course and communications are expected to show respect and courtesy to others. To creating a friendly and respectful place for learning, teaching and contributing, you are expected to read and follow the [DSCI 310 Code of Conduct](https://ubc-dsci.github.io/dsci-310-student/coc.html).
+All participants in our course and communications are expected to show
+respect and courtesy to others. To creating a friendly and respectful
+place for learning, teaching and contributing, you are expected to read
+and follow the [DSCI 310 Code of
+Conduct](https://ubc-dsci.github.io/dsci-310-student/coc.html).
 
 ### Late registration
 
