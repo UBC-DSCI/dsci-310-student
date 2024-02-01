@@ -131,7 +131,9 @@ At minimum, we believe that a good/effective code of conduct should include:
 -   [Pandas CoC](https://github.com/pandas-dev/pandas-governance/blob/master/code-of-conduct.md)
 -   [Vox Media CoC](http://code-of-conduct.voxmedia.com/?_ga=1.62865454.308680892.1455143920)
 
-**Note - this document should live in the root of your public GitHub.com repository.**
+**Note 1 - this document should live in the root of your public GitHub.com repository.**
+
+**Note 2 - If you all, or even part, of someone else's code of conduct, be sure to make this clear by attributing them.**
 
 #### iii. `CONTRIBUTING.md`
 
@@ -141,19 +143,9 @@ It is a good practice to include information about how others, outside the core 
 -   [dplyr](https://github.com/tidyverse/dplyr/blob/master/.github/CONTRIBUTING.md)
 -   [Atom editor](https://github.com/atom/atom/blob/master/CONTRIBUTING.md) (very comprehensive)
 
-If you're interested in this, [here's a quick guide](https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors) to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:
+**Note 1 - this document should live in the root of your public GitHub.com repository.**
 
-```         
-We welcome all contributions to this project!
-If you notice a bug, or have a feature request,
-please open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues).
-If you'd like to contribute a feature or bug fix,
-you can fork our repo and submit a pull request.
-We will review pull requests within 7 days.
-All contributors must abide by our [code of conduct](CODE_OF_CONDUCT.md).
-```
-
-**Note - this document should live in the root of your public GitHub.com repository.**
+**Note 2 - If you all, or even part, of someone else's code of conduct, be sure to make this clear by attributing them.**
 
 #### iv. `data/`
 
@@ -193,6 +185,10 @@ The data for the project should be publicly available,
 and clearly licensed to be shared and used openly on the internet.
 We strongly suggest you avoid using data sets where authentication is needed for access
 (e.g., Kaggle) as this adds another layer of complexity when making these projects reproducible.
+
+
+**Note - You are expected to create an original data analysis for this project.** 
+**You are not allowed to reuse an analysis from another course.**
 
 #### Possible data set sources
 
