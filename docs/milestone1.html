@@ -2508,10 +2508,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="#draft-a-team-work-contract" id="toc-draft-a-team-work-contract">1. Draft a team work contract</a></li>
 <li><a href="#set-up-a-github-repository" id="toc-set-up-a-github-repository">2. Set-up a GitHub repository</a></li>
-<li><a href="#select-a-data-analysis-project-to-work-with" id="toc-select-a-data-analysis-project-to-work-with">3. Select a data analysis project to work with</a></li>
-<li><a href="#create-an-appropriate-file-and-directory-structure-for-a-data-analysis-project" id="toc-create-an-appropriate-file-and-directory-structure-for-a-data-analysis-project">4. Create an appropriate file and directory structure for a data analysis project</a></li>
-<li><a href="#add-the-data-analysis-as-a-literate-code-document" id="toc-add-the-data-analysis-as-a-literate-code-document">5. Add the data analysis as a literate code document</a></li>
-<li><a href="#make-the-computation-environment-reproducible-through-containerization-with-docker" id="toc-make-the-computation-environment-reproducible-through-containerization-with-docker">6. Make the computation environment reproducible through containerization with Docker</a></li>
+<li><a href="#create-an-appropriate-file-directory-structure-for-a-data-analysis-project" id="toc-create-an-appropriate-file-directory-structure-for-a-data-analysis-project">3. Create an appropriate file &amp; directory structure for a data analysis project</a></li>
+<li><a href="#perform-the-data-analysis-in-a-literate-code-document" id="toc-perform-the-data-analysis-in-a-literate-code-document">4. Perform the data analysis in a literate code document</a></li>
+<li><a href="#ensure-the-computation-environment-is-reproducible-through-a-virtual-environment-e.g.-conda-or-renv" id="toc-ensure-the-computation-environment-is-reproducible-through-a-virtual-environment-e.g.-conda-or-renv">6. Ensure the computation environment is reproducible through a virtual environment (e.g., conda or renv)</a></li>
 <li><a href="#manage-issues-professionally" id="toc-manage-issues-professionally">6. Manage issues professionally</a></li>
 </ul></li>
 <li><a href="#submission-instructions" id="toc-submission-instructions">Submission Instructions</a>
@@ -2592,72 +2591,23 @@ Also discuss if there is anything missing from the contract.</p></li>
 <p>Fill out this survey to provide us your GitHub.com username: <a href="https://ubc.ca1.qualtrics.com/jfe/form/SV_8cCRmyxpbch5uxU" class="uri">https://ubc.ca1.qualtrics.com/jfe/form/SV_8cCRmyxpbch5uxU</a></p>
 <p>After we add you to the <a href="https://github.com/DSCI-310-2024">DSCI 310 2024 organization on GitHub.com</a>, set-up a public GitHub repository for your group under that organization being sure to add all team members as collaborators. Once you have decided on a project question and data set, make sure your repository has a name that is relevant to that question. <em>Note: if you need to change the name of your project repository later, you can!</em></p>
 <p>We are using github.com and public repositories because we will eventually be using some fancy tooling (<em>e.g.,</em> GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com. Additionally, this will help you build a portfolio of your work you can share with others.</p>
-<h3 id="select-a-data-analysis-project-to-work-with">3. Select a data analysis project to work with</h3>
-<p>The content of this analysis project should be a narrated analysis that asks
-and answers a predictive question using a classification
-or regression method taught in the prerequisite course, DSCI 100.
-For milestone 1,
-the code and analysis narrative should be contained within a single Jupyter notebook
-(e.g., <code>.ipynb</code> file), RMarkdown file (e.g., <code>.Rmd</code> file), or Quarto document (e.g., <code>.qmd</code> file).
-The analysis narrative should be rich,
-and at the level of the final project from DSCI 100.
-Either R or Python can be used to do this.
-However, all group members must have past experience using the language chosen
-and permission of the instructor must be given.
-The restrictions on the analysis methods
-and programming language are put in place to ensure that all group members
-can contribute equally to the project.</p>
-<p>The data for the project should be publicly available,
-and clearly licensed to be shared and used openly on the internet.
-We strongly suggest you avoid using data sets where authentication is needed for access
-(e.g., Kaggle) as this adds another layer of complexity when making these projects reproducible.</p>
-<h4 id="possible-data-set-sources">Possible data set sources</h4>
-<ul>
-<li>past DSCI 100 projects
-(note: if you reuse part or all of a past DSCI 100 project,
-you will be required to provide documentation of written permission
-of all past teammates from that project)</li>
-<li><a href="https://archive-beta.ics.uci.edu/ml/datasets">UCI Machine Learning Repository: Data Sets</a></li>
-<li><a href="https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/fivethirtyeight.html">fivethirtyeight R package</a> (if you use this, see the note below!)</li>
-<li><a href="https://open.canada.ca/en/open-data">Government of Canada open data</a></li>
-<li><a href="https://github.com/awesomedata/awesome-public-datasets">GitHub repo of awesome public datasets</a></li>
-<li><a href="https://github.com/rfordatascience/tidytuesday">tidytuesday data set</a></li>
-<li><a href="https://toolbox.google.com/datasetsearch">Google Data set search engine</a></li>
-</ul>
-<p><strong>Note: if you choose a data set from the fivethirtyeight R package, you cannot copy their scientific question, visualizations or methods from the original FiveThirtyEight articles from where the data sets were first reported on. Finally, with the fivethirtyeight R package data sets, we want you to get practice reading them using the <code>read_*</code> functions in R or Python, so please use the versions of the data sets listed here: <a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw" class="uri">https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw</a></strong></p>
-<h3 id="create-an-appropriate-file-and-directory-structure-for-a-data-analysis-project">4. Create an appropriate file and directory structure for a data analysis project</h3>
-<p>For this project,
-you are expected to follow the best practices we have learned about
-in regards to project directory and file structures.
-This should be reflected in your GitHub repository.
-Specifically for this milestone,
-please ensure that you include <strong>at least</strong> the following 7 files and directories
-in your project’s GitHub repository:</p>
+<h3 id="create-an-appropriate-file-directory-structure-for-a-data-analysis-project">3. Create an appropriate file &amp; directory structure for a data analysis project</h3>
+<p>For this project, you are expected to follow the best practices we have learned about in regards to project directory and file structures. This should be reflected in your GitHub repository. Specifically for this milestone, please ensure that you include <strong>at least</strong> the following 7 files and directories in your project’s GitHub repository:</p>
 <ul>
 <li><code>README.md</code></li>
 <li><code>CODE_OF_CONDUCT.md</code></li>
 <li><code>CONTRIBUTING.md</code></li>
 <li><code>data/</code></li>
-<li><code>analysis.ipynb</code></li>
-<li><code>Dockerfile</code></li>
-<li><code>.github/workflows/publish_docker_image.yml</code></li>
+<li><code>&lt;analysis&gt;.ipynb</code> (give it a meaningful name!)</li>
+<li><code>environment.yml</code> (or the corresponding <code>renv</code> files)</li>
 <li><code>LICENSE.md</code></li>
 </ul>
 <p>The description of each of them follows.</p>
 <h4 id="i.-readme.md">i. <code>README.md</code></h4>
-<p>In the main <code>README.md</code> file for this project you should include:
-- the project title
-- the list of contributors/authors
-- a short summary of the project (view from 10,000 feet)
-- how to run your data analysis
-- a list of the dependencies needed to run your analysis
-- the names of the licenses contained in <code>LICENSE.md</code></p>
+<p>In the main <code>README.md</code> file for this project you should include: - the project title - the list of contributors/authors - a short summary of the project (view from 10,000 feet) - how to run your data analysis - a list of the dependencies needed to run your analysis - the names of the licenses contained in <code>LICENSE.md</code></p>
 <p><strong>Note - this document should live in the root of your public GitHub.com repo.</strong></p>
 <h4 id="ii.-code_of_conduct.md">ii. <code>CODE_OF_CONDUCT.md</code></h4>
-<p>In an attempt to create a safe, positive, productive, and happy community, many organizations and developers create a code of conduct for their projects.
-A code of conduct in a Data Science project informs others of social norms, acceptable behaviour and general etiquette.
-It is more outward facing than the team work contract discussed above.
-We recommend <a href="https://projectinclude.org/writing_cocs">Project Include</a> for a comprehensive guide to writing an effective Code of Conduct.</p>
+<p>In an attempt to create a safe, positive, productive, and happy community, many organizations and developers create a code of conduct for their projects. A code of conduct in a Data Science project informs others of social norms, acceptable behaviour and general etiquette. It is more outward facing than the team work contract discussed above. We recommend <a href="https://projectinclude.org/writing_cocs">Project Include</a> for a comprehensive guide to writing an effective Code of Conduct.</p>
 <p>At minimum, we believe that a good/effective code of conduct should include:</p>
 <ul>
 <li>A Statement on diversity and inclusivity</li>
@@ -2676,18 +2626,13 @@ We recommend <a href="https://projectinclude.org/writing_cocs">Project Include</
 </ul>
 <p><strong>Note - this document should live in the root of your public GitHub.com repository.</strong></p>
 <h4 id="iii.-contributing.md">iii. <code>CONTRIBUTING.md</code></h4>
-<p>It is a good practice to include information about how others outside the core team
-can contribute to your project somewhere in your repository.
-This is typically done as a separate file in a repository called <code>CONTRIBUTING.md</code>.
-Here are some examples of this file:</p>
+<p>It is a good practice to include information about how others, outside the core team, can contribute to your project somewhere in your repository. This is typically done as a separate file in the repository called <code>CONTRIBUTING.md</code>. Here are some examples of this file:</p>
 <ul>
 <li><a href="https://github.com/altair-viz/altair/blob/master/CONTRIBUTING.md">Altair</a></li>
 <li><a href="https://github.com/tidyverse/dplyr/blob/master/.github/CONTRIBUTING.md">dplyr</a></li>
 <li><a href="https://github.com/atom/atom/blob/master/CONTRIBUTING.md">Atom editor</a> (very comprehensive)</li>
 </ul>
-<p>If you’re interested in this,
-<a href="https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors">here’s a quick guide</a>
-to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:</p>
+<p>If you’re interested in this, <a href="https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors">here’s a quick guide</a> to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:</p>
 <pre><code>We welcome all contributions to this project!
 If you notice a bug, or have a feature request,
 please open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues).
@@ -2697,58 +2642,46 @@ We will review pull requests within 7 days.
 All contributors must abide by our [code of conduct](CODE_OF_CONDUCT.md).</code></pre>
 <p><strong>Note - this document should live in the root of your public GitHub.com repository.</strong></p>
 <h4 id="iv.-data">iv. <code>data/</code></h4>
-<p>The <code>data</code> directory should contain a copy of the downloaded data (written there by code).
-An exception to this can be made if the data set is extremely large (&gt; 100 MB per file).
-In such cases, please reach out to the instructional team to make an alternative plan.</p>
-<h4 id="v.-analysis.ipynb-analysis.rmd-analysis.qmd">v. <code>analysis.ipynb</code> / <code>analysis.Rmd</code> / <code>analysis.qmd</code></h4>
-<p>For this milestone,
-the analysis code and narration should be contained within a single literate code document
-(e.g., Jupyter notebook, RMarkdown file, or Quarto document).
-This document should not actually be named <code>analysis.***</code>, but have a more descriptive title,
-related to the project title.</p>
-<h4 id="vi.-dockerfile">vi. <code>Dockerfile</code></h4>
-<p>The <code>Dockerfile</code> is the file used to specify and create the Docker image from which containers
-can be run to create an reproducible computational environment for your analysis.
-For this project,
-we recommend using a base Docker image
-that already has most of the software dependencies needed for your analysis.
-Examples of these include the Jupyter core team Docker images
-(<a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html">documentation</a>)
-and the Rocker team Docker images
-(<a href="https://github.com/rocker-org/rocker-versioned2#version-stable-rocker-images-for-r--400">documentation</a>).
-When you add other software dependencies to this <code>Dockerfile</code>,
-ensure that you pin the version of the software that you add.</p>
+<p>The <code>data</code> directory should contain a copy of the downloaded data (it should get written there by code). An exception to this can be made if the data set is extremely large (&gt; 100 MB per file). In such cases, please reach out to the instructional team to make an alternative plan.</p>
+<h4 id="v.-analysis.ipynb-analysis.qmd">v. <code>analysis.ipynb</code> / <code>analysis.qmd</code></h4>
+<p>For this milestone, the analysis code and narration should be contained within a single literate code document (e.g., Jupyter notebook, RMarkdown file, or Quarto document). This document should not actually be named <code>analysis.***</code>, but have a more descriptive title, related to the project title.</p>
+<h4 id="vi.-environment.yml-or-the-corresponding-renv-files">vi. <code>environment.yml</code> (or the corresponding <code>renv</code> files)</h4>
+<p>Include the necessary files (e.g., <code>environment.yml</code>) so others can reproduce your work on their machine.</p>
 <p><strong>Note - this document should live in the root of your public GitHub.com repository.</strong></p>
-<h4 id="vii.-.githubworkflowspublish_docker_image.yml">vii. <code>.github/workflows/publish_docker_image.yml</code></h4>
-<p>In this milestone,
-we expect you to add a GitHub Actions workflow to automatically build the image,
-push it to DockerHub,
-and version the image (using <code>latest</code> is okay for now) and GitHub repo when changes are pushed to the Dockerfile</p>
-<p>You will need to add your DockerHub username and password
-(naming them <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>, respectively)
-as GitHub secrets to this repository for this to work.</p>
-<p>This part is similar to Individual Assignment 3.</p>
 <h4 id="viii.-license.md">viii. <code>LICENSE.md</code></h4>
-<p>License’s tell others how they may (or may not) use your work.
-We will learn more about licenses later in the course,
-and for now we recommend using an
-<a href="https://opensource.org/licenses/MIT">MIT license</a>
-for the project code
-and a Creative Commons
-<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>
-license for the project report.
-As long as your group agrees,
-these can be changed later in the course when you learn more about licenses.
-If you want to spend some time choosing different licenses now, we can recommend these two websites to help get you started:</p>
+<p>License’s tell others how they may (or may not) use your work. We will learn more about licenses later in the course, and for now we recommend using an <a href="https://opensource.org/licenses/MIT">MIT license</a> for the project code and a Creative Commons <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a> license for the project report. As long as your group agrees, these can be changed later in the course when you learn more about licenses. If you want to spend some time choosing different licenses now, we can recommend these two websites to help get you started:</p>
 <ul>
 <li><a href="https://choosealicense.com/" class="uri">https://choosealicense.com/</a></li>
 <li><a href="https://chooser-beta.creativecommons.org/" class="uri">https://chooser-beta.creativecommons.org/</a></li>
 </ul>
-<h3 id="add-the-data-analysis-as-a-literate-code-document">5. Add the data analysis as a literate code document</h3>
-<p>For this milestone,
-the analysis code and narration should be contained within a single literate code document
-(i.e., Jupyter notebook).
-The following sections should be included:</p>
+<p><strong>Note - this document should live in the root of your public GitHub.com repository.</strong></p>
+<h3 id="perform-the-data-analysis-in-a-literate-code-document">4. Perform the data analysis in a literate code document</h3>
+<p>The content of this analysis project should be a narrated analysis that asks
+and answers a predictive question using a classification
+or regression method taught in the prerequisite course, DSCI 100.
+For milestone 1,
+the code and analysis narrative should be contained within a single Jupyter notebook
+(e.g., <code>.ipynb</code> file), RMarkdown file (e.g., <code>.Rmd</code> file), or Quarto document (e.g., <code>.qmd</code> file).
+The analysis narrative should be rich,
+and at the level of the final project from DSCI 100.
+Either R or Python can be used to do this.
+The data for the project should be publicly available,
+and clearly licensed to be shared and used openly on the internet.
+We strongly suggest you avoid using data sets where authentication is needed for access
+(e.g., Kaggle) as this adds another layer of complexity when making these projects reproducible.</p>
+<h4 id="possible-data-set-sources">Possible data set sources</h4>
+<ul>
+<li><a href="https://opendata.vancouver.ca/pages/home/">City of Vancouver Open Data Portal</a></li>
+<li><a href="https://catalogue.data.gov.bc.ca/">BC Data Catalogue</a></li>
+<li><a href="https://open.canada.ca/en/open-data">Government of Canada open data</a></li>
+<li><a href="https://github.com/awesomedata/awesome-public-datasets">GitHub repo of awesome public datasets</a></li>
+<li><a href="https://archive-beta.ics.uci.edu/ml/datasets">UCI Machine Learning Repository: Data Sets</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday">tidytuesday data set</a></li>
+<li><a href="https://toolbox.google.com/datasetsearch">Google Data set search engine</a></li>
+<li><a href="https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/fivethirtyeight.html">fivethirtyeight R package</a> (if you use this, see the note below!)</li>
+</ul>
+<p><strong>Note: if you choose a data set from the fivethirtyeight R package, you cannot copy their scientific question, visualizations or methods from the original FiveThirtyEight articles from where the data sets were first reported on. Finally, with the fivethirtyeight R package data sets, we want you to get practice reading them using the <code>read_*</code> functions in R or Python, so please use the versions of the data sets listed here: <a href="https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw" class="uri">https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw</a></strong></p>
+<p>Your analysis should have the following sections:</p>
 <ul>
 <li><strong>Title</strong></li>
 <li><strong>Summary</strong></li>
@@ -2760,7 +2693,8 @@ The following sections should be included:</p>
 </ul></li>
 <li><strong>Methods &amp; Results:</strong>
 <ul>
-<li>describe in written english the methods you used to perform your analysis from beginning to end that narrates the code the does the analysis.</li>
+<li>describe in written english the methods you used to perform your analysis from beginning to end that narrates the code the does the analysis.
+<ul>
 <li>your report should include code which:</li>
 <li>loads data from the original source on the web</li>
 <li>wrangles and cleans the data from it’s original (downloaded) format to the format necessary for the planned classification or clustering analysis</li>
@@ -2769,6 +2703,7 @@ The following sections should be included:</p>
 <li>performs classification or regression analysis</li>
 <li>creates a visualization of the result of the analysis</li>
 <li><em>note: all tables and figure should have a figure/table number and a legend</em></li>
+</ul></li>
 </ul></li>
 <li><strong>Discussion:</strong>
 <ul>
@@ -2782,16 +2717,10 @@ The following sections should be included:</p>
 <li>at least 4 citations relevant to the project (format is your choose, just be consistent across the references).</li>
 </ul></li>
 </ul>
-<h3 id="make-the-computation-environment-reproducible-through-containerization-with-docker">6. Make the computation environment reproducible through containerization with Docker</h3>
-<p>For this project,
-we will be making the computation environment reproducible through containerization with Docker.
-We will use Docker containers for collaborative project development,
-as well as for sharing a reproducible analysis at the end of the project.
-It is expected that:
-- the Docker image, from which containers are generated,
-will be specified by a <code>Dockerfile</code> that lives in the root of the project’s GitHub repository
-- the building of the Docker image and distribution of it via DockerHub will be automated via GitHub Actions
-- an explanation of how to run and use Docker to develop and execute the analysis will be documented in the <code>README.md</code> file.</p>
+<h3 id="ensure-the-computation-environment-is-reproducible-through-a-virtual-environment-e.g.-conda-or-renv">6. Ensure the computation environment is reproducible through a virtual environment (e.g., conda or renv)</h3>
+<p>For this project, we will eventually be making the computation environment reproducible through containerization with Docker. For milestone 1 however, we will start with using a virtual environment as our first step towards this. You can use either <code>conda</code> or <code>renv</code> for this. Be sure to include the necessary files (e.g., <code>environment.yml</code>) so others can reproduce your work. Be sure to include documentation of how to use the environment with your project as well in the <code>README.md</code> file.
+Finally, make sure the versions of all software and software packages used in the analysis
+are recorded in the file that specifies the environment.</p>
 <h3 id="manage-issues-professionally">6. Manage issues professionally</h3>
 <p>Manage issues effectively through project boards and milestones, make it clear who is responsible for what and what project milestone each task is associated with. In particular, create an issue for each task in the project. Each of these issues must be assigned to a single person on the team. We want all of you to get coding experience in the project and <strong>each team member should be responsible for an approximately equal portion of the code.</strong></p>
 <p>To ensure the TA’s can grade your project board, change the visibility from the default private setting to the public setting. To change the visibility of the project board do the following:</p>
@@ -2826,9 +2755,9 @@ before the the pull request is accepted.</li>
 <li>You should be committing to git and pushing to GitHub.com every time you work on this project.</li>
 <li>Git commit messages should be meaningful. These will be marked.
 It’s OK if one or two are less meaningful, but most should be.</li>
-<li>Use GitHub issues to communicate to their team mate (as opposed to email or Slack).</li>
+<li>Use GitHub issues to communicate to their team mate (as opposed to email, WhatsApp, WeChat, etc).</li>
 <li>Your question, analysis and visualization should make sense. It doesn’t have to be complicated.</li>
-<li>You should use proper grammar and full sentences in your README.
+<li>You should use proper grammar and full sentences in your written documents.
 Point form may occur, but should be less than 10% of your written documents.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
