@@ -2512,6 +2512,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#create-an-appropriate-file-and-directory-structure-for-a-data-analysis-project" id="toc-create-an-appropriate-file-and-directory-structure-for-a-data-analysis-project">4. Create an appropriate file and directory structure for a data analysis project</a></li>
 <li><a href="#add-the-data-analysis-as-a-literate-code-document" id="toc-add-the-data-analysis-as-a-literate-code-document">5. Add the data analysis as a literate code document</a></li>
 <li><a href="#make-the-computation-environment-reproducible-through-containerization-with-docker" id="toc-make-the-computation-environment-reproducible-through-containerization-with-docker">6. Make the computation environment reproducible through containerization with Docker</a></li>
+<li><a href="#manage-issues-professionally" id="toc-manage-issues-professionally">6. Manage issues professionally</a></li>
 </ul></li>
 <li><a href="#submission-instructions" id="toc-submission-instructions">Submission Instructions</a>
 <ul>
@@ -2534,25 +2535,25 @@ to a fully reproducible and robust data data analysis project, comprised of:</p>
 <ul>
 <li>a well documented and modularized software package and scripts written in R and/or Python,</li>
 <li>a data analysis pipeline automated with GNU Make,</li>
-<li>a reproducible report powered by either Jupyter book or R Markdown,</li>
+<li>a reproducible report powered by Quarto,</li>
 <li>a containerized computational environment created and made shareable by Docker, and</li>
-<li>a remote version control repository on GitHub for project collaboration and sharing,
+<li>remote version control repositories on GitHub for project collaboration and sharing,
 as well as automation of test suite execution and documentation and software deployment.</li>
 </ul>
 <p>An example final project from another course (where the project is similar) can be seen here:
-<a href="https://github.com/ttimbers/breast_cancer_predictor">Breast Cancer Predictor</a></p>
+<a href="https://github.com/ttimbers/breast_cancer_predictor_py">Breast Cancer Predictor</a></p>
 <h2 id="milestone-1-summary">Milestone 1 summary</h2>
 <p>In this milestone, you will:</p>
 <ol type="1">
 <li>Draft a team work contract</li>
-<li>Set-up a public GitHub repository <del>or a private one, adding all the teaching team (<code>chendaniely</code>, <code>a-kong</code>, <code>gzzen</code>, and <code>tonyliang19</code>) as collaborators</del></li>
-<li>Select a data analysis project to work with</li>
+<li>Set-up a public GitHub repository</li>
 <li>Create an appropriate file and directory structure for a data analysis project</li>
-<li>Add the data analysis as a literate code document</li>
-<li>Make the computation environment reproducible through containerization with Docker</li>
+<li>Perform the data analysis in a literate code document</li>
+<li>Ensure the computation environment is reproducible through a virtual environment (e.g., conda or renv) - hint do this as you create the analysis, don’t wait until the end!</li>
+<li>Manage issues professionally</li>
 </ol>
 <p>An example project milestone 1 is available here:
-<a href="https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2">https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2</a></p>
+<a href="https://github.com/ttimbers/breast_cancer_predictor_py/tree/v0.0.4">Breast Cancer Predictor in Python v0.0.4</a></p>
 <h3 id="draft-a-team-work-contract">1. Draft a team work contract</h3>
 <p>This document will govern the working relationships on your team, and if done correctly,
 it should help you manage and resolve any issues that might arise when working in a group.
@@ -2576,25 +2577,21 @@ and gives detail about the logisitics of working together and the expectations y
 <p>Use this opportunity to use your prior knowledge/experience to improve your
 teamwork, communication, leadership, and organizational skills.
 You will need all of these for your capastone projects (and beyond)!</p>
-<p><strong>Note - this document is fairly personal and does NOT need to reside in your public GitHub.com repo. Instead you can prove that you created this by pasting it into the text box for your Canvas homework submission for this milestone.</strong></p>
+<p><strong>Note - this document is fairly personal and does NOT need to reside in your public GitHub.com repo. Instead you can prove that you created this by submitting a copy of it to Gradescope under the Milestone 1 assignment.</strong></p>
+<h4 id="activity-to-start-drafting-the-team-work-document">Activity to start drafting the team work document</h4>
+<ol type="1">
+<li><p>(5 min) Each person quietly writes down three things that are important to them
+for the team work contract.</p></li>
+<li><p>(5 min) Each person takes a turn shares their three ideas with the group.</p></li>
+<li><p>(10 min) Group discussion to decide which of the ideas presented should
+be incorporated into the contract
+(try to fairly distribute the inclusion of ideas from all teammates).
+Also discuss if there is anything missing from the contract.</p></li>
+</ol>
 <h3 id="set-up-a-github-repository">2. Set-up a GitHub repository</h3>
-<p>Now set-up a public GitHub repository
-<del>(or a private one, adding the teaching team<code>chendaniely</code>, <code>a-kong</code>, <code>gzzen</code>, and <code>tonyliang19</code> as collaborators)</del>
-for your project in the format: <code>dsci-310-group-XX-&lt;optional_team_name&gt;</code>.</p>
-<p>We are using github.com and public repositories because we will eventually be using some fancy tooling (<em>e.g.,</em> GitHub Actions) in this project.
-For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com.
-Additionally, this will help you build a portfolio of your work you can share with others.
-<em>Note: if you need to change the name of your project repository later, you can!</em></p>
-<p>The tracking of the project will be done using
-<a href="https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones">GitHub milestones</a>.
-When you create a milestone,
-you can associate it with issues and pull requests.
-After creating issues you can link them to a milestone associating each them to a project due date.</p>
-<p>In order to make more efficient team workflow,
-organize the issues you have previously associated with milestones into a
-<a href="https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards">GitHub project board</a>.</p>
-<p>The project board should show the current status of the project to the team.
-Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves.</p>
+<p>Fill out this survey to provide us your GitHub.com username: <a href="https://ubc.ca1.qualtrics.com/jfe/form/SV_8cCRmyxpbch5uxU" class="uri">https://ubc.ca1.qualtrics.com/jfe/form/SV_8cCRmyxpbch5uxU</a></p>
+<p>After we add you to the <a href="https://github.com/DSCI-310-2024">DSCI 310 2024 organization on GitHub.com</a>, set-up a public GitHub repository for your group under that organization being sure to add all team members as collaborators. Once you have decided on a project question and data set, make sure your repository has a name that is relevant to that question. <em>Note: if you need to change the name of your project repository later, you can!</em></p>
+<p>We are using github.com and public repositories because we will eventually be using some fancy tooling (<em>e.g.,</em> GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com. Additionally, this will help you build a portfolio of your work you can share with others.</p>
 <h3 id="select-a-data-analysis-project-to-work-with">3. Select a data analysis project to work with</h3>
 <p>The content of this analysis project should be a narrated analysis that asks
 and answers a predictive question using a classification
@@ -2795,6 +2792,13 @@ It is expected that:
 will be specified by a <code>Dockerfile</code> that lives in the root of the project’s GitHub repository
 - the building of the Docker image and distribution of it via DockerHub will be automated via GitHub Actions
 - an explanation of how to run and use Docker to develop and execute the analysis will be documented in the <code>README.md</code> file.</p>
+<h3 id="manage-issues-professionally">6. Manage issues professionally</h3>
+<p>Manage issues effectively through project boards and milestones, make it clear who is responsible for what and what project milestone each task is associated with. In particular, create an issue for each task in the project. Each of these issues must be assigned to a single person on the team. We want all of you to get coding experience in the project and <strong>each team member should be responsible for an approximately equal portion of the code.</strong></p>
+<p>To ensure the TA’s can grade your project board, change the visibility from the default private setting to the public setting. To change the visibility of the project board do the following:</p>
+<ol type="1">
+<li><p>Go to the project board and click on the three vertical dots on the right-hand side of the board and select settings</p></li>
+<li><p>Scroll to the bottom of the Settings page to the “Danger zone” and under visibility select “Public”.</p></li>
+</ol>
 <h2 id="submission-instructions">Submission Instructions</h2>
 <p>You will submit two URLS’s to Canvas in the provided text box for milestone 1:</p>
 <ol type="1">
