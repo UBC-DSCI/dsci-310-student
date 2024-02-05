@@ -32,11 +32,10 @@ The purpose of this assignment is to ensure that everyone gains hands-on practic
     - edit the workflow file on line 32 so that the Docker image will be pushed to your DockerHub user space (and not mine!)
     -   add your DockerHub username and password (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively) as GitHub secret (Under Settings > Secrets and variables > Actions > New repository secret) to this repository for this to work.
 
-(As Needed): Make sure that the GitHub Actions workflow to build and publish the Docker image
-get triggered. The `docker-publish.yml` file can be be triggered by either
+    - (As Needed): Make sure that the GitHub Actions workflow to build and publish the Docker image get triggered. The `docker-publish.yml` file can be be triggered by either:
 
-    - pushing a commit that changes the `Dockerfile`, or
-    - clicking on the Actions tab, and then click on the workflow .github/workflows/docker-publish.yml. You then should see a “Run workflow” button with a drop down menu, from that menu select “Run workflow” (this will trigger GitHub Actions to create a commit in your remote repository).
+        - pushing a commit that changes the `Dockerfile`, or
+        - clicking on the Actions tab, and then click on the workflow .github/workflows/docker-publish.yml. You then should see a “Run workflow” button with a drop down menu, from that menu select “Run workflow” (this will trigger GitHub Actions to create a commit in your remote repository).
 
 6. Add a `LICENSE` file that attributes the usage of my `docker-publish.yml`
 file in your repository. 
