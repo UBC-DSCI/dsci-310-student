@@ -2532,24 +2532,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>We recommend doing this by:</p>
 <ul>
-<li>by clicking the Actions tab and selecting “Skip this and setup a workflow yourself”</li>
-<li>paste this workflow into the empty file: <a href="https://github.com/ttimbers/dsci310-dockerfile-practice/blob/main/.github/workflows/docker-publish.yml" class="uri">https://github.com/ttimbers/dsci310-dockerfile-practice/blob/main/.github/workflows/docker-publish.yml</a> (also edit the name to edit the name of the file to be <code>docker-publish.yml</code> instead of <code>main.yml</code>).</li>
-<li>edit the workflow file on line 32 so that the Docker image will be pushed to your DockerHub user space (and not mine!)</li>
-<li>add your DockerHub username and password (naming them <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>, respectively) as GitHub secret (Under Settings &gt; Secrets and variables &gt; Actions &gt; New repository secret) to this repository for this to work.</li>
+<li><p>by clicking the Actions tab and selecting “Skip this and setup a workflow yourself”</p></li>
+<li><p>paste this workflow into the empty file: <a href="https://github.com/ttimbers/dsci310-dockerfile-practice/blob/main/.github/workflows/docker-publish.yml" class="uri">https://github.com/ttimbers/dsci310-dockerfile-practice/blob/main/.github/workflows/docker-publish.yml</a> (also edit the name to edit the name of the file to be <code>docker-publish.yml</code> instead of <code>main.yml</code>).</p></li>
+<li><p>edit the workflow file on line 32 so that the Docker image will be pushed to your DockerHub user space (and not mine!)</p></li>
+<li><p>add your DockerHub username and password (naming them <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>, respectively) as GitHub secret (Under Settings &gt; Secrets and variables &gt; Actions &gt; New repository secret) to this repository for this to work.</p></li>
+<li><p>(As Needed): Make sure that the GitHub Actions workflow to build and publish the Docker image get triggered. The <code>docker-publish.yml</code> file can be be triggered by either:</p>
+<ul>
+<li>pushing a commit that changes the <code>Dockerfile</code>, or</li>
+<li>clicking on the Actions tab, and then click on the workflow .github/workflows/docker-publish.yml. You then should see a “Run workflow” button with a drop down menu, from that menu select “Run workflow” (this will trigger GitHub Actions to create a commit in your remote repository).</li>
 </ul></li>
-</ol>
-<p>(As Needed): Make sure that the GitHub Actions workflow to build and publish the Docker image
-get triggered. The <code>docker-publish.yml</code> file can be be triggered by either</p>
-<pre><code>- pushing a commit that changes the `Dockerfile`, or
-- clicking on the Actions tab, and then click on the workflow .github/workflows/docker-publish.yml. You then should see a “Run workflow” button with a drop down menu, from that menu select “Run workflow” (this will trigger GitHub Actions to create a commit in your remote repository).</code></pre>
-<ol start="6" type="1">
-<li>Add a <code>LICENSE</code> file that attributes the usage of my <code>docker-publish.yml</code>
+</ul></li>
+<li><p>Add a <code>LICENSE</code> file that attributes the usage of my <code>docker-publish.yml</code>
 file in your repository.
 This means, you need to copy the <code>LICENSE</code> file contents from
 <a href="https://github.com/ttimbers/dsci310-dockerfile-practice/blob/main/LICENSE" class="uri">https://github.com/ttimbers/dsci310-dockerfile-practice/blob/main/LICENSE</a>
 and include the text in your <code>LICENSE</code> file.
 You also want to add a note in that file that this only covers the code you copied from me
-(<code>docker-publish.yml</code>).</li>
+(<code>docker-publish.yml</code>).</p></li>
 </ol>
 <h3 id="submission-instructions">Submission instructions</h3>
 <p>You will submit a PDF to Gradescope for individual assignment 3 that includes:</p>
@@ -2596,7 +2595,7 @@ You also want to add a note in that file that this only covers the code you copi
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
