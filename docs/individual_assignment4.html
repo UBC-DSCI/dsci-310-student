@@ -2551,7 +2551,8 @@ from basic Jupyter notebooks.</p>
 <h4 id="step-1">Step 1</h4>
 <p><strong>Goal:</strong> Create a copy from the template repository.</p>
 <ul>
-<li>Create a copy of <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto">this template repository</a>
+<li>Create a copy of either the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto-r">R template repository</a>
+or the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto-python">Python template repository</a>
 on GitHub.com under <strong>your personal username</strong></li>
 </ul>
 <p><strong>Notes:</strong></p>
@@ -2563,18 +2564,19 @@ so we strongly suggest making it public.</li>
 </ul>
 <h4 id="step-2">Step 2</h4>
 <p><strong>Goal:</strong> Get familiar with the repository</p>
-<p>Inside the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto">template repository</a>,
+<p>Inside the the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto-r">R template repository</a>
+or the <a href="https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto-python">Python template repository</a>,
 there are several directories and files.
 Here is a quick rundown of each:</p>
 <ul>
 <li><code>data</code>: contains data used in the analysis <strong>(do not edit)</strong></li>
 <li><code>reports</code>: contains the Quarto report file (ends in <code>qmd_example.qmd</code>) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) <strong>(incomplete - you will need to edit this)</strong>, and the BibTeX references file (<code>references.bib</code>) for the report <strong>(do not edit)</strong></li>
-<li><code>makefile</code>: declares commands used to build the Quarto report <strong>(do not edit</strong>)
+<li><code>Makefile</code>: declares commands used to build the Quarto report <strong>(do not edit</strong>)
 <ul>
 <li>This file has all the commands you need to do this assignment.</li>
 </ul></li>
 <li><code>results</code>: output of the script in <code>source</code></li>
-<li><code>source/generate_figures.R</code>: a script that performs the analysis and outputs
+<li><code>source/generate_figures.R</code> or <code>source/generate_figures.py</code>: a script that performs the analysis and outputs
 various plots and a table that are to be used in the report <strong>(do not edit)</strong></li>
 </ul>
 <h4 id="step-3">Step 3</h4>
