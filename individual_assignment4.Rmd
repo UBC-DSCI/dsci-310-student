@@ -55,8 +55,9 @@ We suggest you read through the instructions first before doing them in sequence
 
 **Goal:** Create a copy from the template repository.
 
-- Create a copy of [this template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto)
-  on GitHub.com under **your personal username**
+- Create a copy of either the [R template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto-r)
+or the [Python template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto-python)
+on GitHub.com under **your personal username**
    
 **Notes:**
 
@@ -69,16 +70,17 @@ so we strongly suggest making it public.
 
 **Goal:** Get familiar with the repository
 
-Inside the [template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto),
+Inside the the [R template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto-r)
+or the [Python template repository](https://github.com/UBC-DSCI/dsci-310-individual-assignment-quarto-python),
 there are several directories and files.
 Here is a quick rundown of each:
 
 - `data`: contains data used in the analysis **(do not edit)**
 - `reports`: contains the Quarto report file (ends in `qmd_example.qmd`) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) **(incomplete - you will need to edit this)**, and the BibTeX references file (`references.bib`) for the report **(do not edit)**
-- `makefile`: declares commands used to build the Quarto report **(do not edit**)
+- `Makefile`: declares commands used to build the Quarto report **(do not edit**)
   - This file has all the commands you need to do this assignment.
 - `results`: output of the script in `source`
-- `source/generate_figures.R`: a script that performs the analysis and outputs
+- `source/generate_figures.R` or `source/generate_figures.py`: a script that performs the analysis and outputs
   various plots and a table that are to be used in the report **(do not edit)**
 
 #### Step 3
