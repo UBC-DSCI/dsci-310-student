@@ -106,16 +106,18 @@ so that:
 1. Add header formatting to sections (e.g., "Aim", "Data", "Methods", "Results", "References")
     and Quarto configuration so that a table of contents that is automatically generated from the document headers
     will be created when the document is rendered
-    ([docs on how to do this](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents)
+    ([docs on how to do this](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents))
 2. Add correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document
     ([docs on how to do this](https://quarto.org/docs/manuscripts/authoring/jupyterlab.html#citations))
 3. Edit the figure formatting ([docs on how to do this](https://quarto.org/docs/authoring/figures.html#figure-basics)) so that Quarto:
     - automatically numbers them 
     - has a label for easy cross referencing
-    - controls the figure sizes so the figures are not too big
+    - controls the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)
 4. add a table description argument so that they are automatically numbered by Quarto
     and use cross referencing to link to the table if/when it is discussed in the text
     ([docs on how to do this](https://quarto.org/docs/authoring/tables.html#cross-references))
+5. Edit the narrative so it uses cross-referencing to refer to the figures 
+    and tables instead of having their reference hardcode the figure and table numbers.
 5. replace the `???` in the Quarto report narrative text
     with inline Quarto code,
     so that the text will be automatically updated with the correct value
@@ -142,9 +144,11 @@ This assignment will be graded for completion as follows:
 |------|-------------|
 | 110% | All 6 of the required edits to the `.qmd` document above were met and the HTML version of the report was served up on GitHub pages |
 | 100% | All 6 of the required edits to the `.qmd` document above were met *and* the report generates a working PDF and HTML file via the `Makefile`. |
-| 75%  | 5/6 of the required edits to the `.qmd` document listed above were met. |
-| 50%  | 4/6 of the required edits to the `.qmd` document listed above were met. |
-| 25%  | 3/6 of the required edits to the `.qmd` document listed above were met. |
-| 0%   | Only 2/6 of the required edits to the `.qmd` document listed above were met or the assignment was not attempted. |
+| 85%  | 5/6 of the required edits to the `.qmd` document listed above were met. |
+| 70%  | 4/6 of the required edits to the `.qmd` document listed above were met. |
+| 55%  | 3/6 of the required edits to the `.qmd` document listed above were met. |
+| 40%  | 2/6 of the required edits to the `.qmd` document listed above were met. |
+| 25%  | 1/6 of the required edits to the `.qmd` document listed above were met. |
+| 0%   | The assignment was not attempted. |
 
 - You will only get the extra points for serving up the HTML version of the report on GitHub pages if all of the main assignment components were completed.

@@ -1,7 +1,7 @@
 ---
 title: "Milestone 1"
 descriptions: |
-    GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (`full.ipynb`, `Dockerfile`, `docker-compose.yml`).
+    GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible virtual environment
 output:
   distill::distill_article:
     toc: true
