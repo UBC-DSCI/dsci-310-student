@@ -2599,18 +2599,20 @@ so that:</p>
 <li>Add header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”)
 and Quarto configuration so that a table of contents that is automatically generated from the document headers
 will be created when the document is rendered
-(<a href="https://quarto.org/docs/output-formats/html-basics.html#table-of-contents">docs on how to do this</a></li>
+(<a href="https://quarto.org/docs/output-formats/html-basics.html#table-of-contents">docs on how to do this</a>)</li>
 <li>Add correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document
 (<a href="https://quarto.org/docs/manuscripts/authoring/jupyterlab.html#citations">docs on how to do this</a>)</li>
 <li>Edit the figure formatting (<a href="https://quarto.org/docs/authoring/figures.html#figure-basics">docs on how to do this</a>) so that Quarto:
 <ul>
 <li>automatically numbers them</li>
 <li>has a label for easy cross referencing</li>
-<li>controls the figure sizes so the figures are not too big</li>
+<li>controls the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)</li>
 </ul></li>
 <li>add a table description argument so that they are automatically numbered by Quarto
 and use cross referencing to link to the table if/when it is discussed in the text
 (<a href="https://quarto.org/docs/authoring/tables.html#cross-references">docs on how to do this</a>)</li>
+<li>Edit the narrative so it uses cross-referencing to refer to the figures
+and tables instead of having their reference hardcode the figure and table numbers.</li>
 <li>replace the <code>???</code> in the Quarto report narrative text
 with inline Quarto code,
 so that the text will be automatically updated with the correct value
@@ -2650,20 +2652,28 @@ so that the report is viewable on the web.</li>
 <td>All 6 of the required edits to the <code>.qmd</code> document above were met <em>and</em> the report generates a working PDF and HTML file via the <code>Makefile</code>.</td>
 </tr>
 <tr class="odd">
-<td>75%</td>
+<td>85%</td>
 <td>5/6 of the required edits to the <code>.qmd</code> document listed above were met.</td>
 </tr>
 <tr class="even">
-<td>50%</td>
+<td>70%</td>
 <td>4/6 of the required edits to the <code>.qmd</code> document listed above were met.</td>
 </tr>
 <tr class="odd">
-<td>25%</td>
+<td>55%</td>
 <td>3/6 of the required edits to the <code>.qmd</code> document listed above were met.</td>
 </tr>
 <tr class="even">
+<td>40%</td>
+<td>2/6 of the required edits to the <code>.qmd</code> document listed above were met.</td>
+</tr>
+<tr class="odd">
+<td>25%</td>
+<td>1/6 of the required edits to the <code>.qmd</code> document listed above were met.</td>
+</tr>
+<tr class="even">
 <td>0%</td>
-<td>Only 2/6 of the required edits to the <code>.qmd</code> document listed above were met or the assignment was not attempted.</td>
+<td>The assignment was not attempted.</td>
 </tr>
 </tbody>
 </table>
