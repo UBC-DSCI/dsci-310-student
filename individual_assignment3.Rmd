@@ -61,6 +61,7 @@ This assignment will be graded for completion as follows:
 | ----- | ----------------------------------------------------------------------------------- |
 | -15%  | There were issues with the links submitted that made it difficult to find the GitHub or DockerHub repository |
 | -15%   | The version is missing from the package that was added to the `Dockerfile` |
+| -15% | There were authentication issues with publishing to Docker Hub. |
 | -33%   | No new package was added to the `Dockerfile`                                          |
 | -33%   | Docker image was not built successfully by GitHub actions and published to DockerHub |
 | -100%    | Assignment was not completed (no GitHub repository was created, or the repository is missing the `Dockerfile`) |
