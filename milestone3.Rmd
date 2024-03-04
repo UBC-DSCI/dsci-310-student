@@ -1,7 +1,7 @@
 ---
 title: "Milestone 3"
 descriptions: |
-    Literate code document (i.e., `.ipynb` or `.Rmd`) broken into scripts and a report. Data analysis pipeline using GNU Make to stitch everything together and automate their execution and rendering (`.R` files, and reproducible report).
+    Functions abstracted to a file/module and addition of robust tests (`reduced.ipynb`, `.R` & `test_*.R`, function documentation)
 output:
   distill::distill_article:
     toc: true
@@ -9,202 +9,148 @@ output:
 
 ## Overall project summary
 
-In this course you will work in assigned teams of three or four (see group assignments in [Canvas](https://canvas.ubc.ca)) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.
+In this course you will work in assigned teams of three or four
+(see group assignments in [Canvas](https://canvas.ubc.ca))
+to answer a predictive question using a publicly available data set
+that will allow you to answer that question.
+To answer this question,
+you will perform a complete data analysis in R and/or Python,
+from data import to communication of results,
+while placing significant emphasis on reproducible and trustworthy workflows.
 
-Your data analysis project will evolve throughout the course from a single, monolithic RMarkdown document, Jupyter notebook, or Quarto document to a fully reproducible and robust data data analysis project, comprised of:
+Your data analysis project will evolve throughout the course from a single,
+monolithic Jupyter notebook,
+to a fully reproducible and robust data data analysis project, comprised of:
 
 - a well documented and modularized software package and scripts written in R and/or Python,
 - a data analysis pipeline automated with GNU Make,
-- a reproducible report powered by either Jupyter book, R Markdown, or Quarto
+- a reproducible report powered by either Jupyter book or R Markdown,
 - a containerized computational environment created and made shareable by Docker, and
-- a remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.
+- a remote version control repository on GitHub for project collaboration and sharing,
+  as well as automation of test suite execution and documentation and software deployment.
 
-An example final project from another course (where the project is similar) can be seen here: 
--[Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor)
+An example final project from another course (where the project is similar) can be seen here:
+
+- [Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor)
 
 ## Milestone 3 summary
 
 In this milestone, you will:
 
-1. Abstract more code from your literate code document (`*.ipynb` or `*.Rmd`) 
-to scripts (e.g., `.R` or `.py`). 
-This code need not be converted to a function, 
-but can simply be files that call the functions needed to run your analysis. 
-You should aim to split the analysis code into 4, or more, R or Python scripts. 
-Where the code in each script is contributing to a related step in your analysis. 
-
-2. Edit your literate code document (`*.ipynb` or `*.Rmd`) so that it's sole 
-job is to narrate your analysis, display your analysis artifacts 
-(i.e., figures and tables), and nicely format the report.
-The goal is that non-data scientists would not be able to tell that code
-was used to perform your analysis or format your report 
-(i.e., no code should be visible in the rendered report).
-
-3. Write another script, a `Makefile` (literally called `Makefile`), to act as a driver script to rule them all. This script should run the others in sequence, hard coding in the appropriate arguments. 
-
-4. Update your project's computational environment as you add dependencies to your project
-
-An example project milestone 3 will soon be available here: [https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v3.0.0)
-
-For now, it is still a work in progress: [https://github.com/UBC-DSCI/predict-airbnb-nightly-price](https://github.com/UBC-DSCI/predict-airbnb-nightly-price).
-
-## Milestone 3 specifics
-
-### 1. Abstract more code from your literate code document (`*.ipynb`, `*.Rmd`, or `.qmd`) to scripts (e.g., `.R` or `.py`).
+1. 1. Upgrade your project's computational environment to a container.
 
 
+2. Abstract some code from your literate code document (`*.Rmd`, `*.qmd`, `*.ipynb`, etc)
+   to functions a modular file (e.g., `.R` or `.py`)
 
-This code need not be converted to a function, 
-but can simply be files that call the functions needed to run your analysis. 
-You should aim to split the analysis code into 4, or more, R or Python scripts.
-Where the code in each script is contributing to a related step in your analysis. 
+3. Update your project's computational environment as you add dependencies to your project
 
-Examples of steps in your current document that can be broken up into steps:
+An example project milestone 2 will soon be available here:
+[https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0](https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v2.0.0)
 
-- Load
-- Clean
-- Tidy
-- EDA
-- Figures
-- Analysis
-- Modeling
-- Results
-- Findings
+For now, it is still a work in progress:
+[https://github.com/UBC-DSCI/predict-airbnb-nightly-price](https://github.com/UBC-DSCI/predict-airbnb-nightly-price).
 
-The output of the first script must be the input of the second, and so on. 
-All scripts should have command line arguments 
-and we expect you to use the `docopt` R package 
-for parsing command line arguments 
-(if you are using Python, we recommend
-[`argparse`](https://docs.python.org/3/library/argparse.html) 
-or [`click`](https://click.palletsprojects.com/en/8.0.x/)). 
-  
-They scripts could be organized something like this:
+### 1. Abstract some code from your literate code document to functions a modular filename
 
-- A first script that downloads the data from the internet 
-and saves it locally. This should take at least two arguments:
+- Your literate code document would be a`*.Rmd`, `*.qmd`, `*.ipynb`, etc
+- Your modular functions file woule be an `*.R` or `*.py` file
 
-  - the path to the input file 
-    (a URL or a relative local path, such as data/file.csv), as well as
-  - a path/filename where to write the file to and what to call it 
-    (e.g., data/cleaned_data.csv).
+In every data science project, there is some code that is repetitive,
+and other code that may not be repetitive in the current project,
+but would likely be very useful in other, related future projects.
+It is well worth it to abstract such code to functions.
+This allows for the code to be tested with unit tests, to ensure it works as expected,
+as well as makes it easily reuseable in the future in other work.
 
-  **Note: choose more descriptive filenames than the ones used above. 
-  These are general for illustrative purposes.**
+Examples of code that often repetitive in a data analysis projects:
 
-- A second script that reads the data from the first script 
-and performs and data cleaning/pre-processing, transforming, 
-and/or partitioning that needs to happen before exploratory data analysis 
-or modeling takes place. This should take at least two arguments:
+- data wrangling, cleaning or transformation code that gets applied to multiple columns or multiple data sets
+- data visualization code when many versions of a similar plot-type is used
+  (e.g., many scatter plots with similar formatting)
+- data modeling workflow/pipeline code when tuning different models on the same data set
 
-  - a path/filename pointing to the data to be read in
-  - a path/filename pointing to where the 
-    cleaned/processed/transformed/partitioned data should live.
+When doing this task,
+follow the
+[workflow for writing functions and tests for data science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html#workflow-for-writing-functions-and-tests-for-data-science),
+remember this process will include:
 
-- A third script which creates exploratory data visualization(s) and table(s) 
-that are useful to help the reader/consumer understand that data set. 
-These analysis artifacts should be written to files.
-This should take at least two arguments:
+  - writing thorough function specifications & documentation
+  - writing robust unit tests for these functions to ensure they work as expected
+  - writing the code that makes up the function body
 
-  - a path/filename pointing to the data, 
-  - a path/filename prefix where to write the figure to 
-    and what to call it (e.g., results/this_eda.png).
+If you are using R, these functions will live in an `.R` file
+(whose filename will be named after the function, or functions).
+It is OK to have one function per file, or all functions in one file.
+This/these file(s) will live in a sub-directory called `R`.
 
-- A fourth script that reads the data from the second script, 
-performs the modeling and summarizes the results as a figure(s) and a table(s). 
-These analysis artifacts should be written to files. 
-This should take at least two arguments:
+If you are using Python, these functions will live in an `.py` file
+(whose filename will be named after the function, or functions).
+Again, it is OK to have one function per file, or all functions in one file.
+This/these file(s) will live in a sub-directory called `src`.
 
-  - a path/filename pointing to the data
-  - a path/filename prefix where to write the figure(s)/table(s) to 
-    and what to call it (e.g., results/this_analysis)
+You will `source` (in the case of R) or `import` (in the case of Python)
+these functions in your literate code document (`*.ipynb`) to use them in your analysis.
+Tests will live in a `test` directory, with files/subdirectories organized as per the testing framework you are using.
 
-### 2. Edit your literate code document (`*.ipynb` or `*.Rmd`) so that it's sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report.
+**We expect that you will abstract at least 3-4 functions from your literate code document.
+One per group member is the minimum.**
+Of course, if it makes sense to have more than 3-4 you are welcome to increase the number!
+However, all functions must have the same standards in regards to software robustness.
+Your functions will be assessed for their quality
+(e.g., functions should do one thing,
+and generally return an object unless they were specifically designed for side-effects),
+usability,
+readability (follow the [tidyverse style guide](https://style.tidyverse.org/) for R,
+or the [black style guide](https://black.readthedocs.io/en/stable/the_black_code_style/index.html) for Python),
+documentation and quality of the test suite.
 
-The goal is that non-data scientists would not be able to tell that code
-was used to perform your analysis or format your report 
-(i.e., no code should be visible in the rendered report).
+If you are using R for your data analysis code,
+we expect you to use the [`testthat`](https://testthat.r-lib.org/) R package framework for writing software tests.
+If you are using Python, we expect you to use the [`pytest`](https://docs.pytest.org/en/7.0.x/) Python package framework.
 
-You should render your report to either `html` or `PDF`. 
-If you are using R Markdown, you should use the 
-[`bookdown`](https://bookdown.org/yihui/bookdown/) outputs
-(e.g., `bookdown::html2` or `bookdown::pdf2`)
-so you can reference figures, tables and sections effectively.
-PDF output needs a TeXLive installation to render the PDF.
-You did this locally in the computer setup at the beginning of the course,
-for your container, you may want to look into the
-[`rocker/verse` base image](https://rocker-project.org/images/#the-versioned-stack).
+### 2. Update your project's computational environment as you add dependencies to your project
 
-If you are using Jupyter for your final report,
-you should use [Jupyter book](https://jupyterbook.org/intro.html), 
-again so you can reference figures, tables and sections effectively.
-
-### 3. Write another script, a `Makefile` (literally called `Makefile`), to act as a driver script to rule them all
-
-This script should run the others in sequence, hard coding in the appropriate arguments. This script should:
-
-- live in the project's root directory and be named Makefile
-
-- be well documented (using the project `README` and comments inside the `Makefile` to explain what it does and how to use it)
-
-- have a `all` target so that you can easily run the entire analysis from top to bottom by running `make all` at the command line
-
-- have a `clean` target so that you can easily "undo" your analysis by running `make clean` at the command line (e.g., deletes all generate data and files).
-
-Tip:
-
-- The `all` target can be a `.PHONTY` target
-- You can create other targets that link up all the dependencies
-  - For example, `data`, `analysis`, `figures`, `pdf`, etc, so your build process only runs what's necessary during development
-
-
-### 4. Update your project's computational environment as you add dependencies to your project
-
-At a minimum, 
-you will be adding either `bookdown` or `jupyter-book` 
-as a new dependency to your project. 
-Thus, you will need to update your project's computational environment 
-as you add this (and potentially other) dependencies to your project. 
-This means that your `Dockerfile` will need to have this package added, 
-with the version pinned, 
-and the Docker container image will need to be rebuilt and published to DockerHub.
+At a minimum, you will be adding the testing package framework as a new dependency to your project
+(e.g., `testthat` R package or `pytest` Python package).
+Thus, you will need to update your project's computational environment
+as you add this (and potentially other) dependencies to your project.
+This means that your `Dockerfile` will need to have this package added, with the version pinned,
+and the Docker container image will need to be rebuilt.
 Do not forget to update your project's documentation to reflect these changes.
 
 ## Submission Instructions
 
-You will submit three URLs to Canvas in the provided text box for milestone 3:
+You will submit two URLs to Canvas in the provided text box for milestone 2:
 
 1. the URL of your project's GitHub.com repository
 2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
-3. The URL of your Dockerhub image that can be pulled and used to run your analysis following your `README.md` instructions.
 
-_Up to_ 50% of your Milestone 1 + Milestone 2 points will be awarded if you have _adequately_ addressed feedback and comments from your repository.
+### Creating a release on GitHub.com
 
-### Creating a release on GitHub.com 
-
-Just before you submit the milestone 3, create a release on your project repository on GitHub and name it something like `3.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.
+Just before you submit the milestone 2,
+create a release on your project repository on GitHub and name it something like `2.0.0`
+([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)).
+This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes,
+while you continue to work on your project for the next milestone.
 
 ## Expectations
 
 - **Everyone should contribute equally to all aspects of the project**
-**(e.g., code, writing, project management).**
-**This should be evidenced by a roughly equal number of commits,**
-**pull request reviews and participation in communication via GitHub issues.**
-
-- Each group member should work in a 
-[GitHub flow workflow](https://docs.github.com/en/get-started/quickstart/github-flow); 
-where they create branches for each feature or fix, 
-which are reviewed and critiqued by at least one other teammate 
-before the the pull request is accepted.
+  **(e.g., code, writing, project management).**
+  **This should be evidenced by a roughly equal number of commits,**
+  **pull request reviews and participation in communication via GitHub issues.**
+- Each group member should work in a
+  [GitHub flow workflow](https://docs.github.com/en/get-started/quickstart/github-flow);
+  where they create branches for each feature or fix,
+  which are reviewed and critiqued by at least one other teammate
+  before the the pull request is accepted.
 - You should be committing to git and pushing to GitHub.com every time you work on this project.
-- Git commit messages should be meaningful. These will be marked. 
-It's OK if one or two are less meaningful, but most should be.
+- Git commit messages should be meaningful. These will be marked.
+  It's OK if one or two are less meaningful, but most should be.
 - Use GitHub issues to communicate to their team mate (as opposed to email or Slack).
 - Your question, analysis and visualization should make sense. It doesn't have to be complicated.
 - **Your analysis should be correct, and run reproducibly given the instructions provided in the README.**
-- You should use proper grammar and full sentences in your README. 
-Point form may occur, but should be less than 10% of your written documents.
-- R code should follow the [tidyverse style guide](https://style.tidyverse.org/), 
-and Python code should follow the 
-[black style guide](https://black.readthedocs.io/en/stable/the_black_code_style/index.html) for Python)
-- You should not have extraneous files in your repository that should be ignored.
+- You should use proper grammar and full sentences in your README.
+  Point form may occur, but should be less than 10% of your written documents.
+- You will not be expected to incorporate Milestone 1 feedback in this submission.
