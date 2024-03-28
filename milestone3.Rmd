@@ -78,7 +78,7 @@ Again, it is OK to have one function per file, or all functions in one file.
 This/these file(s) will live in a sub-directory called `src`.
 
 You will `source` (in the case of R) or `import` (in the case of Python)
-these functions in your literate code document (`*.ipynb`) to use them in your analysis.
+these functions in your scripts to use them in your analysis.
 Tests will live in a `test` directory, with files/subdirectories organized as per the testing framework you are using.
 If you are using R for your data analysis code,
 we expect you to use the [`testthat`](https://testthat.r-lib.org/) R package framework for writing software tests.
