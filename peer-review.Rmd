@@ -15,16 +15,15 @@ by reviewing a data analysis project created by your classmates.
 You will be writing your review in an issue in your assigned repository.
 You will be evaluated on the thoughtfullness and usefullness of your feedback in the review.
 
-Your review assignments are posted in Canvas.
+- Peer review repository: https://github.com/DSCI-310-2024/data-analysis-review-2024
+- Your review assignments are posted on Piazza: TBD
 
 ### Submission instructions
 
-In the textbox provided for this assignment on Canvas,
-you must submit a URL to the issue containing your peer review to the "Peer review" assignment on Canvas
-so that the TA can find your review easily.
+You will submit a PDF to Gradescope for this peer review that includes:
 
-Your submission url will look something like this: `https://github.com/USERNAME/PROJECT_NAME/issues/ISSUE_NUMBER`
-Do not submit an invalid URL.
+1.  your GitHub.com username
+2.  the URL of to the issue containing your peer review (ideally linked to your post)
 
 ### Peer review instructions
 
