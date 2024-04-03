@@ -15,7 +15,7 @@ by reviewing a data analysis project created by your classmates.
 You will be writing your review in an issue in your assigned repository.
 You will be evaluated on the thoughtfullness and usefullness of your feedback in the review.
 
-- Peer review repository: https://github.com/DSCI-310-2024/data-analysis-review-2024
+- Peer review repository: <https://github.com/DSCI-310-2024/data-analysis-review-2024>
 - Your review assignments are posted on Piazza: <https://piazza.com/class/lr1bsx4w2te58d/post/187>
 
 ### Submission instructions
