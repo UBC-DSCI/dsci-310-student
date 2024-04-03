@@ -1,5 +1,5 @@
 ---
-title: "Final project"
+title: "Milestone 4"
 descriptions: |
     Abstract project functions to their own software package, 
     and address any feedback received in earlier milestones.
