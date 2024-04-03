@@ -2504,17 +2504,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3>Contents</h3>
 <ul>
 <li><a href="#overall-project-summary" id="toc-overall-project-summary">Overall project summary</a></li>
-<li><a href="#final-project-summary" id="toc-final-project-summary">Final project summary</a></li>
+<li><a href="#milestone-4-summary" id="toc-milestone-4-summary">Milestone 4 summary</a></li>
 <li><a href="#final-project-specifics" id="toc-final-project-specifics">Final project specifics</a>
 <ul>
 <li><a href="#abstract-project-functions-to-their-own-software-package" id="toc-abstract-project-functions-to-their-own-software-package">Abstract project functions to their own software package</a></li>
-<li><a href="#members-file" id="toc-members-file"><code>MEMBERS</code> File</a></li>
-<li><a href="#repository-ownership-transfer" id="toc-repository-ownership-transfer">Repository Ownership Transfer</a></li>
+<li><a href="#address-any-feedback-received-in-earlier-milestones-and-during-peer-review" id="toc-address-any-feedback-received-in-earlier-milestones-and-during-peer-review">2. Address any feedback received in earlier milestones and during peer review</a></li>
 </ul></li>
-<li><a href="#submission-instructions" id="toc-submission-instructions">Submission Instructions</a>
-<ul>
-<li><a href="#creating-a-release-on-github.com" id="toc-creating-a-release-on-github.com">Creating a release on GitHub.com</a></li>
-</ul></li>
+<li><a href="#submission-instructions" id="toc-submission-instructions">Submission Instructions</a></li>
 <li><a href="#expectations" id="toc-expectations">Expectations</a></li>
 </ul>
 </nav>
@@ -2522,51 +2518,45 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="overall-project-summary">Overall project summary</h2>
 <p>In this course you will work in assigned teams of three or four
 (see group assignments in <a href="https://canvas.ubc.ca">Canvas</a>)
-to answer a predictive question using a publicly available data set
-that will allow you to answer that question.
+to answer a predictive question using a publicly available data set that will allow you to answer that question.
 To answer this question,
 you will perform a complete data analysis in R and/or Python,
 from data import to communication of results,
 while placing significant emphasis on reproducible and trustworthy workflows.</p>
-<p>Your data analysis project will evolve throughout the course from a
-single, monolithic Jupyter notebook,
+<p>Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook,
 to a fully reproducible and robust data data analysis project, comprised of:</p>
 <ul>
 <li>a well documented and modularized software package and scripts written in R and/or Python,</li>
 <li>a data analysis pipeline automated with GNU Make,</li>
-<li>a reproducible report powered by either Jupyter book, R Markdown, or Quarto</li>
+<li>a reproducible report powered by Quarto,</li>
 <li>a containerized computational environment created and made shareable by Docker, and</li>
-<li>a remote version control repository on GitHub for project collaboration and sharing,
+<li>remote version control repositories on GitHub for project collaboration and sharing,
 as well as automation of test suite execution and documentation and software deployment.</li>
 </ul>
 <p>An example final project from another course (where the project is similar) can be seen here:
--<a href="https://github.com/ttimbers/breast_cancer_predictor">Breast Cancer Predictor</a></p>
-<h2 id="final-project-summary">Final project summary</h2>
+<a href="https://github.com/ttimbers/breast_cancer_predictor_py">Breast Cancer Predictor</a></p>
+<h2 id="milestone-4-summary">Milestone 4 summary</h2>
 <p>In this final project milestone, you will:</p>
 <ul>
-<li>Abstract project functions to their own software package
-(this means the code for your project will be split across two repositories)</li>
+<li><p>Abstract project functions to their own software package
+(this means the code for your project will be split across two repositories)</p></li>
+<li><p>Address any feedback received in earlier milestones or during the peer review</p></li>
 </ul>
-<!--2022-23: feedback was addressed during M2 and M3
-2. Address any feedback received in earlier milestones
--->
 <h2 id="final-project-specifics">Final project specifics</h2>
 <h3 id="abstract-project-functions-to-their-own-software-package">Abstract project functions to their own software package</h3>
 <p>To further refine your project, you are going to split the code
 for your analysis into two version control repositories.
 One will be for your analysis,
 the other will be another separate repository,
-that will serve as a place to package up the functions you wrote in milestone 2.
+that will serve as a place to package up the functions you wrote in milestone 3.
 Decoupling these two code bases
 will allow for those functions to more easily be reused in future projects by
 you and others who might find them useful!</p>
 <p>Your new version control repository for your packaged functions should:</p>
 <ul>
-<li><p>be named the same as your group project repository, with the addition of <code>-pkg</code> at the end.</p>
-<ul>
-<li>For example if my report project is named <code>dsci-310-202223-group-10</code> my package repository will be named <code>dsci-310-202223-group-10-pkg</code>.</li>
-</ul></li>
-<li><p>be in the DSCI-310 organization: <a href="https://github.com/DSCI-310" class="uri">https://github.com/DSCI-310</a></p></li>
+<li><p>be given a name relevant to the functions it contains
+(just like the data science packages you know and love are).</p></li>
+<li><p>be in the DSCI-310-2024 organization: <a href="https://github.com/DSCI-310-2024" class="uri">https://github.com/DSCI-310-2024</a></p></li>
 <li><p>contain at least 3 or 4 useful functions that handle errors gracefully
 (you already wrote these - you need to now
 copy them from your analysis repository to the software package repository)</p></li>
@@ -2605,75 +2595,68 @@ and the <code>tests</code> directory files that holds the tests and the helper d
 <li>update your projects computational environment so that it contains your R (or Python) package.
 <em>Don’t forget to include the version when doing this!</em></li>
 </ul>
-<!--
-### 2. Address any feedback received in earlier milestones
-
-Revise your data analysis project to address feedback received
-from the DSCI 310 teaching team from past milestones.
-50% of your final grade for this milestone will be assessing 
-whether you have addressed this feedback to improve your project.
-
-To help us easily, and correctly, assess this, 
-please point us to where you have addressed the feedback received
-by replying in the issue thread where the feedback was given.
-You can point us to evidence of addressing it 
-by providing URLs to reference 
+<h3 id="address-any-feedback-received-in-earlier-milestones-and-during-peer-review">2. Address any feedback received in earlier milestones and during peer review</h3>
+<p>Revise your data analysis project to address feedback received
+from the DSCI 310 teaching team from past milestones,
+as well as feedback received from the peer review.
+50% of your final grade for this milestone will be assessing
+whether you have addressed this feedback to improve your project.</p>
+<p>To help us easily, and correctly, assess this,
+please create a GitHub issue in your analysis project’s GitHub repository
+with the title “Feedback addressed”.
+In this issue describe any improvements you made to the project based on feedback,
+and point to evidence of these improvements.
+You can point us to evidence of addressing it
+by providing URLs to reference
 specific lines of code, commit messages, pull requests, etc.
-Be sure to add some narration when sharing these URLs 
-so that it is easy for us to identify which changes to your work 
-addressed which pieces of feedback.
--->
-<h3 id="members-file"><code>MEMBERS</code> File</h3>
-<p>Create a file in the root part of your project called <code>MEMBERS</code> (no file extension or anything).
-This file contains the username of each of your teammates on their own line.
-E.g., the file contents should <em>just</em> look like this:</p>
-<pre><code>chendaniely
-ttimbers</code></pre>
-<p>Do not have any other extra information. We are using this file to do automation at the end.
-Do not put in any other extra information in here.</p>
-<h3 id="repository-ownership-transfer">Repository Ownership Transfer</h3>
-<p>When you are ready to submit your final project for grading
-you will need to transfer the ownership of your final project to the DSCI-310 organization.
-Please make sure the <code>MEMBERS</code> file is correct, otherwise you may loose access to your repository.</p>
-<p>You do this by going to the repository Settings &gt; General &gt; Danger Zone &gt; Transfer Owner &gt; Select DSCI-310</p>
-<p>Follow the instructions to finish the repository transfer.
-Your new Repository URL should look like <code>https://github.com/DSCI-310/XXXXXXXXXX</code></p>
-<p>All of your work for this class should now be under the DSCI-310 organization.</p>
+Be sure to add some narration when sharing these URLs
+so that it is easy for us to identify which changes to your work
+addressed which pieces of feedback.</p>
+<p>You will be graded on a sliding scale for this,
+the more improvements you make,
+the higher your grade for this part of the milestone will be.
+The improvements should be at least one per team member,
+and they should significantly improve the project.
+This minimum could earn at most 37.5/50.
+To earn more, you need to exceed these minimum improvements.</p>
 <h2 id="submission-instructions">Submission Instructions</h2>
-<p>You will submit four (4) URLs to Canvas in the provided text box for the final project:</p>
+<p>Just before you submit the milestone 4, create a release on your analysis project repository on GitHub and name it something like <code>3.0.0</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.</p>
+<p>Also create a release on your software package repository
+(do this manually if you are not using an automated tool for this
+in your continuous deployment).</p>
+<p>You will submit a PDF to Gradescope for milestone 4 that includes:</p>
 <ol type="1">
-<li>URL of your project’s GitHub.com repository (remember to transfer your repository to be marked)</li>
-<li>URL of a GitHub release of your project’s GitHub.com repository for this milestone.</li>
-<li>URL of your software package’s repository on GitHub.com</li>
-<li>Dockerhub URL of your project’s built image and environment</li>
+<li>the URL of your analysis project’s GitHub.com repository</li>
+<li>the URL of a GitHub release of your analysis project’s GitHub.com repository</li>
+<li>the URL to the “Feedback addressed” issue that outlines the feedback you have addressed</li>
+<li>the URL of your software package’s GitHub.com repository</li>
+<li>the URL of a GitHub release of your software package’s GitHub.com repository</li>
 </ol>
-<h3 id="creating-a-release-on-github.com">Creating a release on GitHub.com</h3>
-<p>Just before you submit the final project, create a release on your project repository on GitHub and name it something like <code>4.0.0</code> (<a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release">how to create a release</a>). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.</p>
 <h2 id="expectations">Expectations</h2>
 <ul>
-<li><strong>Everyone should contribute equally to all aspects of the project</strong>
+<li><p><strong>Everyone should contribute equally to all aspects of the project</strong>
 <strong>(e.g., code, writing, project management).</strong>
 <strong>This should be evidenced by a roughly equal number of commits,</strong>
-<strong>pull request reviews and participation in communication via GitHub issues.</strong></li>
-<li>Each group member should work in a
+<strong>pull request reviews and participation in communication via GitHub issues.</strong></p></li>
+<li><p>Each group member should work in a
 <a href="https://docs.github.com/en/get-started/quickstart/github-flow">GitHub flow workflow</a>;
 where they create branches for each feature or fix,
 which are reviewed and critiqued by at least one other teammate
-before the the pull request is accepted.</li>
-<li>You should be committing to git and pushing to GitHub.com every time you work on this project.</li>
-<li>Git commit messages should be meaningful. These will be marked.
-It’s OK if one or two are less meaningful, but most should be.</li>
-<li>Use GitHub issues to communicate to their team mate (as opposed to email or Slack).</li>
-<li>Your question, analysis and visualization should make sense. It doesn’t have to be complicated.</li>
-<li><strong>Your analysis should be correct, and run reproducibly given the instructions provided in the analysis repository README.</strong></li>
-<li><strong>Your package should work, and be able to be installed by following the instructions provided in the package repository README.</strong></li>
-<li>You should use proper grammar and full sentences in your README.
-Point form may occur, but should be less than 10% of your written documents.</li>
-<li>R code should follow the <a href="https://style.tidyverse.org/">tidyverse style guide</a>,
+before the the pull request is accepted.</p></li>
+<li><p>You should be committing to git and pushing to GitHub.com every time you work on this project.</p></li>
+<li><p>Git commit messages should be meaningful. These will be marked.
+It’s OK if one or two are less meaningful, but most should be.</p></li>
+<li><p>Use GitHub issues to communicate to their team mate (as opposed to email or Slack).</p></li>
+<li><p>Your question, analysis and visualization should make sense. It doesn’t have to be complicated.</p></li>
+<li><p><strong>Your analysis should be correct, and run reproducibly given the instructions provided in the README.</strong></p></li>
+<li><p>You should use proper grammar and full sentences in your README.
+Point form may occur, but should be less than 10% of your written documents.</p></li>
+<li><p>R code should follow the <a href="https://style.tidyverse.org/">tidyverse style guide</a>,
 and Python code should follow the
-<a href="https://black.readthedocs.io/en/stable/the_black_code_style/index.html">black style guide</a> for Python)</li>
+<a href="https://black.readthedocs.io/en/stable/the_black_code_style/index.html">black style guide</a> for Python)</p></li>
+<li><p>You should not have extraneous files in your repository that should be ignored.</p></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
