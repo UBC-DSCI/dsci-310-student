@@ -1,9 +1,0 @@
----
-title: "FAQ"
-description: Frequently asked questions about DSCI 310.
-output:
-  distill::distill_article:
-    toc: true
----
-
-Work in progress...
