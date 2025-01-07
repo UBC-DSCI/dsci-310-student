@@ -5,3 +5,8 @@
 docs/search.json
 .ipynb_checkpoints
 .virtual_documents
+
+.quarto
+_site
+
+/.quarto/

@@ -1,0 +1,62 @@
+---
+title: "Assessment schedule"
+descriptions: |
+    Course assessments for DSCI 310: Reproducible and trustworthy workflows for data science.
+---
+
+This course includes a substantial group project component.
+You will work in randomly assigned groups of four for the project milestones.
+There are also individual assignments
+that act as stepping stones to the project milestones.
+Given that collaboration is so important in data science,
+a portion of your final grade will be an assessment of the evidence you provide
+that you were an effective and productive team member.
+A combination of peer evaluation
+and GitHub history will be used to evaluate this.
+Your individual knowledge on the course materials
+(concepts and practical skills)
+will be evaluated on two summative assessments (midterm and final exam).
+
+Finally, this course is delivered in a blended format,
+with some pre-work (video watching or reading)
+expected to be done before each lecture.
+These will be provided in the course Canvas shell.
+Each in class lecture session will start with iClicker cloud
+questions to probe your understanding of the pre-lecture material
+and then we will work through demonstrations
+and exercises in class to build off of this.
+
+In general, assignments will be due 11:59 PM on Saturdays.
+However, in the final week of classes,
+all assignments need to be submitted by the final day of classes,
+thus we have two alternative due dates that week.
+
+```{r}
+df <- readr::read_csv("syllabus/assessment.csv")
+
+gt::gt(
+        df,
+        rowname_col = "Assessment"
+    ) |>
+    gt::fmt_date(
+        columns = "Due Date",
+        date_style = 30
+    ) |>
+    gt::tab_footnote(
+        "Assignments are due at 23:59 Vancouver time unless otherwise stated.",
+        locations = gt::cells_column_labels(columns = `Due Date`)
+    ) |>
+    gt::tab_footnote(
+        gt::md("These are summative assessments, you can learn more about them here: <https://www.cmu.edu/teaching/assessment/basics/formative-summative.html>"),
+        locations = gt::cells_stub(rows = c("Mid-term exam", "Final exam"))
+    ) |>
+    gt::tab_footnote(
+        gt::md("A higher final exam score can be used to replace a lower midterm exam score."),
+        locations = gt::cells_stub(rows = c("Mid-term exam", "Final exam"))
+    ) |>
+    gt::tab_footnote(
+        gt::md("**You must pass the final to pass the course.**"),
+        locations = gt::cells_stub(rows = c("Final exam"))
+    )
+
+```
