@@ -26,6 +26,7 @@ jobs:
         run: |
             install.packages("readr")
             install.packages("dt")
+            install.packages("rmarkdown")
         shell: Rscript {0}
 
       - name: Render and Publish
