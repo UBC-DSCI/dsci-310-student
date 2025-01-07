@@ -304,8 +304,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="configuring-git-user-info" class="level3">
 <h3 class="anchored" data-anchor-id="configuring-git-user-info">Configuring Git user info</h3>
 <p>Next, we need to configure Git by telling it your name and email. To do this, type the following into the terminal (replacing Jane Doe and janedoe@example.com, with your name and email that you used to sign up for GitHub, respectively):</p>
-<pre><code>git config --global user.name "Jane Doe"
-git config --global user.email janedoe@example.com</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Jane Doe"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email janedoe@example.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> To ensure that you haven’t made a typo in any of the above, you can view your global Git configurations by either opening the configuration file in a text editor (e.g.&nbsp;via the command <code>code ~/.gitconfig</code>) or by typing <code>git config --list --global</code>.</p>
 </blockquote>
@@ -351,32 +351,39 @@ VISUAL=$EDITOR  # Use the same value as for "EDITOR" in the line above</code></p
 <h2 class="anchored" data-anchor-id="python-conda-and-jupyterlab">Python, Conda, and JupyterLab</h2>
 <section id="python-and-conda" class="level3">
 <h3 class="anchored" data-anchor-id="python-and-conda">Python and Conda</h3>
-<p>In DSCI 310 we will be using Python and the <code>conda</code> package manager. To install Python and the <code>conda</code> package manager, we will use the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda platform (read more here)</a>, for which the <a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe">Python 3.x 64-bit version can be downloaded here</a>. After the download has finished, run the installer and accept the default configuration for all pages.</p>
+<p>In DSCI 310 we will be using Python and the <code>conda</code> package manager. To install Python and the <code>conda</code> package manager, we will use the <a href="https://github.com/conda-forge/miniforge">Miniforge platform (read more here)</a>.</p>
+<p>Select the appropriate link:</p>
+<p>You can find the Windows download links here: <a href="https://conda-forge.org/miniforge/" class="uri">https://conda-forge.org/miniforge/</a>. Make sure you use the <code>Miniforge3</code> installers, not the other ones listed. We will assume you downloaded the file into your <code>Downloads</code> folder.</p>
+<p>Once downloaded, run the installer.</p>
+<p>Use all the default options in the installer.</p>
+<p>The install location should look something like: <code>C:\Users\YOUR_USER_NAME\miniforge3</code></p>
 <blockquote class="blockquote">
-<p><strong>Note:</strong> Do <em>not</em> add miniconda to PATH. We will set this up later.</p>
+<p><strong>Note:</strong> Do <em>not</em> add miniforge to PATH. We will set this up later.</p>
 </blockquote>
-<p>After installation, open the Start Menu and search for the program called “Anaconda Prompt (miniconda3)”. When this opens you will see a prompt similar to <code>(base) C:\Users\your_name</code>. Type the following to check that your Python installation is working:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After installation, open the Start Menu and search for the program called “Miniforge Prompt”. When this opens you will see a prompt similar to <code>(base) C:\Users\your_name</code>. Type the following to check that your Python installation is working:</p>
+<pre><code>python --version</code></pre>
 <p>which should return Python 3.11.0 or greater:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.11.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Python 3.11.0</code></pre>
+<p>If not, run the following command in the Miniforge Prompt, Confirm that you are in the <code>(base)</code> environment. Then update the base python with:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install python=3.11</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="integrating-python-with-the-git-bash-terminal" class="level3">
 <h3 class="anchored" data-anchor-id="integrating-python-with-the-git-bash-terminal">Integrating Python with the Git Bash terminal</h3>
 <p>To avoid having to open the separate Anaconda Prompt every time we want to use Python, we can make it available from the (Git Bash) terminal, which is what we will be using most of the time. To set this up, open the “Anaconda Prompt (miniconda3)” again and type:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> init bash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will see that this modified a few configuration files, which makes <code>conda</code> visible to the terminal. Close all open terminal windows and launch a new one, you should now see that the prompt string has changed to include the word <code>(base)</code> as in the screenshot below:</p>
 <p><img src="resources/add_conda_env_to_ps1.png" class="img-fluid"></p>
 <p>If you type</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>you should now see the same output as above:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.11.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.11.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Let’s also check the version of the <code>conda</code> package manager. If you type</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>you should see something like this</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> 23.5.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> 23.5.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p><strong>Optional:</strong> One annoyance with our current terminal setup is that the word <code>(base)</code> is not on the same row as the rest of the prompt string (the part with <code>your_name@your_computer</code>. To fix this we can edit the <code>.bash_profile</code> configuration file to indicate that we do not want a newline at the beginning of the prompt string. Open up the configuration file using VS Code by typing the following command into a terminal:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="st">"/c/Program Files/Git/etc/profile.d/git-prompt.sh"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="st">"/c/Program Files/Git/etc/profile.d/git-prompt.sh"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Delete the line that reads the following (it should be line 13):</p>
 <pre><code>PS1="$PS1"'\n'       # new line</code></pre>
 <p>While we are in this file, let’s also remove the line that says <code>PS1="$PS1"'$MSYSTEM '          # show MSYSTEM</code> (line 17), to remove some clutter from the terminal.</p>
@@ -387,18 +394,14 @@ VISUAL=$EDITOR  # Use the same value as for "EDITOR" in the line above</code></p
 </section>
 <section id="installing-python-packages" class="level2">
 <h2 class="anchored" data-anchor-id="installing-python-packages">Installing Python packages</h2>
-<p><code>conda</code> installs Python packages from different online repositories which are called “channels”. A package needs to go through thorough testing before it is included in the default channel, which is good for stability, but also means that new versions will be delayed and fewer packages are available overall. There is a community-driven effort called the <a href="https://conda-forge.org/">conda-forge (read more here)</a>, which provides more up to date packages. To enable us to access the most up to date version of the Python packages we are going to use, we will add the more up to date channel. To add the conda-forge channel by typing the following in the terminal:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>conda</code> installs Python packages from different online repositories which are called “channels”. A package needs to go through thorough testing before it is included in the default channel, which is good for stability, but also means that new versions will be delayed and fewer packages are available overall. There is a community-driven effort called the <a href="https://conda-forge.org/">conda-forge (read more here)</a>, which provides more up to date packages. Conda-forge is already set up when we installed Miniforge3</p>
 <p>To install packages individually, we can now use the following command: <code>conda install &lt;package-name&gt;</code>. After running that command <code>conda</code> will show you the packages that will be downloaded, and you can press enter to proceed with the installation. If you want to answer <code>yes</code> by default and skip this confirmation step, you can replace <code>conda install</code> with <code>conda install -y</code>. Also note that we may occasionally need to install packages using <code>pip</code>, the standard Python package manager. The installation command is very similar to that of <code>conda</code>: <code>pip install &lt;package-name&gt;</code>.</p>
-<p>Let’s try this out by installing a package that makes conda faster and changing the config to use this package by default:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-libmamba-solver</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--set</span> solver libmamba</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the next session we will use <code>conda</code> to install some of the key packages we will use in DSCI 310.</p>
 </section>
 <section id="jupyterlab-setup" class="level2">
 <h2 class="anchored" data-anchor-id="jupyterlab-setup">JupyterLab setup</h2>
 <p><code>JupyterLab</code> is a coding environment that we will be using frequently throughout the course. The JupyterLab git extension facilitates using notebooks in JupyterLab together with Git &amp; GitHub. The spellchecker helps us correcting typos in our writing. Install them via the following commands:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyterlab jupyterlab-git jupyterlab-spellchecker</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyterlab jupyterlab-git jupyterlab-spellchecker</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To test that your JupyterLab installation is functional, you can type <code>jupyter lab</code> into a terminal, which should open a new tab in your default browser with the JupyterLab interface. To exit out of JupyterLab you can click <code>File -&gt; Shutdown</code>, or go to the terminal from which you launched JupyterLab and hold <code>Ctrl</code> while pressing <code>c</code> twice.</p>
 </section>
 <section id="r-irkernel-rtools-and-rstudio" class="level2">
@@ -408,24 +411,24 @@ VISUAL=$EDITOR  # Use the same value as for "EDITOR" in the line above</code></p
 <h3 class="anchored" data-anchor-id="r">R</h3>
 <p>Go to <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a> and download the latest version of R for Windows. Open the file and follow the installer instructions accepting the default configuration.</p>
 <p>After the installation is complete, we will add the R executables to the PATH variable in terminal so that you can use it without typing the full path to R each time Open a terminal and type:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Append the following lines to the file</p>
-<pre><code># Automatically expand the R version number
-R_DIR=(/c/Program\ Files/R/*/bin/x64)
-# Add R and Rscript to PATH
-export PATH="$R_DIR:$PATH" # double quote is important here</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Automatically expand the R version number</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="va">R_DIR</span><span class="op">=</span><span class="va">(</span>/c/Program\ Files/R/<span class="pp">*</span>/bin/x64<span class="va">)</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add R and Rscript to PATH</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$R_DIR</span><span class="st">:</span><span class="va">$PATH</span><span class="st">"</span> <span class="co"># double quote is important here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then save the file and exit VS Code. Now you can open a new terminal window and type</p>
-<pre><code>R --version</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which should return something like:</p>
-<pre><code>R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
-Copyright (C) 2022 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
-
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under the terms of the
-GNU General Public License versions 2 or 3.
-For more information about these matters see
-https://www.gnu.org/licenses/.</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> version 4.2.1 <span class="er">(</span><span class="ex">2022-06-23</span> ucrt<span class="kw">)</span> <span class="ex">--</span> <span class="st">"Funny-Looking Kid"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">2022</span> The R Foundation for Statistical Computing</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Platform:</span> x86_64-w64-mingw32/x64 <span class="er">(</span><span class="ex">64-bit</span><span class="kw">)</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> is free software and comes with ABSOLUTELY NO WARRANTY.</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ex">You</span> are welcome to redistribute it under the terms of the</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> General Public License versions 2 or 3.</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more information about these matters see</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="ex">https://www.gnu.org/licenses/.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p><strong>Note</strong>: Although it is possible to install R through conda, we highly recommend not doing so. In case you have already installed R using conda you can remove it by executing <code>conda uninstall r-base</code>.</p>
 </blockquote>
@@ -441,9 +444,9 @@ https://www.gnu.org/licenses/.</code></pre>
 <p>And type in <code>R_USER</code> as the “Variable name” and <code>C:\Users\username</code> as the “Variable value”, replacing <code>username</code> with your actual user name (if you don’t know your user name, look at the top of the screenshot above where it says “User variables for your_username”):</p>
 <p><img src="resources/new_user_var_values.png" class="img-fluid"></p>
 <p>Click “OK” on all of the three windows we opened above and you’re done! If you open the console in RStudio and also R from the Windows Terminal (open Windows Terminal, type <code>R</code>, and then press <code>enter</code>) and type the following in both:</p>
-<pre><code>.libPaths()</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>both applications should return the same values, and the first one should be a path inside your user directory e.g.</p>
-<pre><code>"C:/Users/florencia/R/win-library/4.2" "C:/Program Files/R/R-4.2.2/library"</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="st">"C:/Users/florencia/R/win-library/4.2"</span> <span class="st">"C:/Program Files/R/R-4.2.2/library"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If they don’t return the same paths, please try to setting up your environmental variable again and making sure that it is pointing to the correct folder.</p>
 <p><strong>Do not continue unless both R from terminal and R from RStudio return the same paths here or later parts of the installation will fail.</strong></p>
 <p>Now we are going to change RStudio’s <em>Insert Pipe</em> shortcut so that it inserts the <a href="https://blog.rstudio.com/2021/06/09/rstudio-v1-4-update-whats-new/">new native pipe operator <code>|&gt;</code></a>. Go to <code>Tools &gt; Global Options &gt; Code &gt; Editing</code> and tick the following option:</p>
@@ -456,48 +459,48 @@ https://www.gnu.org/licenses/.</code></pre>
 <h3 class="anchored" data-anchor-id="rtools">Rtools</h3>
 <p>Windows users will also need to install Rtools, which will allow you to use external libraries. Go to <a href="http://cran.r-project.org/bin/windows/Rtools/" class="uri">http://cran.r-project.org/bin/windows/Rtools/</a> and download the latest version (e.g., rtools40v2-x86_64.exe). After the download has finished, run the installer with the default configuration. <strong>Do not</strong> follow the Rtools’ website instructions for “Putting Rtools on the PATH”. RStudio will put Rtools on the PATH automatically when it is needed.</p>
 <p>To test if your installation was successful, open RStudio (restart it if you already have it open) and type the following into the Console:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If the <code>jsonlite</code> package installs without errors, Rtools is setup correctly.</p>
 </section>
 <section id="irkernel" class="level3">
 <h3 class="anchored" data-anchor-id="irkernel">IRkernel</h3>
 <p>The <code>IRkernel</code> package is needed to make R work in Jupyter notebooks. To enable this kernel in the notebooks, install by pasting the following command into the <strong>RStudio</strong> Console:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'IRkernel'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'IRkernel'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Next, open the <strong>Windows terminal</strong> and type the following (you can’t use RStudio for this step since it doesn’t honor <code>$PATH</code> changes)</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-e</span> <span class="st">"IRkernel::installspec()"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-e</span> <span class="st">"IRkernel::installspec()"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To see if you were successful, try running JupyterLab and check if you have a working R kernel. To launch the JupyterLab type the following in the terminal:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>A browser should have launched and you should see a page that looks like the screenshot below. Now click on “R” notebook (circled in red on the screenshot below) to launch an JupyterLab with an R kernel.</p>
 <p><img src="resources/jupyterlab_r_kernel.png" class="img-fluid"></p>
 <p>Sometimes a kernel loads, but doesn’t work as expected. To test whether your installation was done correctly now type <code>library(tidyverse)</code> in the code cell and click on the run button to run the cell. If your R kernel works you should see something like the image below:</p>
 <p><img src="resources/jupyterlab_r_kernel2.png" class="img-fluid"></p>
 <p>To improve the experience of using R in JupyterLab, we will add keyboard shortcuts for inserting the common R operators <code>&lt;-</code> and <code>|&gt;</code>. Go to <code>Settings -&gt; Settings Editor</code>. Then click <code>JSON Settings Editor</code> in the top right corner and click on <code>Keyboard Shortcuts</code> in the navigation panel to the left. You will see two panels, the right-most panel allows you to perform advanced modification of keyboards shortcuts in JupyterLab and it already contains quite a few shortcuts. We’re going to add two more shortcuts, by pasting a text snippet just before the first existing shortcut. Go ahead and create a new line just after the line that says <code>"shortcuts": [</code> and paste the following:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"apputils:run-first-enabled"</span><span class="fu">,</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"selector"</span><span class="fu">:</span> <span class="st">"body"</span><span class="fu">,</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"keys"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Alt -"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"commands"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"console:replace-selection"</span><span class="ot">,</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"fileeditor:replace-selection"</span><span class="ot">,</span></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"notebook:replace-selection"</span><span class="ot">,</span></span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"text"</span><span class="fu">:</span> <span class="st">"&lt;- "</span><span class="fu">}</span></span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="er">,</span></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"apputils:run-first-enabled"</span><span class="fu">,</span></span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"selector"</span><span class="fu">:</span> <span class="st">"body"</span><span class="fu">,</span></span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"keys"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Accel Shift M"</span><span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"commands"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"console:replace-selection"</span><span class="ot">,</span></span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"fileeditor:replace-selection"</span><span class="ot">,</span></span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"notebook:replace-selection"</span><span class="ot">,</span></span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"text"</span><span class="fu">:</span> <span class="st">"|&gt; "</span><span class="fu">}</span></span>
-<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
-<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="er">,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"apputils:run-first-enabled"</span><span class="fu">,</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"selector"</span><span class="fu">:</span> <span class="st">"body"</span><span class="fu">,</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"keys"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Alt -"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"commands"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"console:replace-selection"</span><span class="ot">,</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"fileeditor:replace-selection"</span><span class="ot">,</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"notebook:replace-selection"</span><span class="ot">,</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"text"</span><span class="fu">:</span> <span class="st">"&lt;- "</span><span class="fu">}</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="er">,</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"apputils:run-first-enabled"</span><span class="fu">,</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"selector"</span><span class="fu">:</span> <span class="st">"body"</span><span class="fu">,</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"keys"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Accel Shift M"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"commands"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"console:replace-selection"</span><span class="ot">,</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"fileeditor:replace-selection"</span><span class="ot">,</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"notebook:replace-selection"</span><span class="ot">,</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span><span class="dt">"text"</span><span class="fu">:</span> <span class="st">"|&gt; "</span><span class="fu">}</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="er">,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After you have pasted this text, hit the small floppy disk in the top right (or <code>Ctrl</code> + <code>s</code>) to save the settings. Here is a screenshot of what it looks like with the settings saved:</p>
 <p><img src="https://ubc-mds.github.io/resources_pages/imgs/r-jl-text-shortcuts.png" class="img-fluid"></p>
 <p>To check that the extension is working, open JupyterLab, launch an R notebook, and try inserting the operators by pressing <code>Alt</code> + <code>-</code> or <code>Shift</code> + <code>Ctrl</code> + <code>m</code>, respectively. You could add any arbitrary text insertion command the same way, but this is all that is required for this course.</p>
@@ -509,9 +512,9 @@ https://www.gnu.org/licenses/.</code></pre>
 <p>The <a href="https://quarto.org/docs/tools/rstudio.html">RStudio version that you have downloaded</a> is already equipped with the last version of Quarto. You can check this by opening a new document in <code>File -&gt; New File -&gt; Quarto Document</code>.</p>
 <p>Quarto can be used outside RStudio as well, this is why we are going to install Quarto CLI. Please, download the <a href="https://quarto.org/docs/get-started/">last version of Quarto CLI</a> for Windows.</p>
 <p>After the installation finishes, close all the terminals you may have open. Then, open a new one and try running this command:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If the installation was successful you will read the output:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.3.450</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">1.3.450</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> Pay attention that due to the Windows settings suggested in this installation you will always have to write <code>quarto.cmd</code> instead of <code>quarto</code> to run Quarto commands. Read more <a href="https://community.rstudio.com/t/bash-quarto-command-not-found/144187/3">here</a>.</p>
 </blockquote>
@@ -520,11 +523,11 @@ https://www.gnu.org/licenses/.</code></pre>
 <h2 class="anchored" data-anchor-id="latex">LaTeX</h2>
 <p>We will install the lightest possible version of LaTeX and its necessary packages as possible so that we can render Jupyter notebooks and R Markdown documents to html and PDF. If you have previously installed LaTeX, please uninstall it before proceeding with these instructions.</p>
 <p>First, open RStudio and run the following commands to install the <code>tinytex</code> package and setup <code>tinytex</code>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that you might see two error messages regarding lua during the installation, you can safely ignore these, the installation will complete successfully after clicking “OK”.</p>
 <p>In order for Git Bash to be able to find the location of TinyTex, you will need to <a href="https://support.microsoft.com/en-us/windows/sign-out-of-windows-346925bb-024c-cd86-7a53-9066242a9ed3">sign out of Windows</a> and back in again. After doing that, you can check that the installation worked by opening a terminal and asking for the version of latex:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">latex</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">latex</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should see something like this if you were successful:</p>
 <pre><code>pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022)
 kpathsea version 6.3.4
@@ -540,34 +543,34 @@ Compiled with zlib 1.2.11; using zlib 1.2.11
 Compiled with xpdf version 4.03</code></pre>
 <p>The above is all we need to have LaTeX work with R Markdown documents, however for Jupyter we need to add several more packages.</p>
 <p>When you sign back in, install the additional LaTeX packages needed for Jupyter by pasting the following into the new terminal instance and press enter: by pasting the following:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.bat</span> install eurosym <span class="dt">\</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  adjustbox <span class="dt">\</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  caption <span class="dt">\</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  collectbox <span class="dt">\</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  enumitem <span class="dt">\</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  environ <span class="dt">\</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  fp <span class="dt">\</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  jknapltx <span class="dt">\</span></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  ms <span class="dt">\</span></span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  parskip <span class="dt">\</span></span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  pdfcol <span class="dt">\</span></span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>  pgf <span class="dt">\</span></span>
-<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>  rsfs <span class="dt">\</span></span>
-<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>  soul <span class="dt">\</span></span>
-<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>  tcolorbox <span class="dt">\</span></span>
-<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>  titling <span class="dt">\</span></span>
-<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>  trimspaces <span class="dt">\</span></span>
-<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>  ucs <span class="dt">\</span></span>
-<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>  ulem <span class="dt">\</span></span>
-<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>  upquote <span class="dt">\</span></span>
-<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>  lwarp <span class="dt">\</span></span>
-<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>  oberdiek</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tlmgr.bat</span> install eurosym <span class="dt">\</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  adjustbox <span class="dt">\</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  caption <span class="dt">\</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  collectbox <span class="dt">\</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  enumitem <span class="dt">\</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  environ <span class="dt">\</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  fp <span class="dt">\</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  jknapltx <span class="dt">\</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  ms <span class="dt">\</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  parskip <span class="dt">\</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  pdfcol <span class="dt">\</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>  pgf <span class="dt">\</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>  rsfs <span class="dt">\</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>  soul <span class="dt">\</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>  tcolorbox <span class="dt">\</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>  titling <span class="dt">\</span></span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>  trimspaces <span class="dt">\</span></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>  ucs <span class="dt">\</span></span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>  ulem <span class="dt">\</span></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>  upquote <span class="dt">\</span></span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>  lwarp <span class="dt">\</span></span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>  oberdiek</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To test that your latex installation is working with jupyter notebooks, launch <code>jupyter lab</code> from a terminal and open either a new notebook or the same one you used to test IRkernel above. Go to <code>File -&gt; Save and Export Notebook as... -&gt; PDF</code>. If the PDF file is created, your LaTeX environment is set up correctly.</p>
 <section id="webpdf-export" class="level3">
 <h3 class="anchored" data-anchor-id="webpdf-export">WebPDF export</h3>
 <p>Jupyter recently added another way to export notebooks to PDF which does not require Latex and makes the exported PDF look similar to notebooks exported to HTML. This requires the <code>pyppeteer</code> package, which we can install by typing the following into Windows Terminal.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">"nbconvert[webpdf]"</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">playwright</span> install chromium</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">"nbconvert[webpdf]"</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">playwright</span> install chromium</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now try exporting a notebook by clicking <code>File -&gt; Save and Export Notebook As... -&gt; WebPDF</code>.</p>
 </section>
 </section>
@@ -580,7 +583,7 @@ Compiled with xpdf version 4.03</code></pre>
 <p><strong>Note:</strong> It is advisable to show file extensions by default in the Windows File Explorer. Click the <code>View</code> tab and check the box next to <code>File name extensions</code>.</p>
 </blockquote>
 <p>Next we need to add make’s <code>bin</code> folder to our PATH so that we can use he command <code>make</code> from the terminal (like we did with R earlier). Open the bash configuration file with VS Code again by pasting this into a terminal:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bash_profile</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And replace the section that reads:</p>
 <pre><code># Add R and Rscript to path
 export PATH="${R_DIR}:$PATH"</code></pre>
@@ -588,14 +591,14 @@ export PATH="${R_DIR}:$PATH"</code></pre>
 <pre><code># Add R, Rscript, and Make to path
 export PATH="/c/Users/${USERNAME}/make-4.3/bin:${R_DIR}:$PATH"</code></pre>
 <p>Then save the file and exit VS Code. Launch a new terminal and run</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which should return something like</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> Make 4.3</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Built</span> for Windows32</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">1988-2020</span> Free Software Foundation, Inc.</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="ex">License</span> GPLv3+: GNU GPL version 3 or later <span class="op">&lt;</span>http://gnu.org/licenses/gpl.html<span class="op">&gt;</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is free software: you are free to change and redistribute it.</span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="ex">There</span> is NO WARRANTY, to the extent permitted by law.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">GNU</span> Make 4.3</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Built</span> for Windows32</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Copyright</span> <span class="er">(</span><span class="ex">C</span><span class="kw">)</span> <span class="ex">1988-2020</span> Free Software Foundation, Inc.</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="ex">License</span> GPLv3+: GNU GPL version 3 or later <span class="op">&lt;</span>http://gnu.org/licenses/gpl.html<span class="op">&gt;</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> is free software: you are free to change and redistribute it.</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="ex">There</span> is NO WARRANTY, to the extent permitted by law.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="docker" class="level2">
 <h2 class="anchored" data-anchor-id="docker">Docker</h2>
@@ -605,32 +608,32 @@ export PATH="/c/Users/${USERNAME}/make-4.3/bin:${R_DIR}:$PATH"</code></pre>
 <p><strong>Note:</strong> If you see a warning saying that your WSL installation is incomplete, you can click the link to install the kernel update and then restart per the instructions in the warning message.</p>
 </blockquote>
 <p>After installation (Docker will make you sign out to finish installing), launch a terminal and type</p>
-<pre><code>docker run hello-world</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which should output something like this:</p>
-<pre><code>Unable to find image 'hello-world:latest' locally
-latest: Pulling from library/hello-world
-0e03bdcc26d7: Pulling fs layer
-0e03bdcc26d7: Verifying Checksum
-0e03bdcc26d7: Download complete
-0e03bdcc26d7: Pull complete
-Digest: sha256:49a1c8800c94df04e9658809b006fd8a686cab8028d33cfba2cc049724254202
-Status: Downloaded newer image for hello-world:latest
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Unable</span> to find image <span class="st">'hello-world:latest'</span> locally</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="ex">latest:</span> Pulling from library/hello-world</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="ex">0e03bdcc26d7:</span> Pulling fs layer</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="ex">0e03bdcc26d7:</span> Verifying Checksum</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="ex">0e03bdcc26d7:</span> Download complete</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="ex">0e03bdcc26d7:</span> Pull complete</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Digest:</span> sha256:49a1c8800c94df04e9658809b006fd8a686cab8028d33cfba2cc049724254202</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Status:</span> Downloaded newer image for hello-world:latest</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> from Docker!</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> message shows that your installation appears to be working correctly.</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> generate this message, Docker took the following steps:</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a> <span class="ex">1.</span> The Docker client contacted the Docker daemon.</span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a> <span class="ex">2.</span> The Docker daemon pulled the <span class="st">"hello-world"</span> image from the Docker Hub.</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">(</span><span class="ex">amd64</span><span class="kw">)</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a> <span class="ex">3.</span> The Docker daemon created a new container from that image which runs the</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">executable</span> that produces the output you are currently reading.</span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a> <span class="ex">4.</span> The Docker daemon streamed that output to the Docker client, which sent it</span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">to</span> your terminal.</span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> try something more ambitious, you can run an Ubuntu container with:</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a> <span class="ex">$</span> docker run <span class="at">-it</span> ubuntu bash</span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a><span class="ex">Share</span> images, automate workflows, and more with a free Docker ID:</span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a> <span class="ex">https://hub.docker.com/</span></span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more examples and ideas, visit:</span>
+<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a> <span class="ex">https://docs.docker.com/get-started/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="vs-code-extensions-optional" class="level2">
 <h2 class="anchored" data-anchor-id="vs-code-extensions-optional">VS Code extensions (Optional)</h2>
@@ -652,63 +655,63 @@ For more examples and ideas, visit:
 <section id="post-installation-notes" class="level2">
 <h2 class="anchored" data-anchor-id="post-installation-notes">Post-installation notes</h2>
 <p>You have completed the installation instructions, well done 🙌! We have created a script to help you check that your installation was successful, and to provide instructions for how you can troubleshoot any potential issues. To run this script, please execute the following command from your terminal.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> <span class="at">-Ss</span> https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/check_setup.sh<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> <span class="at">-Ss</span> https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main/src/check_setup.sh<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The output from running the script will look something like this:</p>
-<pre><code># DSCI 310 setup check 2024.1
-
-If a program or package is marked as MISSING,
-this means that you are missing the required version of that program or package.
-Either it is not installed at all or the wrong version is installed.
-The required version is indicated with a number and an asterisk (*),
-e.g. 4.* means that all versions starting with 4 are accepted (4.0.1, 4.2.5, etc).
-
-You can run the following commands to find out which version
-of a program or package is installed (if any):
-
-name_of_program --version  # For system programs
-conda list  # For Python packages
-R -q -e "as.data.frame(installed.packages()[,3])"  # For R packages
-
-
-Checking program and package versions...
-
-## Operating system
-ProductName:            macOS
-ProductVersion:         13.4
-BuildVersion:           22F66
-
-## System programs
-OK        rstudio 2023.12.0+369
-OK        R 4.3.2 (2023-10-31) -- "Eye Holes"
-OK        python 3.11.6
-OK        conda 23
-OK        bash 3.2.57(1)-release (arm64-apple-darwin22)
-OK        git 2.39.2 (Apple Git-143)
-OK        make 3.81
-OK        latex 3.141592653-2.6-1.40.25 (TeX Live 2023)
-OK        tlmgr 5:21 +0200)
-OK        docker 24.0.6, build ed223bc
-OK        code 1.85.0
-
-## Python packages
-OK        nbconvert-core=7.8.0
-OK        playwright=1.40.0
-OK        jupyterlab=4.0.6
-OK        jupyterlab-git=0.41.0
-OK        jupyterlab-spellchecker=0.8.4
-OK        jupyterlab PDF-generation was successful.
-OK        jupyterlab WebPDF-generation was successful.
-OK        jupyterlab HTML-generation was successful.
-
-## R packages
-OK        IRkernel=1.3.2
-OK        tinytex=0.46
-OK        rmarkdown PDF-generation was successful.
-OK        rmarkdown HTML-generation was successful.
-
-The above output has been saved to the file /Users/timberst/Documents/dsci-310/dsci-310-student/check-setup-310.log
-together with system configuration details and any detailed error messages about PDF and HTML generation.
-You can open this folder in your file browser by typing `open .` (without the surrounding backticks).</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DSCI 310 setup check 2024.1</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="ex">If</span> a program or package is marked as MISSING,</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="ex">this</span> means that you are missing the required version of that program or package.</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Either</span> it is not installed at all or the wrong version is installed.</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> required version is indicated with a number and an asterisk <span class="er">(</span><span class="ex">*</span><span class="kw">)</span><span class="ex">,</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="ex">e.g.</span> 4.<span class="pp">*</span> means that all versions starting with 4 are accepted <span class="er">(</span><span class="ex">4.0.1,</span> 4.2.5, etc<span class="kw">)</span><span class="bu">.</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="ex">You</span> can run the following commands to find out which version</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="ex">of</span> a program or package is installed <span class="er">(</span><span class="cf">if</span> <span class="ex">any</span><span class="kw">)</span><span class="bu">:</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="ex">name_of_program</span> <span class="at">--version</span>  <span class="co"># For system programs</span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list  <span class="co"># For Python packages</span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-q</span> <span class="at">-e</span> <span class="st">"as.data.frame(installed.packages()[,3])"</span>  <span class="co"># For R packages</span></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="ex">Checking</span> program and package versions...</span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a><span class="co">## Operating system</span></span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a><span class="ex">ProductName:</span>            macOS</span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a><span class="ex">ProductVersion:</span>         13.4</span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a><span class="ex">BuildVersion:</span>           22F66</span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a><span class="co">## System programs</span></span>
+<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        rstudio 2023.12.0+369</span>
+<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        R 4.3.2 <span class="er">(</span><span class="ex">2023-10-31</span><span class="kw">)</span> <span class="ex">--</span> <span class="st">"Eye Holes"</span></span>
+<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        python 3.11.6</span>
+<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        conda 23</span>
+<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        bash 3.2.57<span class="er">(</span><span class="ex">1</span><span class="kw">)</span><span class="ex">-release</span> <span class="er">(</span><span class="ex">arm64-apple-darwin22</span><span class="kw">)</span></span>
+<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        git 2.39.2 <span class="er">(</span><span class="ex">Apple</span> Git-143<span class="kw">)</span></span>
+<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        make 3.81</span>
+<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        latex 3.141592653-2.6-1.40.25 <span class="er">(</span><span class="ex">TeX</span> Live 2023<span class="kw">)</span></span>
+<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        tlmgr 5:21 +0200<span class="er">)</span></span>
+<span id="cb51-34"><a href="#cb51-34" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        docker 24.0.6, build ed223bc</span>
+<span id="cb51-35"><a href="#cb51-35" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        code 1.85.0</span>
+<span id="cb51-36"><a href="#cb51-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-37"><a href="#cb51-37" aria-hidden="true" tabindex="-1"></a><span class="co">## Python packages</span></span>
+<span id="cb51-38"><a href="#cb51-38" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        nbconvert-core=7.8.0</span>
+<span id="cb51-39"><a href="#cb51-39" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        playwright=1.40.0</span>
+<span id="cb51-40"><a href="#cb51-40" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        jupyterlab=4.0.6</span>
+<span id="cb51-41"><a href="#cb51-41" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        jupyterlab-git=0.41.0</span>
+<span id="cb51-42"><a href="#cb51-42" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        jupyterlab-spellchecker=0.8.4</span>
+<span id="cb51-43"><a href="#cb51-43" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        jupyterlab PDF-generation was successful.</span>
+<span id="cb51-44"><a href="#cb51-44" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        jupyterlab WebPDF-generation was successful.</span>
+<span id="cb51-45"><a href="#cb51-45" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        jupyterlab HTML-generation was successful.</span>
+<span id="cb51-46"><a href="#cb51-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-47"><a href="#cb51-47" aria-hidden="true" tabindex="-1"></a><span class="co">## R packages</span></span>
+<span id="cb51-48"><a href="#cb51-48" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        IRkernel=1.3.2</span>
+<span id="cb51-49"><a href="#cb51-49" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        tinytex=0.46</span>
+<span id="cb51-50"><a href="#cb51-50" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        rmarkdown PDF-generation was successful.</span>
+<span id="cb51-51"><a href="#cb51-51" aria-hidden="true" tabindex="-1"></a><span class="ex">OK</span>        rmarkdown HTML-generation was successful.</span>
+<span id="cb51-52"><a href="#cb51-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-53"><a href="#cb51-53" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> above output has been saved to the file /Users/timberst/Documents/dsci-310/dsci-310-student/check-setup-310.log</span>
+<span id="cb51-54"><a href="#cb51-54" aria-hidden="true" tabindex="-1"></a><span class="ex">together</span> with system configuration details and any detailed error messages about PDF and HTML generation.</span>
+<span id="cb51-55"><a href="#cb51-55" aria-hidden="true" tabindex="-1"></a><span class="ex">You</span> can open this folder in your file browser by typing <span class="kw">`</span><span class="ex">open</span> .<span class="kw">`</span> <span class="er">(</span><span class="ex">without</span> the surrounding backticks<span class="kw">)</span><span class="bu">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>As you can see at the end of the output, a log file is saved in your current directory. We might ask you to upload this file if we need to troubleshoot your installation, so that we can help you more effectively. If any of your packages are marked as “MISSING” you will need to figure out what is wrong and possibly reinstall them. Once all packages are marked as “OK” we will ask you to submit this log file, so that we can confirm that your installation was successful. Details on where to submit will be provided later.</p>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> In general you should be careful running scripts unless they come from a trusted source as in this case (just like how you should be careful when downloading and installing programs on your computer).</p>
