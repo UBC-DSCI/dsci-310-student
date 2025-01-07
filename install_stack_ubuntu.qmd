@@ -78,20 +78,20 @@ Some of the Git commands we will use are only available since Git 2.23,
 so if your Git is older than this version,
 we ask you to update it using the following commands:
 
-```
+```bash
 sudo apt update
 sudo apt install git
 ```
 
 You can check your git version with the following command:
 
-```
+```bash
 git --version
 ```
 
 you should see something like this if you were successful:
 
-```
+```bash
 git version 2.34.1
 ```
 
@@ -117,7 +117,7 @@ git config --global user.email janedoe@example.com
 To make programs run from the terminal (such as `git`) use VS Code by default,
 we will modify the bash configuration file `~/.bashrc`. First, open it using VS Code:
 
-```
+```bash
 code ~/.bashrc
 ```
 
@@ -127,7 +127,7 @@ code ~/.bashrc
 
 Append the following lines:
 
-```
+```bash
 # Set the default editor for programs launch from terminal
 EDITOR="code --wait"
 VISUAL=$EDITOR  # Use the same value as for "EDITOR" in the line above
@@ -154,35 +154,29 @@ git config --global core.editor "code --wait"
 
 ### Python and Conda
 
-In DSCI 310 we will be using Python and the `conda` package manager.
-To install Python and the `conda` package manager,
-we will use the [Miniconda platform (read more here)](https://docs.conda.io/en/latest/miniconda.html),
-for which the [Python 3.x 64-bit version can be downloaded here](https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh).
+We will be using Python for a large part of the program, and `conda` as our Python package manager. To install Python and the `conda` package manager, we will use the [Miniforge platform (read more here)](https://github.com/conda-forge/miniforge).
 
-Once the download is finished, open Terminal and execute the following commands:
+Select the appropriate link:
+
+You can find the Mac ARM and Intel download links here: <https://conda-forge.org/miniforge/>.
+Make sure you use the `Miniforge3` installers, not the other ones listed.
+We will assume you downloaded the file into your `Downloads` folder.
+
+Once downloaded, open up a terminal and run the following command
 
 ```bash
-bash path/to/file
+bash ${HOME}/Downloads/Miniforge3.sh -b -p "${HOME}/miniforge3"
 ```
 
-> **Note:** Most often this file is downloaded to the `Downloads` directory,
-> and thus the command will look like this:
->
->```bash
->bash Downloads/Miniconda3-latest-Linux-x86_64.sh
->```
+After installation run the following commands
 
-The instructions for the installation will then appear:
+```bash
+source "${HOME}/miniforge3/etc/profile.d/conda.sh"
+conda activate
+conda init
+```
 
-1. Press Enter.
-2. Once the licence agreement shows, you can press space scroll down, or press `q` to skip reading it.
-3. Type `yes` and press enter to accept the licence agreement.
-4. Press enter to accept the default installation location.
-5. Type `yes` and press enter to instruct the installer to run `conda init`, which makes `conda` available from the terminal/shell.
-
-After installation, restart the terminal. If the installation was successful,
-you will see `(base)` prepending to your prompt string.
-To confirm that `conda` is working, you can ask it which version was installed:
+After installation, **restart** the terminal. If the installation was successful, you will see `(base)` prepending to your prompt string. To confirm that `conda` is working, you can ask it which version was installed:
 
 ```bash
 conda --version
@@ -190,9 +184,11 @@ conda --version
 
 which should return something like this:
 
-```bash
+```
 conda 23.5.2
 ```
+
+> **Note:** If you see `zsh: command not found: conda`, see the section on [Bash](#bash-shell){:target="_self"} above to set your default Terminal shell to Bash as opposed to Zsh.
 
 Next, type the following to ask for the version of Python:
 
@@ -200,10 +196,10 @@ Next, type the following to ask for the version of Python:
 python --version
 ```
 
-which should return Python 3.11.0 or greater:
+Make sure it returns Python 3.11.0 or greater:
 
 ```
-Python 3.11.0
+Python 3.11.4
 ```
 
 
@@ -215,13 +211,7 @@ which is good for stability,
 but also means that new versions will be delayed and fewer packages are available overall.
 There is a community-driven effort called the [conda-forge (read more here)](https://conda-forge.org/),
 which provides more up to date packages.
-To enable us to access the most up to date version of the Python packages we are going to use,
-we will add the more up to date channel.
-To add the conda-forge channel by typing the following in the terminal:
-
-```bash
-conda config --add channels conda-forge
-```
+Conda-forge is already set up when we installed Miniforge3
 
 To install packages individually,
 we can now use the following command:
@@ -231,16 +221,7 @@ After running that command
 and you can press enter to proceed with the installation.
 If you want to answer `yes` by default and skip this confirmation step,
 you can replace `conda install` with `conda install -y`.
-Also note that we may occasionally need to install packages using `pip`,
-the standard Python package manager.
-The installation command is very similar to that of `conda`: `pip install <package-name>`.
-Let's try this out by installing a package that makes conda faster
-and changing the config to use this package by default:
-
-```bash
-conda install conda-libmamba-solver
-conda config --set solver libmamba
-```
+Also note that we may occasionally need to install packages using `pip`, the standard Python package manager. The installation command is very similar to that of `conda`: `pip install <package-name>`.
 
 In the next session
 we will use `conda` to install
@@ -278,24 +259,24 @@ To obtain the latest R packages,
 we need to add a new repository which is maintained directly by the r-project.
 To do this, first add the key for this repository by typing the following:
 
-```bash
+```
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 ```
 
 Then add the URL to the repository:
 
-```bash
+```
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 ```
 
 Next, install `r-base` and `r-base-dev` (useful for compiling R packages from source):
 
-```bash
+```
 sudo apt install r-base r-base-dev
 ```
 
 After installation, type the following in a new terminal window:
-```bash
+```
 R --version
 ```
 
@@ -313,11 +294,9 @@ For more information about these matters see
 https://www.gnu.org/licenses/.
 ```
 
-> **Note:** [See this page for additoinal instructions if you run into troubles while installing R](https://cloud.r-project.org/bin/linux/ubuntu/).
+> **Note:** [See this page for additional instructions if you run into troubles while installing R](https://cloud.r-project.org/bin/linux/ubuntu/).
 
-> **Note:** Although it is possible to install R through conda,
-> we highly recommend not doing so. In case you have already installed R using
-> conda you can remove it by executing `conda uninstall r-base`.
+> **Note:** Although it is possible to install R through conda, we highly recommend not doing so. In case you have already installed R using conda you can remove it by executing `conda uninstall r-base`.
 
 ### RStudio
 
@@ -475,13 +454,13 @@ it is important to **log out and in again for TinyTex to work properly**
 Once you log back in,
 try running the following in a terminal:
 
-```
+```bash
 latex --version
 ```
 
 You should see something like this if you were successful:
 
-```
+```bash
 pdfTeX 3.14159265-2.6-1.40.25 (TeX Live 2023)
 kpathsea version 6.3.2
 Copyright 2020 Han The Thanh (pdfTeX) et al.
@@ -500,7 +479,7 @@ The above is all we need to have LaTeX work with R Markdown documents, however f
 To install the additional LaTeX packages needed for Jupyter
 paste the following into the new terminal instance and press enter:
 
-```
+```bash
 tlmgr install eurosym \
   adjustbox \
   caption \
@@ -547,8 +526,6 @@ playwright install chromium
 
 Now you can try exporting by going to
 `File -> Save and Export Notebook As... -> WebPDF`.
-
-## Docker
 
 ## Docker
 

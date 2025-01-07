@@ -174,7 +174,7 @@ To do this, type the following into the terminal
 (replacing Jane Doe and janedoe@example.com, with your name and email that
 you used to sign up for GitHub, respectively):
 
-```
+```bash
 git config --global user.name "Jane Doe"
 git config --global user.email janedoe@example.com
 ```
@@ -260,25 +260,40 @@ Now Git Bash should be opened automatically each time you open a new terminal in
 
 In DSCI 310 we will be using Python and the `conda` package manager.
 To install Python and the `conda` package manager,
-we will use the [Miniconda platform (read more here)](https://docs.conda.io/en/latest/miniconda.html),
-for which the [Python 3.x 64-bit version can be downloaded here](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe).
-After the download has finished, run the installer and accept the default configuration for all pages.
+we will use the [Miniforge platform (read more here)](https://github.com/conda-forge/miniforge).
 
-> **Note:** Do *not* add miniconda to PATH. We will set this up later.
+Select the appropriate link:
 
-After installation,
-open the Start Menu and search for the program called "Anaconda Prompt (miniconda3)".
-When this opens you will see a prompt similar to `(base) C:\Users\your_name`.
-Type the following to check that your Python installation is working:
+You can find the Windows download links here: <https://conda-forge.org/miniforge/>.
+Make sure you use the `Miniforge3` installers, not the other ones listed.
+We will assume you downloaded the file into your `Downloads` folder.
 
-```bash
+Once downloaded, run the installer.
+
+Use all the default options in the installer.
+
+The install location should look something like: `C:\Users\YOUR_USER_NAME\miniforge3`
+
+> **Note:** Do *not* add miniforge to PATH. We will set this up later.
+
+After installation, open the Start Menu and search for the program called "Miniforge Prompt". When this opens you will see a prompt similar to `(base) C:\Users\your_name`. Type the following to check that your Python installation is working:
+
+```
 python --version
 ```
 
 which should return Python 3.11.0 or greater:
 
-```bash
+```
 Python 3.11.0
+```
+
+If not, run the following command in the Miniforge Prompt,
+Confirm that you are in the `(base)` environment.
+Then update the base python with:
+
+```bash
+conda install python=3.11
 ```
 
 ### Integrating Python with the Git Bash terminal
@@ -356,13 +371,7 @@ which is good for stability,
 but also means that new versions will be delayed and fewer packages are available overall.
 There is a community-driven effort called the [conda-forge (read more here)](https://conda-forge.org/),
 which provides more up to date packages.
-To enable us to access the most up to date version of the Python packages we are going to use,
-we will add the more up to date channel.
-To add the conda-forge channel by typing the following in the terminal:
-
-```bash
-conda config --add channels conda-forge
-```
+Conda-forge is already set up when we installed Miniforge3
 
 To install packages individually,
 we can now use the following command:
@@ -372,18 +381,7 @@ After running that command
 and you can press enter to proceed with the installation.
 If you want to answer `yes` by default and skip this confirmation step,
 you can replace `conda install` with `conda install -y`.
-Also note that we may occasionally need to install packages using `pip`,
-the standard Python package manager.
-The installation command is very similar to that of `conda`: `pip install <package-name>`.
-
-
-Let's try this out by installing a package that makes conda faster
-and changing the config to use this package by default:
-
-```bash
-conda install conda-libmamba-solver
-conda config --set solver libmamba
-```
+Also note that we may occasionally need to install packages using `pip`, the standard Python package manager. The installation command is very similar to that of `conda`: `pip install <package-name>`.
 
 In the next session
 we will use `conda` to install
@@ -429,7 +427,7 @@ code ~/.bash_profile
 
 Append the following lines to the file
 
-```
+```bash
 # Automatically expand the R version number
 R_DIR=(/c/Program\ Files/R/*/bin/x64)
 # Add R and Rscript to PATH
@@ -439,13 +437,13 @@ export PATH="$R_DIR:$PATH" # double quote is important here
 Then save the file and exit VS Code.
 Now you can open a new terminal window and type
 
-```
+```bash
 R --version
 ```
 
 which should return something like:
 
-```
+```bash
 R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
@@ -491,13 +489,13 @@ Click "OK" on all of the three windows we opened above and you're done!
 If you open the console in RStudio and also R from the Windows Terminal
 (open Windows Terminal, type `R`, and then press `enter`) and type the following in both:
 
-```
+```R
 .libPaths()
 ```
 
 both applications should return the same values, and the first one should be a path inside your user directory e.g.
 
-```
+```R
 "C:/Users/florencia/R/win-library/4.2" "C:/Program Files/R/R-4.2.2/library"
 ```
 
@@ -820,13 +818,13 @@ After signing-up and signing into the Docker Store, go [here](https://store.dock
 
 After installation (Docker will make you sign out to finish installing), launch a terminal and type
 
-```
+```bash
 docker run hello-world
 ```
 
 which should output something like this:
 
-```
+```bash
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 0e03bdcc26d7: Pulling fs layer
@@ -887,7 +885,7 @@ bash <(curl -Ss https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main
 
 The output from running the script will look something like this:
 
-````
+````bash
 # DSCI 310 setup check 2024.1
 
 If a program or package is marked as MISSING,
