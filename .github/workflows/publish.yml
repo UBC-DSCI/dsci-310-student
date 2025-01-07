@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
             install.packages("readr")
-            install.packages("dt")
+            install.packages("gt")
             install.packages("rmarkdown")
         shell: Rscript {0}
 
