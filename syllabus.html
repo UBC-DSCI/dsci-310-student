@@ -1,0 +1,2887 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.5">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Course syllabus for DSCI 310: Reproducible and trustworthy workflows for data science.">
+
+<title>Syllabus – DSCI 310</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ff4371ef257df69894857e99c6ad0d06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">DSCI 310</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./syllabus.html" aria-current="page"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./assessments.html"> 
+<span class="menu-text">Assessments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./computer-setup.html"> 
+<span class="menu-text">Computer Setup</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./coc.html"> 
+<span class="menu-text">Code of Conduct</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#time-and-place" id="toc-time-and-place" class="nav-link active" data-scroll-target="#time-and-place">Time and place</a></li>
+  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course description</a></li>
+  <li><a href="#textbook" id="toc-textbook" class="nav-link" data-scroll-target="#textbook">Textbook</a></li>
+  <li><a href="#hardware-software" id="toc-hardware-software" class="nav-link" data-scroll-target="#hardware-software">Hardware &amp; software</a></li>
+  <li><a href="#course-level-learning-outcomes" id="toc-course-level-learning-outcomes" class="nav-link" data-scroll-target="#course-level-learning-outcomes">Course-level learning outcomes</a></li>
+  <li><a href="#teaching-team" id="toc-teaching-team" class="nav-link" data-scroll-target="#teaching-team">Teaching team</a></li>
+  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a>
+  <ul class="collapse">
+  <li><a href="#course-breakdown" id="toc-course-breakdown" class="nav-link" data-scroll-target="#course-breakdown">Course breakdown</a></li>
+  </ul></li>
+  <li><a href="#schedule-at-a-glance" id="toc-schedule-at-a-glance" class="nav-link" data-scroll-target="#schedule-at-a-glance">Schedule at a glance</a>
+  <ul class="collapse">
+  <li><a href="#assessment-schedule" id="toc-assessment-schedule" class="nav-link" data-scroll-target="#assessment-schedule">Assessment schedule</a></li>
+  </ul></li>
+  <li><a href="#policies" id="toc-policies" class="nav-link" data-scroll-target="#policies">Policies</a>
+  <ul class="collapse">
+  <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of Conduct</a></li>
+  <li><a href="#late-registration" id="toc-late-registration" class="nav-link" data-scroll-target="#late-registration">Late registration</a></li>
+  <li><a href="#late-assignments-mid-term-exam-absence" id="toc-late-assignments-mid-term-exam-absence" class="nav-link" data-scroll-target="#late-assignments-mid-term-exam-absence">Late assignments / mid-term exam absence</a></li>
+  <li><a href="#re-grading" id="toc-re-grading" class="nav-link" data-scroll-target="#re-grading">Re-grading</a></li>
+  <li><a href="#missed-final-exam" id="toc-missed-final-exam" class="nav-link" data-scroll-target="#missed-final-exam">Missed final exam</a></li>
+  <li><a href="#academic-concession-policy" id="toc-academic-concession-policy" class="nav-link" data-scroll-target="#academic-concession-policy">Academic concession policy</a></li>
+  <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic integrity</a></li>
+  <li><a href="#plagiarism" id="toc-plagiarism" class="nav-link" data-scroll-target="#plagiarism">Plagiarism</a></li>
+  </ul></li>
+  <li><a href="#attribution" id="toc-attribution" class="nav-link" data-scroll-target="#attribution">Attribution</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Syllabus</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>Course syllabus for DSCI 310: Reproducible and trustworthy workflows for data science.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="time-and-place" class="level2">
+<h2 class="anchored" data-anchor-id="time-and-place">Time and place</h2>
+<ul>
+<li>See UBC Calendar</li>
+</ul>
+</section>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course description</h2>
+<p>Data science methods to automate the running and testing of code and analytic reports, manage data analysis software dependencies, package and deploy software for data analysis, and collaborate with others using version control.</p>
+<p><strong>Pre-reqs:</strong> DSCI 100 and either (a) one of CPSC 203, CPSC 210, CPEN 221 or (b) one of MATH 210, ECON 323 and one of CPSC 107, CPSC 110.</p>
+<p><em>See the Faculty of Science Credit Exclusion Lists: <a href="https://www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414">www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414</a></em></p>
+<p><strong>Long version:</strong> Data Science skills and tools are increasingly in demand across a large variety of disciplines. DSCI 310 aims to further students’ existing data science knowledge with reproducible and trustworthy workflows in the areas of creating and deploying data analysis, reports, and software. Particular focus will be placed on teaching the skills and tools currently used in academic research and industry settings.</p>
+<p>Without deliberate and conscious effort towards project organization, tool choice, and workflows, complex and large data science projects can quickly grow out-of-hand and become irreproducible and untrustworthy. This course will focus on reproducible and trustworthy workflows for writing computer scripts, analytic reports and data analysis pipelines, as well as packaging, automated testing and deployment of software written for data analysis. An emphasis is also placed on how to collaborate effectively with others using version control tools, such as Git and GitHub. Such workflows act to mitigate chaos and maximize transparency, reproducibility, and productivity.</p>
+<p>While the course will be based on the use of the two leading languages in data science, Python and R, and related current tools (conda, Docker, Git, GitHub, Jupyter, etc.), the concepts and skills taught in the course aim to be discipline and tool agnostic, focussing on the importance of reproducible and trustworthy workflows for data analysis and the implications of failing to implement these when performing a data analysis.</p>
+<p>Students who have completed this course will be able to complete complex data analysis projects with minimal technical debt – meaning that others can transparently follow how the analysis was done, reproduce the analysis for themselves if desired, and easily pickup on, and further extend the analysis in new areas. Strategies for collaboration on data science projects will also be emphasized.</p>
+</section>
+<section id="textbook" class="level2">
+<h2 class="anchored" data-anchor-id="textbook">Textbook</h2>
+<p>We will be using a collection of resources available online. These include:</p>
+<ul>
+<li><a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science">DSCI 310 course notes</a></li>
+<li><a href="https://r-pkgs.org/">R packages</a></li>
+<li><a href="https://py-pkgs.org/">Python packages</a></li>
+</ul>
+</section>
+<section id="hardware-software" class="level2">
+<h2 class="anchored" data-anchor-id="hardware-software">Hardware &amp; software</h2>
+<p>Students are required to bring a laptop to both lectures and tutorials. Students who do not own a laptop, chromebook, or tablet may be able to <a href="https://services.library.ubc.ca/computers-technology/technology-borrowing/">loan a laptop from the UBC library</a>.</p>
+</section>
+<section id="course-level-learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="course-level-learning-outcomes">Course-level learning outcomes</h2>
+<p>By the end of the course, students will be able to:</p>
+<ol type="1">
+<li>Defend and justify the importance of creating data science workflows that are reproducible and trustworthy and the elements that go into such a workflow (e.g., writing clear, robust, accurate and reproducible code, managing and sharing compute environments, defined collaboration strategies, etc).</li>
+<li>Constructively criticize the workflows and data analysis of others in regards to its reproducibility and trustworthiness.</li>
+<li>Develop a data science project (including code and non-code documents such as reports) that uses reproducible and trustworthy workflows</li>
+<li>Demonstrate how to effectively share and collaborate on data science projects and software by creating robust code packages, using reproducible compute environments, and leveraging collaborative development tools.</li>
+<li>Defend and justify the benefit of, and employ automated testing regimes, continuous integration and continuous deployment for managing and maintaining data science projects and packages.</li>
+<li>Demonstrate strong communication, teamwork, and collaborative skills by working on a significant data science project with peers throughout the course.</li>
+</ol>
+</section>
+<section id="teaching-team" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-team">Teaching team</h2>
+<p><em>Note that your TAs are students too; they may have class right before their office hours, and they may run a few minutes late. Please be patient!</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="jbidzzccad" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jbidzzccad table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jbidzzccad thead, #jbidzzccad tbody, #jbidzzccad tfoot, #jbidzzccad tr, #jbidzzccad td, #jbidzzccad th {
+  border-style: none;
+}
+
+#jbidzzccad p {
+  margin: 0;
+  padding: 0;
+}
+
+#jbidzzccad .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jbidzzccad .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jbidzzccad .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jbidzzccad .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jbidzzccad .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jbidzzccad .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jbidzzccad .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jbidzzccad .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jbidzzccad .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jbidzzccad .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jbidzzccad .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jbidzzccad .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jbidzzccad .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jbidzzccad .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jbidzzccad .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jbidzzccad .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jbidzzccad .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jbidzzccad .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jbidzzccad .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jbidzzccad .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jbidzzccad .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jbidzzccad .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jbidzzccad .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jbidzzccad .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jbidzzccad .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jbidzzccad .gt_left {
+  text-align: left;
+}
+
+#jbidzzccad .gt_center {
+  text-align: center;
+}
+
+#jbidzzccad .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jbidzzccad .gt_font_normal {
+  font-weight: normal;
+}
+
+#jbidzzccad .gt_font_bold {
+  font-weight: bold;
+}
+
+#jbidzzccad .gt_font_italic {
+  font-style: italic;
+}
+
+#jbidzzccad .gt_super {
+  font-size: 65%;
+}
+
+#jbidzzccad .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jbidzzccad .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jbidzzccad .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jbidzzccad .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jbidzzccad .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jbidzzccad .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jbidzzccad .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jbidzzccad .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jbidzzccad div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Position" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Position</th>
+<th id="Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Name</th>
+<th id="Email" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Email</th>
+<th id="Office-Hours" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Office Hours</th>
+<th id="Location" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Location</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Position">Instructor</td>
+<td class="gt_row gt_left" headers="Name">Daniel Chen</td>
+<td class="gt_row gt_left" headers="Email">See Canvas</td>
+<td class="gt_row gt_left" headers="Office Hours">See Canvas</td>
+<td class="gt_row gt_left" headers="Location">See Canvas</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Position">TA</td>
+<td class="gt_row gt_left" headers="Name">NA</td>
+<td class="gt_row gt_left" headers="Email">See Canvas</td>
+<td class="gt_row gt_left" headers="Office Hours">See Canvas</td>
+<td class="gt_row gt_left" headers="Location">See Canvas</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Position">TA</td>
+<td class="gt_row gt_left" headers="Name">NA</td>
+<td class="gt_row gt_left" headers="Email">See Canvas</td>
+<td class="gt_row gt_left" headers="Office Hours">See Canvas</td>
+<td class="gt_row gt_left" headers="Location">See Canvas</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="assessment" class="level2">
+<h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
+<section id="course-breakdown" class="level3">
+<h3 class="anchored" data-anchor-id="course-breakdown">Course breakdown</h3>
+<p>This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).</p>
+<p>Finally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="pumnxfffau" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pumnxfffau table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#pumnxfffau thead, #pumnxfffau tbody, #pumnxfffau tfoot, #pumnxfffau tr, #pumnxfffau td, #pumnxfffau th {
+  border-style: none;
+}
+
+#pumnxfffau p {
+  margin: 0;
+  padding: 0;
+}
+
+#pumnxfffau .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#pumnxfffau .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#pumnxfffau .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#pumnxfffau .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#pumnxfffau .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#pumnxfffau .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#pumnxfffau .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#pumnxfffau .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#pumnxfffau .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#pumnxfffau .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#pumnxfffau .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pumnxfffau .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#pumnxfffau .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#pumnxfffau .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#pumnxfffau .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pumnxfffau .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#pumnxfffau .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#pumnxfffau .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#pumnxfffau .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pumnxfffau .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#pumnxfffau .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pumnxfffau .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#pumnxfffau .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pumnxfffau .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pumnxfffau .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pumnxfffau .gt_left {
+  text-align: left;
+}
+
+#pumnxfffau .gt_center {
+  text-align: center;
+}
+
+#pumnxfffau .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pumnxfffau .gt_font_normal {
+  font-weight: normal;
+}
+
+#pumnxfffau .gt_font_bold {
+  font-weight: bold;
+}
+
+#pumnxfffau .gt_font_italic {
+  font-style: italic;
+}
+
+#pumnxfffau .gt_super {
+  font-size: 65%;
+}
+
+#pumnxfffau .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#pumnxfffau .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#pumnxfffau .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#pumnxfffau .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#pumnxfffau .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#pumnxfffau .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#pumnxfffau .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#pumnxfffau .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#pumnxfffau div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="Grade-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Grade (%)</th>
+<th id="Learning-Objectives-Addressed" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Learning Objectives Addressed</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">iClicker cloud<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></td>
+<td class="gt_row gt_right" headers="stub_1_1 Grade (%)">1</td>
+<td class="gt_row gt_left" headers="stub_1_1 Learning Objectives Addressed">1 – 6</td>
+</tr>
+<tr class="even">
+<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Individual assignments</td>
+<td class="gt_row gt_right" headers="stub_1_2 Grade (%)">1</td>
+<td class="gt_row gt_left" headers="stub_1_2 Learning Objectives Addressed">1, 2, 4, 5</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Project milestone 1</td>
+<td class="gt_row gt_right" headers="stub_1_3 Grade (%)">5</td>
+<td class="gt_row gt_left" headers="stub_1_3 Learning Objectives Addressed">3, 6</td>
+</tr>
+<tr class="even">
+<td id="stub_1_4" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Project milestone 2</td>
+<td class="gt_row gt_right" headers="stub_1_4 Grade (%)">5</td>
+<td class="gt_row gt_left" headers="stub_1_4 Learning Objectives Addressed">3, 4, 6</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Project milestone 3</td>
+<td class="gt_row gt_right" headers="stub_1_5 Grade (%)">5</td>
+<td class="gt_row gt_left" headers="stub_1_5 Learning Objectives Addressed">3, 4, 5, 6</td>
+</tr>
+<tr class="even">
+<td id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Final project</td>
+<td class="gt_row gt_right" headers="stub_1_6 Grade (%)">5</td>
+<td class="gt_row gt_left" headers="stub_1_6 Learning Objectives Addressed">3, 4, 5, 6</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Peer review</td>
+<td class="gt_row gt_right" headers="stub_1_7 Grade (%)">2.5</td>
+<td class="gt_row gt_left" headers="stub_1_7 Learning Objectives Addressed">2</td>
+</tr>
+<tr class="even">
+<td id="stub_1_8" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Teamwork</td>
+<td class="gt_row gt_right" headers="stub_1_8 Grade (%)">5</td>
+<td class="gt_row gt_left" headers="stub_1_8 Learning Objectives Addressed">6</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_9" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">GitHub username quiz</td>
+<td class="gt_row gt_right" headers="stub_1_9 Grade (%)">0.5</td>
+<td class="gt_row gt_left" headers="stub_1_9 Learning Objectives Addressed">NA</td>
+</tr>
+<tr class="even">
+<td id="stub_1_10" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Midterm exam<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span></td>
+<td class="gt_row gt_right" headers="stub_1_10 Grade (%)">20</td>
+<td class="gt_row gt_left" headers="stub_1_10 Learning Objectives Addressed">1, 2, part of 4</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_11" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Final exam<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span></td>
+<td class="gt_row gt_right" headers="stub_1_11 Grade (%)">50</td>
+<td class="gt_row gt_left" headers="stub_1_11 Learning Objectives Addressed">1, 2, 4, 5</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> We will be using iClicker cloud in the lectures regularly. You will be graded on both participation and performance (50% each). The three lowest iClicker marks will not be counted.</td>
+</tr>
+<tr class="even">
+<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span> A higher final exam grade can be used to replace a lower midterm exam grade.</td>
+</tr>
+<tr class="odd">
+<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span> <strong>You must pass the final exam to pass the course.</strong></td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="schedule-at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="schedule-at-a-glance">Schedule at a glance</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="nkacakdigx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nkacakdigx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#nkacakdigx thead, #nkacakdigx tbody, #nkacakdigx tfoot, #nkacakdigx tr, #nkacakdigx td, #nkacakdigx th {
+  border-style: none;
+}
+
+#nkacakdigx p {
+  margin: 0;
+  padding: 0;
+}
+
+#nkacakdigx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#nkacakdigx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#nkacakdigx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#nkacakdigx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nkacakdigx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nkacakdigx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nkacakdigx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nkacakdigx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nkacakdigx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#nkacakdigx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#nkacakdigx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nkacakdigx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nkacakdigx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nkacakdigx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nkacakdigx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nkacakdigx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#nkacakdigx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#nkacakdigx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#nkacakdigx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nkacakdigx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#nkacakdigx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nkacakdigx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nkacakdigx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nkacakdigx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nkacakdigx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nkacakdigx .gt_left {
+  text-align: left;
+}
+
+#nkacakdigx .gt_center {
+  text-align: center;
+}
+
+#nkacakdigx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nkacakdigx .gt_font_normal {
+  font-weight: normal;
+}
+
+#nkacakdigx .gt_font_bold {
+  font-weight: bold;
+}
+
+#nkacakdigx .gt_font_italic {
+  font-style: italic;
+}
+
+#nkacakdigx .gt_super {
+  font-size: 65%;
+}
+
+#nkacakdigx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#nkacakdigx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#nkacakdigx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#nkacakdigx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#nkacakdigx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#nkacakdigx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#nkacakdigx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#nkacakdigx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#nkacakdigx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Week" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Week</th>
+<th id="Date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Date</th>
+<th id="Topic" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Topic</th>
+<th id="Assessments-due" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Assessments due</th>
+<th id="Notes" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Notes</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Week">1</td>
+<td class="gt_row gt_right" headers="Date">Jan 7</td>
+<td class="gt_row gt_left" headers="Topic">How do reproducible and trustworthy workflows impact data analysis?</td>
+<td class="gt_row gt_left" headers="Assessments due">NA</td>
+<td class="gt_row gt_left" headers="Notes">Start working on your installation instructions</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Week">2</td>
+<td class="gt_row gt_right" headers="Date">Jan 14</td>
+<td class="gt_row gt_left" headers="Topic">Version control for transparency and collaboration</td>
+<td class="gt_row gt_left" headers="Assessments due">Individual assignment 1 &amp; GitHub username quiz</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Week">3</td>
+<td class="gt_row gt_right" headers="Date">Jan 21</td>
+<td class="gt_row gt_left" headers="Topic">Integrated development environments, filenames and data science project organization</td>
+<td class="gt_row gt_left" headers="Assessments due">Individual assignment 2</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Week">4</td>
+<td class="gt_row gt_right" headers="Date">Jan 28</td>
+<td class="gt_row gt_left" headers="Topic">Managing dependencies using virtual environments</td>
+<td class="gt_row gt_left" headers="Assessments due">NA</td>
+<td class="gt_row gt_left" headers="Notes">Team assignment for group projects &amp; drafting of team work contract</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Week">5</td>
+<td class="gt_row gt_right" headers="Date">Feb 4</td>
+<td class="gt_row gt_left" headers="Topic">Managing dependencies using containerization</td>
+<td class="gt_row gt_left" headers="Assessments due">Individual assignment 3</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Week">6</td>
+<td class="gt_row gt_right" headers="Date">Feb 11</td>
+<td class="gt_row gt_left" headers="Topic">Non-interactive scripts and reproducible reports</td>
+<td class="gt_row gt_left" headers="Assessments due">NA</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Week">6</td>
+<td class="gt_row gt_right" headers="Date">Feb 14</td>
+<td class="gt_row gt_left" headers="Topic">Mid-term exam</td>
+<td class="gt_row gt_left" headers="Assessments due">NA</td>
+<td class="gt_row gt_left" headers="Notes">You will need to have git, github, and docker working for the exam</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Week">7</td>
+<td class="gt_row gt_right" headers="Date">Feb 18</td>
+<td class="gt_row gt_left" headers="Topic">Reading Break</td>
+<td class="gt_row gt_left" headers="Assessments due">NA</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Week">8</td>
+<td class="gt_row gt_right" headers="Date">Feb 25</td>
+<td class="gt_row gt_left" headers="Topic">Data analysis pipelines</td>
+<td class="gt_row gt_left" headers="Assessments due">Milestone 1</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Week">9</td>
+<td class="gt_row gt_right" headers="Date">Mar 4</td>
+<td class="gt_row gt_left" headers="Topic">Introduction to testing code for data science</td>
+<td class="gt_row gt_left" headers="Assessments due">Individual assignment 4</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Week">10</td>
+<td class="gt_row gt_right" headers="Date">Mar 11</td>
+<td class="gt_row gt_left" headers="Topic">Advanced version control workflows</td>
+<td class="gt_row gt_left" headers="Assessments due">Milestone 2</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Week">11</td>
+<td class="gt_row gt_right" headers="Date">Mar 18</td>
+<td class="gt_row gt_left" headers="Topic">Packaging and project work session</td>
+<td class="gt_row gt_left" headers="Assessments due">NA</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Week">12</td>
+<td class="gt_row gt_right" headers="Date">Mar 25</td>
+<td class="gt_row gt_left" headers="Topic">Project work session &amp; documenting code</td>
+<td class="gt_row gt_left" headers="Assessments due">Milestone 3</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Week">13</td>
+<td class="gt_row gt_right" headers="Date">Apr 1</td>
+<td class="gt_row gt_left" headers="Topic">Automated testing and continuous integration</td>
+<td class="gt_row gt_left" headers="Assessments due">Individual assignment 5 &amp; Peer review</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Week">14</td>
+<td class="gt_row gt_right" headers="Date">Apr 8</td>
+<td class="gt_row gt_left" headers="Topic">Deploying and publishing packages, copyright and licenses</td>
+<td class="gt_row gt_left" headers="Assessments due">Final project &amp; Team work reflection</td>
+<td class="gt_row gt_left" headers="Notes">NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<section id="assessment-schedule" class="level3">
+<h3 class="anchored" data-anchor-id="assessment-schedule">Assessment schedule</h3>
+<p>In general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="mzrqkqohnq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mzrqkqohnq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#mzrqkqohnq thead, #mzrqkqohnq tbody, #mzrqkqohnq tfoot, #mzrqkqohnq tr, #mzrqkqohnq td, #mzrqkqohnq th {
+  border-style: none;
+}
+
+#mzrqkqohnq p {
+  margin: 0;
+  padding: 0;
+}
+
+#mzrqkqohnq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#mzrqkqohnq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#mzrqkqohnq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#mzrqkqohnq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#mzrqkqohnq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#mzrqkqohnq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#mzrqkqohnq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#mzrqkqohnq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#mzrqkqohnq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#mzrqkqohnq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#mzrqkqohnq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#mzrqkqohnq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#mzrqkqohnq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#mzrqkqohnq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#mzrqkqohnq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mzrqkqohnq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#mzrqkqohnq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#mzrqkqohnq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#mzrqkqohnq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mzrqkqohnq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#mzrqkqohnq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mzrqkqohnq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#mzrqkqohnq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mzrqkqohnq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mzrqkqohnq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mzrqkqohnq .gt_left {
+  text-align: left;
+}
+
+#mzrqkqohnq .gt_center {
+  text-align: center;
+}
+
+#mzrqkqohnq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#mzrqkqohnq .gt_font_normal {
+  font-weight: normal;
+}
+
+#mzrqkqohnq .gt_font_bold {
+  font-weight: bold;
+}
+
+#mzrqkqohnq .gt_font_italic {
+  font-style: italic;
+}
+
+#mzrqkqohnq .gt_super {
+  font-size: 65%;
+}
+
+#mzrqkqohnq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#mzrqkqohnq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#mzrqkqohnq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#mzrqkqohnq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#mzrqkqohnq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#mzrqkqohnq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#mzrqkqohnq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#mzrqkqohnq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#mzrqkqohnq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
+<th id="Due-Date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Due Date<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="Due-Week" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Due Week</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Individual assignment 1</td>
+<td class="gt_row gt_left" headers="stub_1_1 Description">Setting up your computer</td>
+<td class="gt_row gt_right" headers="stub_1_1 Due Date">Jan 18</td>
+<td class="gt_row gt_right" headers="stub_1_1 Due Week">2</td>
+</tr>
+<tr class="even">
+<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">GitHub username quiz</td>
+<td class="gt_row gt_left" headers="stub_1_2 Description">Create a GitHub account (if you haven’t already) and let us know what it is</td>
+<td class="gt_row gt_right" headers="stub_1_2 Due Date">Jan 18</td>
+<td class="gt_row gt_right" headers="stub_1_2 Due Week">2</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Individual assignment 2</td>
+<td class="gt_row gt_left" headers="stub_1_3 Description">Version control practice</td>
+<td class="gt_row gt_right" headers="stub_1_3 Due Date">Jan 25</td>
+<td class="gt_row gt_right" headers="stub_1_3 Due Week">3</td>
+</tr>
+<tr class="even">
+<td id="stub_1_4" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Individual assignment 3</td>
+<td class="gt_row gt_left" headers="stub_1_4 Description">Dockerfile practice</td>
+<td class="gt_row gt_right" headers="stub_1_4 Due Date">Feb 8</td>
+<td class="gt_row gt_right" headers="stub_1_4 Due Week">5</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Mid-term exam<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2,3</sup></span></td>
+<td class="gt_row gt_left" headers="stub_1_5 Description">The midterm is a summative assessment</td>
+<td class="gt_row gt_right" headers="stub_1_5 Due Date">Feb 14</td>
+<td class="gt_row gt_right" headers="stub_1_5 Due Week">6</td>
+</tr>
+<tr class="even">
+<td id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Milestone 1</td>
+<td class="gt_row gt_left" headers="stub_1_6 Description">Question, data &amp; rough draft of analysis in one monolithic literate code document, reproducible environment</td>
+<td class="gt_row gt_right" headers="stub_1_6 Due Date">Mar 1</td>
+<td class="gt_row gt_right" headers="stub_1_6 Due Week">8</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Individual assignment 4</td>
+<td class="gt_row gt_left" headers="stub_1_7 Description">Reproducible reports practice</td>
+<td class="gt_row gt_right" headers="stub_1_7 Due Date">Mar 8</td>
+<td class="gt_row gt_right" headers="stub_1_7 Due Week">9</td>
+</tr>
+<tr class="even">
+<td id="stub_1_8" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Milestone 2</td>
+<td class="gt_row gt_left" headers="stub_1_8 Description">literate code document broken into scripts and a report &amp; data analysis pipeline to stitch everything together</td>
+<td class="gt_row gt_right" headers="stub_1_8 Due Date">Mar 15</td>
+<td class="gt_row gt_right" headers="stub_1_8 Due Week">10</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_9" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Milestone 3</td>
+<td class="gt_row gt_left" headers="stub_1_9 Description">functions abstracted to a file/module &amp; tests, function documentation</td>
+<td class="gt_row gt_right" headers="stub_1_9 Due Date">Mar 29</td>
+<td class="gt_row gt_right" headers="stub_1_9 Due Week">12</td>
+</tr>
+<tr class="even">
+<td id="stub_1_10" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Peer review</td>
+<td class="gt_row gt_left" headers="stub_1_10 Description">review of another group's project</td>
+<td class="gt_row gt_right" headers="stub_1_10 Due Date">Apr 5</td>
+<td class="gt_row gt_right" headers="stub_1_10 Due Week">13</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_11" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Individual assignment 5</td>
+<td class="gt_row gt_left" headers="stub_1_11 Description">Packaging practice</td>
+<td class="gt_row gt_right" headers="stub_1_11 Due Date">Apr 5</td>
+<td class="gt_row gt_right" headers="stub_1_11 Due Week">13</td>
+</tr>
+<tr class="even">
+<td id="stub_1_12" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Final project</td>
+<td class="gt_row gt_left" headers="stub_1_12 Description">package &amp; CI (the full monty package - including docs)</td>
+<td class="gt_row gt_right" headers="stub_1_12 Due Date">Apr 11</td>
+<td class="gt_row gt_right" headers="stub_1_12 Due Week">14</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_13" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Team work</td>
+<td class="gt_row gt_left" headers="stub_1_13 Description">Reflection of how the group worked together, as well as individual performance</td>
+<td class="gt_row gt_right" headers="stub_1_13 Due Date">Apr 11</td>
+<td class="gt_row gt_right" headers="stub_1_13 Due Week">14</td>
+</tr>
+<tr class="even">
+<td id="stub_1_14" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Final exam<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2,3,4</sup></span></td>
+<td class="gt_row gt_left" headers="stub_1_14 Description">The Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.</td>
+<td class="gt_row gt_right" headers="stub_1_14 Due Date">NA</td>
+<td class="gt_row gt_right" headers="stub_1_14 Due Week">NA</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Assignments are due at 23:59 Vancouver time unless otherwise stated.</td>
+</tr>
+<tr class="even">
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span> These are summative assessments, you can learn more about them here: <a href="https://www.cmu.edu/teaching/assessment/basics/formative-summative.html">https://www.cmu.edu/teaching/assessment/basics/formative-summative.html</a></td>
+</tr>
+<tr class="odd">
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>3</sup></span> A higher final exam score can be used to replace a lower midterm exam score.</td>
+</tr>
+<tr class="even">
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>4</sup></span> <strong>You must pass the final to pass the course.</strong></td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="policies" class="level2">
+<h2 class="anchored" data-anchor-id="policies">Policies</h2>
+<section id="code-of-conduct" class="level3">
+<h3 class="anchored" data-anchor-id="code-of-conduct">Code of Conduct</h3>
+<p>All participants in our course and communications are expected to show respect and courtesy to others. To creating a friendly and respectful place for learning, teaching and contributing, you are expected to read and follow the <a href="https://ubc-dsci.github.io/dsci-310-student/coc.html">DSCI 310 Code of Conduct</a>.</p>
+</section>
+<section id="late-registration" class="level3">
+<h3 class="anchored" data-anchor-id="late-registration">Late registration</h3>
+<p>Students who register for the class late have 1 week from their registration date on Canvas to complete all prior assignments.</p>
+</section>
+<section id="late-assignments-mid-term-exam-absence" class="level3">
+<h3 class="anchored" data-anchor-id="late-assignments-mid-term-exam-absence">Late assignments / mid-term exam absence</h3>
+<p>Students <strong>must be present</strong> at the invigilation venue (in class, on Zoom, examination centre, etc) to take the mid-term exam; otherwise they will be considered to have missed the mid-term exam and will be assigned a grade of zero.</p>
+<p>Students who will miss the mid-term exam <strong>must provide a self-declaration prior to the mid-term exam</strong> and make arrangements (e.g., schedule an oral make-up mid-term exam) with the Instructor. Failing to present a declaration within a reasonable timeframe before the mid-term exam will result in a grade of zero.</p>
+<p>A late submission is defined as any work submitted after the deadline. For a late submission, the student will receive a 75% scaling of their grade for the first occurrence, 50% scaling of their grade for the second occurrence, and will receive a grade of 0 for subsequent occurrences.</p>
+<p>Students who miss an assignment or quiz can request an academic concession. From the <a href="https://senate.ubc.ca/sites/senate.ubc.ca/files/downloads/20190515_V_135_Academic_Concession-Approved.pdf">UBC Senate policy on academic concession</a>, grounds for academic concession can be illness, conflicting responsibilities, or compassionate grounds. Examples of compassionate grounds, from the above policy, include “a traumatic event experienced by the student, a family member, or a close friend; an act of sexual assault or other sexual misconduct experienced by the student, a family member, or a close friend; a death in the family or of a close friend.”</p>
+<p>To request an academic concession, students should immediately email a completed and signed <a href="https://github.com/UBC-MDS/UBC-MDS.github.io/blob/master/img/Template%20-%20In-Term%20Academic%20Concessions%20Self%20Declaration.pdf?raw=1">academic concession form to the course Instructor</a>. Upon receiving the form, the Instructor will make a decision about how to proceed. Failure to present valid documentation may result in a failing grade.</p>
+</section>
+<section id="re-grading" class="level3">
+<h3 class="anchored" data-anchor-id="re-grading">Re-grading</h3>
+<p>If you have concerns about the way your work was graded, please contact the TA who graded it within one week of having the grade returned to you through Piazza. After this one-week window, we may deny your request for re-evaluation. Also, please keep in mind that your grade may go up or down as a result of re-grading.</p>
+</section>
+<section id="missed-final-exam" class="level3">
+<h3 class="anchored" data-anchor-id="missed-final-exam">Missed final exam</h3>
+<p>Students who miss the final quiz must report to their faculty advising office within 72 hours of the missed exam, and must supply supporting documentation. Only your faculty advising office can grant deferred standing in a course. You must also notify your instructor prior to (if possible) or immediately after the exam. Your instructor will let you know when you are expected to write your deferred exam. Deferred exams will ONLY be provided to students who have applied for and received deferred standing from their faculty.</p>
+</section>
+<section id="academic-concession-policy" class="level3">
+<h3 class="anchored" data-anchor-id="academic-concession-policy">Academic concession policy</h3>
+<p>Please see <a href="http://www.calendar.ubc.ca/vancouver/index.cfm?tree=3,329,0,0">UBC’s concession policy</a> for detailed information on dealing with missed coursework, quizzes, and exams under circumstances of an acute and unanticipated nature.</p>
+</section>
+<section id="academic-integrity" class="level3">
+<h3 class="anchored" data-anchor-id="academic-integrity">Academic integrity</h3>
+<p>The academic enterprise is founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President’s Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.</p>
+<p>A more detailed description of academic integrity, including the University’s policies and procedures, may be found in the Academic Calendar at <a href="http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0" class="uri">http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0</a>.</p>
+</section>
+<section id="plagiarism" class="level3">
+<h3 class="anchored" data-anchor-id="plagiarism">Plagiarism</h3>
+<p>Students must correctly cite any code or text that has been authored by someone else or by the student themselves for other assignments. Cases of plagiarism may include, but are not limited to:</p>
+<ul>
+<li>the reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)</li>
+<li>the translation of an algorithm or a script from a language to another</li>
+<li>the generation of code by automatic code-generation software</li>
+</ul>
+<p>An “adequate acknowledgement” requires a detailed identification of the (parts of the) code or text reused and a full citation of the original source code that has been reused.</p>
+<p>The above attribution policy applies only to assignments. <strong>No code or text may be copied (with or without attribution) from any source during a quiz or exam. Answers must always be in your own words. At a minimum, copying will result in a grade of 0 for the related question.</strong></p>
+<p><strong>Repeated plagiarism of any form could result in larger penalties, including failure of the course.</strong></p>
+</section>
+</section>
+<section id="attribution" class="level2">
+<h2 class="anchored" data-anchor-id="attribution">Attribution</h2>
+<p>Parts of this syllabus (particularly the policies) have been copied and derived from the <a href="https://ubc-mds.github.io/policies/">UBC MDS Policies</a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/UBC-DSCI\.github\.io\/dsci-310-student\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

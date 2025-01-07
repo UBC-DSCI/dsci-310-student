@@ -1,0 +1,1 @@
+Sitemap: https://UBC-DSCI.github.io/dsci-310-student/sitemap.xml
