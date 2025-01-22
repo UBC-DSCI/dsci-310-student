@@ -39,7 +39,7 @@ The open-source text editor Visual Studio Code (VS Code) is both a powerful text
     - "Register Code as an editor for supported file types"
     - "Add to PATH" (this should be selected by default).
 
-![](resources/windows_vscode.png)
+![](../resources/windows_vscode.png)
 
 ## GitHub
 
@@ -63,16 +63,16 @@ run the installer and accept the default configuration for all pages except for 
 
 - On the **Select Components** page, add a Git Bash profile to Windows Terminal.
 
-    ![](resources/git_bash_profile.png)
+    ![](../resources/git_bash_profile.png)
 
 - On the **Choosing the default editor used by Git** page,
     select "Use Visual Studio Code as Git's default editor" from the drop-down menu'
 
-    ![](resources/vscode_as_git_editor.png)
+    ![](../resources/vscode_as_git_editor.png)
 
 - Set the default branch name to `main`
 
-    ![](/resources_pages/imgs/gitbash-defualt_main.png)
+    ![](../resources/gitbash-defualt_main.png)
 
 [To install windows terminal visit this link](https://aka.ms/terminal)
 and click `Get` to open it in Windows Store.
@@ -89,7 +89,7 @@ In the `Startup` section,
 click the dropdown menu under `Default profile`
 and select `Git Bash`.
 
-![](resources/git_bash_default.png)
+![](../resources/git_bash_default.png)
 
 You can now launch the Windows terminal from the start menu
 or pin it to the taskbar like any other program
@@ -103,7 +103,7 @@ and the tab should read  `MINGW64:/c/Users/$USERNAME`
 (you should also see `/c/Users/$USERNAME` if you type `pwd` into the terminal).
 This screenshot shows what it should look like:
 
-![](resources/windows_terminal_gitbash.png)
+![](../resources/windows_terminal_gitbash.png)
 
 > **Note:** Whenever we refer to "the terminal" in these installation instructions,
 > we want you to use the Windows Terminal that you just installed with the Git Bash profile.
@@ -306,7 +306,7 @@ conda init bash
 
 You will see that this modified a few configuration files, which makes `conda` visible to the terminal. Close all open terminal windows and launch a new one, you should now see that the prompt string has changed to include the word `(base)` as in the screenshot below:
 
-![](resources/add_conda_env_to_ps1.png)
+![](../resources/add_conda_env_to_ps1.png)
 
 If you type
 
@@ -360,7 +360,7 @@ conda 23.5.2
 > Now if you launch a new terminal instance,
 > you will see `(base)` on the same line as the rest of the prompt string as in the screenshot below.
 >
-> ![](resources/remove_newline_from_ps1.png)
+> ![](../resources/remove_newline_from_ps1.png)
 
 
 ## Installing Python packages
@@ -473,17 +473,17 @@ First, open the start menu, type "env" and select the match that reads
 "Edit the system environment variables".
 Click the button at the bottom that reads "Environmental Variables...":
 
-![](resources/sys_props_env_vars.png)
+![](../resources/sys_props_env_vars.png)
 
 Under "User variable" click the "New..." button:
 
-![](resources/env_vars_new_user_var.png)
+![](../resources/env_vars_new_user_var.png)
 
 And type in `R_USER` as the "Variable name" and `C:\Users\username` as the "Variable value",
 replacing `username` with your actual user name (if you don't know your user name,
 look at the top of the screenshot above where it says "User variables for your_username"):
 
-![](resources/new_user_var_values.png)
+![](../resources/new_user_var_values.png)
 
 Click "OK" on all of the three windows we opened above and you're done!
 If you open the console in RStudio and also R from the Windows Terminal
@@ -508,7 +508,7 @@ Now we are going to change RStudio’s *Insert Pipe* shortcut so that it inserts
 the [new native pipe operator `|>`](https://blog.rstudio.com/2021/06/09/rstudio-v1-4-update-whats-new/).
 Go to `Tools > Global Options > Code > Editing` and tick the following option:
 
-![](resources/native_pipe.png)
+![](../resources/native_pipe.png)
 
 Once the change is made you can try in the RStudio console `Ctrl` + `Shift` + `m` to check if works.
 
@@ -563,14 +563,14 @@ jupyter lab
 
 A browser should have launched and you should see a page that looks like the screenshot below. Now click on "R" notebook (circled in red on the screenshot below) to launch an JupyterLab with an R kernel.
 
-![](resources/jupyterlab_r_kernel.png)
+![](../resources/jupyterlab_r_kernel.png)
 
 Sometimes a kernel loads, but doesn't work as expected.
 To test whether your installation was done correctly now type `library(tidyverse)`
 in the code cell and click on the run button to run the cell.
 If your R kernel works you should see something like the image below:
 
-![](resources/jupyterlab_r_kernel2.png)
+![](../resources/jupyterlab_r_kernel2.png)
 
 To improve the experience of using R in JupyterLab,
 we will add keyboard shortcuts for inserting the common R operators `<-` and `|>`.
@@ -759,9 +759,9 @@ Change the extract location to `C:\Users\YOUR_USERNAME\make-4.3`
 (substituting in your actual username instead of `YOUR_USERNAME`) and click "Extract".
 See the screenshots below if you're unsure what to click.
 
-![](resources/extract_make.png)
+![](../resources/extract_make.png)
 
-![](resources/extract_make_path.png)
+![](../resources/extract_make_path.png)
 
 > **Note:** It is advisable to show file extensions by default in the Windows File Explorer.
 > Click the `View` tab and check the box next to `File name extensions`.
@@ -855,7 +855,7 @@ For more examples and ideas, visit:
 
 The real magic of VS Code is in the extensions that let you add languages, debuggers, and tools to your installation to support your specific workflow. From within VS Code you can open up the [Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery) to browse and install extensions by clicking on the Extensions icon in the Activity Bar indicated in the figure below.
 
-![](/resources_pages/imgs/vscode.png)
+![](../resources/vscode.png)
 
 To install an extension, you simply search for it in the search bar, click the extension you want, and then click "Install". There are extensions available to make almost any workflow or task you are interested in more efficient! Here we are interested in setting up VS Code as a Python IDE. To do this, search for and install the following extensions:
 

@@ -23,8 +23,8 @@ These instructions will walk you through how to install the required Data Scienc
 
 Please click the appropriate link below to view the installation instructions for your operating system:
 
-- [macOS arm](install_stack_mac.html)
-- [Ubuntu](install_stack_ubuntu.html)
-- [Windows](install_stack_windows.html)
+- [macOS arm](install_instructions/install_stack_mac.html)
+- [Ubuntu](install_instructions/install_stack_ubuntu.html)
+- [Windows](install_instructions/install_stack_windows.html)
 
  *The following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D'Andrea, and Tiffany Timbers.*

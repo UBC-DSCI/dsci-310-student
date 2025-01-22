@@ -1,6 +1,6 @@
 ---
-title: macOS (ARM)
-description: DSCI 310 software stack install instructions for macOS.
+title: Ubuntu
+description: DSCI 310 software stack install instructions for Ubuntu.
 ---
 
 ## Installation notes
@@ -8,8 +8,9 @@ description: DSCI 310 software stack install instructions for macOS.
 If you have already installed Git, Latex, or any of the R or Python related packages
 **please uninstall these and follow the instructions below to reinstall them**
 (make sure to also remove any user configuration files and backup them if desired).
-In order to be able to support you effectively and minimize setup issues and software
-conflicts, we suggest you install the required software as specified below.
+In order to be able to support you effectively
+and minimize setup issues and software conflicts,
+we require all students to install the software stack the same way.
 
 In all the sections below,
 if you are presented with the choice to download either a 64-bit (also called x64)
@@ -19,43 +20,35 @@ Once you have completed these installation instructions,
 make sure to follow the post-installation notes at the end
 to check that all software is setup correctly.
 
+## Ubuntu software settings
+
+To ensure that you are installing the right version of the software in this guide,
+open "Software & Updates" and make sure that the boxes in the screenshot are checked
+(this is the default configuration).
+
+![](../resources/ubuntu_settings.png)
+
 ## Web browser
 
-In DSCI 310 we will be using many tools that work most reliably on Google Chrome and Firefox
+In DSCI 310 we will be using several tools that work most reliably on Google Chrome and Firefox
 (including our online quiz software), so we recommend that you use one of these browsers.
 
-- To install Chrome, go to [https://www.google.com/chrome/](https://www.google.com/chrome/),
-    click on "Download Chrome" and follow the instructions on the website to finish the installation.
-- To install Firefox, go to [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/),
-    click on "Download Firefox" and follow the instructions on the website to finish the installation.
+- Firefox comes preinstalled with Ubuntu, so there is not need to download anything.
+- To install Chrome, go to [https://www.google.com/chrome/](https://www.google.com/chrome/), click on "Download Chrome" choose the deb-file, download it to your computer and click on the downloaded file to install it.
 
-
-## Bash shell
-
-Apple recently changed the Mac default shell in the Terminal to Zsh, however,
-we aim to teach with the same shell across all three operating systems we support,
-which is the Bash shell. Thus, we ask that you change the default shell in your
-Terminal to Bash by opening the Terminal ([how to video](https://youtu.be/5AJbWEWwnbY)) and typing:
-
-```shell
-chsh -s /bin/bash
-```
-
-You will have to quit all instances of open Terminals and then
-restart the Terminal for this to take effect.
+> **Note:** If you select "open with" and try to open the file directly with the Ubuntu Software app instead of downloading it first, the software app might complain that the file is not supported.
 
 ## Visual Studio Code
 
-### Installing
-
-The open-source text editor Visual Studio Code (VS Code) is both a powerful text editor and a full-blown Python IDE,
+The open-source text editor Visual Studio Code (VS Code) is both
+a powerful text editor and a full-blown Python IDE,
 which we will use for more complex analysis.
-You can download and install the macOS version of VS Code from the VS code website
+You can install VS Code either via the
+[Snap store/Ubuntu software app through this link](https://snapcraft.io/code)
+or via the downloadable deb-file from the VS code website
 [https://code.visualstudio.com/download](https://code.visualstudio.com/download).
-Once the download is finished, click "Open with Archive utility",
-and move the extracted VS Code application from "Downloads" to "Applications".
-In addition to reading the [getting started instructions](https://code.visualstudio.com/docs/setup/mac),
-**be sure to follow the ["Launching from the command line"](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) steps as well.**
+The getting started instructions are here:
+[https://code.visualstudio.com/docs/?dv=linux64_deb](https://code.visualstudio.com/docs/?dv=linux64_deb).
 
 You can test that VS code is installed and can be opened from Terminal by restarting terminal and typing the following command:
 
@@ -67,15 +60,9 @@ you should see something like this if you were successful:
 
 ```bash
 1.81.1
-5763d909d5f12fe19f215cbfdd29a91c0fa9208a
-arm64
+6d9b74a70ca9c7733b29f0456fd8195364076dda
+x64
 ```
-
-> **Note:** If you get an error message such as `-bash: code: command not found`,
-> but you can see the VS Code application has been installed,
-> then something went wrong with setting up the launch from the command line.
-> Try following [these instructions](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
-> again, in particular you might want to try the described manual method of adding VS Code to your path.
 
 ## GitHub
 
@@ -89,29 +76,24 @@ Sign up for a free account at [GitHub.com](https://github.com/) if you don't hav
 We will be using the command line version of Git as well as Git through RStudio and JupyterLab.
 Some of the Git commands we will use are only available since Git 2.23,
 so if your Git is older than this version,
-we ask you to update it using the Xcode command line tools (not all of Xcode), which includes Git.
-
-Open Terminal and type the following command to install Xcode command line tools:
+we ask you to update it using the following commands:
 
 ```bash
-xcode-select --install
+sudo apt update
+sudo apt install git
 ```
 
-After installation, in terminal type the following to ask for the version:
+You can check your git version with the following command:
 
 ```bash
 git --version
 ```
 
-you should see something like this (does not have to be the exact same version) if you were successful:
+you should see something like this if you were successful:
 
+```bash
+git version 2.34.1
 ```
-git version 2.39.2 (Apple Git-143)
-```
-
-> **Note:** If you run into trouble, please see that Install Git
-> Mac OS section from [Happy Git and GitHub for the useR](http://happygitwithr.com/install-git.html#mac-os)
-> for additional help or strategies for Git installation.
 
 ### Configuring Git user info
 
@@ -132,19 +114,18 @@ git config --global user.email janedoe@example.com
 
 ### Setting VS Code as the default editor
 
-To make programs run from the terminal (such as `git`) use vscode by default,
-we will modify `~/.bash_profile`. First, open it using VS Code (this will also
-create the file if it doesn't already exist):
+To make programs run from the terminal (such as `git`) use VS Code by default,
+we will modify the bash configuration file `~/.bashrc`. First, open it using VS Code:
 
 ```bash
-code ~/.bash_profile
+code ~/.bashrc
 ```
 
-> **Note:** If you see any existing lines in your `~/.bash_profile`
+> **Note:** If you see any existing lines in your `~/.bashrc`
 > related to a previous Python or R installation,
 > please remove these.
 
-Now append the following lines to `~/.bash_profile`:
+Append the following lines:
 
 ```bash
 # Set the default editor for programs launch from terminal
@@ -168,27 +149,6 @@ also run the following from your terminal:
 ```bash
 git config --global core.editor "code --wait"
 ```
-
-On MacOS,
-VScode sometimes reads a different configuration file than your other programs.
-To avoid this,
-open your `~/.bashrc` file:
-
-```bash
-code ~/.bashrc
-```
-
-And append the following lines:
-
-```bash
-# Do NOT add anything to this file, use `~/.bash_profile` instead.
-# The next line automatically loads your `~/.bash_profile`
-# any time a program tries to read your `~/.bashrc` file.
-if [ -f ~/.bash_profile ]; then . ~/.bash_profile; fi
-```
-
-The comment is a reminder to your future self
-who might open up this file a few months from now =)
 
 ## Python, Conda, and JupyterLab
 
@@ -242,17 +202,10 @@ Make sure it returns Python 3.11.0 or greater:
 Python 3.11.4
 ```
 
-If you do not see Python >3.11, close your terminal and open a new one.
-Confirm that you are in the `(base)` environment.
-Then update the base python with:
-
-```bash
-conda install python=3.11
-```
 
 ## Installing Python packages
 
-``conda` installs Python packages from different online repositories which are called "channels".
+`conda` installs Python packages from different online repositories which are called "channels".
 A package needs to go through thorough testing before it is included in the default channel,
 which is good for stability,
 but also means that new versions will be delayed and fewer packages are available overall.
@@ -287,32 +240,52 @@ Install them via the following commands:
 conda install jupyterlab jupyterlab-git jupyterlab-spellchecker
 ```
 
-To test that your JupyterLab installation is functional, you can type `jupyter lab` into a terminal,
+To test that your JupyterLab installation is functional,
+you can type `jupyter lab` into a terminal,
 which should open a new tab in your default browser with the JupyterLab interface.
 To exit out of JupyterLab you can click `File -> Shutdown`,
 or go to the terminal from which you launched JupyterLab and hold `Ctrl` while pressing `c` twice.
 
-## R, XQuartz, IRkernel, and RStudio
+## R, IRkernel, and RStudio
 
 R is the second language that we will be using frequently in this course.
 We will use R both in Jupyter notebooks and in RStudio.
 
 ### R
 
-Go to [https://cran.r-project.org/bin/macosx/](https://cran.r-project.org/bin/macosx/) and download the latest version of R for Mac. Open the file and follow the installer instructions. Pay attention that you will have to install `R-4.3.2-arm64.pkg` if you are working with a Apple silicon (M1/M2) Mac and `R-4.3.2-x86_64.pkg` if you are working in n older Intel Mac.
+The version of R available in the default Ubuntu repositories is older
+than the one we will be using in this course.
+To obtain the latest R packages,
+we need to add a new repository which is maintained directly by the r-project.
+To do this, first add the key for this repository by typing the following:
 
-After installation, open a new terminal window and type the following:
+```
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+```
 
-```bash
+Then add the URL to the repository:
+
+```
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+```
+
+Next, install `r-base` and `r-base-dev` (useful for compiling R packages from source):
+
+```
+sudo apt install r-base r-base-dev
+```
+
+After installation, type the following in a new terminal window:
+```
 R --version
 ```
 
 You should see something like this if you were successful:
 
 ```
-R version 4.3.2 (2023-10-31) -- "Eye Holes"
+R version 4.3.1 (2023-06-16) -- "Beagle Scouts"
 Copyright (C) 2023 The R Foundation for Statistical Computing
-Platform: aarch64-apple-darwin20 (64-bit)
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under the terms of the
@@ -321,34 +294,36 @@ For more information about these matters see
 https://www.gnu.org/licenses/.
 ```
 
-> **Note:** Although it is possible to install R through conda, we highly recommend not doing so.
-> In case you have already installed R using conda you can remove it by executing `conda uninstall r-base`.
+> **Note:** [See this page for additional instructions if you run into troubles while installing R](https://cloud.r-project.org/bin/linux/ubuntu/).
 
-### XQuartz
-
-Some R packages rely on the dependency XQuartz which no longer ships with the Mac OS,
-thus we need to install it separately.
-Download it from here: [https://www.xquartz.org/](https://www.xquartz.org/)
-and follow the installation instructions.
+> **Note:** Although it is possible to install R through conda, we highly recommend not doing so. In case you have already installed R using conda you can remove it by executing `conda uninstall r-base`.
 
 ### RStudio
 
-Download the macOS Desktop version (not Pro) of RStudio  [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/). Open the file and follow the installer instructions.
+Download the Ubuntu 22 Desktop version (not Pro) of RStudio from [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/). Open the file and follow the installer instructions.
+
+> **Note:** If you select "open with" and try to open the file directly with the Ubuntu Software app instead of downloading it first, the software app might complain that the file is not supported.
 
 To see if you were successful,
-try opening RStudio by clicking on its icon (from Finder, Applications or Launchpad).
+try opening RStudio by clicking on its icon or typing `rstudio` in a terminal.
+
+> **Note:** Since we installed RStudio directly from a deb file rather than
+> from a repository or a snap package,
+> it will not be updated when we run `sudo apt upgrade`
+> and not automatically as for snap packages.
+> Instead, RStudio will notify you of any available updates when the program is launched.
 
 Now we are going to change RStudio’s *Insert Pipe* shortcut so that it inserts
 the [new native pipe operator `|>`](https://blog.rstudio.com/2021/06/09/rstudio-v1-4-update-whats-new/).
 Go to `Tools > Global Options > Code > Editing` and tick the following option:
 
-![](resources/native_pipe.png)
+![](../resources/native_pipe.png)
 
-Once the change is made you can try in the RStudio console `Command` + `Shift` + `m` to check if works.
+Once the change is made you can try in the RStudio console `Control` + `Shift` + `m` to check if works.
 
 Finally, let's install a common R package that you used a lot in DSCI 100 by typing the following into the console inside RStudio:
 
-```R
+```
 install.packages("tidyverse")
 ```
 
@@ -359,18 +334,14 @@ To enable this kernel in the notebooks, install by pasting the following command
 
 ```R
 install.packages('IRkernel')
+IRkernel::installspec()
 ```
 
-Next, open a terminal and type the following
-(you can't use RStudio for this step
-since it doesn't honor `$PATH` changes in `~/.bash_profile`)
-
-```bash
-R -e "IRkernel::installspec()"
-```
+> **Note:** If you see an error message saying "jupyter-client has to be installed...",
+> close RStudio and run the following line from your terminal instead `R -e "IRkernel::installspec()"`.
 
 To see if you were successful, try running JupyterLab and check if you have a working R kernel.
-To launch JupyterLab, type the following in Terminal:
+To launch JupyterLab, type the following in a terminal:
 
 ```bash
 jupyter lab
@@ -379,14 +350,14 @@ jupyter lab
 A browser should have launched and you should see a page that looks like the screenshot below.
 Now click on "R" notebook (circled in red on the screenshot below) to launch an JupyterLab with an R kernel.
 
-![](resources/jupyterlab_r_kernel.png)
+![](../resources/jupyterlab_r_kernel.png)
 
 Sometimes a kernel loads, but doesn't work as expected.
 To test whether your installation was done correctly now type `library(tidyverse)`
 in the code cell and click on the run button to run the cell.
 If your R kernel works you should see something like the image below:
 
-![](resources/jupyterlab_r_kernel2.png)
+![](../resources/jupyterlab_r_kernel2.png)
 
 To improve the experience of using R in JupyterLab,
 we will add keyboard shortcuts for inserting the common R operators `<-` and `|>`.
@@ -440,9 +411,9 @@ Here is a screenshot of what it looks like with the settings saved:
 To check that the extension is working,
 open JupyterLab,
 launch an R notebook,
-and try inserting the operators by pressing `Alt` + `-` or `Command` + `Shift` + `m`, respectively.
+and try inserting the operators by pressing `Alt` + `-` or `Shift` + `Ctrl` + `m`, respectively.
 You could add any arbitrary text insertion command the same way,
-but this is all that we suggest for this course.
+but this is all that is required for this course.
 
 ## Quarto CLI
 
@@ -450,17 +421,18 @@ Quarto is an open-source scientific and technical publishing system that you can
 
 The [RStudio version that you have downloaded](https://quarto.org/docs/tools/rstudio.html) is already equipped with the last version of Quarto. You can check this by opening a new document in `File -> New File -> Quarto Document`.
 
-Quarto can be used outside RStudio as well, this is why we are going to install Quarto CLI. Please, download the [last version of Quarto CLI](https://quarto.org/docs/get-started/) for MacOs.
+Quarto can be used outside RStudio as well, this is why we are going to install Quarto CLI. Please, download the [last version of Quarto CLI](https://quarto.org/docs/get-started/) for Linux.
 
 After the installation finishes, close all the terminals you may have open. Then, open a new one and try running this command:
 
 ```bash
 quarto --version
 ```
-If the installation was successful you will read the output (the exact number may not match, that's okay):
+
+If the installation was successful you will read the output:
 
 ```bash
-1.6.40
+1.3.450
 ```
 
 ## LaTeX
@@ -469,22 +441,18 @@ We will install the lightest possible version of LaTeX and its necessary
 packages as possible so that we can render Jupyter notebooks and R Markdown documents to html and PDF.
 If you have previously installed LaTeX, please uninstall it before proceeding with these instructions.
 
-First, run the following command to make sure that `/usr/local/bin` is writable:
-
-```bash
-sudo chown -R $(whoami):admin /usr/local/bin
-```
-
-> **Note:** You might be asked to enter your password during installation.
-
-Now open RStudio and run the following commands to install the `tinytex` package and setup `tinytex`:
+First, open RStudio and run the following commands to install the `tinytex` package and setup `tinytex`:
 
 ```R
 install.packages('tinytex')
 tinytex::install_tinytex()
 ```
 
-You can check that the installation is working by opening a terminal and asking for the version of latex:
+As recommended at the end of the installation,
+it is important to **log out and in again for TinyTex to work properly**
+(restarting the computer also works).
+Once you log back in,
+try running the following in a terminal:
 
 ```bash
 latex --version
@@ -493,23 +461,23 @@ latex --version
 You should see something like this if you were successful:
 
 ```bash
-pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023)
-kpathsea version 6.3.5
-Copyright 2023 Han The Thanh (pdfTeX) et al.
+pdfTeX 3.14159265-2.6-1.40.25 (TeX Live 2023)
+kpathsea version 6.3.2
+Copyright 2020 Han The Thanh (pdfTeX) et al.
 There is NO warranty.  Redistribution of this software is
 covered by the terms of both the pdfTeX copyright and
 the Lesser GNU General Public License.
 For more information about these matters, see the file
 named COPYING and the pdfTeX source.
 Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
-Compiled with libpng 1.6.39; using libpng 1.6.39
-Compiled with zlib 1.2.13; using zlib 1.2.13
-Compiled with xpdf version 4.04
+Compiled with libpng 1.6.37; using libpng 1.6.37
+Compiled with zlib 1.2.11; using zlib 1.2.11
+Compiled with xpdf version 4.02
 ```
 
-The above is all we need to have LaTeX work with R Markdown documents,
-however for Jupyter we need to add several more packages.
-Do this by opening a terminal and copying the following there press enter:
+The above is all we need to have LaTeX work with R Markdown documents, however for Jupyter we need to install several more packages.
+To install the additional LaTeX packages needed for Jupyter
+paste the following into the new terminal instance and press enter:
 
 ```bash
 tlmgr install eurosym \
@@ -548,7 +516,7 @@ your LaTeX environment is set up correctly.
 Jupyter recently added another way to export notebooks to PDF
 which does not require Latex
 and makes the exported PDF look similar to notebooks exported to HTML.
-This requires the `pyppeteer` package,
+This requires the an additional package,
 which we can install as follows.
 
 ```bash
@@ -556,66 +524,32 @@ pip install "nbconvert[webpdf]"
 playwright install chromium
 ```
 
-Try this by going to `File -> Export notebook as... -> Export Notebook to WebPDF`.
+Now you can try exporting by going to
+`File -> Save and Export Notebook As... -> WebPDF`.
 
 ## Docker
 
 You will use Docker to create reproducible, sharable and shippable computing environments for your analyses. For this you will need a Docker account. You can [sign up for a free one here](https://store.docker.com/signup?next=%2F%3Fref%3Dlogin).
 
-After signing-up and signing into the Docker Store, go here: [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac) and click on the button "Mac with Intel chip" or "Mac with Apple chip". Then follow the installation instructions on that screen to install the stable version.
+After signing-up, you also need to install Docker **CE** for Ubuntu. Install the stable version by following the installation instructions using the ["Install using the repository" methods found here](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository), including the subheadings "Set up the repository" and "Install Docker engine" (you can skip step 2 "Install a specific version of the docker engine" since we already got the latest from step 1).
 
-To test if Docker is working, after installation open the Docker app by clicking on its icon (from Finder, Applications or Launchpad). Next open Terminal and type the following:
+Next, [follow the Linux post installation steps here](https://docs.docker.com/engine/install/linux-postinstall/) so that you can run Docker without typing `sudo`
+(only the subheading "Managing docker as a non-root user").
+Confirm that docker is working by following the verification instructions on that same page.
 
-```bash
-docker run hello-world
-```
+## VS Code extensions (Optional)
 
-you should see something like this if you were successful:
+The real magic of VS Code is in the extensions that let you add languages, debuggers, and tools to your installation to support your specific workflow. From within VS Code you can open up the [Extension Marketplace (read more here)](https://code.visualstudio.com/docs/editor/extension-gallery) to browse and install extensions by clicking on the Extensions icon in the Activity Bar indicated in the figure below.
 
-```bash
-Unable to find image 'hello-world:latest' locally
-latest: Pulling from library/hello-world
-1b930d010525: Pull complete
-Digest: sha256:451ce787d12369c5df2a32c85e5a03d52cbcef6eb3586dd03075f3034f10adcd
-Status: Downloaded newer image for hello-world:latest
+![](../resources/vscode.png)
 
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/
-```
-
-## VS Code extensions (Optional!)
-
-The real magic of VS Code is in the extensions that let you add languages, debuggers, and tools to your installation to support your specific workflow. Now that we have installed all our other Data Science tools, we can install the VS Code extensions that work really well with them. From within VS Code you can open up the [Extension Marketplace (read more here)](https://code.visualstudio.com/docs/editor/extension-gallery) to browse and install extensions by clicking on the Extensions icon in the Activity Bar indicated in the figure below.
-
-![](/resources_pages/imgs/vscode.png)
-
-To install an extension, go to `View -> Extensions` or click in the icon as you can see in the image above. Then, search for the names of the ones you are interested in the search bar, click the extension you want, and click "Install". There are extensions available to make almost any workflow or task you are interested in more efficient! Here we are interested in setting up VS Code as a Python IDE. To do this, search for and install the following extensions:
+To install an extension, you simply search for it in the search bar, click the extension you want, and then click "Install". There are extensions available to make almost any workflow or task you are interested in more efficient! Here we are interested in setting up VS Code as a Python IDE. To do this, search for and install the following extensions:
 
 - Python (everything Python: notebooks, debugging, linting, formatting, etc.)
 - markdownlint (markdown linting and style checking extension)
-- GitLens - Git supercharged (powerful extension that extends VS Code's native git capabilities)
+- GitLens (powerful extension that extends VS Code's native git capabilities)
 - Git History (intutive view of your git history)
 - Docker (easily use Docker from VS Code)
-- Quarto (integrated render and preview for Quarto documents and [more](https://quarto.org/docs/tools/vscode.html))
-
 - (Optional) Material Theme and/or Predawn Theme Kit (additional colour themes to choose from)
 - (Optional) Material Icon Theme (great-looking custom file icons!)
 
@@ -635,7 +569,7 @@ bash <(curl -Ss https://raw.githubusercontent.com/UBC-DSCI/dsci-310-student/main
 
 The output from running the script will look something like this:
 
-````bash
+```
 # DSCI 310 setup check 2024.1
 
 If a program or package is marked as MISSING,
@@ -692,7 +626,7 @@ OK        rmarkdown HTML-generation was successful.
 The above output has been saved to the file /Users/timberst/Documents/dsci-310/dsci-310-student/check-setup-310.log
 together with system configuration details and any detailed error messages about PDF and HTML generation.
 You can open this folder in your file browser by typing `open .` (without the surrounding backticks).
-````
+```
 
 As you can see at the end of the output,
 a log file is saved in your current directory.
