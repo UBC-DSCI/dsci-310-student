@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/install_instructions/install_stack_mac.html</loc>
+    <lastmod>2025-01-22T03:30:01.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/install_instructions/install_stack_ubuntu.html</loc>
+    <lastmod>2025-01-22T03:30:01.720Z</lastmod>
+  </url>
+  <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/syllabus.html</loc>
-    <lastmod>2025-01-07T06:19:13.478Z</lastmod>
+    <lastmod>2025-01-22T03:30:01.729Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/computer-setup.html</loc>
-    <lastmod>2025-01-07T06:19:13.463Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/individual_assignment_1.html</loc>
-    <lastmod>2025-01-07T06:19:13.469Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/install_stack_mac.html</loc>
-    <lastmod>2025-01-07T06:19:13.469Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/install_stack_ubuntu.html</loc>
-    <lastmod>2025-01-07T06:19:13.469Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/coc.html</loc>
-    <lastmod>2025-01-07T06:19:13.462Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/LICENSE.html</loc>
-    <lastmod>2025-01-07T06:19:13.461Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/install_stack_windows.html</loc>
-    <lastmod>2025-01-07T06:19:13.470Z</lastmod>
+    <lastmod>2025-01-22T03:30:01.714Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/assessments.html</loc>
-    <lastmod>2025-01-07T06:19:13.462Z</lastmod>
+    <lastmod>2025-01-22T03:30:01.713Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/coc.html</loc>
+    <lastmod>2025-01-22T03:30:01.714Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/LICENSE.html</loc>
+    <lastmod>2025-01-22T03:30:01.713Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/index.html</loc>
-    <lastmod>2025-01-07T06:19:13.469Z</lastmod>
+    <lastmod>2025-01-22T03:30:01.718Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/about.html</loc>
-    <lastmod>2025-01-07T06:19:13.462Z</lastmod>
+    <lastmod>2025-01-22T03:30:01.713Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/assignment_milestone/individual_assignment_1.html</loc>
+    <lastmod>2025-01-22T03:30:01.713Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/install_instructions/install_stack_windows.html</loc>
+    <lastmod>2025-01-22T03:30:01.720Z</lastmod>
   </url>
 </urlset>
