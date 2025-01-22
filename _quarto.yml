@@ -1,9 +1,25 @@
 project:
   type: website
+  preview:
+    port: 3100
+  render:
+    #  List index.qmd first so that / redirects to it
+    - /index.qmd
+    - /*.qmd
+    - assignment_milestone
+    - tutorials
+    - install_instructions
 
 website:
   title: "DSCI 310"
+
+  page-navigation: true
+
+  repo-url: https://github.com/UBC-DSCI/dsci-310-student
+  repo-actions: [edit, source, issue]
+
   navbar:
+    search: true
     left:
       - href: index.qmd
         text: Home
@@ -17,6 +33,23 @@ website:
     right:
       - href: coc.qmd
         text: Code of Conduct
+
+  sidebar:
+    - title: Assessments
+      contents:
+        - assessments.qmd
+
+        - text: "---"
+
+        - section: "Individual Assignments"
+          contents:
+            - assignment_milestone/ia1.qmd
+
+        - text: "---"
+
+        - section: "Milestone"
+          contents:
+
 
 format:
   html:
