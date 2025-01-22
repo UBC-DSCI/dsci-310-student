@@ -44,10 +44,16 @@ website:
         - section: "Individual Assignments"
           contents:
             - assignment_milestone/ia1.qmd
+            - assignment_milestone/ia2.qmd
 
         - text: "---"
 
         - section: "Milestone"
+          contents:
+
+        - text: "---"
+
+        - section: "Teamwork"
           contents:
 
 
