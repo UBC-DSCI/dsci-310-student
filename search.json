@@ -238,6 +238,126 @@
     "text": "Attributions\n\nUBC MDS Software Stack Install Instructions\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0\nSoftware Carpentry"
   },
   {
+    "objectID": "assignment_milestone/ia1.html",
+    "href": "assignment_milestone/ia1.html",
+    "title": "Individual assignment 1",
+    "section": "",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia1.html#instructions",
+    "href": "assignment_milestone/ia1.html#instructions",
+    "title": "Individual assignment 1",
+    "section": "",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia1.html#submission",
+    "href": "assignment_milestone/ia1.html#submission",
+    "title": "Individual assignment 1",
+    "section": "Submission",
+    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia1.html#troubleshooting",
+    "href": "assignment_milestone/ia1.html#troubleshooting",
+    "title": "Individual assignment 1",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia1.html#rubric",
+    "href": "assignment_milestone/ia1.html#rubric",
+    "title": "Individual assignment 1",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "computer-setup.html",
+    "href": "computer-setup.html",
+    "title": "Computer setup",
+    "section": "",
+    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
+  },
+  {
+    "objectID": "computer-setup.html#laptop-requirements",
+    "href": "computer-setup.html#laptop-requirements",
+    "title": "Computer setup",
+    "section": "Laptop requirements",
+    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
+  },
+  {
+    "objectID": "computer-setup.html#software-installation-instructions",
+    "href": "computer-setup.html#software-installation-instructions",
+    "title": "Computer setup",
+    "section": "Software installation instructions",
+    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
+  },
+  {
+    "objectID": "assessments.html",
+    "href": "assessments.html",
+    "title": "Assessment schedule",
+    "section": "",
+    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
+    "crumbs": [
+      "Assessments",
+      "Assessment schedule"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSCI 310",
+    "section": "",
+    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
+  },
+  {
+    "objectID": "coc.html#attribution",
+    "href": "coc.html#attribution",
+    "title": "Code of Conduct",
+    "section": "Attribution",
+    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
+  },
+  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
     "title": "Syllabus",
@@ -313,104 +433,6 @@
     "title": "Syllabus",
     "section": "Attribution",
     "text": "Attribution\nParts of this syllabus (particularly the policies) have been copied and derived from the UBC MDS Policies."
-  },
-  {
-    "objectID": "computer-setup.html",
-    "href": "computer-setup.html",
-    "title": "Computer setup",
-    "section": "",
-    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
-  },
-  {
-    "objectID": "computer-setup.html#laptop-requirements",
-    "href": "computer-setup.html#laptop-requirements",
-    "title": "Computer setup",
-    "section": "Laptop requirements",
-    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
-  },
-  {
-    "objectID": "computer-setup.html#software-installation-instructions",
-    "href": "computer-setup.html#software-installation-instructions",
-    "title": "Computer setup",
-    "section": "Software installation instructions",
-    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
-  },
-  {
-    "objectID": "assessments.html",
-    "href": "assessments.html",
-    "title": "Assessment schedule",
-    "section": "",
-    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course."
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
-  },
-  {
-    "objectID": "coc.html#attribution",
-    "href": "coc.html#attribution",
-    "title": "Code of Conduct",
-    "section": "Attribution",
-    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
-  },
-  {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "Instructional Material",
-    "section": "",
-    "text": "Instructional Material\nAll instructional material in the dsci-310-student repository is made available under the Attribution 4.0 International (CC BY 4.0).\nThis is a human-readable summary of (and not a substitute for) the license.\nYou are free:\n\nto Share—copy and redistribute the material in any medium or format\nto Adapt—remix, transform, and build upon the material\n\nfor any purpose, even commercially.\nThe licensor cannot revoke these freedoms as long as you follow the license terms.\nUnder the following terms:\n\nAttribution—You must give appropriate credit (mentioning that your work is derived from work that is Copyright © Software Carpentry and, where practical, linking to http://software-carpentry.org/), provide a [link to the license][cc-by-human], and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\n\nNo additional restrictions—You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits. With the understanding that:\nNotices:\n\nYou do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.\nNo warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.\n\n\n\nSoftware\nExcept where otherwise noted, the example programs and other software provided in the dsci-310-student repository are made available under the MIT license.\nMIT License\nCopyright (c) 2020 Tiffany A. Timbers\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSCI 310",
-    "section": "",
-    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "assignment_milestone/individual_assignment_1.html",
-    "href": "assignment_milestone/individual_assignment_1.html",
-    "title": "Individual assignment 1",
-    "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions"
-  },
-  {
-    "objectID": "assignment_milestone/individual_assignment_1.html#instructions",
-    "href": "assignment_milestone/individual_assignment_1.html#instructions",
-    "title": "Individual assignment 1",
-    "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions"
-  },
-  {
-    "objectID": "assignment_milestone/individual_assignment_1.html#submission",
-    "href": "assignment_milestone/individual_assignment_1.html#submission",
-    "title": "Individual assignment 1",
-    "section": "Submission",
-    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)"
-  },
-  {
-    "objectID": "assignment_milestone/individual_assignment_1.html#troubleshooting",
-    "href": "assignment_milestone/individual_assignment_1.html#troubleshooting",
-    "title": "Individual assignment 1",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions."
-  },
-  {
-    "objectID": "assignment_milestone/individual_assignment_1.html#rubric",
-    "href": "assignment_milestone/individual_assignment_1.html#rubric",
-    "title": "Individual assignment 1",
-    "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted."
   },
   {
     "objectID": "install_instructions/install_stack_windows.html",
