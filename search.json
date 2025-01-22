@@ -435,6 +435,90 @@
     "text": "Attribution\nParts of this syllabus (particularly the policies) have been copied and derived from the UBC MDS Policies."
   },
   {
+    "objectID": "assignment_milestone/ia2.html",
+    "href": "assignment_milestone/ia2.html",
+    "title": "Individual assignment 2",
+    "section": "",
+    "text": "The purpose of this assignment is to start familiarizing yourselves with version control with Git and GitHub. It will build on the git demos in class as well as the TA tutorials from week 1 (intro shell/bash) and week 2 (merge conflicts). Specifically, we will create a toy repository with a merge conflict and learn how to resolve it. A merge conflict occurs when Git is unable to automatically determine how to incorporate new changes. This can can occur when two branches modify the same line, or when a file is deleted when someone else is changing it. You can read more about merge conflicts here: Git merge conflicts.\nFollow the instructions listed below. You will be graded for completion.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia2.html#step-1-create-a-repository",
+    "href": "assignment_milestone/ia2.html#step-1-create-a-repository",
+    "title": "Individual assignment 2",
+    "section": "Step 1: Create a repository",
+    "text": "Step 1: Create a repository\nCreate a new public repository on GitHub.com\n\nNamed {date}-learning-about-version-control\nReplace the {date} part of the repository name with a date. This way you can come back and re-do this assignment for exam practice. We won’t be grading on when you create the repository.\nCreate it under your own github account (Not the course organization)\n\nMake sure the repository:\n\nIncludes a README.md that has a header that says “Learning about Version Control” and has your name listed as the author.\nIs public\nYou may edit the README.md file using the web interface.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia2.html#step-2-clone-your-repository",
+    "href": "assignment_milestone/ia2.html#step-2-clone-your-repository",
+    "title": "Individual assignment 2",
+    "section": "Step 2: Clone your repository",
+    "text": "Step 2: Clone your repository\nClone your {date}-learning-about-version-control repository to your local computer.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia2.html#step-3-merge-conflict",
+    "href": "assignment_milestone/ia2.html#step-3-merge-conflict",
+    "title": "Individual assignment 2",
+    "section": "Step 3: Merge Conflict",
+    "text": "Step 3: Merge Conflict\nCreate and resolve a merge conflict 😱!\n\nOn your remote version control repository, use the pen tool to add a line to the README that says “Solving merge conflicts is easy!”\nOn your local version control repository, edit the same line in the README that you just edited, but this time write “Solving merge conflicts is soooooo hard!”\nAdd and commit your local changes to the README, and the try to push the file so that you create the merge conflict.\nResolve the merge conflict on your local computer so that the line reads “Solving merge conflicts takes conscious effort, but I can do it!”. Take a screen shot while you are resolving the conflict to document you did this.\nPush the local changes to your remote version control repository.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia2.html#step-4-pull-request",
+    "href": "assignment_milestone/ia2.html#step-4-pull-request",
+    "title": "Individual assignment 2",
+    "section": "Step 4: Pull request",
+    "text": "Step 4: Pull request\nCreate and accept a pull request!\n\nCreate a new Git branch on your local version control repository named opinions and switch to that branch.\nEdit your README so that you add at least one sentence about what you like most about version control, and add at least one sentence about what you find most challenging/confusing/frustrating about version control (we all have opinions on this one…). Add and commit your changes to local version control.\nPush the changes to the README that you made on the opinions branch to the remote repository on GitHub.com.\nVisit GitHub.com and create a pull request to suggest that the changes on the opinions branch should be merged into the main branch.\nAccept the pull request you opened to merge your changes from the opinions branch into the main branch.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia2.html#submission-instructions",
+    "href": "assignment_milestone/ia2.html#submission-instructions",
+    "title": "Individual assignment 2",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\nYou will submit a PDF to Gradescope for individual assignment 1 that includes:\n\nthe URL of the commit history of GitHub.com repository you created and worked on for this assignment (it will be something like: https://github.com/&lt;YOURUSERNAME&gt;/&lt;DATE&gt;learning-about-version-control/commits/main)\nthe screenshot of your resolved merge conflict\nan explanation (2-3 sentences and in your own words) of why it is useful to work in a branch-pull-request workflow instead of working by directly committing each change to the main branch.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia2.html#rubric",
+    "href": "assignment_milestone/ia2.html#rubric",
+    "title": "Individual assignment 2",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nGitHub history (check under pull request tab in repo) indicates a successfully merged pull request from opinions into main, clearly demonstrated solving the merge conflict in screenshot and well explained why it is useful to work in a branch-pull-request workflow\n\n\n-25%\nGitHub history (check under pull request tab in repo) does not indicate a successfully merged pull request from opinions into main\n\n\n-25%\nDid not clearly demonstrate solving the merge conflict in screenshot.\n\n\n-25%\nDid not well explain why it is useful to work in a branch-pull-request workflow.\n\n\n-100%\nNo repository or attempt",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
     "objectID": "install_instructions/install_stack_windows.html",
     "href": "install_instructions/install_stack_windows.html",
     "title": "Windows",
