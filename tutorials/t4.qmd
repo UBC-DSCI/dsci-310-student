@@ -1,0 +1,138 @@
+---
+title: "Tutorial 4"
+---
+
+Virtual environments and docker containers
+
+## R Environments
+
+1. Create a new RStudio Project
+2. Note the currently installed packages
+3. Install the `renv` library if you do not have it installed
+4. Initialize the current project as an `renv` project
+5. Note the new packages in the environment.
+6. Install an R package
+7. Snapsnot the package
+8. Note how the `renv.lock` file does not change
+9. Create and save an R script that uses the package you just installed
+10. Re-snapshot the project
+11. Note how the `renv.lock` file updates now
+12. Close the current RStudio project
+13. Note how you have your old packages back
+14. Re-open the RStudio project you just created and see how t5he packages change.
+
+## Optional: Python environment
+
+For people and teams working on a python project and want to practice `conda` environments.
+
+:::{.callout-note}
+`conda` environments are not going to be on the exam.
+This exercise is solely to give you instructions to practice creating python environments.
+:::
+
+1. Check that you are currently in the `base` conda environment:
+
+```bash
+conda info
+```
+
+2. Note the packages in the current conda environment and their versions
+
+```bash
+conda list
+```
+
+3. Create a new conda environment (we are going to name it `myenv`) with python 3.12
+
+```bash
+conda create -n myenv -c conda-forge python=3.12
+```
+
+4. Activate this environment
+5. Run python and compare your python versions and see if you are able to import `pandas`
+6. `conda` install another package into the environment, `pandas` and import it from the new environment.
+
+
+## Run a docker container
+
+Let's get some practice with running docker containers
+
+Docker Desktop needs to be runnign in the background.
+
+### Your first container
+
+We did this in the Computer Setup process, but let's run the `hello-world` container with `docker run`
+
+```bash
+$ docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+$
+```
+
+This command runs a container that executes a script that prints out the hello docker text.
+When this script runs, it exits and the container exits to give you your prompt back
+
+### An R Container
+
+1. Compare the version of R you have right now on your computer.
+You can open up and launch `R` or run `R --version` to get your current R version.
+2.Run the R 4.3.2 container:
+
+```bash
+docker run --rm -it rocker/r-ver:4.3.2
+```
+
+3. Compare the version from the version you have on your computer
+4. Try to load a package you have installed on your computer in the container (it should fail)
+5. Exit out of this docker container
+
+### An RStudio Container
+
+:::{.callout-note}
+If you are on an ARM based M-chip mac, you need to pass in the `--platform=linux/amd64` flag to the `docker run` command.
+<https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform>
+:::
+
+1. Run the RStudio container and connect it to your local computer's port `8787`
+
+```bash
+docker run --rm -e PASSWORD="pizza" -p 8787:8787 rocker/rstudio:4.4.2
+```
+
+2. Explain in your own words what each of the flags are doing in the `docker run` command. You can use the official `docker run` documentation:
+<https://docs.docker.com/reference/cli/docker/container/run/>
+
+
+3. Open and log into the RStudio container and try to run some R code in a script
+4. Save this script
+5. Close the container and run it again
+6. Notice how all your work inside the container is lost
+
+### An RStudio Tidyverse Container
+
+1. Do the same process as before, but this time use the `rocker/tidyverse:4.4.2` container.
+2. Without turning off this container, open a new terminal and run a separate `rocker/rstudio:4.4.2` container
+  - You will need to change the local port mapping
+3. Make sure you are able to log into and run both RStudio sessions in the container
+  - Note how only one of the RStudio sessions has `tidyverse` installed and the other doesn't

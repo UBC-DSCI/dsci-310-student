@@ -1,0 +1,5 @@
+---
+title: "Tutorial 1"
+---
+
+Computer Setup Help, Bash, and Git

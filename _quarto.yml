@@ -27,6 +27,8 @@ website:
         text: Syllabus
       - href: assessments.qmd
         text: Assessments
+      - href: tutorials.qmd
+        text: Tutorials
       - href: computer-setup.qmd
         text: Computer Setup
 
@@ -56,6 +58,15 @@ website:
         - section: "Teamwork"
           contents:
 
+    - title: Tutorials
+      contents:
+        - tutorials.qmd
+        - section: "Tutorials"
+          contents:
+            - tutorials/t1.qmd
+            - tutorials/t2.qmd
+            - tutorials/t3.qmd
+            - tutorials/t4.qmd
 
 format:
   html:
