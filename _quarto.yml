@@ -8,6 +8,7 @@ project:
     - /*.qmd
     - assignment_milestone
     - tutorials
+    - project
     - install_instructions
 
 website:
@@ -47,16 +48,19 @@ website:
           contents:
             - assignment_milestone/ia1.qmd
             - assignment_milestone/ia2.qmd
+            - assignment_milestone/ia3.qmd
 
         - text: "---"
 
         - section: "Milestone"
           contents:
+            - project/m1.qmd
 
         - text: "---"
 
         - section: "Teamwork"
           contents:
+            - project/teamwork_contract.qmd
 
     - title: Tutorials
       contents:
