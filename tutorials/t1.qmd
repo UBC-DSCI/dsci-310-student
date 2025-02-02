@@ -3,3 +3,29 @@ title: "Tutorial 1"
 ---
 
 Computer Setup Help, Bash, and Git
+
+## Create a repository
+
+- Create a new repository on GitHub (e.g., `YYYY-MM-DD-git`).
+  You can create it with an existing `README.md` file (or create a new one later)
+
+:::{.callout-tip}
+Creating a repository with a date is a quick way to make a unique name
+where you can practice and redo a tutorial again in the future.
+:::
+
+- Clone down the repository to your local computer
+
+## Make Changes to a file
+
+- Create a `README.md` file if you don't have one already
+- Edit the `README.md` file by adding a line about your favorite food
+- Add / commit / push your changes up to github
+
+## Update changes from remote
+
+- Now edit the `README.md` file on the remote github repository
+- Add a new line by naming your favorite color
+- Commit the changes on github.com
+- Confirm your changes in github.com are made in the web interface
+- pull down your changes to your local computer

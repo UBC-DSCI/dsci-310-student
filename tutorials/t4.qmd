@@ -2,7 +2,9 @@
 title: "Tutorial 4"
 ---
 
-Virtual environments and docker containers
+Virtual environments and docker containers.
+We'll practice creating virtual environments again (just like last tutorial),
+so we can compare it with creating docker containers.
 
 ## R Environments
 

@@ -2,4 +2,39 @@
 title: "Tutorial 3"
 ---
 
-Python and R Environments
+Here we'll practice with programming language environments.
+
+If `conda` and python does not apply to you, you may skip the `conda` and python portion of the tutorial.
+If you are taking, have taken,
+or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.
+
+
+
+## R Environments: renv
+
+1. Open up RStudio
+2. run `getwd()` in the r console, and note the default starting working directory in R when not in a project.
+3. Create an RStudio Project (either from an existing folder, or create a new folder)
+3. run `getwd()` again and see how the working directory changes
+4. Install the `renv` package (if you do not have it installed)
+5. Note all the current installed R packages you have in the packages panel
+6. Run the `renv::init()` in the current project (you can also choose to `library(renv)` and then `init()` as 2 separate steps
+7. Now note the packages in the package panel
+8. Install the `palmerpenguins` package in R
+9. Library the `palmerpenguins` package
+10. you should now have access to the `penguins` dataframe
+11. update the lock file with `renv::snapshot()`
+12. Open a new RStudio or close the current project
+13. You should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made
+
+
+
+## Python Environments: conda
+
+1. Open up a terminal, you should be in a conda base environment
+2. Run `python --version` and `which python` to check the python version you have and which one is actually being used
+3.  create a new conda environment with a different python version from the one you currently have in base
+4. activate this environment
+5. install jupyterlab and pandas in the new environment
+6. create an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)
+7. deactivate your python environment
