@@ -238,6 +238,66 @@
     "text": "Attributions\n\nUBC MDS Software Stack Install Instructions\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0\nSoftware Carpentry"
   },
   {
+    "objectID": "project/m1.html",
+    "href": "project/m1.html",
+    "title": "Milestone 1",
+    "section": "",
+    "text": "GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (full.ipynb, Dockerfile, docker-compose.yml).",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 1"
+    ]
+  },
+  {
+    "objectID": "project/m1.html#overall-project-summary",
+    "href": "project/m1.html#overall-project-summary",
+    "title": "Milestone 1",
+    "section": "Overall project summary",
+    "text": "Overall project summary\nIn this course you will work in assigned teams of three or four (see group assignments in Canvas) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.\nYour data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:\n\nA well documented and modularized software package and scripts written in R and/or Python,\nA data analysis pipeline automated with GNU Make,\nA reproducible report powered by either Jupyter book or R Markdown,\nA containerized computational environment created and made shareable by Docker, and\nA remote version control repository on GitHub for project collaboration and sharing, As well as automation of test suite execution and documentation and software deployment.\n\nAn example final project from another course (where the project is similar) can be seen here: Breast Cancer Predictor",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 1"
+    ]
+  },
+  {
+    "objectID": "project/m1.html#milestone-1-summary",
+    "href": "project/m1.html#milestone-1-summary",
+    "title": "Milestone 1",
+    "section": "Milestone 1 summary",
+    "text": "Milestone 1 summary\nIn this milestone, you will:\n\nDraft a team work contract\nSet-up a public GitHub repository\nSelect a data analysis project to work with\nCreate an appropriate file and directory structure for a data analysis project\nAdd the data analysis as a literate code document\nMake the computation environment reproducible through containerization with Docker\n\nAn example project milestone 1 is available here: https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2\n\n1. Draft a team work contract\nThis document will govern the working relationships on your team, and if done correctly, it should help you manage and resolve any issues that might arise when working in a group. A sample team work contract from a past data science project can be found here.\nA team work contract communicates specifically how the core group of people who are working together and gives detail about the logistics of working together and the expectations you have for each other.\nSome aspects of the team work contract could be:\n\nHow will work be distributed in a fair and equitable way?\nWhat are the expected work hours for the project?\nHow often will group meetings occur (here is a nice article on meetings)?\nWill you have meeting agendas and minutes? If so, what will be the system for rotating through these responsibilities?\nWhat will be the style of working?\n\nWill you start each day with stand-ups, or submit a summary of your contributions 4 hours before each meeting? or something else?\n\nWhat is the quality of work each team member expects from themselves and each other?\nWhen are team members not available (e.g., evenings and Sundays because of family obligations).\nAnd any other similar things that govern your working relationships.\n\nUse this opportunity to use your prior knowledge/experience to improve your teamwork, communication, leadership, and organizational skills.\n\n\n\n\n\n\nNote\n\n\n\nThis document is fairly personal and does NOT need to reside in your public GitHub.com repo.\nPlease submit this contract under a separate assignment.\n\n\n\n\n2. Set-up a GitHub repository\nNow set-up a public GitHub repository for your project in the format: dsci-310-group-XX-&lt;optional_team_name&gt;. You will create this project in the course github organization (not under a personal account).\nWe are using github.com and public repositories because we will eventually be using some fancy tooling (e.g., GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com. Additionally, this will help you build a portfolio of your work you can share with others.\n\n\n\n\n\n\nNote\n\n\n\nIf you need to change the name of your project repository later, you can.\n\n\nThe tracking of the project will be done using GitHub milestones. When you create a milestone, you can associate it with issues and pull requests. After creating issues you can link them to a milestone associating each them to a project due date.\nIn order to make more efficient team workflow, organize the issues you have previously associated with milestones into a GitHub project board.\nThe project board should show the current status of the project to the team. Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves.\n\n\n3. Select a data analysis project to work with\nThe content of this analysis project should be a narrated analysis that asks and answers a predictive question using a classification or regression method taught in the prerequisite course, DSCI 100. For milestone 1, the code and analysis narrative should be contained within a single Jupyter notebook (e.g., .ipynb file), RMarkdown file (e.g., .Rmd file), or Quarto document (e.g., .qmd file). The analysis narrative should be rich, and at the level of the final project from DSCI 100. Either R or Python can be used to do this. However, all group members must have past experience using the language chosen and permission of the instructor must be given. The restrictions on the analysis methods and programming language are put in place to ensure that all group members can contribute equally to the project.\nThe data for the project should be publicly available, and clearly licensed to be shared and used openly on the internet. We strongly suggest you avoid using data sets where authentication is needed for access (e.g., Kaggle) as this adds another layer of complexity when making these projects reproducible.\n\nPossible data set sources\n\npast DSCI 100 projects (note: if you reuse part or all of a past DSCI 100 project, you will be required to provide documentation of written permission of all past teammates from that project)\nUCI Machine Learning Repository: Data Sets\nfivethirtyeight R package (if you use this, see the note below!)\nGovernment of Canada open data\nGitHub repo of awesome public datasets\ntidytuesday data set\nGoogle Data set search engine\n\n\n\n\n\n\n\nNote\n\n\n\nIf you choose a data set from the fivethirtyeight R package, you cannot copy their scientific question, visualizations or methods from the original FiveThirtyEight articles from where the data sets were first reported on. Finally, with the fivethirtyeight R package data sets, we want you to get practice reading them using the read_* functions in R or Python, so please use the versions of the data sets listed here: https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw\n\n\n\n\n\n4. Create an appropriate file and directory structure for a data analysis project\nFor this project, you are expected to follow the best practices we have learned about in regards to project directory and file structures. This should be reflected in your GitHub repository. Specifically for this milestone, please ensure that you include at least the following 7 files and directories in your project’s GitHub repository:\n\nREADME.md\nCODE_OF_CONDUCT.md\nCONTRIBUTING.md\ndata/\nanalysis.Rmd or analysis.qmd\nDockerfile\n.github/workflows/publish_docker_image.yml\nLICENSE.md\n\nThe description of each of them follows.\n\ni. README.md\nIn the main README.md file for this project you should include: - the project title - the list of contributors/authors - a short summary of the project (view from 10,000 feet) - how to run your data analysis - a list of the dependencies needed to run your analysis - the names of the licenses contained in LICENSE.md\nNote - this document should live in the root of your public GitHub.com repo.\n\n\nii. CODE_OF_CONDUCT.md\nIn an attempt to create a safe, positive, productive, and happy community, many organizations and developers create a code of conduct for their projects. A code of conduct in a Data Science project informs others of social norms, acceptable behaviour and general etiquette. It is more outward facing than the team work contract discussed above. We recommend Project Include for a comprehensive guide to writing an effective Code of Conduct.\nAt minimum, we believe that a good/effective code of conduct should include:\n\nA Statement on diversity and inclusivity\nDetails on expected, and unacceptable behaviour\nA list of consequences for unacceptable behaviour\nA procedure for reporting and dealing with unacceptable behaviour\n\n\nSample Codes of Conduct:\n\nUBC Data Science 100 CoC\nidocde Coc\nPython Community CoC\nTidyverse CoC\nPandas CoC\nVox Media CoC\n\nNote - this document should live in the root of your public GitHub.com repository.\n\n\n\niii. CONTRIBUTING.md\nIt is a good practice to include information about how others outside the core team can contribute to your project somewhere in your repository. This is typically done as a separate file in a repository called CONTRIBUTING.md. Here are some examples of this file:\n\nAltair\ndplyr\nAtom editor (very comprehensive)\n\nIf you’re interested in this, here’s a quick guide to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:\nWe welcome all contributions to this project!\nIf you notice a bug, or have a feature request,\nplease open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues).\nIf you'd like to contribute a feature or bug fix,\nyou can fork our repo and submit a pull request.\nWe will review pull requests within 7 days.\nAll contributors must abide by our [code of conduct](CODE_OF_CONDUCT.md).\nNote - this document should live in the root of your public GitHub.com repository.\n\n\niv. data/\nThe data directory should contain a copy of the downloaded data (written there by code). An exception to this can be made if the data set is extremely large (&gt; 100 MB per file). In such cases, please reach out to the instructional team to make an alternative plan.\n\n\nv. analysis.ipynb / analysis.Rmd / analysis.qmd\nFor this milestone, the analysis code and narration should be contained within a single literate code document (e.g., Jupyter notebook, RMarkdown file, or Quarto document). This document should not actually be named analysis.***, but have a more descriptive title, related to the project title.\n\n\nvi. Dockerfile\nThe Dockerfile is the file used to specify and create the Docker image from which containers can be run to create an reproducible computational environment for your analysis. For this project, we recommend using a base Docker image that already has most of the software dependencies needed for your analysis. Examples of these include the Jupyter core team Docker images (documentation) and the Rocker team Docker images (documentation). When you add other software dependencies to this Dockerfile, ensure that you pin the version of the software that you add.\nNote - this document should live in the root of your public GitHub.com repository.\n\n\nvii. .github/workflows/publish_docker_image.yml\nIn this milestone, we expect you to add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image (using latest is okay for now) and GitHub repo when changes are pushed to the Dockerfile\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nThis part is similar to Individual Assignment 3.\n\n\nviii. LICENSE.md\nLicense’s tell others how they may (or may not) use your work. We will learn more about licenses later in the course, and for now we recommend using an MIT license for the project code and a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license for the project report. As long as your group agrees, these can be changed later in the course when you learn more about licenses. If you want to spend some time choosing different licenses now, we can recommend these two websites to help get you started:\n\nhttps://choosealicense.com/\nhttps://chooser-beta.creativecommons.org/\n\n\n\n\n5. Add the data analysis as a literate code document\nFor this milestone, the analysis code and narration should be contained within a single literate code document (i.e., Jupyter notebook). The following sections should be included:\n\nTitle\nSummary\nIntroduction:\n\nprovide some relevant background information on the topic so that someone unfamiliar with it will be prepared to understand the rest of your report\nclearly state the question you tried to answer with your project\nidentify and describe the dataset that was used to answer the question\n\nMethods & Results:\n\ndescribe in written english the methods you used to perform your analysis from beginning to end that narrates the code the does the analysis.\nyour report should include code which:\nloads data from the original source on the web\nwrangles and cleans the data from it’s original (downloaded) format to the format necessary for the planned classification or clustering analysis\nperforms a summary of the data set that is relevant for exploratory data analysis related to the planned classification analysis\ncreates a visualization of the dataset that is relevant for exploratory data analysis related to the planned classification analysis\nperforms classification or regression analysis\ncreates a visualization of the result of the analysis\nnote: all tables and figure should have a figure/table number and a legend\n\nDiscussion:\n\nsummarize what you found\ndiscuss whether this is what you expected to find?\ndiscuss what impact could such findings have?\ndiscuss what future questions could this lead to?\n\nReferences:\n\nat least 4 citations relevant to the project (format is your choose, just be consistent across the references).\n\n\n\n\n6. Make the computation environment reproducible through containerization with Docker\nFor this project, we will be making the computation environment reproducible through containerization with Docker. We will use Docker containers for collaborative project development, as well as for sharing a reproducible analysis at the end of the project. It is expected that: - the Docker image, from which containers are generated, will be specified by a Dockerfile that lives in the root of the project’s GitHub repository - the building of the Docker image and distribution of it via DockerHub will be automated via GitHub Actions - an explanation of how to run and use Docker to develop and execute the analysis will be documented in the README.md file.",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 1"
+    ]
+  },
+  {
+    "objectID": "project/m1.html#submission-instructions",
+    "href": "project/m1.html#submission-instructions",
+    "title": "Milestone 1",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\nYou will submit two URLS’s to Canvas in the provided text box for milestone 1:\n\nthe URL of your project’s GitHub.com repository\nthe URL of a GitHub release of your project’s project’s GitHub.com repository\nIn a separate file / Submission, your teamwork contract\n\n\nCreating a release on GitHub.com\nJust before you submit the milestone 1, create a release on your project repository on GitHub and name it 0.0.1 (how to create a release). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 1"
+    ]
+  },
+  {
+    "objectID": "project/m1.html#expectations",
+    "href": "project/m1.html#expectations",
+    "title": "Milestone 1",
+    "section": "Expectations",
+    "text": "Expectations\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nAfter the repository is set-up, each group member should work in a GitHub flow workflow; where they create branches for each feature or fix, which are reviewed and critiqued by at least one other teammate before the the pull request is accepted.\nYou should be committing to git and pushing to GitHub.com every time you work on this project.\nGit commit messages should be meaningful. These will be marked. It’s OK if one or two are less meaningful, but most should be.\nUse GitHub issues to communicate to their team mate (as opposed to email or Slack).\nYour question, analysis and visualization should make sense. It doesn’t have to be complicated.\nYou should use proper grammar and full sentences in your README. Point form may occur, but should be less than 10% of your written documents.",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 1"
+    ]
+  },
+  {
     "objectID": "tutorials/t1.html",
     "href": "tutorials/t1.html",
     "title": "Tutorial 1",
@@ -315,64 +375,110 @@
     ]
   },
   {
-    "objectID": "assignment_milestone/ia1.html",
-    "href": "assignment_milestone/ia1.html",
-    "title": "Individual assignment 1",
+    "objectID": "assignment_milestone/ia3.html",
+    "href": "assignment_milestone/ia3.html",
+    "title": "Individual assignment 3",
     "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "text": "Practice building Docker images",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 1"
+      "Individual assignment 3"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia1.html#instructions",
-    "href": "assignment_milestone/ia1.html#instructions",
-    "title": "Individual assignment 1",
-    "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "objectID": "assignment_milestone/ia3.html#instructions",
+    "href": "assignment_milestone/ia3.html#instructions",
+    "title": "Individual assignment 3",
+    "section": "Instructions",
+    "text": "Instructions\nThe purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from Dockerfiles.\n\nSubmission instructions\nIn the text box provided for this assignment on Canvas, you must submit:\n\nA link to the GitHub.com repository that you create for this assignment.\n\nYou should name your GitHub.com repository dsci310-ia3-&lt;USERNAME&gt;-docker.\nYou need to create this assignment in the course organization: https://github.com/DSCI-310-2025\n\nA the link to your Docker image on DockerHub. You should name your DockerHub repository dsci310-ia3-&lt;USERNAME&gt;-docker.\n\n\n\n\n\n\n\nWarning\n\n\n\nMake sure your repository is under the DSCI-310-2025 organization. You can do a “repository transfer” if you need to, but your submission needs to be in the correct org.\n\n\n\n\nExercise instructions\n\nCreate a public repository on GitHub.com repo under your personal username called dsci310-ia3-&lt;USERNAME&gt;-docker\n\nYou can choose a pre-made .gitignore or manually create one yourself\n\nAdd a Dockerfile to it. This Dockerfile should be based off of the rocker/rstudio:4.4.2 Docker image\n\nlink to rocker/rstudio DockerHub repository\nlink to rocker/rstudio:4.4.2 Dockerfile\n\nAdd at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).\n\nThere are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.\nOne way is to turn your dsci310-dockerfile-practice into a local RStudio project then do the following steps:\n\nOpen the RStudio project locally\nInitialize the project with renv\nUse {renv} to install a package (e.g., cowsay) and then make sure you create a script that loads/uses the {cowsay} package.\nIn your Dockerfile COPY all your renv files into the container\nUse the outputs from renv to help you specify which functions to use to install the libraries\n\n\nHint: you might need to toggle the USER in the Dockerfile between rstudio and root to get everything working.\n\nAnother way is to RUN commands directly in the Dockerfile to install packages\n\nHint: You cannot use install.packages() because you can’t pin a version number.\nHint: You can run R code directly from the command line. For example, Rscript -e \"print('something to say...')\". Make sure to change the double quotes \"\" to single quotes '' in the R code.\nHint: You will need to first install the {remotes} package, and then use the remotes::install_version() function\n\n\nBuild your Dockerfile and test it locally.\nAdd a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile\n\nUse the “Docker image” workflow\n\nYou can also start off with an empty file and paste in a workflow by clicking “Skip this and setup a workflow yourself”.\n\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nHere are some resources to help you create your own Github Action Workflow:\n\nIn-class demo on Thursday’s lecture recording, starting 35:00\nGithub Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images\n\n\n\n(As Needed): Make sure you make at least one change to the Dockerfile once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once. - You can also add a workflow_dispatch: trigger and manually trigger a workflow\n\nNote: If you are making an renv.lock file and you notice it’s not updating with renv::snapshot(), take a look at this FAQ",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 1"
+      "Individual assignment 3"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia1.html#submission",
-    "href": "assignment_milestone/ia1.html#submission",
-    "title": "Individual assignment 1",
-    "section": "Submission",
-    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignment_milestone/ia1.html#troubleshooting",
-    "href": "assignment_milestone/ia1.html#troubleshooting",
-    "title": "Individual assignment 1",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignment_milestone/ia1.html#rubric",
-    "href": "assignment_milestone/ia1.html#rubric",
-    "title": "Individual assignment 1",
+    "objectID": "assignment_milestone/ia3.html#rubric",
+    "href": "assignment_milestone/ia3.html#rubric",
+    "title": "Individual assignment 3",
     "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\nA Docker image named dockerfile-practice and tagged with a version exists under the student’s username on DockerHub.\nThe Dockerfile used to create the Docker image lives in a GitHub repository named dockerfile-practice under the student’s username.\nThere is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.\nThe Docker image version tag is in sync with the GitHub repository release tag. (Not needed – Free Point)\nAt least one new R package was added to the Dockerfile and the version of that package was pinned.\n\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\n5/5 of the criteria listed above were met.\n\n\n75%\n4/5 of the criteria listed above were met.\n\n\n50%\n3/5 of the criteria listed above were met.\n\n\n25%\n2/5 of the criteria listed above were met.\n\n\n0%\nOnly 1/5 of the criteria listed above were met or the assignment was not attempted.\n\n\n50%\nMaximum amount of points if created in the wrong organization\n\n\n\nAdditional points taken off:\n\n-2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 1"
+      "Individual assignment 3"
     ]
+  },
+  {
+    "objectID": "tutorials.html",
+    "href": "tutorials.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Tutorials for the Friday sessions",
+    "crumbs": [
+      "Tutorials"
+    ]
+  },
+  {
+    "objectID": "computer-setup.html",
+    "href": "computer-setup.html",
+    "title": "Computer setup",
+    "section": "",
+    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
+  },
+  {
+    "objectID": "computer-setup.html#laptop-requirements",
+    "href": "computer-setup.html#laptop-requirements",
+    "title": "Computer setup",
+    "section": "Laptop requirements",
+    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
+  },
+  {
+    "objectID": "computer-setup.html#software-installation-instructions",
+    "href": "computer-setup.html#software-installation-instructions",
+    "title": "Computer setup",
+    "section": "Software installation instructions",
+    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
+  },
+  {
+    "objectID": "assessments.html",
+    "href": "assessments.html",
+    "title": "Assessment schedule",
+    "section": "",
+    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
+    "crumbs": [
+      "Assessments",
+      "Assessment schedule"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSCI 310",
+    "section": "",
+    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
+  },
+  {
+    "objectID": "coc.html#attribution",
+    "href": "coc.html#attribution",
+    "title": "Code of Conduct",
+    "section": "Attribution",
+    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
   },
   {
     "objectID": "syllabus.html",
@@ -452,73 +558,63 @@
     "text": "Attribution\nParts of this syllabus (particularly the policies) have been copied and derived from the UBC MDS Policies."
   },
   {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
+    "objectID": "assignment_milestone/ia1.html",
+    "href": "assignment_milestone/ia1.html",
+    "title": "Individual assignment 1",
     "section": "",
-    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
-  },
-  {
-    "objectID": "coc.html#attribution",
-    "href": "coc.html#attribution",
-    "title": "Code of Conduct",
-    "section": "Attribution",
-    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSCI 310",
-    "section": "",
-    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
-  },
-  {
-    "objectID": "assessments.html",
-    "href": "assessments.html",
-    "title": "Assessment schedule",
-    "section": "",
-    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
     "crumbs": [
       "Assessments",
-      "Assessment schedule"
+      "Individual Assignments",
+      "Individual assignment 1"
     ]
   },
   {
-    "objectID": "computer-setup.html",
-    "href": "computer-setup.html",
-    "title": "Computer setup",
+    "objectID": "assignment_milestone/ia1.html#instructions",
+    "href": "assignment_milestone/ia1.html#instructions",
+    "title": "Individual assignment 1",
     "section": "",
-    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
-  },
-  {
-    "objectID": "computer-setup.html#laptop-requirements",
-    "href": "computer-setup.html#laptop-requirements",
-    "title": "Computer setup",
-    "section": "Laptop requirements",
-    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
-  },
-  {
-    "objectID": "computer-setup.html#software-installation-instructions",
-    "href": "computer-setup.html#software-installation-instructions",
-    "title": "Computer setup",
-    "section": "Software installation instructions",
-    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
-  },
-  {
-    "objectID": "tutorials.html",
-    "href": "tutorials.html",
-    "title": "Tutorials",
-    "section": "",
-    "text": "Tutorials for the Friday sessions",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
     "crumbs": [
-      "Tutorials"
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia1.html#submission",
+    "href": "assignment_milestone/ia1.html#submission",
+    "title": "Individual assignment 1",
+    "section": "Submission",
+    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia1.html#troubleshooting",
+    "href": "assignment_milestone/ia1.html#troubleshooting",
+    "title": "Individual assignment 1",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignment_milestone/ia1.html#rubric",
+    "href": "assignment_milestone/ia1.html#rubric",
+    "title": "Individual assignment 1",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
     ]
   },
   {
@@ -691,6 +787,18 @@
     "crumbs": [
       "Tutorials",
       "Tutorial 4"
+    ]
+  },
+  {
+    "objectID": "project/teamwork_contract.html",
+    "href": "project/teamwork_contract.html",
+    "title": "Sample teamwork contract",
+    "section": "",
+    "text": "Sample project teamwork contract from a group of students for a past data science group project.\nTeam Contract\nExpectations\nThe time expected for group members to work on DSCI 5XX will be a maximum of 6 hours unless all the team members agree to lengthen the time expected. If team members cannot complete their sections within the maximum hours, members should give notice on Slack at least 24 hours before the group submission date (Saturday 6am) to see if work should be redistributed or if the expected time should be increased.\nAll submissions are expected to meet the criteria of the milestones as set out in the instructions. This includes making sure all scripts are working, creating tests for all your functions, and using proper grammar in written submissions.\nMeetings\nMeeting times were established during the initial team meeting held on 202X-XX-XX. Meetings will be held in or meet outside LOCATION on the following dates:\n\nThursday 2/27: 4-5pm\nMonday 3/2: 4-5pm (if needed)\nThursday 3/5: 1-2pm\nMonday 3/9: 4-5pm (if needed)\nWednesday 3/11: 12:30-2pm\nThursday 3/12: 4-5pm (if needed)\nMonday 3/16: 4-5pm (if needed)\nThursday 3/19: 1-2pm\nThursday 3/19 (same day): 4-5pm (if needed)\nThursday 3/26: 10am - 1pm\n\nThe group will have a second formal meeting during the lab for 524 on Mondays at 2 pm. All members are expected to attend the meetings. If a member cannot make a meeting, written notice must be given 24 hours before the meeting to discuss alternative options.\nCommunication\nAll communication outside of the meetings will be through Slack or Github. Github will be the primary communication tool for ideas, suggestions, submitting work and reviewing work. Slack will be the primary communication tool for informal communication and scheduling meetings.\nReviews\nAll members are expected to submit a pull request for their work on the repository for the group project on Github.com. Members are expected to add teammates as reviewers to have all pull request reviewed by another teammate. Pull request should be reviewed within 24 hours after creation.\nRoles\nThere are two roles team members will be responsible for each week. The roles are as follows:\n\nScribe:\n\nResponsible for taking notes at the meetings and in-class lab sessions and adding as a GitHub issue.\nResponsible for sharing with all notes and in-class activities to teammates.\n\nProof-reader\n\nResponsible for doing a final check of the submission before the deadline to make sure all requirements are satisfied.\n\n\nPositions will be rotated each week to ensure that each team member does each position once.\nDeadlines\nDeadlines for individual items will be assigned during meetings. The proof-reader will review the work on Saturday and ensure that the final version is ready for submission and create the required version tag.\nBreach of Contract\nFailure to follow the team contract will result in a three-step warning system:\n\nThe first step is a written notice that outlines the violation of the team contract and a reminder of the team contract conditions.\nThe second step is a meeting to discuss the behaviour and write an agreement to follow the team contract is required by the member.\nThe third step is to reach out to the lab instructor or TAs of the issues with the teammate",
+    "crumbs": [
+      "Assessments",
+      "Teamwork",
+      "Sample teamwork contract"
     ]
   },
   {
