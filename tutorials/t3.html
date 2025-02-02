@@ -185,8 +185,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#r-environments-renv" id="toc-r-environments-renv" class="nav-link active" data-scroll-target="#r-environments-renv">R Environments: renv</a></li>
+  <li><a href="#python-environments-conda" id="toc-python-environments-conda" class="nav-link" data-scroll-target="#python-environments-conda">Python Environments: conda</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -210,9 +217,41 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Python and R Environments</p>
+<p>Here we’ll practice with programming language environments.</p>
+<p>If <code>conda</code> and python does not apply to you, you may skip the <code>conda</code> and python portion of the tutorial. If you are taking, have taken, or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.</p>
+<section id="r-environments-renv" class="level2">
+<h2 class="anchored" data-anchor-id="r-environments-renv">R Environments: renv</h2>
+<ol type="1">
+<li>Open up RStudio</li>
+<li>run <code>getwd()</code> in the r console, and note the default starting working directory in R when not in a project.</li>
+<li>Create an RStudio Project (either from an existing folder, or create a new folder)</li>
+<li>run <code>getwd()</code> again and see how the working directory changes</li>
+<li>Install the <code>renv</code> package (if you do not have it installed)</li>
+<li>Note all the current installed R packages you have in the packages panel</li>
+<li>Run the <code>renv::init()</code> in the current project (you can also choose to <code>library(renv)</code> and then <code>init()</code> as 2 separate steps</li>
+<li>Now note the packages in the package panel</li>
+<li>Install the <code>palmerpenguins</code> package in R</li>
+<li>Library the <code>palmerpenguins</code> package</li>
+<li>you should now have access to the <code>penguins</code> dataframe</li>
+<li>update the lock file with <code>renv::snapshot()</code></li>
+<li>Open a new RStudio or close the current project</li>
+<li>You should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made</li>
+</ol>
+</section>
+<section id="python-environments-conda" class="level2">
+<h2 class="anchored" data-anchor-id="python-environments-conda">Python Environments: conda</h2>
+<ol type="1">
+<li>Open up a terminal, you should be in a conda base environment</li>
+<li>Run <code>python --version</code> and <code>which python</code> to check the python version you have and which one is actually being used</li>
+<li>create a new conda environment with a different python version from the one you currently have in base</li>
+<li>activate this environment</li>
+<li>install jupyterlab and pandas in the new environment</li>
+<li>create an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)</li>
+<li>deactivate your python environment</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -649,4 +688,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

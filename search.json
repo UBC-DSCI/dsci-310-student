@@ -249,11 +249,66 @@
     ]
   },
   {
+    "objectID": "tutorials/t1.html#create-a-repository",
+    "href": "tutorials/t1.html#create-a-repository",
+    "title": "Tutorial 1",
+    "section": "Create a repository",
+    "text": "Create a repository\n\nCreate a new repository on GitHub (e.g., YYYY-MM-DD-git). You can create it with an existing README.md file (or create a new one later)\n\n\n\n\n\n\n\nTip\n\n\n\nCreating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.\n\n\n\nClone down the repository to your local computer",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html#make-changes-to-a-file",
+    "href": "tutorials/t1.html#make-changes-to-a-file",
+    "title": "Tutorial 1",
+    "section": "Make Changes to a file",
+    "text": "Make Changes to a file\n\nCreate a README.md file if you don’t have one already\nEdit the README.md file by adding a line about your favorite food\nAdd / commit / push your changes up to github",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html#update-changes-from-remote",
+    "href": "tutorials/t1.html#update-changes-from-remote",
+    "title": "Tutorial 1",
+    "section": "Update changes from remote",
+    "text": "Update changes from remote\n\nNow edit the README.md file on the remote github repository\nAdd a new line by naming your favorite color\nCommit the changes on github.com\nConfirm your changes in github.com are made in the web interface\npull down your changes to your local computer",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
     "objectID": "tutorials/t3.html",
     "href": "tutorials/t3.html",
     "title": "Tutorial 3",
     "section": "",
-    "text": "Python and R Environments",
+    "text": "Here we’ll practice with programming language environments.\nIf conda and python does not apply to you, you may skip the conda and python portion of the tutorial. If you are taking, have taken, or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 3"
+    ]
+  },
+  {
+    "objectID": "tutorials/t3.html#r-environments-renv",
+    "href": "tutorials/t3.html#r-environments-renv",
+    "title": "Tutorial 3",
+    "section": "R Environments: renv",
+    "text": "R Environments: renv\n\nOpen up RStudio\nrun getwd() in the r console, and note the default starting working directory in R when not in a project.\nCreate an RStudio Project (either from an existing folder, or create a new folder)\nrun getwd() again and see how the working directory changes\nInstall the renv package (if you do not have it installed)\nNote all the current installed R packages you have in the packages panel\nRun the renv::init() in the current project (you can also choose to library(renv) and then init() as 2 separate steps\nNow note the packages in the package panel\nInstall the palmerpenguins package in R\nLibrary the palmerpenguins package\nyou should now have access to the penguins dataframe\nupdate the lock file with renv::snapshot()\nOpen a new RStudio or close the current project\nYou should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 3"
+    ]
+  },
+  {
+    "objectID": "tutorials/t3.html#python-environments-conda",
+    "href": "tutorials/t3.html#python-environments-conda",
+    "title": "Tutorial 3",
+    "section": "Python Environments: conda",
+    "text": "Python Environments: conda\n\nOpen up a terminal, you should be in a conda base environment\nRun python --version and which python to check the python version you have and which one is actually being used\ncreate a new conda environment with a different python version from the one you currently have in base\nactivate this environment\ninstall jupyterlab and pandas in the new environment\ncreate an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)\ndeactivate your python environment",
     "crumbs": [
       "Tutorials",
       "Tutorial 3"
@@ -599,7 +654,7 @@
     "href": "tutorials/t4.html",
     "title": "Tutorial 4",
     "section": "",
-    "text": "Virtual environments and docker containers",
+    "text": "Virtual environments and docker containers. We’ll practice creating virtual environments again (just like last tutorial), so we can compare it with creating docker containers.",
     "crumbs": [
       "Tutorials",
       "Tutorial 4"
