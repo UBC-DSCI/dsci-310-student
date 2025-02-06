@@ -31,7 +31,7 @@ You can do a "repository transfer" if you need to, but your submission needs to 
     - [link to `rocker/rstudio:4.4.2` Dockerfile](https://hub.docker.com/r/rocker/rstudio/tags?page=1&name=4.4.2)
 3. Add at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).
     - There are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.
-    - One way is to turn your `dsci310-dockerfile-practice` into a local RStudio project then do the following steps:
+    - One way is to turn your `dsci310-ia3-<USERNAME>-docker` into a local RStudio project then do the following steps:
         1. Open the RStudio project locally
         2. Initialize the project with renv
         3. Use `{renv}` to install a package (e.g., `cowsay`) and then make sure you create a script that loads/uses the `{cowsay}` package.
@@ -50,7 +50,6 @@ You can do a "repository transfer" if you need to, but your submission needs to 
     - You will need to add your DockerHub username and password (naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively)
       as GitHub secrets to this repository for this to work.
     - Here are some resources to help you create your own Github Action Workflow:
-        - In-class demo on Thursday's lecture recording, starting 35:00
         - Github Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
 
 (As Needed): Make sure you make at least one change to the `Dockerfile` once the GitHub Actions have been setup
@@ -65,7 +64,7 @@ You can do a "repository transfer" if you need to, but your submission needs to 
 This assignment will be graded for completion as follows:
 
 1. A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub.
-2. The Dockerfile used to create the Docker image lives in a GitHub repository named `dockerfile-practice` under the student's username.
+2. The Dockerfile used to create the Docker image lives in a GitHub repository named `dsci310-ia3-<USERNAME>-docker` under the DSCI-310 org.
 3. There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository,
    and publish it to DockerHub.
 4. ~~The Docker image version tag is in sync with the GitHub repository release tag.~~ (Not needed -- Free Point)
