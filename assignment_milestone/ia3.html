@@ -295,7 +295,7 @@ Warning
 <li>Add at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).
 <ul>
 <li>There are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.</li>
-<li>One way is to turn your <code>dsci310-dockerfile-practice</code> into a local RStudio project then do the following steps:
+<li>One way is to turn your <code>dsci310-ia3-&lt;USERNAME&gt;-docker</code> into a local RStudio project then do the following steps:
 <ol type="1">
 <li>Open the RStudio project locally</li>
 <li>Initialize the project with renv</li>
@@ -323,7 +323,6 @@ Warning
 <li>You will need to add your DockerHub username and password (naming them <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>, respectively) as GitHub secrets to this repository for this to work.</li>
 <li>Here are some resources to help you create your own Github Action Workflow:
 <ul>
-<li>In-class demo on Thursday’s lecture recording, starting 35:00</li>
 <li>Github Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images</li>
 </ul></li>
 </ul></li>
@@ -339,7 +338,7 @@ Warning
 <p>This assignment will be graded for completion as follows:</p>
 <ol type="1">
 <li>A Docker image named <code>dockerfile-practice</code> and tagged with a version exists under the student’s username on DockerHub.</li>
-<li>The Dockerfile used to create the Docker image lives in a GitHub repository named <code>dockerfile-practice</code> under the student’s username.</li>
+<li>The Dockerfile used to create the Docker image lives in a GitHub repository named <code>dsci310-ia3-&lt;USERNAME&gt;-docker</code> under the DSCI-310 org.</li>
 <li>There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.</li>
 <li><del>The Docker image version tag is in sync with the GitHub repository release tag.</del> (Not needed – Free Point)</li>
 <li>At least one new R package was added to the Dockerfile and the version of that package was pinned.</li>
