@@ -6,7 +6,7 @@ project:
     #  List index.qmd first so that / redirects to it
     - /index.qmd
     - /*.qmd
-    - assignment_milestone
+    - individual_assignment
     - tutorials
     - project
     - install_instructions
@@ -46,9 +46,9 @@ website:
 
         - section: "Individual Assignments"
           contents:
-            - assignment_milestone/ia1.qmd
-            - assignment_milestone/ia2.qmd
-            - assignment_milestone/ia3.qmd
+            - individual_assignment/ia1.qmd
+            - individual_assignment/ia2.qmd
+            - individual_assignment/ia3.qmd
 
         - text: "---"
 
@@ -71,6 +71,7 @@ website:
             - tutorials/t2.qmd
             - tutorials/t3.qmd
             - tutorials/t4.qmd
+            - tutorials/t5.qmd
 
 format:
   html:

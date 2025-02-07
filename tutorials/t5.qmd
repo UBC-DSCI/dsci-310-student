@@ -1,0 +1,21 @@
+---
+title: "Tutorial 5"
+---
+
+1. Create a repository and clone it down
+
+2. Create a bash script that lists (using a bash command)
+   the files of your current working directory,
+   the root of the repo. Name it `list.sh`
+
+3. Create a dockerfile that uses the `rocker/rstudio` container, using version `4.2.2`.
+
+4. Copy the list.sh into the container
+
+5. Run the script in the container
+
+6. Document how to run the container and run the script in the container.
+   We must follow the steps until we are able to run and see the output.
+   Put your steps in the `README.md` file
+
+7. For Tuesday: Create a github action that also runs this bash script
