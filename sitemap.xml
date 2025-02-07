@@ -2,78 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/install_instructions/install_stack_mac.html</loc>
-    <lastmod>2025-02-06T18:44:44.203Z</lastmod>
+    <lastmod>2025-02-07T21:00:37.069Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/install_instructions/install_stack_ubuntu.html</loc>
-    <lastmod>2025-02-06T18:44:44.203Z</lastmod>
+    <lastmod>2025-02-07T21:00:37.069Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/project/m1.html</loc>
-    <lastmod>2025-02-06T18:44:44.204Z</lastmod>
+    <lastmod>2025-02-07T21:00:37.070Z</lastmod>
   </url>
   <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials/t1.html</loc>
-    <lastmod>2025-02-06T18:44:44.214Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials/t3.html</loc>
-    <lastmod>2025-02-06T18:44:44.214Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/assignment_milestone/ia3.html</loc>
-    <lastmod>2025-02-06T18:44:44.198Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials.html</loc>
-    <lastmod>2025-02-06T18:44:44.214Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/computer-setup.html</loc>
-    <lastmod>2025-02-06T18:44:44.198Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/assessments.html</loc>
-    <lastmod>2025-02-06T18:44:44.197Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/index.html</loc>
-    <lastmod>2025-02-06T18:44:44.202Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/about.html</loc>
-    <lastmod>2025-02-06T18:44:44.197Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/coc.html</loc>
-    <lastmod>2025-02-06T18:44:44.198Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/syllabus.html</loc>
-    <lastmod>2025-02-06T18:44:44.213Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/assignment_milestone/ia1.html</loc>
-    <lastmod>2025-02-06T18:44:44.197Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-DSCI.github.io/dsci-310-student/assignment_milestone/ia2.html</loc>
-    <lastmod>2025-02-06T18:44:44.198Z</lastmod>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials/t5.html</loc>
+    <lastmod>2025-02-07T21:00:37.080Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials/t2.html</loc>
-    <lastmod>2025-02-06T18:44:44.214Z</lastmod>
+    <lastmod>2025-02-07T21:00:37.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/individual_assignment/ia2.html</loc>
+    <lastmod>2025-02-07T21:00:37.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/individual_assignment/ia1.html</loc>
+    <lastmod>2025-02-07T21:00:37.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/syllabus.html</loc>
+    <lastmod>2025-02-07T21:00:37.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/coc.html</loc>
+    <lastmod>2025-02-07T21:00:37.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/about.html</loc>
+    <lastmod>2025-02-07T21:00:37.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/index.html</loc>
+    <lastmod>2025-02-07T21:00:37.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/assessments.html</loc>
+    <lastmod>2025-02-07T21:00:37.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/computer-setup.html</loc>
+    <lastmod>2025-02-07T21:00:37.062Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials.html</loc>
+    <lastmod>2025-02-07T21:00:37.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/individual_assignment/ia3.html</loc>
+    <lastmod>2025-02-07T21:00:37.069Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials/t3.html</loc>
+    <lastmod>2025-02-07T21:00:37.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials/t1.html</loc>
+    <lastmod>2025-02-07T21:00:37.079Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/tutorials/t4.html</loc>
-    <lastmod>2025-02-06T18:44:44.215Z</lastmod>
+    <lastmod>2025-02-07T21:00:37.080Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/project/teamwork_contract.html</loc>
-    <lastmod>2025-02-06T18:44:44.204Z</lastmod>
+    <lastmod>2025-02-07T21:00:37.070Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-DSCI.github.io/dsci-310-student/install_instructions/install_stack_windows.html</loc>
-    <lastmod>2025-02-06T18:44:44.204Z</lastmod>
+    <lastmod>2025-02-07T21:00:37.070Z</lastmod>
   </url>
 </urlset>

@@ -298,187 +298,203 @@
     ]
   },
   {
-    "objectID": "tutorials/t1.html",
-    "href": "tutorials/t1.html",
-    "title": "Tutorial 1",
+    "objectID": "tutorials/t5.html",
+    "href": "tutorials/t5.html",
+    "title": "Tutorial 5",
     "section": "",
-    "text": "Computer Setup Help, Bash, and Git",
+    "text": "Create a repository and clone it down\nCreate a bash script that lists (using a bash command) the files of your current working directory, the root of the repo. Name it list.sh\nCreate a dockerfile that uses the rocker/rstudio container, using version 4.2.2.\nCopy the list.sh into the container\nRun the script in the container\nDocument how to run the container and run the script in the container. We must follow the steps until we are able to run and see the output. Put your steps in the README.md file\nFor Tuesday: Create a github action that also runs this bash script",
     "crumbs": [
       "Tutorials",
-      "Tutorial 1"
+      "Tutorial 5"
     ]
   },
   {
-    "objectID": "tutorials/t1.html#create-a-repository",
-    "href": "tutorials/t1.html#create-a-repository",
-    "title": "Tutorial 1",
-    "section": "Create a repository",
-    "text": "Create a repository\n\nCreate a new repository on GitHub (e.g., YYYY-MM-DD-git). You can create it with an existing README.md file (or create a new one later)\n\n\n\n\n\n\n\nTip\n\n\n\nCreating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.\n\n\n\nClone down the repository to your local computer",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t1.html#make-changes-to-a-file",
-    "href": "tutorials/t1.html#make-changes-to-a-file",
-    "title": "Tutorial 1",
-    "section": "Make Changes to a file",
-    "text": "Make Changes to a file\n\nCreate a README.md file if you don’t have one already\nEdit the README.md file by adding a line about your favorite food\nAdd / commit / push your changes up to github",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t1.html#update-changes-from-remote",
-    "href": "tutorials/t1.html#update-changes-from-remote",
-    "title": "Tutorial 1",
-    "section": "Update changes from remote",
-    "text": "Update changes from remote\n\nNow edit the README.md file on the remote github repository\nAdd a new line by naming your favorite color\nCommit the changes on github.com\nConfirm your changes in github.com are made in the web interface\npull down your changes to your local computer",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t3.html",
-    "href": "tutorials/t3.html",
-    "title": "Tutorial 3",
+    "objectID": "tutorials/t2.html",
+    "href": "tutorials/t2.html",
+    "title": "Tutorial 2",
     "section": "",
-    "text": "Here we’ll practice with programming language environments.\nIf conda and python does not apply to you, you may skip the conda and python portion of the tutorial. If you are taking, have taken, or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.",
+    "text": "This tutorial will focus on Git + GitHub practice",
     "crumbs": [
       "Tutorials",
-      "Tutorial 3"
+      "Tutorial 2"
     ]
   },
   {
-    "objectID": "tutorials/t3.html#r-environments-renv",
-    "href": "tutorials/t3.html#r-environments-renv",
-    "title": "Tutorial 3",
-    "section": "R Environments: renv",
-    "text": "R Environments: renv\n\nOpen up RStudio\nrun getwd() in the r console, and note the default starting working directory in R when not in a project.\nCreate an RStudio Project (either from an existing folder, or create a new folder)\nrun getwd() again and see how the working directory changes\nInstall the renv package (if you do not have it installed)\nNote all the current installed R packages you have in the packages panel\nRun the renv::init() in the current project (you can also choose to library(renv) and then init() as 2 separate steps\nNow note the packages in the package panel\nInstall the palmerpenguins package in R\nLibrary the palmerpenguins package\nyou should now have access to the penguins dataframe\nupdate the lock file with renv::snapshot()\nOpen a new RStudio or close the current project\nYou should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made",
+    "objectID": "tutorials/t2.html#git-github",
+    "href": "tutorials/t2.html#git-github",
+    "title": "Tutorial 2",
+    "section": "Git + GitHub",
+    "text": "Git + GitHub\n\nCreate a github repository from github.com\nclone it down to your computer\nCreate/Edit the README file and write a short definition for the following commands:\n\ngit branch\ngit switch\ngit log --oneline --graph --all\n\nadd/commit/push your definitions to your github repository",
     "crumbs": [
       "Tutorials",
-      "Tutorial 3"
+      "Tutorial 2"
     ]
   },
   {
-    "objectID": "tutorials/t3.html#python-environments-conda",
-    "href": "tutorials/t3.html#python-environments-conda",
-    "title": "Tutorial 3",
-    "section": "Python Environments: conda",
-    "text": "Python Environments: conda\n\nOpen up a terminal, you should be in a conda base environment\nRun python --version and which python to check the python version you have and which one is actually being used\ncreate a new conda environment with a different python version from the one you currently have in base\nactivate this environment\ninstall jupyterlab and pandas in the new environment\ncreate an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)\ndeactivate your python environment",
+    "objectID": "tutorials/t2.html#branches-and-pull-requests-prs",
+    "href": "tutorials/t2.html#branches-and-pull-requests-prs",
+    "title": "Tutorial 2",
+    "section": "Branches and Pull Requests (PRs)",
+    "text": "Branches and Pull Requests (PRs)\n\nCreate a new branch (does not matter what name you give it)\nIn the new branch define the following terms:\n\nbranch\npull request\n\nPush your branch up to github and create a pull request\nMake a comment in your own pull request\nMerge your pull request into main\nUpdate your local main branch",
     "crumbs": [
       "Tutorials",
-      "Tutorial 3"
+      "Tutorial 2"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia3.html",
-    "href": "assignment_milestone/ia3.html",
-    "title": "Individual assignment 3",
+    "objectID": "tutorials/t2.html#extra-merge-conflicts",
+    "href": "tutorials/t2.html#extra-merge-conflicts",
+    "title": "Tutorial 2",
+    "section": "Extra: Merge Conflicts",
+    "text": "Extra: Merge Conflicts\nLet’s create a PR with a merge conflict\n\nCreate a new branch from main, edit the readme file, at the top and define the follow terms\n\ngit add\ngit commit\n\nPush this branch and create a PR, but DO NOT merge it\nOn your local machine, go back to your main branch\nCreate yet another branch from main (you should not be on your previous branch)\nAt the top of your readme file define the following terms\n\ngit push ...\ngit pull ...\n\nadd/commit/push your branch\nCreate another PR from your second branch\nTry to merge both branches now, you should see a merge conflict when you try to merge the 2nd branch",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html",
+    "href": "individual_assignment/ia2.html",
+    "title": "Individual assignment 2",
     "section": "",
-    "text": "Practice building Docker images",
+    "text": "The purpose of this assignment is to start familiarizing yourselves with version control with Git and GitHub. It will build on the git demos in class as well as the TA tutorials from week 1 (intro shell/bash) and week 2 (merge conflicts). Specifically, we will create a toy repository with a merge conflict and learn how to resolve it. A merge conflict occurs when Git is unable to automatically determine how to incorporate new changes. This can can occur when two branches modify the same line, or when a file is deleted when someone else is changing it. You can read more about merge conflicts here: Git merge conflicts.\nFollow the instructions listed below. You will be graded for completion.",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 3"
+      "Individual assignment 2"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia3.html#instructions",
-    "href": "assignment_milestone/ia3.html#instructions",
-    "title": "Individual assignment 3",
-    "section": "Instructions",
-    "text": "Instructions\nThe purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from Dockerfiles.\n\nSubmission instructions\nIn the text box provided for this assignment on Canvas, you must submit:\n\nA link to the GitHub.com repository that you create for this assignment.\n\nYou should name your GitHub.com repository dsci310-ia3-&lt;USERNAME&gt;-docker.\nYou need to create this assignment in the course organization: https://github.com/DSCI-310-2025\n\nA the link to your Docker image on DockerHub. You should name your DockerHub repository dsci310-ia3-&lt;USERNAME&gt;-docker.\n\n\n\n\n\n\n\nWarning\n\n\n\nMake sure your repository is under the DSCI-310-2025 organization. You can do a “repository transfer” if you need to, but your submission needs to be in the correct org.\n\n\n\n\nExercise instructions\n\nCreate a public repository on GitHub.com repo under your personal username called dsci310-ia3-&lt;USERNAME&gt;-docker\n\nYou can choose a pre-made .gitignore or manually create one yourself\n\nAdd a Dockerfile to it. This Dockerfile should be based off of the rocker/rstudio:4.4.2 Docker image\n\nlink to rocker/rstudio DockerHub repository\nlink to rocker/rstudio:4.4.2 Dockerfile\n\nAdd at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).\n\nThere are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.\nOne way is to turn your dsci310-ia3-&lt;USERNAME&gt;-docker into a local RStudio project then do the following steps:\n\nOpen the RStudio project locally\nInitialize the project with renv\nUse {renv} to install a package (e.g., cowsay) and then make sure you create a script that loads/uses the {cowsay} package.\nIn your Dockerfile COPY all your renv files into the container\nUse the outputs from renv to help you specify which functions to use to install the libraries\n\n\nHint: you might need to toggle the USER in the Dockerfile between rstudio and root to get everything working.\n\nAnother way is to RUN commands directly in the Dockerfile to install packages\n\nHint: You cannot use install.packages() because you can’t pin a version number.\nHint: You can run R code directly from the command line. For example, Rscript -e \"print('something to say...')\". Make sure to change the double quotes \"\" to single quotes '' in the R code.\nHint: You will need to first install the {remotes} package, and then use the remotes::install_version() function\n\n\nBuild your Dockerfile and test it locally.\nAdd a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile\n\nUse the “Docker image” workflow\n\nYou can also start off with an empty file and paste in a workflow by clicking “Skip this and setup a workflow yourself”.\n\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nHere are some resources to help you create your own Github Action Workflow:\n\nGithub Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images\n\n\n\n(As Needed): Make sure you make at least one change to the Dockerfile once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once. - You can also add a workflow_dispatch: trigger and manually trigger a workflow\n\nNote: If you are making an renv.lock file and you notice it’s not updating with renv::snapshot(), take a look at this FAQ",
+    "objectID": "individual_assignment/ia2.html#step-1-create-a-repository",
+    "href": "individual_assignment/ia2.html#step-1-create-a-repository",
+    "title": "Individual assignment 2",
+    "section": "Step 1: Create a repository",
+    "text": "Step 1: Create a repository\nCreate a new public repository on GitHub.com\n\nNamed {date}-learning-about-version-control\nReplace the {date} part of the repository name with a date. This way you can come back and re-do this assignment for exam practice. We won’t be grading on when you create the repository.\nCreate it under your own github account (Not the course organization)\n\nMake sure the repository:\n\nIncludes a README.md that has a header that says “Learning about Version Control” and has your name listed as the author.\nIs public\nYou may edit the README.md file using the web interface.",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 3"
+      "Individual assignment 2"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia3.html#rubric",
-    "href": "assignment_milestone/ia3.html#rubric",
-    "title": "Individual assignment 3",
+    "objectID": "individual_assignment/ia2.html#step-2-clone-your-repository",
+    "href": "individual_assignment/ia2.html#step-2-clone-your-repository",
+    "title": "Individual assignment 2",
+    "section": "Step 2: Clone your repository",
+    "text": "Step 2: Clone your repository\nClone your {date}-learning-about-version-control repository to your local computer.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#step-3-merge-conflict",
+    "href": "individual_assignment/ia2.html#step-3-merge-conflict",
+    "title": "Individual assignment 2",
+    "section": "Step 3: Merge Conflict",
+    "text": "Step 3: Merge Conflict\nCreate and resolve a merge conflict 😱!\n\nOn your remote version control repository, use the pen tool to add a line to the README that says “Solving merge conflicts is easy!”\nOn your local version control repository, edit the same line in the README that you just edited, but this time write “Solving merge conflicts is soooooo hard!”\nAdd and commit your local changes to the README, and the try to push the file so that you create the merge conflict.\nResolve the merge conflict on your local computer so that the line reads “Solving merge conflicts takes conscious effort, but I can do it!”. Take a screen shot while you are resolving the conflict to document you did this.\nPush the local changes to your remote version control repository.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#step-4-pull-request",
+    "href": "individual_assignment/ia2.html#step-4-pull-request",
+    "title": "Individual assignment 2",
+    "section": "Step 4: Pull request",
+    "text": "Step 4: Pull request\nCreate and accept a pull request!\n\nCreate a new Git branch on your local version control repository named opinions and switch to that branch.\nEdit your README so that you add at least one sentence about what you like most about version control, and add at least one sentence about what you find most challenging/confusing/frustrating about version control (we all have opinions on this one…). Add and commit your changes to local version control.\nPush the changes to the README that you made on the opinions branch to the remote repository on GitHub.com.\nVisit GitHub.com and create a pull request to suggest that the changes on the opinions branch should be merged into the main branch.\nAccept the pull request you opened to merge your changes from the opinions branch into the main branch.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#submission-instructions",
+    "href": "individual_assignment/ia2.html#submission-instructions",
+    "title": "Individual assignment 2",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\nYou will submit a PDF to Gradescope for individual assignment 1 that includes:\n\nthe URL of the commit history of GitHub.com repository you created and worked on for this assignment (it will be something like: https://github.com/&lt;YOURUSERNAME&gt;/&lt;DATE&gt;learning-about-version-control/commits/main)\nthe screenshot of your resolved merge conflict\nan explanation (2-3 sentences and in your own words) of why it is useful to work in a branch-pull-request workflow instead of working by directly committing each change to the main branch.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#rubric",
+    "href": "individual_assignment/ia2.html#rubric",
+    "title": "Individual assignment 2",
     "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\nA Docker image named dockerfile-practice and tagged with a version exists under the student’s username on DockerHub.\nThe Dockerfile used to create the Docker image lives in a GitHub repository named dsci310-ia3-&lt;USERNAME&gt;-docker under the DSCI-310 org.\nThere is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.\nThe Docker image version tag is in sync with the GitHub repository release tag. (Not needed – Free Point)\nAt least one new R package was added to the Dockerfile and the version of that package was pinned.\n\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\n5/5 of the criteria listed above were met.\n\n\n75%\n4/5 of the criteria listed above were met.\n\n\n50%\n3/5 of the criteria listed above were met.\n\n\n25%\n2/5 of the criteria listed above were met.\n\n\n0%\nOnly 1/5 of the criteria listed above were met or the assignment was not attempted.\n\n\n50%\nMaximum amount of points if created in the wrong organization\n\n\n\nAdditional points taken off:\n\n-2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nGitHub history (check under pull request tab in repo) indicates a successfully merged pull request from opinions into main, clearly demonstrated solving the merge conflict in screenshot and well explained why it is useful to work in a branch-pull-request workflow\n\n\n-25%\nGitHub history (check under pull request tab in repo) does not indicate a successfully merged pull request from opinions into main\n\n\n-25%\nDid not clearly demonstrate solving the merge conflict in screenshot.\n\n\n-25%\nDid not well explain why it is useful to work in a branch-pull-request workflow.\n\n\n-100%\nNo repository or attempt",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 3"
+      "Individual assignment 2"
     ]
   },
   {
-    "objectID": "tutorials.html",
-    "href": "tutorials.html",
-    "title": "Tutorials",
+    "objectID": "individual_assignment/ia1.html",
+    "href": "individual_assignment/ia1.html",
+    "title": "Individual assignment 1",
     "section": "",
-    "text": "Tutorials for the Friday sessions",
-    "crumbs": [
-      "Tutorials"
-    ]
-  },
-  {
-    "objectID": "computer-setup.html",
-    "href": "computer-setup.html",
-    "title": "Computer setup",
-    "section": "",
-    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
-  },
-  {
-    "objectID": "computer-setup.html#laptop-requirements",
-    "href": "computer-setup.html#laptop-requirements",
-    "title": "Computer setup",
-    "section": "Laptop requirements",
-    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
-  },
-  {
-    "objectID": "computer-setup.html#software-installation-instructions",
-    "href": "computer-setup.html#software-installation-instructions",
-    "title": "Computer setup",
-    "section": "Software installation instructions",
-    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
-  },
-  {
-    "objectID": "assessments.html",
-    "href": "assessments.html",
-    "title": "Assessment schedule",
-    "section": "",
-    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
     "crumbs": [
       "Assessments",
-      "Assessment schedule"
+      "Individual Assignments",
+      "Individual assignment 1"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSCI 310",
+    "objectID": "individual_assignment/ia1.html#instructions",
+    "href": "individual_assignment/ia1.html#instructions",
+    "title": "Individual assignment 1",
     "section": "",
-    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
+    "objectID": "individual_assignment/ia1.html#submission",
+    "href": "individual_assignment/ia1.html#submission",
+    "title": "Individual assignment 1",
+    "section": "Submission",
+    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
   },
   {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
+    "objectID": "individual_assignment/ia1.html#troubleshooting",
+    "href": "individual_assignment/ia1.html#troubleshooting",
+    "title": "Individual assignment 1",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
   },
   {
-    "objectID": "coc.html#attribution",
-    "href": "coc.html#attribution",
-    "title": "Code of Conduct",
-    "section": "Attribution",
-    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
+    "objectID": "individual_assignment/ia1.html#rubric",
+    "href": "individual_assignment/ia1.html#rubric",
+    "title": "Individual assignment 1",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
   },
   {
     "objectID": "syllabus.html",
@@ -558,191 +574,186 @@
     "text": "Attribution\nParts of this syllabus (particularly the policies) have been copied and derived from the UBC MDS Policies."
   },
   {
-    "objectID": "assignment_milestone/ia1.html",
-    "href": "assignment_milestone/ia1.html",
-    "title": "Individual assignment 1",
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
     "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
-    ]
+    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
   },
   {
-    "objectID": "assignment_milestone/ia1.html#instructions",
-    "href": "assignment_milestone/ia1.html#instructions",
-    "title": "Individual assignment 1",
+    "objectID": "coc.html#attribution",
+    "href": "coc.html#attribution",
+    "title": "Code of Conduct",
+    "section": "Attribution",
+    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSCI 310",
+    "section": "",
+    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
+  },
+  {
+    "objectID": "assessments.html",
+    "href": "assessments.html",
+    "title": "Assessment schedule",
+    "section": "",
+    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
     "crumbs": [
       "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
+      "Assessment schedule"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia1.html#submission",
-    "href": "assignment_milestone/ia1.html#submission",
-    "title": "Individual assignment 1",
-    "section": "Submission",
-    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
+    "objectID": "computer-setup.html",
+    "href": "computer-setup.html",
+    "title": "Computer setup",
+    "section": "",
+    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
+  },
+  {
+    "objectID": "computer-setup.html#laptop-requirements",
+    "href": "computer-setup.html#laptop-requirements",
+    "title": "Computer setup",
+    "section": "Laptop requirements",
+    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
+  },
+  {
+    "objectID": "computer-setup.html#software-installation-instructions",
+    "href": "computer-setup.html#software-installation-instructions",
+    "title": "Computer setup",
+    "section": "Software installation instructions",
+    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
+  },
+  {
+    "objectID": "tutorials.html",
+    "href": "tutorials.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Tutorials for the Friday sessions",
     "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
+      "Tutorials"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia1.html#troubleshooting",
-    "href": "assignment_milestone/ia1.html#troubleshooting",
-    "title": "Individual assignment 1",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
+    "objectID": "individual_assignment/ia3.html",
+    "href": "individual_assignment/ia3.html",
+    "title": "Individual assignment 3",
+    "section": "",
+    "text": "Practice building Docker images",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 1"
+      "Individual assignment 3"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia1.html#rubric",
-    "href": "assignment_milestone/ia1.html#rubric",
-    "title": "Individual assignment 1",
+    "objectID": "individual_assignment/ia3.html#instructions",
+    "href": "individual_assignment/ia3.html#instructions",
+    "title": "Individual assignment 3",
+    "section": "Instructions",
+    "text": "Instructions\nThe purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from Dockerfiles.\n\nSubmission instructions\nIn the text box provided for this assignment on Canvas, you must submit:\n\nA link to the GitHub.com repository that you create for this assignment.\n\nYou should name your GitHub.com repository dsci310-ia3-&lt;USERNAME&gt;-docker.\nYou need to create this assignment in the course organization: https://github.com/DSCI-310-2025\n\nA the link to your Docker image on DockerHub. You should name your DockerHub repository dsci310-ia3-&lt;USERNAME&gt;-docker.\n\n\n\n\n\n\n\nWarning\n\n\n\nMake sure your repository is under the DSCI-310-2025 organization. You can do a “repository transfer” if you need to, but your submission needs to be in the correct org.\n\n\n\n\nExercise instructions\n\nCreate a public repository on GitHub.com repo under your personal username called dsci310-ia3-&lt;USERNAME&gt;-docker\n\nYou can choose a pre-made .gitignore or manually create one yourself\n\nAdd a Dockerfile to it. This Dockerfile should be based off of the rocker/rstudio:4.4.2 Docker image\n\nlink to rocker/rstudio DockerHub repository\nlink to rocker/rstudio:4.4.2 Dockerfile\n\nAdd at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).\n\nThere are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.\nOne way is to turn your dsci310-ia3-&lt;USERNAME&gt;-docker into a local RStudio project then do the following steps:\n\nOpen the RStudio project locally\nInitialize the project with renv\nUse {renv} to install a package (e.g., cowsay) and then make sure you create a script that loads/uses the {cowsay} package.\nIn your Dockerfile COPY all your renv files into the container\nUse the outputs from renv to help you specify which functions to use to install the libraries\n\n\nHint: you might need to toggle the USER in the Dockerfile between rstudio and root to get everything working.\n\nAnother way is to RUN commands directly in the Dockerfile to install packages\n\nHint: You cannot use install.packages() because you can’t pin a version number.\nHint: You can run R code directly from the command line. For example, Rscript -e \"print('something to say...')\". Make sure to change the double quotes \"\" to single quotes '' in the R code.\nHint: You will need to first install the {remotes} package, and then use the remotes::install_version() function\n\n\nBuild your Dockerfile and test it locally.\nAdd a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile\n\nUse the “Docker image” workflow\n\nYou can also start off with an empty file and paste in a workflow by clicking “Skip this and setup a workflow yourself”.\n\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nHere are some resources to help you create your own Github Action Workflow:\n\nGithub Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images\n\n\n\n(As Needed): Make sure you make at least one change to the Dockerfile once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once. - You can also add a workflow_dispatch: trigger and manually trigger a workflow\n\nNote: If you are making an renv.lock file and you notice it’s not updating with renv::snapshot(), take a look at this FAQ",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 3"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia3.html#rubric",
+    "href": "individual_assignment/ia3.html#rubric",
+    "title": "Individual assignment 3",
     "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\nA Docker image named dockerfile-practice and tagged with a version exists under the student’s username on DockerHub.\nThe Dockerfile used to create the Docker image lives in a GitHub repository named dsci310-ia3-&lt;USERNAME&gt;-docker under the DSCI-310 org.\nThere is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.\nThe Docker image version tag is in sync with the GitHub repository release tag. (Not needed – Free Point)\nAt least one new R package was added to the Dockerfile and the version of that package was pinned.\n\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\n5/5 of the criteria listed above were met.\n\n\n75%\n4/5 of the criteria listed above were met.\n\n\n50%\n3/5 of the criteria listed above were met.\n\n\n25%\n2/5 of the criteria listed above were met.\n\n\n0%\nOnly 1/5 of the criteria listed above were met or the assignment was not attempted.\n\n\n50%\nMaximum amount of points if created in the wrong organization\n\n\n\nAdditional points taken off:\n\n-2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 1"
+      "Individual assignment 3"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia2.html",
-    "href": "assignment_milestone/ia2.html",
-    "title": "Individual assignment 2",
+    "objectID": "tutorials/t3.html",
+    "href": "tutorials/t3.html",
+    "title": "Tutorial 3",
     "section": "",
-    "text": "The purpose of this assignment is to start familiarizing yourselves with version control with Git and GitHub. It will build on the git demos in class as well as the TA tutorials from week 1 (intro shell/bash) and week 2 (merge conflicts). Specifically, we will create a toy repository with a merge conflict and learn how to resolve it. A merge conflict occurs when Git is unable to automatically determine how to incorporate new changes. This can can occur when two branches modify the same line, or when a file is deleted when someone else is changing it. You can read more about merge conflicts here: Git merge conflicts.\nFollow the instructions listed below. You will be graded for completion.",
+    "text": "Here we’ll practice with programming language environments.\nIf conda and python does not apply to you, you may skip the conda and python portion of the tutorial. If you are taking, have taken, or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.",
     "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
+      "Tutorials",
+      "Tutorial 3"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia2.html#step-1-create-a-repository",
-    "href": "assignment_milestone/ia2.html#step-1-create-a-repository",
-    "title": "Individual assignment 2",
-    "section": "Step 1: Create a repository",
-    "text": "Step 1: Create a repository\nCreate a new public repository on GitHub.com\n\nNamed {date}-learning-about-version-control\nReplace the {date} part of the repository name with a date. This way you can come back and re-do this assignment for exam practice. We won’t be grading on when you create the repository.\nCreate it under your own github account (Not the course organization)\n\nMake sure the repository:\n\nIncludes a README.md that has a header that says “Learning about Version Control” and has your name listed as the author.\nIs public\nYou may edit the README.md file using the web interface.",
+    "objectID": "tutorials/t3.html#r-environments-renv",
+    "href": "tutorials/t3.html#r-environments-renv",
+    "title": "Tutorial 3",
+    "section": "R Environments: renv",
+    "text": "R Environments: renv\n\nOpen up RStudio\nrun getwd() in the r console, and note the default starting working directory in R when not in a project.\nCreate an RStudio Project (either from an existing folder, or create a new folder)\nrun getwd() again and see how the working directory changes\nInstall the renv package (if you do not have it installed)\nNote all the current installed R packages you have in the packages panel\nRun the renv::init() in the current project (you can also choose to library(renv) and then init() as 2 separate steps\nNow note the packages in the package panel\nInstall the palmerpenguins package in R\nLibrary the palmerpenguins package\nyou should now have access to the penguins dataframe\nupdate the lock file with renv::snapshot()\nOpen a new RStudio or close the current project\nYou should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made",
     "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
+      "Tutorials",
+      "Tutorial 3"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia2.html#step-2-clone-your-repository",
-    "href": "assignment_milestone/ia2.html#step-2-clone-your-repository",
-    "title": "Individual assignment 2",
-    "section": "Step 2: Clone your repository",
-    "text": "Step 2: Clone your repository\nClone your {date}-learning-about-version-control repository to your local computer.",
+    "objectID": "tutorials/t3.html#python-environments-conda",
+    "href": "tutorials/t3.html#python-environments-conda",
+    "title": "Tutorial 3",
+    "section": "Python Environments: conda",
+    "text": "Python Environments: conda\n\nOpen up a terminal, you should be in a conda base environment\nRun python --version and which python to check the python version you have and which one is actually being used\ncreate a new conda environment with a different python version from the one you currently have in base\nactivate this environment\ninstall jupyterlab and pandas in the new environment\ncreate an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)\ndeactivate your python environment",
     "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
+      "Tutorials",
+      "Tutorial 3"
     ]
   },
   {
-    "objectID": "assignment_milestone/ia2.html#step-3-merge-conflict",
-    "href": "assignment_milestone/ia2.html#step-3-merge-conflict",
-    "title": "Individual assignment 2",
-    "section": "Step 3: Merge Conflict",
-    "text": "Step 3: Merge Conflict\nCreate and resolve a merge conflict 😱!\n\nOn your remote version control repository, use the pen tool to add a line to the README that says “Solving merge conflicts is easy!”\nOn your local version control repository, edit the same line in the README that you just edited, but this time write “Solving merge conflicts is soooooo hard!”\nAdd and commit your local changes to the README, and the try to push the file so that you create the merge conflict.\nResolve the merge conflict on your local computer so that the line reads “Solving merge conflicts takes conscious effort, but I can do it!”. Take a screen shot while you are resolving the conflict to document you did this.\nPush the local changes to your remote version control repository.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignment_milestone/ia2.html#step-4-pull-request",
-    "href": "assignment_milestone/ia2.html#step-4-pull-request",
-    "title": "Individual assignment 2",
-    "section": "Step 4: Pull request",
-    "text": "Step 4: Pull request\nCreate and accept a pull request!\n\nCreate a new Git branch on your local version control repository named opinions and switch to that branch.\nEdit your README so that you add at least one sentence about what you like most about version control, and add at least one sentence about what you find most challenging/confusing/frustrating about version control (we all have opinions on this one…). Add and commit your changes to local version control.\nPush the changes to the README that you made on the opinions branch to the remote repository on GitHub.com.\nVisit GitHub.com and create a pull request to suggest that the changes on the opinions branch should be merged into the main branch.\nAccept the pull request you opened to merge your changes from the opinions branch into the main branch.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignment_milestone/ia2.html#submission-instructions",
-    "href": "assignment_milestone/ia2.html#submission-instructions",
-    "title": "Individual assignment 2",
-    "section": "Submission Instructions",
-    "text": "Submission Instructions\nYou will submit a PDF to Gradescope for individual assignment 1 that includes:\n\nthe URL of the commit history of GitHub.com repository you created and worked on for this assignment (it will be something like: https://github.com/&lt;YOURUSERNAME&gt;/&lt;DATE&gt;learning-about-version-control/commits/main)\nthe screenshot of your resolved merge conflict\nan explanation (2-3 sentences and in your own words) of why it is useful to work in a branch-pull-request workflow instead of working by directly committing each change to the main branch.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignment_milestone/ia2.html#rubric",
-    "href": "assignment_milestone/ia2.html#rubric",
-    "title": "Individual assignment 2",
-    "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nGitHub history (check under pull request tab in repo) indicates a successfully merged pull request from opinions into main, clearly demonstrated solving the merge conflict in screenshot and well explained why it is useful to work in a branch-pull-request workflow\n\n\n-25%\nGitHub history (check under pull request tab in repo) does not indicate a successfully merged pull request from opinions into main\n\n\n-25%\nDid not clearly demonstrate solving the merge conflict in screenshot.\n\n\n-25%\nDid not well explain why it is useful to work in a branch-pull-request workflow.\n\n\n-100%\nNo repository or attempt",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
-    ]
-  },
-  {
-    "objectID": "tutorials/t2.html",
-    "href": "tutorials/t2.html",
-    "title": "Tutorial 2",
+    "objectID": "tutorials/t1.html",
+    "href": "tutorials/t1.html",
+    "title": "Tutorial 1",
     "section": "",
-    "text": "This tutorial will focus on Git + GitHub practice",
+    "text": "Computer Setup Help, Bash, and Git",
     "crumbs": [
       "Tutorials",
-      "Tutorial 2"
+      "Tutorial 1"
     ]
   },
   {
-    "objectID": "tutorials/t2.html#git-github",
-    "href": "tutorials/t2.html#git-github",
-    "title": "Tutorial 2",
-    "section": "Git + GitHub",
-    "text": "Git + GitHub\n\nCreate a github repository from github.com\nclone it down to your computer\nCreate/Edit the README file and write a short definition for the following commands:\n\ngit branch\ngit switch\ngit log --oneline --graph --all\n\nadd/commit/push your definitions to your github repository",
+    "objectID": "tutorials/t1.html#create-a-repository",
+    "href": "tutorials/t1.html#create-a-repository",
+    "title": "Tutorial 1",
+    "section": "Create a repository",
+    "text": "Create a repository\n\nCreate a new repository on GitHub (e.g., YYYY-MM-DD-git). You can create it with an existing README.md file (or create a new one later)\n\n\n\n\n\n\n\nTip\n\n\n\nCreating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.\n\n\n\nClone down the repository to your local computer",
     "crumbs": [
       "Tutorials",
-      "Tutorial 2"
+      "Tutorial 1"
     ]
   },
   {
-    "objectID": "tutorials/t2.html#branches-and-pull-requests-prs",
-    "href": "tutorials/t2.html#branches-and-pull-requests-prs",
-    "title": "Tutorial 2",
-    "section": "Branches and Pull Requests (PRs)",
-    "text": "Branches and Pull Requests (PRs)\n\nCreate a new branch (does not matter what name you give it)\nIn the new branch define the following terms:\n\nbranch\npull request\n\nPush your branch up to github and create a pull request\nMake a comment in your own pull request\nMerge your pull request into main\nUpdate your local main branch",
+    "objectID": "tutorials/t1.html#make-changes-to-a-file",
+    "href": "tutorials/t1.html#make-changes-to-a-file",
+    "title": "Tutorial 1",
+    "section": "Make Changes to a file",
+    "text": "Make Changes to a file\n\nCreate a README.md file if you don’t have one already\nEdit the README.md file by adding a line about your favorite food\nAdd / commit / push your changes up to github",
     "crumbs": [
       "Tutorials",
-      "Tutorial 2"
+      "Tutorial 1"
     ]
   },
   {
-    "objectID": "tutorials/t2.html#extra-merge-conflicts",
-    "href": "tutorials/t2.html#extra-merge-conflicts",
-    "title": "Tutorial 2",
-    "section": "Extra: Merge Conflicts",
-    "text": "Extra: Merge Conflicts\nLet’s create a PR with a merge conflict\n\nCreate a new branch from main, edit the readme file, at the top and define the follow terms\n\ngit add\ngit commit\n\nPush this branch and create a PR, but DO NOT merge it\nOn your local machine, go back to your main branch\nCreate yet another branch from main (you should not be on your previous branch)\nAt the top of your readme file define the following terms\n\ngit push ...\ngit pull ...\n\nadd/commit/push your branch\nCreate another PR from your second branch\nTry to merge both branches now, you should see a merge conflict when you try to merge the 2nd branch",
+    "objectID": "tutorials/t1.html#update-changes-from-remote",
+    "href": "tutorials/t1.html#update-changes-from-remote",
+    "title": "Tutorial 1",
+    "section": "Update changes from remote",
+    "text": "Update changes from remote\n\nNow edit the README.md file on the remote github repository\nAdd a new line by naming your favorite color\nCommit the changes on github.com\nConfirm your changes in github.com are made in the web interface\npull down your changes to your local computer",
     "crumbs": [
       "Tutorials",
-      "Tutorial 2"
+      "Tutorial 1"
     ]
   },
   {
