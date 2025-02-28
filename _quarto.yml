@@ -65,13 +65,13 @@ website:
     - title: Tutorials
       contents:
         - tutorials.qmd
-        - section: "Tutorials"
-          contents:
-            - tutorials/t1.qmd
-            - tutorials/t2.qmd
-            - tutorials/t3.qmd
-            - tutorials/t4.qmd
-            - tutorials/t5.qmd
+        - text: "---"
+        - tutorials/t1.qmd
+        - tutorials/t2.qmd
+        - tutorials/t3.qmd
+        - tutorials/t4.qmd
+        - tutorials/t5.qmd
+        - tutorials/t6.qmd
 
 format:
   html:

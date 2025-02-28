@@ -1,0 +1,89 @@
+---
+title: "Tutorial 6: Refactoring R Code"
+---
+
+# Introduction
+
+In this tutorial, you will refactor the code into separate scripts corresponding to each section. The dataset we will use comes from the `palmerpenguins` package, which contains measurements of penguins from three species.
+
+## Load Libraries and Data
+
+```{r}
+#| echo: fenced
+library(tidyverse)
+library(palmerpenguins)
+library(tidymodels)
+
+data <- penguins
+
+# Initial cleaning: Remove missing values
+data <- data %>% drop_na()
+```
+
+# Methods
+
+In this section, we perform exploratory data analysis (EDA) and prepare the data for modeling.
+
+```{r}
+# Summary statistics
+glimpse(data)
+summarise(data, mean_bill_length = mean(bill_length_mm), mean_bill_depth = mean(bill_depth_mm))
+
+# Visualizations
+ggplot(data, aes(x = species, y = bill_length_mm, fill = species)) +
+  geom_boxplot() +
+  theme_minimal()
+
+# Prepare data for modeling
+data <- data %>%
+  select(species, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g) %>%
+  mutate(species = as.factor(species))
+```
+
+# Model
+
+We will fit a classification model using `tidymodels` to predict the species of a penguin based on its physical characteristics.
+
+```{r}
+# Split data
+set.seed(123)
+data_split <- initial_split(data, strata = species)
+train_data <- training(data_split)
+test_data <- testing(data_split)
+
+# Define model
+penguin_model <- nearest_neighbor(mode = "classification", neighbors = 5) %>%
+  set_engine("kknn")
+
+# Create workflow
+penguin_workflow <- workflow() %>%
+  add_model(penguin_model) %>%
+  add_formula(species ~ .)
+
+# Fit model
+penguin_fit <- penguin_workflow %>%
+  fit(data = train_data)
+```
+
+# Results
+
+We evaluate the performance of the model using the test dataset.
+
+```{r}
+# Predict on test data
+predictions <- predict(penguin_fit, test_data, type = "class") %>%
+  bind_cols(test_data)
+
+# Confusion matrix
+conf_mat <- conf_mat(predictions, truth = species, estimate = .pred_class)
+conf_mat
+```
+
+# Conclusion
+
+In this tutorial, we:
+
+- Loaded and cleaned the `palmerpenguins` dataset.
+- Performed exploratory data analysis.
+- Built a k-Nearest Neighbors classification model using `tidymodels`.
+- Evaluated the model's performance.
