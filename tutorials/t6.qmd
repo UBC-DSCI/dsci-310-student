@@ -20,4 +20,4 @@ Below you fill find the text for an example data analysis report using R and Qua
    You can load data from the script and write code to make a table prettier in quarto if you'd like.
 
 You can download the sample quarto document here:
-<https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t6-quarto.qmd>
+<https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd>
