@@ -49,6 +49,7 @@ website:
             - individual_assignment/ia1.qmd
             - individual_assignment/ia2.qmd
             - individual_assignment/ia3.qmd
+            - individual_assignment/ia4.qmd
 
         - text: "---"
 
