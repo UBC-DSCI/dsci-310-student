@@ -455,74 +455,40 @@
     ]
   },
   {
-    "objectID": "tutorials.html",
-    "href": "tutorials.html",
-    "title": "Tutorials",
+    "objectID": "individual_assignment/ia4.html",
+    "href": "individual_assignment/ia4.html",
+    "title": "Individual assignment 4",
     "section": "",
-    "text": "Tutorials for the Friday sessions",
-    "crumbs": [
-      "Tutorials"
-    ]
-  },
-  {
-    "objectID": "computer-setup.html",
-    "href": "computer-setup.html",
-    "title": "Computer setup",
-    "section": "",
-    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
-  },
-  {
-    "objectID": "computer-setup.html#laptop-requirements",
-    "href": "computer-setup.html#laptop-requirements",
-    "title": "Computer setup",
-    "section": "Laptop requirements",
-    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
-  },
-  {
-    "objectID": "computer-setup.html#software-installation-instructions",
-    "href": "computer-setup.html#software-installation-instructions",
-    "title": "Computer setup",
-    "section": "Software installation instructions",
-    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
-  },
-  {
-    "objectID": "assessments.html",
-    "href": "assessments.html",
-    "title": "Assessment schedule",
-    "section": "",
-    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
+    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
     "crumbs": [
       "Assessments",
-      "Assessment schedule"
+      "Individual Assignments",
+      "Individual assignment 4"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSCI 310",
+    "objectID": "individual_assignment/ia4.html#instructions",
+    "href": "individual_assignment/ia4.html#instructions",
+    "title": "Individual assignment 4",
     "section": "",
-    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
+    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 4"
+    ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
-  },
-  {
-    "objectID": "coc.html#attribution",
-    "href": "coc.html#attribution",
-    "title": "Code of Conduct",
-    "section": "Attribution",
-    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
+    "objectID": "individual_assignment/ia4.html#rubric",
+    "href": "individual_assignment/ia4.html#rubric",
+    "title": "Individual assignment 4",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n110%\nAll 6 of the required edits to the .qmd document above were met and the HTML version of the report was served up on GitHub pages\n\n\n100%\nAll 6 of the required edits to the .qmd document above were met and the report generates a working PDF and HTML file via the Makefile.\n\n\n85%\n5/6 of the required edits to the .qmd document listed above were met.\n\n\n70%\n4/6 of the required edits to the .qmd document listed above were met.\n\n\n55%\n3/6 of the required edits to the .qmd document listed above were met.\n\n\n40%\n2/6 of the required edits to the .qmd document listed above were met.\n\n\n25%\n1/6 of the required edits to the .qmd document listed above were met.\n\n\n0%\nThe assignment was not attempted.\n\n\n\n\nYou will only get the extra points for serving up the HTML version of the report on GitHub pages if all of the main assignment components were completed.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 4"
+    ]
   },
   {
     "objectID": "syllabus.html",
@@ -600,6 +566,76 @@
     "title": "Syllabus",
     "section": "Attribution",
     "text": "Attribution\nParts of this syllabus (particularly the policies) have been copied and derived from the UBC MDS Policies."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
+  },
+  {
+    "objectID": "coc.html#attribution",
+    "href": "coc.html#attribution",
+    "title": "Code of Conduct",
+    "section": "Attribution",
+    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSCI 310",
+    "section": "",
+    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
+  },
+  {
+    "objectID": "assessments.html",
+    "href": "assessments.html",
+    "title": "Assessment schedule",
+    "section": "",
+    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
+    "crumbs": [
+      "Assessments",
+      "Assessment schedule"
+    ]
+  },
+  {
+    "objectID": "computer-setup.html",
+    "href": "computer-setup.html",
+    "title": "Computer setup",
+    "section": "",
+    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
+  },
+  {
+    "objectID": "computer-setup.html#laptop-requirements",
+    "href": "computer-setup.html#laptop-requirements",
+    "title": "Computer setup",
+    "section": "Laptop requirements",
+    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
+  },
+  {
+    "objectID": "computer-setup.html#software-installation-instructions",
+    "href": "computer-setup.html#software-installation-instructions",
+    "title": "Computer setup",
+    "section": "Software installation instructions",
+    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
+  },
+  {
+    "objectID": "tutorials.html",
+    "href": "tutorials.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Tutorials for the Friday sessions",
+    "crumbs": [
+      "Tutorials"
+    ]
   },
   {
     "objectID": "individual_assignment/ia1.html",
