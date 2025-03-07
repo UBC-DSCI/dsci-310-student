@@ -310,80 +310,458 @@
     ]
   },
   {
-    "objectID": "tutorials/t6.html",
-    "href": "tutorials/t6.html",
-    "title": "Tutorial 6: Refactor Quarto Doc",
+    "objectID": "tutorials/t7.html",
+    "href": "tutorials/t7.html",
+    "title": "DSCI 310",
     "section": "",
-    "text": "Below you fill find the text for an example data analysis report using R and Quarto.\n\nCopy the text below into your own quarto document\nRender the document to check it is all working\nYour task is to refactor each section into separate R scripts (01_load_data.R, 02_methods.R, 03_model.R, 04_results.R) and make sure each script can completely run independently from one another without source()ing another script.\nYour scripts should save out what ever data artifact it needs for both the pipline code and the quarto report\nCreate a Makefile with a target named all that will run all the scripts in the correct order.\nEdit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.\n\nYou can download the sample quarto document here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd",
+    "text": "Rendering a quarto document into the docs directory and publish it into github pages.\nWe are going to work with the repository we’ve been using in class this week. This is the final version of the repo after learning about command line scripts and Make:\nhttps://github.com/chendaniely/2025-03-06-make-quarto\nIt has been set up as a Template. Click on the green “Use this template” button and then select “Create a new repository” to copy the repository into your github account.",
     "crumbs": [
       "Tutorials",
-      "Tutorial 6: Refactor Quarto Doc"
+      "Step 1: Run the current set of files"
     ]
   },
   {
-    "objectID": "tutorials/t6.html#refactoring-a-quarto-report",
-    "href": "tutorials/t6.html#refactoring-a-quarto-report",
-    "title": "Tutorial 6: Refactor Quarto Doc",
+    "objectID": "tutorials/t7.html#step-1-run-the-current-set-of-files",
+    "href": "tutorials/t7.html#step-1-run-the-current-set-of-files",
+    "title": "DSCI 310",
+    "section": "Step 1: Run the current set of files",
+    "text": "Step 1: Run the current set of files\nRun the report target from the repository. This should generate the index.html file in the project root.\nIf you open this document, it should open a basic quarto document with a single figure in it.",
+    "crumbs": [
+      "Tutorials",
+      "Step 1: Run the current set of files"
+    ]
+  },
+  {
+    "objectID": "tutorials/t7.html#step-2-enable-github-pages",
+    "href": "tutorials/t7.html#step-2-enable-github-pages",
+    "title": "DSCI 310",
+    "section": "Step 2: Enable GitHub Pages",
+    "text": "Step 2: Enable GitHub Pages\nPush the files (index.html) into your github repository, then enable GitHub Pages via the repository settings &gt; pages panel.\n\nUnder Source, select “Deploy from a branch”\nUnder Branch, select “main” and / (root)\n\nwait a few minutes for github pages to build and publish the site.",
+    "crumbs": [
+      "Tutorials",
+      "Step 1: Run the current set of files"
+    ]
+  },
+  {
+    "objectID": "tutorials/t7.html#step-3-turn-the-project-into-a-quarto-project",
+    "href": "tutorials/t7.html#step-3-turn-the-project-into-a-quarto-project",
+    "title": "DSCI 310",
+    "section": "Step 3: Turn the project into a Quarto Project",
+    "text": "Step 3: Turn the project into a Quarto Project\nWe are now going to turn this project into a quarto project, specifically a manuscript:\nhttps://quarto.org/docs/projects/quarto-projects.html\nThe current repository has an empty _quarto.yml file, we will edit it to become a quarto manuscript project.\n\nEdit the _quarto.yml file\nEdit the _quarto.yml file so it looks like this:\nproject:\n  type: manuscript\n  output-dir: docs\n\nmanuscript:\n  article: index.qmd\n\nformat:\n  html:\n    comments:\n      hypothesis: true\n  docx: default\nThis will set the project type, some of the html formats, and also generate a doc file of our report. We will also have our documents render into the docs directory instead of the root directory.\nYou will also notice that the article option is looking for index.qmd. We will address this part next.\n\n\nCreate the index file for web publishing\n\nMove and rename the report/report.qmd to index.qmd in the repository root.\n\nThis will allow quarto to find and render the manuscript project.\nAfter doing this, you should be able to run quarto render on its own, and the report will render into the docs/` directory.\n\n\nClean up the repository,\nRun the clean target in the repository and confirm that the index.html is no longer created in the root directory.\n\n\nEdit the Makefile\n\nEdit the clean target so that it also deletes the docs/ directory\nEdit the index.html target such that it is really creating the docs/index.html file.\n\nNow when you run make clean followed by make report (a phony target), you should be able to re-create your report file.\n\n\nPush your changes to github\nPush your new repository changes to github. Including your new docs folder.\nYou should also no loger have an index.html file in the project root.",
+    "crumbs": [
+      "Tutorials",
+      "Step 1: Run the current set of files"
+    ]
+  },
+  {
+    "objectID": "tutorials/t7.html#step-4-publish-your-side-from-docs",
+    "href": "tutorials/t7.html#step-4-publish-your-side-from-docs",
+    "title": "DSCI 310",
+    "section": "Step 4: Publish your side from docs",
+    "text": "Step 4: Publish your side from docs\nWe have now created a quarto project that renders into the docs directory, not the root directory.\nYour current website may be broken since index.html does not exist in the root.\nGo back to your Settings &gt; pages repository settings and change the main publishing from root to docs.\nYour website should now be published from the docs directory.",
+    "crumbs": [
+      "Tutorials",
+      "Step 1: Run the current set of files"
+    ]
+  },
+  {
+    "objectID": "tutorials/t4.html",
+    "href": "tutorials/t4.html",
+    "title": "Tutorial 4",
     "section": "",
-    "text": "Below you fill find the text for an example data analysis report using R and Quarto.\n\nCopy the text below into your own quarto document\nRender the document to check it is all working\nYour task is to refactor each section into separate R scripts (01_load_data.R, 02_methods.R, 03_model.R, 04_results.R) and make sure each script can completely run independently from one another without source()ing another script.\nYour scripts should save out what ever data artifact it needs for both the pipline code and the quarto report\nCreate a Makefile with a target named all that will run all the scripts in the correct order.\nEdit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.\n\nYou can download the sample quarto document here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd",
+    "text": "Virtual environments and docker containers. We’ll practice creating virtual environments again (just like last tutorial), so we can compare it with creating docker containers.",
     "crumbs": [
       "Tutorials",
-      "Tutorial 6: Refactor Quarto Doc"
+      "Tutorial 4"
     ]
   },
   {
-    "objectID": "tutorials/t5.html",
-    "href": "tutorials/t5.html",
-    "title": "Tutorial 5",
+    "objectID": "tutorials/t4.html#r-environments",
+    "href": "tutorials/t4.html#r-environments",
+    "title": "Tutorial 4",
+    "section": "R Environments",
+    "text": "R Environments\n\nCreate a new RStudio Project\nNote the currently installed packages\nInstall the renv library if you do not have it installed\nInitialize the current project as an renv project\nNote the new packages in the environment.\nInstall an R package\nSnapsnot the package\nNote how the renv.lock file does not change\nCreate and save an R script that uses the package you just installed\nRe-snapshot the project\nNote how the renv.lock file updates now\nClose the current RStudio project\nNote how you have your old packages back\nRe-open the RStudio project you just created and see how t5he packages change.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 4"
+    ]
+  },
+  {
+    "objectID": "tutorials/t4.html#optional-python-environment",
+    "href": "tutorials/t4.html#optional-python-environment",
+    "title": "Tutorial 4",
+    "section": "Optional: Python environment",
+    "text": "Optional: Python environment\nFor people and teams working on a python project and want to practice conda environments.\n\n\n\n\n\n\nNote\n\n\n\nconda environments are not going to be on the exam. This exercise is solely to give you instructions to practice creating python environments.\n\n\n\nCheck that you are currently in the base conda environment:\n\nconda info\n\nNote the packages in the current conda environment and their versions\n\nconda list\n\nCreate a new conda environment (we are going to name it myenv) with python 3.12\n\nconda create -n myenv -c conda-forge python=3.12\n\nActivate this environment\nRun python and compare your python versions and see if you are able to import pandas\nconda install another package into the environment, pandas and import it from the new environment.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 4"
+    ]
+  },
+  {
+    "objectID": "tutorials/t4.html#run-a-docker-container",
+    "href": "tutorials/t4.html#run-a-docker-container",
+    "title": "Tutorial 4",
+    "section": "Run a docker container",
+    "text": "Run a docker container\nLet’s get some practice with running docker containers\nDocker Desktop needs to be runnign in the background.\n\nYour first container\nWe did this in the Computer Setup process, but let’s run the hello-world container with docker run\n$ docker run hello-world\n\nHello from Docker!\nThis message shows that your installation appears to be working correctly.\n\nTo generate this message, Docker took the following steps:\n 1. The Docker client contacted the Docker daemon.\n 2. The Docker daemon pulled the \"hello-world\" image from the Docker Hub.\n    (amd64)\n 3. The Docker daemon created a new container from that image which runs the\n    executable that produces the output you are currently reading.\n 4. The Docker daemon streamed that output to the Docker client, which sent it\n    to your terminal.\n\nTo try something more ambitious, you can run an Ubuntu container with:\n $ docker run -it ubuntu bash\n\nShare images, automate workflows, and more with a free Docker ID:\n https://hub.docker.com/\n\nFor more examples and ideas, visit:\n https://docs.docker.com/get-started/\n\n$\nThis command runs a container that executes a script that prints out the hello docker text. When this script runs, it exits and the container exits to give you your prompt back\n\n\nAn R Container\n\nCompare the version of R you have right now on your computer. You can open up and launch R or run R --version to get your current R version. 2.Run the R 4.3.2 container:\n\ndocker run --rm -it rocker/r-ver:4.3.2\n\nCompare the version from the version you have on your computer\nTry to load a package you have installed on your computer in the container (it should fail)\nExit out of this docker container\n\n\n\nAn RStudio Container\n\n\n\n\n\n\nNote\n\n\n\nIf you are on an ARM based M-chip mac, you need to pass in the --platform=linux/amd64 flag to the docker run command. https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform\n\n\n\nRun the RStudio container and connect it to your local computer’s port 8787\n\ndocker run --rm -e PASSWORD=\"pizza\" -p 8787:8787 rocker/rstudio:4.4.2\n\nExplain in your own words what each of the flags are doing in the docker run command. You can use the official docker run documentation: https://docs.docker.com/reference/cli/docker/container/run/\nOpen and log into the RStudio container and try to run some R code in a script\nSave this script\nClose the container and run it again\nNotice how all your work inside the container is lost\n\n\n\nAn RStudio Tidyverse Container\n\nDo the same process as before, but this time use the rocker/tidyverse:4.4.2 container.\nWithout turning off this container, open a new terminal and run a separate rocker/rstudio:4.4.2 container\n\n\nYou will need to change the local port mapping\n\n\nMake sure you are able to log into and run both RStudio sessions in the container\n\n\nNote how only one of the RStudio sessions has tidyverse installed and the other doesn’t",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 4"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html",
+    "href": "tutorials/t1.html",
+    "title": "Tutorial 1",
     "section": "",
-    "text": "Create a repository and clone it down\nCreate a bash script that lists (using a bash command) the files of your current working directory, the root of the repo. Name it list.sh\nCreate a dockerfile that uses the rocker/rstudio container, using version 4.2.2.\nCopy the list.sh into the container\nRun the script in the container\nDocument how to run the container and run the script in the container. We must follow the steps until we are able to run and see the output. Put your steps in the README.md file\nFor Tuesday: Create a github action that also runs this bash script",
+    "text": "Computer Setup Help, Bash, and Git",
     "crumbs": [
       "Tutorials",
-      "Tutorial 5"
+      "Tutorial 1"
     ]
   },
   {
-    "objectID": "tutorials/t2.html",
-    "href": "tutorials/t2.html",
-    "title": "Tutorial 2",
+    "objectID": "tutorials/t1.html#create-a-repository",
+    "href": "tutorials/t1.html#create-a-repository",
+    "title": "Tutorial 1",
+    "section": "Create a repository",
+    "text": "Create a repository\n\nCreate a new repository on GitHub (e.g., YYYY-MM-DD-git). You can create it with an existing README.md file (or create a new one later)\n\n\n\n\n\n\n\nTip\n\n\n\nCreating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.\n\n\n\nClone down the repository to your local computer",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html#make-changes-to-a-file",
+    "href": "tutorials/t1.html#make-changes-to-a-file",
+    "title": "Tutorial 1",
+    "section": "Make Changes to a file",
+    "text": "Make Changes to a file\n\nCreate a README.md file if you don’t have one already\nEdit the README.md file by adding a line about your favorite food\nAdd / commit / push your changes up to github",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html#update-changes-from-remote",
+    "href": "tutorials/t1.html#update-changes-from-remote",
+    "title": "Tutorial 1",
+    "section": "Update changes from remote",
+    "text": "Update changes from remote\n\nNow edit the README.md file on the remote github repository\nAdd a new line by naming your favorite color\nCommit the changes on github.com\nConfirm your changes in github.com are made in the web interface\npull down your changes to your local computer",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t3.html",
+    "href": "tutorials/t3.html",
+    "title": "Tutorial 3",
     "section": "",
-    "text": "This tutorial will focus on Git + GitHub practice",
+    "text": "Here we’ll practice with programming language environments.\nIf conda and python does not apply to you, you may skip the conda and python portion of the tutorial. If you are taking, have taken, or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.",
     "crumbs": [
       "Tutorials",
-      "Tutorial 2"
+      "Tutorial 3"
     ]
   },
   {
-    "objectID": "tutorials/t2.html#git-github",
-    "href": "tutorials/t2.html#git-github",
-    "title": "Tutorial 2",
-    "section": "Git + GitHub",
-    "text": "Git + GitHub\n\nCreate a github repository from github.com\nclone it down to your computer\nCreate/Edit the README file and write a short definition for the following commands:\n\ngit branch\ngit switch\ngit log --oneline --graph --all\n\nadd/commit/push your definitions to your github repository",
+    "objectID": "tutorials/t3.html#r-environments-renv",
+    "href": "tutorials/t3.html#r-environments-renv",
+    "title": "Tutorial 3",
+    "section": "R Environments: renv",
+    "text": "R Environments: renv\n\nOpen up RStudio\nrun getwd() in the r console, and note the default starting working directory in R when not in a project.\nCreate an RStudio Project (either from an existing folder, or create a new folder)\nrun getwd() again and see how the working directory changes\nInstall the renv package (if you do not have it installed)\nNote all the current installed R packages you have in the packages panel\nRun the renv::init() in the current project (you can also choose to library(renv) and then init() as 2 separate steps\nNow note the packages in the package panel\nInstall the palmerpenguins package in R\nLibrary the palmerpenguins package\nyou should now have access to the penguins dataframe\nupdate the lock file with renv::snapshot()\nOpen a new RStudio or close the current project\nYou should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made",
     "crumbs": [
       "Tutorials",
-      "Tutorial 2"
+      "Tutorial 3"
     ]
   },
   {
-    "objectID": "tutorials/t2.html#branches-and-pull-requests-prs",
-    "href": "tutorials/t2.html#branches-and-pull-requests-prs",
-    "title": "Tutorial 2",
-    "section": "Branches and Pull Requests (PRs)",
-    "text": "Branches and Pull Requests (PRs)\n\nCreate a new branch (does not matter what name you give it)\nIn the new branch define the following terms:\n\nbranch\npull request\n\nPush your branch up to github and create a pull request\nMake a comment in your own pull request\nMerge your pull request into main\nUpdate your local main branch",
+    "objectID": "tutorials/t3.html#python-environments-conda",
+    "href": "tutorials/t3.html#python-environments-conda",
+    "title": "Tutorial 3",
+    "section": "Python Environments: conda",
+    "text": "Python Environments: conda\n\nOpen up a terminal, you should be in a conda base environment\nRun python --version and which python to check the python version you have and which one is actually being used\ncreate a new conda environment with a different python version from the one you currently have in base\nactivate this environment\ninstall jupyterlab and pandas in the new environment\ncreate an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)\ndeactivate your python environment",
     "crumbs": [
       "Tutorials",
-      "Tutorial 2"
+      "Tutorial 3"
     ]
   },
   {
-    "objectID": "tutorials/t2.html#extra-merge-conflicts",
-    "href": "tutorials/t2.html#extra-merge-conflicts",
-    "title": "Tutorial 2",
-    "section": "Extra: Merge Conflicts",
-    "text": "Extra: Merge Conflicts\nLet’s create a PR with a merge conflict\n\nCreate a new branch from main, edit the readme file, at the top and define the follow terms\n\ngit add\ngit commit\n\nPush this branch and create a PR, but DO NOT merge it\nOn your local machine, go back to your main branch\nCreate yet another branch from main (you should not be on your previous branch)\nAt the top of your readme file define the following terms\n\ngit push ...\ngit pull ...\n\nadd/commit/push your branch\nCreate another PR from your second branch\nTry to merge both branches now, you should see a merge conflict when you try to merge the 2nd branch",
+    "objectID": "individual_assignment/ia3.html",
+    "href": "individual_assignment/ia3.html",
+    "title": "Individual assignment 3",
+    "section": "",
+    "text": "Practice building Docker images",
     "crumbs": [
-      "Tutorials",
-      "Tutorial 2"
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 3"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia3.html#instructions",
+    "href": "individual_assignment/ia3.html#instructions",
+    "title": "Individual assignment 3",
+    "section": "Instructions",
+    "text": "Instructions\nThe purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from Dockerfiles.\n\nSubmission instructions\nIn the text box provided for this assignment on Canvas, you must submit:\n\nA link to the GitHub.com repository that you create for this assignment.\n\nYou should name your GitHub.com repository dsci310-ia3-&lt;USERNAME&gt;-docker.\nYou need to create this assignment in the course organization: https://github.com/DSCI-310-2025\n\nA the link to your Docker image on DockerHub. You should name your DockerHub repository dsci310-ia3-&lt;USERNAME&gt;-docker.\n\n\n\n\n\n\n\nWarning\n\n\n\nMake sure your repository is under the DSCI-310-2025 organization. You can do a “repository transfer” if you need to, but your submission needs to be in the correct org.\n\n\n\n\nExercise instructions\n\nCreate a public repository on GitHub.com repo under your personal username called dsci310-ia3-&lt;USERNAME&gt;-docker\n\nYou can choose a pre-made .gitignore or manually create one yourself\n\nAdd a Dockerfile to it. This Dockerfile should be based off of the rocker/rstudio:4.4.2 Docker image\n\nlink to rocker/rstudio DockerHub repository\nlink to rocker/rstudio:4.4.2 Dockerfile\n\nAdd at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).\n\nThere are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.\nOne way is to turn your dsci310-ia3-&lt;USERNAME&gt;-docker into a local RStudio project then do the following steps:\n\nOpen the RStudio project locally\nInitialize the project with renv\nUse {renv} to install a package (e.g., cowsay) and then make sure you create a script that loads/uses the {cowsay} package.\nIn your Dockerfile COPY all your renv files into the container\nUse the outputs from renv to help you specify which functions to use to install the libraries\n\n\nHint: you might need to toggle the USER in the Dockerfile between rstudio and root to get everything working.\n\nAnother way is to RUN commands directly in the Dockerfile to install packages\n\nHint: You cannot use install.packages() because you can’t pin a version number.\nHint: You can run R code directly from the command line. For example, Rscript -e \"print('something to say...')\". Make sure to change the double quotes \"\" to single quotes '' in the R code.\nHint: You will need to first install the {remotes} package, and then use the remotes::install_version() function\n\n\nBuild your Dockerfile and test it locally.\nAdd a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile\n\nUse the “Docker image” workflow\n\nYou can also start off with an empty file and paste in a workflow by clicking “Skip this and setup a workflow yourself”.\n\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nHere are some resources to help you create your own Github Action Workflow:\n\nGithub Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images\n\n\n\n(As Needed): Make sure you make at least one change to the Dockerfile once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once. - You can also add a workflow_dispatch: trigger and manually trigger a workflow\n\nNote: If you are making an renv.lock file and you notice it’s not updating with renv::snapshot(), take a look at this FAQ",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 3"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia3.html#rubric",
+    "href": "individual_assignment/ia3.html#rubric",
+    "title": "Individual assignment 3",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\nA Docker image named dockerfile-practice and tagged with a version exists under the student’s username on DockerHub.\nThe Dockerfile used to create the Docker image lives in a GitHub repository named dsci310-ia3-&lt;USERNAME&gt;-docker under the DSCI-310 org.\nThere is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.\nThe Docker image version tag is in sync with the GitHub repository release tag. (Not needed – Free Point)\nAt least one new R package was added to the Dockerfile and the version of that package was pinned.\n\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\n5/5 of the criteria listed above were met.\n\n\n75%\n4/5 of the criteria listed above were met.\n\n\n50%\n3/5 of the criteria listed above were met.\n\n\n25%\n2/5 of the criteria listed above were met.\n\n\n0%\nOnly 1/5 of the criteria listed above were met or the assignment was not attempted.\n\n\n50%\nMaximum amount of points if created in the wrong organization\n\n\n\nAdditional points taken off:\n\n-2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 3"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia4.html",
+    "href": "individual_assignment/ia4.html",
+    "title": "Individual assignment 4",
+    "section": "",
+    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 4"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia4.html#instructions",
+    "href": "individual_assignment/ia4.html#instructions",
+    "title": "Individual assignment 4",
+    "section": "",
+    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 4"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia4.html#rubric",
+    "href": "individual_assignment/ia4.html#rubric",
+    "title": "Individual assignment 4",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n110%\nAll 6 of the required edits to the .qmd document above were met and the HTML version of the report was served up on GitHub pages\n\n\n100%\nAll 6 of the required edits to the .qmd document above were met and the report generates a working PDF and HTML file via the Makefile.\n\n\n85%\n5/6 of the required edits to the .qmd document listed above were met.\n\n\n70%\n4/6 of the required edits to the .qmd document listed above were met.\n\n\n55%\n3/6 of the required edits to the .qmd document listed above were met.\n\n\n40%\n2/6 of the required edits to the .qmd document listed above were met.\n\n\n25%\n1/6 of the required edits to the .qmd document listed above were met.\n\n\n0%\nThe assignment was not attempted.\n\n\n\n\nYou will only get the extra points for serving up the HTML version of the report on GitHub pages if all of the main assignment components were completed.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 4"
+    ]
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "See UBC Calendar"
+  },
+  {
+    "objectID": "syllabus.html#time-and-place",
+    "href": "syllabus.html#time-and-place",
+    "title": "Syllabus",
+    "section": "",
+    "text": "See UBC Calendar"
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "Course description",
+    "text": "Course description\nData science methods to automate the running and testing of code and analytic reports, manage data analysis software dependencies, package and deploy software for data analysis, and collaborate with others using version control.\nPre-reqs: DSCI 100 and either (a) one of CPSC 203, CPSC 210, CPEN 221 or (b) one of MATH 210, ECON 323 and one of CPSC 107, CPSC 110.\nSee the Faculty of Science Credit Exclusion Lists: www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414\nLong version: Data Science skills and tools are increasingly in demand across a large variety of disciplines. DSCI 310 aims to further students’ existing data science knowledge with reproducible and trustworthy workflows in the areas of creating and deploying data analysis, reports, and software. Particular focus will be placed on teaching the skills and tools currently used in academic research and industry settings.\nWithout deliberate and conscious effort towards project organization, tool choice, and workflows, complex and large data science projects can quickly grow out-of-hand and become irreproducible and untrustworthy. This course will focus on reproducible and trustworthy workflows for writing computer scripts, analytic reports and data analysis pipelines, as well as packaging, automated testing and deployment of software written for data analysis. An emphasis is also placed on how to collaborate effectively with others using version control tools, such as Git and GitHub. Such workflows act to mitigate chaos and maximize transparency, reproducibility, and productivity.\nWhile the course will be based on the use of the two leading languages in data science, Python and R, and related current tools (conda, Docker, Git, GitHub, Jupyter, etc.), the concepts and skills taught in the course aim to be discipline and tool agnostic, focussing on the importance of reproducible and trustworthy workflows for data analysis and the implications of failing to implement these when performing a data analysis.\nStudents who have completed this course will be able to complete complex data analysis projects with minimal technical debt – meaning that others can transparently follow how the analysis was done, reproduce the analysis for themselves if desired, and easily pickup on, and further extend the analysis in new areas. Strategies for collaboration on data science projects will also be emphasized."
+  },
+  {
+    "objectID": "syllabus.html#textbook",
+    "href": "syllabus.html#textbook",
+    "title": "Syllabus",
+    "section": "Textbook",
+    "text": "Textbook\nWe will be using a collection of resources available online. These include:\n\nDSCI 310 course notes\nR packages\nPython packages"
+  },
+  {
+    "objectID": "syllabus.html#hardware-software",
+    "href": "syllabus.html#hardware-software",
+    "title": "Syllabus",
+    "section": "Hardware & software",
+    "text": "Hardware & software\nStudents are required to bring a laptop to both lectures and tutorials. Students who do not own a laptop, chromebook, or tablet may be able to loan a laptop from the UBC library."
+  },
+  {
+    "objectID": "syllabus.html#course-level-learning-outcomes",
+    "href": "syllabus.html#course-level-learning-outcomes",
+    "title": "Syllabus",
+    "section": "Course-level learning outcomes",
+    "text": "Course-level learning outcomes\nBy the end of the course, students will be able to:\n\nDefend and justify the importance of creating data science workflows that are reproducible and trustworthy and the elements that go into such a workflow (e.g., writing clear, robust, accurate and reproducible code, managing and sharing compute environments, defined collaboration strategies, etc).\nConstructively criticize the workflows and data analysis of others in regards to its reproducibility and trustworthiness.\nDevelop a data science project (including code and non-code documents such as reports) that uses reproducible and trustworthy workflows\nDemonstrate how to effectively share and collaborate on data science projects and software by creating robust code packages, using reproducible compute environments, and leveraging collaborative development tools.\nDefend and justify the benefit of, and employ automated testing regimes, continuous integration and continuous deployment for managing and maintaining data science projects and packages.\nDemonstrate strong communication, teamwork, and collaborative skills by working on a significant data science project with peers throughout the course."
+  },
+  {
+    "objectID": "syllabus.html#teaching-team",
+    "href": "syllabus.html#teaching-team",
+    "title": "Syllabus",
+    "section": "Teaching team",
+    "text": "Teaching team\nNote that your TAs are students too; they may have class right before their office hours, and they may run a few minutes late. Please be patient!\n\n\n\n\n\n\n\n\nPosition\nName\nEmail\nOffice Hours\nLocation\n\n\n\n\nInstructor\nDaniel Chen\nSee Canvas\nSee Canvas\nSee Canvas\n\n\nTA\nNA\nSee Canvas\nSee Canvas\nSee Canvas\n\n\nTA\nNA\nSee Canvas\nSee Canvas\nSee Canvas"
+  },
+  {
+    "objectID": "syllabus.html#assessment",
+    "href": "syllabus.html#assessment",
+    "title": "Syllabus",
+    "section": "Assessment",
+    "text": "Assessment\n\nCourse breakdown\nThis course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\n\n\n\n\n\n\n\n\n\nGrade (%)\nLearning Objectives Addressed\n\n\n\n\niClicker cloud1\n1\n1 – 6\n\n\nIndividual assignments\n1\n1, 2, 4, 5\n\n\nProject milestone 1\n5\n3, 6\n\n\nProject milestone 2\n5\n3, 4, 6\n\n\nProject milestone 3\n5\n3, 4, 5, 6\n\n\nFinal project\n5\n3, 4, 5, 6\n\n\nPeer review\n2.5\n2\n\n\nTeamwork\n5\n6\n\n\nGitHub username quiz\n0.5\nNA\n\n\nMidterm exam2\n20\n1, 2, part of 4\n\n\nFinal exam3\n50\n1, 2, 4, 5\n\n\n\n1 We will be using iClicker cloud in the lectures regularly. You will be graded on both participation and performance (50% each). The three lowest iClicker marks will not be counted.\n\n\n2 A higher final exam grade can be used to replace a lower midterm exam grade.\n\n\n3 You must pass the final exam to pass the course."
+  },
+  {
+    "objectID": "syllabus.html#schedule-at-a-glance",
+    "href": "syllabus.html#schedule-at-a-glance",
+    "title": "Syllabus",
+    "section": "Schedule at a glance",
+    "text": "Schedule at a glance\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nAssessments due\nNotes\n\n\n\n\n1\nJan 7\nHow do reproducible and trustworthy workflows impact data analysis?\nNA\nStart working on your installation instructions\n\n\n2\nJan 14\nVersion control for transparency and collaboration\nIndividual assignment 1 & GitHub username quiz\nNA\n\n\n3\nJan 21\nIntegrated development environments, filenames and data science project organization\nIndividual assignment 2\nNA\n\n\n4\nJan 28\nManaging dependencies using virtual environments\nNA\nTeam assignment for group projects & drafting of team work contract\n\n\n5\nFeb 4\nManaging dependencies using containerization\nIndividual assignment 3\nNA\n\n\n6\nFeb 11\nNon-interactive scripts and reproducible reports\nNA\nNA\n\n\n6\nFeb 14\nMid-term exam\nNA\nYou will need to have git, github, and docker working for the exam\n\n\n7\nFeb 18\nReading Break\nNA\nNA\n\n\n8\nFeb 25\nData analysis pipelines\nMilestone 1\nNA\n\n\n9\nMar 4\nIntroduction to testing code for data science\nIndividual assignment 4\nNA\n\n\n10\nMar 11\nAdvanced version control workflows\nMilestone 2\nNA\n\n\n11\nMar 18\nPackaging and project work session\nNA\nNA\n\n\n12\nMar 25\nProject work session & documenting code\nMilestone 3\nNA\n\n\n13\nApr 1\nAutomated testing and continuous integration\nIndividual assignment 5 & Peer review\nNA\n\n\n14\nApr 8\nDeploying and publishing packages, copyright and licenses\nFinal project & Team work reflection\nNA\n\n\n\n\n\n\n\n\nAssessment schedule\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course."
+  },
+  {
+    "objectID": "syllabus.html#policies",
+    "href": "syllabus.html#policies",
+    "title": "Syllabus",
+    "section": "Policies",
+    "text": "Policies\n\nCode of Conduct\nAll participants in our course and communications are expected to show respect and courtesy to others. To creating a friendly and respectful place for learning, teaching and contributing, you are expected to read and follow the DSCI 310 Code of Conduct.\n\n\nLate registration\nStudents who register for the class late have 1 week from their registration date on Canvas to complete all prior assignments.\n\n\nLate assignments / mid-term exam absence\nStudents must be present at the invigilation venue (in class, on Zoom, examination centre, etc) to take the mid-term exam; otherwise they will be considered to have missed the mid-term exam and will be assigned a grade of zero.\nStudents who will miss the mid-term exam must provide a self-declaration prior to the mid-term exam and make arrangements (e.g., schedule an oral make-up mid-term exam) with the Instructor. Failing to present a declaration within a reasonable timeframe before the mid-term exam will result in a grade of zero.\nA late submission is defined as any work submitted after the deadline. For a late submission, the student will receive a 75% scaling of their grade for the first occurrence, 50% scaling of their grade for the second occurrence, and will receive a grade of 0 for subsequent occurrences.\nStudents who miss an assignment or quiz can request an academic concession. From the UBC Senate policy on academic concession, grounds for academic concession can be illness, conflicting responsibilities, or compassionate grounds. Examples of compassionate grounds, from the above policy, include “a traumatic event experienced by the student, a family member, or a close friend; an act of sexual assault or other sexual misconduct experienced by the student, a family member, or a close friend; a death in the family or of a close friend.”\nTo request an academic concession, students should immediately email a completed and signed academic concession form to the course Instructor. Upon receiving the form, the Instructor will make a decision about how to proceed. Failure to present valid documentation may result in a failing grade.\n\n\nRe-grading\nIf you have concerns about the way your work was graded, please contact the TA who graded it within one week of having the grade returned to you through Piazza. After this one-week window, we may deny your request for re-evaluation. Also, please keep in mind that your grade may go up or down as a result of re-grading.\n\n\nMissed final exam\nStudents who miss the final quiz must report to their faculty advising office within 72 hours of the missed exam, and must supply supporting documentation. Only your faculty advising office can grant deferred standing in a course. You must also notify your instructor prior to (if possible) or immediately after the exam. Your instructor will let you know when you are expected to write your deferred exam. Deferred exams will ONLY be provided to students who have applied for and received deferred standing from their faculty.\n\n\nAcademic concession policy\nPlease see UBC’s concession policy for detailed information on dealing with missed coursework, quizzes, and exams under circumstances of an acute and unanticipated nature.\n\n\nAcademic integrity\nThe academic enterprise is founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President’s Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.\nA more detailed description of academic integrity, including the University’s policies and procedures, may be found in the Academic Calendar at http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0.\n\n\nPlagiarism\nStudents must correctly cite any code or text that has been authored by someone else or by the student themselves for other assignments. Cases of plagiarism may include, but are not limited to:\n\nthe reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)\nthe translation of an algorithm or a script from a language to another\nthe generation of code by automatic code-generation software\n\nAn “adequate acknowledgement” requires a detailed identification of the (parts of the) code or text reused and a full citation of the original source code that has been reused.\nThe above attribution policy applies only to assignments. No code or text may be copied (with or without attribution) from any source during a quiz or exam. Answers must always be in your own words. At a minimum, copying will result in a grade of 0 for the related question.\nRepeated plagiarism of any form could result in larger penalties, including failure of the course."
+  },
+  {
+    "objectID": "syllabus.html#attribution",
+    "href": "syllabus.html#attribution",
+    "title": "Syllabus",
+    "section": "Attribution",
+    "text": "Attribution\nParts of this syllabus (particularly the policies) have been copied and derived from the UBC MDS Policies."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
+  },
+  {
+    "objectID": "coc.html#attribution",
+    "href": "coc.html#attribution",
+    "title": "Code of Conduct",
+    "section": "Attribution",
+    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DSCI 310",
+    "section": "",
+    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
+  },
+  {
+    "objectID": "assessments.html",
+    "href": "assessments.html",
+    "title": "Assessment schedule",
+    "section": "",
+    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
+    "crumbs": [
+      "Assessments",
+      "Assessment schedule"
+    ]
+  },
+  {
+    "objectID": "computer-setup.html",
+    "href": "computer-setup.html",
+    "title": "Computer setup",
+    "section": "",
+    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
+  },
+  {
+    "objectID": "computer-setup.html#laptop-requirements",
+    "href": "computer-setup.html#laptop-requirements",
+    "title": "Computer setup",
+    "section": "Laptop requirements",
+    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
+  },
+  {
+    "objectID": "computer-setup.html#software-installation-instructions",
+    "href": "computer-setup.html#software-installation-instructions",
+    "title": "Computer setup",
+    "section": "Software installation instructions",
+    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
+  },
+  {
+    "objectID": "tutorials.html",
+    "href": "tutorials.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Tutorials for the Friday sessions",
+    "crumbs": [
+      "Tutorials"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html",
+    "href": "individual_assignment/ia1.html",
+    "title": "Individual assignment 1",
+    "section": "",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html#instructions",
+    "href": "individual_assignment/ia1.html#instructions",
+    "title": "Individual assignment 1",
+    "section": "",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html#submission",
+    "href": "individual_assignment/ia1.html#submission",
+    "title": "Individual assignment 1",
+    "section": "Submission",
+    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html#troubleshooting",
+    "href": "individual_assignment/ia1.html#troubleshooting",
+    "title": "Individual assignment 1",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html#rubric",
+    "href": "individual_assignment/ia1.html#rubric",
+    "title": "Individual assignment 1",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
     ]
   },
   {
@@ -471,403 +849,80 @@
     ]
   },
   {
-    "objectID": "individual_assignment/ia1.html",
-    "href": "individual_assignment/ia1.html",
-    "title": "Individual assignment 1",
+    "objectID": "tutorials/t2.html",
+    "href": "tutorials/t2.html",
+    "title": "Tutorial 2",
     "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia1.html#instructions",
-    "href": "individual_assignment/ia1.html#instructions",
-    "title": "Individual assignment 1",
-    "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia1.html#submission",
-    "href": "individual_assignment/ia1.html#submission",
-    "title": "Individual assignment 1",
-    "section": "Submission",
-    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia1.html#troubleshooting",
-    "href": "individual_assignment/ia1.html#troubleshooting",
-    "title": "Individual assignment 1",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia1.html#rubric",
-    "href": "individual_assignment/ia1.html#rubric",
-    "title": "Individual assignment 1",
-    "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
-    ]
-  },
-  {
-    "objectID": "tutorials.html",
-    "href": "tutorials.html",
-    "title": "Tutorials",
-    "section": "",
-    "text": "Tutorials for the Friday sessions",
-    "crumbs": [
-      "Tutorials"
-    ]
-  },
-  {
-    "objectID": "computer-setup.html",
-    "href": "computer-setup.html",
-    "title": "Computer setup",
-    "section": "",
-    "text": "These instructions will walk you through how to install the required Data Science software stack for DSCI 310. Before starting with the installation instructions, ensure that your laptop meets our program requirements. If your computer does not meet the requirements please reach out to the teaching team on Piazza and describe how it does not. We will work to accommodate you where we can."
-  },
-  {
-    "objectID": "computer-setup.html#laptop-requirements",
-    "href": "computer-setup.html#laptop-requirements",
-    "title": "Computer setup",
-    "section": "Laptop requirements",
-    "text": "Laptop requirements\n\nRuns one of the following operating systems: Ubuntu 20.04 (any version &gt;=20.04 will likely work), macOS (version 11.4.x or higher), Windows 11 (version 2004, 20H2, 21H1 or higher).\n\nWhen installing Ubuntu, checking the box “Install third party…” will (among other things) install proprietary drivers, which can be helpful for wifi and graphics cards.\n\nCan connect to networks via a wireless connection for on campus work\nHas access to an internet connection that is fast and stable enough for video calling and conducting online quizzes\nHas at least 30 GB disk space available (50 GB is recommended)\nHas at least 4 GB of RAM (8 GB is recommended)\nUses a 64-bit CPU\nIs at most 6 years old (4 years old or newer is recommended)\nUses English as the default language\nStudent user has full administrative access to the computer"
-  },
-  {
-    "objectID": "computer-setup.html#software-installation-instructions",
-    "href": "computer-setup.html#software-installation-instructions",
-    "title": "Computer setup",
-    "section": "Software installation instructions",
-    "text": "Software installation instructions\nPlease click the appropriate link below to view the installation instructions for your operating system:\n\nmacOS arm\nUbuntu\nWindows\n\nThe following people contributed to these instructions: Daniel Chen, Anmol Jawandha, Tomas Beuzen, Rodolfo Lourenzutti, Joel Ostblom, Arman Seyed-Ahmadi, Florencia D’Andrea, and Tiffany Timbers."
-  },
-  {
-    "objectID": "assessments.html",
-    "href": "assessments.html",
-    "title": "Assessment schedule",
-    "section": "",
-    "text": "This course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course.",
-    "crumbs": [
-      "Assessments",
-      "Assessment schedule"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "DSCI 310",
-    "section": "",
-    "text": "Welcome to the course website for DSCI 310! Course-specific information is contained within this website. General resources (course notes and textbook readings) are located at the links below:\n\nDSCI 310 course notes\nR packages\nPython packages\n\nWe will also be using Canvas for this course. Please ensure you can access the DSCI 310 Canvas course shell at canvas.ubc.ca."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.\nTo make clear what is expected, everyone participating in DSCI 310 activities is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces managed by DSCI 310 including, but not limited to, class meetings, email communication, and online forums such as Piazza and GitHub. The DSCI 310 teaching team are expected to assist with the enforcement of the Code of Conduct.\nThe DSCI 310 Instructor(s) is responsible for enforcing the Code of Conduct. All reports will be reviewed by the Instructor(s) and will be kept confidential."
-  },
-  {
-    "objectID": "coc.html#attribution",
-    "href": "coc.html#attribution",
-    "title": "Code of Conduct",
-    "section": "Attribution",
-    "text": "Attribution\n\nDerived from the Carpentries Code of Conduct"
-  },
-  {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "See UBC Calendar"
-  },
-  {
-    "objectID": "syllabus.html#time-and-place",
-    "href": "syllabus.html#time-and-place",
-    "title": "Syllabus",
-    "section": "",
-    "text": "See UBC Calendar"
-  },
-  {
-    "objectID": "syllabus.html#course-description",
-    "href": "syllabus.html#course-description",
-    "title": "Syllabus",
-    "section": "Course description",
-    "text": "Course description\nData science methods to automate the running and testing of code and analytic reports, manage data analysis software dependencies, package and deploy software for data analysis, and collaborate with others using version control.\nPre-reqs: DSCI 100 and either (a) one of CPSC 203, CPSC 210, CPEN 221 or (b) one of MATH 210, ECON 323 and one of CPSC 107, CPSC 110.\nSee the Faculty of Science Credit Exclusion Lists: www.calendar.ubc.ca/vancouver/index.cfm?tree=12,215,410,414\nLong version: Data Science skills and tools are increasingly in demand across a large variety of disciplines. DSCI 310 aims to further students’ existing data science knowledge with reproducible and trustworthy workflows in the areas of creating and deploying data analysis, reports, and software. Particular focus will be placed on teaching the skills and tools currently used in academic research and industry settings.\nWithout deliberate and conscious effort towards project organization, tool choice, and workflows, complex and large data science projects can quickly grow out-of-hand and become irreproducible and untrustworthy. This course will focus on reproducible and trustworthy workflows for writing computer scripts, analytic reports and data analysis pipelines, as well as packaging, automated testing and deployment of software written for data analysis. An emphasis is also placed on how to collaborate effectively with others using version control tools, such as Git and GitHub. Such workflows act to mitigate chaos and maximize transparency, reproducibility, and productivity.\nWhile the course will be based on the use of the two leading languages in data science, Python and R, and related current tools (conda, Docker, Git, GitHub, Jupyter, etc.), the concepts and skills taught in the course aim to be discipline and tool agnostic, focussing on the importance of reproducible and trustworthy workflows for data analysis and the implications of failing to implement these when performing a data analysis.\nStudents who have completed this course will be able to complete complex data analysis projects with minimal technical debt – meaning that others can transparently follow how the analysis was done, reproduce the analysis for themselves if desired, and easily pickup on, and further extend the analysis in new areas. Strategies for collaboration on data science projects will also be emphasized."
-  },
-  {
-    "objectID": "syllabus.html#textbook",
-    "href": "syllabus.html#textbook",
-    "title": "Syllabus",
-    "section": "Textbook",
-    "text": "Textbook\nWe will be using a collection of resources available online. These include:\n\nDSCI 310 course notes\nR packages\nPython packages"
-  },
-  {
-    "objectID": "syllabus.html#hardware-software",
-    "href": "syllabus.html#hardware-software",
-    "title": "Syllabus",
-    "section": "Hardware & software",
-    "text": "Hardware & software\nStudents are required to bring a laptop to both lectures and tutorials. Students who do not own a laptop, chromebook, or tablet may be able to loan a laptop from the UBC library."
-  },
-  {
-    "objectID": "syllabus.html#course-level-learning-outcomes",
-    "href": "syllabus.html#course-level-learning-outcomes",
-    "title": "Syllabus",
-    "section": "Course-level learning outcomes",
-    "text": "Course-level learning outcomes\nBy the end of the course, students will be able to:\n\nDefend and justify the importance of creating data science workflows that are reproducible and trustworthy and the elements that go into such a workflow (e.g., writing clear, robust, accurate and reproducible code, managing and sharing compute environments, defined collaboration strategies, etc).\nConstructively criticize the workflows and data analysis of others in regards to its reproducibility and trustworthiness.\nDevelop a data science project (including code and non-code documents such as reports) that uses reproducible and trustworthy workflows\nDemonstrate how to effectively share and collaborate on data science projects and software by creating robust code packages, using reproducible compute environments, and leveraging collaborative development tools.\nDefend and justify the benefit of, and employ automated testing regimes, continuous integration and continuous deployment for managing and maintaining data science projects and packages.\nDemonstrate strong communication, teamwork, and collaborative skills by working on a significant data science project with peers throughout the course."
-  },
-  {
-    "objectID": "syllabus.html#teaching-team",
-    "href": "syllabus.html#teaching-team",
-    "title": "Syllabus",
-    "section": "Teaching team",
-    "text": "Teaching team\nNote that your TAs are students too; they may have class right before their office hours, and they may run a few minutes late. Please be patient!\n\n\n\n\n\n\n\n\nPosition\nName\nEmail\nOffice Hours\nLocation\n\n\n\n\nInstructor\nDaniel Chen\nSee Canvas\nSee Canvas\nSee Canvas\n\n\nTA\nNA\nSee Canvas\nSee Canvas\nSee Canvas\n\n\nTA\nNA\nSee Canvas\nSee Canvas\nSee Canvas"
-  },
-  {
-    "objectID": "syllabus.html#assessment",
-    "href": "syllabus.html#assessment",
-    "title": "Syllabus",
-    "section": "Assessment",
-    "text": "Assessment\n\nCourse breakdown\nThis course includes a substantial group project component. You will work in randomly assigned groups of four for the project milestones. There are also individual assignments that act as stepping stones to the project milestones. Given that collaboration is so important in data science, a portion of your final grade will be an assessment of the evidence you provide that you were an effective and productive team member. A combination of peer evaluation and GitHub history will be used to evaluate this. Your individual knowledge on the course materials (concepts and practical skills) will be evaluated on two summative assessments (midterm and final exam).\nFinally, this course is delivered in a blended format, with some pre-work (video watching or reading) expected to be done before each lecture. These will be provided in the course Canvas shell. Each in class lecture session will start with iClicker cloud questions to probe your understanding of the pre-lecture material and then we will work through demonstrations and exercises in class to build off of this.\n\n\n\n\n\n\n\n\n\nGrade (%)\nLearning Objectives Addressed\n\n\n\n\niClicker cloud1\n1\n1 – 6\n\n\nIndividual assignments\n1\n1, 2, 4, 5\n\n\nProject milestone 1\n5\n3, 6\n\n\nProject milestone 2\n5\n3, 4, 6\n\n\nProject milestone 3\n5\n3, 4, 5, 6\n\n\nFinal project\n5\n3, 4, 5, 6\n\n\nPeer review\n2.5\n2\n\n\nTeamwork\n5\n6\n\n\nGitHub username quiz\n0.5\nNA\n\n\nMidterm exam2\n20\n1, 2, part of 4\n\n\nFinal exam3\n50\n1, 2, 4, 5\n\n\n\n1 We will be using iClicker cloud in the lectures regularly. You will be graded on both participation and performance (50% each). The three lowest iClicker marks will not be counted.\n\n\n2 A higher final exam grade can be used to replace a lower midterm exam grade.\n\n\n3 You must pass the final exam to pass the course."
-  },
-  {
-    "objectID": "syllabus.html#schedule-at-a-glance",
-    "href": "syllabus.html#schedule-at-a-glance",
-    "title": "Syllabus",
-    "section": "Schedule at a glance",
-    "text": "Schedule at a glance\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nAssessments due\nNotes\n\n\n\n\n1\nJan 7\nHow do reproducible and trustworthy workflows impact data analysis?\nNA\nStart working on your installation instructions\n\n\n2\nJan 14\nVersion control for transparency and collaboration\nIndividual assignment 1 & GitHub username quiz\nNA\n\n\n3\nJan 21\nIntegrated development environments, filenames and data science project organization\nIndividual assignment 2\nNA\n\n\n4\nJan 28\nManaging dependencies using virtual environments\nNA\nTeam assignment for group projects & drafting of team work contract\n\n\n5\nFeb 4\nManaging dependencies using containerization\nIndividual assignment 3\nNA\n\n\n6\nFeb 11\nNon-interactive scripts and reproducible reports\nNA\nNA\n\n\n6\nFeb 14\nMid-term exam\nNA\nYou will need to have git, github, and docker working for the exam\n\n\n7\nFeb 18\nReading Break\nNA\nNA\n\n\n8\nFeb 25\nData analysis pipelines\nMilestone 1\nNA\n\n\n9\nMar 4\nIntroduction to testing code for data science\nIndividual assignment 4\nNA\n\n\n10\nMar 11\nAdvanced version control workflows\nMilestone 2\nNA\n\n\n11\nMar 18\nPackaging and project work session\nNA\nNA\n\n\n12\nMar 25\nProject work session & documenting code\nMilestone 3\nNA\n\n\n13\nApr 1\nAutomated testing and continuous integration\nIndividual assignment 5 & Peer review\nNA\n\n\n14\nApr 8\nDeploying and publishing packages, copyright and licenses\nFinal project & Team work reflection\nNA\n\n\n\n\n\n\n\n\nAssessment schedule\nIn general, assignments will be due 11:59 PM on Saturdays. However, in the final week of classes, all assignments need to be submitted by the final day of classes, thus we have two alternative due dates that week.\n\n\n\n\n\n\n\n\n\nDescription\nDue Date1\nDue Week\n\n\n\n\nIndividual assignment 1\nSetting up your computer\nJan 18\n2\n\n\nGitHub username quiz\nCreate a GitHub account (if you haven’t already) and let us know what it is\nJan 18\n2\n\n\nIndividual assignment 2\nVersion control practice\nJan 25\n3\n\n\nIndividual assignment 3\nDockerfile practice\nFeb 8\n5\n\n\nMid-term exam2,3\nThe midterm is a summative assessment\nFeb 14\n6\n\n\nMilestone 1\nQuestion, data & rough draft of analysis in one monolithic literate code document, reproducible environment\nMar 1\n8\n\n\nIndividual assignment 4\nReproducible reports practice\nMar 8\n9\n\n\nMilestone 2\nliterate code document broken into scripts and a report & data analysis pipeline to stitch everything together\nMar 15\n10\n\n\nMilestone 3\nfunctions abstracted to a file/module & tests, function documentation\nMar 29\n12\n\n\nPeer review\nreview of another group's project\nApr 5\n13\n\n\nIndividual assignment 5\nPackaging practice\nApr 5\n13\n\n\nFinal project\npackage & CI (the full monty package - including docs)\nApr 11\n14\n\n\nTeam work\nReflection of how the group worked together, as well as individual performance\nApr 11\n14\n\n\nFinal exam2,3,4\nThe Final Exam will include all the material covered in all the components of the course (cumulative). This is a summative assessment.\nNA\nNA\n\n\n\n1 Assignments are due at 23:59 Vancouver time unless otherwise stated.\n\n\n2 These are summative assessments, you can learn more about them here: https://www.cmu.edu/teaching/assessment/basics/formative-summative.html\n\n\n3 A higher final exam score can be used to replace a lower midterm exam score.\n\n\n4 You must pass the final to pass the course."
-  },
-  {
-    "objectID": "syllabus.html#policies",
-    "href": "syllabus.html#policies",
-    "title": "Syllabus",
-    "section": "Policies",
-    "text": "Policies\n\nCode of Conduct\nAll participants in our course and communications are expected to show respect and courtesy to others. To creating a friendly and respectful place for learning, teaching and contributing, you are expected to read and follow the DSCI 310 Code of Conduct.\n\n\nLate registration\nStudents who register for the class late have 1 week from their registration date on Canvas to complete all prior assignments.\n\n\nLate assignments / mid-term exam absence\nStudents must be present at the invigilation venue (in class, on Zoom, examination centre, etc) to take the mid-term exam; otherwise they will be considered to have missed the mid-term exam and will be assigned a grade of zero.\nStudents who will miss the mid-term exam must provide a self-declaration prior to the mid-term exam and make arrangements (e.g., schedule an oral make-up mid-term exam) with the Instructor. Failing to present a declaration within a reasonable timeframe before the mid-term exam will result in a grade of zero.\nA late submission is defined as any work submitted after the deadline. For a late submission, the student will receive a 75% scaling of their grade for the first occurrence, 50% scaling of their grade for the second occurrence, and will receive a grade of 0 for subsequent occurrences.\nStudents who miss an assignment or quiz can request an academic concession. From the UBC Senate policy on academic concession, grounds for academic concession can be illness, conflicting responsibilities, or compassionate grounds. Examples of compassionate grounds, from the above policy, include “a traumatic event experienced by the student, a family member, or a close friend; an act of sexual assault or other sexual misconduct experienced by the student, a family member, or a close friend; a death in the family or of a close friend.”\nTo request an academic concession, students should immediately email a completed and signed academic concession form to the course Instructor. Upon receiving the form, the Instructor will make a decision about how to proceed. Failure to present valid documentation may result in a failing grade.\n\n\nRe-grading\nIf you have concerns about the way your work was graded, please contact the TA who graded it within one week of having the grade returned to you through Piazza. After this one-week window, we may deny your request for re-evaluation. Also, please keep in mind that your grade may go up or down as a result of re-grading.\n\n\nMissed final exam\nStudents who miss the final quiz must report to their faculty advising office within 72 hours of the missed exam, and must supply supporting documentation. Only your faculty advising office can grant deferred standing in a course. You must also notify your instructor prior to (if possible) or immediately after the exam. Your instructor will let you know when you are expected to write your deferred exam. Deferred exams will ONLY be provided to students who have applied for and received deferred standing from their faculty.\n\n\nAcademic concession policy\nPlease see UBC’s concession policy for detailed information on dealing with missed coursework, quizzes, and exams under circumstances of an acute and unanticipated nature.\n\n\nAcademic integrity\nThe academic enterprise is founded on honesty, civility, and integrity. As members of this enterprise, all students are expected to know, understand, and follow the codes of conduct regarding academic integrity. At the most basic level, this means submitting only original work done by you and acknowledging all sources of information or ideas and attributing them to others as required. This also means you should not cheat, copy, or mislead others about what is your work. Violations of academic integrity (i.e., misconduct) lead to the breakdown of the academic enterprise, and therefore serious consequences arise and harsh sanctions are imposed. For example, incidences of plagiarism or cheating may result in a mark of zero on the assignment or exam and more serious consequences may apply if the matter is referred to the President’s Advisory Committee on Student Discipline. Careful records are kept in order to monitor and prevent recurrences.\nA more detailed description of academic integrity, including the University’s policies and procedures, may be found in the Academic Calendar at http://calendar.ubc.ca/vancouver/index.cfm?tree=3,54,111,0.\n\n\nPlagiarism\nStudents must correctly cite any code or text that has been authored by someone else or by the student themselves for other assignments. Cases of plagiarism may include, but are not limited to:\n\nthe reproduction (copying and pasting) of code or text with none or minimal reformatting (e.g., changing the name of the variables)\nthe translation of an algorithm or a script from a language to another\nthe generation of code by automatic code-generation software\n\nAn “adequate acknowledgement” requires a detailed identification of the (parts of the) code or text reused and a full citation of the original source code that has been reused.\nThe above attribution policy applies only to assignments. No code or text may be copied (with or without attribution) from any source during a quiz or exam. Answers must always be in your own words. At a minimum, copying will result in a grade of 0 for the related question.\nRepeated plagiarism of any form could result in larger penalties, including failure of the course."
-  },
-  {
-    "objectID": "syllabus.html#attribution",
-    "href": "syllabus.html#attribution",
-    "title": "Syllabus",
-    "section": "Attribution",
-    "text": "Attribution\nParts of this syllabus (particularly the policies) have been copied and derived from the UBC MDS Policies."
-  },
-  {
-    "objectID": "individual_assignment/ia4.html",
-    "href": "individual_assignment/ia4.html",
-    "title": "Individual assignment 4",
-    "section": "",
-    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 4"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia4.html#instructions",
-    "href": "individual_assignment/ia4.html#instructions",
-    "title": "Individual assignment 4",
-    "section": "",
-    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 4"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia4.html#rubric",
-    "href": "individual_assignment/ia4.html#rubric",
-    "title": "Individual assignment 4",
-    "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n110%\nAll 6 of the required edits to the .qmd document above were met and the HTML version of the report was served up on GitHub pages\n\n\n100%\nAll 6 of the required edits to the .qmd document above were met and the report generates a working PDF and HTML file via the Makefile.\n\n\n85%\n5/6 of the required edits to the .qmd document listed above were met.\n\n\n70%\n4/6 of the required edits to the .qmd document listed above were met.\n\n\n55%\n3/6 of the required edits to the .qmd document listed above were met.\n\n\n40%\n2/6 of the required edits to the .qmd document listed above were met.\n\n\n25%\n1/6 of the required edits to the .qmd document listed above were met.\n\n\n0%\nThe assignment was not attempted.\n\n\n\n\nYou will only get the extra points for serving up the HTML version of the report on GitHub pages if all of the main assignment components were completed.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 4"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia3.html",
-    "href": "individual_assignment/ia3.html",
-    "title": "Individual assignment 3",
-    "section": "",
-    "text": "Practice building Docker images",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 3"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia3.html#instructions",
-    "href": "individual_assignment/ia3.html#instructions",
-    "title": "Individual assignment 3",
-    "section": "Instructions",
-    "text": "Instructions\nThe purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from Dockerfiles.\n\nSubmission instructions\nIn the text box provided for this assignment on Canvas, you must submit:\n\nA link to the GitHub.com repository that you create for this assignment.\n\nYou should name your GitHub.com repository dsci310-ia3-&lt;USERNAME&gt;-docker.\nYou need to create this assignment in the course organization: https://github.com/DSCI-310-2025\n\nA the link to your Docker image on DockerHub. You should name your DockerHub repository dsci310-ia3-&lt;USERNAME&gt;-docker.\n\n\n\n\n\n\n\nWarning\n\n\n\nMake sure your repository is under the DSCI-310-2025 organization. You can do a “repository transfer” if you need to, but your submission needs to be in the correct org.\n\n\n\n\nExercise instructions\n\nCreate a public repository on GitHub.com repo under your personal username called dsci310-ia3-&lt;USERNAME&gt;-docker\n\nYou can choose a pre-made .gitignore or manually create one yourself\n\nAdd a Dockerfile to it. This Dockerfile should be based off of the rocker/rstudio:4.4.2 Docker image\n\nlink to rocker/rstudio DockerHub repository\nlink to rocker/rstudio:4.4.2 Dockerfile\n\nAdd at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).\n\nThere are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.\nOne way is to turn your dsci310-ia3-&lt;USERNAME&gt;-docker into a local RStudio project then do the following steps:\n\nOpen the RStudio project locally\nInitialize the project with renv\nUse {renv} to install a package (e.g., cowsay) and then make sure you create a script that loads/uses the {cowsay} package.\nIn your Dockerfile COPY all your renv files into the container\nUse the outputs from renv to help you specify which functions to use to install the libraries\n\n\nHint: you might need to toggle the USER in the Dockerfile between rstudio and root to get everything working.\n\nAnother way is to RUN commands directly in the Dockerfile to install packages\n\nHint: You cannot use install.packages() because you can’t pin a version number.\nHint: You can run R code directly from the command line. For example, Rscript -e \"print('something to say...')\". Make sure to change the double quotes \"\" to single quotes '' in the R code.\nHint: You will need to first install the {remotes} package, and then use the remotes::install_version() function\n\n\nBuild your Dockerfile and test it locally.\nAdd a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile\n\nUse the “Docker image” workflow\n\nYou can also start off with an empty file and paste in a workflow by clicking “Skip this and setup a workflow yourself”.\n\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nHere are some resources to help you create your own Github Action Workflow:\n\nGithub Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images\n\n\n\n(As Needed): Make sure you make at least one change to the Dockerfile once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once. - You can also add a workflow_dispatch: trigger and manually trigger a workflow\n\nNote: If you are making an renv.lock file and you notice it’s not updating with renv::snapshot(), take a look at this FAQ",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 3"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia3.html#rubric",
-    "href": "individual_assignment/ia3.html#rubric",
-    "title": "Individual assignment 3",
-    "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\nA Docker image named dockerfile-practice and tagged with a version exists under the student’s username on DockerHub.\nThe Dockerfile used to create the Docker image lives in a GitHub repository named dsci310-ia3-&lt;USERNAME&gt;-docker under the DSCI-310 org.\nThere is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.\nThe Docker image version tag is in sync with the GitHub repository release tag. (Not needed – Free Point)\nAt least one new R package was added to the Dockerfile and the version of that package was pinned.\n\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\n5/5 of the criteria listed above were met.\n\n\n75%\n4/5 of the criteria listed above were met.\n\n\n50%\n3/5 of the criteria listed above were met.\n\n\n25%\n2/5 of the criteria listed above were met.\n\n\n0%\nOnly 1/5 of the criteria listed above were met or the assignment was not attempted.\n\n\n50%\nMaximum amount of points if created in the wrong organization\n\n\n\nAdditional points taken off:\n\n-2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 3"
-    ]
-  },
-  {
-    "objectID": "tutorials/t3.html",
-    "href": "tutorials/t3.html",
-    "title": "Tutorial 3",
-    "section": "",
-    "text": "Here we’ll practice with programming language environments.\nIf conda and python does not apply to you, you may skip the conda and python portion of the tutorial. If you are taking, have taken, or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.",
+    "text": "This tutorial will focus on Git + GitHub practice",
     "crumbs": [
       "Tutorials",
-      "Tutorial 3"
+      "Tutorial 2"
     ]
   },
   {
-    "objectID": "tutorials/t3.html#r-environments-renv",
-    "href": "tutorials/t3.html#r-environments-renv",
-    "title": "Tutorial 3",
-    "section": "R Environments: renv",
-    "text": "R Environments: renv\n\nOpen up RStudio\nrun getwd() in the r console, and note the default starting working directory in R when not in a project.\nCreate an RStudio Project (either from an existing folder, or create a new folder)\nrun getwd() again and see how the working directory changes\nInstall the renv package (if you do not have it installed)\nNote all the current installed R packages you have in the packages panel\nRun the renv::init() in the current project (you can also choose to library(renv) and then init() as 2 separate steps\nNow note the packages in the package panel\nInstall the palmerpenguins package in R\nLibrary the palmerpenguins package\nyou should now have access to the penguins dataframe\nupdate the lock file with renv::snapshot()\nOpen a new RStudio or close the current project\nYou should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made",
+    "objectID": "tutorials/t2.html#git-github",
+    "href": "tutorials/t2.html#git-github",
+    "title": "Tutorial 2",
+    "section": "Git + GitHub",
+    "text": "Git + GitHub\n\nCreate a github repository from github.com\nclone it down to your computer\nCreate/Edit the README file and write a short definition for the following commands:\n\ngit branch\ngit switch\ngit log --oneline --graph --all\n\nadd/commit/push your definitions to your github repository",
     "crumbs": [
       "Tutorials",
-      "Tutorial 3"
+      "Tutorial 2"
     ]
   },
   {
-    "objectID": "tutorials/t3.html#python-environments-conda",
-    "href": "tutorials/t3.html#python-environments-conda",
-    "title": "Tutorial 3",
-    "section": "Python Environments: conda",
-    "text": "Python Environments: conda\n\nOpen up a terminal, you should be in a conda base environment\nRun python --version and which python to check the python version you have and which one is actually being used\ncreate a new conda environment with a different python version from the one you currently have in base\nactivate this environment\ninstall jupyterlab and pandas in the new environment\ncreate an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)\ndeactivate your python environment",
+    "objectID": "tutorials/t2.html#branches-and-pull-requests-prs",
+    "href": "tutorials/t2.html#branches-and-pull-requests-prs",
+    "title": "Tutorial 2",
+    "section": "Branches and Pull Requests (PRs)",
+    "text": "Branches and Pull Requests (PRs)\n\nCreate a new branch (does not matter what name you give it)\nIn the new branch define the following terms:\n\nbranch\npull request\n\nPush your branch up to github and create a pull request\nMake a comment in your own pull request\nMerge your pull request into main\nUpdate your local main branch",
     "crumbs": [
       "Tutorials",
-      "Tutorial 3"
+      "Tutorial 2"
     ]
   },
   {
-    "objectID": "tutorials/t1.html",
-    "href": "tutorials/t1.html",
-    "title": "Tutorial 1",
+    "objectID": "tutorials/t2.html#extra-merge-conflicts",
+    "href": "tutorials/t2.html#extra-merge-conflicts",
+    "title": "Tutorial 2",
+    "section": "Extra: Merge Conflicts",
+    "text": "Extra: Merge Conflicts\nLet’s create a PR with a merge conflict\n\nCreate a new branch from main, edit the readme file, at the top and define the follow terms\n\ngit add\ngit commit\n\nPush this branch and create a PR, but DO NOT merge it\nOn your local machine, go back to your main branch\nCreate yet another branch from main (you should not be on your previous branch)\nAt the top of your readme file define the following terms\n\ngit push ...\ngit pull ...\n\nadd/commit/push your branch\nCreate another PR from your second branch\nTry to merge both branches now, you should see a merge conflict when you try to merge the 2nd branch",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 2"
+    ]
+  },
+  {
+    "objectID": "tutorials/t5.html",
+    "href": "tutorials/t5.html",
+    "title": "Tutorial 5",
     "section": "",
-    "text": "Computer Setup Help, Bash, and Git",
+    "text": "Create a repository and clone it down\nCreate a bash script that lists (using a bash command) the files of your current working directory, the root of the repo. Name it list.sh\nCreate a dockerfile that uses the rocker/rstudio container, using version 4.2.2.\nCopy the list.sh into the container\nRun the script in the container\nDocument how to run the container and run the script in the container. We must follow the steps until we are able to run and see the output. Put your steps in the README.md file\nFor Tuesday: Create a github action that also runs this bash script",
     "crumbs": [
       "Tutorials",
-      "Tutorial 1"
+      "Tutorial 5"
     ]
   },
   {
-    "objectID": "tutorials/t1.html#create-a-repository",
-    "href": "tutorials/t1.html#create-a-repository",
-    "title": "Tutorial 1",
-    "section": "Create a repository",
-    "text": "Create a repository\n\nCreate a new repository on GitHub (e.g., YYYY-MM-DD-git). You can create it with an existing README.md file (or create a new one later)\n\n\n\n\n\n\n\nTip\n\n\n\nCreating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.\n\n\n\nClone down the repository to your local computer",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t1.html#make-changes-to-a-file",
-    "href": "tutorials/t1.html#make-changes-to-a-file",
-    "title": "Tutorial 1",
-    "section": "Make Changes to a file",
-    "text": "Make Changes to a file\n\nCreate a README.md file if you don’t have one already\nEdit the README.md file by adding a line about your favorite food\nAdd / commit / push your changes up to github",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t1.html#update-changes-from-remote",
-    "href": "tutorials/t1.html#update-changes-from-remote",
-    "title": "Tutorial 1",
-    "section": "Update changes from remote",
-    "text": "Update changes from remote\n\nNow edit the README.md file on the remote github repository\nAdd a new line by naming your favorite color\nCommit the changes on github.com\nConfirm your changes in github.com are made in the web interface\npull down your changes to your local computer",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t4.html",
-    "href": "tutorials/t4.html",
-    "title": "Tutorial 4",
+    "objectID": "tutorials/t6.html",
+    "href": "tutorials/t6.html",
+    "title": "Tutorial 6: Refactor Quarto Doc",
     "section": "",
-    "text": "Virtual environments and docker containers. We’ll practice creating virtual environments again (just like last tutorial), so we can compare it with creating docker containers.",
+    "text": "Below you fill find the text for an example data analysis report using R and Quarto.\n\nCopy the text below into your own quarto document\nRender the document to check it is all working\nYour task is to refactor each section into separate R scripts (01_load_data.R, 02_methods.R, 03_model.R, 04_results.R) and make sure each script can completely run independently from one another without source()ing another script.\nYour scripts should save out what ever data artifact it needs for both the pipline code and the quarto report\nCreate a Makefile with a target named all that will run all the scripts in the correct order.\nEdit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.\n\nYou can download the sample quarto document here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd",
     "crumbs": [
       "Tutorials",
-      "Tutorial 4"
+      "Tutorial 6: Refactor Quarto Doc"
     ]
   },
   {
-    "objectID": "tutorials/t4.html#r-environments",
-    "href": "tutorials/t4.html#r-environments",
-    "title": "Tutorial 4",
-    "section": "R Environments",
-    "text": "R Environments\n\nCreate a new RStudio Project\nNote the currently installed packages\nInstall the renv library if you do not have it installed\nInitialize the current project as an renv project\nNote the new packages in the environment.\nInstall an R package\nSnapsnot the package\nNote how the renv.lock file does not change\nCreate and save an R script that uses the package you just installed\nRe-snapshot the project\nNote how the renv.lock file updates now\nClose the current RStudio project\nNote how you have your old packages back\nRe-open the RStudio project you just created and see how t5he packages change.",
+    "objectID": "tutorials/t6.html#refactoring-a-quarto-report",
+    "href": "tutorials/t6.html#refactoring-a-quarto-report",
+    "title": "Tutorial 6: Refactor Quarto Doc",
+    "section": "",
+    "text": "Below you fill find the text for an example data analysis report using R and Quarto.\n\nCopy the text below into your own quarto document\nRender the document to check it is all working\nYour task is to refactor each section into separate R scripts (01_load_data.R, 02_methods.R, 03_model.R, 04_results.R) and make sure each script can completely run independently from one another without source()ing another script.\nYour scripts should save out what ever data artifact it needs for both the pipline code and the quarto report\nCreate a Makefile with a target named all that will run all the scripts in the correct order.\nEdit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.\n\nYou can download the sample quarto document here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd",
     "crumbs": [
       "Tutorials",
-      "Tutorial 4"
-    ]
-  },
-  {
-    "objectID": "tutorials/t4.html#optional-python-environment",
-    "href": "tutorials/t4.html#optional-python-environment",
-    "title": "Tutorial 4",
-    "section": "Optional: Python environment",
-    "text": "Optional: Python environment\nFor people and teams working on a python project and want to practice conda environments.\n\n\n\n\n\n\nNote\n\n\n\nconda environments are not going to be on the exam. This exercise is solely to give you instructions to practice creating python environments.\n\n\n\nCheck that you are currently in the base conda environment:\n\nconda info\n\nNote the packages in the current conda environment and their versions\n\nconda list\n\nCreate a new conda environment (we are going to name it myenv) with python 3.12\n\nconda create -n myenv -c conda-forge python=3.12\n\nActivate this environment\nRun python and compare your python versions and see if you are able to import pandas\nconda install another package into the environment, pandas and import it from the new environment.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 4"
-    ]
-  },
-  {
-    "objectID": "tutorials/t4.html#run-a-docker-container",
-    "href": "tutorials/t4.html#run-a-docker-container",
-    "title": "Tutorial 4",
-    "section": "Run a docker container",
-    "text": "Run a docker container\nLet’s get some practice with running docker containers\nDocker Desktop needs to be runnign in the background.\n\nYour first container\nWe did this in the Computer Setup process, but let’s run the hello-world container with docker run\n$ docker run hello-world\n\nHello from Docker!\nThis message shows that your installation appears to be working correctly.\n\nTo generate this message, Docker took the following steps:\n 1. The Docker client contacted the Docker daemon.\n 2. The Docker daemon pulled the \"hello-world\" image from the Docker Hub.\n    (amd64)\n 3. The Docker daemon created a new container from that image which runs the\n    executable that produces the output you are currently reading.\n 4. The Docker daemon streamed that output to the Docker client, which sent it\n    to your terminal.\n\nTo try something more ambitious, you can run an Ubuntu container with:\n $ docker run -it ubuntu bash\n\nShare images, automate workflows, and more with a free Docker ID:\n https://hub.docker.com/\n\nFor more examples and ideas, visit:\n https://docs.docker.com/get-started/\n\n$\nThis command runs a container that executes a script that prints out the hello docker text. When this script runs, it exits and the container exits to give you your prompt back\n\n\nAn R Container\n\nCompare the version of R you have right now on your computer. You can open up and launch R or run R --version to get your current R version. 2.Run the R 4.3.2 container:\n\ndocker run --rm -it rocker/r-ver:4.3.2\n\nCompare the version from the version you have on your computer\nTry to load a package you have installed on your computer in the container (it should fail)\nExit out of this docker container\n\n\n\nAn RStudio Container\n\n\n\n\n\n\nNote\n\n\n\nIf you are on an ARM based M-chip mac, you need to pass in the --platform=linux/amd64 flag to the docker run command. https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform\n\n\n\nRun the RStudio container and connect it to your local computer’s port 8787\n\ndocker run --rm -e PASSWORD=\"pizza\" -p 8787:8787 rocker/rstudio:4.4.2\n\nExplain in your own words what each of the flags are doing in the docker run command. You can use the official docker run documentation: https://docs.docker.com/reference/cli/docker/container/run/\nOpen and log into the RStudio container and try to run some R code in a script\nSave this script\nClose the container and run it again\nNotice how all your work inside the container is lost\n\n\n\nAn RStudio Tidyverse Container\n\nDo the same process as before, but this time use the rocker/tidyverse:4.4.2 container.\nWithout turning off this container, open a new terminal and run a separate rocker/rstudio:4.4.2 container\n\n\nYou will need to change the local port mapping\n\n\nMake sure you are able to log into and run both RStudio sessions in the container\n\n\nNote how only one of the RStudio sessions has tidyverse installed and the other doesn’t",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 4"
+      "Tutorial 6: Refactor Quarto Doc"
     ]
   },
   {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tutorial 1 – DSCI 310</title>
+<title>t7 – DSCI 310</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tutorials/t2.html" rel="next">
+<link href="../tutorials/t6.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -126,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/t1.html">Tutorial 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/t7.html">Step 1: Run the current set of files</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -147,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/t1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tutorials/t1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tutorial 1</span></a>
   </div>
 </li>
@@ -183,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/t7.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/t7.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Step 1: Run the current set of files</span></a>
   </div>
 </li>
@@ -197,74 +231,92 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#create-a-repository" id="toc-create-a-repository" class="nav-link active" data-scroll-target="#create-a-repository">Create a repository</a></li>
-  <li><a href="#make-changes-to-a-file" id="toc-make-changes-to-a-file" class="nav-link" data-scroll-target="#make-changes-to-a-file">Make Changes to a file</a></li>
-  <li><a href="#update-changes-from-remote" id="toc-update-changes-from-remote" class="nav-link" data-scroll-target="#update-changes-from-remote">Update changes from remote</a></li>
+  <li><a href="#step-1-run-the-current-set-of-files" id="toc-step-1-run-the-current-set-of-files" class="nav-link active" data-scroll-target="#step-1-run-the-current-set-of-files">Step 1: Run the current set of files</a></li>
+  <li><a href="#step-2-enable-github-pages" id="toc-step-2-enable-github-pages" class="nav-link" data-scroll-target="#step-2-enable-github-pages">Step 2: Enable GitHub Pages</a></li>
+  <li><a href="#step-3-turn-the-project-into-a-quarto-project" id="toc-step-3-turn-the-project-into-a-quarto-project" class="nav-link" data-scroll-target="#step-3-turn-the-project-into-a-quarto-project">Step 3: Turn the project into a Quarto Project</a></li>
+  <li><a href="#step-4-publish-your-side-from-docs" id="toc-step-4-publish-your-side-from-docs" class="nav-link" data-scroll-target="#step-4-publish-your-side-from-docs">Step 4: Publish your side from docs</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t7.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t7.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Tutorial 1</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Computer Setup Help, Bash, and Git</p>
-<section id="create-a-repository" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-repository">Create a repository</h2>
-<ul>
-<li>Create a new repository on GitHub (e.g., <code>YYYY-MM-DD-git</code>). You can create it with an existing <code>README.md</code> file (or create a new one later)</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Creating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.</p>
-</div>
-</div>
-<ul>
-<li>Clone down the repository to your local computer</li>
-</ul>
+<p>Rendering a quarto document into the docs directory and publish it into github pages.</p>
+<p>We are going to work with the repository we’ve been using in class this week. This is the final version of the repo after learning about command line scripts and Make:</p>
+<p><a href="https://github.com/chendaniely/2025-03-06-make-quarto" class="uri">https://github.com/chendaniely/2025-03-06-make-quarto</a></p>
+<p>It has been set up as a Template. Click on the green “Use this template” button and then select “Create a new repository” to copy the repository into your github account.</p>
+<section id="step-1-run-the-current-set-of-files" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-run-the-current-set-of-files">Step 1: Run the current set of files</h2>
+<p>Run the <code>report</code> target from the repository. This should generate the <code>index.html</code> file in the project root.</p>
+<p>If you open this document, it should open a basic quarto document with a single figure in it.</p>
 </section>
-<section id="make-changes-to-a-file" class="level2">
-<h2 class="anchored" data-anchor-id="make-changes-to-a-file">Make Changes to a file</h2>
+<section id="step-2-enable-github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-enable-github-pages">Step 2: Enable GitHub Pages</h2>
+<p>Push the files (index.html) into your github repository, then enable GitHub Pages via the repository settings &gt; pages panel.</p>
 <ul>
-<li>Create a <code>README.md</code> file if you don’t have one already</li>
-<li>Edit the <code>README.md</code> file by adding a line about your favorite food</li>
-<li>Add / commit / push your changes up to github</li>
+<li>Under Source, select “Deploy from a branch”</li>
+<li>Under Branch, select “main” and <code>/ (root)</code></li>
 </ul>
+<p>wait a few minutes for github pages to build and publish the site.</p>
 </section>
-<section id="update-changes-from-remote" class="level2">
-<h2 class="anchored" data-anchor-id="update-changes-from-remote">Update changes from remote</h2>
+<section id="step-3-turn-the-project-into-a-quarto-project" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-turn-the-project-into-a-quarto-project">Step 3: Turn the project into a Quarto Project</h2>
+<p>We are now going to turn this project into a quarto project, specifically a manuscript:</p>
+<p><a href="https://quarto.org/docs/projects/quarto-projects.html" class="uri">https://quarto.org/docs/projects/quarto-projects.html</a></p>
+<p>The current repository has an empty <code>_quarto.yml</code> file, we will edit it to become a quarto manuscript project.</p>
+<section id="edit-the-_quarto.yml-file" class="level4">
+<h4 class="anchored" data-anchor-id="edit-the-_quarto.yml-file">Edit the <code>_quarto.yml</code> file</h4>
+<p>Edit the <code>_quarto.yml</code> file so it looks like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> manuscript</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">manuscript</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">article</span><span class="kw">:</span><span class="at"> index.qmd</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">comments</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">hypothesis</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will set the project type, some of the html formats, and also generate a doc file of our report. We will also have our documents render into the <code>docs</code> directory instead of the root directory.</p>
+<p>You will also notice that the article option is looking for <code>index.qmd</code>. We will address this part next.</p>
+</section>
+<section id="create-the-index-file-for-web-publishing" class="level4">
+<h4 class="anchored" data-anchor-id="create-the-index-file-for-web-publishing">Create the index file for web publishing</h4>
 <ul>
-<li>Now edit the <code>README.md</code> file on the remote github repository</li>
-<li>Add a new line by naming your favorite color</li>
-<li>Commit the changes on github.com</li>
-<li>Confirm your changes in github.com are made in the web interface</li>
-<li>pull down your changes to your local computer</li>
+<li>Move and rename the <code>report/report.qmd</code> to <code>index.qmd</code> in the repository root.</li>
 </ul>
+<p>This will allow <code>quarto</code> to find and render the manuscript project.</p>
+<p>After doing this, you should be able to run <code>quarto render</code> on its own, and the report will render into the docs/` directory.</p>
+</section>
+<section id="clean-up-the-repository" class="level4">
+<h4 class="anchored" data-anchor-id="clean-up-the-repository">Clean up the repository,</h4>
+<p>Run the <code>clean</code> target in the repository and confirm that the <code>index.html</code> is no longer created in the root directory.</p>
+</section>
+<section id="edit-the-makefile" class="level4">
+<h4 class="anchored" data-anchor-id="edit-the-makefile">Edit the Makefile</h4>
+<ul>
+<li>Edit the <code>clean</code> target so that it also deletes the <code>docs/</code> directory</li>
+<li>Edit the <code>index.html</code> target such that it is really creating the <code>docs/index.html</code> file.</li>
+</ul>
+<p>Now when you run <code>make clean</code> followed by <code>make report</code> (a phony target), you should be able to re-create your report file.</p>
+</section>
+<section id="push-your-changes-to-github" class="level4">
+<h4 class="anchored" data-anchor-id="push-your-changes-to-github">Push your changes to github</h4>
+<p>Push your new repository changes to github. Including your new docs folder.</p>
+<p>You should also no loger have an <code>index.html</code> file in the project root.</p>
+</section>
+</section>
+<section id="step-4-publish-your-side-from-docs" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-publish-your-side-from-docs">Step 4: Publish your side from docs</h2>
+<p>We have now created a quarto project that renders into the <code>docs</code> directory, not the root directory.</p>
+<p>Your current website may be broken since <code>index.html</code> does not exist in the root.</p>
+<p>Go back to your Settings &gt; pages repository settings and change the main publishing from root to docs.</p>
+<p>Your website should now be published from the docs directory.</p>
 
 
 </section>
@@ -689,11 +741,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../tutorials/t6.html" class="pagination-link" aria-label="Tutorial 6: Refactor Quarto Doc">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tutorial 6: Refactor Quarto Doc</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tutorials/t2.html" class="pagination-link" aria-label="Tutorial 2">
-        <span class="nav-page-text">Tutorial 2</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -701,4 +753,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t7.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t7.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
