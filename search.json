@@ -312,56 +312,56 @@
   {
     "objectID": "tutorials/t7.html",
     "href": "tutorials/t7.html",
-    "title": "DSCI 310",
+    "title": "Tutorial 7",
     "section": "",
     "text": "Rendering a quarto document into the docs directory and publish it into github pages.\nWe are going to work with the repository we’ve been using in class this week. This is the final version of the repo after learning about command line scripts and Make:\nhttps://github.com/chendaniely/2025-03-06-make-quarto\nIt has been set up as a Template. Click on the green “Use this template” button and then select “Create a new repository” to copy the repository into your github account.",
     "crumbs": [
       "Tutorials",
-      "Step 1: Run the current set of files"
+      "Tutorial 7"
     ]
   },
   {
     "objectID": "tutorials/t7.html#step-1-run-the-current-set-of-files",
     "href": "tutorials/t7.html#step-1-run-the-current-set-of-files",
-    "title": "DSCI 310",
+    "title": "Tutorial 7",
     "section": "Step 1: Run the current set of files",
     "text": "Step 1: Run the current set of files\nRun the report target from the repository. This should generate the index.html file in the project root.\nIf you open this document, it should open a basic quarto document with a single figure in it.",
     "crumbs": [
       "Tutorials",
-      "Step 1: Run the current set of files"
+      "Tutorial 7"
     ]
   },
   {
     "objectID": "tutorials/t7.html#step-2-enable-github-pages",
     "href": "tutorials/t7.html#step-2-enable-github-pages",
-    "title": "DSCI 310",
+    "title": "Tutorial 7",
     "section": "Step 2: Enable GitHub Pages",
     "text": "Step 2: Enable GitHub Pages\nPush the files (index.html) into your github repository, then enable GitHub Pages via the repository settings &gt; pages panel.\n\nUnder Source, select “Deploy from a branch”\nUnder Branch, select “main” and / (root)\n\nwait a few minutes for github pages to build and publish the site.",
     "crumbs": [
       "Tutorials",
-      "Step 1: Run the current set of files"
+      "Tutorial 7"
     ]
   },
   {
     "objectID": "tutorials/t7.html#step-3-turn-the-project-into-a-quarto-project",
     "href": "tutorials/t7.html#step-3-turn-the-project-into-a-quarto-project",
-    "title": "DSCI 310",
+    "title": "Tutorial 7",
     "section": "Step 3: Turn the project into a Quarto Project",
     "text": "Step 3: Turn the project into a Quarto Project\nWe are now going to turn this project into a quarto project, specifically a manuscript:\nhttps://quarto.org/docs/projects/quarto-projects.html\nThe current repository has an empty _quarto.yml file, we will edit it to become a quarto manuscript project.\n\nEdit the _quarto.yml file\nEdit the _quarto.yml file so it looks like this:\nproject:\n  type: manuscript\n  output-dir: docs\n\nmanuscript:\n  article: index.qmd\n\nformat:\n  html:\n    comments:\n      hypothesis: true\n  docx: default\nThis will set the project type, some of the html formats, and also generate a doc file of our report. We will also have our documents render into the docs directory instead of the root directory.\nYou will also notice that the article option is looking for index.qmd. We will address this part next.\n\n\nCreate the index file for web publishing\n\nMove and rename the report/report.qmd to index.qmd in the repository root.\n\nThis will allow quarto to find and render the manuscript project.\nAfter doing this, you should be able to run quarto render on its own, and the report will render into the docs/` directory.\n\n\nClean up the repository,\nRun the clean target in the repository and confirm that the index.html is no longer created in the root directory.\n\n\nEdit the Makefile\n\nEdit the clean target so that it also deletes the docs/ directory\nEdit the index.html target such that it is really creating the docs/index.html file.\n\nNow when you run make clean followed by make report (a phony target), you should be able to re-create your report file.\n\n\nPush your changes to github\nPush your new repository changes to github. Including your new docs folder.\nYou should also no loger have an index.html file in the project root.",
     "crumbs": [
       "Tutorials",
-      "Step 1: Run the current set of files"
+      "Tutorial 7"
     ]
   },
   {
     "objectID": "tutorials/t7.html#step-4-publish-your-side-from-docs",
     "href": "tutorials/t7.html#step-4-publish-your-side-from-docs",
-    "title": "DSCI 310",
+    "title": "Tutorial 7",
     "section": "Step 4: Publish your side from docs",
     "text": "Step 4: Publish your side from docs\nWe have now created a quarto project that renders into the docs directory, not the root directory.\nYour current website may be broken since index.html does not exist in the root.\nGo back to your Settings &gt; pages repository settings and change the main publishing from root to docs.\nYour website should now be published from the docs directory.",
     "crumbs": [
       "Tutorials",
-      "Step 1: Run the current set of files"
+      "Tutorial 7"
     ]
   },
   {
