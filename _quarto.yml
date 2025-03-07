@@ -74,6 +74,7 @@ website:
         - tutorials/t4.qmd
         - tutorials/t5.qmd
         - tutorials/t6.qmd
+        - tutorials/t7.qmd
 
 format:
   html:

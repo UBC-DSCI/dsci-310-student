@@ -1,0 +1,107 @@
+---
+titie: Tutorial 7
+---
+
+Rendering a quarto document into the docs directory and publish it into github pages.
+
+We are going to work with the repository we've been using in class this week.
+This is the final version of the repo after learning about command line scripts and Make:
+
+<https://github.com/chendaniely/2025-03-06-make-quarto>
+
+It has been set up as a Template. Click on the green "Use this template" button and
+then select "Create a new repository" to copy the repository into your github account.
+
+## Step 1: Run the current set of files
+
+Run the `report` target from the repository.
+This should generate the `index.html` file in the project root.
+
+If you open this document, it should open a basic quarto document with a single figure in it.
+
+## Step 2: Enable GitHub Pages
+
+Push the files (index.html) into your github repository,
+then enable GitHub Pages via the repository settings > pages panel.
+
+- Under Source, select "Deploy from a branch"
+- Under Branch, select "main" and `/ (root)`
+
+wait a few minutes for github pages to build and publish the site.
+
+## Step 3: Turn the project into a Quarto Project
+
+We are now going to turn this project into a quarto project,
+specifically a manuscript:
+
+<https://quarto.org/docs/projects/quarto-projects.html>
+
+The current repository has an empty `_quarto.yml` file,
+we will edit it to become a quarto manuscript project.
+
+#### Edit the `_quarto.yml` file
+
+Edit the `_quarto.yml` file so it looks like this:
+
+```yml
+project:
+  type: manuscript
+  output-dir: docs
+
+manuscript:
+  article: index.qmd
+
+format:
+  html:
+    comments:
+      hypothesis: true
+  docx: default
+```
+
+This will set the project type, some of the html formats, and also generate a doc file of our report.
+We will also have our documents render into the `docs` directory instead of the root directory.
+
+You will also notice that the article option is looking for `index.qmd`.
+We will address this part next.
+
+#### Create the index file for web publishing
+
+- Move and rename the `report/report.qmd` to `index.qmd` in the repository root.
+
+This will allow `quarto` to find and render the manuscript project.
+
+After doing this, you should be able to run `quarto render` on its own,
+and the report will render into the docs/` directory.
+
+
+#### Clean up the repository,
+
+Run the `clean` target in the repository and confirm that the `index.html` is no longer created in
+the root directory.
+
+#### Edit the Makefile
+
+- Edit the `clean` target so that it also deletes the `docs/` directory
+- Edit the `index.html` target such that it is really creating the `docs/index.html` file.
+
+Now when you run `make clean` followed by `make report` (a phony target),
+you should be able to re-create your report file.
+
+#### Push your changes to github
+
+Push your new repository changes to github.
+Including your new docs folder.
+
+You should also no loger have an `index.html` file in the project root.
+
+## Step 4: Publish your side from docs
+
+We have now created a quarto project that renders into the `docs` directory,
+not the root directory.
+
+Your current website may be broken since `index.html` does not exist in the root.
+
+Go back to your Settings > pages repository settings and change the main publishing
+from root to docs.
+
+Your website should now be published from the docs directory.
