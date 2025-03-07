@@ -1,5 +1,5 @@
 ---
-titie: Tutorial 7
+title: Tutorial 7
 ---
 
 Rendering a quarto document into the docs directory and publish it into github pages.
