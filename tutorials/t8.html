@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tutorial 1 – DSCI 310</title>
+<title>Tutorial 8 – DSCI 310</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tutorials/t2.html" rel="next">
+<link href="../tutorials/t7.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -126,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/t1.html">Tutorial 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/t8.html">Tutorial 8</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/t1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tutorials/t1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tutorial 1</span></a>
   </div>
 </li>
@@ -189,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/t8.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/t8.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tutorial 8</span></a>
   </div>
 </li>
@@ -203,18 +203,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#create-a-repository" id="toc-create-a-repository" class="nav-link active" data-scroll-target="#create-a-repository">Create a repository</a></li>
-  <li><a href="#make-changes-to-a-file" id="toc-make-changes-to-a-file" class="nav-link" data-scroll-target="#make-changes-to-a-file">Make Changes to a file</a></li>
-  <li><a href="#update-changes-from-remote" id="toc-update-changes-from-remote" class="nav-link" data-scroll-target="#update-changes-from-remote">Update changes from remote</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">R</a></li>
+  <li><a href="#python-optional" id="toc-python-optional" class="nav-link" data-scroll-target="#python-optional">Python (optional)</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t8.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tutorial 1</h1>
+<h1 class="title">Tutorial 8</h1>
 </div>
 
 
@@ -231,46 +230,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Computer Setup Help, Bash, and Git</p>
-<section id="create-a-repository" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-repository">Create a repository</h2>
+<p>This tutorial we’ll practice writing Tests for our functions.</p>
+<p>We will write a function that calculates whether or not a particular year is a leap year. This is how the Gregorian calendar calculates leap years:</p>
 <ul>
-<li>Create a new repository on GitHub (e.g., <code>YYYY-MM-DD-git</code>). You can create it with an existing <code>README.md</code> file (or create a new one later)</li>
+<li>If the year is divisible by four, it’s a leap year</li>
+<li>But if the year can be divided by 100 as well as four, it’s not a leap year</li>
+<li>However, if the year is divisible by 400, it is a leap year</li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Creating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.</p>
-</div>
-</div>
+<p>Write a function named <code>is_leap</code>. It should:</p>
 <ul>
-<li>Clone down the repository to your local computer</li>
+<li>Take in a number as an input</li>
+<li>Return a value for True if it is a leap year</li>
+<li>Return a value for False if it is not a leap year.</li>
 </ul>
+<p>Here are some examples of what the function should return:</p>
+<ul>
+<li>1992: True</li>
+<li>2000: True</li>
+<li>1900: False</li>
+<li>2021: False</li>
+</ul>
+<p>In addition from the above examples, here are some test cases you should write as well</p>
+<ul>
+<li>Return an error if the user puts in the value of 0</li>
+<li>Return an error if the user puts in a negative value</li>
+<li>Returns an error if the user puts in a string</li>
+</ul>
+<p>What are some other edge cases you can think of?</p>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<ol type="1">
+<li>Write an R function that meets the above criteria</li>
+<li>Using <code>{testthat}</code> write unit tests that can test your function</li>
+<li>You may opt to source your function file in your test file.</li>
+</ol>
 </section>
-<section id="make-changes-to-a-file" class="level2">
-<h2 class="anchored" data-anchor-id="make-changes-to-a-file">Make Changes to a file</h2>
-<ul>
-<li>Create a <code>README.md</code> file if you don’t have one already</li>
-<li>Edit the <code>README.md</code> file by adding a line about your favorite food</li>
-<li>Add / commit / push your changes up to github</li>
-</ul>
-</section>
-<section id="update-changes-from-remote" class="level2">
-<h2 class="anchored" data-anchor-id="update-changes-from-remote">Update changes from remote</h2>
-<ul>
-<li>Now edit the <code>README.md</code> file on the remote github repository</li>
-<li>Add a new line by naming your favorite color</li>
-<li>Commit the changes on github.com</li>
-<li>Confirm your changes in github.com are made in the web interface</li>
-<li>pull down your changes to your local computer</li>
-</ul>
+<section id="python-optional" class="level2">
+<h2 class="anchored" data-anchor-id="python-optional">Python (optional)</h2>
+<ol type="1">
+<li>Write an R function that meets the above criteria</li>
+<li>Write tests for your function that can be run with <code>pytest</code></li>
+<li>For this tutorial, create your function and test files in the same directory, so it’s easier to import your function module for testing.</li>
+</ol>
 
 
 </section>
@@ -695,11 +696,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../tutorials/t7.html" class="pagination-link" aria-label="Tutorial 7">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tutorial 7</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tutorials/t2.html" class="pagination-link" aria-label="Tutorial 2">
-        <span class="nav-page-text">Tutorial 2</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -707,4 +708,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t8.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
