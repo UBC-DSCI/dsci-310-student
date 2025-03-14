@@ -122,7 +122,8 @@ so that:
     just the code outputs where needed (e.g., figures and tables)
     ([docs on how to do this](https://quarto.org/docs/computations/execution-options.html))
 7. (optional) Turn on GitHub pages so that it serves up the `docs` directory
-    so that the report is viewable on the web.
+    so that the report is viewable on the web. For this optional and extra credit step,
+    you may need to edit the `Makefile`.
 
 ### Submission instructions
 
