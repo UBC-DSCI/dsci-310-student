@@ -1,0 +1,51 @@
+---
+title: "Tutorial 8"
+---
+
+This tutorial we'll practice writing Tests for our functions.
+
+We will write a function that calculates whether or not a particular year is
+a leap year.
+This is how the Gregorian calendar calculates leap years:
+
+- If the year is divisible by four, it's a leap year
+- But if the year can be divided by 100 as well as four, it's not a leap year
+- However, if the year is divisible by 400, it is a leap year
+
+Write a function named `is_leap`.
+It should:
+
+- Take in a number as an input
+- Return a value for True if it is a leap year
+- Return a value for False if it is not a leap year.
+
+Here are some examples of what the function should return:
+
+- 1992: True
+- 2000: True
+- 1900: False
+- 2021: False
+
+In addition from the above examples,
+here are some test cases you should write as well
+
+- Return an error if the user puts in the value of 0
+- Return an error if the user puts in a negative value
+- Returns an error if the user puts in a string
+
+What are some other edge cases you can think of?
+
+
+## R
+
+1. Write an R function that meets the above criteria
+2. Using `{testthat}` write unit tests that can test your function
+3. You may opt to source your function file in your test file.
+
+
+## Python (optional)
+
+1. Write an R function that meets the above criteria
+2. Write tests for your function that can be run with `pytest`
+3. For this tutorial, create your function and test files in the same directory,
+   so it's easier to import your function module for testing.
