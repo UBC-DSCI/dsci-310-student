@@ -1,0 +1,137 @@
+---
+title: "Milestone 3"
+---
+
+Functions abstracted to a file/module and addition of robust tests
+
+## Overall project summary
+
+In this course you will work in assigned teams of three or four
+(see group assignments in [Canvas](https://canvas.ubc.ca))
+to answer a predictive question using a publicly available data set that will allow you to answer that question.
+To answer this question,
+you will perform a complete data analysis in R and/or Python,
+from data import to communication of results,
+while placing significant emphasis on reproducible and trustworthy workflows.
+
+Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook,
+to a fully reproducible and robust data data analysis project, comprised of:
+
+- a well documented and modularized software package and scripts written in R and/or Python,
+- a data analysis pipeline automated with GNU Make,
+- a reproducible report powered by Quarto,
+- a containerized computational environment created and made shareable by Docker, and
+- remote version control repositories on GitHub for project collaboration and sharing,
+  as well as automation of test suite execution and documentation and software deployment.
+
+An example final project from another course (where the project is similar) can be seen here:
+[Breast Cancer Predictor](https://github.com/ttimbers/breast_cancer_predictor_py)
+
+## Milestone 3 summary
+
+In this milestone, you will:
+
+1. Abstract some code from your scripts to functions in a separate file,
+and write tests for those functions
+
+2. Continue to manage issues professionally
+
+### 1. Abstract some code from your scripts to functions in a separate file, and write tests for those functions
+
+In every data science project, there is some code that is repetitive,
+and other code that may not be repetitive in the current project,
+but would likely be very useful in other, related future projects.
+It is well worth it to abstract such code to functions,
+making it easily reuseable in the future in other work.
+Examples of code that often repetitive in a data analysis projects:
+
+- data wrangling, cleaning or transformation code that gets applied to multiple columns or multiple data sets
+- data visualization code when many versions of a similar plot-type is used
+  (e.g., many scatter plots with similar formatting)
+- data modeling workflow/pipeline code when tuning different models on the same data set
+
+Abstracting our analysis code into functions also makes it testable!
+Meaning you can assess whether your code works as expected.
+This alone is reason enough to use functions in your analysis code.
+
+Your job here is to **create at least 3-4 functions from your scripts.**
+**One per group member is the minimum.**
+When doing this task,
+follow the
+[workflow for writing functions and tests for data science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/materials/lectures/06-intro-to-testing-code.html#workflow-for-writing-functions-and-tests-for-data-science),
+remember this process will include:
+
+  - writing thorough function specifications & documentation
+  - writing robust unit tests for these functions to ensure they work as expected
+  - writing the code that makes up the function body
+
+If you are using R, these functions will live in an `.R` file
+(whose filename will be named after the function, or functions).
+It is OK to have one function per file, or all functions in one file.
+This/these file(s) will live in a sub-directory called `R`.
+If you are using Python, these functions will live in an `.py` file
+(whose filename will be named after the function, or functions).
+Again, it is OK to have one function per file, or all functions in one file.
+This/these file(s) will live in a sub-directory called `src`.
+
+You will `source` (in the case of R) or `import` (in the case of Python)
+these functions in your scripts to use them in your analysis.
+Tests will live in a `test` directory, with files/subdirectories organized as per the testing framework you are using.
+If you are using R for your data analysis code,
+we expect you to use the [`testthat`](https://testthat.r-lib.org/) R package framework for writing software tests.
+If you are using Python, we expect you to use the [`pytest`](https://docs.pytest.org/en/7.0.x/) Python package framework.
+
+Of course, if it makes sense to have more than 3-4 you are welcome to increase the number!
+However, all functions must have the same standards in regards to software robustness.
+Your functions will be assessed for their quality
+(e.g., functions should do one thing,
+and generally return an object unless they were specifically designed for side-effects),
+usability,
+readability (follow the [tidyverse style guide](https://style.tidyverse.org/) for R,
+or the [black style guide](https://black.readthedocs.io/en/stable/the_black_code_style/index.html) for Python),
+documentation and quality of the test suite.
+
+### 5. Continue to manage issues professionally
+
+Continue managing issues effectively through project boards and milestones,
+make it clear who is responsible for what
+and what project milestone each task is associated with.
+In particular, create an issue for each task and/or sub-task needed for this milestone.
+Each of these issues must be assigned to a single person on the team.
+We want all of you to get coding experience in the project and **each team member should be responsible for an approximately equal portion of the code.**
+
+## Submission Instructions
+
+You will submit two URLs to Canvas in the provided text box for milestone 3:
+
+1. the URL of your project's GitHub.com repository
+2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
+
+### Creating a release on GitHub.com
+
+Just before you submit the milestone 3, create a release on your project repository on GitHub and name it something like `2.0.0` ([how to create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.
+
+## Expectations
+
+- **Everyone should contribute equally to all aspects of the project**
+**(e.g., code, writing, project management).**
+**This should be evidenced by a roughly equal number of commits,**
+**pull request reviews and participation in communication via GitHub issues.**
+
+- Each group member should work in a
+[GitHub flow workflow](https://docs.github.com/en/get-started/quickstart/github-flow);
+where they create branches for each feature or fix,
+which are reviewed and critiqued by at least one other teammate
+before the the pull request is accepted.
+- You should be committing to git and pushing to GitHub.com every time you work on this project.
+- Git commit messages should be meaningful. These will be marked.
+It's OK if one or two are less meaningful, but most should be.
+- Use GitHub issues to communicate to their team mate (as opposed to email or Slack).
+- Your question, analysis and visualization should make sense. It doesn't have to be complicated.
+- **Your analysis should be correct, and run reproducibly given the instructions provided in the README.**
+- You should use proper grammar and full sentences in your README.
+Point form may occur, but should be less than 10% of your written documents.
+- R code should follow the [tidyverse style guide](https://style.tidyverse.org/),
+and Python code should follow the
+[black style guide](https://black.readthedocs.io/en/stable/the_black_code_style/index.html) for Python)
+- You should not have extraneous files in your repository that should be ignored.

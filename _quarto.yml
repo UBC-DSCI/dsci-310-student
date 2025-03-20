@@ -50,6 +50,7 @@ website:
             - individual_assignment/ia2.qmd
             - individual_assignment/ia3.qmd
             - individual_assignment/ia4.qmd
+            - individual_assignment/ia5.qmd
 
         - text: "---"
 
@@ -57,6 +58,7 @@ website:
           contents:
             - project/m1.qmd
             - project/m2.qmd
+            - project/m3.qmd
 
         - text: "---"
 
