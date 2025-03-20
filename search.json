@@ -238,329 +238,371 @@
     "text": "Attributions\n\nUBC MDS Software Stack Install Instructions\nHarvard CS109\nUBC STAT 545 licensed under the CC BY-NC 3.0\nSoftware Carpentry"
   },
   {
-    "objectID": "project/m2.html",
-    "href": "project/m2.html",
-    "title": "Milestone 2",
+    "objectID": "project/m3.html",
+    "href": "project/m3.html",
+    "title": "Milestone 3",
     "section": "",
-    "text": "Literate code document (i.e., *.ipynb or .Rmd) broken into scripts and a Quarto report. Data analysis pipeline using GNU Make to stitch everything together and automate their execution and rendering (.R files, and reproducible Quarto report).",
+    "text": "Functions abstracted to a file/module and addition of robust tests",
     "crumbs": [
       "Assessments",
       "Milestone",
-      "Milestone 2"
+      "Milestone 3"
     ]
   },
   {
-    "objectID": "project/m2.html#overall-project-summary",
-    "href": "project/m2.html#overall-project-summary",
-    "title": "Milestone 2",
+    "objectID": "project/m3.html#overall-project-summary",
+    "href": "project/m3.html#overall-project-summary",
+    "title": "Milestone 3",
     "section": "Overall project summary",
     "text": "Overall project summary\nIn this course you will work in assigned teams of three or four (see group assignments in Canvas) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.\nYour data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:\n\na well documented and modularized software package and scripts written in R and/or Python,\na data analysis pipeline automated with GNU Make,\na reproducible report powered by Quarto,\na containerized computational environment created and made shareable by Docker, and\nremote version control repositories on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.\n\nAn example final project from another course (where the project is similar) can be seen here: Breast Cancer Predictor",
     "crumbs": [
       "Assessments",
       "Milestone",
-      "Milestone 2"
+      "Milestone 3"
     ]
   },
   {
-    "objectID": "project/m2.html#milestone-2-summary",
-    "href": "project/m2.html#milestone-2-summary",
-    "title": "Milestone 2",
-    "section": "Milestone 2 summary",
-    "text": "Milestone 2 summary\nIn this milestone, you will:\n\nUpgrade your project’s computational environment to a container.\nAbstract more code from your literate code document (*.ipynb, *.Rmd, or .qmd) to scripts (e.g., .R or .py). You should aim to split the analysis code into 4, or more, R or Python scripts. Where the code in each script is contributing to a related step in your analysis.\nConvert your *.ipynb or *.Rmd files into a Quarto document (*.qmd). Edit your Quarto document so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report. The goal is that non-data scientists would not be able to tell that code was used to perform your analysis or format your report (i.e., no code should be visible in the rendered report).\nWrite another script, a Makefile (literally called Makefile), to act as a driver script to rule them all. This script should run the others in sequence, hard coding in the appropriate arguments.\nContinue to manage issues professionally.",
+    "objectID": "project/m3.html#milestone-3-summary",
+    "href": "project/m3.html#milestone-3-summary",
+    "title": "Milestone 3",
+    "section": "Milestone 3 summary",
+    "text": "Milestone 3 summary\nIn this milestone, you will:\n\nAbstract some code from your scripts to functions in a separate file, and write tests for those functions\nContinue to manage issues professionally\n\n\n1. Abstract some code from your scripts to functions in a separate file, and write tests for those functions\nIn every data science project, there is some code that is repetitive, and other code that may not be repetitive in the current project, but would likely be very useful in other, related future projects. It is well worth it to abstract such code to functions, making it easily reuseable in the future in other work. Examples of code that often repetitive in a data analysis projects:\n\ndata wrangling, cleaning or transformation code that gets applied to multiple columns or multiple data sets\ndata visualization code when many versions of a similar plot-type is used (e.g., many scatter plots with similar formatting)\ndata modeling workflow/pipeline code when tuning different models on the same data set\n\nAbstracting our analysis code into functions also makes it testable! Meaning you can assess whether your code works as expected. This alone is reason enough to use functions in your analysis code.\nYour job here is to create at least 3-4 functions from your scripts. One per group member is the minimum. When doing this task, follow the workflow for writing functions and tests for data science, remember this process will include:\n\nwriting thorough function specifications & documentation\nwriting robust unit tests for these functions to ensure they work as expected\nwriting the code that makes up the function body\n\nIf you are using R, these functions will live in an .R file (whose filename will be named after the function, or functions). It is OK to have one function per file, or all functions in one file. This/these file(s) will live in a sub-directory called R. If you are using Python, these functions will live in an .py file (whose filename will be named after the function, or functions). Again, it is OK to have one function per file, or all functions in one file. This/these file(s) will live in a sub-directory called src.\nYou will source (in the case of R) or import (in the case of Python) these functions in your scripts to use them in your analysis. Tests will live in a test directory, with files/subdirectories organized as per the testing framework you are using. If you are using R for your data analysis code, we expect you to use the testthat R package framework for writing software tests. If you are using Python, we expect you to use the pytest Python package framework.\nOf course, if it makes sense to have more than 3-4 you are welcome to increase the number! However, all functions must have the same standards in regards to software robustness. Your functions will be assessed for their quality (e.g., functions should do one thing, and generally return an object unless they were specifically designed for side-effects), usability, readability (follow the tidyverse style guide for R, or the black style guide for Python), documentation and quality of the test suite.\n\n\n5. Continue to manage issues professionally\nContinue managing issues effectively through project boards and milestones, make it clear who is responsible for what and what project milestone each task is associated with. In particular, create an issue for each task and/or sub-task needed for this milestone. Each of these issues must be assigned to a single person on the team. We want all of you to get coding experience in the project and each team member should be responsible for an approximately equal portion of the code.",
     "crumbs": [
       "Assessments",
       "Milestone",
-      "Milestone 2"
+      "Milestone 3"
     ]
   },
   {
-    "objectID": "project/m2.html#milestone-2-specifics",
-    "href": "project/m2.html#milestone-2-specifics",
-    "title": "Milestone 2",
-    "section": "Milestone 2 specifics",
-    "text": "Milestone 2 specifics\n\n0. Address any issues with your document or code from Milestone 1\nThese milestones build on one another, addressing issues from the previous milestone will make moving on to the next one easier.\n\n\n1. Upgrade your project’s computational environment to a container.\nWrite a Dockerfile to create a custom container for the computational environment for your project. Build your container using GitHub Actions, and publish your container image on DockerHub. Once this is done, shift the development of your project from working in a virtual environment to working in a container!\nThe Dockerfile is the file used to specify and create the Docker image from which containers can be run to create an reproducible computational environment for your analysis. For this project, we recommend using a base Docker image that already has most of the software dependencies needed for your analysis. Examples of these include the Jupyter core team Docker images (documentation) and the Rocker team Docker images (documentation). When you add other software dependencies to this Dockerfile, ensure that you pin the version of the software that you add.\nNote - this document should live in the root of your public GitHub.com repository.\nIn this milestone, we expect you to add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image (using the corresponding GitHub SHA) and GitHub repo when changes are pushed to the Dockerfile.\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work. This part is similar to Individual Assignment 2.\nAdditionally, document how to use your container image in your README. This is important to make it easy for you and your team to shift to a container solution for your computational environment. We highly recommend using Docker Compose so that launching your containers is as frictionless as possible (which makes you more likely to use this tool in your workflow)!\n\n\n2. Abstract more code from your literate code document (*.ipynb, *.Rmd, or .qmd) to scripts (e.g., .R or .py).\nThis code need not be converted to a function, but can simply be files that call the functions needed to run your analysis. You should aim to split the analysis code into 4, or more, R or Python scripts. Where the code in each script is contributing to a related step in your analysis.\nThe output of the first script must be the input of the second, and so on. All scripts should have command line arguments and we expect you to use either the docopt R package or the click Python package for parsing command line arguments.\nThey scripts could be organized something like this:\n\nA first script that downloads the data from the internet and saves it locally. This should take at least two arguments:\n\nthe path to the input file (a URL or a relative local path, such as data/file.csv), as well as\na path/filename where to write the file to and what to call it (e.g., data/cleaned_data.csv).\n\nNote: choose more descriptive filenames than the ones used above. These are general for illustrative purposes.\nA second script that reads the data from the first script and performs and data cleaning/pre-processing, transforming, and/or partitioning that needs to happen before exploratory data analysis or modeling takes place. This should take at least two arguments:\n\na path/filename pointing to the data to be read in\na path/filename pointing to where the cleaned/processed/transformed/partitioned data should live.\n\nA third script which creates exploratory data visualization(s) and table(s) that are useful to help the reader/consumer understand that data set. These analysis artifacts should be written to files. This should take at least two arguments:\n\na path/filename pointing to the data,\na path/filename prefix where to write the figure to and what to call it (e.g., results/this_eda.png).\n\nA fourth script that reads the data from the second script, performs the modeling and summarizes the results as a figure(s) and a table(s). These analysis artifacts should be written to files. This should take at least two arguments:\n\na path/filename pointing to the data\na path/filename prefix where to write the figure(s)/table(s) to and what to call it (e.g., results/this_analysis)\n\n\n\n\n3. Convert your *.ipynb or *.Rmd files into a Quarto document (*.qmd). Edit your Quarto document so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report\nThe goal is that non-data scientists would not be able to tell that code was used to perform your analysis or format your report (i.e., no code should be visible in the rendered report). You should do all the things you did for the report in individual assignment 4, including:\n\nUse markdown headers and Quarto configuration so that a table of contents will be created when the document is rendered.\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document.\nEdit the figure formatting so that Quarto:\n\nautomatically numbers them,\nhas a label for easy cross referencing, and\ncontrols the figure sizes so the figures are not too big.\n\nAdd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text.\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nReplace any hard-coded values in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value.\nChange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables).\n\n\n\n4. Write another script, a Makefile (literally called Makefile), to act as a driver script to rule them all\nThis script should run the others in sequence, hard coding in the appropriate arguments. This script should:\n\nlive in the project’s root directory and be named Makefile\nbe well documented (using the project README and comments inside the Makefile to explain what it does and how to use it)\nhave a all target so that you can easily run the entire analysis from top to bottom by running make all at the command line\nhave a clean target so that you can easily “undo” your analysis by running make clean at the command line (e.g., deletes all generate data and files).\n\nTip:\n\nThe all target can be a .PHONY target\nYou can create other targets that link up all the dependencies\n\nFor example, data, analysis, figures, pdf, etc, so your build process only runs what’s necessary during development\n\n\n\n\n5. Continue to manage issues professionally\nContinue managing issues effectively through project boards and milestones, make it clear who is responsible for what and what project milestone each task is associated with. In particular, create an issue for each task and/or sub-task needed for this milestone. Each of these issues must be assigned to a single person on the team. We want all of you to get coding experience in the project and each team member should be responsible for an approximately equal portion of the code.",
-    "crumbs": [
-      "Assessments",
-      "Milestone",
-      "Milestone 2"
-    ]
-  },
-  {
-    "objectID": "project/m2.html#submission-instructions",
-    "href": "project/m2.html#submission-instructions",
-    "title": "Milestone 2",
+    "objectID": "project/m3.html#submission-instructions",
+    "href": "project/m3.html#submission-instructions",
+    "title": "Milestone 3",
     "section": "Submission Instructions",
-    "text": "Submission Instructions\nYou will submit three URLs to Canvas in the provided text box for milestone 2:\n\nthe URL of your project’s GitHub.com repository\nthe URL of a GitHub release of your project’s GitHub.com repository for this milestone.\nThe URL of your Dockerhub image that can be pulled and used to run your analysis following your README.md instructions.\n\n\nCreating a release on GitHub.com\nJust before you submit the milestone 2, create a release on your project repository on GitHub and name it something like 1.0.0 (how to create a release). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.",
+    "text": "Submission Instructions\nYou will submit two URLs to Canvas in the provided text box for milestone 3:\n\nthe URL of your project’s GitHub.com repository\nthe URL of a GitHub release of your project’s GitHub.com repository for this milestone.\n\n\nCreating a release on GitHub.com\nJust before you submit the milestone 3, create a release on your project repository on GitHub and name it something like 2.0.0 (how to create a release). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.",
     "crumbs": [
       "Assessments",
       "Milestone",
-      "Milestone 2"
+      "Milestone 3"
     ]
   },
   {
-    "objectID": "project/m2.html#expectations",
-    "href": "project/m2.html#expectations",
-    "title": "Milestone 2",
+    "objectID": "project/m3.html#expectations",
+    "href": "project/m3.html#expectations",
+    "title": "Milestone 3",
     "section": "Expectations",
     "text": "Expectations\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nEach group member should work in a GitHub flow workflow; where they create branches for each feature or fix, which are reviewed and critiqued by at least one other teammate before the the pull request is accepted.\nYou should be committing to git and pushing to GitHub.com every time you work on this project.\nGit commit messages should be meaningful. These will be marked. It’s OK if one or two are less meaningful, but most should be.\nUse GitHub issues to communicate to their team mate (as opposed to email or Slack).\nYour question, analysis and visualization should make sense. It doesn’t have to be complicated.\nYour analysis should be correct, and run reproducibly given the instructions provided in the README.\nYou should use proper grammar and full sentences in your README. Point form may occur, but should be less than 10% of your written documents.\nR code should follow the tidyverse style guide, and Python code should follow the black style guide for Python)\nYou should not have extraneous files in your repository that should be ignored.",
     "crumbs": [
       "Assessments",
       "Milestone",
-      "Milestone 2"
+      "Milestone 3"
     ]
   },
   {
-    "objectID": "tutorials/t8.html",
-    "href": "tutorials/t8.html",
-    "title": "Tutorial 8",
+    "objectID": "project/m1.html",
+    "href": "project/m1.html",
+    "title": "Milestone 1",
     "section": "",
-    "text": "This tutorial we’ll practice writing Tests for our functions.\nWe will write a function that calculates whether or not a particular year is a leap year. This is how the Gregorian calendar calculates leap years:\nWrite a function named is_leap. It should:\nHere are some examples of what the function should return:\nIn addition from the above examples, here are some test cases you should write as well\nWhat are some other edge cases you can think of?",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 8"
-    ]
-  },
-  {
-    "objectID": "tutorials/t8.html#r",
-    "href": "tutorials/t8.html#r",
-    "title": "Tutorial 8",
-    "section": "R",
-    "text": "R\n\nWrite an R function that meets the above criteria\nUsing {testthat} write unit tests that can test your function\nYou may opt to source your function file in your test file.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 8"
-    ]
-  },
-  {
-    "objectID": "tutorials/t8.html#python-optional",
-    "href": "tutorials/t8.html#python-optional",
-    "title": "Tutorial 8",
-    "section": "Python (optional)",
-    "text": "Python (optional)\n\nWrite an R function that meets the above criteria\nWrite tests for your function that can be run with pytest\nFor this tutorial, create your function and test files in the same directory, so it’s easier to import your function module for testing.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 8"
-    ]
-  },
-  {
-    "objectID": "tutorials/t6.html",
-    "href": "tutorials/t6.html",
-    "title": "Tutorial 6: Refactor Quarto Doc",
-    "section": "",
-    "text": "Below you fill find the text for an example data analysis report using R and Quarto.\n\nCopy the text below into your own quarto document\nRender the document to check it is all working\nYour task is to refactor each section into separate R scripts (01_load_data.R, 02_methods.R, 03_model.R, 04_results.R) and make sure each script can completely run independently from one another without source()ing another script.\nYour scripts should save out what ever data artifact it needs for both the pipline code and the quarto report\nCreate a Makefile with a target named all that will run all the scripts in the correct order.\nEdit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.\n\nYou can download the sample quarto document here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 6: Refactor Quarto Doc"
-    ]
-  },
-  {
-    "objectID": "tutorials/t6.html#refactoring-a-quarto-report",
-    "href": "tutorials/t6.html#refactoring-a-quarto-report",
-    "title": "Tutorial 6: Refactor Quarto Doc",
-    "section": "",
-    "text": "Below you fill find the text for an example data analysis report using R and Quarto.\n\nCopy the text below into your own quarto document\nRender the document to check it is all working\nYour task is to refactor each section into separate R scripts (01_load_data.R, 02_methods.R, 03_model.R, 04_results.R) and make sure each script can completely run independently from one another without source()ing another script.\nYour scripts should save out what ever data artifact it needs for both the pipline code and the quarto report\nCreate a Makefile with a target named all that will run all the scripts in the correct order.\nEdit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.\n\nYou can download the sample quarto document here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 6: Refactor Quarto Doc"
-    ]
-  },
-  {
-    "objectID": "tutorials/t5.html",
-    "href": "tutorials/t5.html",
-    "title": "Tutorial 5",
-    "section": "",
-    "text": "Create a repository and clone it down\nCreate a bash script that lists (using a bash command) the files of your current working directory, the root of the repo. Name it list.sh\nCreate a dockerfile that uses the rocker/rstudio container, using version 4.2.2.\nCopy the list.sh into the container\nRun the script in the container\nDocument how to run the container and run the script in the container. We must follow the steps until we are able to run and see the output. Put your steps in the README.md file\nFor Tuesday: Create a github action that also runs this bash script",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 5"
-    ]
-  },
-  {
-    "objectID": "tutorials/t2.html",
-    "href": "tutorials/t2.html",
-    "title": "Tutorial 2",
-    "section": "",
-    "text": "This tutorial will focus on Git + GitHub practice",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 2"
-    ]
-  },
-  {
-    "objectID": "tutorials/t2.html#git-github",
-    "href": "tutorials/t2.html#git-github",
-    "title": "Tutorial 2",
-    "section": "Git + GitHub",
-    "text": "Git + GitHub\n\nCreate a github repository from github.com\nclone it down to your computer\nCreate/Edit the README file and write a short definition for the following commands:\n\ngit branch\ngit switch\ngit log --oneline --graph --all\n\nadd/commit/push your definitions to your github repository",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 2"
-    ]
-  },
-  {
-    "objectID": "tutorials/t2.html#branches-and-pull-requests-prs",
-    "href": "tutorials/t2.html#branches-and-pull-requests-prs",
-    "title": "Tutorial 2",
-    "section": "Branches and Pull Requests (PRs)",
-    "text": "Branches and Pull Requests (PRs)\n\nCreate a new branch (does not matter what name you give it)\nIn the new branch define the following terms:\n\nbranch\npull request\n\nPush your branch up to github and create a pull request\nMake a comment in your own pull request\nMerge your pull request into main\nUpdate your local main branch",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 2"
-    ]
-  },
-  {
-    "objectID": "tutorials/t2.html#extra-merge-conflicts",
-    "href": "tutorials/t2.html#extra-merge-conflicts",
-    "title": "Tutorial 2",
-    "section": "Extra: Merge Conflicts",
-    "text": "Extra: Merge Conflicts\nLet’s create a PR with a merge conflict\n\nCreate a new branch from main, edit the readme file, at the top and define the follow terms\n\ngit add\ngit commit\n\nPush this branch and create a PR, but DO NOT merge it\nOn your local machine, go back to your main branch\nCreate yet another branch from main (you should not be on your previous branch)\nAt the top of your readme file define the following terms\n\ngit push ...\ngit pull ...\n\nadd/commit/push your branch\nCreate another PR from your second branch\nTry to merge both branches now, you should see a merge conflict when you try to merge the 2nd branch",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 2"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia2.html",
-    "href": "individual_assignment/ia2.html",
-    "title": "Individual assignment 2",
-    "section": "",
-    "text": "The purpose of this assignment is to start familiarizing yourselves with version control with Git and GitHub. It will build on the git demos in class as well as the TA tutorials from week 1 (intro shell/bash) and week 2 (merge conflicts). Specifically, we will create a toy repository with a merge conflict and learn how to resolve it. A merge conflict occurs when Git is unable to automatically determine how to incorporate new changes. This can can occur when two branches modify the same line, or when a file is deleted when someone else is changing it. You can read more about merge conflicts here: Git merge conflicts.\nFollow the instructions listed below. You will be graded for completion.",
+    "text": "GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (full.ipynb, Dockerfile, docker-compose.yml).",
     "crumbs": [
       "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
+      "Milestone",
+      "Milestone 1"
     ]
   },
   {
-    "objectID": "individual_assignment/ia2.html#step-1-create-a-repository",
-    "href": "individual_assignment/ia2.html#step-1-create-a-repository",
-    "title": "Individual assignment 2",
-    "section": "Step 1: Create a repository",
-    "text": "Step 1: Create a repository\nCreate a new public repository on GitHub.com\n\nNamed {date}-learning-about-version-control\nReplace the {date} part of the repository name with a date. This way you can come back and re-do this assignment for exam practice. We won’t be grading on when you create the repository.\nCreate it under your own github account (Not the course organization)\n\nMake sure the repository:\n\nIncludes a README.md that has a header that says “Learning about Version Control” and has your name listed as the author.\nIs public\nYou may edit the README.md file using the web interface.",
+    "objectID": "project/m1.html#overall-project-summary",
+    "href": "project/m1.html#overall-project-summary",
+    "title": "Milestone 1",
+    "section": "Overall project summary",
+    "text": "Overall project summary\nIn this course you will work in assigned teams of three or four (see group assignments in Canvas) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.\nYour data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:\n\nA well documented and modularized software package and scripts written in R and/or Python,\nA data analysis pipeline automated with GNU Make,\nA reproducible report powered by either Jupyter book or R Markdown,\nA containerized computational environment created and made shareable by Docker, and\nA remote version control repository on GitHub for project collaboration and sharing, As well as automation of test suite execution and documentation and software deployment.\n\nAn example final project from another course (where the project is similar) can be seen here: Breast Cancer Predictor",
     "crumbs": [
       "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
+      "Milestone",
+      "Milestone 1"
     ]
   },
   {
-    "objectID": "individual_assignment/ia2.html#step-2-clone-your-repository",
-    "href": "individual_assignment/ia2.html#step-2-clone-your-repository",
-    "title": "Individual assignment 2",
-    "section": "Step 2: Clone your repository",
-    "text": "Step 2: Clone your repository\nClone your {date}-learning-about-version-control repository to your local computer.",
+    "objectID": "project/m1.html#milestone-1-summary",
+    "href": "project/m1.html#milestone-1-summary",
+    "title": "Milestone 1",
+    "section": "Milestone 1 summary",
+    "text": "Milestone 1 summary\nIn this milestone, you will:\n\nDraft a team work contract\nSet-up a public GitHub repository\nSelect a data analysis project to work with\nCreate an appropriate file and directory structure for a data analysis project\nAdd the data analysis as a literate code document\nMake the computation environment reproducible through containerization with Docker\n\nAn example project milestone 1 is available here: https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2\n\n1. Draft a team work contract\nThis document will govern the working relationships on your team, and if done correctly, it should help you manage and resolve any issues that might arise when working in a group. A sample team work contract from a past data science project can be found here.\nA team work contract communicates specifically how the core group of people who are working together and gives detail about the logistics of working together and the expectations you have for each other.\nSome aspects of the team work contract could be:\n\nHow will work be distributed in a fair and equitable way?\nWhat are the expected work hours for the project?\nHow often will group meetings occur (here is a nice article on meetings)?\nWill you have meeting agendas and minutes? If so, what will be the system for rotating through these responsibilities?\nWhat will be the style of working?\n\nWill you start each day with stand-ups, or submit a summary of your contributions 4 hours before each meeting? or something else?\n\nWhat is the quality of work each team member expects from themselves and each other?\nWhen are team members not available (e.g., evenings and Sundays because of family obligations).\nAnd any other similar things that govern your working relationships.\n\nUse this opportunity to use your prior knowledge/experience to improve your teamwork, communication, leadership, and organizational skills.\n\n\n\n\n\n\nNote\n\n\n\nThis document is fairly personal and does NOT need to reside in your public GitHub.com repo.\nPlease submit this contract under a separate assignment.\n\n\n\n\n2. Set-up a GitHub repository\nNow set-up a public GitHub repository for your project in the format: dsci-310-group-XX-&lt;optional_team_name&gt;. You will create this project in the course github organization (not under a personal account).\nWe are using github.com and public repositories because we will eventually be using some fancy tooling (e.g., GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com. Additionally, this will help you build a portfolio of your work you can share with others.\n\n\n\n\n\n\nNote\n\n\n\nIf you need to change the name of your project repository later, you can.\n\n\nThe tracking of the project will be done using GitHub milestones. When you create a milestone, you can associate it with issues and pull requests. After creating issues you can link them to a milestone associating each them to a project due date.\nIn order to make more efficient team workflow, organize the issues you have previously associated with milestones into a GitHub project board.\nThe project board should show the current status of the project to the team. Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves.\n\n\n3. Select a data analysis project to work with\nThe content of this analysis project should be a narrated analysis that asks and answers a predictive question using a classification or regression method taught in the prerequisite course, DSCI 100. For milestone 1, the code and analysis narrative should be contained within a single Jupyter notebook (e.g., .ipynb file), RMarkdown file (e.g., .Rmd file), or Quarto document (e.g., .qmd file). The analysis narrative should be rich, and at the level of the final project from DSCI 100. Either R or Python can be used to do this. However, all group members must have past experience using the language chosen and permission of the instructor must be given. The restrictions on the analysis methods and programming language are put in place to ensure that all group members can contribute equally to the project.\nThe data for the project should be publicly available, and clearly licensed to be shared and used openly on the internet. We strongly suggest you avoid using data sets where authentication is needed for access (e.g., Kaggle) as this adds another layer of complexity when making these projects reproducible.\n\nPossible data set sources\n\npast DSCI 100 projects (note: if you reuse part or all of a past DSCI 100 project, you will be required to provide documentation of written permission of all past teammates from that project)\nUCI Machine Learning Repository: Data Sets\nfivethirtyeight R package (if you use this, see the note below!)\nGovernment of Canada open data\nGitHub repo of awesome public datasets\ntidytuesday data set\nGoogle Data set search engine\n\n\n\n\n\n\n\nNote\n\n\n\nIf you choose a data set from the fivethirtyeight R package, you cannot copy their scientific question, visualizations or methods from the original FiveThirtyEight articles from where the data sets were first reported on. Finally, with the fivethirtyeight R package data sets, we want you to get practice reading them using the read_* functions in R or Python, so please use the versions of the data sets listed here: https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw\n\n\n\n\n\n4. Create an appropriate file and directory structure for a data analysis project\nFor this project, you are expected to follow the best practices we have learned about in regards to project directory and file structures. This should be reflected in your GitHub repository. Specifically for this milestone, please ensure that you include at least the following 7 files and directories in your project’s GitHub repository:\n\nREADME.md\nCODE_OF_CONDUCT.md\nCONTRIBUTING.md\ndata/\nanalysis.Rmd or analysis.qmd\nDockerfile\n.github/workflows/publish_docker_image.yml\nLICENSE.md\n\nThe description of each of them follows.\n\ni. README.md\nIn the main README.md file for this project you should include: - the project title - the list of contributors/authors - a short summary of the project (view from 10,000 feet) - how to run your data analysis - a list of the dependencies needed to run your analysis - the names of the licenses contained in LICENSE.md\nNote - this document should live in the root of your public GitHub.com repo.\n\n\nii. CODE_OF_CONDUCT.md\nIn an attempt to create a safe, positive, productive, and happy community, many organizations and developers create a code of conduct for their projects. A code of conduct in a Data Science project informs others of social norms, acceptable behaviour and general etiquette. It is more outward facing than the team work contract discussed above. We recommend Project Include for a comprehensive guide to writing an effective Code of Conduct.\nAt minimum, we believe that a good/effective code of conduct should include:\n\nA Statement on diversity and inclusivity\nDetails on expected, and unacceptable behaviour\nA list of consequences for unacceptable behaviour\nA procedure for reporting and dealing with unacceptable behaviour\n\n\nSample Codes of Conduct:\n\nUBC Data Science 100 CoC\nidocde Coc\nPython Community CoC\nTidyverse CoC\nPandas CoC\nVox Media CoC\n\nNote - this document should live in the root of your public GitHub.com repository.\n\n\n\niii. CONTRIBUTING.md\nIt is a good practice to include information about how others outside the core team can contribute to your project somewhere in your repository. This is typically done as a separate file in a repository called CONTRIBUTING.md. Here are some examples of this file:\n\nAltair\ndplyr\nAtom editor (very comprehensive)\n\nIf you’re interested in this, here’s a quick guide to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:\nWe welcome all contributions to this project!\nIf you notice a bug, or have a feature request,\nplease open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues).\nIf you'd like to contribute a feature or bug fix,\nyou can fork our repo and submit a pull request.\nWe will review pull requests within 7 days.\nAll contributors must abide by our [code of conduct](CODE_OF_CONDUCT.md).\nNote - this document should live in the root of your public GitHub.com repository.\n\n\niv. data/\nThe data directory should contain a copy of the downloaded data (written there by code). An exception to this can be made if the data set is extremely large (&gt; 100 MB per file). In such cases, please reach out to the instructional team to make an alternative plan.\n\n\nv. analysis.ipynb / analysis.Rmd / analysis.qmd\nFor this milestone, the analysis code and narration should be contained within a single literate code document (e.g., Jupyter notebook, RMarkdown file, or Quarto document). This document should not actually be named analysis.***, but have a more descriptive title, related to the project title.\n\n\nvi. Dockerfile\nThe Dockerfile is the file used to specify and create the Docker image from which containers can be run to create an reproducible computational environment for your analysis. For this project, we recommend using a base Docker image that already has most of the software dependencies needed for your analysis. Examples of these include the Jupyter core team Docker images (documentation) and the Rocker team Docker images (documentation). When you add other software dependencies to this Dockerfile, ensure that you pin the version of the software that you add.\nNote - this document should live in the root of your public GitHub.com repository.\n\n\nvii. .github/workflows/publish_docker_image.yml\nIn this milestone, we expect you to add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image (using latest is okay for now) and GitHub repo when changes are pushed to the Dockerfile\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nThis part is similar to Individual Assignment 3.\n\n\nviii. LICENSE.md\nLicense’s tell others how they may (or may not) use your work. We will learn more about licenses later in the course, and for now we recommend using an MIT license for the project code and a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license for the project report. As long as your group agrees, these can be changed later in the course when you learn more about licenses. If you want to spend some time choosing different licenses now, we can recommend these two websites to help get you started:\n\nhttps://choosealicense.com/\nhttps://chooser-beta.creativecommons.org/\n\n\n\n\n5. Add the data analysis as a literate code document\nFor this milestone, the analysis code and narration should be contained within a single literate code document (i.e., Jupyter notebook). The following sections should be included:\n\nTitle\nSummary\nIntroduction:\n\nprovide some relevant background information on the topic so that someone unfamiliar with it will be prepared to understand the rest of your report\nclearly state the question you tried to answer with your project\nidentify and describe the dataset that was used to answer the question\n\nMethods & Results:\n\ndescribe in written english the methods you used to perform your analysis from beginning to end that narrates the code the does the analysis.\nyour report should include code which:\nloads data from the original source on the web\nwrangles and cleans the data from it’s original (downloaded) format to the format necessary for the planned classification or clustering analysis\nperforms a summary of the data set that is relevant for exploratory data analysis related to the planned classification analysis\ncreates a visualization of the dataset that is relevant for exploratory data analysis related to the planned classification analysis\nperforms classification or regression analysis\ncreates a visualization of the result of the analysis\nnote: all tables and figure should have a figure/table number and a legend\n\nDiscussion:\n\nsummarize what you found\ndiscuss whether this is what you expected to find?\ndiscuss what impact could such findings have?\ndiscuss what future questions could this lead to?\n\nReferences:\n\nat least 4 citations relevant to the project (format is your choose, just be consistent across the references).\n\n\n\n\n6. Make the computation environment reproducible through containerization with Docker\nFor this project, we will be making the computation environment reproducible through containerization with Docker. We will use Docker containers for collaborative project development, as well as for sharing a reproducible analysis at the end of the project. It is expected that: - the Docker image, from which containers are generated, will be specified by a Dockerfile that lives in the root of the project’s GitHub repository - the building of the Docker image and distribution of it via DockerHub will be automated via GitHub Actions - an explanation of how to run and use Docker to develop and execute the analysis will be documented in the README.md file.",
     "crumbs": [
       "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
+      "Milestone",
+      "Milestone 1"
     ]
   },
   {
-    "objectID": "individual_assignment/ia2.html#step-3-merge-conflict",
-    "href": "individual_assignment/ia2.html#step-3-merge-conflict",
-    "title": "Individual assignment 2",
-    "section": "Step 3: Merge Conflict",
-    "text": "Step 3: Merge Conflict\nCreate and resolve a merge conflict 😱!\n\nOn your remote version control repository, use the pen tool to add a line to the README that says “Solving merge conflicts is easy!”\nOn your local version control repository, edit the same line in the README that you just edited, but this time write “Solving merge conflicts is soooooo hard!”\nAdd and commit your local changes to the README, and the try to push the file so that you create the merge conflict.\nResolve the merge conflict on your local computer so that the line reads “Solving merge conflicts takes conscious effort, but I can do it!”. Take a screen shot while you are resolving the conflict to document you did this.\nPush the local changes to your remote version control repository.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia2.html#step-4-pull-request",
-    "href": "individual_assignment/ia2.html#step-4-pull-request",
-    "title": "Individual assignment 2",
-    "section": "Step 4: Pull request",
-    "text": "Step 4: Pull request\nCreate and accept a pull request!\n\nCreate a new Git branch on your local version control repository named opinions and switch to that branch.\nEdit your README so that you add at least one sentence about what you like most about version control, and add at least one sentence about what you find most challenging/confusing/frustrating about version control (we all have opinions on this one…). Add and commit your changes to local version control.\nPush the changes to the README that you made on the opinions branch to the remote repository on GitHub.com.\nVisit GitHub.com and create a pull request to suggest that the changes on the opinions branch should be merged into the main branch.\nAccept the pull request you opened to merge your changes from the opinions branch into the main branch.",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia2.html#submission-instructions",
-    "href": "individual_assignment/ia2.html#submission-instructions",
-    "title": "Individual assignment 2",
+    "objectID": "project/m1.html#submission-instructions",
+    "href": "project/m1.html#submission-instructions",
+    "title": "Milestone 1",
     "section": "Submission Instructions",
-    "text": "Submission Instructions\nYou will submit a PDF to Gradescope for individual assignment 1 that includes:\n\nthe URL of the commit history of GitHub.com repository you created and worked on for this assignment (it will be something like: https://github.com/&lt;YOURUSERNAME&gt;/&lt;DATE&gt;learning-about-version-control/commits/main)\nthe screenshot of your resolved merge conflict\nan explanation (2-3 sentences and in your own words) of why it is useful to work in a branch-pull-request workflow instead of working by directly committing each change to the main branch.",
+    "text": "Submission Instructions\nYou will submit two URLS’s to Canvas in the provided text box for milestone 1:\n\nthe URL of your project’s GitHub.com repository\nthe URL of a GitHub release of your project’s project’s GitHub.com repository\nIn a separate file / Submission, your teamwork contract\n\n\nCreating a release on GitHub.com\nJust before you submit the milestone 1, create a release on your project repository on GitHub and name it 0.0.1 (how to create a release). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.",
     "crumbs": [
       "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
+      "Milestone",
+      "Milestone 1"
     ]
   },
   {
-    "objectID": "individual_assignment/ia2.html#rubric",
-    "href": "individual_assignment/ia2.html#rubric",
-    "title": "Individual assignment 2",
-    "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nGitHub history (check under pull request tab in repo) indicates a successfully merged pull request from opinions into main, clearly demonstrated solving the merge conflict in screenshot and well explained why it is useful to work in a branch-pull-request workflow\n\n\n-25%\nGitHub history (check under pull request tab in repo) does not indicate a successfully merged pull request from opinions into main\n\n\n-25%\nDid not clearly demonstrate solving the merge conflict in screenshot.\n\n\n-25%\nDid not well explain why it is useful to work in a branch-pull-request workflow.\n\n\n-100%\nNo repository or attempt",
+    "objectID": "project/m1.html#expectations",
+    "href": "project/m1.html#expectations",
+    "title": "Milestone 1",
+    "section": "Expectations",
+    "text": "Expectations\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nAfter the repository is set-up, each group member should work in a GitHub flow workflow; where they create branches for each feature or fix, which are reviewed and critiqued by at least one other teammate before the the pull request is accepted.\nYou should be committing to git and pushing to GitHub.com every time you work on this project.\nGit commit messages should be meaningful. These will be marked. It’s OK if one or two are less meaningful, but most should be.\nUse GitHub issues to communicate to their team mate (as opposed to email or Slack).\nYour question, analysis and visualization should make sense. It doesn’t have to be complicated.\nYou should use proper grammar and full sentences in your README. Point form may occur, but should be less than 10% of your written documents.",
     "crumbs": [
       "Assessments",
-      "Individual Assignments",
-      "Individual assignment 2"
+      "Milestone",
+      "Milestone 1"
     ]
   },
   {
-    "objectID": "individual_assignment/ia1.html",
-    "href": "individual_assignment/ia1.html",
-    "title": "Individual assignment 1",
+    "objectID": "tutorials/t7.html",
+    "href": "tutorials/t7.html",
+    "title": "Tutorial 7",
     "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "text": "Rendering a quarto document into the docs directory and publish it into github pages.\nWe are going to work with the repository we’ve been using in class this week. This is the final version of the repo after learning about command line scripts and Make:\nhttps://github.com/chendaniely/2025-03-06-make-quarto\nIt has been set up as a Template. Click on the green “Use this template” button and then select “Create a new repository” to copy the repository into your github account.",
     "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
+      "Tutorials",
+      "Tutorial 7"
     ]
   },
   {
-    "objectID": "individual_assignment/ia1.html#instructions",
-    "href": "individual_assignment/ia1.html#instructions",
-    "title": "Individual assignment 1",
+    "objectID": "tutorials/t7.html#step-1-run-the-current-set-of-files",
+    "href": "tutorials/t7.html#step-1-run-the-current-set-of-files",
+    "title": "Tutorial 7",
+    "section": "Step 1: Run the current set of files",
+    "text": "Step 1: Run the current set of files\nRun the report target from the repository. This should generate the index.html file in the project root.\nIf you open this document, it should open a basic quarto document with a single figure in it.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 7"
+    ]
+  },
+  {
+    "objectID": "tutorials/t7.html#step-2-enable-github-pages",
+    "href": "tutorials/t7.html#step-2-enable-github-pages",
+    "title": "Tutorial 7",
+    "section": "Step 2: Enable GitHub Pages",
+    "text": "Step 2: Enable GitHub Pages\nPush the files (index.html) into your github repository, then enable GitHub Pages via the repository settings &gt; pages panel.\n\nUnder Source, select “Deploy from a branch”\nUnder Branch, select “main” and / (root)\n\nwait a few minutes for github pages to build and publish the site.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 7"
+    ]
+  },
+  {
+    "objectID": "tutorials/t7.html#step-3-turn-the-project-into-a-quarto-project",
+    "href": "tutorials/t7.html#step-3-turn-the-project-into-a-quarto-project",
+    "title": "Tutorial 7",
+    "section": "Step 3: Turn the project into a Quarto Project",
+    "text": "Step 3: Turn the project into a Quarto Project\nWe are now going to turn this project into a quarto project, specifically a manuscript:\nhttps://quarto.org/docs/projects/quarto-projects.html\nThe current repository has an empty _quarto.yml file, we will edit it to become a quarto manuscript project.\n\nEdit the _quarto.yml file\nEdit the _quarto.yml file so it looks like this:\nproject:\n  type: manuscript\n  output-dir: docs\n\nmanuscript:\n  article: index.qmd\n\nformat:\n  html:\n    comments:\n      hypothesis: true\n  docx: default\nThis will set the project type, some of the html formats, and also generate a doc file of our report. We will also have our documents render into the docs directory instead of the root directory.\nYou will also notice that the article option is looking for index.qmd. We will address this part next.\n\n\nCreate the index file for web publishing\n\nMove and rename the report/report.qmd to index.qmd in the repository root.\n\nThis will allow quarto to find and render the manuscript project.\nAfter doing this, you should be able to run quarto render on its own, and the report will render into the docs/` directory.\n\n\nClean up the repository,\nRun the clean target in the repository and confirm that the index.html is no longer created in the root directory.\n\n\nEdit the Makefile\n\nEdit the clean target so that it also deletes the docs/ directory\nEdit the index.html target such that it is really creating the docs/index.html file.\n\nNow when you run make clean followed by make report (a phony target), you should be able to re-create your report file.\n\n\nPush your changes to github\nPush your new repository changes to github. Including your new docs folder.\nYou should also no loger have an index.html file in the project root.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 7"
+    ]
+  },
+  {
+    "objectID": "tutorials/t7.html#step-4-publish-your-side-from-docs",
+    "href": "tutorials/t7.html#step-4-publish-your-side-from-docs",
+    "title": "Tutorial 7",
+    "section": "Step 4: Publish your side from docs",
+    "text": "Step 4: Publish your side from docs\nWe have now created a quarto project that renders into the docs directory, not the root directory.\nYour current website may be broken since index.html does not exist in the root.\nGo back to your Settings &gt; pages repository settings and change the main publishing from root to docs.\nYour website should now be published from the docs directory.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 7"
+    ]
+  },
+  {
+    "objectID": "tutorials/t4.html",
+    "href": "tutorials/t4.html",
+    "title": "Tutorial 4",
     "section": "",
-    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "text": "Virtual environments and docker containers. We’ll practice creating virtual environments again (just like last tutorial), so we can compare it with creating docker containers.",
     "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
+      "Tutorials",
+      "Tutorial 4"
     ]
   },
   {
-    "objectID": "individual_assignment/ia1.html#submission",
-    "href": "individual_assignment/ia1.html#submission",
-    "title": "Individual assignment 1",
-    "section": "Submission",
-    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
+    "objectID": "tutorials/t4.html#r-environments",
+    "href": "tutorials/t4.html#r-environments",
+    "title": "Tutorial 4",
+    "section": "R Environments",
+    "text": "R Environments\n\nCreate a new RStudio Project\nNote the currently installed packages\nInstall the renv library if you do not have it installed\nInitialize the current project as an renv project\nNote the new packages in the environment.\nInstall an R package\nSnapsnot the package\nNote how the renv.lock file does not change\nCreate and save an R script that uses the package you just installed\nRe-snapshot the project\nNote how the renv.lock file updates now\nClose the current RStudio project\nNote how you have your old packages back\nRe-open the RStudio project you just created and see how t5he packages change.",
     "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
+      "Tutorials",
+      "Tutorial 4"
     ]
   },
   {
-    "objectID": "individual_assignment/ia1.html#troubleshooting",
-    "href": "individual_assignment/ia1.html#troubleshooting",
-    "title": "Individual assignment 1",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
+    "objectID": "tutorials/t4.html#optional-python-environment",
+    "href": "tutorials/t4.html#optional-python-environment",
+    "title": "Tutorial 4",
+    "section": "Optional: Python environment",
+    "text": "Optional: Python environment\nFor people and teams working on a python project and want to practice conda environments.\n\n\n\n\n\n\nNote\n\n\n\nconda environments are not going to be on the exam. This exercise is solely to give you instructions to practice creating python environments.\n\n\n\nCheck that you are currently in the base conda environment:\n\nconda info\n\nNote the packages in the current conda environment and their versions\n\nconda list\n\nCreate a new conda environment (we are going to name it myenv) with python 3.12\n\nconda create -n myenv -c conda-forge python=3.12\n\nActivate this environment\nRun python and compare your python versions and see if you are able to import pandas\nconda install another package into the environment, pandas and import it from the new environment.",
     "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 1"
+      "Tutorials",
+      "Tutorial 4"
     ]
   },
   {
-    "objectID": "individual_assignment/ia1.html#rubric",
-    "href": "individual_assignment/ia1.html#rubric",
-    "title": "Individual assignment 1",
+    "objectID": "tutorials/t4.html#run-a-docker-container",
+    "href": "tutorials/t4.html#run-a-docker-container",
+    "title": "Tutorial 4",
+    "section": "Run a docker container",
+    "text": "Run a docker container\nLet’s get some practice with running docker containers\nDocker Desktop needs to be runnign in the background.\n\nYour first container\nWe did this in the Computer Setup process, but let’s run the hello-world container with docker run\n$ docker run hello-world\n\nHello from Docker!\nThis message shows that your installation appears to be working correctly.\n\nTo generate this message, Docker took the following steps:\n 1. The Docker client contacted the Docker daemon.\n 2. The Docker daemon pulled the \"hello-world\" image from the Docker Hub.\n    (amd64)\n 3. The Docker daemon created a new container from that image which runs the\n    executable that produces the output you are currently reading.\n 4. The Docker daemon streamed that output to the Docker client, which sent it\n    to your terminal.\n\nTo try something more ambitious, you can run an Ubuntu container with:\n $ docker run -it ubuntu bash\n\nShare images, automate workflows, and more with a free Docker ID:\n https://hub.docker.com/\n\nFor more examples and ideas, visit:\n https://docs.docker.com/get-started/\n\n$\nThis command runs a container that executes a script that prints out the hello docker text. When this script runs, it exits and the container exits to give you your prompt back\n\n\nAn R Container\n\nCompare the version of R you have right now on your computer. You can open up and launch R or run R --version to get your current R version. 2.Run the R 4.3.2 container:\n\ndocker run --rm -it rocker/r-ver:4.3.2\n\nCompare the version from the version you have on your computer\nTry to load a package you have installed on your computer in the container (it should fail)\nExit out of this docker container\n\n\n\nAn RStudio Container\n\n\n\n\n\n\nNote\n\n\n\nIf you are on an ARM based M-chip mac, you need to pass in the --platform=linux/amd64 flag to the docker run command. https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform\n\n\n\nRun the RStudio container and connect it to your local computer’s port 8787\n\ndocker run --rm -e PASSWORD=\"pizza\" -p 8787:8787 rocker/rstudio:4.4.2\n\nExplain in your own words what each of the flags are doing in the docker run command. You can use the official docker run documentation: https://docs.docker.com/reference/cli/docker/container/run/\nOpen and log into the RStudio container and try to run some R code in a script\nSave this script\nClose the container and run it again\nNotice how all your work inside the container is lost\n\n\n\nAn RStudio Tidyverse Container\n\nDo the same process as before, but this time use the rocker/tidyverse:4.4.2 container.\nWithout turning off this container, open a new terminal and run a separate rocker/rstudio:4.4.2 container\n\n\nYou will need to change the local port mapping\n\n\nMake sure you are able to log into and run both RStudio sessions in the container\n\n\nNote how only one of the RStudio sessions has tidyverse installed and the other doesn’t",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 4"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html",
+    "href": "tutorials/t1.html",
+    "title": "Tutorial 1",
+    "section": "",
+    "text": "Computer Setup Help, Bash, and Git",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html#create-a-repository",
+    "href": "tutorials/t1.html#create-a-repository",
+    "title": "Tutorial 1",
+    "section": "Create a repository",
+    "text": "Create a repository\n\nCreate a new repository on GitHub (e.g., YYYY-MM-DD-git). You can create it with an existing README.md file (or create a new one later)\n\n\n\n\n\n\n\nTip\n\n\n\nCreating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.\n\n\n\nClone down the repository to your local computer",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html#make-changes-to-a-file",
+    "href": "tutorials/t1.html#make-changes-to-a-file",
+    "title": "Tutorial 1",
+    "section": "Make Changes to a file",
+    "text": "Make Changes to a file\n\nCreate a README.md file if you don’t have one already\nEdit the README.md file by adding a line about your favorite food\nAdd / commit / push your changes up to github",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t1.html#update-changes-from-remote",
+    "href": "tutorials/t1.html#update-changes-from-remote",
+    "title": "Tutorial 1",
+    "section": "Update changes from remote",
+    "text": "Update changes from remote\n\nNow edit the README.md file on the remote github repository\nAdd a new line by naming your favorite color\nCommit the changes on github.com\nConfirm your changes in github.com are made in the web interface\npull down your changes to your local computer",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 1"
+    ]
+  },
+  {
+    "objectID": "tutorials/t3.html",
+    "href": "tutorials/t3.html",
+    "title": "Tutorial 3",
+    "section": "",
+    "text": "Here we’ll practice with programming language environments.\nIf conda and python does not apply to you, you may skip the conda and python portion of the tutorial. If you are taking, have taken, or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 3"
+    ]
+  },
+  {
+    "objectID": "tutorials/t3.html#r-environments-renv",
+    "href": "tutorials/t3.html#r-environments-renv",
+    "title": "Tutorial 3",
+    "section": "R Environments: renv",
+    "text": "R Environments: renv\n\nOpen up RStudio\nrun getwd() in the r console, and note the default starting working directory in R when not in a project.\nCreate an RStudio Project (either from an existing folder, or create a new folder)\nrun getwd() again and see how the working directory changes\nInstall the renv package (if you do not have it installed)\nNote all the current installed R packages you have in the packages panel\nRun the renv::init() in the current project (you can also choose to library(renv) and then init() as 2 separate steps\nNow note the packages in the package panel\nInstall the palmerpenguins package in R\nLibrary the palmerpenguins package\nyou should now have access to the penguins dataframe\nupdate the lock file with renv::snapshot()\nOpen a new RStudio or close the current project\nYou should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 3"
+    ]
+  },
+  {
+    "objectID": "tutorials/t3.html#python-environments-conda",
+    "href": "tutorials/t3.html#python-environments-conda",
+    "title": "Tutorial 3",
+    "section": "Python Environments: conda",
+    "text": "Python Environments: conda\n\nOpen up a terminal, you should be in a conda base environment\nRun python --version and which python to check the python version you have and which one is actually being used\ncreate a new conda environment with a different python version from the one you currently have in base\nactivate this environment\ninstall jupyterlab and pandas in the new environment\ncreate an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)\ndeactivate your python environment",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 3"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia3.html",
+    "href": "individual_assignment/ia3.html",
+    "title": "Individual assignment 3",
+    "section": "",
+    "text": "Practice building Docker images",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 3"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia3.html#instructions",
+    "href": "individual_assignment/ia3.html#instructions",
+    "title": "Individual assignment 3",
+    "section": "Instructions",
+    "text": "Instructions\nThe purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from Dockerfiles.\n\nSubmission instructions\nIn the text box provided for this assignment on Canvas, you must submit:\n\nA link to the GitHub.com repository that you create for this assignment.\n\nYou should name your GitHub.com repository dsci310-ia3-&lt;USERNAME&gt;-docker.\nYou need to create this assignment in the course organization: https://github.com/DSCI-310-2025\n\nA the link to your Docker image on DockerHub. You should name your DockerHub repository dsci310-ia3-&lt;USERNAME&gt;-docker.\n\n\n\n\n\n\n\nWarning\n\n\n\nMake sure your repository is under the DSCI-310-2025 organization. You can do a “repository transfer” if you need to, but your submission needs to be in the correct org.\n\n\n\n\nExercise instructions\n\nCreate a public repository on GitHub.com repo under your personal username called dsci310-ia3-&lt;USERNAME&gt;-docker\n\nYou can choose a pre-made .gitignore or manually create one yourself\n\nAdd a Dockerfile to it. This Dockerfile should be based off of the rocker/rstudio:4.4.2 Docker image\n\nlink to rocker/rstudio DockerHub repository\nlink to rocker/rstudio:4.4.2 Dockerfile\n\nAdd at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).\n\nThere are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.\nOne way is to turn your dsci310-ia3-&lt;USERNAME&gt;-docker into a local RStudio project then do the following steps:\n\nOpen the RStudio project locally\nInitialize the project with renv\nUse {renv} to install a package (e.g., cowsay) and then make sure you create a script that loads/uses the {cowsay} package.\nIn your Dockerfile COPY all your renv files into the container\nUse the outputs from renv to help you specify which functions to use to install the libraries\n\n\nHint: you might need to toggle the USER in the Dockerfile between rstudio and root to get everything working.\n\nAnother way is to RUN commands directly in the Dockerfile to install packages\n\nHint: You cannot use install.packages() because you can’t pin a version number.\nHint: You can run R code directly from the command line. For example, Rscript -e \"print('something to say...')\". Make sure to change the double quotes \"\" to single quotes '' in the R code.\nHint: You will need to first install the {remotes} package, and then use the remotes::install_version() function\n\n\nBuild your Dockerfile and test it locally.\nAdd a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile\n\nUse the “Docker image” workflow\n\nYou can also start off with an empty file and paste in a workflow by clicking “Skip this and setup a workflow yourself”.\n\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nHere are some resources to help you create your own Github Action Workflow:\n\nGithub Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images\n\n\n\n(As Needed): Make sure you make at least one change to the Dockerfile once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once. - You can also add a workflow_dispatch: trigger and manually trigger a workflow\n\nNote: If you are making an renv.lock file and you notice it’s not updating with renv::snapshot(), take a look at this FAQ",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 3"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia3.html#rubric",
+    "href": "individual_assignment/ia3.html#rubric",
+    "title": "Individual assignment 3",
     "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\nA Docker image named dockerfile-practice and tagged with a version exists under the student’s username on DockerHub.\nThe Dockerfile used to create the Docker image lives in a GitHub repository named dsci310-ia3-&lt;USERNAME&gt;-docker under the DSCI-310 org.\nThere is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.\nThe Docker image version tag is in sync with the GitHub repository release tag. (Not needed – Free Point)\nAt least one new R package was added to the Dockerfile and the version of that package was pinned.\n\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\n5/5 of the criteria listed above were met.\n\n\n75%\n4/5 of the criteria listed above were met.\n\n\n50%\n3/5 of the criteria listed above were met.\n\n\n25%\n2/5 of the criteria listed above were met.\n\n\n0%\nOnly 1/5 of the criteria listed above were met or the assignment was not attempted.\n\n\n50%\nMaximum amount of points if created in the wrong organization\n\n\n\nAdditional points taken off:\n\n-2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 1"
+      "Individual assignment 3"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia4.html",
+    "href": "individual_assignment/ia4.html",
+    "title": "Individual assignment 4",
+    "section": "",
+    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web. For this optional and extra credit step, you may need to edit the Makefile.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 4"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia4.html#instructions",
+    "href": "individual_assignment/ia4.html#instructions",
+    "title": "Individual assignment 4",
+    "section": "",
+    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web. For this optional and extra credit step, you may need to edit the Makefile.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 4"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia4.html#rubric",
+    "href": "individual_assignment/ia4.html#rubric",
+    "title": "Individual assignment 4",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n110%\nAll 6 of the required edits to the .qmd document above were met and the HTML version of the report was served up on GitHub pages\n\n\n100%\nAll 6 of the required edits to the .qmd document above were met and the report generates a working PDF and HTML file via the Makefile.\n\n\n85%\n5/6 of the required edits to the .qmd document listed above were met.\n\n\n70%\n4/6 of the required edits to the .qmd document listed above were met.\n\n\n55%\n3/6 of the required edits to the .qmd document listed above were met.\n\n\n40%\n2/6 of the required edits to the .qmd document listed above were met.\n\n\n25%\n1/6 of the required edits to the .qmd document listed above were met.\n\n\n0%\nThe assignment was not attempted.\n\n\n\n\nYou will only get the extra points for serving up the HTML version of the report on GitHub pages if all of the main assignment components were completed.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 4"
     ]
   },
   {
@@ -711,311 +753,389 @@
     "text": "Attribution\nParts of this syllabus (particularly the policies) have been copied and derived from the UBC MDS Policies."
   },
   {
-    "objectID": "individual_assignment/ia4.html",
-    "href": "individual_assignment/ia4.html",
-    "title": "Individual assignment 4",
+    "objectID": "individual_assignment/ia5.html",
+    "href": "individual_assignment/ia5.html",
+    "title": "Individual assignment 5",
     "section": "",
-    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web. For this optional and extra credit step, you may need to edit the Makefile.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
+    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating software packages in R or Python (or both for bonus points)! This will help prepare you to work on and complete your group project for this course.",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 4"
+      "Individual assignment 5"
     ]
   },
   {
-    "objectID": "individual_assignment/ia4.html#instructions",
-    "href": "individual_assignment/ia4.html#instructions",
-    "title": "Individual assignment 4",
+    "objectID": "individual_assignment/ia5.html#motivation",
+    "href": "individual_assignment/ia5.html#motivation",
+    "title": "Individual assignment 5",
     "section": "",
-    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating reproducible reports using Quarto.\nThroughout the pre-requisites for DSCI 310, you have become familiar with using Jupyter Notebooks to interweave narration and runnable code into a single document. This allowed you to pass your analysis over to a co-worker or reviewer, who could reproduce your work by running your notebook from top to bottom.\nBut are Jupyter Notebooks all there is to creating reproducible reports? Not entirely… For example, Jupyter Notebooks struggle with organization and configuration. Imagine you have an extremely long and complicated report packed into a single Jupyter Notebook. Writing out a table of contents, formatting a bibliography, and adding labels to figures can become extremely cumbersome, especially as they evolve with your analysis during the review process.\nImagine you have 25 figures and tables labelled 1 to 25 and you decide to add a new figure at the very start of your report; figure 1 now needs to be renamed to figure 2, table 2 now needs to be renamed to table 3, figure 3 now needs to be renamed to figure 4…\nThis is where Quarto (and related tools) can come in handy. Although they have their own set of disadvantages, they are certainly an improvement over plain Jupyter Notebooks. They allow for the automatic creation and formatting of a table of contents, a bibliography, and those pesky figure labels, among many other features. During this individual assignment, you will start to familiarize yourself with Quarto reports, start to understand their advantages and disadvantages, and begin to recognize their similarities and differences from basic Jupyter notebooks.\n\n\nWe suggest you read through the instructions first before doing them in sequence.\n\n\nGoal: Create a copy from the template repository.\n\nCreate a copy of either the R template repository or the Python template repository on GitHub.com under your personal username\n\nNotes:\n\nDo not create it under the DSCI-310 organization\nWe, the teaching team, also need to be able to see this repository in order to grade it so we strongly suggest making it public.\n\n\n\n\nGoal: Get familiar with the repository\nInside the the R template repository or the Python template repository, there are several directories and files. Here is a quick rundown of each:\n\ndata: contains data used in the analysis (do not edit)\nreports: contains the Quarto report file (ends in qmd_example.qmd) that contains the narrative of the analysis report and the code to display the analysis artifacts (tables and figures) (incomplete - you will need to edit this), and the BibTeX references file (references.bib) for the report (do not edit)\nMakefile: declares commands used to build the Quarto report (do not edit)\n\nThis file has all the commands you need to do this assignment.\n\nresults: output of the script in source\nsource/generate_figures.R or source/generate_figures.py: a script that performs the analysis and outputs various plots and a table that are to be used in the report (do not edit)\n\n\n\n\nGoal: Familiarize yourself with the Makefile targets\n\nThe Makefile has all the targets needed to render the final Quarto report.\nYou will want to have GNU Make build the qmd target to do this.\n\nNotes:\n\nThe HTML version of the report is saved to docs/qmd_example.html\nThe PDF version will be saved to docs/qmd_example.pdf\nThe Makefile commands will help you\n\n\n\n\nGoal: Create the example report so that it is a polished academic manuscript.\nEdit reports/qmd_example.rmd (using either R or Python Quarto syntax, the choice is yours) so that:\n\nAdd header formatting to sections (e.g., “Aim”, “Data”, “Methods”, “Results”, “References”) and Quarto configuration so that a table of contents that is automatically generated from the document headers will be created when the document is rendered (docs on how to do this)\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document (docs on how to do this)\nEdit the figure formatting (docs on how to do this) so that Quarto:\n\nautomatically numbers them\nhas a label for easy cross referencing\ncontrols the figure sizes so the figures are not too big (in particular the second figure in the report should be only 60-70% of the default width)\n\nadd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text (docs on how to do this)\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nreplace the ??? in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value (docs on how to do this)\nchange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables) (docs on how to do this)\n(optional) Turn on GitHub pages so that it serves up the docs directory so that the report is viewable on the web. For this optional and extra credit step, you may need to edit the Makefile.\n\n\n\n\n\nYou will submit a PDF to Gradescope for individual assignment 3 that includes:\n\nA link to the GitHub.com repository that you create for this assignment.\n(optional) link to the HTML report served on GitHub pages.",
+    "text": "The purpose of this assignment is to ensure that everyone gains hands-on practice creating software packages in R or Python (or both for bonus points)! This will help prepare you to work on and complete your group project for this course.",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 4"
+      "Individual assignment 5"
     ]
   },
   {
-    "objectID": "individual_assignment/ia4.html#rubric",
-    "href": "individual_assignment/ia4.html#rubric",
-    "title": "Individual assignment 4",
-    "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n110%\nAll 6 of the required edits to the .qmd document above were met and the HTML version of the report was served up on GitHub pages\n\n\n100%\nAll 6 of the required edits to the .qmd document above were met and the report generates a working PDF and HTML file via the Makefile.\n\n\n85%\n5/6 of the required edits to the .qmd document listed above were met.\n\n\n70%\n4/6 of the required edits to the .qmd document listed above were met.\n\n\n55%\n3/6 of the required edits to the .qmd document listed above were met.\n\n\n40%\n2/6 of the required edits to the .qmd document listed above were met.\n\n\n25%\n1/6 of the required edits to the .qmd document listed above were met.\n\n\n0%\nThe assignment was not attempted.\n\n\n\n\nYou will only get the extra points for serving up the HTML version of the report on GitHub pages if all of the main assignment components were completed.",
+    "objectID": "individual_assignment/ia5.html#exercise-instructions",
+    "href": "individual_assignment/ia5.html#exercise-instructions",
+    "title": "Individual assignment 5",
+    "section": "Exercise instructions",
+    "text": "Exercise instructions\nThis assignment you will follow the tutorial to create a toy/practice package using the language you are using for your course project. Follow the instructions in the chapters linked to below. Use the code they provide for the package functions.\n\nMake an R package:\n\nRead through and follow the instructions in The Whole Game to create a toy/practice package in the R programming language. Push all your work to GitHub.com in a repository under your personal username.\n\n\n\nAnd/or make a Python package:\n\nRead through and follow the instructions in How to package a Python to create a toy/practice package in the Python programming language. Note - you only need to publish your package to TestPyPI, not PyPI. Push all your work to GitHub.com in a repository under your personal username.",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
-      "Individual assignment 4"
+      "Individual assignment 5"
     ]
   },
   {
-    "objectID": "individual_assignment/ia3.html",
-    "href": "individual_assignment/ia3.html",
-    "title": "Individual assignment 3",
-    "section": "",
-    "text": "Practice building Docker images",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 3"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia3.html#instructions",
-    "href": "individual_assignment/ia3.html#instructions",
-    "title": "Individual assignment 3",
-    "section": "Instructions",
-    "text": "Instructions\nThe purpose of this assignment is to ensure that everyone gains hands-on practice on creating Docker images from Dockerfiles.\n\nSubmission instructions\nIn the text box provided for this assignment on Canvas, you must submit:\n\nA link to the GitHub.com repository that you create for this assignment.\n\nYou should name your GitHub.com repository dsci310-ia3-&lt;USERNAME&gt;-docker.\nYou need to create this assignment in the course organization: https://github.com/DSCI-310-2025\n\nA the link to your Docker image on DockerHub. You should name your DockerHub repository dsci310-ia3-&lt;USERNAME&gt;-docker.\n\n\n\n\n\n\n\nWarning\n\n\n\nMake sure your repository is under the DSCI-310-2025 organization. You can do a “repository transfer” if you need to, but your submission needs to be in the correct org.\n\n\n\n\nExercise instructions\n\nCreate a public repository on GitHub.com repo under your personal username called dsci310-ia3-&lt;USERNAME&gt;-docker\n\nYou can choose a pre-made .gitignore or manually create one yourself\n\nAdd a Dockerfile to it. This Dockerfile should be based off of the rocker/rstudio:4.4.2 Docker image\n\nlink to rocker/rstudio DockerHub repository\nlink to rocker/rstudio:4.4.2 Dockerfile\n\nAdd at least one new R package to the Dockerfile using (ensure that you pin the version of the package you add).\n\nThere are 2 ways of doing this. There are different benefits to each of the methods depicted. You only need to do one of them for the assignment.\nOne way is to turn your dsci310-ia3-&lt;USERNAME&gt;-docker into a local RStudio project then do the following steps:\n\nOpen the RStudio project locally\nInitialize the project with renv\nUse {renv} to install a package (e.g., cowsay) and then make sure you create a script that loads/uses the {cowsay} package.\nIn your Dockerfile COPY all your renv files into the container\nUse the outputs from renv to help you specify which functions to use to install the libraries\n\n\nHint: you might need to toggle the USER in the Dockerfile between rstudio and root to get everything working.\n\nAnother way is to RUN commands directly in the Dockerfile to install packages\n\nHint: You cannot use install.packages() because you can’t pin a version number.\nHint: You can run R code directly from the command line. For example, Rscript -e \"print('something to say...')\". Make sure to change the double quotes \"\" to single quotes '' in the R code.\nHint: You will need to first install the {remotes} package, and then use the remotes::install_version() function\n\n\nBuild your Dockerfile and test it locally.\nAdd a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image and GitHub repo when changes are pushed to the Dockerfile\n\nUse the “Docker image” workflow\n\nYou can also start off with an empty file and paste in a workflow by clicking “Skip this and setup a workflow yourself”.\n\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nHere are some resources to help you create your own Github Action Workflow:\n\nGithub Actions Docker reference: https://docs.github.com/en/actions/publishing-packages/publishing-docker-images\n\n\n\n(As Needed): Make sure you make at least one change to the Dockerfile once the GitHub Actions have been setup so that you get the image automatically built and pushed to DockerHub at least once. - You can also add a workflow_dispatch: trigger and manually trigger a workflow\n\nNote: If you are making an renv.lock file and you notice it’s not updating with renv::snapshot(), take a look at this FAQ",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 3"
-    ]
-  },
-  {
-    "objectID": "individual_assignment/ia3.html#rubric",
-    "href": "individual_assignment/ia3.html#rubric",
-    "title": "Individual assignment 3",
-    "section": "Rubric",
-    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\nA Docker image named dockerfile-practice and tagged with a version exists under the student’s username on DockerHub.\nThe Dockerfile used to create the Docker image lives in a GitHub repository named dsci310-ia3-&lt;USERNAME&gt;-docker under the DSCI-310 org.\nThere is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository, and publish it to DockerHub.\nThe Docker image version tag is in sync with the GitHub repository release tag. (Not needed – Free Point)\nAt least one new R package was added to the Dockerfile and the version of that package was pinned.\n\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\n5/5 of the criteria listed above were met.\n\n\n75%\n4/5 of the criteria listed above were met.\n\n\n50%\n3/5 of the criteria listed above were met.\n\n\n25%\n2/5 of the criteria listed above were met.\n\n\n0%\nOnly 1/5 of the criteria listed above were met or the assignment was not attempted.\n\n\n50%\nMaximum amount of points if created in the wrong organization\n\n\n\nAdditional points taken off:\n\n-2% for checking in files that are not supposed to be in the repository (temporary system files, thumbnail files, IDE user files, etc)",
-    "crumbs": [
-      "Assessments",
-      "Individual Assignments",
-      "Individual assignment 3"
-    ]
-  },
-  {
-    "objectID": "tutorials/t3.html",
-    "href": "tutorials/t3.html",
-    "title": "Tutorial 3",
-    "section": "",
-    "text": "Here we’ll practice with programming language environments.\nIf conda and python does not apply to you, you may skip the conda and python portion of the tutorial. If you are taking, have taken, or planning to take a class that uses python it will still be worth practicing and familiarizing yourself with conda environments.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 3"
-    ]
-  },
-  {
-    "objectID": "tutorials/t3.html#r-environments-renv",
-    "href": "tutorials/t3.html#r-environments-renv",
-    "title": "Tutorial 3",
-    "section": "R Environments: renv",
-    "text": "R Environments: renv\n\nOpen up RStudio\nrun getwd() in the r console, and note the default starting working directory in R when not in a project.\nCreate an RStudio Project (either from an existing folder, or create a new folder)\nrun getwd() again and see how the working directory changes\nInstall the renv package (if you do not have it installed)\nNote all the current installed R packages you have in the packages panel\nRun the renv::init() in the current project (you can also choose to library(renv) and then init() as 2 separate steps\nNow note the packages in the package panel\nInstall the palmerpenguins package in R\nLibrary the palmerpenguins package\nyou should now have access to the penguins dataframe\nupdate the lock file with renv::snapshot()\nOpen a new RStudio or close the current project\nYou should not be in your project now, and notice the packages listed listed. And notice how the packages change again when you open up the project you just made",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 3"
-    ]
-  },
-  {
-    "objectID": "tutorials/t3.html#python-environments-conda",
-    "href": "tutorials/t3.html#python-environments-conda",
-    "title": "Tutorial 3",
-    "section": "Python Environments: conda",
-    "text": "Python Environments: conda\n\nOpen up a terminal, you should be in a conda base environment\nRun python --version and which python to check the python version you have and which one is actually being used\ncreate a new conda environment with a different python version from the one you currently have in base\nactivate this environment\ninstall jupyterlab and pandas in the new environment\ncreate an environment.yml file for your new environment. it should only list the packages you explicitly installed (not list dependencies)\ndeactivate your python environment",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 3"
-    ]
-  },
-  {
-    "objectID": "tutorials/t1.html",
-    "href": "tutorials/t1.html",
-    "title": "Tutorial 1",
-    "section": "",
-    "text": "Computer Setup Help, Bash, and Git",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t1.html#create-a-repository",
-    "href": "tutorials/t1.html#create-a-repository",
-    "title": "Tutorial 1",
-    "section": "Create a repository",
-    "text": "Create a repository\n\nCreate a new repository on GitHub (e.g., YYYY-MM-DD-git). You can create it with an existing README.md file (or create a new one later)\n\n\n\n\n\n\n\nTip\n\n\n\nCreating a repository with a date is a quick way to make a unique name where you can practice and redo a tutorial again in the future.\n\n\n\nClone down the repository to your local computer",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t1.html#make-changes-to-a-file",
-    "href": "tutorials/t1.html#make-changes-to-a-file",
-    "title": "Tutorial 1",
-    "section": "Make Changes to a file",
-    "text": "Make Changes to a file\n\nCreate a README.md file if you don’t have one already\nEdit the README.md file by adding a line about your favorite food\nAdd / commit / push your changes up to github",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t1.html#update-changes-from-remote",
-    "href": "tutorials/t1.html#update-changes-from-remote",
-    "title": "Tutorial 1",
-    "section": "Update changes from remote",
-    "text": "Update changes from remote\n\nNow edit the README.md file on the remote github repository\nAdd a new line by naming your favorite color\nCommit the changes on github.com\nConfirm your changes in github.com are made in the web interface\npull down your changes to your local computer",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 1"
-    ]
-  },
-  {
-    "objectID": "tutorials/t4.html",
-    "href": "tutorials/t4.html",
-    "title": "Tutorial 4",
-    "section": "",
-    "text": "Virtual environments and docker containers. We’ll practice creating virtual environments again (just like last tutorial), so we can compare it with creating docker containers.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 4"
-    ]
-  },
-  {
-    "objectID": "tutorials/t4.html#r-environments",
-    "href": "tutorials/t4.html#r-environments",
-    "title": "Tutorial 4",
-    "section": "R Environments",
-    "text": "R Environments\n\nCreate a new RStudio Project\nNote the currently installed packages\nInstall the renv library if you do not have it installed\nInitialize the current project as an renv project\nNote the new packages in the environment.\nInstall an R package\nSnapsnot the package\nNote how the renv.lock file does not change\nCreate and save an R script that uses the package you just installed\nRe-snapshot the project\nNote how the renv.lock file updates now\nClose the current RStudio project\nNote how you have your old packages back\nRe-open the RStudio project you just created and see how t5he packages change.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 4"
-    ]
-  },
-  {
-    "objectID": "tutorials/t4.html#optional-python-environment",
-    "href": "tutorials/t4.html#optional-python-environment",
-    "title": "Tutorial 4",
-    "section": "Optional: Python environment",
-    "text": "Optional: Python environment\nFor people and teams working on a python project and want to practice conda environments.\n\n\n\n\n\n\nNote\n\n\n\nconda environments are not going to be on the exam. This exercise is solely to give you instructions to practice creating python environments.\n\n\n\nCheck that you are currently in the base conda environment:\n\nconda info\n\nNote the packages in the current conda environment and their versions\n\nconda list\n\nCreate a new conda environment (we are going to name it myenv) with python 3.12\n\nconda create -n myenv -c conda-forge python=3.12\n\nActivate this environment\nRun python and compare your python versions and see if you are able to import pandas\nconda install another package into the environment, pandas and import it from the new environment.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 4"
-    ]
-  },
-  {
-    "objectID": "tutorials/t4.html#run-a-docker-container",
-    "href": "tutorials/t4.html#run-a-docker-container",
-    "title": "Tutorial 4",
-    "section": "Run a docker container",
-    "text": "Run a docker container\nLet’s get some practice with running docker containers\nDocker Desktop needs to be runnign in the background.\n\nYour first container\nWe did this in the Computer Setup process, but let’s run the hello-world container with docker run\n$ docker run hello-world\n\nHello from Docker!\nThis message shows that your installation appears to be working correctly.\n\nTo generate this message, Docker took the following steps:\n 1. The Docker client contacted the Docker daemon.\n 2. The Docker daemon pulled the \"hello-world\" image from the Docker Hub.\n    (amd64)\n 3. The Docker daemon created a new container from that image which runs the\n    executable that produces the output you are currently reading.\n 4. The Docker daemon streamed that output to the Docker client, which sent it\n    to your terminal.\n\nTo try something more ambitious, you can run an Ubuntu container with:\n $ docker run -it ubuntu bash\n\nShare images, automate workflows, and more with a free Docker ID:\n https://hub.docker.com/\n\nFor more examples and ideas, visit:\n https://docs.docker.com/get-started/\n\n$\nThis command runs a container that executes a script that prints out the hello docker text. When this script runs, it exits and the container exits to give you your prompt back\n\n\nAn R Container\n\nCompare the version of R you have right now on your computer. You can open up and launch R or run R --version to get your current R version. 2.Run the R 4.3.2 container:\n\ndocker run --rm -it rocker/r-ver:4.3.2\n\nCompare the version from the version you have on your computer\nTry to load a package you have installed on your computer in the container (it should fail)\nExit out of this docker container\n\n\n\nAn RStudio Container\n\n\n\n\n\n\nNote\n\n\n\nIf you are on an ARM based M-chip mac, you need to pass in the --platform=linux/amd64 flag to the docker run command. https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform\n\n\n\nRun the RStudio container and connect it to your local computer’s port 8787\n\ndocker run --rm -e PASSWORD=\"pizza\" -p 8787:8787 rocker/rstudio:4.4.2\n\nExplain in your own words what each of the flags are doing in the docker run command. You can use the official docker run documentation: https://docs.docker.com/reference/cli/docker/container/run/\nOpen and log into the RStudio container and try to run some R code in a script\nSave this script\nClose the container and run it again\nNotice how all your work inside the container is lost\n\n\n\nAn RStudio Tidyverse Container\n\nDo the same process as before, but this time use the rocker/tidyverse:4.4.2 container.\nWithout turning off this container, open a new terminal and run a separate rocker/rstudio:4.4.2 container\n\n\nYou will need to change the local port mapping\n\n\nMake sure you are able to log into and run both RStudio sessions in the container\n\n\nNote how only one of the RStudio sessions has tidyverse installed and the other doesn’t",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 4"
-    ]
-  },
-  {
-    "objectID": "tutorials/t7.html",
-    "href": "tutorials/t7.html",
-    "title": "Tutorial 7",
-    "section": "",
-    "text": "Rendering a quarto document into the docs directory and publish it into github pages.\nWe are going to work with the repository we’ve been using in class this week. This is the final version of the repo after learning about command line scripts and Make:\nhttps://github.com/chendaniely/2025-03-06-make-quarto\nIt has been set up as a Template. Click on the green “Use this template” button and then select “Create a new repository” to copy the repository into your github account.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 7"
-    ]
-  },
-  {
-    "objectID": "tutorials/t7.html#step-1-run-the-current-set-of-files",
-    "href": "tutorials/t7.html#step-1-run-the-current-set-of-files",
-    "title": "Tutorial 7",
-    "section": "Step 1: Run the current set of files",
-    "text": "Step 1: Run the current set of files\nRun the report target from the repository. This should generate the index.html file in the project root.\nIf you open this document, it should open a basic quarto document with a single figure in it.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 7"
-    ]
-  },
-  {
-    "objectID": "tutorials/t7.html#step-2-enable-github-pages",
-    "href": "tutorials/t7.html#step-2-enable-github-pages",
-    "title": "Tutorial 7",
-    "section": "Step 2: Enable GitHub Pages",
-    "text": "Step 2: Enable GitHub Pages\nPush the files (index.html) into your github repository, then enable GitHub Pages via the repository settings &gt; pages panel.\n\nUnder Source, select “Deploy from a branch”\nUnder Branch, select “main” and / (root)\n\nwait a few minutes for github pages to build and publish the site.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 7"
-    ]
-  },
-  {
-    "objectID": "tutorials/t7.html#step-3-turn-the-project-into-a-quarto-project",
-    "href": "tutorials/t7.html#step-3-turn-the-project-into-a-quarto-project",
-    "title": "Tutorial 7",
-    "section": "Step 3: Turn the project into a Quarto Project",
-    "text": "Step 3: Turn the project into a Quarto Project\nWe are now going to turn this project into a quarto project, specifically a manuscript:\nhttps://quarto.org/docs/projects/quarto-projects.html\nThe current repository has an empty _quarto.yml file, we will edit it to become a quarto manuscript project.\n\nEdit the _quarto.yml file\nEdit the _quarto.yml file so it looks like this:\nproject:\n  type: manuscript\n  output-dir: docs\n\nmanuscript:\n  article: index.qmd\n\nformat:\n  html:\n    comments:\n      hypothesis: true\n  docx: default\nThis will set the project type, some of the html formats, and also generate a doc file of our report. We will also have our documents render into the docs directory instead of the root directory.\nYou will also notice that the article option is looking for index.qmd. We will address this part next.\n\n\nCreate the index file for web publishing\n\nMove and rename the report/report.qmd to index.qmd in the repository root.\n\nThis will allow quarto to find and render the manuscript project.\nAfter doing this, you should be able to run quarto render on its own, and the report will render into the docs/` directory.\n\n\nClean up the repository,\nRun the clean target in the repository and confirm that the index.html is no longer created in the root directory.\n\n\nEdit the Makefile\n\nEdit the clean target so that it also deletes the docs/ directory\nEdit the index.html target such that it is really creating the docs/index.html file.\n\nNow when you run make clean followed by make report (a phony target), you should be able to re-create your report file.\n\n\nPush your changes to github\nPush your new repository changes to github. Including your new docs folder.\nYou should also no loger have an index.html file in the project root.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 7"
-    ]
-  },
-  {
-    "objectID": "tutorials/t7.html#step-4-publish-your-side-from-docs",
-    "href": "tutorials/t7.html#step-4-publish-your-side-from-docs",
-    "title": "Tutorial 7",
-    "section": "Step 4: Publish your side from docs",
-    "text": "Step 4: Publish your side from docs\nWe have now created a quarto project that renders into the docs directory, not the root directory.\nYour current website may be broken since index.html does not exist in the root.\nGo back to your Settings &gt; pages repository settings and change the main publishing from root to docs.\nYour website should now be published from the docs directory.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 7"
-    ]
-  },
-  {
-    "objectID": "project/m1.html",
-    "href": "project/m1.html",
-    "title": "Milestone 1",
-    "section": "",
-    "text": "GitHub repository, statistical question, data & rough draft of analysis in one monolithic literate code document, reproducible environment (full.ipynb, Dockerfile, docker-compose.yml).",
-    "crumbs": [
-      "Assessments",
-      "Milestone",
-      "Milestone 1"
-    ]
-  },
-  {
-    "objectID": "project/m1.html#overall-project-summary",
-    "href": "project/m1.html#overall-project-summary",
-    "title": "Milestone 1",
-    "section": "Overall project summary",
-    "text": "Overall project summary\nIn this course you will work in assigned teams of three or four (see group assignments in Canvas) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.\nYour data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:\n\nA well documented and modularized software package and scripts written in R and/or Python,\nA data analysis pipeline automated with GNU Make,\nA reproducible report powered by either Jupyter book or R Markdown,\nA containerized computational environment created and made shareable by Docker, and\nA remote version control repository on GitHub for project collaboration and sharing, As well as automation of test suite execution and documentation and software deployment.\n\nAn example final project from another course (where the project is similar) can be seen here: Breast Cancer Predictor",
-    "crumbs": [
-      "Assessments",
-      "Milestone",
-      "Milestone 1"
-    ]
-  },
-  {
-    "objectID": "project/m1.html#milestone-1-summary",
-    "href": "project/m1.html#milestone-1-summary",
-    "title": "Milestone 1",
-    "section": "Milestone 1 summary",
-    "text": "Milestone 1 summary\nIn this milestone, you will:\n\nDraft a team work contract\nSet-up a public GitHub repository\nSelect a data analysis project to work with\nCreate an appropriate file and directory structure for a data analysis project\nAdd the data analysis as a literate code document\nMake the computation environment reproducible through containerization with Docker\n\nAn example project milestone 1 is available here: https://github.com/UBC-DSCI/predict-airbnb-nightly-price/tree/v1.0.2\n\n1. Draft a team work contract\nThis document will govern the working relationships on your team, and if done correctly, it should help you manage and resolve any issues that might arise when working in a group. A sample team work contract from a past data science project can be found here.\nA team work contract communicates specifically how the core group of people who are working together and gives detail about the logistics of working together and the expectations you have for each other.\nSome aspects of the team work contract could be:\n\nHow will work be distributed in a fair and equitable way?\nWhat are the expected work hours for the project?\nHow often will group meetings occur (here is a nice article on meetings)?\nWill you have meeting agendas and minutes? If so, what will be the system for rotating through these responsibilities?\nWhat will be the style of working?\n\nWill you start each day with stand-ups, or submit a summary of your contributions 4 hours before each meeting? or something else?\n\nWhat is the quality of work each team member expects from themselves and each other?\nWhen are team members not available (e.g., evenings and Sundays because of family obligations).\nAnd any other similar things that govern your working relationships.\n\nUse this opportunity to use your prior knowledge/experience to improve your teamwork, communication, leadership, and organizational skills.\n\n\n\n\n\n\nNote\n\n\n\nThis document is fairly personal and does NOT need to reside in your public GitHub.com repo.\nPlease submit this contract under a separate assignment.\n\n\n\n\n2. Set-up a GitHub repository\nNow set-up a public GitHub repository for your project in the format: dsci-310-group-XX-&lt;optional_team_name&gt;. You will create this project in the course github organization (not under a personal account).\nWe are using github.com and public repositories because we will eventually be using some fancy tooling (e.g., GitHub Actions) in this project. For this to work, all your work for this project (including scripts) should be developed and live in this repository on GitHub.com. Additionally, this will help you build a portfolio of your work you can share with others.\n\n\n\n\n\n\nNote\n\n\n\nIf you need to change the name of your project repository later, you can.\n\n\nThe tracking of the project will be done using GitHub milestones. When you create a milestone, you can associate it with issues and pull requests. After creating issues you can link them to a milestone associating each them to a project due date.\nIn order to make more efficient team workflow, organize the issues you have previously associated with milestones into a GitHub project board.\nThe project board should show the current status of the project to the team. Each collaborator is responsible of converting the issues to cards and then moving them through the board columns as the project evolves.\n\n\n3. Select a data analysis project to work with\nThe content of this analysis project should be a narrated analysis that asks and answers a predictive question using a classification or regression method taught in the prerequisite course, DSCI 100. For milestone 1, the code and analysis narrative should be contained within a single Jupyter notebook (e.g., .ipynb file), RMarkdown file (e.g., .Rmd file), or Quarto document (e.g., .qmd file). The analysis narrative should be rich, and at the level of the final project from DSCI 100. Either R or Python can be used to do this. However, all group members must have past experience using the language chosen and permission of the instructor must be given. The restrictions on the analysis methods and programming language are put in place to ensure that all group members can contribute equally to the project.\nThe data for the project should be publicly available, and clearly licensed to be shared and used openly on the internet. We strongly suggest you avoid using data sets where authentication is needed for access (e.g., Kaggle) as this adds another layer of complexity when making these projects reproducible.\n\nPossible data set sources\n\npast DSCI 100 projects (note: if you reuse part or all of a past DSCI 100 project, you will be required to provide documentation of written permission of all past teammates from that project)\nUCI Machine Learning Repository: Data Sets\nfivethirtyeight R package (if you use this, see the note below!)\nGovernment of Canada open data\nGitHub repo of awesome public datasets\ntidytuesday data set\nGoogle Data set search engine\n\n\n\n\n\n\n\nNote\n\n\n\nIf you choose a data set from the fivethirtyeight R package, you cannot copy their scientific question, visualizations or methods from the original FiveThirtyEight articles from where the data sets were first reported on. Finally, with the fivethirtyeight R package data sets, we want you to get practice reading them using the read_* functions in R or Python, so please use the versions of the data sets listed here: https://github.com/rudeboybert/fivethirtyeight/tree/master/data-raw\n\n\n\n\n\n4. Create an appropriate file and directory structure for a data analysis project\nFor this project, you are expected to follow the best practices we have learned about in regards to project directory and file structures. This should be reflected in your GitHub repository. Specifically for this milestone, please ensure that you include at least the following 7 files and directories in your project’s GitHub repository:\n\nREADME.md\nCODE_OF_CONDUCT.md\nCONTRIBUTING.md\ndata/\nanalysis.Rmd or analysis.qmd\nDockerfile\n.github/workflows/publish_docker_image.yml\nLICENSE.md\n\nThe description of each of them follows.\n\ni. README.md\nIn the main README.md file for this project you should include: - the project title - the list of contributors/authors - a short summary of the project (view from 10,000 feet) - how to run your data analysis - a list of the dependencies needed to run your analysis - the names of the licenses contained in LICENSE.md\nNote - this document should live in the root of your public GitHub.com repo.\n\n\nii. CODE_OF_CONDUCT.md\nIn an attempt to create a safe, positive, productive, and happy community, many organizations and developers create a code of conduct for their projects. A code of conduct in a Data Science project informs others of social norms, acceptable behaviour and general etiquette. It is more outward facing than the team work contract discussed above. We recommend Project Include for a comprehensive guide to writing an effective Code of Conduct.\nAt minimum, we believe that a good/effective code of conduct should include:\n\nA Statement on diversity and inclusivity\nDetails on expected, and unacceptable behaviour\nA list of consequences for unacceptable behaviour\nA procedure for reporting and dealing with unacceptable behaviour\n\n\nSample Codes of Conduct:\n\nUBC Data Science 100 CoC\nidocde Coc\nPython Community CoC\nTidyverse CoC\nPandas CoC\nVox Media CoC\n\nNote - this document should live in the root of your public GitHub.com repository.\n\n\n\niii. CONTRIBUTING.md\nIt is a good practice to include information about how others outside the core team can contribute to your project somewhere in your repository. This is typically done as a separate file in a repository called CONTRIBUTING.md. Here are some examples of this file:\n\nAltair\ndplyr\nAtom editor (very comprehensive)\n\nIf you’re interested in this, here’s a quick guide to creating this file from GitHub, but in the meantime, you can use the following snippet as a template:\nWe welcome all contributions to this project!\nIf you notice a bug, or have a feature request,\nplease open up an issue [here](https://github.com/UBC-DSCI/REPOSITORY_NAME/issues).\nIf you'd like to contribute a feature or bug fix,\nyou can fork our repo and submit a pull request.\nWe will review pull requests within 7 days.\nAll contributors must abide by our [code of conduct](CODE_OF_CONDUCT.md).\nNote - this document should live in the root of your public GitHub.com repository.\n\n\niv. data/\nThe data directory should contain a copy of the downloaded data (written there by code). An exception to this can be made if the data set is extremely large (&gt; 100 MB per file). In such cases, please reach out to the instructional team to make an alternative plan.\n\n\nv. analysis.ipynb / analysis.Rmd / analysis.qmd\nFor this milestone, the analysis code and narration should be contained within a single literate code document (e.g., Jupyter notebook, RMarkdown file, or Quarto document). This document should not actually be named analysis.***, but have a more descriptive title, related to the project title.\n\n\nvi. Dockerfile\nThe Dockerfile is the file used to specify and create the Docker image from which containers can be run to create an reproducible computational environment for your analysis. For this project, we recommend using a base Docker image that already has most of the software dependencies needed for your analysis. Examples of these include the Jupyter core team Docker images (documentation) and the Rocker team Docker images (documentation). When you add other software dependencies to this Dockerfile, ensure that you pin the version of the software that you add.\nNote - this document should live in the root of your public GitHub.com repository.\n\n\nvii. .github/workflows/publish_docker_image.yml\nIn this milestone, we expect you to add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image (using latest is okay for now) and GitHub repo when changes are pushed to the Dockerfile\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work.\nThis part is similar to Individual Assignment 3.\n\n\nviii. LICENSE.md\nLicense’s tell others how they may (or may not) use your work. We will learn more about licenses later in the course, and for now we recommend using an MIT license for the project code and a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license for the project report. As long as your group agrees, these can be changed later in the course when you learn more about licenses. If you want to spend some time choosing different licenses now, we can recommend these two websites to help get you started:\n\nhttps://choosealicense.com/\nhttps://chooser-beta.creativecommons.org/\n\n\n\n\n5. Add the data analysis as a literate code document\nFor this milestone, the analysis code and narration should be contained within a single literate code document (i.e., Jupyter notebook). The following sections should be included:\n\nTitle\nSummary\nIntroduction:\n\nprovide some relevant background information on the topic so that someone unfamiliar with it will be prepared to understand the rest of your report\nclearly state the question you tried to answer with your project\nidentify and describe the dataset that was used to answer the question\n\nMethods & Results:\n\ndescribe in written english the methods you used to perform your analysis from beginning to end that narrates the code the does the analysis.\nyour report should include code which:\nloads data from the original source on the web\nwrangles and cleans the data from it’s original (downloaded) format to the format necessary for the planned classification or clustering analysis\nperforms a summary of the data set that is relevant for exploratory data analysis related to the planned classification analysis\ncreates a visualization of the dataset that is relevant for exploratory data analysis related to the planned classification analysis\nperforms classification or regression analysis\ncreates a visualization of the result of the analysis\nnote: all tables and figure should have a figure/table number and a legend\n\nDiscussion:\n\nsummarize what you found\ndiscuss whether this is what you expected to find?\ndiscuss what impact could such findings have?\ndiscuss what future questions could this lead to?\n\nReferences:\n\nat least 4 citations relevant to the project (format is your choose, just be consistent across the references).\n\n\n\n\n6. Make the computation environment reproducible through containerization with Docker\nFor this project, we will be making the computation environment reproducible through containerization with Docker. We will use Docker containers for collaborative project development, as well as for sharing a reproducible analysis at the end of the project. It is expected that: - the Docker image, from which containers are generated, will be specified by a Dockerfile that lives in the root of the project’s GitHub repository - the building of the Docker image and distribution of it via DockerHub will be automated via GitHub Actions - an explanation of how to run and use Docker to develop and execute the analysis will be documented in the README.md file.",
-    "crumbs": [
-      "Assessments",
-      "Milestone",
-      "Milestone 1"
-    ]
-  },
-  {
-    "objectID": "project/m1.html#submission-instructions",
-    "href": "project/m1.html#submission-instructions",
-    "title": "Milestone 1",
+    "objectID": "individual_assignment/ia5.html#submission-instructions",
+    "href": "individual_assignment/ia5.html#submission-instructions",
+    "title": "Individual assignment 5",
     "section": "Submission Instructions",
-    "text": "Submission Instructions\nYou will submit two URLS’s to Canvas in the provided text box for milestone 1:\n\nthe URL of your project’s GitHub.com repository\nthe URL of a GitHub release of your project’s project’s GitHub.com repository\nIn a separate file / Submission, your teamwork contract\n\n\nCreating a release on GitHub.com\nJust before you submit the milestone 1, create a release on your project repository on GitHub and name it 0.0.1 (how to create a release). This release allows us and you to easily jump to the state of your repository at the time of submission for grading puroposes, while you continue to work on your project for the next milestone.",
+    "text": "Submission Instructions\nYou will submit a PDF to Gradescope for this individual assignment that includes:\n\nthe URL of the GitHub.com repository containing your toy/practice package in the Python programming language\nthe URL of the GitHub.com repository containing your toy/practice package in the R programming language",
     "crumbs": [
       "Assessments",
-      "Milestone",
-      "Milestone 1"
+      "Individual Assignments",
+      "Individual assignment 5"
     ]
   },
   {
-    "objectID": "project/m1.html#expectations",
-    "href": "project/m1.html#expectations",
-    "title": "Milestone 1",
-    "section": "Expectations",
-    "text": "Expectations\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nAfter the repository is set-up, each group member should work in a GitHub flow workflow; where they create branches for each feature or fix, which are reviewed and critiqued by at least one other teammate before the the pull request is accepted.\nYou should be committing to git and pushing to GitHub.com every time you work on this project.\nGit commit messages should be meaningful. These will be marked. It’s OK if one or two are less meaningful, but most should be.\nUse GitHub issues to communicate to their team mate (as opposed to email or Slack).\nYour question, analysis and visualization should make sense. It doesn’t have to be complicated.\nYou should use proper grammar and full sentences in your README. Point form may occur, but should be less than 10% of your written documents.",
+    "objectID": "individual_assignment/ia5.html#rubric",
+    "href": "individual_assignment/ia5.html#rubric",
+    "title": "Individual assignment 5",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n110%\nA complete and working toy R package, as well as a complete and working toy Python package\n\n\n100%\nA complete and working toy R or Python package\n\n\n75%\nA complete but non-working toy R or Python package\n\n\n50%\nA complete but non-working toy R or Python package\n\n\n50%\nAn incomplete but non-working toy R or Python package\n\n\n0%\nThe assignment was not attempted.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 5"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html",
+    "href": "individual_assignment/ia1.html",
+    "title": "Individual assignment 1",
+    "section": "",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html#instructions",
+    "href": "individual_assignment/ia1.html#instructions",
+    "title": "Individual assignment 1",
+    "section": "",
+    "text": "Complete the computer setup installation instructions which corresponds to your computer’s operating system:\n\nComputer setup installation instructions",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html#submission",
+    "href": "individual_assignment/ia1.html#submission",
+    "title": "Individual assignment 1",
+    "section": "Submission",
+    "text": "Submission\nYou will submit a PDF to Gradescope for individual assignment 1 that includes a copy of the output of the check_setup.sh script you ran (instructions in “Post-installation notes” section of the computer setup instructions)",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html#troubleshooting",
+    "href": "individual_assignment/ia1.html#troubleshooting",
+    "title": "Individual assignment 1",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nWe understand that you may encounter issues when following the installation instructions. If/when you do, please post your issues on the course Piazza forum to obtain assistance trouble shooting these. When asking for help on Piazza please ensure you include the following information in your post to ensure we can help you:\n\nOperating system type (e.g., Windows, Mac x86, Mac ARM, or Ubuntu) and version\nWhat you did that led to the issue (command/code typed, software that was attempted to be installed)\nClear description and/or screenshot of the issue\n\nWhen possible please share commands typed and error messages as text, not screenshots, as text can be copied and pasted by the teaching team to help search for solutions.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia1.html#rubric",
+    "href": "individual_assignment/ia1.html#rubric",
+    "title": "Individual assignment 1",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nThe output of the check_setup.sh script indicates that 90% or more of the installation instructions were attempted.\n\n\n50%\nThe output of the check_setup.sh script indicates that only 50%, or less, of the installation instructions were attempted.\n\n\n0%\nNo output from the check_setup.sh script was provided, or the output of the check_setup.sh script indicates that only 25%, or less, of the installation instructions were attempted.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 1"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html",
+    "href": "individual_assignment/ia2.html",
+    "title": "Individual assignment 2",
+    "section": "",
+    "text": "The purpose of this assignment is to start familiarizing yourselves with version control with Git and GitHub. It will build on the git demos in class as well as the TA tutorials from week 1 (intro shell/bash) and week 2 (merge conflicts). Specifically, we will create a toy repository with a merge conflict and learn how to resolve it. A merge conflict occurs when Git is unable to automatically determine how to incorporate new changes. This can can occur when two branches modify the same line, or when a file is deleted when someone else is changing it. You can read more about merge conflicts here: Git merge conflicts.\nFollow the instructions listed below. You will be graded for completion.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#step-1-create-a-repository",
+    "href": "individual_assignment/ia2.html#step-1-create-a-repository",
+    "title": "Individual assignment 2",
+    "section": "Step 1: Create a repository",
+    "text": "Step 1: Create a repository\nCreate a new public repository on GitHub.com\n\nNamed {date}-learning-about-version-control\nReplace the {date} part of the repository name with a date. This way you can come back and re-do this assignment for exam practice. We won’t be grading on when you create the repository.\nCreate it under your own github account (Not the course organization)\n\nMake sure the repository:\n\nIncludes a README.md that has a header that says “Learning about Version Control” and has your name listed as the author.\nIs public\nYou may edit the README.md file using the web interface.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#step-2-clone-your-repository",
+    "href": "individual_assignment/ia2.html#step-2-clone-your-repository",
+    "title": "Individual assignment 2",
+    "section": "Step 2: Clone your repository",
+    "text": "Step 2: Clone your repository\nClone your {date}-learning-about-version-control repository to your local computer.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#step-3-merge-conflict",
+    "href": "individual_assignment/ia2.html#step-3-merge-conflict",
+    "title": "Individual assignment 2",
+    "section": "Step 3: Merge Conflict",
+    "text": "Step 3: Merge Conflict\nCreate and resolve a merge conflict 😱!\n\nOn your remote version control repository, use the pen tool to add a line to the README that says “Solving merge conflicts is easy!”\nOn your local version control repository, edit the same line in the README that you just edited, but this time write “Solving merge conflicts is soooooo hard!”\nAdd and commit your local changes to the README, and the try to push the file so that you create the merge conflict.\nResolve the merge conflict on your local computer so that the line reads “Solving merge conflicts takes conscious effort, but I can do it!”. Take a screen shot while you are resolving the conflict to document you did this.\nPush the local changes to your remote version control repository.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#step-4-pull-request",
+    "href": "individual_assignment/ia2.html#step-4-pull-request",
+    "title": "Individual assignment 2",
+    "section": "Step 4: Pull request",
+    "text": "Step 4: Pull request\nCreate and accept a pull request!\n\nCreate a new Git branch on your local version control repository named opinions and switch to that branch.\nEdit your README so that you add at least one sentence about what you like most about version control, and add at least one sentence about what you find most challenging/confusing/frustrating about version control (we all have opinions on this one…). Add and commit your changes to local version control.\nPush the changes to the README that you made on the opinions branch to the remote repository on GitHub.com.\nVisit GitHub.com and create a pull request to suggest that the changes on the opinions branch should be merged into the main branch.\nAccept the pull request you opened to merge your changes from the opinions branch into the main branch.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#submission-instructions",
+    "href": "individual_assignment/ia2.html#submission-instructions",
+    "title": "Individual assignment 2",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\nYou will submit a PDF to Gradescope for individual assignment 1 that includes:\n\nthe URL of the commit history of GitHub.com repository you created and worked on for this assignment (it will be something like: https://github.com/&lt;YOURUSERNAME&gt;/&lt;DATE&gt;learning-about-version-control/commits/main)\nthe screenshot of your resolved merge conflict\nan explanation (2-3 sentences and in your own words) of why it is useful to work in a branch-pull-request workflow instead of working by directly committing each change to the main branch.",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "individual_assignment/ia2.html#rubric",
+    "href": "individual_assignment/ia2.html#rubric",
+    "title": "Individual assignment 2",
+    "section": "Rubric",
+    "text": "Rubric\nThis assignment will be graded for completion as follows:\n\n\n\n\n\n\n\nGrade\nDescription\n\n\n\n\n100%\nGitHub history (check under pull request tab in repo) indicates a successfully merged pull request from opinions into main, clearly demonstrated solving the merge conflict in screenshot and well explained why it is useful to work in a branch-pull-request workflow\n\n\n-25%\nGitHub history (check under pull request tab in repo) does not indicate a successfully merged pull request from opinions into main\n\n\n-25%\nDid not clearly demonstrate solving the merge conflict in screenshot.\n\n\n-25%\nDid not well explain why it is useful to work in a branch-pull-request workflow.\n\n\n-100%\nNo repository or attempt",
+    "crumbs": [
+      "Assessments",
+      "Individual Assignments",
+      "Individual assignment 2"
+    ]
+  },
+  {
+    "objectID": "tutorials/t2.html",
+    "href": "tutorials/t2.html",
+    "title": "Tutorial 2",
+    "section": "",
+    "text": "This tutorial will focus on Git + GitHub practice",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 2"
+    ]
+  },
+  {
+    "objectID": "tutorials/t2.html#git-github",
+    "href": "tutorials/t2.html#git-github",
+    "title": "Tutorial 2",
+    "section": "Git + GitHub",
+    "text": "Git + GitHub\n\nCreate a github repository from github.com\nclone it down to your computer\nCreate/Edit the README file and write a short definition for the following commands:\n\ngit branch\ngit switch\ngit log --oneline --graph --all\n\nadd/commit/push your definitions to your github repository",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 2"
+    ]
+  },
+  {
+    "objectID": "tutorials/t2.html#branches-and-pull-requests-prs",
+    "href": "tutorials/t2.html#branches-and-pull-requests-prs",
+    "title": "Tutorial 2",
+    "section": "Branches and Pull Requests (PRs)",
+    "text": "Branches and Pull Requests (PRs)\n\nCreate a new branch (does not matter what name you give it)\nIn the new branch define the following terms:\n\nbranch\npull request\n\nPush your branch up to github and create a pull request\nMake a comment in your own pull request\nMerge your pull request into main\nUpdate your local main branch",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 2"
+    ]
+  },
+  {
+    "objectID": "tutorials/t2.html#extra-merge-conflicts",
+    "href": "tutorials/t2.html#extra-merge-conflicts",
+    "title": "Tutorial 2",
+    "section": "Extra: Merge Conflicts",
+    "text": "Extra: Merge Conflicts\nLet’s create a PR with a merge conflict\n\nCreate a new branch from main, edit the readme file, at the top and define the follow terms\n\ngit add\ngit commit\n\nPush this branch and create a PR, but DO NOT merge it\nOn your local machine, go back to your main branch\nCreate yet another branch from main (you should not be on your previous branch)\nAt the top of your readme file define the following terms\n\ngit push ...\ngit pull ...\n\nadd/commit/push your branch\nCreate another PR from your second branch\nTry to merge both branches now, you should see a merge conflict when you try to merge the 2nd branch",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 2"
+    ]
+  },
+  {
+    "objectID": "tutorials/t5.html",
+    "href": "tutorials/t5.html",
+    "title": "Tutorial 5",
+    "section": "",
+    "text": "Create a repository and clone it down\nCreate a bash script that lists (using a bash command) the files of your current working directory, the root of the repo. Name it list.sh\nCreate a dockerfile that uses the rocker/rstudio container, using version 4.2.2.\nCopy the list.sh into the container\nRun the script in the container\nDocument how to run the container and run the script in the container. We must follow the steps until we are able to run and see the output. Put your steps in the README.md file\nFor Tuesday: Create a github action that also runs this bash script",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 5"
+    ]
+  },
+  {
+    "objectID": "tutorials/t6.html",
+    "href": "tutorials/t6.html",
+    "title": "Tutorial 6: Refactor Quarto Doc",
+    "section": "",
+    "text": "Below you fill find the text for an example data analysis report using R and Quarto.\n\nCopy the text below into your own quarto document\nRender the document to check it is all working\nYour task is to refactor each section into separate R scripts (01_load_data.R, 02_methods.R, 03_model.R, 04_results.R) and make sure each script can completely run independently from one another without source()ing another script.\nYour scripts should save out what ever data artifact it needs for both the pipline code and the quarto report\nCreate a Makefile with a target named all that will run all the scripts in the correct order.\nEdit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.\n\nYou can download the sample quarto document here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 6: Refactor Quarto Doc"
+    ]
+  },
+  {
+    "objectID": "tutorials/t6.html#refactoring-a-quarto-report",
+    "href": "tutorials/t6.html#refactoring-a-quarto-report",
+    "title": "Tutorial 6: Refactor Quarto Doc",
+    "section": "",
+    "text": "Below you fill find the text for an example data analysis report using R and Quarto.\n\nCopy the text below into your own quarto document\nRender the document to check it is all working\nYour task is to refactor each section into separate R scripts (01_load_data.R, 02_methods.R, 03_model.R, 04_results.R) and make sure each script can completely run independently from one another without source()ing another script.\nYour scripts should save out what ever data artifact it needs for both the pipline code and the quarto report\nCreate a Makefile with a target named all that will run all the scripts in the correct order.\nEdit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.\n\nYou can download the sample quarto document here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 6: Refactor Quarto Doc"
+    ]
+  },
+  {
+    "objectID": "tutorials/t8.html",
+    "href": "tutorials/t8.html",
+    "title": "Tutorial 8",
+    "section": "",
+    "text": "This tutorial we’ll practice writing Tests for our functions.\nWe will write a function that calculates whether or not a particular year is a leap year. This is how the Gregorian calendar calculates leap years:\nWrite a function named is_leap. It should:\nHere are some examples of what the function should return:\nIn addition from the above examples, here are some test cases you should write as well\nWhat are some other edge cases you can think of?",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 8"
+    ]
+  },
+  {
+    "objectID": "tutorials/t8.html#r",
+    "href": "tutorials/t8.html#r",
+    "title": "Tutorial 8",
+    "section": "R",
+    "text": "R\n\nWrite an R function that meets the above criteria\nUsing {testthat} write unit tests that can test your function\nYou may opt to source your function file in your test file.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 8"
+    ]
+  },
+  {
+    "objectID": "tutorials/t8.html#python-optional",
+    "href": "tutorials/t8.html#python-optional",
+    "title": "Tutorial 8",
+    "section": "Python (optional)",
+    "text": "Python (optional)\n\nWrite an R function that meets the above criteria\nWrite tests for your function that can be run with pytest\nFor this tutorial, create your function and test files in the same directory, so it’s easier to import your function module for testing.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 8"
+    ]
+  },
+  {
+    "objectID": "project/m2.html",
+    "href": "project/m2.html",
+    "title": "Milestone 2",
+    "section": "",
+    "text": "Literate code document (i.e., *.ipynb or .Rmd) broken into scripts and a Quarto report. Data analysis pipeline using GNU Make to stitch everything together and automate their execution and rendering (.R files, and reproducible Quarto report).",
     "crumbs": [
       "Assessments",
       "Milestone",
-      "Milestone 1"
+      "Milestone 2"
+    ]
+  },
+  {
+    "objectID": "project/m2.html#overall-project-summary",
+    "href": "project/m2.html#overall-project-summary",
+    "title": "Milestone 2",
+    "section": "Overall project summary",
+    "text": "Overall project summary\nIn this course you will work in assigned teams of three or four (see group assignments in Canvas) to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.\nYour data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:\n\na well documented and modularized software package and scripts written in R and/or Python,\na data analysis pipeline automated with GNU Make,\na reproducible report powered by Quarto,\na containerized computational environment created and made shareable by Docker, and\nremote version control repositories on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.\n\nAn example final project from another course (where the project is similar) can be seen here: Breast Cancer Predictor",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 2"
+    ]
+  },
+  {
+    "objectID": "project/m2.html#milestone-2-summary",
+    "href": "project/m2.html#milestone-2-summary",
+    "title": "Milestone 2",
+    "section": "Milestone 2 summary",
+    "text": "Milestone 2 summary\nIn this milestone, you will:\n\nUpgrade your project’s computational environment to a container.\nAbstract more code from your literate code document (*.ipynb, *.Rmd, or .qmd) to scripts (e.g., .R or .py). You should aim to split the analysis code into 4, or more, R or Python scripts. Where the code in each script is contributing to a related step in your analysis.\nConvert your *.ipynb or *.Rmd files into a Quarto document (*.qmd). Edit your Quarto document so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report. The goal is that non-data scientists would not be able to tell that code was used to perform your analysis or format your report (i.e., no code should be visible in the rendered report).\nWrite another script, a Makefile (literally called Makefile), to act as a driver script to rule them all. This script should run the others in sequence, hard coding in the appropriate arguments.\nContinue to manage issues professionally.",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 2"
+    ]
+  },
+  {
+    "objectID": "project/m2.html#milestone-2-specifics",
+    "href": "project/m2.html#milestone-2-specifics",
+    "title": "Milestone 2",
+    "section": "Milestone 2 specifics",
+    "text": "Milestone 2 specifics\n\n0. Address any issues with your document or code from Milestone 1\nThese milestones build on one another, addressing issues from the previous milestone will make moving on to the next one easier.\n\n\n1. Upgrade your project’s computational environment to a container.\nWrite a Dockerfile to create a custom container for the computational environment for your project. Build your container using GitHub Actions, and publish your container image on DockerHub. Once this is done, shift the development of your project from working in a virtual environment to working in a container!\nThe Dockerfile is the file used to specify and create the Docker image from which containers can be run to create an reproducible computational environment for your analysis. For this project, we recommend using a base Docker image that already has most of the software dependencies needed for your analysis. Examples of these include the Jupyter core team Docker images (documentation) and the Rocker team Docker images (documentation). When you add other software dependencies to this Dockerfile, ensure that you pin the version of the software that you add.\nNote - this document should live in the root of your public GitHub.com repository.\nIn this milestone, we expect you to add a GitHub Actions workflow to automatically build the image, push it to DockerHub, and version the image (using the corresponding GitHub SHA) and GitHub repo when changes are pushed to the Dockerfile.\nYou will need to add your DockerHub username and password (naming them DOCKER_USERNAME and DOCKER_PASSWORD, respectively) as GitHub secrets to this repository for this to work. This part is similar to Individual Assignment 2.\nAdditionally, document how to use your container image in your README. This is important to make it easy for you and your team to shift to a container solution for your computational environment. We highly recommend using Docker Compose so that launching your containers is as frictionless as possible (which makes you more likely to use this tool in your workflow)!\n\n\n2. Abstract more code from your literate code document (*.ipynb, *.Rmd, or .qmd) to scripts (e.g., .R or .py).\nThis code need not be converted to a function, but can simply be files that call the functions needed to run your analysis. You should aim to split the analysis code into 4, or more, R or Python scripts. Where the code in each script is contributing to a related step in your analysis.\nThe output of the first script must be the input of the second, and so on. All scripts should have command line arguments and we expect you to use either the docopt R package or the click Python package for parsing command line arguments.\nThey scripts could be organized something like this:\n\nA first script that downloads the data from the internet and saves it locally. This should take at least two arguments:\n\nthe path to the input file (a URL or a relative local path, such as data/file.csv), as well as\na path/filename where to write the file to and what to call it (e.g., data/cleaned_data.csv).\n\nNote: choose more descriptive filenames than the ones used above. These are general for illustrative purposes.\nA second script that reads the data from the first script and performs and data cleaning/pre-processing, transforming, and/or partitioning that needs to happen before exploratory data analysis or modeling takes place. This should take at least two arguments:\n\na path/filename pointing to the data to be read in\na path/filename pointing to where the cleaned/processed/transformed/partitioned data should live.\n\nA third script which creates exploratory data visualization(s) and table(s) that are useful to help the reader/consumer understand that data set. These analysis artifacts should be written to files. This should take at least two arguments:\n\na path/filename pointing to the data,\na path/filename prefix where to write the figure to and what to call it (e.g., results/this_eda.png).\n\nA fourth script that reads the data from the second script, performs the modeling and summarizes the results as a figure(s) and a table(s). These analysis artifacts should be written to files. This should take at least two arguments:\n\na path/filename pointing to the data\na path/filename prefix where to write the figure(s)/table(s) to and what to call it (e.g., results/this_analysis)\n\n\n\n\n3. Convert your *.ipynb or *.Rmd files into a Quarto document (*.qmd). Edit your Quarto document so that it’s sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report\nThe goal is that non-data scientists would not be able to tell that code was used to perform your analysis or format your report (i.e., no code should be visible in the rendered report). You should do all the things you did for the report in individual assignment 4, including:\n\nUse markdown headers and Quarto configuration so that a table of contents will be created when the document is rendered.\nAdd correctly formatted inline bibtex references so that a nicely formatted reference list will be present at the end of the document.\nEdit the figure formatting so that Quarto:\n\nautomatically numbers them,\nhas a label for easy cross referencing, and\ncontrols the figure sizes so the figures are not too big.\n\nAdd a table description argument so that they are automatically numbered by Quarto and use cross referencing to link to the table if/when it is discussed in the text.\nEdit the narrative so it uses cross-referencing to refer to the figures and tables instead of having their reference hardcode the figure and table numbers.\nReplace any hard-coded values in the Quarto report narrative text with inline Quarto code, so that the text will be automatically updated with the correct value.\nChange the code chunk options so that no code is viewable in the rendered report, just the code outputs where needed (e.g., figures and tables).\n\n\n\n4. Write another script, a Makefile (literally called Makefile), to act as a driver script to rule them all\nThis script should run the others in sequence, hard coding in the appropriate arguments. This script should:\n\nlive in the project’s root directory and be named Makefile\nbe well documented (using the project README and comments inside the Makefile to explain what it does and how to use it)\nhave a all target so that you can easily run the entire analysis from top to bottom by running make all at the command line\nhave a clean target so that you can easily “undo” your analysis by running make clean at the command line (e.g., deletes all generate data and files).\n\nTip:\n\nThe all target can be a .PHONY target\nYou can create other targets that link up all the dependencies\n\nFor example, data, analysis, figures, pdf, etc, so your build process only runs what’s necessary during development\n\n\n\n\n5. Continue to manage issues professionally\nContinue managing issues effectively through project boards and milestones, make it clear who is responsible for what and what project milestone each task is associated with. In particular, create an issue for each task and/or sub-task needed for this milestone. Each of these issues must be assigned to a single person on the team. We want all of you to get coding experience in the project and each team member should be responsible for an approximately equal portion of the code.",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 2"
+    ]
+  },
+  {
+    "objectID": "project/m2.html#submission-instructions",
+    "href": "project/m2.html#submission-instructions",
+    "title": "Milestone 2",
+    "section": "Submission Instructions",
+    "text": "Submission Instructions\nYou will submit three URLs to Canvas in the provided text box for milestone 2:\n\nthe URL of your project’s GitHub.com repository\nthe URL of a GitHub release of your project’s GitHub.com repository for this milestone.\nThe URL of your Dockerhub image that can be pulled and used to run your analysis following your README.md instructions.\n\n\nCreating a release on GitHub.com\nJust before you submit the milestone 2, create a release on your project repository on GitHub and name it something like 1.0.0 (how to create a release). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 2"
+    ]
+  },
+  {
+    "objectID": "project/m2.html#expectations",
+    "href": "project/m2.html#expectations",
+    "title": "Milestone 2",
+    "section": "Expectations",
+    "text": "Expectations\n\nEveryone should contribute equally to all aspects of the project (e.g., code, writing, project management). This should be evidenced by a roughly equal number of commits, pull request reviews and participation in communication via GitHub issues.\nEach group member should work in a GitHub flow workflow; where they create branches for each feature or fix, which are reviewed and critiqued by at least one other teammate before the the pull request is accepted.\nYou should be committing to git and pushing to GitHub.com every time you work on this project.\nGit commit messages should be meaningful. These will be marked. It’s OK if one or two are less meaningful, but most should be.\nUse GitHub issues to communicate to their team mate (as opposed to email or Slack).\nYour question, analysis and visualization should make sense. It doesn’t have to be complicated.\nYour analysis should be correct, and run reproducibly given the instructions provided in the README.\nYou should use proper grammar and full sentences in your README. Point form may occur, but should be less than 10% of your written documents.\nR code should follow the tidyverse style guide, and Python code should follow the black style guide for Python)\nYou should not have extraneous files in your repository that should be ignored.",
+    "crumbs": [
+      "Assessments",
+      "Milestone",
+      "Milestone 2"
     ]
   },
   {
