@@ -1,0 +1,133 @@
+---
+title: Tutorial 9
+---
+
+Creating a quarto website.
+
+You can see the course notes for quarto + github pages here:
+<https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/930-quarto-ghpages.html>
+
+You will be doing the final exercise listed in the chapter for the tutorial.
+
+*Creating and Deploying a Quarto Website**
+
+**Objective:** By completing this exercise, students will gain hands-on experience in creating a Quarto website and deploying it using GitHub Pages.
+
+**Instructions:**
+
+1. **Create a New Quarto Website Project:**
+   - Open your command line interface (Terminal on Mac/Linux, Command Prompt/PowerShell on Windows).
+   - Use the `quarto create project` command to create a new Quarto website project.
+
+   ```bash
+   quarto create project
+   ```
+
+   - Select "website" as the project type and provide a directory name for your project.
+
+2. **Navigate to Your Project Directory:**
+   - Change into the newly created project directory.
+
+   ```bash
+   cd your_project_directory
+   ```
+
+3. **Customize Your Quarto Website:**
+   - Open the `_quarto.yml` file in a text editor and customize the settings as needed.
+
+   ```yml
+   project:
+     type: website
+     output-dir: docs
+   ```
+
+   - Modify the content of the `index.qmd` and `about.qmd` files to personalize your website.
+
+4. **Render Your Quarto Website:**
+   - Use the `quarto render` command to generate the HTML files for your website.
+
+   ```bash
+   quarto render
+   ```
+
+   - Verify that the output is created in the `docs` directory.
+
+5. **Initialize a Git Repository:**
+   - If you haven't already, initialize a Git repository in your project directory.
+
+   ```bash
+   git init
+   ```
+
+   - Add all files to the Git repository and commit them.
+
+   ```bash
+   git add .
+   git commit -m "Initial commit of Quarto website"
+   ```
+
+6. **Push Your Project to GitHub:**
+   - Create a new repository on GitHub and follow the instructions to push your local repository to GitHub.
+
+   ```bash
+   git remote add origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+7. **Enable GitHub Pages:**
+   - Go to the settings of your GitHub repository.
+   - Under the "Pages" section, set the source to the `docs` folder on the `main` branch.
+   - Save the settings and wait for GitHub to publish your website.
+
+8. **Verify Your Website:**
+   - Navigate to `https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME` to see your published Quarto website.
+
+9. **Migrate the website to the gh-pages branch**
+    - delete the `docs` folder that renders your website
+    - ignore the `docs` and `_site` folder in your `.gitignore`
+    - Create and publish your website to the `gh-pages` branch
+
+    ```bash
+    git checkout --orphan gh-pages
+    git reset --hard # make sure all changes are committed before running this!
+    git commit --allow-empty -m "Initialising gh-pages branch"
+    git push origin gh-pages
+
+    quarto publish gh-pages
+    ```
+
+    You can still use regular `quarto render` or `quarto preview` to build your site locally,
+    you will no longer need to manually build and push the site to the `main` branch
+
+10. **Auto build the site using a github action**
+    - Auto build the website when changes are pushed to main.
+      **make sure you manually publish to the gh-pages branch before creating the workflow**.
+
+    ```yaml
+    on:
+      workflow_dispatch:
+      push:
+        branches: main
+
+    name: Quarto Publish
+
+    jobs:
+      build-deploy:
+        runs-on: ubuntu-latest
+        permissions:
+          contents: write
+        steps:
+          - name: Check out repository
+            uses: actions/checkout@v4
+
+          - name: Set up Quarto
+            uses: quarto-dev/quarto-actions/setup@v2
+
+          - name: Render and Publish
+            uses: quarto-dev/quarto-actions/publish@v2
+            with:
+              target: gh-pages
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    ```
