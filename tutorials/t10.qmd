@@ -1,0 +1,7 @@
+---
+title: Tutorial 10
+---
+
+Packaging
+
+- Start going through [Individual Assignment 5](/individual_assignment/ia5.qmd) and start the packaging assignment.
