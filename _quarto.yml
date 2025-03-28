@@ -79,6 +79,7 @@ website:
         - tutorials/t7.qmd
         - tutorials/t8.qmd
         - tutorials/t9.qmd
+        - tutorials/t10.qmd
 
 
 format:
