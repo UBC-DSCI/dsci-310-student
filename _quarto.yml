@@ -66,6 +66,10 @@ website:
           contents:
             - project/teamwork_contract.qmd
 
+        - section: "Peer Review"
+          contents:
+            - project/peer_review.qmd
+
     - title: Tutorials
       contents:
         - tutorials.qmd
