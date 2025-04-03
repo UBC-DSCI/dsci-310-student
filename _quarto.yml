@@ -59,6 +59,7 @@ website:
             - project/m1.qmd
             - project/m2.qmd
             - project/m3.qmd
+            - project/m4.qmd
 
         - text: "---"
 
