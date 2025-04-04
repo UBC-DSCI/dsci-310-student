@@ -1,0 +1,12 @@
+---
+title: Tutorial 11
+---
+
+Continue Packaging
+
+- Start going through [Individual Assignment 5](/individual_assignment/ia5.qmd) and start the packaging assignment.
+
+Additional Steps:
+
+- Continuous Integration: Add automatic checks and code coverage to your package: <https://r-pkgs.org/software-development-practices.html#sec-sw-dev-practices-gha>
+- Continuous Deployment: Add a website for your package: <https://r-pkgs.org/website.html>
