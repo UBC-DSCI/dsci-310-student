@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tutorial 6: Refactor Quarto Doc – DSCI 310</title>
+<title>Tutorial 11 – DSCI 310</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tutorials/t7.html" rel="next">
-<link href="../tutorials/t5.html" rel="prev">
+<link href="../tutorials/t10.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -127,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/t6.html">Tutorial 6: Refactor Quarto Doc</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorials/t11.html">Tutorial 11</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -178,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/t6.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tutorials/t6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tutorial 6: Refactor Quarto Doc</span></a>
   </div>
 </li>
@@ -208,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutorials/t11.html" class="sidebar-item-text sidebar-link">
+  <a href="../tutorials/t11.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tutorial 11</span></a>
   </div>
 </li>
@@ -217,21 +216,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#refactoring-a-quarto-report" id="toc-refactoring-a-quarto-report" class="nav-link active" data-scroll-target="#refactoring-a-quarto-report">Refactoring a Quarto Report</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t6.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t6.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tutorial 6: Refactor Quarto Doc</h1>
+<h1 class="title">Tutorial 11</h1>
 </div>
 
 
@@ -248,21 +241,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="refactoring-a-quarto-report" class="level2">
-<h2 class="anchored" data-anchor-id="refactoring-a-quarto-report">Refactoring a Quarto Report</h2>
-<p>Below you fill find the text for an example data analysis report using R and Quarto.</p>
-<ol type="1">
-<li>Copy the text below into your own quarto document</li>
-<li>Render the document to check it is all working</li>
-<li>Your task is to refactor each section into separate R scripts (<code>01_load_data.R</code>, <code>02_methods.R</code>, <code>03_model.R</code>, <code>04_results.R</code>) and make sure each script can completely run independently from one another without <code>source()</code>ing another script.</li>
-<li>Your scripts should save out what ever data artifact it needs for both the pipline code and the quarto report</li>
-<li>Create a <code>Makefile</code> with a target named <code>all</code> that will run all the scripts in the correct order.</li>
-<li>Edit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.</li>
-</ol>
-<p>You can download the sample quarto document here: <a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd" class="uri">https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd</a></p>
+<p>Continue Packaging</p>
+<ul>
+<li>Start going through <a href="../individual_assignment/ia5.html">Individual Assignment 5</a> and start the packaging assignment.</li>
+</ul>
+<p>Additional Steps:</p>
+<ul>
+<li>Continuous Integration: Add automatic checks and code coverage to your package: <a href="https://r-pkgs.org/software-development-practices.html#sec-sw-dev-practices-gha" class="uri">https://r-pkgs.org/software-development-practices.html#sec-sw-dev-practices-gha</a></li>
+<li>Continuous Deployment: Add a website for your package: <a href="https://r-pkgs.org/website.html" class="uri">https://r-pkgs.org/website.html</a></li>
+</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -684,14 +673,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutorials/t5.html" class="pagination-link" aria-label="Tutorial 5">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tutorial 5</span>
+      <a href="../tutorials/t10.html" class="pagination-link" aria-label="Tutorial 10">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tutorial 10</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tutorials/t7.html" class="pagination-link" aria-label="Tutorial 7">
-        <span class="nav-page-text">Tutorial 7</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -699,4 +685,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t6.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t6.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t11.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
