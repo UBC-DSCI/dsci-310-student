@@ -58,7 +58,7 @@ Your new version control repository for your packaged functions should:
 - be given a name relevant to the functions it contains
 (just like the data science packages you know and love are).
 
-- be in the DSCI-310-2024 organization: https://github.com/DSCI-310-2024
+- be in the DSCI-310-2025 organization: https://github.com/DSCI-310-2025
 
 - contain at least 3 or 4 useful functions that handle errors gracefully
   (you already wrote these - you need to now
