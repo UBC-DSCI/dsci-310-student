@@ -4,7 +4,7 @@ title: "Teamwork Feedback"
 
 Team work reflection document - contributes to part of the individual team work grade.
 
-*You can access an editable version of this file [here]().*
+*You can access an editable version of this file [here](https://github.com/UBC-DSCI/dsci-310-student/blob/main/project/teamwork_feedback.qmd).*
 
 The purpose of this individual report
 is to give you an avenue to present your viewpoint
@@ -106,5 +106,5 @@ comment on the following areas:
 ## Submission instructions
 
 - Fill out this form
-(editable version of the form available [here]())
+(editable version of the form available [here](https://github.com/UBC-DSCI/dsci-310-student/blob/main/project/teamwork_feedback.qmd))
 and convert it to an `.pdf` document and submit it to Gradescope
