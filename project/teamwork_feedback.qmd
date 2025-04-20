@@ -34,7 +34,7 @@ Use the following ratings:
 ## 0. Group number
 
 What Group number are you in?
-
+06
 ## 1. Preparation
 
 - Prepared for group meetings and presentations
@@ -45,9 +45,9 @@ What Group number are you in?
 
 | Group member name | Preparation rating |
 |-------------------|--------------------|
-|                   |                    |
-|                   |                    |
-|                   |                    |
+|   Kaylee li       |  4                 |
+|   Luke Huang      |  4                 |
+|  Nicholas  Tam    |  4                 |
 
 ## 2. Participation & communication
 
@@ -58,9 +58,9 @@ What Group number are you in?
 
 | Group member name | Participation & communication rating |
 |-------------------|--------------------------------------|
-|                   |                                      |
-|                   |                                      |
-|                   |                                      |
+|   Kaylee li       |  4                                   |
+|   Luke Huang      |  4                                   |
+|  Nicholas  Tam    |  4                                   |
 
 ## 3. Helps group excel
 
@@ -72,9 +72,9 @@ What Group number are you in?
 
 | Group member name | Helps group excel rating |
 |-------------------|--------------------------|
-|                   |                          |
-|                   |                          |
-|                   |                          |
+|   Kaylee li       |  4                       |
+|   Luke Huang      |  4                       |
+|  Nicholas  Tam    |  4                       |
 
 ## 4. Team player (cooperation)
 
@@ -86,9 +86,9 @@ What Group number are you in?
 
 | Group member name | Team player (cooperation) rating |
 |-------------------|----------------------------------|
-|                   |                                  |
-|                   |                                  |
-|                   |                                  |
+|   Kaylee li       |  4                               |
+|   Luke Huang      |  4                               |
+|  Nicholas  Tam    |  4                               |
 
 Below,
 briefly describe the specific contributions each team member
@@ -103,6 +103,11 @@ comment on the following areas:
     - What were the roles of others in your group?
 - What went well and poorly throughout the team project experience?
 
+- We all worked on each milestone mostly together. We set up a meeting every time a milestone was released and divided up the tasks equally. I worked with both parts of the code as well as some writing
+or explaining parts like the introduction, code of conduct, including vignettes. Nicholas and Kaylee mostly worked with setting up the environments and makefiles. Luke worked with me on some milestones and also worked
+independently for some coding tasks. The other team members also contributed to code as well as the writing parts. We also after finishing the tasks looked over each others
+work and gace feedback. What went well was that we made a groupchat and regularly updated each other and asked for help if needed. Everybody was super helpful and would respond quickly. What could be improved
+was that for one of the milestones we miscalculated the amount of time it would take for one of the tasks and kind of left things to the last minute and it was very stressful to work on it as the deadline was approaching. However, we decided to start the rest of them way earlier to avoid the same thing happening. Overall, everything was fairly smooth.
 ## Submission instructions
 
 - Fill out this form
