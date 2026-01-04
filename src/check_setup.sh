@@ -50,10 +50,10 @@ elif [[ "$(uname)" == 'Darwin' ]]; then
 elif [[ "$OSTYPE" == 'msys' ]]; then
     # wmic use some non-ASCII characters that we need grep (or sort or similar) to convert,
     # otherwise the logfile looks weird. There is also an additional newline at the end.
-    os_edition=$(wmic os get caption | grep Micro | sed 's/\n//g')
+    os_edition=$(powershell -c "(Get-CimInstance Win32_OperatingSystem).Caption")
     echo $os_edition >> check-setup-310.log
-    wmic os get osarchitecture | grep bit | sed 's/\n//g' >> check-setup-310.log
-    os_version=$(wmic os get version | grep 10 | sed 's/\n//g')
+    powershell -c "Write-Host (Get-CimInstance Win32_OperatingSystem).OSArchitecture" >> check-setup-310.log
+    os_version=$(powershell -c "(Get-CimInstance Win32_OperatingSystem).Version")
     echo $os_version >> check-setup-310.log
     file_browser="explorer"
 
