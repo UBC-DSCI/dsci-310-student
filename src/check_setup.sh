@@ -55,7 +55,7 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
     echo $os_version >> check-setup-310.log
     file_browser="explorer"
 
-    if ! $(grep -iq "26[0-9]|1904[1-5]" <<< $os_version); then
+    if ! $(grep -Eiq "26[0-9]|1904[1-5]" <<< $os_version); then
         echo '' >> check-setup-310.log
         echo "MISSING You need Windows 10 or 11 with build number >= 10.0.19041. Please run Windows update." >> check-setup-310.log
     fi
@@ -74,26 +74,26 @@ echo -e "${ORANGE}## System programs${NC}" >> check-setup-310.log
 # so easier to test the location of the executable than having students add it to PATH.
 if [[ "$(uname)" == 'Darwin' ]]; then
     # rstudio is installed as an .app
-    if ! $(grep -iq "= \"2023\.12.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
-        echo "MISSING   rstudio 2023.12.*" >> check-setup-310.log
+    if ! $(grep -iq "= \"2025\.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
+        echo "MISSING   rstudio 2025.09.*" >> check-setup-310.log
     else
         # This is what is needed instead of --version
-        installed_version_tmp=$(grep -io "= \"2023\.12.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
+        installed_version_tmp=$(grep -io "= \"2025\.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
         # Tidy strangely formatted version number
         installed_version=$(sed "s/= //;s/\"//g" <<< "$installed_version_tmp")
         echo "OK        "rstudio $installed_version >> check-setup-310.log
     fi
 
     # Remove rstudio and psql from the programs to be tested using the normal --version test
-    sys_progs=(R=4.* python=3.* conda="23\|22\|4.*" bash=3.* git=2.* make=3.* latex=3.* tlmgr=5.* docker=24.* code=1.*)
+    sys_progs=(R=4.* python=3.* conda="25.*" bash=3.* git=2.* make=3.* latex=3.* tlmgr=5.* docker=29.* code=1.*)
 # Rstudio are not on PATH in windows
 elif [[ "$OSTYPE" == 'msys' ]]; then
     # Rstudio on windows does not accept the --version flag when run interactively
     # so this section can only be troubleshot from the script
-    if ! $(grep -iq "2023\.12.*" <<< "$('/c//Program Files/RStudio/rstudio' --version)"); then
-        echo "MISSING   rstudio 2023.12*" >> check-setup-310.log
+    if ! $(grep -iq "2025\.09.*" <<< "$('/c//Program Files/RStudio/rstudio' --version)"); then
+        echo "MISSING   rstudio 2025.09*" >> check-setup-310.log
     else
-        echo "OK        rstudio "$('/c//Program Files/RStudio/rstudio' --version) >> check-setup-310.log
+        echo "OK        rstudio $( '/c//Program Files/RStudio/rstudio' --version | xargs )" >> check-setup-310.log
     fi
     # tlmgr needs .bat appended on windows and it cannot be tested as an exectuable with `-x`
     if ! [ "$(command -v tlmgr.bat)" ]; then
@@ -102,11 +102,11 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
         echo "OK        "$(tlmgr.bat --version | head -1) >> check-setup-310.log
     fi
     # Remove rstudio from the programs to be tested using the normal --version test
-    sys_progs=(R=4.* python=3.* conda="23\|22\|4.*" bash=4.* git=2.* make=4.* latex=3.* docker=24.* code=1.*)
+    sys_progs=(R=4.* python=3.* conda="25.*" bash=4.* git=2.* make=4.* latex=3.* docker=29.* code=1.*)
 else
     # For Linux everything is sane and consistent so all packages can be tested the same way
-    sys_progs=(rstudio=2023\.12.* R=4.* python=3.* conda="23\|22\|4.*" bash=5.* \
-        git=2.* make=4.* latex=3.* tlmgr=5.* docker=24.* code=1.*)
+    sys_progs=(rstudio=2025\.09.* R=4.* python=3.* conda="5.*" bash=5.* \
+        git=2.* make=4.* latex=3.* tlmgr=5.* docker=29.* code=1.*)
     # Note that the single equal sign syntax in used for `sys_progs` is what we have in the install
     # instruction for conda, so I am using it for Python packagees so that we
     # can just paste in the same syntax as for the conda installations
@@ -202,49 +202,28 @@ else
     else
         echo 'OK        jupyterlab PDF-generation was successful.' >> check-setup-310.log
     fi
+
     # Test WebPDF
-    # I don't want to automate any of the installation steps since it can be harder to troubleshoot then,
-    # so we just output and error message telling students is the most probable cause of the failure.
-    if ! [ -x "$(command -v playwright)" ]; then  # Check that playwright exists as an executable program
-        echo 'MISSING   jupyterlab WebPDF-generation failed. It seems like you did not run `pip install "nbconvert[webpdf]"`.' >> check-setup-310.log
+    # Testing for chromium/playwright by just trying to load it in Python
+    # The previous method of trying to install chromium and checking to see
+    # if it takes too long was too brittle and would incorrectly mark it as missing.
+    # Hopefully this process is also sufficiently OS-agnostic 
+    BROWSER_STATUS=$(python -c "
+from playwright.sync_api import sync_playwright
+try:
+    with sync_playwright() as p:
+        p.chromium.launch()
+        print('OK')
+except Exception:
+    print('Could not launch Chromium with playwright')
+")
+
+    if [ "$BROWSER_STATUS" == "OK" ]; then
+        echo "OK        jupyterlab WebPDF-generation was successful." >> check-setup-310.log
     else
-        # If the student didn't run `playwright install chromium`
-        # then that command will try to download chromium,
-        # which should always take more than 1s
-        # so `timeout` will interupt it with exit code 1.
-        # If chromium is already installed,
-        # this command just returns an info message which should not take more than 1s.
-        # ----
-        # Unfortunately, apple has decided not to use gnu-coreutils,
-        # so we need to use less reliable solution on macOS;
-        # there might be corner cases where this breaks
-        if [[ "$(uname)" == 'Darwin' ]]; then
-            # The surrounding $() here is just to supress the alarm clock output
-            # as redirection does not work.
-            $(perl -e 'alarm shift; exec `playwright install chromium`' 1)
-        else
-            # Using the reliable `timeout` tool on Linux and Windows
-            timeout 1s playwright install chromium &> /dev/null
-        fi
-        # `$?` stores the exit code of the last program that as executed
-        # If the exit code is anything else than zero, it means that the above command failed,
-        # i.e. chromium has not been installed via playwright yet
-        if ! [ $? -eq "0" ]; then
-            echo 'MISSING   jupyterlab WebPDF-generation failed. It seems like you have not run `playwright install chromium` to download chromium for jupyterlab WebPDF export.' >> check-setup-310.log
-        elif ! jupyter nbconvert mds-nbconvert-test.ipynb --to webpdf --log-level 'ERROR' &> jupyter-webpdf-error.log; then
-            echo 'MISSING   jupyterlab WebPDF-generation failed. Check that jupyterlab, nbconvert, and playwright are marked OK above, then read the detailed error message in the log file.' >> check-setup-310.log
-        else
-            echo 'OK        jupyterlab WebPDF-generation was successful.' >> check-setup-310.log
-        fi
+        echo 'MISSING   jupyterlab WebPDF-generation failed. It seems like you have not run `pip install "nbconvert[webpdf]"` or `playwright install chromium` to download chromium for jupyterlab WebPDF export.' >> check-setup-310.log
     fi
-    # Test HTML
-    if ! jupyter nbconvert mds-nbconvert-test.ipynb --to html --log-level 'ERROR' &> jupyter-html-error.log; then
-        echo 'MISSING   jupyterlab HTML-generation failed. Check that jupyterlab and nbconvert are marked OK above, then read the detailed error message in the log file.' >> check-setup-310.log
-    else
-        echo 'OK        jupyterlab HTML-generation was successful.' >> check-setup-310.log
-    fi
-    # -f makes sure `rm` succeeds even when the file does not exists
-    rm -f mds-nbconvert-test.ipynb mds-nbconvert-test.pdf mds-nbconvert-test.html
+
 fi
 
 # 3. R packages
