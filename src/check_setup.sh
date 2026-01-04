@@ -48,8 +48,6 @@ elif [[ "$(uname)" == 'Darwin' ]]; then
         echo "MISSING You need macOS Big Sur or greater (>=11.4)." >> check-setup-310.log
     fi
 elif [[ "$OSTYPE" == 'msys' ]]; then
-    # wmic use some non-ASCII characters that we need grep (or sort or similar) to convert,
-    # otherwise the logfile looks weird. There is also an additional newline at the end.
     os_edition=$(powershell -c "(Get-CimInstance Win32_OperatingSystem).Caption")
     echo $os_edition >> check-setup-310.log
     powershell -c "Write-Host (Get-CimInstance Win32_OperatingSystem).OSArchitecture" >> check-setup-310.log
@@ -57,7 +55,7 @@ elif [[ "$OSTYPE" == 'msys' ]]; then
     echo $os_version >> check-setup-310.log
     file_browser="explorer"
 
-    if ! $(grep -iq "22[0-9]|1904[1|2|3|4]" <<< $os_version); then
+    if ! $(grep -iq "26[0-9]|1904[1-5]" <<< $os_version); then
         echo '' >> check-setup-310.log
         echo "MISSING You need Windows 10 or 11 with build number >= 10.0.19041. Please run Windows update." >> check-setup-310.log
     fi
