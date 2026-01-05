@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 
 # 0. Help message and OS info
 echo ''
-echo -e "${ORANGE}# DSCI 310 setup check 2024.1${NC}" | tee check-setup-310.log
+echo -e "${ORANGE}# DSCI 310 setup check 2025W2.1${NC}" | tee check-setup-310.log
 echo '' | tee -a check-setup-310.log
 echo 'If a program or package is marked as MISSING,'
 echo 'this means that you are missing the required version of that program or package.'
