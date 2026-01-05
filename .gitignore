@@ -10,3 +10,5 @@ docs/search.json
 _site
 
 /.quarto/
+
+**/*.quarto_ipynb

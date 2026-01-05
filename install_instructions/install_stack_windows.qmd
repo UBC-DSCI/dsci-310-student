@@ -77,6 +77,11 @@ run the installer and accept the default configuration for all pages except for 
 [To install windows terminal visit this link](https://aka.ms/terminal)
 and click `Get` to open it in Windows Store.
 Inside the Store, click `Get` again and then click `Install`.
+
+> **Note:** Some Windows 11 users might have Windows Terminal installed by default, 
+> and so it might appear that nothing is installed when they follow these instructions. 
+> To confirm, hit `Windows Key` and then type `terminal` and confirm the terminal is there. 
+
 After installation,
 click `Launch` to start Windows Terminal.
 In the top of the window,
@@ -147,7 +152,7 @@ git --version
 ```
 
 ```bash
-git version 2.42.0.windows.2
+git version 2.52.0.windows.1
 ```
 
 > **Note:** Some of the Git commands we will use are only available since Git 2.23,
@@ -162,8 +167,8 @@ code --version
 ```
 
 ```bash
-1.81.1
-6d9b74a70ca9c7733b29f0456fd8195364076dda
+1.107.1
+994fd12f8d3a5aa16f17d42c041e5809167e845a
 x64
 ```
 
@@ -199,7 +204,7 @@ code ~/.bash_profile
 
 Append the following lines:
 
-```
+```bash
 # Set the default editor for programs launch from terminal
 EDITOR="code --wait"
 VISUAL=$EDITOR  # Use the same value as for "EDITOR" in the line above
@@ -282,10 +287,10 @@ After installation, open the Start Menu and search for the program called "Minif
 python --version
 ```
 
-which should return Python 3.11.0 or greater:
+which should return Python 3.12.0 or greater:
 
 ```
-Python 3.11.0
+Python 3.12.12
 ```
 
 If not, run the following command in the Miniforge Prompt,
@@ -293,12 +298,12 @@ Confirm that you are in the `(base)` environment.
 Then update the base python with:
 
 ```bash
-conda install python=3.11
+conda install python=3.12
 ```
 
 ### Integrating Python with the Git Bash terminal
 
-To avoid having to open the separate Anaconda Prompt every time we want to use Python, we can make it available from the (Git Bash) terminal, which is what we will be using most of the time. To set this up, open the "Anaconda Prompt (miniconda3)" again and type:
+To avoid having to open the separate Miniforge Prompt every time we want to use Python, we can make it available from the (Git Bash) terminal, which is what we will be using most of the time. To set this up, open the "Miniforge Prompt" again and type:
 
 ```bash
 conda init bash
@@ -317,7 +322,7 @@ python --version
 you should now see the same output as above:
 
 ```bash
-Python 3.11.0
+Python 3.12.12
 ```
 
 Let's also check the version of the `conda` package manager. If you type
@@ -329,12 +334,12 @@ conda --version
 you should see something like this
 
 ```bash
-conda 23.5.2
+conda 25.11.1
 ```
 
 > **Optional:** One annoyance with our current terminal setup is that the word `(base)`
 > is not on the same row as the rest of the prompt string
-> (the part with `your_name@your_computer`.
+> (the part with `your_name@your_computer`).
 > To fix this we can edit the `.bash_profile` configuration file to indicate
 > that we do not want a newline at the beginning of the prompt string.
 > Open up the configuration file using VS Code by typing the following command into a terminal:
@@ -343,7 +348,7 @@ conda 23.5.2
 > code "/c/Program Files/Git/etc/profile.d/git-prompt.sh"
 > ```
 >
-> Delete the line that reads the following (it should be line 13):
+> Delete the line that reads the following (it should be line 13, but could be elsewhere):
 >
 > ```
 > PS1="$PS1"'\n'       # new line
@@ -444,9 +449,9 @@ R --version
 which should return something like:
 
 ```bash
-R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
-Copyright (C) 2022 The R Foundation for Statistical Computing
-Platform: x86_64-w64-mingw32/x64 (64-bit)
+R version 4.5.2 (2025-10-31 ucrt) -- "[Not] Part in a Rumble"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under the terms of the
@@ -496,7 +501,7 @@ If you open the console in RStudio and also R from the Windows Terminal
 both applications should return the same values, and the first one should be a path inside your user directory e.g.
 
 ```R
-"C:/Users/florencia/R/win-library/4.2" "C:/Program Files/R/R-4.2.2/library"
+"C:/Users/florencia/R/win-library/4.5" "C:/Program Files/R/R-4.5.2/library"
 ```
 
 If they don't return the same paths, please try to setting up your environmental variable again
@@ -522,7 +527,7 @@ install.packages("tidyverse")
 ### Rtools
 
 Windows users will also need to install Rtools, which will allow you to use external libraries.
-Go to <http://cran.r-project.org/bin/windows/Rtools/> and download the latest version (e.g., rtools40v2-x86_64.exe).
+Go to <http://cran.r-project.org/bin/windows/Rtools/> and download the latest version (e.g., rtools45-6691-6492.exe).
 After the download has finished, run the installer with the default configuration.
 **Do not** follow the Rtools' website instructions for "Putting Rtools on the PATH".
 RStudio will put Rtools on the PATH automatically when it is needed.
@@ -578,11 +583,19 @@ Go to `Settings -> Settings Editor`. Then click `JSON Settings Editor` in the to
 You will see two panels,
 the right-most panel allows you to perform advanced modification
 of keyboards shortcuts in JupyterLab
-and it already contains quite a few shortcuts.
+and it might already contain quite a few shortcuts.
+For some, the right side might be completely blank. 
 We're going to add two more shortcuts,
-by pasting a text snippet just before the first existing shortcut.
-Go ahead and create a new line just after the line that says `"shortcuts": [`
-and paste the following:
+by pasting a text snippet.
+
+If the right side is completely blank, paste the following code:
+```json
+{"shortcuts":[
+]}
+```
+
+Whether or not there are already settings, or you pasted the code above, now go ahead and create a new line just after the line that says `"shortcuts": [`
+and paste the following code.
 
 
 ```json
@@ -644,10 +657,10 @@ quarto --version
 If the installation was successful you will read the output:
 
 ```bash
-1.3.450
+1.8.26
 ```
 
-> **Note:** Pay attention that due to the Windows settings suggested in this installation you will always have to write  `quarto.cmd` instead of `quarto` to run Quarto commands. Read more [here](https://community.rstudio.com/t/bash-quarto-command-not-found/144187/3).
+> **Note:** Pay attention that due to the Windows settings suggested in this installation you *might* have to write  `quarto.cmd` instead of `quarto` to run Quarto commands. Try using `quarto` first, and if doesn't work, then use `quarto.cmd`. Read more [here](https://community.rstudio.com/t/bash-quarto-command-not-found/144187/3).
 
 
 
@@ -681,18 +694,18 @@ latex --version
 You should see something like this if you were successful:
 
 ```
-pdfTeX 3.141592653-2.6-1.40.24 (TeX Live 2022)
-kpathsea version 6.3.4
-Copyright 2022 Han The Thanh (pdfTeX) et al.
+pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025)
+kpathsea version 6.4.1
+Copyright 2025 Han The Thanh (pdfTeX) et al.
 There is NO warranty.  Redistribution of this software is
 covered by the terms of both the pdfTeX copyright and
 the Lesser GNU General Public License.
 For more information about these matters, see the file
 named COPYING and the pdfTeX source.
 Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
-Compiled with libpng 1.6.37; using libpng 1.6.37
-Compiled with zlib 1.2.11; using zlib 1.2.11
-Compiled with xpdf version 4.03
+Compiled with libpng 1.6.46; using libpng 1.6.46
+Compiled with zlib 1.3.1; using zlib 1.3.1
+Compiled with xpdf version 4.04
 ```
 
 The above is all we need to have LaTeX work with R Markdown documents, however for Jupyter we need to add several more packages.
@@ -710,7 +723,6 @@ tlmgr.bat install eurosym \
   environ \
   fp \
   jknapltx \
-  ms \
   parskip \
   pdfcol \
   pgf \
