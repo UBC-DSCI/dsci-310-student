@@ -73,7 +73,7 @@ include:
 ## Hardware & software
 
 Students are required to bring a laptop to both lectures and tutorials.
-Students who do not own a laptop, chromebook, or tablet may be able to
+Students who do not own a laptop may be able to
 [loan a laptop from the UBC
 library](https://services.library.ubc.ca/computers-technology/technology-borrowing/).
 
