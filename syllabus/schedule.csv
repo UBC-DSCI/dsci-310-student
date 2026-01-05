@@ -1,16 +1,16 @@
 Week,Date,Topic,Assessments due,Notes
-1,2025-01-07,How do reproducible and trustworthy workflows impact data analysis?,,Start working on your installation instructions
-2,2025-01-14,Version control for transparency and collaboration,Individual assignment 1 & GitHub username quiz,
-3,2025-01-21,"Integrated development environments, filenames and data science project organization",Individual assignment 2,
-4,2025-01-28,Managing dependencies using virtual environments,,Team assignment for group projects & drafting of team work contract
-5,2025-02-04,Managing dependencies using containerization,Individual assignment 3,
-6,2025-02-11,Non-interactive scripts and reproducible reports,,
-6,2025-02-14,Mid-term exam,,"You will need to have git, github, and docker working for the exam"
-7,2025-02-18,Reading Break,,
-8,2025-02-25,Data analysis pipelines,Milestone 1,
-9,2025-03-04,Introduction to testing code for data science,Individual assignment 4,
-10,2025-03-11,Advanced version control workflows,Milestone 2,
-11,2025-03-18,Packaging and project work session,,
-12,2025-03-25,Project work session & documenting code,Milestone 3,
-13,2025-04-01,Automated testing and continuous integration,Individual assignment 5 & Peer review,
-14,2025-04-08,"Deploying and publishing packages, copyright and licenses",Final project & Team work reflection,
+1,2025-01-06,How do reproducible and trustworthy workflows impact data analysis?,,Start working on your installation instructions
+2,2025-01-13,Version control for transparency and collaboration,Individual assignment 1 & GitHub username quiz,
+3,2025-01-22,"Integrated development environments, filenames and data science project organization",Individual assignment 2,
+4,2025-01-27,Managing dependencies using virtual environments,,Team assignment for group projects & drafting of team work contract
+5,2025-02-03,Managing dependencies using containerization,Individual assignment 3,
+6,2025-02-10,Non-interactive scripts and reproducible reports,,
+6,2025-02-13,Mid-term exam,,"You will need to have git, github, and docker working for the exam"
+7,2025-02-17,Reading Break,,
+8,2025-02-24,Data analysis pipelines,Milestone 1,
+9,2025-03-03,Introduction to testing code for data science,Individual assignment 4,
+10,2025-03-10,Advanced version control workflows,Milestone 2,
+11,2025-03-17,Packaging and project work session,,
+12,2025-03-24,Project work session & documenting code,Milestone 3,
+13,2025-03-31,Automated testing and continuous integration,Individual assignment 5 & Peer review,
+14,2025-04-07,"Deploying and publishing packages, copyright and licenses",Final project & Team work reflection,
