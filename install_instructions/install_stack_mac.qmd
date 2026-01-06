@@ -66,7 +66,7 @@ code --version
 you should see something like this if you were successful:
 
 ```bash
-1.81.1
+1.107.1
 5763d909d5f12fe19f215cbfdd29a91c0fa9208a
 arm64
 ```
@@ -205,8 +205,9 @@ We will assume you downloaded the file into your `Downloads` folder.
 Once downloaded, open up a terminal and run the following command
 
 ```bash
-bash ${HOME}/Downloads/Miniforge3.sh -b -p "${HOME}/miniforge3"
+bash ${HOME}/Downloads/Miniforge3-25.11.0-0-MacOSX-arm64.sh -b -p "${HOME}/miniforge3"
 ```
+If you get an error about the operation not being permitted, go to Settings -> Privacy and Security -> Files and Folders -> Terminal, and make sure the downloads folder is ticked.
 
 After installation run the following commands
 
@@ -225,7 +226,7 @@ conda --version
 which should return something like this:
 
 ```
-conda 23.5.2
+conda 25.11.0
 ```
 
 > **Note:** If you see `zsh: command not found: conda`, see the section on [Bash](#bash-shell){:target="_self"} above to set your default Terminal shell to Bash as opposed to Zsh.
@@ -239,7 +240,7 @@ python --version
 Make sure it returns Python 3.11.0 or greater:
 
 ```
-Python 3.11.4
+Python 3.12.12
 ```
 
 If you do not see Python >3.11, close your terminal and open a new one.
@@ -310,15 +311,13 @@ R --version
 You should see something like this if you were successful:
 
 ```
-R version 4.3.2 (2023-10-31) -- "Eye Holes"
-Copyright (C) 2023 The R Foundation for Statistical Computing
-Platform: aarch64-apple-darwin20 (64-bit)
-
+R version 4.5.2 (2025-10-31) -- "[Not] Part in a Rumble"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under the terms of the
 GNU General Public License versions 2 or 3.
-For more information about these matters see
-https://www.gnu.org/licenses/.
+For more information about these
 ```
 
 > **Note:** Although it is possible to install R through conda, we highly recommend not doing so.
@@ -431,7 +430,7 @@ and paste the following:
 ```
 
 After you have pasted this text,
-hit the small floppy disk in the top right (or `Ctrl` + `s`)
+hit the small floppy disk in the top right (or `Cmd` + `s`)
 to save the settings.
 Here is a screenshot of what it looks like with the settings saved:
 
@@ -460,7 +459,7 @@ quarto --version
 If the installation was successful you will read the output (the exact number may not match, that's okay):
 
 ```bash
-1.6.40
+1.8.26
 ```
 
 ## LaTeX
@@ -493,17 +492,17 @@ latex --version
 You should see something like this if you were successful:
 
 ```bash
-pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023)
-kpathsea version 6.3.5
-Copyright 2023 Han The Thanh (pdfTeX) et al.
-There is NO warranty.  Redistribution of this software is
+pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025)
+kpathsea version 6.4.1
+Copyright 2025 Han The Thanh (pdfTeX) et al.
+There is NO warranty. Redistribution of this software is
 covered by the terms of both the pdfTeX copyright and
 the Lesser GNU General Public License.
 For more information about these matters, see the file
 named COPYING and the pdfTeX source.
 Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
-Compiled with libpng 1.6.39; using libpng 1.6.39
-Compiled with zlib 1.2.13; using zlib 1.2.13
+Compiled with libpng 1.6.46; using libpng 1.6.46
+Compiled with zlib 1.3.1; using zlib 1.3.1
 Compiled with xpdf version 4.04
 ```
 
