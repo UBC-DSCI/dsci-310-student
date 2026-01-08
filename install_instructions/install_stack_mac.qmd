@@ -700,6 +700,9 @@ The above output has been saved to the file /Users/timberst/Documents/dsci-310/d
 together with system configuration details and any detailed error messages about PDF and HTML generation.
 You can open this folder in your file browser by typing `open .` (without the surrounding backticks).
 ````
+> **Note:** If you get a `MISSING` message for `rmarkdown PDF-generation`
+> and `rmarkdown HTML-generation` you can fix this by installing pandoc:
+> https://pandoc.org/installing.html
 
 As you can see at the end of the output,
 a log file is saved in your current directory.
