@@ -74,11 +74,11 @@ echo -e "${ORANGE}## System programs${NC}" >> check-setup-310.log
 # so easier to test the location of the executable than having students add it to PATH.
 if [[ "$(uname)" == 'Darwin' ]]; then
     # rstudio is installed as an .app
-    if ! $(grep -iq "= \"2025\.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
-        echo "MISSING   rstudio 2025.09.*" >> check-setup-310.log
+    if ! $(grep -iq "= \"2026\.01.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)"); then
+        echo "MISSING   rstudio 2026.01.*" >> check-setup-310.log
     else
         # This is what is needed instead of --version
-        installed_version_tmp=$(grep -io "= \"2025\.09.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
+        installed_version_tmp=$(grep -io "= \"2026\.01.*" <<< "$(mdls -name kMDItemVersion /Applications/RStudio.app)")
         # Tidy strangely formatted version number
         installed_version=$(sed "s/= //;s/\"//g" <<< "$installed_version_tmp")
         echo "OK        "rstudio $installed_version >> check-setup-310.log
@@ -90,8 +90,8 @@ if [[ "$(uname)" == 'Darwin' ]]; then
 elif [[ "$OSTYPE" == 'msys' ]]; then
     # Rstudio on windows does not accept the --version flag when run interactively
     # so this section can only be troubleshot from the script
-    if ! $(grep -iq "2025\.09.*" <<< "$('/c//Program Files/RStudio/rstudio' --version)"); then
-        echo "MISSING   rstudio 2025.09*" >> check-setup-310.log
+    if ! $(grep -iq "2026\.01.*" <<< "$('/c//Program Files/RStudio/rstudio' --version)"); then
+        echo "MISSING   rstudio 2026.01*" >> check-setup-310.log
     else
         echo "OK        rstudio $( '/c//Program Files/RStudio/rstudio' --version | xargs )" >> check-setup-310.log
     fi
