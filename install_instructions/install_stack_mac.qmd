@@ -393,11 +393,19 @@ Go to `Settings -> Settings Editor`. Then click `JSON Settings Editor` in the to
 You will see two panels,
 the right-most panel allows you to perform advanced modification
 of keyboards shortcuts in JupyterLab
-and it already contains quite a few shortcuts.
+and it might already contain quite a few shortcuts.
+For some, the right side might be completely blank. 
 We're going to add two more shortcuts,
-by pasting a text snippet just before the first existing shortcut.
-Go ahead and create a new line just after the line that says `"shortcuts": [`
-and paste the following:
+by pasting a text snippet.
+
+If the right side is completely blank, paste the following code:
+```json
+{"shortcuts":[
+]}
+```
+
+Whether or not there are already settings, or you pasted the code above, now go ahead and create a new line just after the line that says `"shortcuts": [`
+and paste the following code.
 
 
 ```json
