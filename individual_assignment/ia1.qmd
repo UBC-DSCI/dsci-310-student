@@ -13,7 +13,7 @@ which corresponds to your computer's operating system:
 
 ## Submission
 
-You will submit a PDF to Gradescope for individual assignment 1 that includes
+You will submit to Canvas
 a copy of the output of the `check_setup.sh` script you ran
 (instructions in
 ["Post-installation notes"](https://ubc-dsci.github.io/dsci-310-student/install_stack_mac.html#post-installation-notes)
