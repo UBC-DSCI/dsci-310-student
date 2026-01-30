@@ -264,13 +264,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#r-environments" id="toc-r-environments" class="nav-link active" data-scroll-target="#r-environments">R Environments</a></li>
-  <li><a href="#optional-python-environment" id="toc-optional-python-environment" class="nav-link" data-scroll-target="#optional-python-environment">Optional: Python environment</a></li>
+  <li><a href="#python-environment" id="toc-python-environment" class="nav-link" data-scroll-target="#python-environment">Python environment</a></li>
   <li><a href="#run-a-docker-container" id="toc-run-a-docker-container" class="nav-link" data-scroll-target="#run-a-docker-container">Run a docker container</a>
   <ul class="collapse">
   <li><a href="#your-first-container" id="toc-your-first-container" class="nav-link" data-scroll-target="#your-first-container">Your first container</a></li>
   <li><a href="#an-r-container" id="toc-an-r-container" class="nav-link" data-scroll-target="#an-r-container">An R Container</a></li>
-  <li><a href="#an-rstudio-container" id="toc-an-rstudio-container" class="nav-link" data-scroll-target="#an-rstudio-container">An RStudio Container</a></li>
-  <li><a href="#an-rstudio-tidyverse-container" id="toc-an-rstudio-tidyverse-container" class="nav-link" data-scroll-target="#an-rstudio-tidyverse-container">An RStudio Tidyverse Container</a></li>
+  <li><a href="#a-python-container" id="toc-a-python-container" class="nav-link" data-scroll-target="#a-python-container">A Python Container</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t4.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -317,22 +316,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Re-open the RStudio project you just created and see how t5he packages change.</li>
 </ol>
 </section>
-<section id="optional-python-environment" class="level2">
-<h2 class="anchored" data-anchor-id="optional-python-environment">Optional: Python environment</h2>
-<p>For people and teams working on a python project and want to practice <code>conda</code> environments.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>conda</code> environments are not going to be on the exam. This exercise is solely to give you instructions to practice creating python environments.</p>
-</div>
-</div>
+<section id="python-environment" class="level2">
+<h2 class="anchored" data-anchor-id="python-environment">Python environment</h2>
+<p>When using Python, <code>conda</code> environments have a slightly different workflow when compared to renv.</p>
 <ol type="1">
 <li>Check that you are currently in the <code>base</code> conda environment:</li>
 </ol>
@@ -354,7 +340,7 @@ Note
 <section id="run-a-docker-container" class="level2">
 <h2 class="anchored" data-anchor-id="run-a-docker-container">Run a docker container</h2>
 <p>Let’s get some practice with running docker containers</p>
-<p>Docker Desktop needs to be runnign in the background.</p>
+<p>Docker Desktop needs to be running in the background.</p>
 <section id="your-first-container" class="level3">
 <h3 class="anchored" data-anchor-id="your-first-container">Your first container</h3>
 <p>We did this in the Computer Setup process, but let’s run the <code>hello-world</code> container with <code>docker run</code></p>
@@ -387,7 +373,8 @@ Note
 <section id="an-r-container" class="level3">
 <h3 class="anchored" data-anchor-id="an-r-container">An R Container</h3>
 <ol type="1">
-<li>Compare the version of R you have right now on your computer. You can open up and launch <code>R</code> or run <code>R --version</code> to get your current R version. 2.Run the R 4.3.2 container:</li>
+<li>Compare the version of R you have right now on your computer. You can open up and launch <code>R</code> or run <code>R --version</code> to get your current R version.</li>
+<li>Run the R 4.3.2 container:</li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-it</span> rocker/r-ver:4.3.2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
@@ -396,48 +383,24 @@ Note
 <li>Exit out of this docker container</li>
 </ol>
 </section>
-<section id="an-rstudio-container" class="level3">
-<h3 class="anchored" data-anchor-id="an-rstudio-container">An RStudio Container</h3>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you are on an ARM based M-chip mac, you need to pass in the <code>--platform=linux/amd64</code> flag to the <code>docker run</code> command. <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform" class="uri">https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform</a></p>
-</div>
-</div>
+<section id="a-python-container" class="level3">
+<h3 class="anchored" data-anchor-id="a-python-container">A Python Container</h3>
 <ol type="1">
-<li>Run the RStudio container and connect it to your local computer’s port <code>8787</code></li>
+<li>Compare the version of Python you have right now on your computer. You can run <code>python --version</code> to get your current Python version.</li>
+<li>Run the latest python:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-e</span> PASSWORD=<span class="st">"pizza"</span> <span class="at">-p</span> 8787:8787 rocker/rstudio:4.4.2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li><p>Explain in your own words what each of the flags are doing in the <code>docker run</code> command. You can use the official <code>docker run</code> documentation: <a href="https://docs.docker.com/reference/cli/docker/container/run/" class="uri">https://docs.docker.com/reference/cli/docker/container/run/</a></p></li>
-<li><p>Open and log into the RStudio container and try to run some R code in a script</p></li>
-<li><p>Save this script</p></li>
-<li><p>Close the container and run it again</p></li>
-<li><p>Notice how all your work inside the container is lost</p></li>
-</ol>
-</section>
-<section id="an-rstudio-tidyverse-container" class="level3">
-<h3 class="anchored" data-anchor-id="an-rstudio-tidyverse-container">An RStudio Tidyverse Container</h3>
-<ol type="1">
-<li>Do the same process as before, but this time use the <code>rocker/tidyverse:4.4.2</code> container.</li>
-<li>Without turning off this container, open a new terminal and run a separate <code>rocker/rstudio:4.4.2</code> container</li>
-</ol>
-<ul>
-<li>You will need to change the local port mapping</li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-it</span> python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
-<li>Make sure you are able to log into and run both RStudio sessions in the container</li>
+<li>Compare the version from the version you have on your computer, once the container starts, Python should display its version above the prompt.</li>
+<li>Try to load a package you have installed on your computer in the container (it should fail)</li>
+<li>Exit out of this docker container</li>
+<li>Run the Python container with the tag “3.12”</li>
 </ol>
-<ul>
-<li>Note how only one of the RStudio sessions has <code>tidyverse</code> installed and the other doesn’t</li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-it</span> python:3.12</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="7" type="1">
+<li>Check the version of Python this prompt shows, and then exit the container.</li>
+<li>What comes after the <code>:</code> appended to the image name is a user-chosen tag that has no <em>direct</em> connection to the contents of the Docker image. But it should provide a semantically meaningful addition to the name. In this instance, why did the developers choose to tag this version of the <code>python</code> docker image with the text <code>3.12</code>?</li>
+</ol>
 
 
 </section>
