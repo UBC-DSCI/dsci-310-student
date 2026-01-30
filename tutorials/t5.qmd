@@ -2,6 +2,41 @@
 title: "Tutorial 5"
 ---
 
+# More Docker Practice
+
+### An RStudio Container
+
+:::{.callout-note}
+If you are on an ARM based M-chip mac, you need to pass in the `--platform=linux/amd64` flag to the `docker run` command.
+<https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform>
+:::
+
+1. Run the RStudio container and connect it to your local computer's port `8787`
+
+```bash
+docker run --rm -e PASSWORD="pizza" -p 8787:8787 rocker/rstudio:4.4.2
+```
+2. This should be your first time using the rocker/rsudio Docker image, and so it will need to fetch the image from the internet first. Think about how that process compares to using renv, is it faster or slower? What sort of things does Docker need to fetch that renv does not?
+
+2. Explain in your own words what each of the flags are doing in the `docker run` command. You can use the official `docker run` documentation:
+<https://docs.docker.com/reference/cli/docker/container/run/>
+
+
+3. Open and log into the RStudio container and try to run some R code in a script
+4. Save this script
+5. Close the container and run it again
+6. Notice how all your work inside the container is lost
+
+### An RStudio Tidyverse Container
+
+1. Do the same process as before, but this time use the `rocker/tidyverse:4.4.2` container.
+2. Without turning off this container, open a new terminal and run a separate `rocker/rstudio:4.4.2` container
+  - You will need to change the local port mapping
+3. Make sure you are able to log into and run both RStudio sessions in the container
+  - Note how only one of the RStudio sessions has `tidyverse` installed and the other doesn't
+
+### Integrating Docker into a repository
+
 1. Create a repository and clone it down
 
 2. Create a bash script that lists (using a bash command)

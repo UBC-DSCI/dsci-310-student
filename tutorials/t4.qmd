@@ -23,14 +23,9 @@ so we can compare it with creating docker containers.
 13. Note how you have your old packages back
 14. Re-open the RStudio project you just created and see how t5he packages change.
 
-## Optional: Python environment
+## Python environment
 
-For people and teams working on a python project and want to practice `conda` environments.
-
-:::{.callout-note}
-`conda` environments are not going to be on the exam.
-This exercise is solely to give you instructions to practice creating python environments.
-:::
+When using Python, `conda` environments have a slightly different workflow when compared to renv.
 
 1. Check that you are currently in the `base` conda environment:
 
@@ -59,7 +54,7 @@ conda create -n myenv -c conda-forge python=3.12
 
 Let's get some practice with running docker containers
 
-Docker Desktop needs to be runnign in the background.
+Docker Desktop needs to be running in the background.
 
 ### Your first container
 
@@ -99,7 +94,7 @@ When this script runs, it exits and the container exits to give you your prompt 
 
 1. Compare the version of R you have right now on your computer.
 You can open up and launch `R` or run `R --version` to get your current R version.
-2.Run the R 4.3.2 container:
+2. Run the R 4.3.2 container:
 
 ```bash
 docker run --rm -it rocker/r-ver:4.3.2
@@ -109,32 +104,24 @@ docker run --rm -it rocker/r-ver:4.3.2
 4. Try to load a package you have installed on your computer in the container (it should fail)
 5. Exit out of this docker container
 
-### An RStudio Container
+### A Python Container
 
-:::{.callout-note}
-If you are on an ARM based M-chip mac, you need to pass in the `--platform=linux/amd64` flag to the `docker run` command.
-<https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/110-containerization-2.html#specifying-the-image-architectureplatform>
-:::
-
-1. Run the RStudio container and connect it to your local computer's port `8787`
+1. Compare the version of Python you have right now on your computer.
+You can run `python --version` to get your current Python version.
+2. Run the latest python:
 
 ```bash
-docker run --rm -e PASSWORD="pizza" -p 8787:8787 rocker/rstudio:4.4.2
+docker run --rm -it python
 ```
 
-2. Explain in your own words what each of the flags are doing in the `docker run` command. You can use the official `docker run` documentation:
-<https://docs.docker.com/reference/cli/docker/container/run/>
+3. Compare the version from the version you have on your computer, once the container starts, Python should display its version above the prompt. 
+4. Try to load a package you have installed on your computer in the container (it should fail)
+5. Exit out of this docker container
+6. Run the Python container with the tag "3.12"
 
+```bash
+docker run --rm -it python:3.12
+```
 
-3. Open and log into the RStudio container and try to run some R code in a script
-4. Save this script
-5. Close the container and run it again
-6. Notice how all your work inside the container is lost
-
-### An RStudio Tidyverse Container
-
-1. Do the same process as before, but this time use the `rocker/tidyverse:4.4.2` container.
-2. Without turning off this container, open a new terminal and run a separate `rocker/rstudio:4.4.2` container
-  - You will need to change the local port mapping
-3. Make sure you are able to log into and run both RStudio sessions in the container
-  - Note how only one of the RStudio sessions has `tidyverse` installed and the other doesn't
+7. Check the version of Python this prompt shows, and then exit the container. 
+7. What comes after the `:` appended to the image name is a user-chosen tag that has no *direct* connection to the contents of the Docker image. But it should provide a semantically meaningful addition to the name. In this instance, why did the developers choose to tag this version of the `python` docker image with the text `3.12`?
