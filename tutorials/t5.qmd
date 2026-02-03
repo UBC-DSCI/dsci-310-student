@@ -53,4 +53,4 @@ docker run --rm -e PASSWORD="pizza" -p 8787:8787 rocker/rstudio:4.4.2
    We must follow the steps until we are able to run and see the output.
    Put your steps in the `README.md` file
 
-7. For Tuesday: Create a github action that also runs this bash script
+7. Create a github action that also runs this bash script
