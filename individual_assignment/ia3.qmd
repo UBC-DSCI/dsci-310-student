@@ -63,7 +63,7 @@ You can do a "repository transfer" if you need to, but your submission needs to 
 
 This assignment will be graded for completion as follows:
 
-1. A Docker image named `dockerfile-practice` and tagged with a version exists under the student's username on DockerHub.
+1. A Docker image named `dsci310-ia3-<USERNAME>-docker ` and tagged with a version exists under the student's username on DockerHub.
 2. The Dockerfile used to create the Docker image lives in a GitHub repository named `dsci310-ia3-<USERNAME>-docker` under the DSCI-310 org.
 3. There is evidence that a GitHub Actions workflow can successfully build a Docker image from the Dockerfile in the GitHub repository,
    and publish it to DockerHub.
