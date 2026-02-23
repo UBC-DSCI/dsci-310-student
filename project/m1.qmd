@@ -19,7 +19,7 @@ to a fully reproducible and robust data data analysis project, comprised of:
 
 - A well documented and modularized software package and scripts written in R and/or Python,
 - A data analysis pipeline automated with GNU Make,
-- A reproducible report powered by either Jupyter book or R Markdown,
+- A reproducible report powered by either Jupyter notebook or R Markdown,
 - A containerized computational environment created and made shareable by Docker, and
 - A remote version control repository on GitHub for project collaboration and sharing,
   As well as automation of test suite execution and documentation and software deployment.
@@ -335,13 +335,16 @@ will be specified by a `Dockerfile` that lives in the root of the project's GitH
 - an explanation of how to run and use Docker to develop and execute the analysis will be documented in the `README.md` file.
 
 ## Submission Instructions
+This is a group submission on Gradescope. At least one group member will initiate the submission, add their team members, and then submit the following information. 
 
-You will submit two URLS's to Canvas in the provided text box for milestone 1:
+There are two questions in the Milestone 1 Gradescope submission.
+
+Question 1. Submit __two__ URLS's in a provided text box:
 
 1. the URL of your project's GitHub.com repository
-2. the URL of a GitHub release of your project's project's GitHub.com repository
+2. the URL of a GitHub release of your project's GitHub.com repository
 
-3. In a separate file / Submission, your teamwork contract
+Question 2. Submit your teamwork contract
 
 ### Creating a release on GitHub.com
 
