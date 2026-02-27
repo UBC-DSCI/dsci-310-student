@@ -262,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Render the document to check it is all working</li>
 <li>Your task is to refactor each section into separate R scripts (<code>01_load_data.R</code>, <code>02_methods.R</code>, <code>03_model.R</code>, <code>04_results.R</code>) and make sure each script can completely run independently from one another without <code>source()</code>ing another script.</li>
 <li>Your scripts should save out what ever data artifact it needs for both the pipline code and the quarto report</li>
-<li>Create a <code>Makefile</code> with a target named <code>all</code> that will run all the scripts in the correct order.</li>
+<li>Write a bash script <code>run_all.sh</code> that will run all the scripts in the correct order in sequence.</li>
 <li>Edit the quarto report such that it does not need to run any of the script code and loads up any table data or figure it needs in the report. You can load data from the script and write code to make a table prettier in quarto if you’d like.</li>
 </ol>
 <p>You can download the sample quarto document here: <a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd" class="uri">https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/t6-quarto.qmd</a></p>
