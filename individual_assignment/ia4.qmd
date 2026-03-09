@@ -127,7 +127,7 @@ so that:
 
 ### Submission instructions
 
-You will submit a PDF to Gradescope for individual assignment 3 that includes:
+You will submit links Gradescope for individual assignment 4 that includes:
 
 1. A link to the GitHub.com repository that you create for this assignment.
 
