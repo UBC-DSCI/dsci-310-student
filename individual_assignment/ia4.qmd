@@ -86,11 +86,6 @@ Goal: Familiarize yourself with the `Makefile` targets
 - The `Makefile` has all the targets needed to render the final Quarto report.
 - You will want to have GNU Make build the `qmd` target to do this.
 
-Notes:
-
-- The HTML version of the report is saved to `docs/qmd_example.html`
-- The PDF version will be saved to `docs/qmd_example.pdf`
-- The `Makefile` commands will help you
 
 #### Step 4
 
