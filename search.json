@@ -470,29 +470,18 @@
     "href": "tutorials/t8.html",
     "title": "Tutorial 8",
     "section": "",
-    "text": "This tutorial we’ll practice writing Tests for our functions.\nWe will write a function that calculates whether or not a particular year is a leap year. This is how the Gregorian calendar calculates leap years:\nWrite a function named is_leap. It should:\nHere are some examples of what the function should return:\nIn addition from the above examples, here are some test cases you should write as well\nWhat are some other edge cases you can think of?",
+    "text": "In this tutorial you’ll get more practice with data validation via a simulated scenario.",
     "crumbs": [
       "Tutorials",
       "Tutorial 8"
     ]
   },
   {
-    "objectID": "tutorials/t8.html#r",
-    "href": "tutorials/t8.html#r",
+    "objectID": "tutorials/t8.html#scenario",
+    "href": "tutorials/t8.html#scenario",
     "title": "Tutorial 8",
-    "section": "R",
-    "text": "R\n\nWrite an R function that meets the above criteria\nUsing {testthat} write unit tests that can test your function\nYou may opt to source your function file in your test file.",
-    "crumbs": [
-      "Tutorials",
-      "Tutorial 8"
-    ]
-  },
-  {
-    "objectID": "tutorials/t8.html#python-optional",
-    "href": "tutorials/t8.html#python-optional",
-    "title": "Tutorial 8",
-    "section": "Python (optional)",
-    "text": "Python (optional)\n\nWrite an R function that meets the above criteria\nWrite tests for your function that can be run with pytest\nFor this tutorial, create your function and test files in the same directory, so it’s easier to import your function module for testing.",
+    "section": "Scenario",
+    "text": "Scenario\nYou are the lead data scientist for a clinical trial testing a new therapeutic drug. The data engineering team just handed you the first batch of patient data (clinical_trials_batch1.csv).\nYou can download the data here: https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/clinical_trials_batch1.csv\nBefore you can begin any exploratory analysis or modeling, you must validate the data. If invalid data makes it into your downstream processes, it could compromise the trial’s integrity.\nYour goal is to build an automated validation pipeline using either Python (Pandera) or R (pointblank). Your pipeline must catch all errors, isolate the bad rows for the engineering team to review, and keep the good rows for your analysis.\n\nThe Data Dictionary\nYou must translate the following rules into your validation schema or agent:\n\npatient_id: Must be a string. Must be entirely unique (no duplicates). Cannot contain missing/null values.\nage: Must be an integer between 18 and 100 (inclusive).\ntreatment_arm: Must perfectly match either “Placebo”, “Drug_A”, or “Drug_B” (watch out for typos and case-sensitivity).\nbiomarker_score: Must be a positive number (strictly greater than 0).\noutcome: Must be either 0 or 1.\n\n\n\nTask 1: Load the Data\n\nSet up your script and load the necessary libraries (pandas and pandera for Python; tidyverse and pointblank for R).\nRead clinical_trials_batch1.csv into a dataframe.\nPrint the total number of rows so you have a baseline count.\n\n\n\nTask 2: Define the Schema or Agent\nTranslate the Data Dictionary into programmatic rules.\n\nPython Users: Create a pa.DataFrameSchema. Map each column to its expected data type andapply the appropriate pa.Check functions (e.g., isin(), between()). Ensure you setnullable=False where appropriate.\nR Users: Initialize an agent using create_agent(), then pipe your dataframe through the appropriate col_vals_* functions (e.g., col_vals_between(), col_vals_in_set()).\n\nImportant Note regarding Uniqueness: You might be tempted to use rows_distinct() to check for duplicate patient_ids. However, rows_distinct() is a table-level check, meaning it won’t flag the specific individual rows that failed. This will break our ability to extract the bad rows later. Instead, use this row-level expression to check for uniqueness:\n\ncol_vals_expr(expr = ~ !patient_id %in% patient_id[duplicated(patient_id)])\n\n\n\nTask 3: Interrogation and Handling\nExecute your validation checks in a way that catches all errors rather than stopping execution at the very first failure.\n\nPython Users:\n\nWrap your execution in a try...except block.\nCall schema.validate() and make sure to pass lazy=True.\nIf validation fails, catch the pa.errors.SchemaErrors exception. Extract the failure_cases dataframe from the error object, isolate the unique row indices that failed, and use those indices to split your original dataframe into clean_data and quarantined_data.\n\nR Users:\n\nRun interrogate() on your agent.\nUse the post-interrogation functions (like get_sundered_data()) to extract the passing rows into a clean_data object and the failing rows into a quarantined_data object.\n\n\n\n\nTask 4: Export the Quarantined Data\nThe data engineering team needs to see exactly which rows failed so they can fix their extraction process.\n\nCheck if your quarantined_data dataframe contains any rows.\nIf it does, export it to a new file named quarantined_data.csv.\nPrint a final summary to the console showing the number of rows in your clean_data and the number of rows in your quarantined_data.",
     "crumbs": [
       "Tutorials",
       "Tutorial 8"

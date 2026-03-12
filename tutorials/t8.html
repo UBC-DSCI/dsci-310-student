@@ -228,8 +228,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">R</a></li>
-  <li><a href="#python-optional" id="toc-python-optional" class="nav-link" data-scroll-target="#python-optional">Python (optional)</a></li>
+  <li><a href="#scenario" id="toc-scenario" class="nav-link active" data-scroll-target="#scenario">Scenario</a>
+  <ul class="collapse">
+  <li><a href="#the-data-dictionary" id="toc-the-data-dictionary" class="nav-link" data-scroll-target="#the-data-dictionary">The Data Dictionary</a></li>
+  <li><a href="#task-1-load-the-data" id="toc-task-1-load-the-data" class="nav-link" data-scroll-target="#task-1-load-the-data">Task 1: Load the Data</a></li>
+  <li><a href="#task-2-define-the-schema-or-agent" id="toc-task-2-define-the-schema-or-agent" class="nav-link" data-scroll-target="#task-2-define-the-schema-or-agent">Task 2: Define the Schema or Agent</a></li>
+  <li><a href="#task-3-interrogation-and-handling" id="toc-task-3-interrogation-and-handling" class="nav-link" data-scroll-target="#task-3-interrogation-and-handling">Task 3: Interrogation and Handling</a></li>
+  <li><a href="#task-4-export-the-quarantined-data" id="toc-task-4-export-the-quarantined-data" class="nav-link" data-scroll-target="#task-4-export-the-quarantined-data">Task 4: Export the Quarantined Data</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UBC-DSCI/dsci-310-student/edit/main/tutorials/t8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/tutorials/t8.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/UBC-DSCI/dsci-310-student/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -255,50 +261,72 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This tutorial we’ll practice writing Tests for our functions.</p>
-<p>We will write a function that calculates whether or not a particular year is a leap year. This is how the Gregorian calendar calculates leap years:</p>
+<p>In this tutorial you’ll get more practice with data validation via a simulated scenario.</p>
+<section id="scenario" class="level2">
+<h2 class="anchored" data-anchor-id="scenario">Scenario</h2>
+<p>You are the lead data scientist for a clinical trial testing a new therapeutic drug. The data engineering team just handed you the first batch of patient data (clinical_trials_batch1.csv).</p>
+<p>You can download the data here: <a href="https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/clinical_trials_batch1.csv" class="uri">https://github.com/UBC-DSCI/dsci-310-student/blob/main/example_files/clinical_trials_batch1.csv</a></p>
+<p>Before you can begin any exploratory analysis or modeling, you must validate the data. If invalid data makes it into your downstream processes, it could compromise the trial’s integrity.</p>
+<p>Your goal is to build an automated validation pipeline using either Python (Pandera) or R (pointblank). Your pipeline must catch all errors, isolate the bad rows for the engineering team to review, and keep the good rows for your analysis.</p>
+<section id="the-data-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="the-data-dictionary">The Data Dictionary</h3>
+<p>You must translate the following rules into your validation schema or agent:</p>
 <ul>
-<li>If the year is divisible by four, it’s a leap year</li>
-<li>But if the year can be divided by 100 as well as four, it’s not a leap year</li>
-<li>However, if the year is divisible by 400, it is a leap year</li>
+<li><code>patient_id</code>: Must be a string. Must be entirely unique (no duplicates). Cannot contain missing/null values.</li>
+<li><code>age</code>: Must be an integer between 18 and 100 (inclusive).</li>
+<li><code>treatment_arm</code>: Must perfectly match either “Placebo”, “Drug_A”, or “Drug_B” (watch out for typos and case-sensitivity).</li>
+<li><code>biomarker_score</code>: Must be a positive number (strictly greater than 0).</li>
+<li><code>outcome</code>: Must be either 0 or 1.</li>
 </ul>
-<p>Write a function named <code>is_leap</code>. It should:</p>
-<ul>
-<li>Take in a number as an input</li>
-<li>Return a value for True if it is a leap year</li>
-<li>Return a value for False if it is not a leap year.</li>
-</ul>
-<p>Here are some examples of what the function should return:</p>
-<ul>
-<li>1992: True</li>
-<li>2000: True</li>
-<li>1900: False</li>
-<li>2021: False</li>
-</ul>
-<p>In addition from the above examples, here are some test cases you should write as well</p>
-<ul>
-<li>Return an error if the user puts in the value of 0</li>
-<li>Return an error if the user puts in a negative value</li>
-<li>Returns an error if the user puts in a string</li>
-</ul>
-<p>What are some other edge cases you can think of?</p>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
+</section>
+<section id="task-1-load-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-load-the-data">Task 1: Load the Data</h3>
 <ol type="1">
-<li>Write an R function that meets the above criteria</li>
-<li>Using <code>{testthat}</code> write unit tests that can test your function</li>
-<li>You may opt to source your function file in your test file.</li>
+<li>Set up your script and load the necessary libraries (pandas and pandera for Python; tidyverse and pointblank for R).</li>
+<li>Read clinical_trials_batch1.csv into a dataframe.</li>
+<li>Print the total number of rows so you have a baseline count.</li>
 </ol>
 </section>
-<section id="python-optional" class="level2">
-<h2 class="anchored" data-anchor-id="python-optional">Python (optional)</h2>
-<ol type="1">
-<li>Write an R function that meets the above criteria</li>
-<li>Write tests for your function that can be run with <code>pytest</code></li>
-<li>For this tutorial, create your function and test files in the same directory, so it’s easier to import your function module for testing.</li>
-</ol>
+<section id="task-2-define-the-schema-or-agent" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-define-the-schema-or-agent">Task 2: Define the Schema or Agent</h3>
+<p>Translate the Data Dictionary into programmatic rules.</p>
+<ul>
+<li>Python Users: Create a pa.DataFrameSchema. Map each column to its expected data type andapply the appropriate pa.Check functions (e.g., isin(), between()). Ensure you setnullable=False where appropriate.</li>
+<li>R Users: Initialize an agent using create_agent(), then pipe your dataframe through the appropriate col_vals_* functions (e.g., col_vals_between(), col_vals_in_set()).
+<ul>
+<li>Important Note regarding Uniqueness: You might be tempted to use rows_distinct() to check for duplicate patient_ids. However, rows_distinct() is a table-level check, meaning it won’t flag the specific individual rows that failed. This will break our ability to extract the bad rows later. Instead, use this row-level expression to check for uniqueness:</li>
+</ul>
+<pre><code>col_vals_expr(expr = ~ !patient_id %in% patient_id[duplicated(patient_id)])</code></pre></li>
+</ul>
+</section>
+<section id="task-3-interrogation-and-handling" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-interrogation-and-handling">Task 3: Interrogation and Handling</h3>
+<p>Execute your validation checks in a way that catches all errors rather than stopping execution at the very first failure.</p>
+<ul>
+<li>Python Users:
+<ul>
+<li>Wrap your execution in a <code>try...except</code> block.</li>
+<li>Call <code>schema.validate()</code> and make sure to pass <code>lazy=True</code>.</li>
+<li>If validation fails, catch the <code>pa.errors.SchemaErrors</code> exception. Extract the <code>failure_cases</code> dataframe from the error object, isolate the unique row indices that failed, and use those indices to split your original dataframe into <code>clean_data</code> and <code>quarantined_data</code>.</li>
+</ul></li>
+<li>R Users:
+<ul>
+<li>Run <code>interrogate()</code> on your agent.</li>
+<li>Use the post-interrogation functions (like <code>get_sundered_data()</code>) to extract the passing rows into a <code>clean_data</code> object and the failing rows into a <code>quarantined_data</code> object.</li>
+</ul></li>
+</ul>
+</section>
+<section id="task-4-export-the-quarantined-data" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-export-the-quarantined-data">Task 4: Export the Quarantined Data</h3>
+<p>The data engineering team needs to see exactly which rows failed so they can fix their extraction process.</p>
+<ul>
+<li>Check if your <code>quarantined_data</code> dataframe contains any rows.</li>
+<li>If it does, export it to a new file named <code>quarantined_data.csv</code>.</li>
+<li>Print a final summary to the console showing the number of rows in your <code>clean_data</code> and the number of rows in your <code>quarantined_data</code>.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
