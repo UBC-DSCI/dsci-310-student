@@ -1190,7 +1190,29 @@
     "href": "tutorials/t9.html",
     "title": "Tutorial 9",
     "section": "",
-    "text": "Creating a quarto website.\nYou can see the course notes for quarto + github pages here: https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/930-quarto-ghpages.html\nYou will be doing the final exercise listed in the chapter for the tutorial.\n*Creating and Deploying a Quarto Website**\nObjective: By completing this exercise, students will gain hands-on experience in creating a Quarto website and deploying it using GitHub Pages.\nInstructions:\n\nCreate a New Quarto Website Project:\n\nOpen your command line interface (Terminal on Mac/Linux, Command Prompt/PowerShell on Windows).\nUse the quarto create project command to create a new Quarto website project.\n\nquarto create project\n\nSelect “website” as the project type and provide a directory name for your project.\n\nNavigate to Your Project Directory:\n\nChange into the newly created project directory.\n\ncd your_project_directory\nCustomize Your Quarto Website:\n\nOpen the _quarto.yml file in a text editor and customize the settings as needed.\n\nproject:\n  type: website\n  output-dir: docs\n\nModify the content of the index.qmd and about.qmd files to personalize your website.\n\nRender Your Quarto Website:\n\nUse the quarto render command to generate the HTML files for your website.\n\nquarto render\n\nVerify that the output is created in the docs directory.\n\nInitialize a Git Repository:\n\nIf you haven’t already, initialize a Git repository in your project directory.\n\ngit init\n\nAdd all files to the Git repository and commit them.\n\ngit add .\ngit commit -m \"Initial commit of Quarto website\"\nPush Your Project to GitHub:\n\nCreate a new repository on GitHub and follow the instructions to push your local repository to GitHub.\n\ngit remote add origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git\ngit branch -M main\ngit push -u origin main\nEnable GitHub Pages:\n\nGo to the settings of your GitHub repository.\nUnder the “Pages” section, set the source to the docs folder on the main branch.\nSave the settings and wait for GitHub to publish your website.\n\nVerify Your Website:\n\nNavigate to https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME to see your published Quarto website.\n\nMigrate the website to the gh-pages branch\n\ndelete the docs folder that renders your website\nignore the docs and _site folder in your .gitignore\nCreate and publish your website to the gh-pages branch\n\ngit checkout --orphan gh-pages\ngit reset --hard # make sure all changes are committed before running this!\ngit commit --allow-empty -m \"Initialising gh-pages branch\"\ngit push origin gh-pages\n\nquarto publish gh-pages\nYou can still use regular quarto render or quarto preview to build your site locally, you will no longer need to manually build and push the site to the main branch\nAuto build the site using a github action\n\nAuto build the website when changes are pushed to main. make sure you manually publish to the gh-pages branch before creating the workflow.\n\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}",
+    "text": "This tutorial we’ll practice writing Tests for our functions.\nWe will write a function that calculates whether or not a particular year is a leap year. This is how the Gregorian calendar calculates leap years:\nWrite a function named is_leap. It should:\nHere are some examples of what the function should return:\nIn addition from the above examples, here are some test cases you should write as well\nWhat are some other edge cases you can think of?",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 9"
+    ]
+  },
+  {
+    "objectID": "tutorials/t9.html#r",
+    "href": "tutorials/t9.html#r",
+    "title": "Tutorial 9",
+    "section": "R",
+    "text": "R\n\nWrite an R function that meets the above criteria\nUsing {testthat} write unit tests that can test your function\nYou may opt to source your function file in your test file.",
+    "crumbs": [
+      "Tutorials",
+      "Tutorial 9"
+    ]
+  },
+  {
+    "objectID": "tutorials/t9.html#python-optional",
+    "href": "tutorials/t9.html#python-optional",
+    "title": "Tutorial 9",
+    "section": "Python (optional)",
+    "text": "Python (optional)\n\nWrite an R function that meets the above criteria\nWrite tests for your function that can be run with pytest\nFor this tutorial, create your function and test files in the same directory, so it’s easier to import your function module for testing.",
     "crumbs": [
       "Tutorials",
       "Tutorial 9"
