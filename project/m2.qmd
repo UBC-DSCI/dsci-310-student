@@ -58,48 +58,7 @@ was used to perform your analysis or format your report
 These milestones build on one another, addressing issues from the previous milestone
 will make moving on to the next one easier.
 
-### 1. Upgrade your project's computational environment to a container.
-
-Write a `Dockerfile` to create a custom container
-for the computational environment for your project.
-Build your container using GitHub Actions,
-and publish your container image on DockerHub.
-Once this is done, shift the development of your project
-from working in a virtual environment to working in a container!
-
-The `Dockerfile` is the file used to specify and create the Docker image from which containers
-can be run to create an reproducible computational environment for your analysis.
-For this project,
-we recommend using a base Docker image
-that already has most of the software dependencies needed for your analysis.
-Examples of these include the Jupyter core team Docker images
-([documentation](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html))
-and the Rocker team Docker images
-([documentation](https://github.com/rocker-org/rocker-versioned2#version-stable-rocker-images-for-r--400)).
-When you add other software dependencies to this `Dockerfile`,
-ensure that you pin the version of the software that you add.
-
-**Note - this document should live in the root of your public GitHub.com repository.**
-
-In this milestone,
-we expect you to add a GitHub Actions workflow to automatically build the image,
-push it to DockerHub,
-and version the image (using the corresponding GitHub SHA) and GitHub repo when changes are pushed to the Dockerfile.
-
-You will need to add your DockerHub username and password
-(naming them `DOCKER_USERNAME` and `DOCKER_PASSWORD`, respectively)
-as GitHub secrets to this repository for this to work.
-This part is similar to Individual Assignment 2.
-
-Additionally, document how to use your container image in your `README`.
-This is important to make it easy for you
-and your team to shift to a container solution
-for your computational environment.
-We highly recommend using Docker Compose
-so that launching your containers is as frictionless as possible
-(which makes you more likely to use this tool in your workflow)!
-
-### 2. Abstract more code from your literate code document (`*.ipynb`, `*.Rmd`, or `.qmd`) to scripts (e.g., `.R` or `.py`).
+### 1. Abstract code from your literate code document (`*.ipynb`, `*.Rmd`, or `.qmd`) to scripts (e.g., `.R` or `.py`).
 
 This code need not be converted to a function,
 but can simply be files that call the functions needed to run your analysis.
@@ -152,7 +111,7 @@ This should take at least two arguments:
   - a path/filename prefix where to write the figure(s)/table(s) to
     and what to call it (e.g., results/this_analysis)
 
-### 3. Convert your `*.ipynb` or `*.Rmd` files into a Quarto document (`*.qmd`). Edit your Quarto document so that it's sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report
+### 2. Convert your `*.ipynb` or `*.Rmd` files into a Quarto document (`*.qmd`). Edit your Quarto document so that it's sole job is to narrate your analysis, display your analysis artifacts (i.e., figures and tables), and nicely format the report
 
 The goal is that non-data scientists would not be able to tell that code
 was used to perform your analysis or format your report
@@ -177,22 +136,22 @@ so that the text will be automatically updated with the correct value.
 - Change the code chunk options so that no code is viewable in the rendered report,
 just the code outputs where needed (e.g., figures and tables).
 
-### 4. Write another script, a `Makefile` (literally called `Makefile`), to act as a driver script to rule them all
+### 3. Write another script, a `Makefile` (literally called `Makefile`), to act as a driver script to rule them all
 
 This script should run the others in sequence, hard coding in the appropriate arguments. This script should:
 
 - live in the project's root directory and be named Makefile
 - be well documented (using the project `README` and comments inside the `Makefile` to explain what it does and how to use it)
 - have a `all` target so that you can easily run the entire analysis from top to bottom by running `make all` at the command line
-- have a `clean` target so that you can easily "undo" your analysis by running `make clean` at the command line (e.g., deletes all generate data and files).
+- have a `clean` target so that you can easily "undo" your analysis by running `make clean` at the command line (e.g., deletes all generated data and files).
 
 Tip:
 
-- The `all` target can be a `.PHONY` target
+- The `all` and `clean` targets can be `.PHONY` targets
 - You can create other targets that link up all the dependencies
   - For example, `data`, `analysis`, `figures`, `pdf`, etc, so your build process only runs what's necessary during development
 
-### 5. Continue to manage issues professionally
+### 4. Continue to manage issues professionally
 
 Continue managing issues effectively through project boards and milestones,
 make it clear who is responsible for what
@@ -203,11 +162,10 @@ We want all of you to get coding experience in the project and **each team membe
 
 ## Submission Instructions
 
-You will submit three URLs to Canvas in the provided text box for milestone 2:
+You will submit two URLs to Gradescope in the provided text box for milestone 2:
 
 1. the URL of your project's GitHub.com repository
 2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
-3. The URL of your Dockerhub image that can be pulled and used to run your analysis following your `README.md` instructions.
 
 ### Creating a release on GitHub.com
 
