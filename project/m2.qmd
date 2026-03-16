@@ -165,7 +165,7 @@ We want all of you to get coding experience in the project and **each team membe
 
 This is a group submission on Gradescope. At least one group member will initiate the submission, add their team members, and then submit the following information.
 
-** Don't forget to add your fellow teammates! **
+**Don't forget to add your fellow teammates!**
 
 You will submit two URLs to Gradescope in the provided text box for milestone 2:
 
