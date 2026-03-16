@@ -56,7 +56,8 @@ was used to perform your analysis or format your report
 ### 0. Address any issues with your document or code from Milestone 1
 
 These milestones build on one another, addressing issues from the previous milestone
-will make moving on to the next one easier.
+will make moving on to the next one easier. The best way to do so is via the project
+board that you are already required to use. 
 
 ### 1. Abstract code from your literate code document (`*.ipynb`, `*.Rmd`, or `.qmd`) to scripts (e.g., `.R` or `.py`).
 
@@ -153,7 +154,7 @@ Tip:
 
 ### 4. Continue to manage issues professionally
 
-Continue managing issues effectively through project boards and milestones,
+Managing issues effectively through **project boards** and **milestones**,
 make it clear who is responsible for what
 and what project milestone each task is associated with.
 In particular, create an issue for each task and/or sub-task needed for this milestone.
