@@ -1319,7 +1319,7 @@
     "href": "project/m3.html#submission-instructions",
     "title": "Milestone 3",
     "section": "Submission Instructions",
-    "text": "Submission Instructions\nYou will submit two URLs to Canvas in the provided text box for milestone 3:\n\nthe URL of your project’s GitHub.com repository\nthe URL of a GitHub release of your project’s GitHub.com repository for this milestone.\n\n\nCreating a release on GitHub.com\nJust before you submit the milestone 3, create a release on your project repository on GitHub and name it something like 2.0.0 (how to create a release). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.",
+    "text": "Submission Instructions\nYou will submit two URLs to Gradescope in the provided text box for milestone 3:\n\nthe URL of your project’s GitHub.com repository\nthe URL of a GitHub release of your project’s GitHub.com repository for this milestone.\n\n\nCreating a release on GitHub.com\nJust before you submit the milestone 3, create a release on your project repository on GitHub and name it something like 2.0.0 (how to create a release). This release allows us and you to easily jump to the state of your repository at the time of submission for grading purposes, while you continue to work on your project for the next milestone.",
     "crumbs": [
       "Assessments",
       "Milestone",
