@@ -102,7 +102,7 @@ We want all of you to get coding experience in the project and **each team membe
 
 ## Submission Instructions
 
-You will submit two URLs to Canvas in the provided text box for milestone 3:
+You will submit two URLs to Gradescope in the provided text box for milestone 3:
 
 1. the URL of your project's GitHub.com repository
 2. the URL of a GitHub release of your project's GitHub.com repository for this milestone.
