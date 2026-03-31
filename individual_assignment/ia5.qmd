@@ -24,7 +24,7 @@ Use the code they provide for the package functions.
 
 ### And/or make a Python package:
 
-- Read through and follow the instructions in [How to package a Python](https://py-pkgs.org/03-how-to-package-a-python) to create a toy/practice package in the Python programming language. Note - you only need to publish your package to TestPyPI, not PyPI. Push all your work to GitHub.com in a repository under your personal username.
+- Read through and follow the instructions in [Create a Python Package](https://www.pyopensci.org/python-package-guide/tutorials/create-python-package.html) and [Publish to PyPI](https://www.pyopensci.org/python-package-guide/tutorials/publish-pypi.html) to create a toy/practice package in the Python programming language. Note - you only need to publish your package to TestPyPI, not PyPI. Push all your work to GitHub.com in a repository under your personal username.
 
 
 ## Submission Instructions
