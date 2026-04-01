@@ -934,7 +934,7 @@
     "href": "individual_assignment/ia5.html#submission-instructions",
     "title": "Individual assignment 5",
     "section": "Submission Instructions",
-    "text": "Submission Instructions\nYou will submit a PDF to Gradescope for this individual assignment that includes:\n\nthe URL of the GitHub.com repository containing your toy/practice package in the Python programming language\nthe URL of the GitHub.com repository containing your toy/practice package in the R programming language",
+    "text": "Submission Instructions\nYou will submit links to Gradescope for this individual assignment that include:\n\nthe URL of the GitHub.com repository containing your toy/practice package in the Python programming language\n\nand/or\n\nthe URL of the GitHub.com repository containing your toy/practice package in the R programming language",
     "crumbs": [
       "Assessments",
       "Individual Assignments",
