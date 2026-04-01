@@ -29,9 +29,12 @@ Use the code they provide for the package functions.
 
 ## Submission Instructions
 
-You will submit a PDF to Gradescope for this individual assignment that includes:
+You will submit links to Gradescope for this individual assignment that include:
 
 1.  the URL of the GitHub.com repository containing your toy/practice package in the Python programming language
+
+and/or
+
 2.  the URL of the GitHub.com repository containing your toy/practice package in the R programming language
 
 ## Rubric
