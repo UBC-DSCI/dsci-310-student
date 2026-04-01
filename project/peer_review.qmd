@@ -9,15 +9,13 @@ by reviewing a data analysis project created by your classmates.
 You will be writing your review in an issue in your assigned repository.
 You will be evaluated on the thoughtfulness and usefulness of your feedback in the review.
 
-- Peer review repository: <https://github.com/DSCI-310-2024/data-analysis-review-2024>
-- Your review assignments are posted on Piazza: <https://piazza.com/class/lr1bsx4w2te58d/post/187>
+- Your review assignments are posted on Canvas: <https://canvas.ubc.ca/courses/177052/pages/peer-review-assignments>
 
 ### Submission instructions
 
-You will submit a PDF to Gradescope for this peer review that includes:
+You will submit to Gradescope:
 
-1.  your GitHub.com username
-2.  the URL of to the issue containing your peer review (ideally linked to your post)
+1. the URL of to the issue containing your peer review
 
 ### Peer review instructions
 
