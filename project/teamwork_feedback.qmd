@@ -45,9 +45,9 @@ What Group number are you in?
 
 | Group member name | Preparation rating |
 |-------------------|--------------------|
-|                   |                    |
-|                   |                    |
-|                   |                    |
+|    Abner Bal      |        4           |
+|    Kevin Jia      |        4           |
+|    Yuwen Luo      |        4           |
 
 ## 2. Participation & communication
 
@@ -58,9 +58,9 @@ What Group number are you in?
 
 | Group member name | Participation & communication rating |
 |-------------------|--------------------------------------|
-|                   |                                      |
-|                   |                                      |
-|                   |                                      |
+|    Abner Bal      |                 4                    |
+|    Kevin Jia      |                 4                    |
+|    Yuwen Luo      |                 4                    |
 
 ## 3. Helps group excel
 
@@ -72,9 +72,9 @@ What Group number are you in?
 
 | Group member name | Helps group excel rating |
 |-------------------|--------------------------|
-|                   |                          |
-|                   |                          |
-|                   |                          |
+|    Abner Bal      |                 4        |
+|    Kevin Jia      |                 4        |
+|    Yuwen Luo      |                 4        |
 
 ## 4. Team player (cooperation)
 
@@ -86,9 +86,9 @@ What Group number are you in?
 
 | Group member name | Team player (cooperation) rating |
 |-------------------|----------------------------------|
-|                   |                                  |
-|                   |                                  |
-|                   |                                  |
+|    Abner Bal      |                 4                |
+|    Kevin Jia      |                 4                |
+|    Yuwen Luo      |                 4                |
 
 Below,
 briefly describe the specific contributions each team member
@@ -102,6 +102,37 @@ comment on the following areas:
       That is, what sort of things did you do to contribute to the evolution of the project?
     - What were the roles of others in your group?
 - What went well and poorly throughout the team project experience?
+
+
+How the team worked together:
+- Collaborated closely and divided work based on each person’s strengths and availability.
+- Maintained regular communication via GitHub issues and pull requests.
+- Followed GitHub flow with meaningful commits, code reviews, and branching.
+
+My Role (Abner):
+- Contributed to both the analysis repo and the package repo.
+- Helped abstract core functions into a separate software package and ensured proper documentation.
+- Participated in writing validation checks and refining the analysis pipeline.
+- Addressed some feedback items and helped polish the final submission.
+
+Kevin’s Role:
+- Contributed across repos—especially on technical refinements and code cleaning.
+- Assisted with testing, Docker environment updates, and integrating the final report.
+- Reviewed and merged pull requests to ensure consistent code quality.
+
+Yuwen’s Role:
+- Took a leadership role in setting up and structuring both repositories.
+- Initiated work on most milestones, including setting up package infrastructure and Quarto report styling.
+- Coordinated task distribution and kept the team on track with deadlines and checklists.
+
+What went well:
+- Balanced workload and adaptability with shifting roles across milestones.
+- Maintained good communication and collaboration through GitHub tools.
+- Everyone contributed meaningfully to both the technical and organizational aspects of the project.
+
+What went poorly:
+- We tended to start each milestone a bit late, which sometimes led to rushed work near the submission deadline.
+
 
 ## Submission instructions
 
