@@ -34,6 +34,7 @@ Use the following ratings:
 ## 0. Group number
 
 What Group number are you in?
+3
 
 ## 1. Preparation
 
@@ -44,10 +45,10 @@ What Group number are you in?
 - Attends and is on time to group meetings and presentations
 
 | Group member name | Preparation rating |
-|-------------------|--------------------|
-|                   |                    |
-|                   |                    |
-|                   |                    |
+|Nathan             | 4
+|            Arnav  |      4              |
+|              Ashley     |    4                |
+|              Jacob     |       4             |
 
 ## 2. Participation & communication
 
@@ -58,9 +59,10 @@ What Group number are you in?
 
 | Group member name | Participation & communication rating |
 |-------------------|--------------------------------------|
-|                   |                                      |
-|                   |                                      |
-|                   |                                      |
+|           Nathan        |         4                             |
+|        Arnav           |                4                      |
+|        Ashley           |                      4                |
+|           Jacob        |                     4                 |
 
 ## 3. Helps group excel
 
@@ -72,9 +74,10 @@ What Group number are you in?
 
 | Group member name | Helps group excel rating |
 |-------------------|--------------------------|
-|                   |                          |
-|                   |                          |
-|                   |                          |
+|          Nathan        |              4            |
+|              Arnav     |        4                  |
+|               Ashley    |           4               |
+|          Jacob         |            4              |
 
 ## 4. Team player (cooperation)
 
@@ -86,10 +89,10 @@ What Group number are you in?
 
 | Group member name | Team player (cooperation) rating |
 |-------------------|----------------------------------|
-|                   |                                  |
-|                   |                                  |
-|                   |                                  |
-
+|             Nathan      |             4                     |
+|             Arnav      |                      4            |
+|           Jacob        |                     4             |
+|              Ashley     |                    4              |
 Below,
 briefly describe the specific contributions each team member
 made to your project (**including yourself**).
@@ -97,11 +100,20 @@ Point form is fine.
 Specifically,
 comment on the following areas:
 
-- How the team worked together as a whole, including:
-    - What was your role in the group?
-      That is, what sort of things did you do to contribute to the evolution of the project?
-    - What were the roles of others in your group?
-- What went well and poorly throughout the team project experience?
+Team Collaboration:
+
+Tasks were distributed evenly across milestones, with each member completing at least one task per milestone
+Used GitHub Issues to assign and track tasks, with each member working on a separate branch
+Pull requests were reviewed by a designated teammate before merging
+
+What Went Well:
+
+Communication improved significantly after Milestone 1 and remained strong throughout the rest of the project
+GitHub workflow (issues, branches, PR reviews) kept the team organized and code changes trackable
+
+What Went Poorly:
+
+Milestone 1 had some initial miscommunication around task expectations, but the team identified and resolved the issues early on
 
 ## Submission instructions
 
